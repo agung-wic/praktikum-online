@@ -27,7 +27,7 @@
         border-top-right-radius: 25px;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
-        /* box-shadow: 5px 10px; */
+        box-shadow: 4px 4px 5px 3px rgba(0, 0, 0, 0.2);
     }
 
     h4 {
