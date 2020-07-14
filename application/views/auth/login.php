@@ -1,44 +1,35 @@
 <div class="container">
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-        <div class="col-lg-7">
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
-                    <img src="<?php echo base_url(); ?>assets/img/its.png" width="100" height="100" style="display: block; margin: auto; margin-top:25px" />
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Praktikum Laboratorium Fisika</h1>
-                                </div>
+    <!-- Logo -->
+    <img class="logo" src="<?php echo base_url(); ?>assets/img/logoits.png" alt="Logo ITS">
 
-                                <?= $this->session->flashdata('message') ?>
-                                <form class="user" method="post" action="<?= base_url('auth'); ?>">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Masukkan email..." value="<?= set_value('email'); ?>">
-                                        <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
-                                        <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-user btn-block">
-                                        Login
-                                    </button>
-                                </form>
-                                <hr>
-                                <div class="text-center" style="padding-top:10px">
-                                    <a class="small" href="forgot-password.html">Lupa Password?</a>
-                                </div>
-                                <div class="text-center">
-                                    <a class="small" href="<?= base_url('auth/registration'); ?>">Buat Akun</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Judul -->
+    <h4 class="pt-3">Praktikum Laboratorium Fisika</h4>
+    <h6 class="pb-4">Institut Teknologi Sepuluh Nopember</h6>
+
+
+    <!-- Form -->
+    <?= $this->session->flashdata('message') ?>
+    <form class="user" method="post" action="<?= base_url('auth'); ?>">
+        <div class="form-group">
+            <input class="form-control" type="text" id="nrp" name="nrp" placeholder="NRP" style="margin-top: 35px; background-color: #f6f6f6; border-top: 0; border-bottom: 1px solid #6a6a6a; border-left: 1px solid #6a6a6a; border-right: 0;value=" <?= set_value('nrp'); ?>">
+            <?= form_error('nrp', '<small class="text-danger pl-3">', '</small>'); ?>
         </div>
-    </div>
+        <div class="form-group">
+            <input class="form-control" type="password" id="password" name="password" placeholder="Password" style="margin-top: 25px; background-color: #f6f6f6; border-top: 0; border-bottom: 1px solid #6a6a6a; border-left: 1px solid #6a6a6a; border-right: 0;">
+            <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
+        </div>
+        <button type="submit" class="btn" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
+                border-top-right-radius: 25px;
+                border-bottom-left-radius: 25px;
+                border-bottom-right-radius: 25px;
+                padding-left:15%;
+                padding-right:15%">Login
+        </button>
+    </form>
+    <h6 class="text-center pt-4">
+        <a href="<?= base_url('auth/forgotpassword'); ?>" style="color: #6a6a6a; font-size: small;">Lupa Password?</a>
+    </h6>
+    <h6 class="text-center">
+        <u><a href="<?= base_url('auth/registration'); ?>" style=" color: #6a6a6a; font-size: small;">Daftar Praktikum</a></u>
+    </h6>
 </div>

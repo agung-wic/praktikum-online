@@ -11,7 +11,7 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+        $this->form_validation->set_rules('nrp', 'NRP', 'required|trim');
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Login';
@@ -26,16 +26,16 @@ class Auth extends CI_Controller
 
     private function _login()
     {
-        $email = $this->input->post('email');
+        $nrp = $this->input->post('nrp');
         $Password = $this->input->post('password');
 
-        $user = $this->db->get_where('user', ['email' => $email])->row_array();
+        $user = $this->db->get_where('user', ['nrp' => $nrp])->row_array();
 
         if ($user) {
             if ($user['is_active'] == 1) {
                 if (password_verify($Password, $user['password'])) {
                     $data = [
-                        'email' => $user['email'],
+                        'nrp' => $user['nrp'],
                         'role_id' => $user['role_id']
                     ];
                     $this->session->set_Userdata($data);
@@ -45,11 +45,11 @@ class Auth extends CI_Controller
                     redirect('auth');
                 }
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email belum di aktivasi!</div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Akun belum di aktivasi!</div>');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email belum terdaftar!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Akun belum terdaftar!</div>');
             redirect('auth');
         }
     }
@@ -57,6 +57,7 @@ class Auth extends CI_Controller
     public function registration()
     {
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
+        $this->form_validation->set_rules('nrp', 'NRP', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'is_unique' => 'Email sudah terdaftar!'
         ]);
@@ -73,6 +74,7 @@ class Auth extends CI_Controller
         } else {
             $data = [
                 'name' => htmlspecialchars($this->input->post('name', true)),
+                'nrp' => htmlspecialchars($this->input->post('nrp', true)),
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'image' => 'default.jpg',
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
@@ -92,5 +94,30 @@ class Auth extends CI_Controller
         $this->session->unset_userdata('role_id');
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Logout berhasil!</div>');
         redirect('auth');
+    }
+
+    public function forgotpassword()
+    {
+        $data['title'] = 'Lupa kata sandi';
+        $this->load->view('template/auth_header.php', $data);
+        $this->load->view('auth/forgot-password');
+        $this->load->view('template/auth_footer.php');
+
+        $email = $this->input->post('email');
+        $user = $this->db->get_where('user', ['email' => $email])->row_array();
+        if ($user) {
+            #KIRIM EMAIL
+            redirect('auth/changepassword');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email salah</div>');
+        }
+    }
+
+    public function changepassword()
+    {
+        $data['title'] = 'Ganti password';
+        $this->load->view('template/auth_header.php', $data);
+        $this->load->view('auth/change-password');
+        $this->load->view('template/auth_footer.php');
     }
 }
