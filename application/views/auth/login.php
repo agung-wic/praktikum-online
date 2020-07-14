@@ -11,7 +11,7 @@
     <?= $this->session->flashdata('message') ?>
     <form class="user" method="post" action="<?= base_url('auth'); ?>">
         <div class="form-group">
-            <input class="form-control" type="text" id="nrp" name="nrp" placeholder="NRP" style="margin-top: 35px; background-color: #f6f6f6; border-top: 0; border-bottom: 1px solid #6a6a6a; border-left: 1px solid #6a6a6a; border-right: 0;" value=" <?= set_value('nrp'); ?>">
+            <input class="form-control" type="text" id="nrp" name="nrp" placeholder="NRP" value="<?= set_value('nrp'); ?>" style="margin-top: 35px; background-color: #f6f6f6; border-top: 0; border-bottom: 1px solid #6a6a6a; border-left: 1px solid #6a6a6a; border-right: 0;">
             <?= form_error('nrp', '<small class="text-danger pl-3">', '</small>'); ?>
         </div>
         <div class="form-group">

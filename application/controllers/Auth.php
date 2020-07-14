@@ -67,7 +67,7 @@ class Auth extends CI_Controller
         ]);
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
         if ($this->form_validation->run() == false) {
-            $data['title'] = 'Daftar Praktikum';
+            $data['title'] = 'Formulir Pendaftaran Praktikum';
             $this->load->view('template/auth_header.php', $data);
             $this->load->view('auth/registration.php');
             $this->load->view('template/auth_footer.php');
