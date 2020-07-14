@@ -7,6 +7,9 @@ class User extends CI_Controller
     {
         $data['title'] = 'Praktikum Online';
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+
+        $this->load->view('template/header', $data);
         $this->load->view('user/index', $data);
+        $this->load->view('template/footer');
     }
 }
