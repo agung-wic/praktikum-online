@@ -6,7 +6,7 @@ class User extends CI_Controller
     public function index()
     {
         $data['title'] = 'Praktikum Online';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $this->load->view('user/index', $data);
     }
 }
