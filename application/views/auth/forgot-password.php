@@ -19,11 +19,10 @@
             Atur Ulang Kata Sandi
         </button>
     </form>
-    <hr>
-    <div class="text-center">
-        <u><a class="small" href="<?= base_url('auth/registration'); ?>">Daftar Praktikum</a></u>
-    </div>
-    <div class="text-center">
-        <a class="small" href="<?= base_url('auth'); ?>">Sudah punya akun? Masuk!</a>
-    </div>
+    <h6 class="text-center pt-4">
+        <a href="<?= base_url('auth'); ?>" style="color: #6a6a6a; font-size: small;">Sudah punya akun? Masuk!</a>
+    </h6>
+    <h6 class="text-center">
+        <u><a href="<?= base_url('auth/registration'); ?>" style="color: #6a6a6a; font-size: small;">Daftar Praktikum</a></u>
+    </h6>
 </div>

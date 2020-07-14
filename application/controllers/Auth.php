@@ -98,24 +98,28 @@ class Auth extends CI_Controller
 
     public function forgotpassword()
     {
-        $data['title'] = 'Lupa kata sandi';
-        $this->load->view('template/auth_header.php', $data);
-        $this->load->view('auth/forgot-password');
-        $this->load->view('template/auth_footer.php');
+        $data['title'] = 'Lupa Kata Sandi';
+        $this->form_validation->set_rules('email', 'Email', 'required|trim');
 
-        $email = $this->input->post('email');
-        $user = $this->db->get_where('user', ['email' => $email])->row_array();
-        if ($user) {
-            #KIRIM EMAIL
-            redirect('auth/changepassword');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('template/auth_header.php', $data);
+            $this->load->view('auth/forgot-password');
+            $this->load->view('template/auth_footer.php');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email salah</div>');
+            $email = $this->input->post('email');
+            $user = $this->db->get_where('user', ['email' => $email])->row_array();
+            if ($user) {
+                #KIRIM EMAIL
+                redirect('auth/changepassword');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email salah</div>');
+            }
         }
     }
 
     public function changepassword()
     {
-        $data['title'] = 'Ganti password';
+        $data['title'] = 'Ubah Kata Sandi';
         $this->load->view('template/auth_header.php', $data);
         $this->load->view('auth/change-password');
         $this->load->view('template/auth_footer.php');
