@@ -18,7 +18,7 @@
                         <p class="mt-4"><b>Waktu : 30 Menit</b></p>
                         <p><b>Status : Belum Selesai</b></p>
                         <div class="row">
-                            <button class="btn btn-secondary ml-auto">Pilih Modul</button>
+                            <a class="btn btn-secondary ml-auto" href="#">Pilih Modul</a>
                         </div>
                     </div>
                 </div>

@@ -12,4 +12,24 @@ class User extends CI_Controller
         $this->load->view('user/index', $data);
         $this->load->view('template/footer');
     }
+
+    public function modul()
+    {
+        $data['title'] = 'Modul 1';
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+
+        $this->load->view('template/header', $data);
+        $this->load->view('user/modul', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function percobaan()
+    {
+        $data['title'] = 'Percobaan Modul 1';
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+
+        $this->load->view('template/header', $data);
+        $this->load->view('user/percobaan', $data);
+        $this->load->view('template/footer');
+    }
 }
