@@ -55,9 +55,10 @@
   <div class="col justify-content-center">
     <div class="kotak">
       <div class="container">
-        <video width="100%" controls>
-          <source src="<?= base_url('assets/vid/') ?>tes.mp4" type="video/mp4">
-        </video>
+        <img name="main" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
+                border-top-right-radius: 25px;
+                border-bottom-left-radius: 25px;
+                border-bottom-right-radius: 25px;" id="main" width="640" height="360" src="http://192.168.0.176:8081">
         <div class="row">
           <div class="col-lg-8">
             <div class="row">
