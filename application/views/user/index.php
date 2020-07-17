@@ -18,7 +18,7 @@
                         <p class="mt-4"><b>Waktu : 30 Menit</b></p>
                         <p><b>Status : Belum Selesai</b></p>
                         <div class="row">
-                            <a class="btn btn-secondary ml-auto" href="#">Pilih Modul</a>
+                            <a class="btn btn-secondary ml-auto" href="http://localhost/praktikum-online-master/user/percobaan">Pilih Modul</a>
                         </div>
                     </div>
                 </div>
