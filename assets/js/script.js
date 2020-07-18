@@ -51,6 +51,7 @@ $(function () {
 		$('.modal-footer button[type=submit]').html('Add');
 		$('.modal-body form').attr('action', 'http://localhost/fisdas/menu');
 
+
 	});
 
 	$('.TampilEditSubmenu').on('click', function () {
@@ -114,5 +115,41 @@ $(function () {
 		$('.modal-body form').attr('action', 'http://localhost/fisdas/admin/role');
 
 	});
+
+	$('.tampilTambahJadwal').on('click', function () {
+		$('#JadwalEditLabel').html('Tambahkan Jadwal Baru');
+		$('.modal-footer button[type=submit]').html('Tambah');
+		$('.modal-body form').attr('action', 'http://localhost/fisdas/admin/tambahjadwal');
+		$('.modal-body input[type=text]').attr("readonly", false);
+		$('.modal-body select').attr("disabled", false);
+
+	});
+
+	$('.tampilEditJadwal').on('click', function () {
+		$('#JadwalEditLabel').html('Edit Jadwal Praktikan');
+		$('.modal-footer button[type=submit]').html('Edit');
+		$('.modal-body form').attr('action', 'http://localhost/fisdas/admin/editjadwal');
+		$('.modal-body input[type=text]').attr("readonly", true);
+		$('.modal-body select').attr("disabled", true);
+		const id = $(this).data('id');
+
+		$.ajax({
+			url: 'http://localhost/fisdas/admin/getubahjadwal',
+			data: {
+				id: id
+			},
+			method: 'post',
+			dataType: 'json',
+			success: function (data) {
+				console.log(data);
+				$('#name').val(data.name);
+				$('#nrp').val(data.nrp);
+				$('#modul').val(data.modul);
+				$('#jadwal').val(data.jadwal);
+				$('#id').val(data.id);
+			}
+		})
+	});
+
 
 });

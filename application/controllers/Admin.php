@@ -12,8 +12,9 @@ class Admin extends CI_Controller
     { #USER#
         $this->load->model('User_model');
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['list'] = $this->db->get('user')->result_array();
+        $data['list'] = $this->User_model->TampilUser();
         $data['detail'] = $this->db->get_where('user', ['id' => $id])->row_array();
+        $data['role'] = $this->db->get('user_role')->result_array();
         if ($this->db->get_where('user', ['id' => $id])) {
             $data['user'] = $this->db->get_where('user', ['id' => $id])->row_array();
         }
@@ -34,7 +35,7 @@ class Admin extends CI_Controller
         $this->db->where('id', $id);
         $this->db->delete('user');
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-          User has been deleted!
+          User berhasil dihapus!
           </div>');
         redirect(base_url('admin'));
     }
@@ -62,7 +63,7 @@ class Admin extends CI_Controller
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('user', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-          User data has been edited!
+          Data user berhasil diubah!
           </div>');
         redirect(base_url('admin'));
     }
@@ -85,7 +86,7 @@ class Admin extends CI_Controller
         } else {
             $this->db->insert('user_role', ['role' => $this->input->post('role')]);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            New role added!
+           Role baru berhasil ditambahkan!
             </div>');
             redirect(base_url('admin/role'));
         }
@@ -100,7 +101,7 @@ class Admin extends CI_Controller
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('user_role', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-        Role has been edited!
+        Role berhasil diubah!
         </div>');
         redirect(base_url('admin/role'));
     }
@@ -115,7 +116,7 @@ class Admin extends CI_Controller
         $this->db->where('id', $id);
         $this->db->delete('user_role');
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-        Role has been deleted!
+        Role berhasil dihapus!
         </div>');
         redirect(base_url('admin/role'));
     }
@@ -140,7 +141,7 @@ class Admin extends CI_Controller
         } else {
             $this->db->insert('user_role', ['role' => $this->input->post('role')]);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            New role added!
+            Role baru berhasil ditambahkan!
             </div>');
             redirect(base_url('admin/role'));
         }
@@ -164,7 +165,57 @@ class Admin extends CI_Controller
             $this->db->delete('user_access_menu', $data);
         }
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Access changed!
+           Akses diubah!
             </div>');
+    }
+
+    public function jadwal()
+    {
+        $this->load->model('User_model');
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['title'] = 'Jadwal Praktikum';
+        $data['list'] = $this->User_model->TampilJadwal();
+        $data['modul'] = $this->db->get('modul')->result_array();
+        if ($this->input->post('keyword')) {
+            $data['list'] = $this->User_model->CariJadwal();
+        }
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('admin/jadwal', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function editjadwal()
+    {
+        $data = [
+            "name" => $this->input->post('name', true),
+            "email" => $this->input->post('email', true),
+            "nrp" => $this->input->post('nrp', true),
+            "role_id" => $this->input->post('role_id', true),
+            "is_active" => $this->input->post('is_active', true)
+        ];
+
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('user', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+          Jadwal praktikan berhasil diubah!
+          </div>');
+        redirect(base_url('admin/jadwal'));
+    }
+
+    public function tambahjadwal()
+    {
+        $data = [
+            "nrp" => $this->input->post('nrp', true),
+            "modul_id" => $this->input->post('modul', true),
+            "jadwal" => $this->input->post('jadwal', true)
+        ];
+
+        $this->db->insert('jadwal', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+          Jadwal praktikan berhasil ditambahkan!
+          </div>');
+        redirect(base_url('admin/jadwal'));
     }
 }

@@ -7,13 +7,14 @@
 
   <div class="row">
     <div class="col-lg">
-      <?= $this->session->flashdata('message'); ?>
+
       <h5></h5>
-      <div class="card shadow mb-4">
+      <div class="kotak">
         <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-primary">Role: <?= $role['role']; ?></h6>
         </div>
         <div class="card-body">
+          <?= $this->session->flashdata('message'); ?>
           <div class="table-responsive">
             <table class="table table-hover">
               <thead>

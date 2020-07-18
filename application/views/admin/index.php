@@ -1,16 +1,14 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-  <!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
   <!-- Begin Page Content -->
   <div class="container-fluid">
 
     <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-      <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">User List</h6>
+    <div class="kotak">
+      <div class="card-header">
+        <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -35,7 +33,7 @@
             <div class="col-md-5 ml-auto">
               <form action="<?= base_url('admin') ?>" method="post">
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" name="keyword" placeholder="Search user...">
+                  <input type="text" class="form-control" name="keyword" placeholder="Cari user...">
                   <div class="input-group-append">
                     <button class="btn btn-primary" type="submit"><i class="fas fa-fw fa-search"></i></button>
                   </div>
@@ -53,7 +51,7 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Name</th>
+                  <th scope="col">Nama</th>
                   <th scope="col">NRP</th>
                   <th scope="col">Email</th>
                   <th scope="col">Role</th>
@@ -73,19 +71,13 @@
               <tbody>
                 <?php $i = 1;
                 foreach ($list as $l) :
-                  if ($l['role_id'] == 1) {
-                    $l['role_id'] = 'Admin';
-                  } else if ($l['role_id'] == 2) {
-                    $l['role_id'] = 'Praktikan';
-                  } else if ($l['role_id'] == 3) {
-                    $l['role_id'] = 'Dosen';
-                  } ?>
+                ?>
                   <tr>
                     <th scope="row"><?= $i; ?></th>
                     <td><?= $l['name']; ?></td>
                     <td><?= $l['nrp']; ?></td>
                     <td><?= $l['email']; ?></td>
-                    <td><?= $l['role_id']; ?></td>
+                    <td><?= $l['role']; ?></td>
                     <td>
                       <a href="<?= base_url('admin/edit/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilModalUbah" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#UserEdit">
                         <i class=" fas fa-fw fa-edit"></i>
@@ -145,12 +137,11 @@
             <input type="text" class="form-control" id="is_active" name="is_active">
           </div>
           <div class="form-group">
-            <label for="role_id">Role ID</label>
+            <label for="role_id">Role</label>
             <select class="form-control" name="role_id" id="role_id">
-              <option value="1">Admin</option>
-              <option value="2">Koor</option>
-              <option value="3">Aslab</option>
-              <option value="4">Praktikan</option>
+              <?php foreach ($role as $r) : ?>
+                <option value="<?= $r['id'] ?>"><?= $r['role'] ?></option>
+              <?php endforeach; ?>
             </select>
           </div>
         </div>

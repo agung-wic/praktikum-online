@@ -1,21 +1,23 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-  <!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
-
-
   <div class="row">
     <div class="col-lg">
-      <?= form_error('role', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
 
-      <?= $this->session->flashdata('message'); ?>
-      <a href="" class="btn btn-primary mb-3 tombolTambahRole" data-toggle="modal" data-target="#NewRoleModal">Add New Role</a>
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary"><?= $title; ?></h6>
+      <div class="kotak">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">
+              <h6 class="m-0 font-weight-bold"><?= $title; ?></h6>
+            </div>
+            <div class="col-auto mr-auto">
+              <a href="" class="btn btn-primary mb-3 tombolTambahRole" data-toggle="modal" data-target="#NewRoleModal">Tambahkan Role Baru</a>
+            </div>
+          </div>
         </div>
         <div class="card-body">
+          <?= form_error('role', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
+          <?= $this->session->flashdata('message'); ?>
           <div class="table-responsive">
             <table class="table table-hover">
               <thead>

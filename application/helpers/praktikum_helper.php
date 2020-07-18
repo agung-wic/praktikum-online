@@ -31,7 +31,7 @@ function check_access($role_id, $menu_id)
   $result = $ci->db->get('user_access_menu');
 
   if ($result->num_rows() > 0) {
-    if ($role_id == 1 && $menu_id == 6) {
+    if ($role_id == 1 && $menu_id == 3) {
       return "checked='checked' disabled";
     } else {
       return "checked='checked'";
