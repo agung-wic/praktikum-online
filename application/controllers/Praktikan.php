@@ -22,6 +22,7 @@ class Praktikan extends CI_Controller
 
     public function modul($id = NULL)
     {
+        $data['modul'] = $this->db->get('modul')->result_array();
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         if (!$id) {
             $data['title'] = 'Modul Praktikum';
