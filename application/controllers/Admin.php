@@ -204,6 +204,12 @@ class Admin extends CI_Controller
         redirect(base_url('admin/jadwal'));
     }
 
+    public function getubahjadwal()
+    {
+        $this->load->model('User_model');
+        echo json_encode($this->User_model->TampilJadwalPraktikan());
+    }
+
     public function tambahjadwal()
     {
         $data = [

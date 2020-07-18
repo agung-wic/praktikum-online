@@ -139,7 +139,8 @@
           <div class="form-group">
             <label for="modul">Modul</label>
             <select class="form-control" name="modul" id="modul">
-              <?php foreach ($modul as $m) : ?>
+              <?php var_dump($modul);
+              foreach ($modul as $m) : ?>
                 <option value="<?= $m['modul'] ?>"><?= $m['name'] ?></option>
               <?php endforeach; ?>
             </select>

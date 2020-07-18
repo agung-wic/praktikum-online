@@ -144,7 +144,7 @@ $(function () {
 				console.log(data);
 				$('#name').val(data.name);
 				$('#nrp').val(data.nrp);
-				$('#modul').val(data.modul);
+				$('#modul').val(data.modul_id);
 				$('#jadwal').val(data.jadwal);
 				$('#id').val(data.id);
 			}
