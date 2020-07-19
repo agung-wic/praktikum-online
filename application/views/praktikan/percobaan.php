@@ -29,7 +29,7 @@
         <img class="mb-5" name="main" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
                 border-top-right-radius: 25px;
                 border-bottom-left-radius: 25px;
-                border-bottom-right-radius: 25px;" id="main" width="640" height="360" src="http://192.168.0.176:8081">
+                border-bottom-right-radius: 25px;" id="main" width="100%" src="http://192.168.0.176:8081">
         <div class="row">
           <div class="col-lg-8">
             <div class="row">
