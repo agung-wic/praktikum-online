@@ -56,7 +56,6 @@ class Praktikan extends CI_Controller
             if ($result) {
                 if ($this->input->post('var')) {
                     $message = "<" . $this->input->post('var') . "," . $this->input->post('val') . ">";
-                    die;
                     if (socket_write($socket, $message, strlen($message))) {
                         $result = socket_read($socket, 1024);
                         if ($result) {
