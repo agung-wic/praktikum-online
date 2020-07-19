@@ -54,18 +54,21 @@ class Praktikan extends CI_Controller
             // connect to server
             $result = socket_connect($socket, $host, $port);
             if ($result) {
-                // send string to server
-                if (socket_write($socket, $message, strlen($message))) {
-                    $result = socket_read($socket, 1024);
-                    if ($result) {
-                        echo "Reply From Server  :" . $result;
-                    } else {
-                        echo "<script>alert('Tidak dapat membaca respon dari server!');
+                if ($this->input->post('var')) {
+                    $message = "<" . $this->input->post('var') . "," . $this->input->post('val') . ">";
+                    die;
+                    if (socket_write($socket, $message, strlen($message))) {
+                        $result = socket_read($socket, 1024);
+                        if ($result) {
+                            echo "Reply From Server  :" . $result;
+                        } else {
+                            echo "<script>alert('Tidak dapat membaca respon dari server!');
                         window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
-                    }
-                } else {
-                    echo "<script>alert('Tidak dapat mengirim data ke server!');
+                        }
+                    } else {
+                        echo "<script>alert('Tidak dapat mengirim data ke server!');
                     window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
+                    }
                 }
             } else {
                 echo "<script>alert('Tidak dapat terhubung ke server!');

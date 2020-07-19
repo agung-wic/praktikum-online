@@ -37,18 +37,16 @@
                 <div class="kotak" style="background-color: #bcaead;">
                   <div class="container mt-2" style="color: black;">
                     <h6 class="mb-3"><b>Input</b></h6>
-                    <form action="">
+                    <form action="<?= base_url('praktikan/percobaan') ?>" method="post">
                       <div class="form-group">
-                        <label for="var1">Variabel 1</label>
-                        <input type="text" id="var1" name="var1" class="form-control form-control-user" id="var1" name="var1">
+                        <label for="var">Variabel</label>
+                        <select class="form-control" name="var" id="var">
+                          <option value="x">X</option>
+                          <input type="text" id="var" name="var" class="form-control form-control-user" id="var" name="var">
                       </div>
                       <div class="form-group">
-                        <label for="var2">Variabel 2</label>
-                        <input type="text" id="var2" name="var2" class="form-control form-control-user" id="var2" name="var2">
-                      </div>
-                      <div class="form-group">
-                        <label for="var3">Variabel 3</label>
-                        <input type="text" id="var3" name="var3" class="form-control form-control-user" id="var3" name="var3">
+                        <label for="val">Nilai</label>
+                        <input type="text" id="val" name="val" class="form-control form-control-user" id="val" name="val">
                       </div>
                       <div class="row justify-content-center mb-3">
                         <button type="submit" class="btn btn-secondary px-4">
