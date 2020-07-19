@@ -46,7 +46,6 @@ class Praktikan extends CI_Controller
     {
         $host    = "192.168.43.56";
         $port    = 25003;
-        $message = "Hello Server";
         //echo "Message To server :" . $message;
         // create socket
         $socket = socket_create(AF_INET, SOCK_STREAM, 0);
@@ -56,7 +55,6 @@ class Praktikan extends CI_Controller
             if ($result) {
                 if ($this->input->post('var')) {
                     $message = "<" . $this->input->post('var') . "," . $this->input->post('val') . ">";
-                    die;
                     if (socket_write($socket, $message, strlen($message))) {
                         $result = socket_read($socket, 1024);
                         if ($result) {
