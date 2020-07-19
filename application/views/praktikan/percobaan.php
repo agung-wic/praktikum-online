@@ -29,7 +29,7 @@
         <img class="mb-5" name="main" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
                 border-top-right-radius: 25px;
                 border-bottom-left-radius: 25px;
-                border-bottom-right-radius: 25px;" id="main" width="100%" src="http://192.168.0.176:8081">
+                border-bottom-right-radius: 25px;" id="main" width="100%" src="http://192.168.43.56:8081">
         <div class="row">
           <div class="col-lg-8">
             <div class="row">
@@ -41,13 +41,13 @@
                       <div class="form-group">
                         <label for="var">Variabel</label>
                         <select class="form-control" name="var" id="var">
-                          <option value="x">Naik</option>
-                          <option value="z">Turun</option>
+                          <option <?php if (($this->input->post('var')) && $this->input->post('var') == "x") echo "selected"; ?> value="x">Naik</option>
+                          <option <?php if (($this->input->post('var')) && $this->input->post('var') == "z") echo "selected"; ?> value="z">Turun</option>
                         </select>
                       </div>
                       <div class="form-group">
                         <label for="val">Nilai</label>
-                        <input type="text" id="val" name="val" class="form-control form-control-user" id="val" name="val">
+                        <input type="text" id="val" name="val" value="<?= set_value('val'); ?>" class="form-control form-control-user" id="val" name="val">
                       </div>
                       <div class="row justify-content-center mb-3">
                         <button type="submit" class="btn btn-secondary px-4">
