@@ -46,7 +46,6 @@ class Praktikan extends CI_Controller
     {
         $host    = "192.168.43.56";
         $port    = 25003;
-        $message = "Hello Server";
         //echo "Message To server :" . $message;
         // create socket
         $socket = socket_create(AF_INET, SOCK_STREAM, 0);
