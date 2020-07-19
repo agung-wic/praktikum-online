@@ -37,12 +37,12 @@
                 <div class="kotak" style="background-color: #bcaead;">
                   <div class="container mt-2" style="color: black;">
                     <h6 class="mb-3"><b>Input</b></h6>
-                    <form action="<?= base_url('praktikan/percobaan') ?>" method="post">
+                    <form action="<?= base_url('praktikan/percobaan/') . $modul['id'] ?>" method="post">
                       <div class="form-group">
                         <label for="var">Variabel</label>
                         <select class="form-control" name="var" id="var">
-                          <option value="x">X</option>
-                          <input type="text" id="var" name="var" class="form-control form-control-user" id="var" name="var">
+                          <option value="x">Naik</option>
+                          <option value="x">Turun</option>
                       </div>
                       <div class="form-group">
                         <label for="val">Nilai</label>
