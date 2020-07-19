@@ -1,3 +1,20 @@
+<?php
+// $host    = "192.168.43.56";
+// $port    = 25003;
+// $message = "Hello Server";
+// echo "Message To server :" . $message;
+// // create socket
+// $socket = socket_create(AF_INET, SOCK_STREAM, 0) or die("Could not create socket\n");
+// // connect to server
+// $result = socket_connect($socket, $host, $port) or die("Could not connect to server\n");
+// // send string to server
+// socket_write($socket, $message, strlen($message)) or die("Could not send data to server\n");
+// // get server response
+// $result = socket_read($socket, 1024) or die("Could not read server response\n");
+// echo "Reply From Server  :" . $result;
+// // close socket
+?>
+
 <div class="row mx-5">
   <div class="col justify-content-center">
     <div class="kotak">
