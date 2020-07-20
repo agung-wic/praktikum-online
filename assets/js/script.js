@@ -123,6 +123,11 @@ $(function () {
 		$('.modal-body input[type=text]').attr("readonly", false);
 		$('.modal-body select').attr("disabled", false);
 
+		$('#name').val(null);
+		$('#nrp').val(null);
+		$('#jadwal').val(null);
+		$('#id').val(null);
+
 	});
 
 	$('.tampilEditJadwal').on('click', function () {
@@ -144,8 +149,31 @@ $(function () {
 				console.log(data);
 				$('#name').val(data.name);
 				$('#nrp').val(data.nrp);
+				$('#modul_id').val(data.modul_id);
 				$('#modul').val(data.modul_id);
 				$('#jadwal').val(data.jadwal);
+				$('#id').val(data.id);
+			}
+		})
+	});
+
+	$('.reqJadwalPraktikan').on('click', function () {
+		const id = $(this).data('id');
+
+		$.ajax({
+			url: 'http://localhost/fisdas/admin/getubahjadwal',
+			data: {
+				id: id
+			},
+			method: 'post',
+			dataType: 'json',
+			success: function (data) {
+				console.log(data);
+				$('#name').val(data.name);
+				$('#nrp').val(data.nrp);
+				$('#modul_id').val(data.modul_id);
+				$('#modul').val(data.modul_id);
+				$('#jadwal_old').val(data.jadwal);
 				$('#id').val(data.id);
 			}
 		})

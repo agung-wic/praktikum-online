@@ -5,6 +5,105 @@
   <!-- Begin Page Content -->
   <div class="container-fluid">
 
+
+    <div class="kotak">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            <h6 class="m-0 font-weight-bold ">Pengajuan Perubahan Jadwal Praktikum</h6>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <div class="row mx-1">
+              <div class="col-md-7">
+                <div class="row">
+                  <div class="col-md-1 mt-2">
+                    <label for="show">Show</label>
+                  </div>
+                  <div class="col-md-2">
+                    <select class="custom-select" name="show" id="show">
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="40">40</option>
+                      <option value="50">50</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2 mt-2">Entries</div>
+                </div>
+              </div>
+              <div class="col-md-5 ml-auto">
+                <form action="<?= base_url('admin/jadwal') ?>" method="post">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="keyword2" name="keyword2" placeholder="Cari  ...">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="submit" id="cari-jadwal"><i class="fas fa-fw fa-search"></i></button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <?= $this->session->flashdata('message2'); ?>
+            </div>
+            <?php if (empty($req)) { ?>
+              <div class="alert alert-danger" role="alert">
+                Data not found!
+              </div>
+            <?php } else { ?>
+              <div id="bungkus">
+
+                <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Nama</th>
+                      <th scope="col">NRP</th>
+                      <th scope="col">Modul</th>
+                      <th scope="col">Jadwal</th>
+                      <th scope="col">Detail</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Nama</th>
+                      <th scope="col">NRP</th>
+                      <th scope="col">Modul</th>
+                      <th scope="col">Jadwal</th>
+                      <th scope="col">Detail</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <?php $i = 1;
+                    foreach ($req as $r) :
+                    ?>
+                      <tr>
+                        <th scope="row"><?= $i; ?></th>
+                        <td><?= $r['name']; ?></td>
+                        <td><?= $r['nrp']; ?></td>
+                        <td><?= $r['modul']; ?></td>
+                        <td><?= str_replace("T", " | ", $r['jadwal_old']); ?></td>
+                        <td>
+                          <a href="<?= base_url('admin/detailpengajuan/') . $r['id']; ?>" class="badge badge-pill badge-primary">
+                            <i class=" fas fa-fw fa-edit"></i>
+                            Detail
+                          </a>
+                        </td>
+                      </tr>
+                    <?php $i++;
+                    endforeach; ?>
+                  </tbody>
+                </table>
+              </div>
+            <?php } ?>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
     <!-- DataTales Example -->
     <div class="kotak">
       <div class="card-header">
@@ -39,14 +138,14 @@
               <div class="col-md-5 ml-auto">
                 <form action="<?= base_url('admin/jadwal') ?>" method="post">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Cari  ...">
+                    <input type="text" class="form-control" id="keyword1" name="keyword1" placeholder="Cari  ...">
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="submit" id="cari-jadwal"><i class="fas fa-fw fa-search"></i></button>
                     </div>
                   </div>
                 </form>
               </div>
-              <?= $this->session->flashdata('message'); ?>
+              <?= $this->session->flashdata('message1'); ?>
             </div>
             <?php if (empty($list)) { ?>
               <div class="alert alert-danger" role="alert">
@@ -127,20 +226,20 @@
         <form action="<?= base_url('admin/editjadwal') ?>" method="post">
           <div class="form-group">
             <input class="form-control" type="number" name="id" id="id" hidden>
+            <input class="form-control" type="text" name="modul" id="modul" hidden>
           </div>
           <div class="form-group">
             <label for="name">Nama Lengkap</label>
-            <input type="text" class="form-control edit" id="name" name="name" readonly>
+            <input type="text" class="form-control edit" id="name" name="name">
           </div>
           <div class="form-group">
             <label for="nrp">NRP</label>
-            <input type="text" class="form-control edit" id="nrp" name="nrp" readonly>
+            <input type="text" class="form-control edit" id="nrp" name="nrp">
           </div>
           <div class="form-group">
             <label for="modul">Modul</label>
-            <select class="form-control" name="modul" id="modul">
-              <?php var_dump($modul);
-              foreach ($modul as $m) : ?>
+            <select class="form-control" name="modul_id" id="modul_id">
+              <?php foreach ($modul as $m) : ?>
                 <option value="<?= $m['modul'] ?>"><?= $m['name'] ?></option>
               <?php endforeach; ?>
             </select>
@@ -151,8 +250,8 @@
           </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Edit</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-primary">Ubah</button>
       </div>
       </form>
     </div>
