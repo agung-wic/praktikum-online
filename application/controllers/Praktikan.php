@@ -96,4 +96,37 @@ class Praktikan extends CI_Controller
         $this->load->view('praktikan/percobaan', $data);
         $this->load->view('template/footer');
     }
+
+    public function jadwal()
+    {
+        $this->load->model('Praktikan_model');
+        $data['title'] = 'Jadwal Praktikum';
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $data['list'] = $this->Praktikan_model->JadwalPraktikan($this->session->userdata('nrp'));
+        $data['modul'] = $this->db->get('modul')->result_array();
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('template/header', $data);
+        $this->load->view('praktikan/jadwal', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function reqjadwal()
+    {
+        $data = [
+            "nrp" => $this->input->post('nrp'),
+            "modul_id" => $this->input->post('modul'),
+            "jadwal_old" => $this->input->post('jadwal_old'),
+            "jadwal_new" => $this->input->post('jadwal_new'),
+            "ket" => $this->input->post('ket'),
+            "is_approved" => 0
+        ];
+
+        $this->db->insert('req_jadwal', $data);
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Pengajuan jadwal sukses! Silakan menunggu persetujuan dari Admin.
+          </div>');
+        redirect(base_url('praktikan/jadwal'));
+    }
 }
