@@ -186,6 +186,23 @@ class Admin extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function pengumuman()
+    {
+        $this->load->model('User_model');
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['title'] = 'Pengumuman';
+        $data['list'] = $this->User_model->TampilJadwal();
+        $data['modul'] = $this->db->get('modul')->result_array();
+        if ($this->input->post('keyword')) {
+            $data['list'] = $this->User_model->CariJadwal();
+        }
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('admin/pengumuman', $data);
+        $this->load->view('template/footer');
+    }
+
     public function editjadwal()
     {
         $data = [

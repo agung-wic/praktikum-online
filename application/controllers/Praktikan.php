@@ -44,24 +44,34 @@ class Praktikan extends CI_Controller
 
     public function percobaan($id = NULL)
     {
-        $host    = "192.168.43.56";
-        $port    = 25003;
+        $host    = "10.122.10.19";
+        $port    = 1000;
+        $port2    = 1001;
         //echo "Message To server :" . $message;
         // create socket
+        $data['result2'] = NULL;
         $socket = socket_create(AF_INET, SOCK_STREAM, 0);
-        if ($socket) {
-            // connect to server
+        $socket2 = socket_create(AF_INET, SOCK_STREAM, 0);
+        if ($socket || $socket2) {
+            // connect to server    
             $result = socket_connect($socket, $host, $port);
-            if ($result) {
-                if ($this->input->post('var')) {
-                    $message = "<" . $this->input->post('var') . "," . $this->input->post('val') . ">";
+            $result2 = socket_connect($socket2, $host, $port2);
+            if ($result || $result2) {
+                if ($this->input->post('aksi')) {
+                    if ($this->input->post('aksi') == 'data') {
+                        $message = "[" . $this->input->post('var') . "," . "500" . "]";
+                    } elseif ($this->input->post('aksi') == 'jatuhkan') {
+                        $message = "[c,320]";
+                    }
                     if (socket_write($socket, $message, strlen($message))) {
-                        $result = socket_read($socket, 1024);
-                        if ($result) {
-                            echo "Reply From Server  :" . $result;
+                        $result2 = socket_read($socket2, 1024);
+                        $result2 = htmlspecialchars($result2);
+                        if ($result2) {
+                            $data['result2'] = $result2;
+                            $id = $this->input->post('id');
                         } else {
                             echo "<script>alert('Tidak dapat membaca respon dari server!');
-                        window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
+                            window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
                         }
                     } else {
                         echo "<script>alert('Tidak dapat mengirim data ke server!');

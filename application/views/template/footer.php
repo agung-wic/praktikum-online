@@ -29,6 +29,12 @@
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url(); ?>assets/js/sb-admin-2.min.js"></script>
 <script src="<?= base_url(); ?>assets/js/script.js"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+    selector: 'textarea'
+  });
+</script>
 
 <script>
   $('.custom-file-input').on('change', function() {
