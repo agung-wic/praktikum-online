@@ -179,5 +179,43 @@ $(function () {
 		})
 	});
 
+	$('.kirim1').on('click', function () {
+		const kirim = $('#var').find(':selected').data('send');
+		console.log(kirim);
+		const id = $(this).data('id');
+		$.ajax({
+			url: 'http://localhost/fisdas/praktikan/getpercobaan',
+			data: {
+				kirim: kirim,
+				id: id
+			},
+			method: 'post',
+			dataType: 'json',
+			success: function (data) {
+				console.log(data);
+				$('#data1').val(data);
+			}
 
+		})
+	})
+
+	$('.kirim2').on('click', function () {
+		const kirim = "[d,1]";
+		console.log(kirim);
+		const id = $(this).data('id');
+		$.ajax({
+			url: 'http://localhost/fisdas/praktikan/getpercobaan',
+			data: {
+				kirim: kirim,
+				id: id
+			},
+			method: 'post',
+			dataType: 'json',
+			success: function (data) {
+				console.log(data);
+				$('#data2').val(data);
+			}
+
+		})
+	})
 });

@@ -193,10 +193,10 @@ class Admin extends CI_Controller
 
     public function pengumuman()
     {
-        $this->load->model('User_model');
+        $this->load->model('Admin_model');
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['title'] = 'Pengumuman';
-        $data['list'] = $this->User_model->TampilJadwal();
+        $data['list'] = $this->Admin_model->TampilJadwal();
         $data['modul'] = $this->db->get('modul')->result_array();
         if ($this->input->post('keyword')) {
             $data['list'] = $this->User_model->CariJadwal();

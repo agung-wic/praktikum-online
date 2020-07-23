@@ -57,6 +57,42 @@ class Admin_model extends CI_Model
     return $this->db->query($query)->result_array();
   }
 
+  public function TampilReqJadwal()
+  {
+    $query = "SELECT `req_jadwal`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', `modul`.`name` as 'modul', `req_jadwal`.`jadwal_old`
+              FROM `user` INNER JOIN `req_jadwal` ON `user`.`nrp` = `req_jadwal`.`nrp` 
+              INNER JOIN `modul` ON `modul`.`modul` = `req_jadwal`.`modul_id` WHERE `req_jadwal`.`is_approved`=0";
+
+    return $this->db->query($query)->result_array();
+  }
+
+  public function DetailJadwal($id)
+  {
+    $query = "SELECT `req_jadwal`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', 
+              `modul`.`name` as 'modul', `req_jadwal`.`jadwal_old`, `req_jadwal`.`jadwal_new`, `req_jadwal`.`ket` 
+              FROM `user` INNER JOIN `req_jadwal` ON `user`.`nrp` = `req_jadwal`.`nrp` 
+              INNER JOIN `modul` ON `modul`.`modul` = `req_jadwal`.`modul_id` WHERE `req_jadwal`.`id` = '$id'
+              ";
+
+    return $this->db->query($query)->row_array();
+  }
+
+  public function CariReqJadwal()
+  {
+    $keyword = $this->input->post('keyword2', true);
+
+    $query = "SELECT `req_jadwal`.`id`, `user`.`nrp`, `user`.`name` as `name`, `modul`.`name` as `modul`, `req_jadwal`.`jadwal_old`
+              FROM `user` INNER JOIN `req_jadwal` ON `user`.`nrp` = `req_jadwal`.`nrp` 
+              INNER JOIN `modul` ON `modul`.`modul` = `req_jadwal`.`modul_id`
+              WHERE `req_jadwal`.`is_approved`=0 AND (`user`.`name` LIKE '%$keyword%'
+              OR `modul`.`name` LIKE '%$keyword%'
+              OR `req_jadwal`.`nrp` LIKE '%$keyword%'
+              OR `req_jadwal`.`jadwal_old` LIKE '%$keyword%')";
+
+    return $this->db->query($query)->result_array();
+  }
+
+
   public function TampilJadwalPraktikan()
   {
     $id = $this->input->post('id', true);

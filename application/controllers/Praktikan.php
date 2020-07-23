@@ -44,48 +44,9 @@ class Praktikan extends CI_Controller
 
     public function percobaan($id = NULL)
     {
-        $host    = "10.122.10.19";
-        $port    = 1000;
-        $port2    = 1001;
-        //echo "Message To server :" . $message;
-        // create socket
-        $data['result2'] = NULL;
-        $socket = socket_create(AF_INET, SOCK_STREAM, 0);
-        $socket2 = socket_create(AF_INET, SOCK_STREAM, 0);
-        if ($socket || $socket2) {
-            // connect to server    
-            $result = socket_connect($socket, $host, $port);
-            $result2 = socket_connect($socket2, $host, $port2);
-            if ($result || $result2) {
-                if ($this->input->post('aksi')) {
-                    if ($this->input->post('aksi') == 'data') {
-                        $message = "[" . $this->input->post('var') . "," . "500" . "]";
-                    } elseif ($this->input->post('aksi') == 'jatuhkan') {
-                        $message = "[c,320]";
-                    }
-                    if (socket_write($socket, $message, strlen($message))) {
-                        $result2 = socket_read($socket2, 1024);
-                        $result2 = htmlspecialchars($result2);
-                        if ($result2) {
-                            $data['result2'] = $result2;
-                            $id = $this->input->post('id');
-                        } else {
-                            echo "<script>alert('Tidak dapat membaca respon dari server!');
-                            window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
-                        }
-                    } else {
-                        echo "<script>alert('Tidak dapat mengirim data ke server!');
-                    window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
-                    }
-                }
-            } else {
-                echo "<script>alert('Tidak dapat terhubung ke server!');
-                window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
-            }
-        } else {
-            echo "<script>alert('Gagal membuat socket!');
-            window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
-        }
+        $this->_connectsocket($id);
+        $data['output'] = NULL;
+
         $data['title'] = 'Percobaan Praktikum';
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['modul'] = $this->db->get_where('modul', ['modul' => $id])->row_array();
@@ -95,6 +56,62 @@ class Praktikan extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('praktikan/percobaan', $data);
         $this->load->view('template/footer');
+    }
+
+    private function _connectsocket($id = NULL)
+    {
+        $host    = "192.168.43.16";
+        $port    = 1000;
+        $port2    = 1001;
+        //echo "Message To server :" . $message;
+        // create socket
+        $socket1 = socket_create(AF_INET, SOCK_STREAM, 0);
+        $socket2 = socket_create(AF_INET, SOCK_STREAM, 0);
+
+        $socket = [$socket1, $socket2];
+        $data['result2'] = NULL;
+
+        if ($socket || $socket2) {
+            // connect to server    
+            $result1 = socket_connect($socket1, $host, $port);
+            $result2 = socket_connect($socket2, $host, $port2);
+
+            $result = [$result1, $result2];
+            if ($result1 || $result2) {
+                $success = [$socket, $result];
+                return $success;
+            } else {
+                echo "<script>alert('Tidak dapat terhubung ke server!');
+                window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
+            }
+        } else {
+            echo "<script>alert('Gagal membuat socket!');
+            window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
+        }
+    }
+
+    private function _sendsocket($socket1, $socket2, $message, $id)
+    {
+        if (socket_write($socket1, $message, strlen($message))) {
+            $result2 = socket_read($socket2, 1024);
+            $result2 = htmlspecialchars($result2);
+            if ($result2) {
+                return $result2;
+            } else {
+                echo "<script>alert('Tidak dapat membaca respon dari server!');
+                    window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
+            }
+        } else {
+            echo "<script>alert('Tidak dapat mengirim data ke server!');
+            window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
+        }
+    }
+
+    public function getpercobaan()
+    {
+        $connect = $this->_connectsocket();
+        $hasil = $this->_sendsocket($connect[0][0], $connect[0][1], $this->input->post('kirim'), $this->input->post('id'));
+        echo json_encode($hasil);
     }
 
     public function jadwal()
