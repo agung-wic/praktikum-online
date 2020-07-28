@@ -36,9 +36,8 @@ class Admin_model extends CI_Model
 
   public function TampilPengumuman()
   {
-    $query = "SELECT `jadwal`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', `modul`.`name` as 'modul', `jadwal`.`jadwal`
-              FROM `user` INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
-              INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id`";
+    $query = "SELECT `pengumuman`.`judul`, `user`.`name` as 'name', `user`.`nrp`, `pengumuman`.`isi`, `pengumuman`.`tanggal`
+              FROM `user` INNER JOIN `pengumuman` ON `user`.`nrp` = `pengumuman`.`nrp`";
 
     return $this->db->query($query)->result_array();
   }
@@ -91,7 +90,6 @@ class Admin_model extends CI_Model
 
     return $this->db->query($query)->result_array();
   }
-
 
   public function TampilJadwalPraktikan()
   {

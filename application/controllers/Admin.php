@@ -196,11 +196,8 @@ class Admin extends CI_Controller
         $this->load->model('Admin_model');
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['title'] = 'Pengumuman';
-        $data['list'] = $this->Admin_model->TampilJadwal();
+        $data['list'] = $this->Admin_model->TampilPengumuman();
         $data['modul'] = $this->db->get('modul')->result_array();
-        if ($this->input->post('keyword')) {
-            $data['list'] = $this->User_model->CariJadwal();
-        }
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
@@ -299,13 +296,37 @@ class Admin extends CI_Controller
         redirect(base_url('admin/jadwal'));
     }
 
-    public function deletejadwal($id)
+    public function tambahpengumuman()
     {
-        $this->db->where('id', $id);
-        $this->db->delete('jadwal');
+        $data = [
+            "nrp" => $this->input->post('nrp', true),
+            "judul" => $this->input->post('judul', true),
+            "isi" => $this->input->post('isi', true),
+            "tanggal" => $this->input->post('tanggal', true)
+        ];
+
+        $this->db->insert('pengumuman', $data);
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
-          Jadwal berhasil dihapus!
+          Pengumuman berhasil ditambhakan!
           </div>');
-        redirect(base_url('admin/jadwal'));
+        redirect(base_url('admin/pengumuman'));
+    }
+
+    public function editpengumuman()
+    {
+        $data = [
+            "id" => $this->input->post('id', true),
+            "nrp" => $this->input->post('nrp', true),
+            "judul" => $this->input->post('judul', true),
+            "isi" => $this->input->post('isi', true),
+            "tanggal" => $this->input->post('tanggal', true)
+        ];
+
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('pengumuman', $data);
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Jadwal praktikan berhasil diubah!
+          </div>');
+        redirect(base_url('admin/pengumuman'));
     }
 }
