@@ -298,4 +298,14 @@ class Admin extends CI_Controller
           </div>');
         redirect(base_url('admin/jadwal'));
     }
+
+    public function deletejadwal($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('jadwal');
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Jadwal berhasil dihapus!
+          </div>');
+        redirect(base_url('admin/jadwal'));
+    }
 }
