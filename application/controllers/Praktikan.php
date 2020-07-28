@@ -58,6 +58,12 @@ class Praktikan extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function getubahjadwal()
+    {
+        $this->load->model('Praktikan_model');
+        echo json_encode($this->Praktikan_model->TampilJadwalPraktikan());
+    }
+
     private function _connectsocket($id = NULL)
     {
         $host    = "192.168.43.16";

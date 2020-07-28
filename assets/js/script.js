@@ -159,9 +159,9 @@ $(function () {
 
 	$('.reqJadwalPraktikan').on('click', function () {
 		const id = $(this).data('id');
-
+		console.log(id);
 		$.ajax({
-			url: 'http://localhost/fisdas/admin/getubahjadwal',
+			url: 'http://localhost/fisdas/praktikan/getubahjadwal',
 			data: {
 				id: id
 			},

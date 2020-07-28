@@ -35,7 +35,7 @@
             </button>
         </div>
         <h6 class="text-center">
-            <u><a href="<?= base_url('auth'); ?>" style=" color: #6a6a6a; font-size: small;">Sudah punya akun? Masuk!</a></u>
+            <u><a href="<?= base_url('auth/login'); ?>" style=" color: #6a6a6a; font-size: small;">Sudah punya akun? Masuk!</a></u>
         </h6>
     </form>
 </div>

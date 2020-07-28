@@ -20,7 +20,7 @@
         </button>
     </form>
     <h6 class="text-center pt-4">
-        <a href="<?= base_url('auth'); ?>" style="color: #6a6a6a; font-size: small;">Sudah punya akun? Masuk!</a>
+        <a href="<?= base_url('auth/login'); ?>" style="color: #6a6a6a; font-size: small;">Sudah punya akun? Masuk!</a>
     </h6>
     <h6 class="text-center">
         <u><a href="<?= base_url('auth/registration'); ?>" style="color: #6a6a6a; font-size: small;">Daftar Praktikum</a></u>
