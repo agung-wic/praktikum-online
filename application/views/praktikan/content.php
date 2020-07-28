@@ -3,8 +3,8 @@
     <div class="kotak">
       <div class="container">
         <h4 class="mt-3"><b><?= $modul['name'] ?></b></h4>
-        <h6 class="mb-3">Kode Percobaan: <?= $modul['modul']; ?></h6>
-        <a href="<?= base_url('assets/file/') . $modul['pdf'] ?>" class="badge badge-pill badge-info"><i class="fas fa-fw fa-download"></i>
+        <h6>Kode Percobaan: <?= $modul['modul']; ?></h6>
+        <a href="<?= base_url('assets/file/') . $modul['pdf'] ?>" download class=" mb-3 badge badge-pill badge-info"><i class="fas fa-fw fa-download"></i>
           Modul
         </a>
         <h6><b>I. Tujuan Percobaan</b></h6>
