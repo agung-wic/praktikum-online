@@ -72,8 +72,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('admin/tambahpengumuman') ?>" method="post">
-                <div class="modal-body">
+            <div class="modal-body">
+                <form action="<?= base_url('admin/tambahpengumuman') ?>" method="post">
                     <div class="form-group">
                         <input class="form-control" type="number" name="id" id="id" hidden>
                     </div>
@@ -85,11 +85,11 @@
                         <label for="isi">Isi</label>
                         <textarea rows="10" cols="10" id="isi" name="isi" class="form-control edit" style="height:200px"></textarea>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Edit</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </div>
             </form>
         </div>
     </div>
