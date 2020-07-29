@@ -243,13 +243,17 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
+				tinymce.init({
+					selector: 'textarea'
+				});
 				console.log(data);
 				$("#id").val(data.id);
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#judul").val(data.judul);
-				$("#isi").val(data.judul);
+				tinymce.get('isi').setContent(data.isi);
 				$("#tanggal").val(data.tanggal);
+
 			},
 		});
 	});

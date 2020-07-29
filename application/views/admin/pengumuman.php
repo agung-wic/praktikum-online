@@ -83,13 +83,18 @@
                     </div>
                     <div class="form-group">
                         <label for="isi">Isi</label>
-                        <textarea rows="10" cols="10" id="isi" name="isi" class="form-control edit" style="height:200px"></textarea>
+                        <textarea rows="20" cols="20" id="isi" name="isi" class="form-control edit" style="height:200px"></textarea>
                     </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Edit</button>
             </div>
+            <script>
+                tinymce.init({
+                    selector: 'textarea'
+                });
+            </script>
             </form>
         </div>
     </div>
