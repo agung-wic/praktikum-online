@@ -42,6 +42,15 @@ class Admin_model extends CI_Model
     return $this->db->query($query)->result_array();
   }
 
+  public function EditPengumuman()
+  {
+    $id = $this->input->post('id', true);
+    $query = "SELECT `pengumuman`.`id`,`pengumuman`.`judul`, `user`.`name` as 'name', `user`.`nrp`, `pengumuman`.`isi`, `pengumuman`.`tanggal`
+              FROM `user` INNER JOIN `pengumuman` ON `user`.`nrp` = `pengumuman`.`nrp` WHERE `pengumuman`.`id`='$id'";
+
+    return $this->db->query($query)->row_array();
+  }
+
   public function CariJadwal()
   {
     $keyword = $this->input->post('keyword', true);

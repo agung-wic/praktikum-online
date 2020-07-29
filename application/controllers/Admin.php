@@ -284,7 +284,7 @@ class Admin extends CI_Controller
     public function getubahpengumuman()
     {
         $this->load->model('Admin_model');
-        echo json_encode($this->Admin_model->TampilPengumuman());
+        echo json_encode($this->Admin_model->EditPengumuman());
     }
 
     public function tambahjadwal()

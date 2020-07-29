@@ -225,7 +225,7 @@ $(function () {
 	});
 
 	$(".tampilEditPengumuman").on("click", function () {
-		$("#PengumumanEditLabel").html("Edit Pengumuman");
+		$("#BuatPengumumanLabel").html("Edit Pengumuman");
 		$(".modal-footer button[type=submit]").html("Edit");
 		$(".modal-body form").attr(
 			"action",
@@ -233,6 +233,7 @@ $(function () {
 		);
 
 		const id = $(this).data("id");
+		console.log(id);
 
 		$.ajax({
 			url: "http://localhost/fisdas/admin/getubahpengumuman",
@@ -247,27 +248,18 @@ $(function () {
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#judul").val(data.judul);
-				$("#isi").val(data.isi);
+				$("#isi").val(data.judul);
 				$("#tanggal").val(data.tanggal);
 			},
 		});
 	});
 
 	$(".tampilTambahPengumuman").on("click", function () {
-		$("#JadwalPengumumanLabel").html("Tambahkan Jadwal Baru");
-		$(".modal-footer button[type=submit]").html("es");
+		$("#BuatPengumumanLabel").html("Tambahkan Pengumuman Baru");
+		$(".modal-footer button[type=submit]").html("Tambah");
 		$(".modal-body form").attr(
 			"action",
 			"http://localhost/fisdas/admin/tambahpengumuman"
 		);
-		$(".modal-body input[type=text]").attr("readonly", false);
-		$(".modal-body select").attr("disabled", false);
-
-		$("#name").val(null);
-		$("#nrp").val(null);
-		$("#id").val(data.id);
-		$("#judul").val(data.judul);
-		$("#isi").val(data.isi);
-		$("#tanggal").val(data.tanggal);
 	});
 });

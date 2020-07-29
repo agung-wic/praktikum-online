@@ -12,7 +12,7 @@
                         <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
                     </div>
                     <div class="col-auto mr-auto">
-                        <a href="" class="btn btn-primary mb-3 tampilTambahJadwal" data-toggle="modal" data-target="#BuatPengumuman">Buat Pengumuman</a>
+                        <a href="" class="btn btn-primary mb-3 tampilTambahPengumuman" data-toggle="modal" data-target="#BuatPengumuman">Buat Pengumuman</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -38,7 +38,7 @@
                                                 <th><?= $l['judul']; ?></th>
                                                 <td><?= $l['isi']; ?></td>
                                                 <td>
-                                                    <a href="<?= base_url('admin/editpengumuman/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilEditPengumuman" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#PengumumanEdit">
+                                                    <a href="<?= base_url('admin/editpengumuman/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilEditPengumuman" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#BuatPengumuman">
                                                         <i class=" fas fa-fw fa-edit"></i>
                                                         Edit
                                                     </a>
@@ -78,12 +78,12 @@
                         <input class="form-control" type="number" name="id" id="id" hidden>
                     </div>
                     <div class="form-group">
-                        <label for="name">Judul</label>
+                        <label for="judul">Judul</label>
                         <input type="text" class="form-control edit" id="judul" name="judul">
                     </div>
                     <div class="form-group">
-                        <label for="text">Isi</label>
-                        <textarea rows="10" cols="10" id="isi" name="isi" type="Pengumuman" class="form-control edit" style="height:200px"></textarea>
+                        <label for="isi">Isi</label>
+                        <textarea rows="10" cols="10" id="isi" name="isi" class="form-control edit" style="height:200px"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -95,7 +95,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="PengumumanEdit" tabindex="-1" role="dialog" aria-labelledby="PengumumanEditLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="PengumumanEdit" tabindex="-1" role="dialog" aria-labelledby="PengumumanEditLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -125,4 +125,4 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
