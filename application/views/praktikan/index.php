@@ -2,7 +2,7 @@
 
     <div class="kotak mt-5">
         <!-- Page Heading -->
-        <h3 class="mb-4"><b>Dashboard</b></h3>
+        <h3 class="mb-4"><b>Pengumuman</b></h3>
 
         <!-- Header Carousel -->
 
@@ -14,9 +14,7 @@
         <section class="py-5">
             <div class="container">
                 <h4 class="font-weight-light"><?= $title ?></h4>
-                <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus totam obcaecati
-                    repudiandae reprehenderit consectetur eligendi adipisci eveniet ipsam minus harum, dolore sapiente
-                    sint voluptas quaerat fugit nesciunt saepe, ab velit!</p>
+                <p class="lead">Ini adalah contoh pengumuman tempat pengumuman berada!</p>
             </div>
         </section>
     </div>
