@@ -197,7 +197,7 @@ class Admin extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['title'] = 'Pengumuman';
         $data['list'] = $this->Admin_model->TampilPengumuman();
-        $data['modul'] = $this->db->get('modul')->result_array();
+
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
@@ -281,6 +281,12 @@ class Admin extends CI_Controller
         echo json_encode($this->Admin_model->TampilJadwalPraktikan());
     }
 
+    public function getubahpengumuman()
+    {
+        $this->load->model('Admin_model');
+        echo json_encode($this->Admin_model->TampilPengumuman());
+    }
+
     public function tambahjadwal()
     {
         $data = [
@@ -309,15 +315,14 @@ class Admin extends CI_Controller
     public function tambahpengumuman()
     {
         $data = [
-            "nrp" => $this->input->post('nrp', true),
+            "nrp" => $this->session->userdata('nrp'),
             "judul" => $this->input->post('judul', true),
             "isi" => $this->input->post('isi', true),
-            "tanggal" => $this->input->post('tanggal', true)
+            "tanggal" => time()
         ];
-
         $this->db->insert('pengumuman', $data);
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
-          Pengumuman berhasil ditambhakan!
+          Pengumuman berhasil ditambahkan!
           </div>');
         redirect(base_url('admin/pengumuman'));
     }
@@ -325,17 +330,25 @@ class Admin extends CI_Controller
     public function editpengumuman()
     {
         $data = [
-            "id" => $this->input->post('id', true),
-            "nrp" => $this->input->post('nrp', true),
+            "nrp" => $this->session->userdata('nrp'),
             "judul" => $this->input->post('judul', true),
             "isi" => $this->input->post('isi', true),
-            "tanggal" => $this->input->post('tanggal', true)
+            "tanggal" => time()
         ];
-
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('pengumuman', $data);
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
-          Jadwal praktikan berhasil diubah!
+          Pengumuman berhasil diubah!
+          </div>');
+        redirect(base_url('admin/pengumuman'));
+    }
+
+    public function deletepengumuman($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('pengumuman');
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Pengumuman berhasil dihapus!
           </div>');
         redirect(base_url('admin/pengumuman'));
     }

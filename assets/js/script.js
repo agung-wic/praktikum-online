@@ -225,14 +225,13 @@ $(function () {
 	});
 
 	$(".tampilEditPengumuman").on("click", function () {
-		$("#JadwalPengumumantLabel").html("Edit Pengumuman");
+		$("#PengumumanEditLabel").html("Edit Pengumuman");
 		$(".modal-footer button[type=submit]").html("Edit");
 		$(".modal-body form").attr(
 			"action",
 			"http://localhost/fisdas/admin/editpengumuman"
 		);
-		$(".modal-body input[type=text]").attr("readonly", true);
-		$(".modal-body select").attr("disabled", true);
+
 		const id = $(this).data("id");
 
 		$.ajax({
@@ -244,9 +243,9 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				console.log(data);
+				$("#id").val(data.id);
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
-				$("#id").val(data.id);
 				$("#judul").val(data.judul);
 				$("#isi").val(data.isi);
 				$("#tanggal").val(data.tanggal);

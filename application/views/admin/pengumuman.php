@@ -35,9 +35,10 @@
                                             <tr>
                                                 <th scope="row"><?= $i; ?></th>
                                                 <td><?= $l['name']; ?></td>
-                                                <td><?= $l['nrp']; ?></td>
+                                                <th><?= $l['judul']; ?></th>
+                                                <td><?= $l['isi']; ?></td>
                                                 <td>
-                                                    <a href="<?= base_url('admin/editpengumuman/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilEditJadwal" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#PengumumanEdit">
+                                                    <a href="<?= base_url('admin/editpengumuman/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilEditPengumuman" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#PengumumanEdit">
                                                         <i class=" fas fa-fw fa-edit"></i>
                                                         Edit
                                                     </a>
@@ -71,24 +72,24 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form>
+            <form action="<?= base_url('admin/tambahpengumuman') ?>" method="post">
+                <div class="modal-body">
                     <div class="form-group">
                         <input class="form-control" type="number" name="id" id="id" hidden>
                     </div>
                     <div class="form-group">
                         <label for="name">Judul</label>
-                        <input type="text" class="form-control edit" id="judul" name="judul" readonly>
+                        <input type="text" class="form-control edit" id="judul" name="judul">
                     </div>
                     <div class="form-group">
                         <label for="text">Isi</label>
-                        <textarea rows="10" cols="10" type="Pengumuman" class="form-control edit" style="height:200px"></textarea>
+                        <textarea rows="10" cols="10" id="isi" name="isi" type="Pengumuman" class="form-control edit" style="height:200px"></textarea>
                     </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Edit</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </div>
             </form>
         </div>
     </div>
@@ -104,30 +105,17 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('admin/editjadwal') ?>" method="post">
+                <form action="<?= base_url('admin/editpengumuman') ?>" method="post">
                     <div class="form-group">
                         <input class="form-control" type="number" name="id" id="id" hidden>
-                        <input class="form-control" type="text" name="modul" id="modul" hidden>
                     </div>
                     <div class="form-group">
-                        <label for="name">Nama Lengkap</label>
-                        <input type="text" class="form-control edit" id="name" name="name">
+                        <label for="judul">Judul</label>
+                        <input type="text" class="form-control" id="judul" name="judul">
                     </div>
                     <div class="form-group">
-                        <label for="nrp">NRP</label>
-                        <input type="text" class="form-control edit" id="nrp" name="nrp">
-                    </div>
-                    <div class="form-group">
-                        <label for="modul">Modul</label>
-                        <select class="form-control" name="modul_id" id="modul_id">
-                            <?php foreach ($modul as $m) : ?>
-                                <option value="<?= $m['modul'] ?>"><?= $m['name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="jadwal">Jadwal</label>
-                        <input type="datetime-local" class="form-control" id="jadwal" name="jadwal">
+                        <label for="isi">Isi</label>
+                        <textarea rows="10" cols="10" id="isi" name="isi" type="Pengumuman" class="form-control" style="height:200px"></textarea>
                     </div>
             </div>
             <div class="modal-footer">
