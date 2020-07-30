@@ -53,9 +53,9 @@ class Admin_model extends CI_Model
 
   public function CariJadwal()
   {
-    $keyword = $this->input->post('keyword', true);
+    $keyword = $this->input->post('keyword1', true);
 
-    $query = "SELECT `jadwal`.`id`, `user`.`name` as `name`, `modul`.`name` as `modul`, `jadwal`.`jadwal`
+    $query = "SELECT `jadwal`.`id`,  `user`.`nrp`, `user`.`name` as `name`, `modul`.`name` as `modul`, `jadwal`.`jadwal`
               FROM `user` INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
               INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id`
               WHERE `user`.`name` LIKE '%$keyword%'
