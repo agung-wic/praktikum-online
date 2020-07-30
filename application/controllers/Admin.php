@@ -302,6 +302,38 @@ class Admin extends CI_Controller
         redirect(base_url('admin/jadwal'));
     }
 
+    public function addfilejadwal()
+    {
+        $file = $_FILES['filejadwal']['name'];
+
+        $config['upload_path'] = './assets/file/';
+        $config['allowed_types'] = 'csv';
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('filejadwal')) {
+
+            $data = fopen(base_url('assets/file/') . $file, "r");
+            while (!feof($data)) {
+                $csv = fgetcsv($data, 0, ';');
+                $jadwal = [
+                    "nrp" => $csv[0],
+                    "modul_id" => $csv[1],
+                    "jadwal" => str_replace("T", " ", $csv[2])
+                ];
+                $this->db->insert('jadwal', $jadwal);
+            }
+            fclose($data);
+            unlink(FCPATH . 'assets/file/' . $file);
+            $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+            Jadwal praktikan berhasil ditambahkan!
+            </div>');
+            redirect(base_url('admin/jadwal'));
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+            redirect(base_url('user'));
+        }
+    }
+
     public function deletejadwal($id)
     {
         $this->db->where('id', $id);

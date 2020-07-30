@@ -113,6 +113,8 @@
           </div>
           <div class="col-auto mr-auto">
             <a href="" class="btn btn-primary mb-3 tampilTambahJadwal" data-toggle="modal" data-target="#JadwalEdit">Tambah Jadwal Baru</a>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#JadwalAddFile"><i class="fas fa-file-csv"></i>
+            </a>
           </div>
         </div>
         <div class="card-body">
@@ -211,6 +213,37 @@
 
   </div>
   <!-- End of Main Content -->
+</div>
+
+<div class="modal fade" id="JadwalAddFile" tabindex="-1" role="dialog" aria-labelledby="JadwalAddFileLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="JadwalAddFileLabel">Unggah Jadwal Praktikan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6>Berkas csv harus memiliki format sebagai berikut:</h6>
+        <ol>
+          <li>Kolom pertama = NRP Mahasiswa dengan 0 sebagai angka pertama</li>
+          <li>Kolom kedua = Kode Modul (contoh: G1)</li>
+          <li>Kolom ketiga = Waktu dengan contoh format (2020-12-31 23:59) tanpa tanda kurung</li>
+        </ol>
+        <?= form_open_multipart(base_url('admin/addfilejadwal')) ?>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="filejadwal" name="filejadwal">
+          <label class="custom-file-label" for="filejadwal">Pilih berkas</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-primary">Tambah</button>
+      </div>
+      </form>
+    </div>
+  </div>
 </div>
 
 <div class="modal fade" id="JadwalEdit" tabindex="-1" role="dialog" aria-labelledby="JadwalEditLabel" aria-hidden="true">
