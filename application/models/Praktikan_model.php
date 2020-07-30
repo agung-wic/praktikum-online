@@ -26,4 +26,12 @@ class Praktikan_model extends CI_Model
 
     return $this->db->query($query)->row_array();
   }
+
+  public function TampilPengumuman()
+  {
+    $query = "SELECT `pengumuman`.`id`,`pengumuman`.`judul`, `user`.`name` as 'name', `user`.`nrp`, `pengumuman`.`isi`, `pengumuman`.`tanggal`
+    FROM `user` INNER JOIN `pengumuman` ON `user`.`nrp` = `pengumuman`.`nrp`";
+
+    return $this->db->query($query)->result_array();
+  }
 }

@@ -10,8 +10,10 @@ class Praktikan extends CI_Controller
     }
     public function index()
     {
+        $this->load->model('Praktikan_model');
         $data['title'] = 'Pengumuman';
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $data['pengumuman'] = $this->Praktikan_model->TampilPengumuman();
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);

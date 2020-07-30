@@ -37,6 +37,7 @@
                                                 <td><?= $l['name']; ?></td>
                                                 <th><?= $l['judul']; ?></th>
                                                 <td><?= $l['isi']; ?></td>
+                                                <td><?= date('Y-m-d H:i:s', $l['tanggal']) ?></td>
                                                 <td>
                                                     <a href="<?= base_url('admin/editpengumuman/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilEditPengumuman" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#BuatPengumuman">
                                                         <i class=" fas fa-fw fa-edit"></i>

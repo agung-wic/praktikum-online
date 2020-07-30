@@ -2,21 +2,32 @@
 
     <div class="kotak mt-5">
         <!-- Page Heading -->
-        <h3 class="mb-4"><b>Dashboard</b></h3>
-
-        <!-- Header Carousel -->
-
-        <video width="100%" controls autoplay>
-            <source src="<?= base_url('assets/vid/') ?>tes.mp4" type="video/mp4">
-        </video>
-
+        <img class="mx-auto d-block pt-5" src="<?php echo base_url(); ?>assets/img/logoits.png" alt="Logo ITS" width="150px">
+        <h1 class=" m-0 font-weight-bold text-center pt-5"><?= $title; ?></h1>
         <!-- Page Content -->
         <section class="py-5">
             <div class="container">
-                <h4 class="font-weight-light"><?= $title ?></h4>
-                <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus totam obcaecati
-                    repudiandae reprehenderit consectetur eligendi adipisci eveniet ipsam minus harum, dolore sapiente
-                    sint voluptas quaerat fugit nesciunt saepe, ab velit!</p>
+                <?php $i = 1;
+                foreach ($pengumuman as $l) :
+                ?>
+                    <!-- <tr>
+                        <th><?= $l['judul']; ?></th>
+                        <td><?= $l['isi']; ?></td>
+                        <td><?= $l['name']; ?></td>
+                        </tr> -->
+                    <div class="card" style="width: auto;">
+                        <div class="card-body">
+                            <h2 class="card-title text-center p-3 pb-4"><?= $l['judul']; ?></h2>
+                            <p class="card-text"><?= $l['isi']; ?></p>
+                        </div>
+                    </div>
+                    <div class="card-footer .bg-secondary" style="background-color:darkgray">
+                        <small style="color:white">Diumukan pada tanggal <?= date('d F Y', $l['tanggal']) ?> Oleh </small>
+                        <b style="color:white"><?= $l['name'] ?></b>
+                    </div>
+                    <br>
+                <?php $i++;
+                endforeach; ?>
             </div>
         </section>
     </div>
