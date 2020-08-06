@@ -1,9 +1,10 @@
 $(function () {
+	const base = "https://virtulab-its.com/"
 	$(".tampilModalUbah").on("click", function () {
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: "http://localhost/fisdas/admin/getubah",
+			url: base + "admin/getubah",
 			data: {
 				id: id,
 			},
@@ -24,12 +25,12 @@ $(function () {
 	$(".TampilEditMenu").on("click", function () {
 		$("#NewMenuModalLabel").html("Edit Menu");
 		$(".modal-footer button[type=submit]").html("Edit");
-		$(".modal-body form").attr("action", "http://localhost/fisdas/menu/edit");
+		$(".modal-body form").attr("action", base + "menu/edit");
 
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: "http://localhost/fisdas/menu/getubah",
+			url: base + "menu/getubah",
 			data: {
 				id: id,
 			},
@@ -46,7 +47,7 @@ $(function () {
 	$(".tombolTambahMenu").on("click", function () {
 		$("#NewMenuModalLabel").html("Add New Menu");
 		$(".modal-footer button[type=submit]").html("Add");
-		$(".modal-body form").attr("action", "http://localhost/fisdas/menu");
+		$(".modal-body form").attr("action", base + "menu");
 	});
 
 	$(".TampilEditSubmenu").on("click", function () {
@@ -54,13 +55,13 @@ $(function () {
 		$(".modal-footer button[type=submit]").html("Edit");
 		$(".modal-body form").attr(
 			"action",
-			"http://localhost/fisdas/menu/editsub"
+			base + "menu/editsub"
 		);
 
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: "http://localhost/fisdas/menu/getubahsub",
+			url: base + "menu/getubahsub",
 			data: {
 				id: id,
 			},
@@ -83,7 +84,7 @@ $(function () {
 		$(".modal-footer button[type=submit]").html("Add");
 		$(".modal-body form").attr(
 			"action",
-			"http://localhost/fisdas/menu/submenu"
+			base + "menu/submenu"
 		);
 	});
 
@@ -92,13 +93,13 @@ $(function () {
 		$(".modal-footer button[type=submit]").html("Edit");
 		$(".modal-body form").attr(
 			"action",
-			"http://localhost/fisdas/admin/editrole"
+			base + "admin/editrole"
 		);
 
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: "http://localhost/fisdas/admin/getubahrole",
+			url: base + "admin/getubahrole",
 			data: {
 				id: id,
 			},
@@ -115,7 +116,7 @@ $(function () {
 	$(".tombolTambahRole").on("click", function () {
 		$("#NewRoleModalLabel").html("Add New Role");
 		$(".modal-footer button[type=submit]").html("Add");
-		$(".modal-body form").attr("action", "http://localhost/fisdas/admin/role");
+		$(".modal-body form").attr("action", base + "admin/role");
 	});
 
 	$(".tampilTambahJadwal").on("click", function () {
@@ -123,7 +124,7 @@ $(function () {
 		$(".modal-footer button[type=submit]").html("Tambah");
 		$(".modal-body form").attr(
 			"action",
-			"http://localhost/fisdas/admin/tambahjadwal"
+			base + "admin/tambahjadwal"
 		);
 		$(".modal-body input[type=text]").attr("readonly", false);
 		$(".modal-body select").attr("disabled", false);
@@ -139,14 +140,14 @@ $(function () {
 		$(".modal-footer button[type=submit]").html("Edit");
 		$(".modal-body form").attr(
 			"action",
-			"http://localhost/fisdas/admin/editjadwal"
+			base + "admin/editjadwal"
 		);
 		$(".modal-body input[type=text]").attr("readonly", true);
 		$(".modal-body select").attr("disabled", true);
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: "http://localhost/fisdas/admin/getubahjadwal",
+			url: base + "admin/getubahjadwal",
 			data: {
 				id: id,
 			},
@@ -168,7 +169,7 @@ $(function () {
 		const id = $(this).data("id");
 		console.log(id);
 		$.ajax({
-			url: "http://localhost/fisdas/praktikan/getubahjadwal",
+			url: base + "praktikan/getubahjadwal",
 			data: {
 				id: id,
 			},
@@ -191,7 +192,7 @@ $(function () {
 		console.log(kirim);
 		const id = $(this).data("id");
 		$.ajax({
-			url: "http://localhost/fisdas/praktikan/getpercobaan",
+			url: base + "praktikan/getpercobaan",
 			data: {
 				kirim: kirim,
 				id: id,
@@ -210,7 +211,7 @@ $(function () {
 		console.log(kirim);
 		const id = $(this).data("id");
 		$.ajax({
-			url: "http://localhost/fisdas/praktikan/getpercobaan",
+			url: base + "praktikan/getpercobaan",
 			data: {
 				kirim: kirim,
 				id: id,
@@ -229,14 +230,14 @@ $(function () {
 		$(".modal-footer button[type=submit]").html("Edit");
 		$(".modal-body form").attr(
 			"action",
-			"http://localhost/fisdas/admin/editpengumuman"
+			base + "admin/editpengumuman"
 		);
 
 		const id = $(this).data("id");
 		console.log(id);
 
 		$.ajax({
-			url: "http://localhost/fisdas/admin/getubahpengumuman",
+			url: base + "admin/getubahpengumuman",
 			data: {
 				id: id,
 			},
@@ -263,7 +264,7 @@ $(function () {
 		$(".modal-footer button[type=submit]").html("Tambah");
 		$(".modal-body form").attr(
 			"action",
-			"http://localhost/fisdas/admin/tambahpengumuman"
+			base + "admin/tambahpengumuman"
 		);
 	});
 });

@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '31.220.110.88',
-	'username' => 'u639542248_fisdas',
-	'password' => 'ASDF1234asdf',
-	'database' => 'u639542248_fisdas',
+	'hostname' => '156.67.222.148',
+	'username' => 'u938748859_fisdas',
+	'password' => '1234asdf!@#$ASDF',
+	'database' => 'u938748859_fisdas',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
