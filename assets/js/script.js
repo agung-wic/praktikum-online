@@ -11,7 +11,6 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#email").val(data.email);
@@ -37,7 +36,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
+
 				$("#menu").val(data.menu);
 				$("#id").val(data.id);
 			},
@@ -68,7 +67,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
+
 				$("#title").val(data.title);
 				$("#menu_id").val(data.menu_id);
 				$("#url").val(data.url);
@@ -106,7 +105,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
+
 				$("#role").val(data.role);
 				$("#id").val(data.id);
 			},
@@ -154,7 +153,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
+
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#modul_id").val(data.modul_id);
@@ -167,7 +166,6 @@ $(function () {
 
 	$(".reqJadwalPraktikan").on("click", function () {
 		const id = $(this).data("id");
-		console.log(id);
 		$.ajax({
 			url: base + "praktikan/getubahjadwal",
 			data: {
@@ -176,7 +174,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
+
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#modul_id").val(data.modul_id);
@@ -189,7 +187,6 @@ $(function () {
 
 	$(".kirim1").on("click", function () {
 		const kirim = $("#var").find(":selected").data("send");
-		console.log(kirim);
 		const id = $(this).data("id");
 		$.ajax({
 			url: base + "praktikan/getpercobaan",
@@ -200,7 +197,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
+
 				$("#data1").val(data);
 			},
 		});
@@ -208,7 +205,6 @@ $(function () {
 
 	$(".kirim2").on("click", function () {
 		const kirim = "[d,1]";
-		console.log(kirim);
 		const id = $(this).data("id");
 		$.ajax({
 			url: base + "praktikan/getpercobaan",
@@ -219,7 +215,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
+
 				$("#data2").val(data);
 			},
 		});
@@ -234,7 +230,6 @@ $(function () {
 		);
 
 		const id = $(this).data("id");
-		console.log(id);
 
 		$.ajax({
 			url: base + "admin/getubahpengumuman",
@@ -247,7 +242,7 @@ $(function () {
 				tinymce.init({
 					selector: 'textarea'
 				});
-				console.log(data);
+
 				$("#id").val(data.id);
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
