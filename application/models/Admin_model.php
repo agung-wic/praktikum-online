@@ -17,13 +17,22 @@ class Admin_model extends CI_Model
     return $this->db->query($query)->result_array();
   }
 
-  public function TampilUser()
+  public function TampilUser($limit, $start)
+  {
+    $query = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`nrp`, `user_role`.`role` 
+              FROM `user` INNER JOIN `user_role` ON `user`.`role_id` = `user_role`.`id` LIMIT $limit OFFSET $start";
+
+    return $this->db->query($query)->result_array();
+  }
+
+  public function JumlahUser()
   {
     $query = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`nrp`, `user_role`.`role` 
               FROM `user` INNER JOIN `user_role` ON `user`.`role_id` = `user_role`.`id`";
 
-    return $this->db->query($query)->result_array();
+    return $this->db->query($query)->num_rows();
   }
+
 
   public function TampilJadwal()
   {
@@ -34,12 +43,20 @@ class Admin_model extends CI_Model
     return $this->db->query($query)->result_array();
   }
 
-  public function TampilPengumuman()
+  public function TampilPengumuman($limit, $start)
+  {
+    $query = "SELECT `pengumuman`.`id`,`pengumuman`.`judul`, `user`.`name` as 'name', `user`.`nrp`, `pengumuman`.`isi`, `pengumuman`.`tanggal`
+              FROM `user` INNER JOIN `pengumuman` ON `user`.`nrp` = `pengumuman`.`nrp`LIMIT $limit OFFSET $start";
+
+    return $this->db->query($query)->result_array();
+  }
+
+  public function JumlahPengumuman()
   {
     $query = "SELECT `pengumuman`.`id`,`pengumuman`.`judul`, `user`.`name` as 'name', `user`.`nrp`, `pengumuman`.`isi`, `pengumuman`.`tanggal`
               FROM `user` INNER JOIN `pengumuman` ON `user`.`nrp` = `pengumuman`.`nrp`";
 
-    return $this->db->query($query)->result_array();
+    return $this->db->query($query)->num_rows();
   }
 
   public function EditPengumuman()

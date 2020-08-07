@@ -73,7 +73,7 @@
                 foreach ($list as $l) :
                 ?>
                   <tr>
-                    <th scope="row"><?= $i; ?></th>
+                    <th scope="row"><?= $start + 1; ?></th>
                     <td><?= $l['name']; ?></td>
                     <td><?= $l['nrp']; ?></td>
                     <td><?= $l['email']; ?></td>
@@ -89,11 +89,14 @@
                       </a>
                     </td>
                   </tr>
-                <?php $i++;
+                <?php $start++;
                 endforeach; ?>
               </tbody>
             </table>
           <?php } ?>
+          <div class="mt-2">
+            <?= $this->pagination->create_links(); ?>
+          </div>
         </div>
       </div>
     </div>
