@@ -275,9 +275,6 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				tinymce.init({
-					selector: 'textarea'
-				});
 				console.log(data);
 				$("#id").val(data.id);
 				$("#modul_id").val(data.modul_id);
