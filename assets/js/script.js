@@ -262,4 +262,29 @@ $(function () {
 			base + "admin/tambahpengumuman"
 		);
 	});
+
+	$(".tampilModalNilai").on("click", function () {
+
+		const id = $(this).data("id");
+
+		$.ajax({
+			url: base + "admin/getubahnilai",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				tinymce.init({
+					selector: 'textarea'
+				});
+
+				$("#id").val(data.id);
+				$("#modul_id").val(data.modul_id);
+				$("#name").val(data.name);
+				$("#nrp").val(data.nrp);
+				$("#modul").val(data.modul);
+			},
+		});
+	});
 });
