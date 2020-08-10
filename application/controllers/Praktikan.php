@@ -63,7 +63,7 @@ class Praktikan extends CI_Controller
 
     public function laporan()
     {
-        $data['title'] = 'Unggah Laporan Praktikum';
+        $data['title'] = 'Unggah Laporan';
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['modul'] = $this->db->get('modul')->result_array();
 
