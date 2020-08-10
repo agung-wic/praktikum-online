@@ -92,12 +92,13 @@
                     <td><?= date("Y-m-d H:i:s", $l['laporan_time']); ?></td>
                     <td><?= $l['nilai']; ?></td>
                     <td>
-                      <?php if ($l['is_acc'] == 1) { ?>
-                        <a href="<?= base_url('dosen/editnilai/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit"><i class=" fas fa-fw fa-edit"></i>
+                      <?php if ($l['is_acc'] == 0) { ?>
+                        <a href="<?= base_url('dosen/editnilai/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                          <i class=" fas fa-fw fa-edit"></i>
                           Edit
                         </a>
                       <?php } else { ?>
-                        <p class="badge badge-pill badge-secondary">Edit</p>
+                        <p class="badge badge-pill badge-secondary"><i class=" fas fa-fw fa-edit"></i>Edit</p>
                       <?php } ?>
 
                       <a href="<?= base_url('dosen/accnilai/') . $l['id']; ?>" class="badge badge-pill badge-success">
