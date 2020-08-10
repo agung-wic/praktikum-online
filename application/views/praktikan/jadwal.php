@@ -39,7 +39,6 @@
               </div>
             <?php } else { ?>
               <div id="bungkus">
-
                 <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
@@ -64,7 +63,7 @@
                     foreach ($list as $l) :
                     ?>
                       <tr>
-                        <th scope="row"><?= $i; ?></th>
+                        <th scope="row"><?= $start + 1; ?></th>
                         <td><?= $l['modul']; ?></td>
                         <td><?= str_replace("T", " | ", $l['jadwal']); ?></td>
                         <td><?php if ($l['is_approved'] == null) {
@@ -88,7 +87,7 @@
                           <?php endif; ?>
                         </td>
                       </tr>
-                    <?php $i++;
+                    <?php $start++;
                     endforeach; ?>
                   </tbody>
                 </table>
@@ -97,7 +96,9 @@
           </div>
         </div>
       </div>
-
+      <div class="mt-2">
+        <?= $this->pagination->create_links(); ?>
+      </div>
     </div>
   </div>
 </div>

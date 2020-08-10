@@ -8,12 +8,14 @@ class Praktikan extends CI_Controller
         parent::__construct();
         is_logged_in();
     }
+
     public function index()
     {
         $this->load->model('Praktikan_model');
         $data['title'] = 'Pengumuman';
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['pengumuman'] = $this->Praktikan_model->TampilPengumuman();
+
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -165,10 +167,42 @@ class Praktikan extends CI_Controller
     public function jadwal()
     {
         $this->load->model('Praktikan_model');
+
+        $config['base_url'] = 'http://localhost/fisdas/praktikan/jadwal';
+        $config['total_rows'] = $this->Praktikan_model->JumlahJadwal($this->session->userdata('nrp'));
+        $config['per_page'] = 10;
+        $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li class="page-item">';
+        $config['next_tag_close'] = '</li>';
+
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="page-item">';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+        $config['cur_tag_close'] = '</li></a>';
+
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+
+        $config['attributes'] = array('class' => 'page-link');
+
+        $this->pagination->initialize($config);
+
+        $data['start'] = $this->uri->segment(3);
+        if ($data['start'] == null) {
+            $data['start'] = 0;
+        }
+
         $data['title'] = 'Jadwal Praktikum';
+
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-        $data['list'] = $this->Praktikan_model->JadwalPraktikan($this->session->userdata('nrp'));
+        $data['list'] = $this->Praktikan_model->JadwalPraktikan($this->session->userdata('nrp'), $config['per_page'], $data['start']);
         $data['modul'] = $this->db->get('modul')->result_array();
+        $data['total'] = $this->Praktikan_model->JumlahJadwal($this->session->userdata('nrp'));
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
