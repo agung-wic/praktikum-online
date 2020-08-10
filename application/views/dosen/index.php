@@ -57,7 +57,7 @@
                   <th scope="col">Laporan</th>
                   <th scope="col">Waktu</th>
                   <th scope="col">Nilai</th>
-                  <th scope="col"></th>
+                  <th scope="col">Action</th>
                 </tr>
               </thead>
               <tfoot>
@@ -70,7 +70,7 @@
                   <th scope="col">Laporan</th>
                   <th scope="col">Waktu</th>
                   <th scope="col">Nilai</th>
-                  <th scope="col"></th>
+                  <th scope="col">Action</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -91,9 +91,13 @@
                     </td>
                     <td><?= date("Y-m-d H:i:s", $l['laporan_time']); ?></td>
                     <td><?= $l['nilai']; ?></td>
-                    <td><a href="<?= base_url('asisten/editnilai/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                    <td><a <?php if ($l['is_acc'] == 0) { ?> href="<?= base_url('dosen/editnilai/') . $l['id']; ?>" <?php } ?> class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                         <i class=" fas fa-fw fa-edit"></i>
                         Edit
+                      </a>
+                      <a href="<?= base_url('dosen/accnilai/') . $l['id']; ?>" class="badge badge-pill badge-warning">
+                        <i class=" fas fa-fw fa-edit"></i>
+                        Acc
                       </a>
                     </td>
                   </tr>
