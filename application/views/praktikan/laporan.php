@@ -28,7 +28,7 @@
         </div>
         <div class="card-footer">
           <div class="form-group row justify-content-end">
-            <div class="col-sm-10">
+            <div class="col-lg">
               <button type="submit" class="btn btn-primary">Unggah</button>
             </div>
           </div>
