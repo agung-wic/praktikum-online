@@ -278,7 +278,7 @@ $(function () {
 				tinymce.init({
 					selector: 'textarea'
 				});
-
+				console.log(data);
 				$("#id").val(data.id);
 				$("#modul_id").val(data.modul_id);
 				$("#name").val(data.name);

@@ -55,7 +55,7 @@
                   <th scope="col">Modul</th>
                   <th scope="col">Asisten</th>
                   <th scope="col">Laporan</th>
-                  <th scope="col">Waktu Pengumpulan</th>
+                  <th scope="col">Waktu</th>
                   <th scope="col">Nilai</th>
                   <th scope="col"></th>
                 </tr>
@@ -68,7 +68,7 @@
                   <th scope="col">Modul</th>
                   <th scope="col">Asisten</th>
                   <th scope="col">Laporan</th>
-                  <th scope="col">Waktu Pengumpulan</th>
+                  <th scope="col">Waktu</th>
                   <th scope="col">Nilai</th>
                   <th scope="col"></th>
                 </tr>
