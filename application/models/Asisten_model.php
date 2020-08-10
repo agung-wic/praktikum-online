@@ -20,6 +20,6 @@ class Asisten_model extends CI_Model
               FROM `user`   INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
               INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul`";
 
-    return $this->db->query($query)->result_array();
+    return $this->db->query($query)->row_array();
   }
 }
