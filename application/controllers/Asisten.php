@@ -18,7 +18,6 @@ class Asisten extends CI_Controller
     $i = 0;
     while ($i < count($data['list'])) {
       $asisten = $data['list'][$i]['asisten'];
-      var_dump($asisten);
       if ($asisten) {
         $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
         $data['list'][$i]['asisten'] = $nama['name'];
