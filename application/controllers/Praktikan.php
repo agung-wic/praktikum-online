@@ -92,7 +92,7 @@ class Praktikan extends CI_Controller
             ];
             $this->db->insert('nilai', $nilai);
 
-            $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Laporan praktikum berhasil diunggah!
             </div>');
             redirect(base_url('praktikan/laporan'));
