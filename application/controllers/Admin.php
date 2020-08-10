@@ -13,7 +13,7 @@ class Admin extends CI_Controller
     { #USER#
         $this->load->model('Admin_model');
 
-        $config['base_url'] = 'http://localhost/fisdas/admin/index';
+        $config['base_url'] = 'https://virtulab-its.com/admin/index';
         $config['total_rows'] = $this->Admin_model->JumlahUser();
 
         $config['per_page'] = 10;
@@ -226,7 +226,7 @@ class Admin extends CI_Controller
     {
         $this->load->model('Admin_model');
 
-        $config['base_url'] = 'http://localhost/fisdas/admin/pengumuman';
+        $config['base_url'] = 'https://virtulab-its.com/admin/pengumuman';
         $config['total_rows'] = $this->Admin_model->JumlahPengumuman();
 
         $config['per_page'] = 5;
