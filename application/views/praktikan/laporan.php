@@ -25,13 +25,15 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="card-footer">
           <div class="form-group row justify-content-end">
             <div class="col-sm-10">
               <button type="submit" class="btn btn-primary">Unggah</button>
             </div>
           </div>
-          </form>
         </div>
+        </form>
       </div>
     </div>
   </div>
