@@ -9,8 +9,7 @@
         <div class="card-body">
           <div class="row">
             <?= form_open_multipart(base_url('praktikan/uploadlaporan')) ?>
-            <div class="col">
-
+            <div class="col-lg">
               <div class="form-group">
                 <label for="modul">Pilih Modul</label>
                 <select class="form-control" name="modul_id" id="modul_id">
