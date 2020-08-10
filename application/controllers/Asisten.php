@@ -15,9 +15,10 @@ class Asisten extends CI_Controller
     $data['title'] = 'Penilaian';
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
     $data['list'] = $this->Asisten_model->TampilNilai();
-    var_dump($data['list']->num_rows());
+    var_dump(count($data['list']));
+    die;
     $i = 0;
-    while ($data['list']->num_rows()) {
+    while ($data['list']) {
       $asisten = $data['list'][$i]['asisten'];
       if ($asisten) {
         $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
