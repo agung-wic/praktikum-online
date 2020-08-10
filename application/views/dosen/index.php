@@ -92,7 +92,7 @@
                     <td><?= date("Y-m-d H:i:s", $l['laporan_time']); ?></td>
                     <td><?= $l['nilai']; ?></td>
                     <td>
-                      <?php if ($l['is_acc'] == 1) { ?>
+                      <?php if ($l['is_acc'] == 0) { ?>
                         <a href="<?= base_url('dosen/editnilai/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                           <i class=" fas fa-fw fa-edit"></i>
                           Edit
