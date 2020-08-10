@@ -8,6 +8,7 @@
         </div>
         <div class="card-body">
           <div class="row">
+            <?= $this->session->flashdata('message'); ?>
             <?= form_open_multipart(base_url('praktikan/uploadlaporan')) ?>
             <div class="col-lg">
               <div class="form-group">
