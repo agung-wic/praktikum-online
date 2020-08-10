@@ -18,8 +18,7 @@ class Asisten extends CI_Controller
     $asisten = $data['list'][0]['asisten'];
     $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
     $data['list'][0]['asisten'] = $nama['name'];
-    var_dump($data['list']);
-    die;
+
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
