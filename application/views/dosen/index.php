@@ -91,7 +91,7 @@
                     </td>
                     <td><?= date("Y-m-d H:i:s", $l['laporan_time']); ?></td>
                     <td><?= $l['nilai']; ?></td>
-                    <td><a <?php if ($l['is_acc'] == 0) { ?> href="<?= base_url('dosen/editnilai/') . $l['id']; ?>" class="badge-secondary" <?php } else { ?> class="badge-primary" <?php } ?> class="badge badge-pill tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                    <td><a class="badge badge-pill" <?php if ($l['is_acc'] == 0) { ?> href="<?= base_url('dosen/editnilai/') . $l['id']; ?>" class="badge-secondary" <?php } else { ?> class="badge-primary" <?php } ?> class="tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                         <i class=" fas fa-fw fa-edit"></i>
                         Edit
                       </a>
