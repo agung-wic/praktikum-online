@@ -98,7 +98,7 @@
                           Edit
                         </a>
                       <?php } else { ?>
-                        <span class="badge badge-pill badge-secondary"><i class=" fas fa-fw fa-edit"></i>Edit</span>
+                        <span class="badge badge-pill badge-secondary"><i class="fas fa-fw fa-edit"></i>Edit</span>
                       <?php } ?>
 
                       <a href="<?= base_url('dosen/accnilai/') . $l['id']; ?>" class="badge badge-pill badge-success">

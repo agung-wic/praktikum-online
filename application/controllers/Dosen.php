@@ -30,4 +30,18 @@ class Dosen extends CI_Controller
     $this->load->view('dosen/index', $data);
     $this->load->view('template/footer');
   }
+
+  public function accnilai($id)
+  {
+    $data = [
+      'is_acc' => 1
+    ];
+
+    $this->db->where('id', $id);
+    $this->db->update('nilai', $data);
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+          Nilai berhasil disetujui!
+          </div>');
+    redirect(base_url('dosen'));
+  }
 }
