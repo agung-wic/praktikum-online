@@ -132,11 +132,11 @@
           </div>
           <div class="form-group">
             <label for="name">Nama Lengkap</label>
-            <input type="text" class="form-control" id="name" name="name" readonlyS>
+            <input type="text" class="form-control" id="name" name="name" readonly>
           </div>
           <div class="form-group">
             <label for="nrp">NRP</label>
-            <input type="text" class="form-control" id="nrp" name="nrp" readonlyS>
+            <input type="text" class="form-control" id="nrp" name="nrp" readonly>
           </div>
           <div class="form-group">
             <label for="modul">Modul</label>
