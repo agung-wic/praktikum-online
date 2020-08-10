@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-lg-7">
+    <div class="col-lg-5">
       <div class="kotak mt-5">
         <!-- Page Heading -->
         <div class="card-header py-3">
