@@ -36,7 +36,8 @@ class Asisten extends CI_Controller
   public function editnilai()
   {
     $data = [
-      'nilai' => $this->input->post('nilai', true)
+      'nilai' => $this->input->post('nilai', true),
+      'asisten' => $this->session->userdata('nrp')
     ];
 
     $this->db->where('id', $this->input->post('id'));
