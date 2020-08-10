@@ -268,7 +268,7 @@ $(function () {
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: base + "admin/getubahnilai",
+			url: base + "asisten/getubahnilai",
 			data: {
 				id: id,
 			},
