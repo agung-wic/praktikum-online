@@ -91,11 +91,11 @@
                     </td>
                     <td><?= date("Y-m-d H:i:s", $l['laporan_time']); ?></td>
                     <td><?= $l['nilai']; ?></td>
-                    <td><a <?php if ($l['is_acc'] == 0) { ?> href="<?= base_url('dosen/editnilai/') . $l['id']; ?>" <?php } ?> class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                    <td><a <?php if ($l['is_acc'] == 0) { ?> href="<?= base_url('dosen/editnilai/') . $l['id']; ?>" class="badge-secondary" <?php } else { ?> class="badge-primary" <?php } ?> class="badge badge-pill tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                         <i class=" fas fa-fw fa-edit"></i>
                         Edit
                       </a>
-                      <a href="<?= base_url('dosen/accnilai/') . $l['id']; ?>" class="badge badge-pill badge-warning">
+                      <a href="<?= base_url('dosen/accnilai/') . $l['id']; ?>" class="badge badge-pill badge-success">
                         <i class=" fas fa-fw fa-edit"></i>
                         Acc
                       </a>
