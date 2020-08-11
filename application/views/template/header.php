@@ -24,7 +24,7 @@
 </head>
 <style>
   .begron {
-    background-image: url("<?= base_url(); ?>/assets/img/bg3.png");
+    background-image: url("<?= base_url(); ?>/assets/img/bg2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
