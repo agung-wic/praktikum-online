@@ -93,7 +93,7 @@
                     <td><?= $l['nilai']; ?></td>
                     <td>
                       <?php if ($l['is_acc'] == 0) { ?>
-                        <a href="<?= base_url('dosen/editnilai/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                        <a href="<?= base_url('dosen/editnilai/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilModalNilaiDosen" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                           <i class=" fas fa-fw fa-edit"></i>
                           Edit
                         </a>
@@ -134,7 +134,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?= base_url('asisten/editnilai') ?>" method="post">
+      <form action="<?= base_url('dosen/editnilai') ?>" method="post">
         <div class="modal-body">
           <div class="form-group">
             <input class="form-control" type="text" name="id" id="id" hidden>

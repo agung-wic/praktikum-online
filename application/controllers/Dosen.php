@@ -91,4 +91,23 @@ class Dosen extends CI_Controller
           </div>');
     redirect(base_url('dosen'));
   }
+
+  public function getubahnilai()
+  {
+    $this->load->model('Dosen_model');
+    echo json_encode($this->Dosen_model->TampilNilaiPraktikan($this->input->post('id')));
+  }
+
+  public function editnilai()
+  {
+    $data = [
+      'nilai' => $this->input->post('nilai', true)
+    ];
+    $this->db->where('id', $this->input->post('id'));
+    $this->db->update('nilai', $data);
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+          Nilai berhasil diubah!
+          </div>');
+    redirect(base_url('dosen'));
+  }
 }
