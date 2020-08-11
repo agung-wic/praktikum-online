@@ -31,6 +31,53 @@ class Dosen extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  public function modul()
+  {
+    $this->load->model('Dosen_model');
+    $data['modul'] = $this->db->get('modul')->result_array();
+    $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+    $data['title'] = 'Modul Praktikum';
+    $data['list'] = $this->Dosen_model->TampilModul();
+    $this->load->view('template/header', $data);
+    $this->load->view('template/sidebar', $data);
+    $this->load->view('template/topbar', $data);
+    $this->load->view('dosen/modul', $data);
+    $this->load->view('template/footer');
+  }
+
+  public function editmodul()
+  {
+    $data = [];
+
+    $this->db->where('id', $this->input->post('id'));
+    $this->db->update('modul', $data);
+    $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+        Modul berhasil diubah!
+        </div>');
+    redirect(base_url('dosen/modul'));
+  }
+
+  public function tambahmodul()
+  {
+    $data = [];
+
+    $this->db->insert('modul', $data);
+    $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+        Modul berhasil ditambahkan!
+        </div>');
+    redirect(base_url('dosen/modul'));
+  }
+
+  public function deletemodul($id)
+  {
+    $this->db->where('id', $id);
+    $this->db->delete('modul');
+    $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+        Jadwal berhasil dihapus!
+        </div>');
+    redirect(base_url('dosen/modul'));
+  }
+
   public function accnilai($id)
   {
     $data = [
