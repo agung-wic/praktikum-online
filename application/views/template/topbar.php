@@ -17,13 +17,13 @@
                 <!-- Nav Item - User Information -->
                 <li class="nav-item">
                     <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user['name']; ?></span>
+                        <span class="mr-2 d-none d-lg-inline small" style="color:#FFFFFF"><?= $user['name']; ?></span>
                     </a>
                     <!-- Dropdown - User Information -->
                 </li>
                 <div class="topbar-divider d-none d-sm-block"></div>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color:#ffffff" data-toggle="modal" data-target="#logoutModal">
+                    <a class="nav-link" href="#" style="color:#FFFFFF" data-toggle="modal" data-target="#logoutModal">
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2"></i>
                         Logout
                     </a>
