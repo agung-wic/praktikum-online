@@ -35,7 +35,7 @@ class Asisten extends CI_Controller
   public function getubahnilai()
   {
     $this->load->model('Asisten_model');
-    echo json_encode($this->Asisten_model->TampilNilaiPraktikan($this->input->post('nilai')));
+    echo json_encode($this->Asisten_model->TampilNilaiPraktikan($this->input->post('id')));
   }
 
   public function editnilai()
