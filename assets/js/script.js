@@ -284,6 +284,7 @@ $(function () {
 			},
 		});
 	});
+
 	$(".tampilModalNilaiDosen").on("click", function () {
 
 		const id = $(this).data("id");
