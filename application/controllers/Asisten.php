@@ -45,6 +45,8 @@ class Asisten extends CI_Controller
       'asisten' => $this->session->userdata('nrp')
     ];
 
+    var_dump($this->input->post('id'));
+    die;
     $this->db->where('id', $this->input->post('id'));
     $this->db->update('nilai', $data);
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
