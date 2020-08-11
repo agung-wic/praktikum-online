@@ -25,9 +25,11 @@ class Dosen_model extends CI_Model
 
   public function TampilModul()
   {
-    $query = "SELECT `pengumuman`.`id`,`pengumuman`.`judul`, `user`.`name` as 'name', `user`.`nrp`, `pengumuman`.`isi`, `pengumuman`.`tanggal`
-              FROM `user` INNER JOIN `pengumuman` ON `user`.`nrp` = `pengumuman`.`nrp`";
+    return $this->db->get('modul')->result_array();
+  }
 
-    return $this->db->query($query)->result_array();
+  public function EditModul()
+  {
+    return $this->db->get('modul')->row_array();
   }
 }

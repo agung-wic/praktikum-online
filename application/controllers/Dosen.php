@@ -47,7 +47,20 @@ class Dosen extends CI_Controller
 
   public function editmodul()
   {
-    $data = [];
+    $data = [
+      "modul" => $this->input->post('modul', true),
+      "name" => $this->input->post('name', true),
+      "peralatan" => $this->input->post('peralatan', true),
+      "teori" => $this->input->post('teori', true),
+      "cara" => $this->input->post('cara', true),
+      "tugas_lapres" => $this->input->post('tugas_lapres', true),
+      "tugas_pendahuluan" => $this->input->post('tugas_pendahuluan', true),
+      "content" => $this->input->post('content', true),
+      "video" => $this->input->post('video', true),
+      "pdf" => $this->input->post('pdf', true),
+      "time" => $this->input->post('time', true),
+      "tujuan" => $this->input->post('tujuan', true),
+    ];
 
     $this->db->where('id', $this->input->post('id'));
     $this->db->update('modul', $data);
@@ -57,10 +70,33 @@ class Dosen extends CI_Controller
     redirect(base_url('dosen/modul'));
   }
 
+  public function getubah()
+  {
+    echo json_encode($this->db->get_where('user', ['id' => $this->input->post('id')])->row_array());
+  }
+
+  public function getubahmodul()
+  {
+    $this->load->model('Dosen_model');
+    echo json_encode($this->Dosen_model->EditModul());
+  }
+
   public function tambahmodul()
   {
-    $data = [];
-
+    $data = [
+      "modul" => $this->input->post('modul', true),
+      "name" => $this->input->post('name', true),
+      "peralatan" => $this->input->post('peralatan', true),
+      "teori" => $this->input->post('teori', true),
+      "cara" => $this->input->post('cara', true),
+      "tugas_lapres" => $this->input->post('tugas_lapres', true),
+      "tugas_pendahuluan" => $this->input->post('tugas_pendahuluan', true),
+      "content" => $this->input->post('content', true),
+      "video" => $this->input->post('video', true),
+      "pdf" => $this->input->post('pdf', true),
+      "time" => $this->input->post('time', true),
+      "tujuan" => $this->input->post('tujuan', true),
+    ];
     $this->db->insert('modul', $data);
     $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
         Modul berhasil ditambahkan!
