@@ -8,7 +8,7 @@ class Asisten_model extends CI_Model
     $query = "SELECT `nilai`.`id`, `user`.`name` as 'name_praktikan', `user`.`nrp`, `modul`.`modul` as 'modul_id', 
               `modul`.`name` as 'modul', `nilai`.`laporan`, `nilai`.`laporan_time`, `nilai`.`is_acc`, `nilai`.`asisten`, `nilai`.`nilai`
               FROM `user`   INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
-              INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` WHERE `nilai`.`is_active`=0";
+              INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` WHERE `nilai`.`is_acc`=0";
 
     return $this->db->query($query)->result_array();
   }
