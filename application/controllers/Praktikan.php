@@ -78,7 +78,7 @@ class Praktikan extends CI_Controller
     {
         $file = $_FILES['filelaporan']['name'];
 
-        $config['upload_path'] = './assets/file/';
+        $config['upload_path'] = './assets/laporan/';
         $config['allowed_types'] = 'pdf';
 
         $this->load->library('upload', $config);
@@ -206,7 +206,6 @@ class Praktikan extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
-        $this->load->view('template/header', $data);
         $this->load->view('praktikan/jadwal', $data);
         $this->load->view('template/footer');
     }

@@ -13,7 +13,7 @@ class Admin extends CI_Controller
     { #USER#
         $this->load->model('Admin_model');
 
-        $config['base_url'] = 'http://localhost/fisdas/admin/index';
+        $config['base_url'] = 'https://virtulab-its.com/admin/index';
         $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
         $config['full_tag_close'] = '</ul></nav>';
 
@@ -206,7 +206,7 @@ class Admin extends CI_Controller
     public function jadwal()
     {
         $this->load->model('Admin_model');
-        $config['base_url'] = 'http://localhost/fisdas/admin/jadwal';
+        $config['base_url'] = 'https://virtulab-its.com/admin/jadwal';
         $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
         $config['full_tag_close'] = '</ul></nav>';
 
