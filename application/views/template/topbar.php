@@ -5,7 +5,7 @@
     <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color: rgba(256,256,256,0);">
+        <nav class="navbar navbar-expand navbar-dark topbar mb-4 static-top shadow" style="background-color: rgba(256,256,256,0);">
 
             <!-- Sidebar Toggle (Topbar) -->
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -23,7 +23,7 @@
                 </li>
                 <div class="topbar-divider d-none d-sm-block"></div>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color:#707070" data-toggle="modal" data-target="#logoutModal">
+                    <a class="nav-link" href="#" style="color:#ffffff" data-toggle="modal" data-target="#logoutModal">
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2"></i>
                         Logout
                     </a>
