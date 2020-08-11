@@ -228,4 +228,17 @@ class Praktikan extends CI_Controller
           </div>');
         redirect(base_url('praktikan/jadwal'));
     }
+
+    public function penilaian()
+    {
+        $this->load->model('Praktikan_model');
+        $data['title'] = 'Penilaian';
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $data['list'] = $this->Praktikan_model->PenilaianPraktikan($this->session->userdata('nrp'));
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('praktikan/penilaian', $data);
+        $this->load->view('template/footer');
+    }
 }
