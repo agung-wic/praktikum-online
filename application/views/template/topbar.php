@@ -5,7 +5,7 @@
     <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color: rgba(0,0,0,100);">
+        <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color: rgba(256,256,256,1);">
 
             <!-- Sidebar Toggle (Topbar) -->
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
