@@ -103,13 +103,8 @@
                         </a>
                       <?php } else { ?>
                         <span class="badge badge-pill badge-secondary"><i class="fas fa-fw fa-edit"></i>Edit</span>
-                        <span class="badge badge-pill badge-secondary"><i class="far fa-check-square"></i></i>Acc</span>
+                        <span class="badge badge-pill badge-secondary"><i class="far fa-check-square"></i>Acc</span>
                       <?php } ?>
-
-                      <a href="<?= base_url('dosen/accnilai/') . $l['id']; ?>" class="badge badge-pill badge-success">
-                        <i class=" fas fa-fw fa-edit"></i>
-                        Acc
-                      </a>
                     </td>
                   </tr>
                 <?php $i++;
