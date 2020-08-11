@@ -37,7 +37,7 @@ class Admin_model extends CI_Model
               INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id`
               WHERE `user`.`name` LIKE '%$keyword%'
               OR `modul`.`name` LIKE '%$keyword%'
-              OR `jadwal`.`jadwal` LIKE '%$keyword%' ";
+              OR `jadwal`.`jadwal` LIKE '%$keyword%' LIMIT $limit OFFSET $start";
     } else {
       $query = "SELECT `jadwal`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', `modul`.`name` as 'modul', `jadwal`.`jadwal`
               FROM `user` INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
