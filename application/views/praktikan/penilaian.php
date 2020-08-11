@@ -71,7 +71,7 @@
                 <?php $i = 1;
                 foreach ($list as $l) :
                   if ($l['is_acc'] == 0) {
-                    $l['nilai'] = 0;
+                    $l['nilai'] = NULL;
                   }
                 ?>
                   <tr>
