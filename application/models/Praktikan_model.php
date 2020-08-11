@@ -46,14 +46,4 @@ class Praktikan_model extends CI_Model
 
     return $this->db->query($query)->result_array();
   }
-
-  public function PenilaianPraktikan($id)
-  {
-    $query = "SELECT `nilai`.`id`, `user`.`name` as 'name_praktikan', `user`.`nrp`, `modul`.`modul` as 'modul_id', 
-              `modul`.`name` as 'modul', `nilai`.`laporan`, `nilai`.`laporan_time`, `nilai`.`is_acc`, `nilai`.`asisten`, `nilai`.`nilai`
-              FROM `user`   INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
-              INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` WHERE `nilai`.`nrp`=$id";
-
-    return $this->db->query($query)->result_array();
-  }
 }

@@ -78,7 +78,7 @@ class Praktikan extends CI_Controller
     {
         $file = $_FILES['filelaporan']['name'];
 
-        $config['upload_path'] = './assets/laporan/';
+        $config['upload_path'] = './assets/file/';
         $config['allowed_types'] = 'pdf';
 
         $this->load->library('upload', $config);
@@ -206,6 +206,7 @@ class Praktikan extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
+        $this->load->view('template/header', $data);
         $this->load->view('praktikan/jadwal', $data);
         $this->load->view('template/footer');
     }
@@ -226,18 +227,5 @@ class Praktikan extends CI_Controller
           Pengajuan jadwal sukses! Silakan menunggu persetujuan dari Admin.
           </div>');
         redirect(base_url('praktikan/jadwal'));
-    }
-
-    public function penilaian()
-    {
-        $this->load->model('Praktikan_model');
-        $data['title'] = 'Penilaian';
-        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-        $data['list'] = $this->Praktikan_model->PenilaianPraktikan($this->session->userdata('nrp'));
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar', $data);
-        $this->load->view('template/topbar', $data);
-        $this->load->view('praktikan/penilaian', $data);
-        $this->load->view('template/footer');
     }
 }

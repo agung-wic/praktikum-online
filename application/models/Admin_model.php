@@ -3,25 +3,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin_model extends CI_Model
 {
-  public function CariUser()
+  public function TampilUser($limit, $start, $keyword = null)
   {
-    $keyword = $this->input->post('keyword', true);
-
-    $query = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`nrp`, `user_role`.`role` 
-              FROM `user` INNER JOIN `user_role` ON `user`.`role_id` = `user_role`.`id` 
-              WHERE `user`.`name` LIKE '%$keyword%'
-              OR `user`.`email` LIKE '%$keyword%'
-              OR `user`.`nrp` LIKE '%$keyword%' 
-              OR `user_role`.`role` LIKE '%$keyword%' ";
-
-    return $this->db->query($query)->result_array();
-  }
-
-  public function TampilUser($limit, $start)
-  {
-    $query = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`nrp`, `user_role`.`role` 
+    if ($keyword) {
+      $query = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`nrp`, `user_role`.`role` 
+      FROM `user` INNER JOIN `user_role` ON `user`.`role_id` = `user_role`.`id` 
+      WHERE `user`.`name` LIKE '%$keyword%'
+      OR `user`.`email` LIKE '%$keyword%'
+      OR `user`.`nrp` LIKE '%$keyword%' 
+      OR `user_role`.`role` LIKE '%$keyword%' LIMIT $limit OFFSET $start ";
+    } else {
+      $query = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`nrp`, `user_role`.`role` 
               FROM `user` INNER JOIN `user_role` ON `user`.`role_id` = `user_role`.`id` LIMIT $limit OFFSET $start";
-
+    }
     return $this->db->query($query)->result_array();
   }
 
@@ -34,13 +28,31 @@ class Admin_model extends CI_Model
   }
 
 
-  public function TampilJadwal()
+  public function TampilJadwal($limit, $start, $keyword = null)
+  {
+    $keyword = $this->input->post('keyword1', true);
+    if ($keyword) {
+      $query = "SELECT `jadwal`.`id`,  `user`.`nrp`, `user`.`name` as `name`, `modul`.`name` as `modul`, `jadwal`.`jadwal`
+              FROM `user` INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
+              INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id`
+              WHERE `user`.`name` LIKE '%$keyword%'
+              OR `modul`.`name` LIKE '%$keyword%'
+              OR `jadwal`.`jadwal` LIKE '%$keyword%' ";
+    } else {
+      $query = "SELECT `jadwal`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', `modul`.`name` as 'modul', `jadwal`.`jadwal`
+              FROM `user` INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
+              INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id` LIMIT $limit OFFSET $start";
+    }
+    return $this->db->query($query)->result_array();
+  }
+
+  public function JumlahJadwal()
   {
     $query = "SELECT `jadwal`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', `modul`.`name` as 'modul', `jadwal`.`jadwal`
               FROM `user` INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
               INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id`";
 
-    return $this->db->query($query)->result_array();
+    return $this->db->query($query)->num_rows();
   }
 
   public function TampilPengumuman($limit, $start)
