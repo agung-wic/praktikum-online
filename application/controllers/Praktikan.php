@@ -54,7 +54,12 @@ class Praktikan extends CI_Controller
         $data['title'] = 'Percobaan Praktikum';
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['modul'] = $this->db->get_where('modul', ['modul' => $id])->row_array();
-        $data['jadwal'] = $this->db->get_where('jadwal', ['nrp' => $this->session->userdata('nrp'), 'modul_id' => $id]);
+
+        $this->db->select('*');
+        $this->db->from('jadwal');
+        $this->db->where('nrp', $this->session->userdata('nrp'));
+        $this->db->where('modul_id', $id);
+        $data['jadwal'] = $this->db->get()->row_array();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);

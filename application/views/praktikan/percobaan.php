@@ -95,10 +95,10 @@
             </div>
           </div>
           <div class="col-lg-auto ml-auto">
-            <h6><b>Waktu : <p id="hours"></p>
-                <p id="mins"></p>
-                <p id="secs"></p>
-              </b></h6>
+            <h6><b>Sisa Waktu </h6> <span id="hours"></span>
+            <span id="mins"></span>
+            <span id="secs"></span>
+            </b>
           </div>
         </div>
         <div class="row mt-5">
@@ -130,8 +130,8 @@
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
     // Result is output to the specific element
-    document.getElementById("hours").innerHTML = hours + ":"
-    document.getElementById("mins").innerHTML = minutes + ":"
+    document.getElementById("hours").innerHTML = hours + " :"
+    document.getElementById("mins").innerHTML = minutes + " :"
     document.getElementById("secs").innerHTML = seconds
 
     if (timeleft < 0) {
