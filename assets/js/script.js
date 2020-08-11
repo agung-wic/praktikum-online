@@ -288,7 +288,7 @@ $(function () {
 	$(".tampilModalNilaiDosen").on("click", function () {
 
 		const id = $(this).data("id");
-
+		console.log(id);
 		$.ajax({
 			url: base + "dosen/getubahnilai",
 			data: {
