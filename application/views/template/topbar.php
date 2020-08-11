@@ -17,7 +17,7 @@
                 <!-- Nav Item - User Information -->
                 <li class="nav-item">
                     <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <p class="mr-2" style="color:#FFFFFF"><strong><?= $user['name']; ?></strong></p>
+                        <p class="mr-2 d-lg-inline" style="color:#FFFFFF"><strong><?= $user['name']; ?></strong></p>
                     </a>
                     <!-- Dropdown - User Information -->
                 </li>
