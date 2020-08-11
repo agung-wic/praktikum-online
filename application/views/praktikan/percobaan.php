@@ -95,7 +95,10 @@
             </div>
           </div>
           <div class="col-lg-auto ml-auto">
-            <h6><b>Waktu : 00:30:00</b></h6>
+            <h6><b>Waktu : <p id="hours"></p>
+                <p id="mins"></p>
+                <p id="secs"></p>
+              </b></h6>
           </div>
         </div>
         <div class="row mt-5">
@@ -110,3 +113,33 @@
     </div>
   </div>
 </div>
+
+<script>
+  // The data/time we want to countdown to
+  var countDownDate = new Date("<?= $jadwal['jadwal']; ?>").getTime();
+
+  // Run myfunc every second
+  var myfunc = setInterval(function() {
+
+    var now = new Date().getTime();
+    var timeleft = countDownDate + (30 * 60 * 1000) - now;
+
+    // Calculating the days, hours, minutes and seconds left
+    var hours = Math.floor((timeleft / (1000 * 60 * 60)));
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+    // Result is output to the specific element
+    document.getElementById("hours").innerHTML = hours + ":"
+    document.getElementById("mins").innerHTML = minutes + ":"
+    document.getElementById("secs").innerHTML = seconds
+
+    if (timeleft < 0) {
+      clearInterval(myfunc);
+      document.getElementById("hours").innerHTML = ""
+      document.getElementById("mins").innerHTML = ""
+      document.getElementById("secs").innerHTML = ""
+      window.location.href = "<?= base_url('praktikan/modul/') ?>";
+    }
+  }, 1000);
+</script>
