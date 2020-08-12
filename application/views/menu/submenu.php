@@ -1,10 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
-
-
     <div class="row">
         <div class="col-lg">
             <?php if (validation_errors()) : ?>
@@ -14,11 +10,17 @@
             <?php endif; ?>
 
             <?= $this->session->flashdata('message'); ?>
-            <a href="" class="btn btn-primary mb-3 tombolTambahSubmenu" data-toggle="modal" data-target="#NewSubmenuModal">Add New Submenu</a>
 
-            <div class="card shadow mb-4">
+            <div class="card shadow mb-4 mt-2">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary"><?= $title; ?></h6>
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="m-0 font-weight-bold text-primary"><?= $title; ?></h6>
+                        </div>
+                        <div class="col-auto mr-auto">
+                            <a href="" class="btn gradien mb-3 tombolTambahSubmenu" data-toggle="modal" data-target="#NewSubmenuModal">Add New Submenu</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

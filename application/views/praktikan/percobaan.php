@@ -106,7 +106,7 @@
             <a href="<?= base_url('praktikan/modul/') . $modul['modul'] ?>" class="btn btn-secondary px-5">Kembali</a>
           </div>
           <div class="col-lg-auto ml-auto">
-            <a href="<?= base_url('praktikan/modul/') ?>" class="btn btn-secondary px-5">Selesai</a>
+            <a href="<?= base_url('praktikan/modul/') ?>" class="btn gradien px-5">Selesai</a>
           </div>
         </div>
       </div>

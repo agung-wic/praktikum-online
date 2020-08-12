@@ -12,7 +12,7 @@
                         <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
                     </div>
                     <div class="col-auto mr-auto">
-                        <a href="" class="btn btn-primary mb-3 tampilTambahPengumuman" data-toggle="modal" data-target="#BuatPengumuman">Buat Pengumuman</a>
+                        <a href="" class="btn gradien mb-3 tampilTambahPengumuman" data-toggle="modal" data-target="#BuatPengumuman">Buat Pengumuman</a>
                     </div>
                 </div>
                 <div class="card-body">

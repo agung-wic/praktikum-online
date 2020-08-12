@@ -35,7 +35,7 @@
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" name="keyword" placeholder="Cari user...">
                   <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit"><i class="fas fa-fw fa-search"></i></button>
+                    <button class="btn gradien" type="submit"><i class="fas fa-fw fa-search"></i></button>
                   </div>
                 </div>
               </form>

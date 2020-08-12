@@ -7,7 +7,7 @@
     <!-- DataTales Example -->
     <div class="kotak">
       <div class="card-header">
-        <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
+        <h6 class="m-0 font-weight-bold "><?= $title; ?> </h6>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -34,7 +34,7 @@
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" name="keyword" placeholder="Cari...">
                   <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit"><i class="fas fa-fw fa-search"></i></button>
+                    <button class="btn gradien" type="submit"><i class="fas fa-fw fa-search"></i></button>
                   </div>
                 </div>
               </form>

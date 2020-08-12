@@ -38,7 +38,7 @@
                   <div class="input-group mb-3">
                     <input type="text" class="form-control" id="keyword2" name="keyword2" placeholder="Cari  ...">
                     <div class="input-group-append">
-                      <button class="btn btn-primary" type="submit" id="cari-jadwal"><i class="fas fa-fw fa-search"></i></button>
+                      <button class="btn gradien" type="submit" id="cari-jadwal"><i class="fas fa-fw fa-search"></i></button>
                     </div>
                   </div>
                 </form>
@@ -112,8 +112,8 @@
             <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
           </div>
           <div class="col-auto mr-auto">
-            <a href="" class="btn btn-primary mb-3 tampilTambahJadwal" data-toggle="modal" data-target="#JadwalEdit">Tambah Jadwal Baru</a>
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#JadwalAddFile"><i class="fas fa-file-csv"></i>
+            <a href="" class="btn gradien mb-3 tampilTambahJadwal" data-toggle="modal" data-target="#JadwalEdit">Tambah Jadwal Baru</a>
+            <a href="" class="btn gradien mb-3" data-toggle="modal" data-target="#JadwalAddFile"><i class="fas fa-file-csv"></i>
             </a>
           </div>
         </div>
@@ -142,7 +142,7 @@
                   <div class="input-group mb-3">
                     <input type="text" class="form-control" id="keyword1" name="keyword1" placeholder="Cari  ...">
                     <div class="input-group-append">
-                      <button class="btn btn-primary" type="submit" id="cari-jadwal"><i class="fas fa-fw fa-search"></i></button>
+                      <button class="btn gradien" type="submit" id="cari-jadwal"><i class="fas fa-fw fa-search"></i></button>
                     </div>
                   </div>
                 </form>

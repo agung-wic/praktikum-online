@@ -11,7 +11,7 @@
               <h6 class="m-0 font-weight-bold"><?= $title; ?></h6>
             </div>
             <div class="col-auto mr-auto">
-              <a href="" class="btn btn-primary mb-3 tombolTambahRole" data-toggle="modal" data-target="#NewRoleModal">Tambahkan Role Baru</a>
+              <a href="" class="btn gradien mb-3 tombolTambahRole" data-toggle="modal" data-target="#NewRoleModal">Tambahkan Role Baru</a>
             </div>
           </div>
         </div>

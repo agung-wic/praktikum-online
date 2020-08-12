@@ -30,7 +30,7 @@
           <div class="row justify-content-end">
             <div class="form-group">
               <div class="col-lg">
-                <button type="submit" class="btn btn-primary">Unggah</button>
+                <button type="submit" class="btn gradien">Unggah</button>
               </div>
             </div>
           </div>

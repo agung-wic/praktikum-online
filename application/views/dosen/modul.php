@@ -9,10 +9,10 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col">
-                        <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
+                        <h6 class="m-0 font-weight-bold "><?= $title; ?> Praktikum</h6>
                     </div>
                     <div class="col-auto mr-auto">
-                        <a href="" class="btn btn-primary mb-3 tampilTambahModul" data-toggle="modal" data-target="#BuatModul">Buat Modul</a>
+                        <a href="" class="btn gradien mb-3 tampilTambahModul" data-toggle="modal" data-target="#BuatModul">Buat Modul</a>
                     </div>
                 </div>
                 <div class="card-body">
