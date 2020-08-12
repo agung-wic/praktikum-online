@@ -13,7 +13,7 @@
 
 <style>
     body {
-        background-image: url("<?= base_url(); ?>/assets/img/background.png");
+        background-image: url("<?= base_url(); ?>/assets/img/begron2.png");
         margin-top: 125px;
         background-repeat: no-repeat;
         background-size: cover;
