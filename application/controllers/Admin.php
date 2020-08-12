@@ -51,10 +51,6 @@ class Admin extends CI_Controller
         $data['list'] = $this->Admin_model->TampilUser($config['per_page'], $data['start'], $data['keyword']);
         $data['detail'] = $this->db->get_where('user', ['id' => $id])->row_array();
         $data['role'] = $this->db->get('user_role')->result_array();
-        if ($this->db->get_where('user', ['id' => $id])) {
-            $data['user'] = $this->db->get_where('user', ['id' => $id])->row_array();
-        }
-
 
         $data['title'] = 'User List';
         $this->load->view('template/header', $data);
