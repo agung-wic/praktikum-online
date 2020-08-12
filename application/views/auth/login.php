@@ -23,7 +23,7 @@
             border-right: 0;">
             <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
         </div>
-        <button type="submit" class="btn" style="display: block; margin: auto; background: linear-gradient(39deg, rgba(111,140,252,1) 33%, rgba(47,200,201,1) 100%); color: white; border-top-left-radius: 25px;
+        <button type="submit" class="btn" style="display: block; margin: auto; background: linear-gradient(40deg, rgba(111,140,252,1) 36%, rgba(47,200,201,1) 100%); color: white; border-top-left-radius: 25px;
                 border-top-right-radius: 25px;
                 border-bottom-left-radius: 25px;
                 border-bottom-right-radius: 25px;
