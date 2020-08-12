@@ -48,8 +48,6 @@ class Admin extends CI_Controller
         $config['per_page'] = 5;
         $this->pagination->initialize($config);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        var_dump($data['user']);
-        die;
         $data['list'] = $this->Admin_model->TampilUser($config['per_page'], $data['start'], $data['keyword']);
         $data['detail'] = $this->db->get_where('user', ['id' => $id])->row_array();
         $data['role'] = $this->db->get('user_role')->result_array();
