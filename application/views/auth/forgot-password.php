@@ -1,8 +1,8 @@
 <div class="container">
     <!-- Logo -->
     <div class="sidebar-brand-icon">
-        <div class="row justify-content-center">
-            <div class="col">
+        <div class="row-lg justify-content-center">
+            <div class="col-lg">
                 <i class="fas fa-fingerprint fa-3x"></i>
             </div>
         </div>
