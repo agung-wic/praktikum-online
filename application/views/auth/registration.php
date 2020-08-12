@@ -1,7 +1,10 @@
 <div class="container">
     <!-- Logo -->
-    <img src="<?php echo base_url(); ?>assets/img/registration_user.png" width="100" height="100" style="display: block; margin: auto; margin-top:25px" />
-
+    <div class="row-lg justify-content-center my-3 text-center">
+        <div class="col-lg big-icon">
+            <i class="fas fa-user-plus fa-5x"></i>
+        </div>
+    </div>
     <!-- Judul -->
     <h4>Formulir Pendaftaran Praktikum</h4>
 
