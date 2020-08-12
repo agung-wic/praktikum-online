@@ -60,6 +60,7 @@ class Praktikan extends CI_Controller
         $this->db->where('nrp', $this->session->userdata('nrp'));
         $this->db->where('modul_id', $id);
         $data['jadwal'] = $this->db->get()->row_array();
+
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);

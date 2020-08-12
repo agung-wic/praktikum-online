@@ -1,6 +1,10 @@
 <div class="container">
     <!-- Logo -->
-    <img class="logo" src="<?= base_url('/assets/img/password.png'); ?>">
+    <div class="row-lg justify-content-center my-3 text-center">
+        <div class="col-lg">
+            <i class="fas fa-fingerprint fa-5x" style="background:-webkit-gradient(linear-gradient(40deg, rgba(111,140,252,1) 8%, rgba(47,200,201,1) 100%)); background-clip: text; -webkit-text-fill-color: transparent;"></i>
+        </div>
+    </div>
 
     <!-- Judul -->
     <h4 class="p-3">Formulir Atur Ulang Kata Sandi</h4>
@@ -12,7 +16,7 @@
             <input type="text" id="email" name="email" style="margin-top: 35px; background-color: #f6f6f6; border-top: 0; border-bottom: 1px solid #6a6a6a; border-left: 1px solid #6a6a6a; border-right: 0;" class="form-control form-control-user" id="email" name="email" value="<?= set_value('email'); ?>" placeholder="Masukkan alamat email">
             <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
         </div>
-        <button type="submit" class="btn" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
+        <button type="submit" class="btn" style="display: block; margin: auto; background: linear-gradient(40deg, rgba(111,140,252,1) 8%, rgba(47,200,201,1) 100%); color: white; border-top-left-radius: 25px;
                 border-top-right-radius: 25px;
                 border-bottom-left-radius: 25px;
                 border-bottom-right-radius: 25px;">
