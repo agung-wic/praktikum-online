@@ -1,8 +1,8 @@
 <div class="container">
     <!-- Logo -->
-    <div class="row-lg justify-content-center mt-5">
+    <div class="row-lg justify-content-center my-3 text-center">
         <div class="col-lg">
-            <i class="fas fa-fingerprint fa-5x"></i>
+            <i class="fas fa-fingerprint fa-5x"></i>a
         </div>
     </div>
 
