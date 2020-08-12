@@ -28,8 +28,8 @@ class Dosen_model extends CI_Model
     return $this->db->get('modul')->result_array();
   }
 
-  public function EditModul()
+  public function EditModul($id)
   {
-    return $this->db->get('modul')->row_array();
+    return $this->db->get_where('modul', ['id' => $id])->row_array();
   }
 }

@@ -294,7 +294,7 @@ $(function () {
 				tinymce.init({
 					selector: "textarea",
 				});
-
+				console.log(data);
 				$("#id").val(data.id);
 				$("#modul").val(data.name);
 				$("#name").val(data.nrp);

@@ -77,8 +77,9 @@ class Dosen extends CI_Controller
 
   public function getubahmodul()
   {
+    $id = $this->input->post('id', true);
     $this->load->model('Dosen_model');
-    echo json_encode($this->Dosen_model->EditModul());
+    echo json_encode($this->Dosen_model->EditModul($id));
   }
 
   public function tambahmodul()
