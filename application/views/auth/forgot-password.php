@@ -2,7 +2,7 @@
     <!-- Logo -->
     <div class="row-lg justify-content-center my-3 text-center">
         <div class="col-lg">
-            <i class="fas fa-fingerprint fa-5x" style="color:linear-gradient(40deg, rgba(111,140,252,1) 8%, rgba(47,200,201,1) 100%);"></i>
+            <i class="fas fa-fingerprint fa-5x" style="background:linear-gradient(40deg, rgba(111,140,252,1) 8%, rgba(47,200,201,1) 100%);"></i>
         </div>
     </div>
 
