@@ -293,6 +293,8 @@ $(function () {
 			success: function (data) {
 				tinymce.init({
 					selector: "textarea",
+					images_upload_url: "postAcceptor.php",
+					images_upload_base_path: "/assets/img",
 				});
 				console.log(data);
 				$("#id").val(data.id);
