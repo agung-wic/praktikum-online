@@ -296,8 +296,8 @@ $(function () {
 				});
 				console.log(data);
 				$("#id").val(data.id);
-				$("#modul").val(data.name);
-				$("#name").val(data.nrp);
+				$("#modul").val(data.modul);
+				$("#name").val(data.name);
 				tinymce.get("peralatan").setContent(data.peralatan);
 				tinymce.get("teori").setContent(data.teori);
 				tinymce.get("cara").setContent(data.cara);
