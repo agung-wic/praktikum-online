@@ -1,7 +1,11 @@
 <div class="container">
     <!-- Logo -->
     <div class="sidebar-brand-icon">
-        <i class="fas fa-fingerprint"></i>
+        <div class="row justify-content-center">
+            <div class="col">
+                <i class="fas fa-fingerprint fa-3x"></i>
+            </div>
+        </div>
     </div>
 
     <!-- Judul -->
