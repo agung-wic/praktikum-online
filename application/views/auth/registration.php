@@ -29,7 +29,7 @@
         <div class="form-group">
             <input class="form-control" type="password" id="password2" name="password2" placeholder="Konfirmasi Password" style="margin-top: 25px; background-color: #f6f6f6; border-top: 0px; border-bottom: 1px solid #6a6a6a; border-left: 1px solid #6a6a6a; border-right: 0px;">
         </div>
-        <div class="p-3"> <button type="submit" class="btn" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
+        <div class="p-3"> <button type="submit" class="btn" style="display: block; margin: auto; background: linear-gradient(40deg, rgba(111,140,252,1) 8%, rgba(47,200,201,1) 100%); color: white; border-top-left-radius: 25px;
                 border-top-right-radius: 25px;
                 border-bottom-left-radius: 25px;
                 border-bottom-right-radius: 25px;
