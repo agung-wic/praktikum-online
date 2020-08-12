@@ -36,6 +36,14 @@
         box-shadow: 4px 4px 5px 3px rgba(0, 0, 0, 0.2);
     }
 
+    .big-icon {
+        font-size: 72px;
+        background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#333));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
     .logo {
         display: block;
         margin: auto;

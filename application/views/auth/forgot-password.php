@@ -1,8 +1,8 @@
 <div class="container">
     <!-- Logo -->
     <div class="row-lg justify-content-center my-3 text-center">
-        <div class="col-lg">
-            <i class="fas fa-fingerprint fa-5x" style="background:-webkit-gradient(linear-gradient(40deg, rgba(111,140,252,1) 8%, rgba(47,200,201,1) 100%)); background-clip: text; -webkit-text-fill-color: transparent;"></i>
+        <div class="col-lg big-icon">
+            <i class="fas fa-fingerprint fa-5x"></i>
         </div>
     </div>
 
