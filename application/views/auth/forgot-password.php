@@ -1,9 +1,9 @@
 <div class="container">
     <!-- Logo -->
-    <div class="sidebar-brand-icon">
-        <div class="row-lg justify-content-center">
-            <div class="col-lg">
-                <i class="fas fa-fingerprint fa-3x"></i>
+    <div class="row-lg justify-content-center mt-5">
+        <div class="col-lg">
+            <div class="sidebar-brand-icon">
+                <i class="fas fa-fingerprint fa-7x"></i>
             </div>
         </div>
     </div>
