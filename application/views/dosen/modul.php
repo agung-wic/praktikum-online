@@ -79,12 +79,52 @@
                         <input class="form-control" type="number" name="id" id="id" hidden>
                     </div>
                     <div class="form-group">
-                        <label for="judul">Judul</label>
-                        <input type="text" class="form-control edit" id="judul" name="judul">
+                        <label for="modul">Kode Modul</label>
+                        <input type="text" class="form-control edit" id="modul" name="modul">
                     </div>
                     <div class="form-group">
-                        <label for="isi">Isi</label>
-                        <textarea rows="20" cols="20" id="isi" name="isi" class="form-control edit" style="height:200px"></textarea>
+                        <label for="name">Nama Modul</label>
+                        <input type="text" class="form-control edit" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="peralatan">Peralatan</label>
+                        <textarea rows="20" cols="20" id="peralatan" name="peralatan" class="form-control edit" style="height:200px"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="teori">Teori</label>
+                        <textarea rows="20" cols="20" id="teori" name="teori" class="form-control edit" style="height:200px"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="cara">Cara</label>
+                        <textarea rows="20" cols="20" id="cara" name="cara" class="form-control edit" style="height:200px"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tugas_lapres">Tugas Lapres</label>
+                        <textarea rows="20" cols="20" id="tugas_lapres" name="tugas_lapres" class="form-control edit" style="height:200px"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tugas_pendahuluan">Tugas Pendahuluan</label>
+                        <textarea rows="20" cols="20" id="tugas_pendahuluan" name="Pendahuluan" class=Pendahuluanform-control edit" style="height:200px"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <Cabel for="content">Content</Cabel>
+                        <textarea rows="20" cols="20" id="content" Came="content" Class="form-control edit" style="height:200px"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="video">Video</label>
+                        <input type="text" class="form-control edit" id="video" name="video">
+                    </div>
+                    <div class="form-group">
+                        <label for="pdf">File pdf</label>
+                        <input type="text" class="form-control edit" id="pdf" name="pdf">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Waktu</label>
+                        <input type="text" class="form-control edit" id="time" name="time">
+                    </div>
+                    <div class="form-group">
+                        <Cabel for="tujuan">Tujuan</Cabel>
+                        <textarea rows="20" cols="20" id="tujuan" Came="tujuan" Class="form-control edit" style="height:200px"></textarea>
                     </div>
             </div>
             <div class="modal-footer">

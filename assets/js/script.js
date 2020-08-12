@@ -1,5 +1,5 @@
 $(function () {
-	const base = "https://virtulab-its.com/"
+	const base = "https://virtulab-its.com/";
 	$(".tampilModalUbah").on("click", function () {
 		const id = $(this).data("id");
 
@@ -36,7 +36,6 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-
 				$("#menu").val(data.menu);
 				$("#id").val(data.id);
 			},
@@ -52,10 +51,7 @@ $(function () {
 	$(".TampilEditSubmenu").on("click", function () {
 		$("#NewSubmenuModalLabel").html("Edit Submenu");
 		$(".modal-footer button[type=submit]").html("Edit");
-		$(".modal-body form").attr(
-			"action",
-			base + "menu/editsub"
-		);
+		$(".modal-body form").attr("action", base + "menu/editsub");
 
 		const id = $(this).data("id");
 
@@ -67,7 +63,6 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-
 				$("#title").val(data.title);
 				$("#menu_id").val(data.menu_id);
 				$("#url").val(data.url);
@@ -81,19 +76,13 @@ $(function () {
 	$(".tombolTambahSubmenu").on("click", function () {
 		$("#NewSubmenuModalLabel").html("Add New Submenu");
 		$(".modal-footer button[type=submit]").html("Add");
-		$(".modal-body form").attr(
-			"action",
-			base + "menu/submenu"
-		);
+		$(".modal-body form").attr("action", base + "menu/submenu");
 	});
 
 	$(".TampilEditRole").on("click", function () {
 		$("#NewRoleModalLabel").html("Edit Role");
 		$(".modal-footer button[type=submit]").html("Edit");
-		$(".modal-body form").attr(
-			"action",
-			base + "admin/editrole"
-		);
+		$(".modal-body form").attr("action", base + "admin/editrole");
 
 		const id = $(this).data("id");
 
@@ -105,7 +94,6 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-
 				$("#role").val(data.role);
 				$("#id").val(data.id);
 			},
@@ -121,10 +109,7 @@ $(function () {
 	$(".tampilTambahJadwal").on("click", function () {
 		$("#JadwalEditLabel").html("Tambahkan Jadwal Baru");
 		$(".modal-footer button[type=submit]").html("Tambah");
-		$(".modal-body form").attr(
-			"action",
-			base + "admin/tambahjadwal"
-		);
+		$(".modal-body form").attr("action", base + "admin/tambahjadwal");
 		$(".modal-body input[type=text]").attr("readonly", false);
 		$(".modal-body select").attr("disabled", false);
 
@@ -137,10 +122,7 @@ $(function () {
 	$(".tampilEditJadwal").on("click", function () {
 		$("#JadwalEditLabel").html("Edit Jadwal Praktikan");
 		$(".modal-footer button[type=submit]").html("Edit");
-		$(".modal-body form").attr(
-			"action",
-			base + "admin/editjadwal"
-		);
+		$(".modal-body form").attr("action", base + "admin/editjadwal");
 		$(".modal-body input[type=text]").attr("readonly", true);
 		$(".modal-body select").attr("disabled", true);
 		const id = $(this).data("id");
@@ -153,7 +135,6 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#modul_id").val(data.modul_id);
@@ -174,7 +155,6 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#modul_id").val(data.modul_id);
@@ -197,7 +177,6 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-
 				$("#data1").val(data);
 			},
 		});
@@ -215,7 +194,6 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-
 				$("#data2").val(data);
 			},
 		});
@@ -224,10 +202,7 @@ $(function () {
 	$(".tampilEditPengumuman").on("click", function () {
 		$("#BuatPengumumanLabel").html("Edit Pengumuman");
 		$(".modal-footer button[type=submit]").html("Edit");
-		$(".modal-body form").attr(
-			"action",
-			base + "admin/editpengumuman"
-		);
+		$(".modal-body form").attr("action", base + "admin/editpengumuman");
 
 		const id = $(this).data("id");
 
@@ -240,16 +215,15 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				tinymce.init({
-					selector: 'textarea'
+					selector: "textarea",
 				});
 
 				$("#id").val(data.id);
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#judul").val(data.judul);
-				tinymce.get('isi').setContent(data.isi);
+				tinymce.get("isi").setContent(data.isi);
 				$("#tanggal").val(data.tanggal);
-
 			},
 		});
 	});
@@ -257,14 +231,10 @@ $(function () {
 	$(".tampilTambahPengumuman").on("click", function () {
 		$("#BuatPengumumanLabel").html("Tambahkan Pengumuman Baru");
 		$(".modal-footer button[type=submit]").html("Tambah");
-		$(".modal-body form").attr(
-			"action",
-			base + "admin/tambahpengumuman"
-		);
+		$(".modal-body form").attr("action", base + "admin/tambahpengumuman");
 	});
 
 	$(".tampilModalNilai").on("click", function () {
-
 		const id = $(this).data("id");
 
 		$.ajax({
@@ -286,7 +256,6 @@ $(function () {
 	});
 
 	$(".tampilModalNilaiDosen").on("click", function () {
-
 		const id = $(this).data("id");
 		console.log(id);
 		$.ajax({
@@ -303,6 +272,42 @@ $(function () {
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#modul").val(data.modul);
+			},
+		});
+	});
+
+	$(".tampilEditModul").on("click", function () {
+		$("#BuatModulLabel").html("Edit Modul");
+		$(".modal-footer button[type=submit]").html("Edit");
+		$(".modal-body form").attr("action", base + "dosen/editmodul");
+
+		const id = $(this).data("id");
+
+		$.ajax({
+			url: base + "dosen/getubahpengumuman",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				tinymce.init({
+					selector: "textarea",
+				});
+
+				$("#id").val(data.id);
+				$("#modul").val(data.name);
+				$("#name").val(data.nrp);
+				tinymce.get("peralatan").setContent(data.peralatan);
+				tinymce.get("teori").setContent(data.teori);
+				tinymce.get("cara").setContent(data.cara);
+				tinymce.get("tugas_lapres").setContent(data.tugas_lapres);
+				tinymce.get("tugas_pendahuluan").setContent(data.tugas_pendahuluan);
+				tinymce.get("content").setContent(data.content);
+				$("#video").val(data.video);
+				$("#pdf").val(data.pdf);
+				$("#time").val(data.time);
+				tinymce.get("tujuan").setContent(data.tujuan);
 			},
 		});
 	});
