@@ -284,7 +284,7 @@ $(function () {
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: base + "dosen/getubahpengumuman",
+			url: base + "dosen/getubahmodul",
 			data: {
 				id: id,
 			},
