@@ -1,6 +1,8 @@
 <div class="container">
     <!-- Logo -->
-    <i class="fas fa-fingerprint"></i>
+    <div class="sidebar-brand-icon">
+        <i class="fas fa-fingerprint"></i>
+    </div>
 
     <!-- Judul -->
     <h4 class="p-3">Formulir Atur Ulang Kata Sandi</h4>
