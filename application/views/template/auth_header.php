@@ -37,7 +37,6 @@
     }
 
     .big-icon {
-        font-size: 72px;
         background: -webkit-linear-gradient(40deg, rgba(111, 140, 252, 1) 8%, rgba(47, 200, 201, 1) 100%);
         -webkit-background-clip: text;
         background-clip: text;
