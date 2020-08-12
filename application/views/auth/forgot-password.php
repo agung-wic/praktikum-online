@@ -2,9 +2,7 @@
     <!-- Logo -->
     <div class="row-lg justify-content-center mt-5">
         <div class="col-lg">
-            <div class="sidebar-brand-icon">
-                <i class="fas fa-fingerprint fa-7x"></i>
-            </div>
+            <i class="fas fa-fingerprint fa-5x"></i>
         </div>
     </div>
 
