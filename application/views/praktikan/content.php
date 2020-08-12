@@ -42,7 +42,7 @@
         </div>
         <div class="row mt-5">
           <div class="col-lg-auto ml-auto">
-            <a href="<?= base_url('praktikan/percobaan/') . $modul['modul']; ?>" class="btn btn-secondary px-5">Mulai Praktikum!</a>
+            <a href="<?= base_url('praktikan/percobaan/') . $modul['modul']; ?>" class="btn gradien px-5">Mulai Praktikum!</a>
           </div>
         </div>
       </div>

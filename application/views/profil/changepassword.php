@@ -33,7 +33,7 @@
               <?= form_error('new_password2', '<small class="text-danger">', '</small>'); ?>
             </div>
             <div class="form-group mt-5">
-              <button type="submit" class="btn" style="background-color: #707070; color:white">Ubah Kata Sandi</button>
+              <button type="submit" class="btn gradien" style="color:white">Ubah Kata Sandi</button>
             </div>
           </form>
         </div>

@@ -19,7 +19,7 @@
               <p class="mt-4"><b>Waktu : <?= $m['time'] ?></b></p>
               <p><b>Status : Belum Selesai</b></p>
               <div class="row">
-                <a class="btn btn-secondary ml-auto" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
+                <a class="btn ml-auto gradien" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
               </div>
             </div>
           </div>
