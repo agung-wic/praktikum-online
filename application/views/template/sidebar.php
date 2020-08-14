@@ -2,7 +2,7 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color:#134074;" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center mb-4" href="<?= base_url('user') ?>">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center mb-4" href="<?= base_url('profil') ?>">
         <div class="sidebar-brand-icon">
             <i class="fas fa-atom"></i>
         </div>
