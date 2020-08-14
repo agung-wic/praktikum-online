@@ -29,6 +29,7 @@ class Praktikan extends CI_Controller
         $data['modul'] = $this->db->get('modul')->result_array();
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         if (!$id) {
+            $data['status'] = $this->db->get_where('jadwal', ['nrp' => $this->session->userdata('nrp')])->result_array();
             $data['title'] = 'Modul Praktikum';
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar', $data);
@@ -37,6 +38,11 @@ class Praktikan extends CI_Controller
             $this->load->view('template/footer');
         } else {
             $data['modul'] = $this->db->get_where('modul', ['modul' => $id])->row_array();
+
+            $this->db->where('modul_id', $id);
+            $this->db->where('nrp', $this->session->userdata('nrp'));
+            $data['status'] = $this->db->get('jadwal')->row_array();
+
             $data['title'] = 'Modul Praktikum';
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar', $data);
@@ -48,24 +54,43 @@ class Praktikan extends CI_Controller
 
     public function percobaan($id = NULL)
     {
-        $this->_connectsocket($id);
-        $data['output'] = NULL;
-
-        $data['title'] = 'Percobaan Praktikum';
-        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['modul'] = $this->db->get_where('modul', ['modul' => $id])->row_array();
-
-        $this->db->select('*');
-        $this->db->from('jadwal');
         $this->db->where('nrp', $this->session->userdata('nrp'));
         $this->db->where('modul_id', $id);
-        $data['jadwal'] = $this->db->get()->row_array();
+        $cek = $this->db->get('jadwal')->row_array();
+        $jadwal = strtotime($cek['jadwal']);
+        $batas = strtotime($data['modul']['time']);
+        $time = (date('H', $batas) * 60 * 60) + (date('i', $batas) * 60) + date('s', $batas);
+        if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) {
+            $this->_connectsocket($id);
+            $data['output'] = NULL;
 
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar', $data);
-        $this->load->view('template/topbar', $data);
-        $this->load->view('praktikan/percobaan', $data);
-        $this->load->view('template/footer');
+            $data['title'] = 'Percobaan Praktikum';
+            $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+
+            $this->db->select('*');
+            $this->db->from('jadwal');
+            $this->db->where('nrp', $this->session->userdata('nrp'));
+            $this->db->where('modul_id', $id);
+            $data['jadwal'] = $this->db->get()->row_array();
+
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar', $data);
+            $this->load->view('template/topbar', $data);
+            $this->load->view('praktikan/percobaan', $data);
+            $this->load->view('template/footer');
+        } else {
+            redirect(base_url('praktikan/modul/') . $id);
+        }
+    }
+
+    public function selesai($id)
+    {
+        $data = ['status' => 1];
+        $this->db->where('nrp', $this->session->userdata('nrp'));
+        $this->db->where('modul_id', $id);
+        $this->db->update('jadwal', $data);
+        redirect(base_url('praktikan/modul'));
     }
 
     public function laporan()

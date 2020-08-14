@@ -301,11 +301,12 @@ class Admin extends CI_Controller
 
     public function editjadwal()
     {
+
         $data = [
             "id" => $this->input->post('id', true),
             "nrp" => $this->input->post('nrp', true),
             "modul_id" => $this->input->post('modul', true),
-            "jadwal" => $this->input->post('jadwal', true)
+            "jadwal" => str_replace("T", " ", $this->input->post('jadwal', true))
         ];
 
         $this->db->where('id', $this->input->post('id'));
@@ -340,7 +341,7 @@ class Admin extends CI_Controller
             $data = [
                 'nrp' => $jadwal['nrp'],
                 'modul_id' => $jadwal['modul_id'],
-                'jadwal' => $jadwal['jadwal_new']
+                'jadwal' => str_replace("T", " ", $jadwal['jadwal_new'])
             ];
             $this->db->where('nrp', $jadwal['nrp']);
             $this->db->where('modul_id', $jadwal['modul_id']);
@@ -349,8 +350,8 @@ class Admin extends CI_Controller
             $data = [
                 'nrp' => $jadwal['nrp'],
                 'modul_id' => $jadwal['modul_id'],
-                'jadwal_old' => $jadwal['jadwal_old'],
-                'jadwal_new' => $jadwal['jadwal_new'],
+                'jadwal_old' => str_replace("T", " ", $jadwal['jadwal_old']),
+                'jadwal_new' => str_replace("T", " ", $jadwal['jadwal_new']),
                 'is_approved' => 1
             ];
             $this->db->where('id', $id);

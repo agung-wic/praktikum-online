@@ -4,9 +4,6 @@
       <div class="container">
         <h4 class="mt-3"><b><?= $modul['name'] ?></b></h4>
         <h6>Kode Percobaan: <?= $modul['modul']; ?></h6>
-        <a href="<?= base_url('assets/file/') . $modul['pdf'] ?>" download class=" mb-3 badge badge-pill badge-info"><i class="fas fa-fw fa-download"></i>
-          Modul
-        </a>
         <h6><b>I. Tujuan Percobaan</b></h6>
         <p><?= $modul['tujuan']; ?></p>
         <h6><b>II. Peralatan Yang Digunakan</b></h6>
@@ -37,12 +34,25 @@
           </div>
           <div class="col-lg-auto ml-auto">
             <h6><b><?= $modul['time'] ?></b></h6>
-            <h6><b>Status : Belum Selesai</b></h6>
+            <h6><b>Status : <?php if ($status['status'] == 0) {
+                              echo "Belum Selesai";
+                            } else {
+                              echo "Selesai";
+                            } ?></b></h6>
           </div>
         </div>
         <div class="row mt-5">
           <div class="col-lg-auto ml-auto">
-            <a href="<?= base_url('praktikan/percobaan/') . $modul['modul']; ?>" class="btn gradien px-5">Mulai Praktikum!</a>
+            <?php if ($status['status'] == 0) {
+              $jadwal = strtotime($status['jadwal']);
+              $batas = strtotime($modul['time']);
+              $time = (date('H', $batas) * 60 * 60) + (date('i', $batas) * 60) + date('s', $batas);
+              if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) { ?>
+                <a href="<?= base_url('praktikan/percobaan/') . $modul['modul']; ?>" class="btn gradien px-5">Mulai Praktikum!</a>
+              <?php } else { ?>
+                <span class="btn btn-secondary px-5">Mulai Praktikum!</span>
+            <?php }
+            } ?>
           </div>
         </div>
       </div>

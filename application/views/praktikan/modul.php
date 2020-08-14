@@ -3,7 +3,8 @@
     <!-- Page Heading -->
     <h1 class="mt-2 mb-5" style="text-align: center;"><?= $title ?></h1>
     <div class="accordion" id="accordionExample">
-      <?php foreach ($modul as $m) : ?>
+      <?php $i = 0;
+      foreach ($modul as $m) : ?>
         <div class="card" style="background-color: #e2e1e6;">
           <div class="card-header" id="heading<?= $m['modul']; ?>">
             <h2 class="mb-0">
@@ -17,7 +18,12 @@
             <div class="card-body">
               Tujuan Percobaan: <?= $m['tujuan'] ?>
               <p class="mt-4"><b>Waktu : <?= $m['time'] ?></b></p>
-              <p><b>Status : Belum Selesai</b></p>
+              <p><b>Status : <?php if ($status[$i]['status'] == 0) {
+                                echo "Belum Selesai";
+                              } else {
+                                echo "Selesai";
+                              }
+                              $i++ ?></b></p>
               <div class="row">
                 <a class="btn ml-auto gradien" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
               </div>
