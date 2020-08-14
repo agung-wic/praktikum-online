@@ -22,7 +22,7 @@
   </div>
 </div>
 <div class="row mx-5">
-  <div class="col-lg-8 justify-content-center">
+  <div class="col-lg-6 justify-content-center">
     <div class="kotak">
       <div class="container">
         <img class="mb-5" name="main" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-auto">
+  <div class="col-lg-5">
     <div class="kotak">
       <div class="row">
         <div class="col-lg-6">
@@ -56,18 +56,6 @@
               <button type="submit" data-aksi="data" class="btn btn-secondary px-4 kirim1">
                 Kirim
               </button>
-            </div>
-
-            <input type="text" name="aksi" value="data" hidden>
-            <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
-            <div class="form-group">
-              <label for="var">Variabel</label>
-              <select class="form-control" name="var" id="var">
-                <option <?php //if (($this->input->post('var')) && $this->input->post('var') == "x") echo "selected"; 
-                        ?> data-send="[x,500]" value="x">Naik</option>
-                <option <?php //if (($this->input->post('var')) && $this->input->post('var') == "z") echo "selected"; 
-                        ?> data-send="z" value="z">Turun</option>
-              </select>
             </div>
             <div class="row justify-content-center mb-3">
               <button type="submit" data-aksi="data" class="btn btn-secondary px-4 kirim1">
