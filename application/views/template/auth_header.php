@@ -19,14 +19,15 @@
 <style>
     body {
         background-image: url("<?= base_url(); ?>/assets/img/begronlogin2.png");
-        margin-top: 125px;
+        padding-top: 125px;
         background-repeat: no-repeat;
         background-size: cover;
     }
 
     .container {
         background-color: #f6f6f6;
-        position: relative;
+        position: absolute;
+        left: 50%;
         padding: 20px;
         width: 30%;
         border-top-left-radius: 25px;
