@@ -19,7 +19,6 @@
 <style>
     body {
         background-image: url("<?= base_url(); ?>/assets/img/begronlogin2.png");
-        padding-top: 125px;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -27,7 +26,7 @@
     .container {
         background-color: #f6f6f6;
         position: absolute;
-        left: 50%;
+        place-self: center;
         padding: 20px;
         width: 30%;
         border-top-left-radius: 25px;
