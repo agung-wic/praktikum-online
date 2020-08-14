@@ -12,6 +12,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url(); ?>assets/css/sb-admin-2.min.css" type="text/css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="icon" href="<?= base_url() ?>/assets/img/logoits.png" type="image/gif">
 </head>
@@ -27,10 +28,6 @@
 
     .container {
         background-color: #f6f6f6;
-        position: absolute;
-        left: 50%;
-        top: 30%;
-        margin-right: -50%;
         padding: 20px;
         width: 30%;
         border-top-left-radius: 25px;
@@ -38,6 +35,12 @@
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
         box-shadow: 4px 4px 5px 3px rgba(0, 0, 0, 0.2);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+        left: 0;
+        right: 0;
+        text-align: center;
     }
 
     .big-icon {
