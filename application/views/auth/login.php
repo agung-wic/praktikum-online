@@ -13,6 +13,3 @@
         <h6 class="pb-4">Institut Teknologi Sepuluh Nopember</h6>
     </div>
 </div>
-
-<!-- particles.js container -->
-<div id="particles-js"></div>
