@@ -21,8 +21,8 @@
     </div>
   </div>
 </div>
-<div class="row mx-5">
-  <div class="col-lg-6 justify-content-center">
+<div class="row m-5">
+  <div class="col-lg-auto justify-content-center">
     <div class="kotak">
       <div class="container">
         <img class="mb-5" name="main" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
