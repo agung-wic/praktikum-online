@@ -26,8 +26,9 @@
     .container {
         background-color: #f6f6f6;
         position: absolute;
-        margin-left: auto;
-        margin-right: auto;
+        left: 50%;
+        top: 50%;
+        margin-right: -50%;
         padding: 20px;
         width: 30%;
         border-top-left-radius: 25px;
