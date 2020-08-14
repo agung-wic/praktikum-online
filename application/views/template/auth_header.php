@@ -12,8 +12,6 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url(); ?>assets/css/sb-admin-2.min.css" type="text/css" rel="stylesheet">
-    <link href="<?= base_url(); ?>assets/css/css.css?v=2" type="text/css" rel="stylesheet">
-    <link href="<?= base_url(); ?>assets/css/style.css?v=8" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="icon" href="<?= base_url() ?>/assets/img/logoits.png" type="image/gif">
 </head>
