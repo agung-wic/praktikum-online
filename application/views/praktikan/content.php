@@ -24,7 +24,7 @@
   </div>
   <div class="col justify-content-center">
     <div class="kotak">
-      <div class="container">
+      <div class="container py-3">
         <video width="100%" controls>
           <source src="<?= base_url('assets/vid/') . $modul['video']; ?>" type="video/mp4">
         </video>
