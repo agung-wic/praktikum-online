@@ -172,8 +172,6 @@ li {
 html,
 
 canvas {
-	display: block;
-	vertical-align: bottom;
 	position: relative;
 }
 
