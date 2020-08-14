@@ -173,6 +173,8 @@ html,
 
 canvas {
 	position: relative;
+	top: 0px;
+	left: 0px;
 }
 
 /* ---- stats.js ---- */
