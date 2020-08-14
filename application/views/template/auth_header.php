@@ -29,6 +29,7 @@
         left: 50%;
         top: 30%;
         margin-right: -50%;
+        padding: 20px;
         width: 30%;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
