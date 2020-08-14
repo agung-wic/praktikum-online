@@ -26,7 +26,6 @@
 
     .container {
         background-color: #f6f6f6;
-        position: absolute;
         padding: 20px;
         width: 30%;
         border-top-left-radius: 25px;
