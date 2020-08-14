@@ -28,8 +28,8 @@
         <img class="mb-5" name="main" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
                 border-top-right-radius: 25px;
                 border-bottom-left-radius: 25px;
-                border-bottom-right-radius: 25px;margin-top:130px;" id="main" width="500px" src="http://36.88.111.119:8081/">
-        <div class="row" style="padding-top: 100px;">
+                border-bottom-right-radius: 25px;" id="main" width="500px" src="http://36.88.111.119:8081/">
+        <div class="row">
           <div class="col-lg-8">
             <div class="row">
               <div class="col-lg-6">
