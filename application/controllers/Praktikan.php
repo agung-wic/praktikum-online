@@ -136,6 +136,7 @@ class Praktikan extends CI_Controller
             $result = [$result1, $result2];
             if ($result1 || $result2) {
                 $success = [$socket, $result];
+                usleep(2 * 1000);
                 return $success;
             } else {
                 echo "<script>alert('Tidak dapat terhubung ke server!');
@@ -154,6 +155,7 @@ class Praktikan extends CI_Controller
             $result2 = htmlspecialchars($result2);
             if ($result2) {
                 return $result2;
+                usleep(2 * 1000);
             } else {
                 echo "<script>alert('Tidak dapat membaca respon dari server!');
                     window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
