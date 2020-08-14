@@ -11,17 +11,6 @@
 }
 
 /* ---- reset ---- */
-
-body {
-	margin: 0;
-	font: normal 100% Arial, Helvetica, sans-serif;
-}
-
-canvas {
-	display: block;
-	vertical-align: bottom;
-}
-
 .gradien {
 	background: linear-gradient(
 		40deg,
