@@ -1,5 +1,5 @@
 <div id="particles-js">
-    <div class="container justify-content-center">
+    <div class="container" style="position:absolute">
         <!-- Logo -->
         <img class="logo" src="<?php echo base_url(); ?>assets/img/logoits.png" alt="Logo ITS">
 
