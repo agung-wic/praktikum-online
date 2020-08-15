@@ -54,11 +54,19 @@
     });
   });
 
-  $('#aaa').click(function() {
-    var aaa = $(this);
-    aaa.prop('disabled', true);
+  $('#param1').click(function() {
+    var param1 = $(this);
+    param1.prop('disabled', true);
     setTimeout(function() {
-      aaa.prop('disabled', false);
+      param1.prop('disabled', false);
+    }, 3000);
+  });
+
+  $('#param2').click(function() {
+    var param2 = $(this);
+    param2.prop('disabled', true);
+    setTimeout(function() {
+      param2.prop('disabled', false);
     }, 3000);
   });
 </script>
