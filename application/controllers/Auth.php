@@ -143,7 +143,7 @@ class Auth extends CI_Controller
             'smtp_host' => 'smtp.hostinger.co.id',
             'smtp_user' => 'fisdas@virtulab-its.com',
             'smtp_pass' => '1234asdf!@#$ASDF',
-            'smtp_port' => 465,
+            'smtp_port' => 587,
             'mailtype' => 'html',
             'charset' => 'utf-8',
             'newline' => "\r\n"
