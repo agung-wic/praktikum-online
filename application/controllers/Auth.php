@@ -265,8 +265,9 @@ class Auth extends CI_Controller
                     <hr>
                     <p>Hi Agung,</p>
                     <p>Klik tombol dibawah ini untuk mengonfirmasi pergantian password anda.</p>
-                    <a href="' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" type="button" class="btn btn-secondary">Konfirmasi</a>
-                </div>
+                    <a href="' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" type="button" class="btn btn-secondary">Atur Ulang</a>
+                    <p style="font-size=8px;"><strong>Jika anda mengalami kesulitan dalam melakukan klik tombol "Konfirmasi", silakan salin link ini pada browser anda: ' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '</strong></p>
+                    </div>
             </section>
             <!-- Optional JavaScript -->
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -277,9 +278,7 @@ class Auth extends CI_Controller
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
             </script>
             </body>   
-            </html>
-            
-            Click this link to reset your password : <a href="' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '">Reset Password</a>');
+            </html>');
         }
 
         if ($this->email->send()) {
