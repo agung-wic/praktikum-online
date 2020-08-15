@@ -140,8 +140,8 @@ class Auth extends CI_Controller
     {
         $config = [
             'protocol' => 'smtp',
-            'smtp_host' => 'ssl://smtp.googlemail.com',
-            'smtp_user' => 'fisdas2020@gmail.com',
+            'smtp_host' => 'smtp.hostinger.co.id',
+            'smtp_user' => 'fisdas@virtulab-its.com',
             'smtp_pass' => '1234asdf!@#$ASDF',
             'smtp_port' => 465,
             'mailtype' => 'html',
@@ -152,7 +152,7 @@ class Auth extends CI_Controller
         $this->load->library('email', $config);
         $this->email->initialize($config);
 
-        $this->email->from('fisdas2020@gmail.com', 'Praktikum Fisika Dasar');
+        $this->email->from('fisdas@virtulab-its.com', 'Praktikum Fisika Dasar');
         $this->email->to($this->input->post('email', true));
 
         if ($type == 'verify') {
