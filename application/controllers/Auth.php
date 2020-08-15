@@ -258,7 +258,7 @@ class Auth extends CI_Controller
             </head>
             <section class="content">
                 <div class="wrapper">
-                    <h4>Konfirmasi Pergantian Password</h4>
+                    <h4>Konfirmasi Perubahan Kata Sandi</h4>
                     <hr>
                     <p>Halo <strong>' . $data['name'] . '</strong>,</p>
                     <p>Klik tombol dibawah ini untuk mengatur ulang kata sandi anda.</p>
