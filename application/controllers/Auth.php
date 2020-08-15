@@ -197,7 +197,7 @@ class Auth extends CI_Controller
                 <div class="wrapper">
                     <h4>Verifikasi Akun E-Mail</h4>
                     <hr>
-                    <p>Halo ' . $data['name'] . ',</p>
+                    <p>Halo <strong>' . $data['name'] . '</strong>,</p>
                     <p>Terimakasih telah membuat akun di virtulab-its.com. Klik tombol dibawah ini untuk
                         memverifikasi akun email
                         anda.</p>
@@ -260,7 +260,7 @@ class Auth extends CI_Controller
                 <div class="wrapper">
                     <h4>Konfirmasi Pergantian Password</h4>
                     <hr>
-                    <p>Halo ' . $data['name'] . ',</p>
+                    <p>Halo <strong>' . $data['name'] . '</strong>,</p>
                     <p>Klik tombol dibawah ini untuk mengatur ulang kata sandi anda.</p>
                     <a href="' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" target="_blank" style="display: inline-block; color: #ffffff; background: linear-gradient(
                         40deg,
