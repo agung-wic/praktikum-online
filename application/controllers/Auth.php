@@ -140,7 +140,7 @@ class Auth extends CI_Controller
     {
         $config = [
             'protocol' => 'smtp',
-            'smtp_host' => 'smtp.hostinger.co.id',
+            'smtp_host' => 'ssl://smtp.hostinger.co.id',
             'smtp_user' => 'fisdas@virtulab-its.com',
             'smtp_pass' => '1234asdf!@#$ASDF',
             'smtp_port' => 587,
