@@ -62,23 +62,27 @@ class Praktikan extends CI_Controller
         $batas = strtotime($data['modul']['time']);
         $time = (date('H', $batas) * 60 * 60) + (date('i', $batas) * 60) + date('s', $batas);
         if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) {
-            $this->_connectsocket($id);
-            $data['output'] = NULL;
+            if ($cek['status'] == 0) {
+                $this->_connectsocket($id);
+                $data['output'] = NULL;
 
-            $data['title'] = 'Percobaan Praktikum';
-            $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+                $data['title'] = 'Percobaan Praktikum';
+                $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
 
-            $this->db->select('*');
-            $this->db->from('jadwal');
-            $this->db->where('nrp', $this->session->userdata('nrp'));
-            $this->db->where('modul_id', $id);
-            $data['jadwal'] = $this->db->get()->row_array();
+                $this->db->select('*');
+                $this->db->from('jadwal');
+                $this->db->where('nrp', $this->session->userdata('nrp'));
+                $this->db->where('modul_id', $id);
+                $data['jadwal'] = $this->db->get()->row_array();
 
-            $this->load->view('template/header', $data);
-            $this->load->view('template/sidebar', $data);
-            $this->load->view('template/topbar', $data);
-            $this->load->view('praktikan/percobaan', $data);
-            $this->load->view('template/footer');
+                $this->load->view('template/header', $data);
+                $this->load->view('template/sidebar', $data);
+                $this->load->view('template/topbar', $data);
+                $this->load->view('praktikan/percobaan', $data);
+                $this->load->view('template/footer');
+            } else {
+                redirect(base_url('praktikan/modul/') . $id);
+            }
         } else {
             redirect(base_url('praktikan/modul/') . $id);
         }
