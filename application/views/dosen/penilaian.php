@@ -52,6 +52,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">NRP</th>
+                                    <th scope="col">Modul</th>
                                     <th scope="col">Asisten</th>
                                     <th scope="col">Laporan</th>
                                     <th scope="col">Waktu</th>
@@ -64,6 +65,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">NRP</th>
+                                    <th scope="col">Modul</th>
                                     <th scope="col">Asisten</th>
                                     <th scope="col">Laporan</th>
                                     <th scope="col">Waktu</th>
@@ -79,6 +81,7 @@
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $l['name_praktikan']; ?></td>
                                         <td><?= $l['nrp']; ?></td>
+                                        <td><?= $l['modul']; ?></td>
                                         <td><?= $l['asisten']; ?></td>
                                         <td>
                                             <a href="<?= base_url('assets/laporan/') . $l['laporan']; ?>" download class="badge badge-pill badge-warning">
