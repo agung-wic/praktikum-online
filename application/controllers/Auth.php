@@ -206,7 +206,7 @@ class Auth extends CI_Controller
                         rgba(111, 140, 252, 1) 8%,
                         rgba(47, 200, 201, 1) 100%
                     ); border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db; ">Konfirmasi</a>
-                    <p style="font-size=8px;"><strong>Jika anda mengalami kesulitan dalam melakukan klik tombol "Konfirmasi", silakan salin link ini pada browser anda: ' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '</strong></p>
+                    <p style="font-size=8px;">Jika anda mengalami kesulitan dalam melakukan klik tombol "Konfirmasi", silakan salin link ini pada browser anda:<strong> ' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '</strong></p>
                 </div>
             </section>
             <!-- Optional JavaScript -->
@@ -221,9 +221,6 @@ class Auth extends CI_Controller
         } else if ($type == 'forgot') {
             $this->email->subject('Reset Password');
             $this->email->message('
-            
-            <!DOCTYPE html>
-            <html lang="en">
             <head>
                 <style>
                     section {
@@ -263,14 +260,14 @@ class Auth extends CI_Controller
                 <div class="wrapper">
                     <h4>Konfirmasi Pergantian Password</h4>
                     <hr>
-                    <p>Hi Agung,</p>
-                    <p>Klik tombol dibawah ini untuk mengonfirmasi pergantian password anda.</p>
+                    <p>Halo ' . $data['name'] . ',</p>
+                    <p>Klik tombol dibawah ini untuk mengatur ulang kata sandi anda.</p>
                     <a href="' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" target="_blank" style="display: inline-block; color: #ffffff; background: linear-gradient(
                         40deg,
                         rgba(111, 140, 252, 1) 8%,
                         rgba(47, 200, 201, 1) 100%
                     ); border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db; ">Atur Ulang</a>
-                    <p style="font-size=8px;"><strong>Jika anda mengalami kesulitan dalam melakukan klik tombol "Atur Ulang", silakan salin link ini pada browser anda: ' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '</strong></p>
+                    <p style="font-size:8px;">Jika anda mengalami kesulitan dalam melakukan klik tombol "Atur Ulang", silakan salin link ini pada browser anda: <strong>' . base_url() . 'auth/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '</strong></p>
                     </div>
             </section>
             <!-- Optional JavaScript -->
@@ -281,8 +278,7 @@ class Auth extends CI_Controller
             </script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
             </script>
-            </body>   
-            </html>');
+            </body>');
         }
 
         if ($this->email->send()) {
