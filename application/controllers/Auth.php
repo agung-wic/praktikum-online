@@ -126,7 +126,7 @@ class Auth extends CI_Controller
                 $this->db->insert('user', $data);
                 $this->db->insert('user_token', $user_token);
 
-                $this->_sendEmail($token, 'verify');
+                $this->_sendEmail($token, 'verify', $data);
 
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Selamat! Akun berhasil dibuat. Silakan periksa email untuk aktivasi!
@@ -157,9 +157,7 @@ class Auth extends CI_Controller
 
         if ($type == 'verify') {
             $this->email->subject('Verifikasi Akun');
-            $this->email->message('<!DOCTYPE html>
-            <html lang="en">
-            <head>
+            $this->email->message('
                 <style>
                     section {
                         margin-top: 195px;
@@ -193,28 +191,21 @@ class Auth extends CI_Controller
                 </style>
                 <!-- Bootstrap CSS -->
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-            </head>
             <section class="content">
                 <div class="wrapper">
                     <h4>Verifikasi Akun E-Mail</h4>
                     <hr>
-                    <p>Halo ' . $data['name'] . ',</p>
+                    <p>Halo ' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . ',</p>
                     <p>Terimakasih telah membuat akun di virtulab-its.com. Klik tombol dibawah ini untuk
                         memverifikasi akun E-Mail
                         anda.</p>
-                    <a href="' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" style="display: inline-block; color: #ffffff; background-color: #3498db; border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db; ">Konfirmasi</a>
+                    <a href="' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" style="display: inline-block; color: #ffffff; background: linear-gradient(
+                        40deg,
+                        rgba(111, 140, 252, 1) 8%,
+                        rgba(47, 200, 201, 1) 100%
+                    ); border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db; ">Konfirmasi</a>
                 </div>
-            </section>
-            <!-- Optional JavaScript -->
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-            </script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-            </script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-            </script>
-            </body>   
-            </html>');
+            </section>');
         } else if ($type == 'forgot') {
             $this->email->subject('Reset Password');
             $this->email->message('
