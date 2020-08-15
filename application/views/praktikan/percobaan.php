@@ -55,7 +55,7 @@
                 </div>
               </div>
               <div class="row justify-content-center mb-3">
-                <button type="submit" id="aaa" data-aksi="data" class="btn btn-secondary px-4 kirim1">
+                <button type="submit" id="param1" data-aksi="data" class="btn btn-secondary px-4 kirim1">
                   Kirim
                 </button>
               </div>
@@ -63,7 +63,7 @@
               <input type="text" id="id" name="id" data-id="<?= $modul['modul']; ?>" value="<?= $modul['modul']; ?>" hidden>
               <input type="text" name="aksi" value="jatuhkan" hidden>
               <div class="row justify-content-center mb-3">
-                <button type="submit" id="aaa" data-aksi="jatuhkan" class="btn btn-secondary px-4 kirim2">
+                <button type="submit" id="param2" data-aksi="jatuhkan" class="btn btn-secondary px-4 kirim2">
                   Jatuhkan
                 </button>
               </div>
