@@ -14,7 +14,7 @@ class Dosen extends CI_Controller
     $this->load->model('Dosen_model');
     $data['modul'] = $this->db->get('modul')->result_array();
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-    $data['title'] = 'Modul';
+    $data['title'] = 'Nilai Praktikum';
     $data['list'] = $this->Dosen_model->TampilModul();
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
@@ -23,12 +23,12 @@ class Dosen extends CI_Controller
     $this->load->view('template/footer');
   }
 
-  public function penilaian()
+  public function penilaian($modul)
   {
     $this->load->model('Dosen_model');
     $data['title'] = 'Nilai Praktikum';
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-    $data['list'] = $this->Dosen_model->TampilNilai();
+    $data['list'] = $this->Dosen_model->TampilNilai($modul);
     $i = 0;
     while ($i < count($data['list'])) {
       $asisten = $data['list'][$i]['asisten'];

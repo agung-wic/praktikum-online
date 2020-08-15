@@ -3,12 +3,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Dosen_model extends CI_Model
 {
-  public function TampilNilai()
+  public function TampilNilai($id)
   {
-    $query = "SELECT `nilai`.`id`, `user`.`name` as 'name_praktikan', `user`.`nrp`, `modul`.`modul` as 'modul_id', 
+    $query = "SELECT `nilai`.`id`, `user`.`name` as 'name_praktikan', `user`.`nrp`, `modul`.`modul` as 'modul_id',
               `modul`.`name` as 'modul', `nilai`.`laporan`, `nilai`.`laporan_time`, `nilai`.`is_acc`, `nilai`.`asisten`, `nilai`.`nilai`
               FROM `user`   INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
-              INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul`";
+              INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` HAVING `modul_id` = '$id'";
 
     return $this->db->query($query)->result_array();
   }

@@ -11,9 +11,9 @@
                     <div class="col">
                         <h6 class="m-0 font-weight-bold "><?= $title; ?> Praktikum</h6>
                     </div>
-                    <div class="col-auto mr-auto">
+                    <!-- <div class="col-auto mr-auto">
                         <a href="" class="btn gradien mb-3 tampilTambahModul" data-toggle="modal" data-target="#BuatModul">Buat Modul</a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
