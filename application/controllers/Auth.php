@@ -202,7 +202,7 @@ class Auth extends CI_Controller
                     <p>Terimakasih telah membuat akun di virtulab-its.com. Klik tombol dibawah ini untuk
                         memverifikasi akun E-Mail
                         anda.</p>
-                    <a href="' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" type="button" class="btn btn-secondary">Konfirmasi</>
+                    <a href="' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" class="btn btn-secondary">Konfirmasi</>
                 </div>
             </section>
             <!-- Optional JavaScript -->
