@@ -33,7 +33,7 @@ class Dosen extends CI_Controller
     while ($i < count($data['list'])) {
       $asisten = $data['list'][$i]['asisten'];
       if ($asisten) {
-        $nama = $this-  >db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
+        $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
         $data['list'][$i]['asisten'] = $nama['name'];
       }
       $i++;
