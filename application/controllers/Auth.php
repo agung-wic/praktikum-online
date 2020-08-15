@@ -157,12 +157,11 @@ class Auth extends CI_Controller
 
         if ($type == 'verify') {
             $this->email->subject('Verifikasi Akun');
-            $this->email->message('<!DOCTYPE html>
-            <html lang="en">
+            $this->email->message('
             <head>
                 <style>
                     section {
-                        margin-top: 195px;
+                        margin-top: 20px;
                         margin-left: auto;
                         margin-right: auto;
                         background-color: #f6f6f6;
@@ -198,9 +197,9 @@ class Auth extends CI_Controller
                 <div class="wrapper">
                     <h4>Verifikasi Akun E-Mail</h4>
                     <hr>
-                    <p>Halo ' . $data['name'] . ',</p>
+                    <p>Halo ' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '</p>
                     <p>Terimakasih telah membuat akun di virtulab-its.com. Klik tombol dibawah ini untuk
-                        memverifikasi akun E-Mail
+                        memverifikasi akun email
                         anda.</p>
                     <a href="' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" style="display: inline-block; color: #ffffff; background: linear-gradient(
                         40deg,
@@ -217,8 +216,7 @@ class Auth extends CI_Controller
             </script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
             </script>
-            </body>   
-            </html>');
+            </body>');
         } else if ($type == 'forgot') {
             $this->email->subject('Reset Password');
             $this->email->message('
