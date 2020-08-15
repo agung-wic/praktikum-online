@@ -354,7 +354,7 @@ class Auth extends CI_Controller
                 ];
 
                 $this->db->insert('user_token', $user_token);
-                $this->_sendEmail($token, 'forgot');
+                $this->_sendEmail($token, 'forgot', $user);
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                 Silakan periksa email untuk mengatur ulang kata sandi!
                 </div>');
