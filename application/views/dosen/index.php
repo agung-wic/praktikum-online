@@ -36,7 +36,7 @@
                         <th scope="row"><?= $i; ?></th>
                         <td><?= $m['modul'] ?>. <?= $m['name']; ?></td>
                         <td>
-                          <a href="<?= base_url('dosen/detailnilai/') . $m['id']; ?>" class="badge badge-pill badge-info">
+                          <a href="<?= base_url('dosen/penilaian') ?>" class="badge badge-pill badge-info">
                             <i class="fas fa-users"></i>
                             Detail
                           </a>
