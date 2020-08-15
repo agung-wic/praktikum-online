@@ -126,7 +126,7 @@ class Auth extends CI_Controller
                 $this->db->insert('user', $data);
                 $this->db->insert('user_token', $user_token);
 
-                $this->_sendEmail($token, 'verify');
+                $this->_sendEmail($token, 'verify', $data);
 
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Selamat! Akun berhasil dibuat. Silakan periksa email untuk aktivasi!
