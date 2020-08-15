@@ -195,7 +195,7 @@ class Auth extends CI_Controller
                 <div class="wrapper">
                     <h4>Verifikasi Akun E-Mail</h4>
                     <hr>
-                    <p>Halo ' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . ',</p>
+                    <p>Halo ' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '</p>
                     <p>Terimakasih telah membuat akun di virtulab-its.com. Klik tombol dibawah ini untuk
                         memverifikasi akun E-Mail
                         anda.</p>
