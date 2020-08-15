@@ -64,11 +64,11 @@ class Auth extends CI_Controller
                     ];
                     $this->session->set_userdata($data);
                     if ($user['role_id'] == 1) {
-                        redirect(base_url('admin'));
+                        redirect(base_url('profil'));
                     } else if ($user['role_id'] == 2) {
-                        redirect(base_url('praktikan'));
+                        redirect(base_url('profil'));
                     } else if ($user['role_id'] == 4) {
-                        redirect(base_url('dosen'));
+                        redirect(base_url('profil'));
                     }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!!</div>');
