@@ -55,7 +55,7 @@
                 </div>
               </div>
               <div class="row justify-content-center mb-3">
-                <button type="submit" data-aksi="data" class="btn btn-secondary px-4 kirim1">
+                <button type="submit" id="aaa" data-aksi="data" class="btn btn-secondary px-4 kirim1">
                   Kirim
                 </button>
               </div>
@@ -63,7 +63,7 @@
               <input type="text" id="id" name="id" data-id="<?= $modul['modul']; ?>" value="<?= $modul['modul']; ?>" hidden>
               <input type="text" name="aksi" value="jatuhkan" hidden>
               <div class="row justify-content-center mb-3">
-                <button type="submit" data-aksi="jatuhkan" class="btn btn-secondary px-4 kirim2">
+                <button type="submit" id="aaa" data-aksi="jatuhkan" class="btn btn-secondary px-4 kirim2">
                   Jatuhkan
                 </button>
               </div>
@@ -151,4 +151,12 @@
       window.location.href = "<?= base_url('praktikan/modul/') ?>";
     }
   }, 1000);
+
+  $('#aaa').click(function() {
+    var aaa = $(this);
+    aaa.prop('disabled', true);
+    setTimeout(function() {
+      aaa.prop('disabled', false);
+    }, 3000);
+  });
 </script>
