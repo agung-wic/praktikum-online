@@ -206,7 +206,7 @@ class Auth extends CI_Controller
                         rgba(111, 140, 252, 1) 8%,
                         rgba(47, 200, 201, 1) 100%
                     ); border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db; ">Konfirmasi</a>
-                    <p style="font-size=8px;">Jika anda mengalami kesulitan dalam melakukan klik tombol "Konfirmasi", silakan salin link ini pada browser anda: ' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '</p>
+                    <p style="font-size=8px;"><strong>Jika anda mengalami kesulitan dalam melakukan klik tombol "Konfirmasi", silakan salin link ini pada browser anda: ' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '</strong></p>
                 </div>
             </section>
             <!-- Optional JavaScript -->
