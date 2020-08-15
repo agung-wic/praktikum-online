@@ -198,11 +198,11 @@ class Auth extends CI_Controller
                 <div class="wrapper">
                     <h4>Verifikasi Akun E-Mail</h4>
                     <hr>
-                    <p>Halo ' . $data["name"] . ',</p>
+                    <p>Halo ' . $data['name'] . ',</p>
                     <p>Terimakasih telah membuat akun di virtulab-its.com. Klik tombol dibawah ini untuk
                         memverifikasi akun E-Mail
                         anda.</p>
-                    <a href="' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" class="btn btn-secondary">Konfirmasi</>
+                    <a href="' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" style="display: inline-block; color: #ffffff; background-color: #3498db; border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db; ">Konfirmasi</a>
                 </div>
             </section>
             <!-- Optional JavaScript -->
