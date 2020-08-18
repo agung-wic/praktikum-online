@@ -19,11 +19,15 @@
               Tujuan Percobaan: <?= $m['tujuan'] ?>
               <p class="mt-4"><b>Waktu : <?= $m['time'] ?></b></p>
               <p><b>Status : <?php
-                              if ($m['modul'] == $status[$i]['modul_id']) {
-                                if ($status[$i]['status'] == 0) {
-                                  echo "Belum Selesai";
+                              if ($status) {
+                                if ($m['modul'] == $status[$i]['modul_id']) {
+                                  if ($status[$i]['status'] == 0) {
+                                    echo "Belum Selesai";
+                                  } else {
+                                    echo "Selesai";
+                                  }
                                 } else {
-                                  echo "Selesai";
+                                  echo "Belum Selesai";
                                 }
                               } else {
                                 echo "Belum Selesai";
