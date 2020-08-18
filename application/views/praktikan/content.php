@@ -43,7 +43,7 @@
         </div>
         <div class="row mt-5">
           <div class="col-lg-auto ml-auto">
-            <?php if ($status['status'] == 0) {
+            <?php if ($status['status'] != 1) {
               $jadwal = strtotime($status['jadwal']);
               $batas = strtotime($modul['time']);
               $time = (date('H', $batas) * 60 * 60) + (date('i', $batas) * 60) + date('s', $batas);
