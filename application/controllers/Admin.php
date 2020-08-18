@@ -387,7 +387,7 @@ class Admin extends CI_Controller
         $data = [
             "nrp" => $this->input->post('nrp', true),
             "modul_id" => $this->input->post('modul_id', true),
-            "jadwal" => $this->input->post('jadwal', true)
+            "jadwal" => str_replace("T", " ", $this->input->post('jadwal', true))
         ];
 
         $this->db->insert('jadwal', $data);
