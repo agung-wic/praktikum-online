@@ -37,8 +37,12 @@
                                                 <td><?= $m['modul'] ?>. <?= $m['name']; ?></td>
                                                 <td>
                                                     <a href="<?= base_url('dosen/editModul/') . $m['id']; ?>" class="badge badge-pill badge-primary tampilEditModul" data-id="<?= $m['id']; ?>" data-toggle="modal" data-target="#BuatModul">
+                                                        <i class="fas fa-video"></i>
+                                                        Edit Video
+                                                    </a>
+                                                    <a href="<?= base_url('dosen/editModul/') . $m['id']; ?>" class="badge badge-pill badge-primary tampilEditModul" data-id="<?= $m['id']; ?>" data-toggle="modal" data-target="#BuatModul">
                                                         <i class=" fas fa-fw fa-edit"></i>
-                                                        Edit
+                                                        Edit Konten
                                                     </a>
                                                     <a href="<?= base_url('dosen/deleteModul/') . $m['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
                                                         <i class="fas fa-fw fa-trash-alt"></i>
