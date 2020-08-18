@@ -18,13 +18,19 @@
             <div class="card-body">
               Tujuan Percobaan: <?= $m['tujuan'] ?>
               <p class="mt-4"><b>Waktu : <?= $m['time'] ?></b></p>
-
-              <a class="btn ml-auto gradien" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
+              <p><b>Status : <?php if ($status[$i]['status'] == 0 || NULL) {
+                                echo "Belum Selesai";
+                              } else {
+                                echo "Selesai";
+                              }
+                              $i++ ?></b></p>
+              <div class="row">
+                <a class="btn ml-auto gradien" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
+              </div>
             </div>
           </div>
         </div>
+      <?php endforeach; ?>
     </div>
-  <?php endforeach; ?>
   </div>
-</div>
 </div>
