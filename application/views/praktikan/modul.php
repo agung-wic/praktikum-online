@@ -26,13 +26,14 @@
                                   } else {
                                     echo "Selesai";
                                   }
+                                  $i++;
                                 } else {
                                   echo "Belum Selesai";
                                 }
                               } else {
                                 echo "Belum Selesai";
                               }
-                              $i++ ?></b></p>
+                              ?></b></p>
               <div class="row">
                 <a class="btn ml-auto gradien" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
               </div>
