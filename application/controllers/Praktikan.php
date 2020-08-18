@@ -26,10 +26,10 @@ class Praktikan extends CI_Controller
 
     public function modul($id = NULL)
     {
-        $data['modul'] = $this->db->get('modul')->result_array();
+        $this->load->model('Praktikan_model');
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         if (!$id) {
-            $data['status'] = $this->db->get_where('jadwal', ['nrp' => $this->session->userdata('nrp')])->result_array();
+            $data['modul'] = $this->Praktikan_model->TampilModul($this->session->userdata('nrp'));
             $data['title'] = 'Modul Praktikum';
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar', $data);
@@ -38,7 +38,6 @@ class Praktikan extends CI_Controller
             $this->load->view('template/footer');
         } else {
             $data['modul'] = $this->db->get_where('modul', ['modul' => $id])->row_array();
-
             $this->db->where('modul_id', $id);
             $this->db->where('nrp', $this->session->userdata('nrp'));
             $data['status'] = $this->db->get('jadwal')->row_array();

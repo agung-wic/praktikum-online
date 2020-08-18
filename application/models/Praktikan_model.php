@@ -56,4 +56,13 @@ class Praktikan_model extends CI_Model
 
     return $this->db->query($query)->result_array();
   }
+
+  public function TampilModul($id)
+  {
+    $query = "SELECT `modul`.*, `jadwal`.`status` FROM `jadwal` 
+              RIGHT JOIN `modul` ON `jadwal`.`modul_id` = `modul`.`modul`
+              WHERE (`jadwal`.`nrp`=$id OR `jadwal`.`nrp` IS NULL) ";
+
+    return $this->db->query($query)->result_array();
+  }
 }
