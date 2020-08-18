@@ -18,10 +18,15 @@
             <div class="card-body">
               Tujuan Percobaan: <?= $m['tujuan'] ?>
               <p class="mt-4"><b>Waktu : <?= $m['time'] ?></b></p>
-              <p><b>Status : <?php if ($m['status'] == 0 || NULL) {
-                                echo "Belum Selesai";
+              <p><b>Status : <?php
+                              if ($m['modul'] == $status[$i]['modul_id']) {
+                                if ($status[$i]['status'] == 0) {
+                                  echo "Belum Selesai";
+                                } else {
+                                  echo "Selesai";
+                                }
                               } else {
-                                echo "Selesai";
+                                echo "Belum Selesai";
                               }
                               $i++ ?></b></p>
               <div class="row">
