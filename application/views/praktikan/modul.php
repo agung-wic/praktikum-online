@@ -18,7 +18,7 @@
             <div class="card-body">
               Tujuan Percobaan: <?= $m['tujuan'] ?>
               <p class="mt-4"><b>Waktu : <?= $m['time'] ?></b></p>
-              <p><b>Status : <?php if ($status[$i]['status'] == 0) {
+              <p><b>Status : <?php if ($status[$i]['status'] == 0 || NULL) {
                                 echo "Belum Selesai";
                               } else {
                                 echo "Selesai";
