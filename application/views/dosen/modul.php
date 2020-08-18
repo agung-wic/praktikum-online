@@ -36,7 +36,7 @@
                                                 <th scope="row"><?= $i; ?></th>
                                                 <td><?= $m['modul'] ?>. <?= $m['name']; ?></td>
                                                 <td>
-                                                    <a href="<?= base_url('dosen/editModul/') . $m['id']; ?>" class="badge badge-pill badge-primary tampilEditModul" data-id="<?= $m['id']; ?>" data-toggle="modal" data-target="#BuatModul">
+                                                    <a href="<?= base_url('dosen/editModul/') . $m['id']; ?>" class="badge badge-pill badge-info tampilEditModul" data-id="<?= $m['id']; ?>" data-toggle="modal" data-target="#BuatModul">
                                                         <i class="fas fa-video"></i>
                                                         Edit Video
                                                     </a>
