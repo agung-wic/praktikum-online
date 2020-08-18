@@ -19,6 +19,8 @@
               Tujuan Percobaan: <?= $m['tujuan'] ?>
               <p class="mt-4"><b>Waktu : <?= $m['time'] ?></b></p>
               <p><b>Status : <?php
+                              var_dump($status);
+                              die;
                               if (isset($status[$i])) {
                                 if ($m['modul'] == $status[$i]['modul_id']) {
                                   if ($status[$i]['status'] == 0) {
