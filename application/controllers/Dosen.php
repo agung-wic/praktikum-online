@@ -168,7 +168,6 @@ class Dosen extends CI_Controller
 
     // Images upload path
     $imageFolder = $_SERVER['DOCUMENT_ROOT'] . "/assets/img/";
-    var_dump($_SERVER['DOCUMENT_ROOT']);
     reset($_FILES);
     $temp = current($_FILES);
     if (is_uploaded_file($temp['tmp_name'])) {
@@ -196,6 +195,7 @@ class Dosen extends CI_Controller
 
       // Accept upload if there was no origin, or if it is an accepted origin
       $filetowrite = $imageFolder . $temp['name'];
+      var_dump($filetowrite);
       move_uploaded_file($temp['tmp_name'], $filetowrite);
 
       // Respond to the successful upload with JSON.
