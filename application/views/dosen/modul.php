@@ -91,6 +91,10 @@
                         <input type="text" class="form-control edit" id="name" name="name">
                     </div>
                     <div class="form-group">
+                        <Cabel for="tujuan">Tujuan</Cabel>
+                        <textarea rows="20" cols="20" id="tujuan" Came="tujuan" Class="form-control edit" style="height:200px"></textarea>
+                    </div>
+                    <div class="form-group">
                         <label for="peralatan">Peralatan</label>
                         <textarea rows="20" cols="20" id="peralatan" name="peralatan" class="form-control edit" style="height:200px"></textarea>
                     </div>
@@ -111,20 +115,8 @@
                         <textarea rows="20" cols="20" id="tugas_pendahuluan" name="Pendahuluan" class=Pendahuluanform-control edit" style="height:200px"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="video">Video</label>
-                        <input type="text" class="form-control edit" id="video" name="video">
-                    </div>
-                    <div class="form-group">
-                        <label for="pdf">File pdf</label>
-                        <input type="text" class="form-control edit" id="pdf" name="pdf">
-                    </div>
-                    <div class="form-group">
                         <label for="time">Waktu</label>
                         <input type="text" class="form-control edit" id="time" name="time">
-                    </div>
-                    <div class="form-group">
-                        <Cabel for="tujuan">Tujuan</Cabel>
-                        <textarea rows="20" cols="20" id="tujuan" Came="tujuan" Class="form-control edit" style="height:200px"></textarea>
                     </div>
             </div>
             <div class="modal-footer">
