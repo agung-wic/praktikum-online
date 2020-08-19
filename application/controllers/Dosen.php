@@ -167,7 +167,7 @@ class Dosen extends CI_Controller
     $accepted_origins = array("https://virtulab-its.com");
 
     // Images upload path
-    $imageFolder = base_url('assets/img');
+    $imageFolder = $_SERVER['DOCUMENT_ROOT'] . "/assets/img";
 
     reset($_FILES);
     $temp = current($_FILES);
@@ -197,7 +197,7 @@ class Dosen extends CI_Controller
       }
 
       // Accept upload if there was no origin, or if it is an accepted origin
-      $filetowrite = '$imageFolder' . $temp['name'];
+      $filetowrite = $imageFolder . $temp['name'];
       move_uploaded_file($temp['tmp_name'], $filetowrite);
 
       // Respond to the successful upload with JSON.
