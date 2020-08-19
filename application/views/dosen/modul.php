@@ -111,10 +111,6 @@
                         <textarea rows="20" cols="20" id="tugas_pendahuluan" name="Pendahuluan" class=Pendahuluanform-control edit" style="height:200px"></textarea>
                     </div>
                     <div class="form-group">
-                        <Cabel for="content">Content</Cabel>
-                        <textarea rows="20" cols="20" id="content" Came="content" Class="form-control edit" style="height:200px"></textarea>
-                    </div>
-                    <div class="form-group">
                         <label for="video">Video</label>
                         <input type="text" class="form-control edit" id="video" name="video">
                     </div>
