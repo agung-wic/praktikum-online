@@ -293,8 +293,41 @@ $(function () {
 			success: function (data) {
 				tinymce.init({
 					selector: "textarea",
-					images_upload_url: "postAcceptor.php",
+					height: 400,
+					plugins: "code image",
+					toolbar: "undo redo | image code",
+					images_upload_url: "upload.php",
 					images_upload_base_path: "/assets/img",
+					images_upload_handler: function (blobInfo, success, failure) {
+						var xhr, formData;
+
+						xhr = new XMLHttpRequest();
+						xhr.withCredentials = false;
+						xhr.open("POST", "upload.php");
+
+						xhr.onload = function () {
+							var json;
+
+							if (xhr.status != 200) {
+								failure("HTTP Error: " + xhr.status);
+								return;
+							}
+
+							json = JSON.parse(xhr.responseText);
+
+							if (!json || typeof json.location != "string") {
+								failure("Invalid JSON: " + xhr.responseText);
+								return;
+							}
+
+							success(json.location);
+						};
+
+						formData = new FormData();
+						formData.append("file", blobInfo.blob(), blobInfo.filename());
+
+						xhr.send(formData);
+					},
 				});
 				console.log(data);
 				$("#id").val(data.id);
