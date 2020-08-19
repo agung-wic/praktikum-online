@@ -197,7 +197,9 @@ class Dosen extends CI_Controller
       $filetowrite = $imageFolder . $temp['name'];
       move_uploaded_file($temp['tmp_name'], $filetowrite);
       // Respond to the successful upload with JSON.
-      echo json_encode(array('location' => $filetowrite));
+      $imageFolder2 = base_url('assets/img');
+      $file = $imageFolder2 . $temp['name'];
+      echo json_encode(array('location' => $file));
     } else {
       // Notify editor that the upload failed
       header("HTTP/1.1 500 Server Error");
