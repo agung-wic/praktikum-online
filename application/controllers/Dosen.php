@@ -172,12 +172,12 @@ class Dosen extends CI_Controller
     reset($_FILES);
     $temp = current($_FILES);
     if (is_uploaded_file($temp['tmp_name'])) {
-      if (isset($_SERVER['HTTP_ORIGIN'])) {
-        var_dump($_SERVER['HTTP_ORIGIN']);
+      if (isset($_SERVER['HTTPS_ORIGIN'])) {
+        var_dump($_SERVER['HTTPS_ORIGIN']);
         die;
         // Same-origin requests won't set an origin. If the origin is set, it must be valid.
-        if (in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)) {
-          header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+        if (in_array($_SERVER['HTTPS_ORIGIN'], $accepted_origins)) {
+          header('Access-Control-Allow-Origin: ' . $_SERVER['HTTPS_ORIGIN']);
         } else {
           header("HTTP/1.1 403 Origin Denied");
           return;
