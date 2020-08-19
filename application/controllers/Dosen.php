@@ -69,11 +69,8 @@ class Dosen extends CI_Controller
       "cara" => $this->input->post('cara', true),
       "tugas_lapres" => $this->input->post('tugas_lapres', true),
       "tugas_pendahuluan" => $this->input->post('tugas_pendahuluan', true),
-      "content" => $this->input->post('content', true),
-      "video" => $this->input->post('video', true),
-      "pdf" => $this->input->post('pdf', true),
       "time" => $this->input->post('time', true),
-      "tujuan" => $this->input->post('tujuan', true),
+      "tujuan" => $this->input->post('tujuan', true)
     ];
 
     $this->db->where('id', $this->input->post('id'));
