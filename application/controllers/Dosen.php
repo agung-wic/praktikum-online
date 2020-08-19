@@ -167,14 +167,12 @@ class Dosen extends CI_Controller
     $accepted_origins = array("https://virtulab-its.com");
 
     // Images upload path
-    $imageFolder = "home/u938748859/domains/virtulab-its.com/public_html/assets/img/";
+    $imageFolder = $_SERVER['DOCUMENT_ROOT'] . "/assets/img/";
 
     reset($_FILES);
     $temp = current($_FILES);
     if (is_uploaded_file($temp['tmp_name'])) {
       if (isset($_SERVER['HTTPS_ORIGIN'])) {
-        var_dump($_SERVER['HTTPS_ORIGIN']);
-        die;
         // Same-origin requests won't set an origin. If the origin is set, it must be valid.
         if (in_array($_SERVER['HTTPS_ORIGIN'], $accepted_origins)) {
           header('Access-Control-Allow-Origin: ' . $_SERVER['HTTPS_ORIGIN']);
