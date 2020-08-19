@@ -319,6 +319,7 @@ $(function () {
 							}
 
 							success(json.location);
+							console.log(json.location);
 						};
 
 						formData = new FormData();
