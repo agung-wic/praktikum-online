@@ -296,6 +296,7 @@ $(function () {
 					plugins: "code image",
 					toolbar: "undo redo | image code",
 					images_upload_url: base + "dosen/upload",
+					image_prepend_url: base + "assets/img/",
 					images_upload_handler: function (blobInfo, success, failure) {
 						var xhr, formData;
 
@@ -319,7 +320,6 @@ $(function () {
 							}
 
 							success(json.location);
-							console.log(json.location);
 						};
 
 						formData = new FormData();
