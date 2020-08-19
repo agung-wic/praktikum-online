@@ -137,7 +137,10 @@
             </div>
             <script>
                 tinymce.init({
-                    selector: 'textarea'
+                    selector: 'textarea',
+                    plugins: 'code image',
+                    toolbar: 'undo redo | image code',
+                    images_upload_url: 'upload.php'
                 });
             </script>
             </form>
