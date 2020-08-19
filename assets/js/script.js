@@ -292,10 +292,10 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				tinymce.init({
-					selector: "textarea",
-					plugins: "code image",
-					toolbar: "undo redo | image code",
-					images_upload_url: "upload.php",
+					selector: 'textarea',
+					plugins: 'code image',
+					toolbar: 'undo redo | image code',
+					images_upload_url: 'upload.php',
 					images_upload_handler: function (blobInfo, success, failure) {
 						var xhr, formData;
 
