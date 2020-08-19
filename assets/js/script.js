@@ -293,11 +293,9 @@ $(function () {
 			success: function (data) {
 				tinymce.init({
 					selector: "textarea",
-					height: 400,
 					plugins: "code image",
 					toolbar: "undo redo | image code",
 					images_upload_url: "upload.php",
-					images_upload_base_path: "/assets/img",
 					images_upload_handler: function (blobInfo, success, failure) {
 						var xhr, formData;
 

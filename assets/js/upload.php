@@ -1,6 +1,6 @@
 <?php
 // Allowed origins to upload images
-$accepted_origins = array("http://localhost/fisdas", "https://virtulab-its.com");
+$accepted_origins = array("https://virtulab-its.com");
 
 // Images upload path
 $imageFolder = "/assets/img";
