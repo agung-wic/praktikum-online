@@ -167,7 +167,7 @@ class Dosen extends CI_Controller
     $accepted_origins = array("https://virtulab-its.com");
 
     // Images upload path
-    $imageFolder = base_url('assets/img');
+    $imageFolder = base_url('assets/img/');
 
     reset($_FILES);
     $temp = current($_FILES);
