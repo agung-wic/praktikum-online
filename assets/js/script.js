@@ -296,9 +296,7 @@ $(function () {
 					plugins: "code image",
 					toolbar: "undo redo | image code",
 					images_upload_url: base + "dosen/upload",
-					relative_urls: false,
-					remove_script_host: false,
-					convert_urls: true,
+
 					images_upload_handler: function (blobInfo, success, failure) {
 						var xhr, formData;
 
