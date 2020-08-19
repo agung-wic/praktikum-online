@@ -164,7 +164,7 @@ class Dosen extends CI_Controller
 
   public function upload()
   {
-    $accepted_origins = array("http://virtulab-its.com");
+    $accepted_origins = array("https://virtulab-its.com");
 
     // Images upload path
     $imageFolder = "/assets/img/";
