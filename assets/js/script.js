@@ -336,7 +336,6 @@ $(function () {
 				tinymce.get("cara").setContent(data.cara);
 				tinymce.get("tugas_lapres").setContent(data.tugas_lapres);
 				tinymce.get("tugas_pendahuluan").setContent(data.tugas_pendahuluan);
-				tinymce.get("content").setContent(data.content);
 				$("#video").val(data.video);
 				$("#pdf").val(data.pdf);
 				$("#time").val(data.time);
