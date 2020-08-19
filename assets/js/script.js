@@ -295,7 +295,7 @@ $(function () {
 					selector: "textarea",
 					plugins: "code image",
 					toolbar: "undo redo | image code",
-					images_upload_url: base + "dosen/upload"
+					images_upload_url: base + "dosen/upload",
 					images_upload_handler: function (blobInfo, success, failure) {
 						var xhr, formData;
 
