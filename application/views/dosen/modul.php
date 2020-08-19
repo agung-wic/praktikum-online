@@ -135,14 +135,6 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Edit</button>
             </div>
-            <script>
-                tinymce.init({
-                    selector: 'textarea',
-                    plugins: 'code image',
-                    toolbar: 'undo redo | image code',
-                    images_upload_url: 'upload.php'
-                });
-            </script>
             </form>
         </div>
     </div>
