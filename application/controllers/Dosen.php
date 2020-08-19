@@ -196,7 +196,8 @@ class Dosen extends CI_Controller
       // Accept upload if there was no origin, or if it is an accepted origin
       $filetowrite = $imageFolder . $temp['name'];
       move_uploaded_file($temp['tmp_name'], $filetowrite);
-
+      var_dump("OK");
+      die;
       // Respond to the successful upload with JSON.
       echo json_encode(array('location' => $filetowrite));
     } else {
