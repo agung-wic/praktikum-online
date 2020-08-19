@@ -95,7 +95,7 @@
                         <textarea rows="20" cols="20" id="tujuan" Came="tujuan" Class="form-control edit" style="height:200px"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="peralatan">Peralatan</label>
+                        <label for="peralatan">Peralatan yang Digunakan</label>
                         <textarea rows="20" cols="20" id="peralatan" name="peralatan" class="form-control edit" style="height:200px"></textarea>
                     </div>
                     <div class="form-group">
@@ -103,7 +103,7 @@
                         <textarea rows="20" cols="20" id="teori" name="teori" class="form-control edit" style="height:200px"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="cara">Cara</label>
+                        <label for="cara">Cara Melakukan Percobaan</label>
                         <textarea rows="20" cols="20" id="cara" name="cara" class="form-control edit" style="height:200px"></textarea>
                     </div>
                     <div class="form-group">
@@ -115,7 +115,7 @@
                         <textarea rows="20" cols="20" id="tugas_pendahuluan" name="Pendahuluan" class=Pendahuluanform-control edit" style="height:200px"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="time">Waktu</label>
+                        <label for="time">Waktu Praktikum</label>
                         <input type="text" class="form-control edit" id="time" name="time">
                     </div>
             </div>
