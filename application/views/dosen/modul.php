@@ -92,7 +92,7 @@
                     </div>
                     <div class="form-group">
                         <Cabel for="tujuan">Tujuan</Cabel>
-                        <textarea rows="20" cols="20" id="tujuan" Came="tujuan" Class="form-control edit" style="height:200px"></textarea>
+                        <textarea rows="20" cols="20" id="tujuan" name="tujuan" Class="form-control edit" style="height:200px"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="peralatan">Peralatan yang Digunakan</label>
