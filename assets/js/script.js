@@ -293,8 +293,8 @@ $(function () {
 			success: function (data) {
 				tinymce.init({
 					selector: "textarea",
-					plugins: "code image",
-					toolbar: "undo redo | image code",
+					plugins: "code image advlist autolink lists link charmap print preview anchor",
+					toolbar: "undo redo | formatselect  |  alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image code",
 					images_upload_url: base + "dosen/upload",
 					relative_urls: false,
 					remove_script_host: false,
