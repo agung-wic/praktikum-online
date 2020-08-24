@@ -266,7 +266,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data.id);
+				console.log(data);
 				$("#id").val(data.id);
 				$("#modul_id").val(data.modul_id);
 				$("#name").val(data.name);
@@ -358,7 +358,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
+				console.log(data.id);
 				$("#id").val(data.id);
 			},
 		});
