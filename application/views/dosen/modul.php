@@ -146,7 +146,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="id" name="id" hidden>
+                    <input type="number" class="form-control" id="idi" name="idi" hidden>
                 </div>
             </div>
             <div class="modal-footer">

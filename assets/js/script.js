@@ -359,7 +359,7 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				console.log(data.id);
-				$("#id").val(data.id);
+				$("#idi").val(data.id);
 			},
 		});
 	});
