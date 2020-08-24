@@ -202,4 +202,29 @@ class Dosen extends CI_Controller
       header("HTTP/1.1 500 Server Error");
     }
   }
+  public function addfilevideo()
+    {
+        $file = $_FILES['filevideo']['name'];
+
+        $config['upload_path'] = './assets/vid/';
+        $config['allowed_types'] = 'mp4';
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('filevideo')) {
+
+            $data = $this->upload->data();
+            $video = [
+                "video" => $data,
+              ];
+            $this->db->update('modul', $video);
+            unlink(FCPATH . 'assets/vid/' . $file);
+            $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+            Jadwal praktikan berhasil ditambahkan!
+            </div>');
+            redirect(base_url('dosen/modul'));
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+            redirect(base_url('dosen/modul'));
+        }
+    }
 }
