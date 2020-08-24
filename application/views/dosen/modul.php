@@ -141,8 +141,10 @@
                 <?= form_open_multipart(base_url('dosen/addfilevideo')) ?>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="filevideo" name="filevideo">
-                    <input type="number" class="custom-file-input" id="id" name="id" hidden>
                     <label class="custom-file-label" for="filevideo">Pilih berkas</label>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="id" name="id" hidden>
                 </div>
             </div>
             <div class="modal-footer">
