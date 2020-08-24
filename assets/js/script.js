@@ -346,4 +346,21 @@ $(function () {
 			},
 		});
 	});
+
+	$(".tampilEditVideo").on("click", function () {
+		const id = $(this).data("id");
+
+		$.ajax({
+			url: base + "dosen/getubahvideo",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				console.log(data);
+				$("#id").val(data.id);
+			},
+		});
+	});
 });

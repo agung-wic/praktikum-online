@@ -203,28 +203,35 @@ class Dosen extends CI_Controller
     }
   }
   public function addfilevideo()
-    {
-        $file = $_FILES['filevideo']['name'];
+  {
+    $file = $_FILES['filevideo']['name'];
+    $data['modul'] = $this->db->get_where('modul', ['id' => $this->input->post('id')])->row_array();
 
-        $config['upload_path'] = './assets/vid/';
-        $config['allowed_types'] = 'mp4';
+    $config['upload_path'] = './assets/vid/';
+    $config['allowed_types'] = 'mp4|mkv ';
 
-        $this->load->library('upload', $config);
-        if ($this->upload->do_upload('filevideo')) {
+    $this->load->library('upload', $config);
+    if ($this->upload->do_upload('filevideo')) {
+      $old_video = $data['modul']['video'];
+      unlink(FCPATH . 'assets/vid/' . $old_video);
+      $new_video = $this->upload->data('file_name');
 
-            $data = $this->upload->data();
-            $video = [
-                "video" => $data,
-              ];
-            $this->db->update('modul', $video);
-            unlink(FCPATH . 'assets/vid/' . $file);
-            $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
-            Jadwal praktikan berhasil ditambahkan!
+      $this->db->set('video', $new_video);
+      $this->db->where('id', $this->input->post('id'));
+      $this->db->update('modul');
+
+      $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+           Video modul berhasil diubah!
             </div>');
-            redirect(base_url('dosen/modul'));
-        } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
-            redirect(base_url('dosen/modul'));
-        }
+      redirect(base_url('dosen/modul'));
+    } else {
+      $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+      redirect(base_url('dosen/modul'));
     }
+  }
+
+  public function getubahvideo()
+  {
+    echo json_encode($this->db->get_where('modul', ['id' => $this->input->post('id')])->row_array());
+  }
 }
