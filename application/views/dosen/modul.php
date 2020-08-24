@@ -138,7 +138,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <?= form_open_multipart(base_url('admin/addfilevideo')) ?>
+                <?= form_open_multipart(base_url('dosen/addfilevideo')) ?>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="filevideo" name="filevideo">
                     <input type="text" class="custom-file-input" id="id" name="id" hidden>
