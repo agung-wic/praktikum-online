@@ -206,7 +206,7 @@ class Dosen extends CI_Controller
   {
     $file = $_FILES['filevideo']['name'];
     if ($file) {
-      $data['modul'] = $this->db->get_where('modul', ['id' => $this->input->post('id')])->row_array();
+      $data['modul'] = $this->db->get_where('modul', ['id' => $this->input->post('id', true)])->row_array();
 
       $config['upload_path'] = './assets/vid/';
       $config['allowed_types'] = 'mp4|mkv ';
@@ -216,7 +216,7 @@ class Dosen extends CI_Controller
         $old_video = $data['modul']['video'];
         unlink(FCPATH . 'assets/vid/' . $old_video);
         $new_video = $this->upload->data('file_name');
-        var_dump($this->input->post('id'));
+        var_dump($this->input->post('id', true));
         die;
 
         $this->db->set('video', $new_video);
