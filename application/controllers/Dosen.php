@@ -220,7 +220,7 @@ class Dosen extends CI_Controller
       $this->db->where('id', $this->input->post('id'));
       $this->db->update('modul');
 
-      $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
            Video modul berhasil diubah!
             </div>');
       redirect(base_url('dosen/modul'));
