@@ -1,5 +1,5 @@
 $(function () {
-	const base = "http://localhost/fisdas/";
+	const base = "https://virtulab-its.com/";
 	$(".tampilModalUbah").on("click", function () {
 		const id = $(this).data("id");
 
