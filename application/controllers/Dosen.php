@@ -205,29 +205,36 @@ class Dosen extends CI_Controller
   public function addfilevideo()
   {
     $file = $_FILES['filevideo']['name'];
-    $data['modul'] = $this->db->get_where('modul', ['id' => $this->input->post('id')])->row_array();
+    if ($file) {
+      $data['modul'] = $this->db->get_where('modul', ['id' => $this->input->post('id')])->row_array();
 
-    $config['upload_path'] = './assets/vid/';
-    $config['allowed_types'] = 'mp4|mkv ';
+      $config['upload_path'] = './assets/vid/';
+      $config['allowed_types'] = 'mp4|mkv ';
 
-    $this->load->library('upload', $config);
-    if ($this->upload->do_upload('filevideo')) {
-      $old_video = $data['modul']['video'];
-      unlink(FCPATH . 'assets/vid/' . $old_video);
-      $new_video = $this->upload->data('file_name');
-      var_dump($data['modul']);
-      die;
+      $this->load->library('upload', $config);
+      if ($this->upload->do_upload('filevideo')) {
+        $old_video = $data['modul']['video'];
+        unlink(FCPATH . 'assets/vid/' . $old_video);
+        $new_video = $this->upload->data('file_name');
+        var_dump($this->input->post('id'));
+        die;
 
-      $this->db->set('video', $new_video);
-      $this->db->where('id', $this->input->post('id'));
-      $this->db->update('modul');
+        $this->db->set('video', $new_video);
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('modul');
 
-      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
            Video modul berhasil diubah!
             </div>');
-      redirect(base_url('dosen/modul'));
+        redirect(base_url('dosen/modul'));
+      } else {
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+        redirect(base_url('dosen/modul'));
+      }
     } else {
-      $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+      $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+          Upload video modul!
+          </div>');
       redirect(base_url('dosen/modul'));
     }
   }
