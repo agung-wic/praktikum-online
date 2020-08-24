@@ -218,7 +218,7 @@ class Dosen extends CI_Controller
         $new_video = $this->upload->data('file_name');
 
         $this->db->set('video', $new_video);
-        $this->db->where('id', $this->input->post('id'));
+        $this->db->where('id', $this->input->post('idi'));
         $this->db->update('modul');
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
