@@ -216,7 +216,7 @@ class Dosen extends CI_Controller
         $old_video = $data['modul']['video'];
         unlink(FCPATH . 'assets/vid/' . $old_video);
         $new_video = $this->upload->data('file_name');
-        var_dump($this->input->post('id', true));
+        var_dump($this->input->post('id'));
         die;
 
         $this->db->set('video', $new_video);
