@@ -21,7 +21,7 @@
               <p><b>Status : <?php
                               if ($i < count($status)) {
                                 var_dump($m['modul']);
-                                var_dump($status[$i]['modul']);
+                                var_dump($status);
                                 if ($m['modul'] == $status[$i]['modul_id']) {
                                   if ($status[$i]['status'] == 0) {
                                     echo "Belum Selesai 1";
