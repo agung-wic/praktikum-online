@@ -149,8 +149,8 @@ class Praktikan extends CI_Controller
     private function _connectsocket($id = NULL)
     {
         $host    = "10.122.11.90";
-        $port    = 1025;
-        $port2    = 1026;
+        $port    = 2000;
+        $port2    = 2001;
         //echo "Message To server :" . $message;
         // create socket
         $socket1 = socket_create(AF_INET, SOCK_STREAM, 0);
