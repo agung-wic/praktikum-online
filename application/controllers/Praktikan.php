@@ -6,6 +6,7 @@ class Praktikan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->helper('download');
         is_logged_in();
     }
 
@@ -281,7 +282,6 @@ class Praktikan extends CI_Controller
 
     public function download()
     {
-        $this->load->helper('download');
         force_download(base_url() . 'assets/laporan/' . $l['laporan'], NULL);
     }
 }
