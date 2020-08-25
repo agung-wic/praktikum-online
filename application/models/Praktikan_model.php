@@ -73,5 +73,7 @@ class Praktikan_model extends CI_Model
               LEFT JOIN `jadwal` ON `modul`.`modul` = `jadwal`.`modul_id`
               WHERE `jadwal`.`nrp`=$id AND `jadwal`.`status`=1
               ORDER BY `modul`.`modul` ASC";
+
+    return $this->db->query($query)->result_array();
   }
 }
