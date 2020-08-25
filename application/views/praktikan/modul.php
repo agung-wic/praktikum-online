@@ -20,7 +20,6 @@
               <p class="mt-4"><b>Waktu : <?= $m['time'] ?></b></p>
               <p><b>Status : <?php
                               if ($i < count($status)) {
-                                var_dump($m['modul']);
                                 var_dump($status);
                                 die;
                                 if ($m['modul'] == $status[$i]['modul_id']) {
