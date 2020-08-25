@@ -28,7 +28,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url(); ?>assets/js/sb-admin-2.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/script.js?v=19"></script>
+<script src="<?= base_url(); ?>assets/js/script.js?v=20"></script>
 
 
 <script>
@@ -67,6 +67,22 @@
     param2.prop('disabled', true);
     setTimeout(function() {
       param2.prop('disabled', false);
+    }, 3000);
+  });
+
+  $('#param3').click(function() {
+    var param3 = $(this);
+    param3.prop('disabled', true);
+    setTimeout(function() {
+      param3.prop('disabled', false);
+    }, 3000);
+  });
+
+  $('#param4').click(function() {
+    var param4 = $(this);
+    param4.prop('disabled', true);
+    setTimeout(function() {
+      param4.prop('disabled', false);
     }, 3000);
   });
 </script>

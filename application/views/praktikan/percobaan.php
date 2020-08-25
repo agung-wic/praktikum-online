@@ -28,7 +28,7 @@
         <img class="my-3" name="main" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
                 border-top-right-radius: 25px;
                 border-bottom-left-radius: 25px;
-                border-bottom-right-radius: 25px;" id="main" width="100%" src="http://36.88.111.119:8081/">
+                border-bottom-right-radius: 25px;" id="main" width="85%%" src="http://10.122.10.43:8081/">
       </div>
     </div>
   </div>
@@ -41,16 +41,15 @@
             <div class="kotak" style="background-color: #bcaead;">
               <div class="container mt-2" style="color: black;">
                 <h6 class="mb-3"><b>Input</b></h6>
-
                 <input type="text" name="aksi" value="data" hidden>
                 <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
                 <div class="form-group">
                   <label for="var">Variabel</label>
                   <select class="form-control" name="var" id="var">
                     <option <?php //if (($this->input->post('var')) && $this->input->post('var') == "x") echo "selected"; 
-                            ?> data-send="[x,500]" value="x">Naik</option>
+                            ?> data-send="c" value="x">Naik</option>
                     <option <?php //if (($this->input->post('var')) && $this->input->post('var') == "z") echo "selected"; 
-                            ?> data-send="z" value="z">Turun</option>
+                            ?> data-send="v" value="z">Turun</option>
                   </select>
                 </div>
               </div>
@@ -58,13 +57,22 @@
                 <button type="submit" id="param1" data-aksi="data" class="btn btn-secondary px-4 kirim1">
                   Kirim
                 </button>
+                <div class="p-1">
+                </div>
+                <button type="submit" id="param2" data-aksi="jatuhkan" class="btn btn-secondary px-4 kirim2">
+                  Jatuhkan
+                </button>
               </div>
-
               <input type="text" id="id" name="id" data-id="<?= $modul['modul']; ?>" value="<?= $modul['modul']; ?>" hidden>
               <input type="text" name="aksi" value="jatuhkan" hidden>
               <div class="row justify-content-center mb-3">
-                <button type="submit" id="param2" data-aksi="jatuhkan" class="btn btn-secondary px-4 kirim2">
-                  Jatuhkan
+                <button type="submit" id="param3" data-aksi="cektinggi" class="btn btn-secondary pl-1 px-4 kirim3">
+                  Hasil waktu
+                </button>
+                <div class="p-1">
+                </div>
+                <button type="submit" id="param4" data-aksi="reload" class="btn btn-secondary px-4 kirim4">
+                  Reload Bola
                 </button>
               </div>
             </div>
@@ -76,7 +84,7 @@
                 <div class="form-group">
                   <label for="data1">Data 1</label>
                   <output type="text" id="data1" name="data1" class="form-control form-control-user mb-4" id="data1" name="data1"></output>
-                  <output type="text" id="data2" name="data2" class="form-control form-control-user" id="data2" name="data2"></output>
+                  <output type="text" id="data3" name="data3" class="form-control form-control-user" id="data3" name="data3"></output>
                 </div>
 
                 <div class="row justify-content-center mb-3">
