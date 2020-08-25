@@ -79,7 +79,7 @@
                     <td><?= $l['modul']; ?></td>
                     <td><?= $l['asisten']; ?></td>
                     <td>
-                      <a href="<?= base_url('assets/laporan/') . $l['laporan']; ?>" download class="badge badge-pill badge-warning">
+                      <a href="<?= force_download('assets/laporan/' . $l['laporan'], NULL);  ?>" download class="badge badge-pill badge-warning">
                         <i class=" fas fa-fw fa-download"></i>
                         Unduh
                       </a>
