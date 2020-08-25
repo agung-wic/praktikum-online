@@ -20,20 +20,18 @@
               <p class="mt-4"><b>Waktu : <?= $m['time'] ?></b></p>
               <p><b>Status : <?php
                               if ($i < count($status)) {
-                                var_dump($status);
-                                die;
                                 if ($m['modul'] == $status[$i]['modul_id']) {
                                   if ($status[$i]['status'] == 0) {
-                                    echo "Belum Selesai 1";
+                                    echo "Belum Selesai";
                                   } else {
                                     echo "Selesai";
                                   }
                                   $i++;
                                 } else {
-                                  echo "Belum Selesai 2";
+                                  echo "Belum Selesai";
                                 }
                               } else {
-                                echo "Belum Selesai 3";
+                                echo "Belum Selesai";
                               }
                               ?></b></p>
               <div class="row">
