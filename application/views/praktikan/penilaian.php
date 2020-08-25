@@ -79,7 +79,7 @@
                     <td><?= $l['modul']; ?></td>
                     <td><?= $l['asisten']; ?></td>
                     <td>
-                      <a href="<?= force_download(FCPATH . 'assets/laporan/' . $l['laporan'], NULL); ?>" download class="badge badge-pill badge-warning">
+                      <a href="<?= base_url('praktikan/download/'); ?>" download class="badge badge-pill badge-warning">
                         <i class=" fas fa-fw fa-download"></i>
                         Unduh
                       </a>

@@ -272,11 +272,16 @@ class Praktikan extends CI_Controller
         $data['title'] = 'Penilaian';
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['list'] = $this->Praktikan_model->PenilaianPraktikan($this->session->userdata('nrp'));
-        $this->load->helper('download');
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
         $this->load->view('praktikan/penilaian', $data);
         $this->load->view('template/footer');
+    }
+
+    public function download()
+    {
+        $this->load->helper('download');
+        force_download(base_url() . 'assets/laporan/' . $l['laporan'], NULL);
     }
 }
