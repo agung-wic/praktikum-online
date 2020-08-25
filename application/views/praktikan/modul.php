@@ -22,16 +22,16 @@
                               if ($i < count($status)) {
                                 if ($m['modul'] == $status[$i]['modul_id']) {
                                   if ($status[$i]['status'] == 0) {
-                                    echo "Belum Selesai";
+                                    echo "Belum Selesai 1";
                                   } else {
                                     echo "Selesai";
                                   }
                                   $i++;
                                 } else {
-                                  echo "Belum Selesai";
+                                  echo "Belum Selesai 2";
                                 }
                               } else {
-                                echo "Belum Selesai";
+                                echo "Belum Selesai 3";
                               }
                               ?></b></p>
               <div class="row">
