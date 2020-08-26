@@ -115,30 +115,60 @@ class Praktikan extends CI_Controller
     public function uploadlaporan()
     {
         $file = $_FILES['filelaporan']['name'];
+        if ($file){
+            $data['nilai'] = $this->db->get_where('nilai', ['id' => $this->input->post('idi', true)])->row_array();
 
-        $config['upload_path'] = './assets/laporan/';
-        $config['allowed_types'] = 'pdf';
+            $config['upload_path'] = './assets/laporan/';
+            $config['allowed_types'] = 'pdf';
 
-        $this->load->library('upload', $config);
-        if ($this->upload->do_upload('filelaporan')) {
-            $nilai = [
-                "nrp" => $this->session->userdata('nrp'),
-                "modul" => $this->input->post('modul_id'),
-                "laporan" => $file,
-                "laporan_time" => time(),
-                "is_acc" => 0
-            ];
-            $this->db->insert('nilai', $nilai);
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('filelaporan')) {
+                $old_laporan = $data['nilai']['laporan'];
+                unlink(FCPATH . 'assets/laporan/' . $old_laporan);
+                $new_laporan = $this->upload->data('file_name');
+        
+                $this->db->set('laporan', $new_laporan);
+                $this->db->where('id', $this->input->post('idi'));
+                $this->db->update('nilai');
+        
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                   Laporan modul berhasil diubah!
+                    </div>');
+                redirect(base_url('praktikan/laporan'));
+              } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+                redirect(base_url('praktikan/laporan'));
+              }
+        }else{
+            $config['upload_path'] = './assets/laporan/';
+            $config['allowed_types'] = 'pdf';
 
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Laporan praktikum berhasil diunggah!
-            </div>');
-            redirect(base_url('praktikan/laporan'));
-        } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
-            redirect(base_url('praktikan/laporan'));
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('filelaporan')) {
+                $nilai = [
+                    "nrp" => $this->session->userdata('nrp'),
+                    "modul" => $this->input->post('modul_id'),
+                    "laporan" => $file,
+                    "laporan_time" => time(),
+                    "is_acc" => 0
+                ];
+                $this->db->insert('nilai', $nilai);
+
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Laporan praktikum berhasil diunggah!
+                </div>');
+                redirect(base_url('praktikan/laporan'));
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+                redirect(base_url('praktikan/laporan'));
+            }
         }
     }
+
+    public function getubahlaporan()
+  {
+    echo json_encode($this->db->get_where('nilail', ['id' => $this->input->post('id')])->row_array());
+  }
 
     public function getubahjadwal()
     {
