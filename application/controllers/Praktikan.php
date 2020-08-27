@@ -115,7 +115,7 @@ class Praktikan extends CI_Controller
     public function uploadlaporan()
     {
         $file = $_FILES['filelaporan']['name'];
-        if ($file){
+        if ($file) {
             $data['nilai'] = $this->db->get_where('nilai', ['id' => $this->input->post('idi', true)])->row_array();
 
             $config['upload_path'] = './assets/laporan/';
@@ -126,20 +126,20 @@ class Praktikan extends CI_Controller
                 $old_laporan = $data['nilai']['laporan'];
                 unlink(FCPATH . 'assets/laporan/' . $old_laporan);
                 $new_laporan = $this->upload->data('file_name');
-        
+
                 $this->db->set('laporan', $new_laporan);
                 $this->db->where('id', $this->input->post('idi'));
                 $this->db->update('nilai');
-        
+
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                    Laporan modul berhasil diubah!
                     </div>');
                 redirect(base_url('praktikan/laporan'));
-              } else {
+            } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
                 redirect(base_url('praktikan/laporan'));
-              }
-        }else{
+            }
+        } else {
             $config['upload_path'] = './assets/laporan/';
             $config['allowed_types'] = 'pdf';
 
@@ -166,9 +166,9 @@ class Praktikan extends CI_Controller
     }
 
     public function getubahlaporan()
-  {
-    echo json_encode($this->db->get_where('nilail', ['id' => $this->input->post('id')])->row_array());
-  }
+    {
+        echo json_encode($this->db->get_where('nilail', ['id' => $this->input->post('id')])->row_array());
+    }
 
     public function getubahjadwal()
     {
@@ -178,7 +178,7 @@ class Praktikan extends CI_Controller
 
     private function _connectsocket($id = NULL)
     {
-        $host    = "10.122.11.90";
+        $host    = "10.122.10.43";
         $port    = 2000;
         $port2    = 2001;
         //echo "Message To server :" . $message;
