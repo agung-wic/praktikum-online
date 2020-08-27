@@ -11,7 +11,12 @@
               <div class="card-header py-3" style="margin-bottom: 0px; background: linear-gradient(40deg,rgba(111, 140, 252, 1) 8%,rgba(47, 200, 201, 1) 100%);color: white;" id="heading<?= $m['modul']; ?>">
                 <h2 class="mb-0">
                   <div class="btn-block text-left collapsed" style="font-size: large; " type="button" data-toggle="collapse" data-target="#collapse<?= $m['modul']; ?>" aria-expanded="true">
+                    <img class="my-3" name="main" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
+                border-top-right-radius: 25px;
+                border-bottom-left-radius: 25px;
+                border-bottom-right-radius: 25px;" id="main" width="85%%" src="http://10.122.10.43:8081/">
                     <div>
+
 
                     </div><strong><?= $m['modul'] ?></strong> . <?= $m['name']; ?>
                   </div>
