@@ -16,6 +16,10 @@
             <div class="card-body">
                <div class="row">
                   <div class="col">
+                     <img class="my-3" name="main" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
+                border-top-right-radius: 25px;
+                border-bottom-left-radius: 25px;
+                border-bottom-right-radius: 25px;" id="main" width="85%%" src="http://10.122.10.43:8081/">
                      <p class="card-text">Nama :<?= ' ' . $user['name']; ?></p>
                      <p class="card-text">NRP :<?= ' ' . $user['nrp']; ?></p>
                      <p class="card-text">Email :<?= ' ' . $user['email']; ?></p>
