@@ -1,5 +1,5 @@
 $(function () {
-	const base = "https://virtulab-its.com/";
+	const base = "https://praktikum-fisdas.its.ac.id/";
 	$(".tampilModalUbah").on("click", function () {
 		const id = $(this).data("id");
 
@@ -293,8 +293,10 @@ $(function () {
 			success: function (data) {
 				tinymce.init({
 					selector: "textarea",
-					plugins: "code image advlist autolink lists link charmap print preview anchor",
-					toolbar: "undo redo | formatselect  |  alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image code",
+					plugins:
+						"code image advlist autolink lists link charmap print preview anchor",
+					toolbar:
+						"undo redo | formatselect  |  alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image code",
 					images_upload_url: base + "dosen/upload",
 					relative_urls: false,
 					remove_script_host: false,
