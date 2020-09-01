@@ -180,6 +180,9 @@ $(function () {
 				$("#data1").val(data);
 				console.log(data);
 			},
+			error: function (data) {
+				console.log(data);
+			},
 		});
 	});
 
