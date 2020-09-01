@@ -132,14 +132,14 @@
   var countDownDate = new Date("<?= $jadwal['jadwal']; ?>").getTime();
   var waktu = "<?= $modul['time']; ?>";
   var batas = waktu.split(":");
-  var jam = parseInt(batas[0]);
-  var menit = parseInt(batas[1]);
-  var detik = parseInt(batas[3]);
+  var jam = parseInt(batas[0]) * 60 * 60 * 1000;
+  var menit = parseInt(batas[1]) * 60 * 1000;
+  var detik = parseInt(batas[3]) * 1000;
   // Run myfunc every second
   var myfunc = setInterval(function() {
 
     var now = new Date().getTime();
-    var timeleft = countDownDate + (jam * 60 * 60 * 1000) + (menit * 60 * 1000) + (detik * 1000) - now;
+    var timeleft = countDownDate + jam + menit + detik - now;
 
     // Calculating the days, hours, minutes and seconds left
     var hours = Math.floor((timeleft / (1000 * 60 * 60)));
