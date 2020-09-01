@@ -148,7 +148,7 @@
 
     // Result is output to the specific element
     document.getElementById("hours").innerHTML = timeleft + " :"
-    document.getElementById("mins").innerHTML = now + " :"
+    document.getElementById("mins").innerHTML = typeof(jam) + " :"
     document.getElementById("secs").innerHTML = typeof(countDownDate)
 
     if (timeleft < 0) {
