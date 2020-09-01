@@ -149,7 +149,7 @@
 
     // Result is output to the specific element
     document.getElementById("hours").innerHTML = countDownDate - now + " :"
-    document.getElementById("mins").innerHTML = countDownDate + jam + " :"
+    document.getElementById("mins").innerHTML = jam + menit + detik + " :"
     document.getElementById("secs").innerHTML = seconds
 
     if (timeleft < 0) {
