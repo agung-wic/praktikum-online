@@ -135,6 +135,7 @@
   var jam = parseInt(batas[0]);
   var menit = parseInt(batas[1]);
   var detik = parseInt(batas[3]);
+  console.log(batas);
   // Run myfunc every second
   var myfunc = setInterval(function() {
 
