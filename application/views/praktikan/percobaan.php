@@ -147,7 +147,7 @@
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
     // Result is output to the specific element
-    document.getElementById("hours").innerHTML = timeleft + " :"
+    document.getElementById("hours").innerHTML = typeof(timeleft) + " :"
     document.getElementById("mins").innerHTML = typeof(jam) + " :"
     document.getElementById("secs").innerHTML = typeof(countDownDate)
 
