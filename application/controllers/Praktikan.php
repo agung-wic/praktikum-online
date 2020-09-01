@@ -115,8 +115,8 @@ class Praktikan extends CI_Controller
     public function uploadlaporan()
     {
         $file = $_FILES['filelaporan']['name'];
-        if ($file) {
-            $data['nilai'] = $this->db->get_where('nilai', ['id' => $this->input->post('idi', true)])->row_array();
+        $data['nilai'] = $this->db->get_where('nilai', ['id' => $this->input->post('idi', true)])->row_array();
+        if ($data['nilai']['laporan']) {
 
             $config['upload_path'] = './assets/laporan/';
             $config['allowed_types'] = 'pdf';
