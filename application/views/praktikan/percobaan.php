@@ -135,6 +135,7 @@
   var jam = parseInt(batas[0]) * 60 * 60 * 1000;
   var menit = parseInt(batas[1]) * 60 * 1000;
   var detik = parseInt(batas[3]) * 1000;
+  var sisa = jam + menit + detik;
   // Run myfunc every second
   var myfunc = setInterval(function() {
 
@@ -147,7 +148,7 @@
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
     // Result is output to the specific element
-    document.getElementById("hours").innerHTML = hours + " :"
+    document.getElementById("hours").innerHTML = sisa + " :"
     document.getElementById("mins").innerHTML = minutes + " :"
     document.getElementById("secs").innerHTML = seconds
 
