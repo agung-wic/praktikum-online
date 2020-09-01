@@ -147,9 +147,9 @@
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
     // Result is output to the specific element
-    document.getElementById("hours").innerHTML = typeof(timeleft) + " :"
-    document.getElementById("mins").innerHTML = typeof(jam) + " :"
-    document.getElementById("secs").innerHTML = typeof(countDownDate)
+    document.getElementById("hours").innerHTML = hours + " :"
+    document.getElementById("mins").innerHTML = minutes + " :"
+    document.getElementById("secs").innerHTML = seconds
 
     if (timeleft < 0) {
       clearInterval(myfunc);
