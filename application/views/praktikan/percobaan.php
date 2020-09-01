@@ -147,7 +147,7 @@
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
     // Result is output to the specific element
-    document.getElementById("hours").innerHTML = batas + " :"
+    document.getElementById("hours").innerHTML = jam + " :"
     document.getElementById("mins").innerHTML = minutes + " :"
     document.getElementById("secs").innerHTML = seconds
 
