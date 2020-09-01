@@ -28,7 +28,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url(); ?>assets/js/sb-admin-2.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/script.js?v=22"></script>
+<script src="<?= base_url(); ?>assets/js/script.js?v=25"></script>
 
 
 <script>
@@ -54,7 +54,15 @@
     });
   });
 
-  $('#param1').click(function() {
+  $('#param1a').click(function() {
+    var param1 = $(this);
+    param1.prop('disabled', true);
+    setTimeout(function() {
+      param1.prop('disabled', false);
+    }, 3000);
+  });
+
+  $('#param1b').click(function() {
     var param1 = $(this);
     param1.prop('disabled', true);
     setTimeout(function() {

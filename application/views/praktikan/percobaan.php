@@ -25,7 +25,7 @@
   <div class="col-lg-6 justify-content-center">
     <div class="kotak">
       <div class="container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/X5Or0Jl-910?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MIVII5FUQGC?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -43,7 +43,6 @@
               </div>
               <div class="row justify-content-left mb-3 ml-3">
                 <button style="font-size: 200%;" type="submit" data-kirim="[c,500]" id="param1a" data-aksi="data" class="btn fa fa-arrow-circle-up kirim1a">
-
                 </button>
                 <div class="p-1">
                 </div>
