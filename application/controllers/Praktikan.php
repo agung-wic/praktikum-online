@@ -188,15 +188,7 @@ class Praktikan extends CI_Controller
 
         $socket = [$socket1, $socket2];
         $data['result2'] = NULL;
-
-        if ($socket1) {
-            // connect to server    
-            $result1 = socket_connect($socket1, $host, $port);
-            $success = [$socket, $result1];
-            return $success;
-            socket_shutdown($socket, 2);
-            socket_close($socket);
-        } else if ($socket1 && $socket2) {
+        if ($socket1 && $socket2) {
             // connect to server    
             $result1 = socket_connect($socket1, $host, $port);
             $result2 = socket_connect($socket2, $host, $port2);
@@ -205,20 +197,19 @@ class Praktikan extends CI_Controller
             if ($result1 || $result2) {
                 $success = [$socket, $result];
                 return $success;
-                socket_shutdown($socket, 2);
-                socket_close($socket);
             } else {
                 echo "<script>alert('Tidak dapat terhubung ke server!');
                 window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
             }
-            socket_shutdown($socket, 2);
-            socket_close($socket);
+        } else if ($socket1) {
+            // connect to server    
+            $result1 = socket_connect($socket1, $host, $port);
+            $success = [$socket, $result1];
+            return $success;
         } else {
             echo "<script>alert('Gagal membuat socket!');
             window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
         }
-        socket_shutdown($socket, 2);
-        socket_close($socket);
     }
 
     private function _sendsocket($socket1, $socket2, $message, $id)
