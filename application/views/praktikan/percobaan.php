@@ -140,7 +140,7 @@
   var myfunc = setInterval(function() {
 
     var now = new Date().getTime();
-    var timeleft = countDownDate + jam + menit + detik - now;
+    var timeleft = parseInt(countDownDate + jam + menit + detik - now);
 
     // Calculating the days, hours, minutes and seconds left
     var hours = Math.floor((timeleft / (1000 * 60 * 60)));
@@ -148,7 +148,7 @@
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
     // Result is output to the specific element
-    document.getElementById("hours").innerHTML = jam + menit + " :"
+    document.getElementById("hours").innerHTML = hours + " :"
     document.getElementById("mins").innerHTML = minutes + " :"
     document.getElementById("secs").innerHTML = seconds
 
