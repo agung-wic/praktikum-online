@@ -196,8 +196,8 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				$("#data1a").val(data);
 				console.log(data);
+				$("#data1a").val(data);
 			},
 		});
 	});
