@@ -1,5 +1,5 @@
 $(function () {
-	const base = "http://localhost/fisdas-6/";
+	const base = "https://riset.its.ac.id/praktikum-fisdas/";
 	$(".tampilModalUbah").on("click", function () {
 		const id = $(this).data("id");
 
