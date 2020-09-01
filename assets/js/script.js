@@ -186,7 +186,6 @@ $(function () {
 	$(".kirim1a").on("click", function () {
 		const kirim = $(this).data("kirim");
 		const id = $(this).data("id");
-		console.log(kirim);
 		$.ajax({
 			url: base + "praktikan/getpercobaan",
 			data: {
@@ -196,8 +195,8 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				$("#data1a").val(data);
 				console.log(data);
+				$("#data1a").val(data);
 			},
 		});
 	});

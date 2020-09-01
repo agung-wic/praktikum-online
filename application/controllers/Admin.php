@@ -202,7 +202,7 @@ class Admin extends CI_Controller
     public function jadwal()
     {
         $this->load->model('Admin_model');
-        $config['base_url'] = 'https://virtulab-its.com/admin/jadwal';
+        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/admin/jadwal';
         $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
         $config['full_tag_close'] = '</ul></nav>';
 
