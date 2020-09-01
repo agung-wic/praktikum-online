@@ -23,7 +23,7 @@
 </div>
 <div class="row mx-3">
   <div class="col-lg-6 justify-content-center">
-    <div class="kotak">
+    <div class="kotak" style="transform:rotate(270deg);">
       <div class="container">
         <iframe width="560" height="600" src="https://www.youtube.com/embed/XwC44ihPP8g?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
