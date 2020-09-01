@@ -43,6 +43,7 @@
               </div>
               <div class="row justify-content-left mb-3 ml-3">
                 <button style="font-size: 200%;" type="submit" data-kirim="[c,500]" id="param1a" data-aksi="data" class="btn fa fa-arrow-circle-up kirim1a">
+
                 </button>
                 <div class="p-1">
                 </div>
