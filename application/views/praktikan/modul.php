@@ -22,23 +22,24 @@
                 <div class="card-body">
                   Tujuan Percobaan: <?= $m['tujuan'] ?>
                   <p class="mt-4"><b>Waktu : <?= $m['time'] ?></b></p>
-                  <p><b>Status : <?php
-                                  if ($i < count($status)) {
-                                    if ($m['modul'] == $status[$i]['modul_id']) {
-                                      if ($status[$i]['status'] == 0) {
-                                        echo "Belum Selesai";
-                                      } else {
-                                        echo "Selesai";
-                                      }
-                                      $i++;
-                                    } else {
-                                      echo "Belum Selesai";
-                                    }
-                                  } else {
-                                    echo "Belum Selesai";
-                                  }
-                                  ?></b></p>
-                  <p>Jadwal : <?= $status[$i]['jadwal']; ?></p>
+                  <?php
+                  if ($i < count($status)) {
+                    if ($m['modul'] == $status[$i]['modul_id']) {
+                      if ($status[$i]['status'] == 0) {
+                        echo "<p><b>Status : Belum Selesai</b></p>";
+                      } else {
+                        echo "<p><b>Status : Selesai</b></p>";
+                      }
+                      echo "<p>Jadwal : " . $status[$i]['jadwal'] . "</p>";
+                      $i++;
+                    } else {
+                      echo "<p><b>Status : Belum Selesai</b></p>";
+                    }
+                  } else {
+                    echo "<p><b>Status : Belum Selesai</b></p>";
+                  }
+                  ?>
+
                   <div class="row">
                     <a class="btn ml-auto gradien" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
                   </div>
