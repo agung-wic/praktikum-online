@@ -38,6 +38,7 @@
                                     echo "Belum Selesai";
                                   }
                                   ?></b></p>
+                  <p>Jadwal : <?= $status[$i]['jadwal']; ?></p>
                   <div class="row">
                     <a class="btn ml-auto gradien" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
                   </div>
