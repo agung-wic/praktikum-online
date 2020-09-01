@@ -149,7 +149,7 @@
     // Result is output to the specific element
     document.getElementById("hours").innerHTML = timeleft + " :"
     document.getElementById("mins").innerHTML = now + " :"
-    document.getElementById("secs").innerHTML = countDownDate
+    document.getElementById("secs").innerHTML = typeof(countDownDate)
 
     if (timeleft < 0) {
       clearInterval(myfunc);
