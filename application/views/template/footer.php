@@ -55,18 +55,18 @@
   });
 
   $('#param1a').click(function() {
-    var param1 = $(this);
-    param1.prop('disabled', true);
+    var param1a = $(this);
+    param1a.prop('disabled', true);
     setTimeout(function() {
-      param1.prop('disabled', false);
+      param1a.prop('disabled', false);
     }, 3000);
   });
 
   $('#param1b').click(function() {
-    var param1 = $(this);
-    param1.prop('disabled', true);
+    var param1b = $(this);
+    param1b.prop('disabled', true);
     setTimeout(function() {
-      param1.prop('disabled', false);
+      param1b.prop('disabled', false);
     }, 3000);
   });
 
@@ -91,6 +91,14 @@
     param4.prop('disabled', true);
     setTimeout(function() {
       param4.prop('disabled', false);
+    }, 3000);
+  });
+
+  $('#param5').click(function() {
+    var param5 = $(this);
+    param5.prop('disabled', true);
+    setTimeout(function() {
+      param5.prop('disabled', false);
     }, 3000);
   });
 </script>
