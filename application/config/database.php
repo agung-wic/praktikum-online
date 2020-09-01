@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '202.46.129.204',
+	'hostname' => 'localhost',
 	'username' => 'fisdas_praktikum',
 	'password' => '1234asdf!@#$ASDF',
 	'database' => 'fisdas_praktikum',
