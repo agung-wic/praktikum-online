@@ -30,7 +30,7 @@
                       } else {
                         echo "<p><b>Status : Selesai</b></p>";
                       }
-                      echo "<p>Jadwal : " . $status[$i]['jadwal'] . "</p>";
+                      echo "<p><b>Jadwal : " . $status[$i]['jadwal'] . "</b></p>";
                       $i++;
                     } else {
                       echo "<p><b>Status : Belum Selesai</b></p>";
