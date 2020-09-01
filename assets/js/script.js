@@ -1,5 +1,5 @@
 $(function () {
-	const base = "https://virtulab-its.com/";
+	const base = "https://riset.its.ac.id/praktikum-fisdas/";
 	$(".tampilModalUbah").on("click", function () {
 		const id = $(this).data("id");
 
@@ -178,12 +178,32 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				$("#data1").val(data);
+				console.log(data);
+			},
+		});
+	});
+
+	$(".kirim1a").on("click", function () {
+		const kirim = $(this).data("kirim");
+		const id = $(this).data("id");
+		console.log(kirim);
+		$.ajax({
+			url: base + "praktikan/getpercobaan",
+			data: {
+				kirim: kirim,
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				$("#data1a").val(data);
+				console.log(data);
 			},
 		});
 	});
 
 	$(".kirim2").on("click", function () {
-		const kirim = "[d,1]";
+		const kirim = "[d]";
 		const id = $(this).data("id");
 		$.ajax({
 			url: base + "praktikan/getpercobaan",
@@ -195,6 +215,58 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				$("#data2").val(data);
+			},
+		});
+	});
+
+	$(".kirim3").on("click", function () {
+		const kirim = "[t]";
+		const id = $(this).data("id");
+		$.ajax({
+			url: base + "praktikan/getpercobaan",
+			data: {
+				kirim: kirim,
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				console.log(data);
+				$("#data3").val(data);
+			},
+		});
+	});
+
+	$(".kirim4").on("click", function () {
+		const kirim = "[r]";
+		const id = $(this).data("id");
+		$.ajax({
+			url: base + "praktikan/getpercobaan",
+			data: {
+				kirim: kirim,
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				$("#data4").val(data);
+			},
+		});
+	});
+
+	$(".kirim5").on("click", function () {
+		const kirim = "[i]";
+		const id = $(this).data("id");
+		$.ajax({
+			url: base + "praktikan/getpercobaan",
+			data: {
+				kirim: kirim,
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				$("#data5").val(data);
 			},
 		});
 	});
@@ -293,12 +365,10 @@ $(function () {
 			success: function (data) {
 				tinymce.init({
 					selector: "textarea",
-					plugins: "code image advlist autolink lists link charmap print preview anchor",
-					toolbar: "undo redo | formatselect  |  alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image code",
+					plugins: "code image",
+					toolbar: "undo redo | image code",
 					images_upload_url: base + "dosen/upload",
-					relative_urls: false,
-					remove_script_host: false,
-					convert_urls: true,
+					image_prepend_url: base + "assets/img/",
 					images_upload_handler: function (blobInfo, success, failure) {
 						var xhr, formData;
 
@@ -343,23 +413,6 @@ $(function () {
 				$("#pdf").val(data.pdf);
 				$("#time").val(data.time);
 				tinymce.get("tujuan").setContent(data.tujuan);
-			},
-		});
-	});
-
-	$(".tampilEditVideo").on("click", function () {
-		const id = $(this).data("id");
-
-		$.ajax({
-			url: base + "dosen/getubahvideo",
-			data: {
-				id: id,
-			},
-			method: "post",
-			dataType: "json",
-			success: function (data) {
-				console.log(data.id);
-				$("#idi").val(data.id);
 			},
 		});
 	});

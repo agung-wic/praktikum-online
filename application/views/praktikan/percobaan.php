@@ -25,10 +25,7 @@
   <div class="col-lg-6 justify-content-center">
     <div class="kotak">
       <div class="container">
-        <img class="my-3" name="main" style="display: block; margin: auto; background-color: #6a6a6a; color: white; border-top-left-radius: 25px;
-                border-top-right-radius: 25px;
-                border-bottom-left-radius: 25px;
-                border-bottom-right-radius: 25px;" id="main" width="85%%" src="http://10.122.10.43:8081/">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/X5Or0Jl-910?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -43,29 +40,28 @@
                 <h6 class="mb-3"><b>Input</b></h6>
                 <input type="text" name="aksi" value="data" hidden>
                 <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
-                <div class="form-group">
-                  <label for="var">Variabel</label>
-                  <select class="form-control" name="var" id="var">
-                    <option <?php //if (($this->input->post('var')) && $this->input->post('var') == "x") echo "selected"; 
-                            ?> data-send="c" value="x">Naik</option>
-                    <option <?php //if (($this->input->post('var')) && $this->input->post('var') == "z") echo "selected"; 
-                            ?> data-send="v" value="z">Turun</option>
-                  </select>
-                </div>
               </div>
-              <div class="row justify-content-center mb-3">
-                <button type="submit" id="param1" data-aksi="data" class="btn btn-secondary px-4 kirim1">
-                  Kirim
+              <div class="row justify-content-left mb-3 ml-3">
+                <button style="font-size: 200%;" type="submit" data-kirim="[c,500]" id="param1a" data-aksi="data" class="btn fa fa-arrow-circle-up kirim1a">
+
                 </button>
                 <div class="p-1">
                 </div>
                 <button type="submit" id="param2" data-aksi="jatuhkan" class="btn btn-secondary px-4 kirim2">
                   Jatuhkan
                 </button>
+                <div class="p-1">
+                </div>
+                <button type="submit" id="param5" data-aksi="cekbola" class="btn btn-secondary px-4 kirim5">
+                  Jumlah Bola
+                </button>
               </div>
               <input type="text" id="id" name="id" data-id="<?= $modul['modul']; ?>" value="<?= $modul['modul']; ?>" hidden>
               <input type="text" name="aksi" value="jatuhkan" hidden>
-              <div class="row justify-content-center mb-3">
+              <div class="row justify-content-left mb-3 ml-3">
+                <button style="font-size: 200%;" type="submit" data-kirim="[v,500]" id="param1b" data-aksi="data" class="btn fa fa-arrow-circle-down kirim1a">
+
+                </button>
                 <button type="submit" id="param3" data-aksi="cektinggi" class="btn btn-secondary pl-1 px-4 kirim3">
                   Hasil waktu
                 </button>
@@ -82,8 +78,9 @@
               <div class="container mt-2" style="color: black;">
                 <h6 class="mb-3"><b>Output</b></h6>
                 <div class="form-group">
-                  <label for="data1">Data 1</label>
-                  <output type="text" id="data1" name="data1" class="form-control form-control-user mb-4" id="data1" name="data1"></output>
+                  <label for="data1">Ketinggian sekarang (cm) </label>
+                  <output type="text" id="data1a" name="data1a" class="form-control form-control-user mb-4"></output>
+                  <label for="data1">Hasil waktu (detik) </label>
                   <output type="text" id="data3" name="data3" class="form-control form-control-user" id="data3" name="data3"></output>
                 </div>
 
