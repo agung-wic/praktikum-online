@@ -148,7 +148,7 @@
 
     // Result is output to the specific element
     document.getElementById("hours").innerHTML = jam + " :"
-    document.getElementById("mins").innerHTML = minutes + " :"
+    document.getElementById("mins").innerHTML = timeleft + " :"
     document.getElementById("secs").innerHTML = seconds
 
     if (timeleft < 0) {
