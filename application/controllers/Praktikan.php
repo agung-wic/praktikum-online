@@ -242,7 +242,7 @@ class Praktikan extends CI_Controller
     {
         $connect = $this->_connectsocket();
         $hasil = $this->_sendsocket($connect[0][0], $connect[0][1], $this->input->post('kirim'), $this->input->post('id'));
-        echo json_encode($hasil);
+        echo json_encode($connect);
     }
 
     public function jadwal()
