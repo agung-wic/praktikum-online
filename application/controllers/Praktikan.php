@@ -195,7 +195,7 @@ class Praktikan extends CI_Controller
 
             $result = [$result1, $result2];
             if ($result1 || $result2) {
-                $success = [$socket, $result];
+                $success = $result2;
                 return $success;
             } else {
                 echo "<script>alert('Tidak dapat terhubung ke server!');
