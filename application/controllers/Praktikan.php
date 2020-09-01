@@ -116,8 +116,6 @@ class Praktikan extends CI_Controller
     {
         $file = $_FILES['filelaporan']['name'];
         $data['nilai'] = $this->db->get_where('nilai', ['modul' => $this->input->post('modul_id', true)])->row_array();
-        var_dump($this->input->post('modul_id', true));
-        die;
         if ($data['nilai']['laporan']) {
 
             $config['upload_path'] = './assets/laporan/';
