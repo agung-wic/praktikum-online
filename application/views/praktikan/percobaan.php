@@ -130,12 +130,16 @@
 <script>
   // The data/time we want to countdown to
   var countDownDate = new Date("<?= $jadwal['jadwal']; ?>").getTime();
-
+  var waktu = <?= $modul['jadwal']; ?>;
+  var batas = waktu.split(":");
+  var jam = parseInt(batas[0]);
+  var menit = parseInt(batas[1]);
+  var detik = parseInt(batas[3]);
   // Run myfunc every second
   var myfunc = setInterval(function() {
 
     var now = new Date().getTime();
-    var timeleft = countDownDate + (30 * 60 * 1000) - now;
+    var timeleft = countDownDate + (jam * 60 * 60 * 1000) + (menit * 60 * 1000) + (detik * 1000) - now;
 
     // Calculating the days, hours, minutes and seconds left
     var hours = Math.floor((timeleft / (1000 * 60 * 60)));
