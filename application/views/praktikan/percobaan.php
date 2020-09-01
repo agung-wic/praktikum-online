@@ -42,7 +42,7 @@
                 <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
               </div>
               <div class="row justify-content-left mb-3 ml-3">
-                <button style="font-size: 200%;" type="submit" data-kirim="[s,500]" data-id="<?= $modul['modul'] ?>;" id="param1a" data-aksi="data" class="btn fa fa-arrow-circle-up kirim1a">
+                <button style="font-size: 200%;" type="submit" data-kirim="[c,500]" data-id="<?= $modul['modul'] ?>;" id="param1a" data-aksi="data" class="btn fa fa-arrow-circle-up kirim1a">
 
                 </button>
                 <div class="p-1">
