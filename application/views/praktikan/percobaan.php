@@ -148,8 +148,8 @@
 
     // Result is output to the specific element
     document.getElementById("hours").innerHTML = jam + " :"
-    document.getElementById("mins").innerHTML = timeleft + " :"
-    document.getElementById("secs").innerHTML = seconds
+    document.getElementById("mins").innerHTML = menit + " :"
+    document.getElementById("secs").innerHTML = countDownDate
 
     if (timeleft < 0) {
       clearInterval(myfunc);
