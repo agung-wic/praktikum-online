@@ -144,7 +144,7 @@
           </div>
           <div class="form-group">
             <label for="nilai">Nilai</label>
-            <input type="text" class="form-control" id="nilai" name="nilai">
+            <input type="number" min="0" max="100" class="form-control" id="nilai" name="nilai">
           </div>
         </div>
         <div class="modal-footer">
