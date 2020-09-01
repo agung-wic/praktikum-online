@@ -242,6 +242,8 @@ class Praktikan extends CI_Controller
     {
         $connect = $this->_connectsocket();
         $hasil = $this->_sendsocket($connect[0][0], $connect[0][1], $this->input->post('kirim'), $this->input->post('id'));
+        var_dump($hasil);
+        die;
         echo json_encode($hasil);
     }
 
