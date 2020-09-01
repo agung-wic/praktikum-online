@@ -116,7 +116,7 @@ class Praktikan extends CI_Controller
     {
         $file = $_FILES['filelaporan']['name'];
         $data['nilai'] = $this->db->get_where('nilai', ['modul' => $this->input->post('idi', true)])->row_array();
-        var_dump($data['nilai']['laporan']);
+        var_dump($this->input->post('idi', true));
         die;
         if ($data['nilai']['laporan']) {
 
