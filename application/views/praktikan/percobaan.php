@@ -130,7 +130,7 @@
 <script>
   // The data/time we want to countdown to
   var countDownDate = new Date("<?= $jadwal['jadwal']; ?>").getTime();
-  var waktu = <?= $modul['jadwal']; ?>;
+  var waktu = <?= $modul['time']; ?>;
   var batas = waktu.split(":");
   var jam = parseInt(batas[0]);
   var menit = parseInt(batas[1]);
