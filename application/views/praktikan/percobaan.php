@@ -42,7 +42,7 @@
                 <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
               </div>
               <div class="row justify-content-left mb-3 ml-3">
-                <button style="font-size: 200%;" type="submit" data-kirim="[c,500]" id="param1a" data-aksi="data" class="btn fa fa-arrow-circle-up kirim1a">
+                <button style="font-size: 200%;" type="submit" data-kirim="[c,500]" data-id="<?= $modul['modul'] ?>;" id="param1a" data-aksi="data" class="btn fa fa-arrow-circle-up kirim1a">
 
                 </button>
                 <div class="p-1">
@@ -59,7 +59,7 @@
               <input type="text" id="id" name="id" data-id="<?= $modul['modul']; ?>" value="<?= $modul['modul']; ?>" hidden>
               <input type="text" name="aksi" value="jatuhkan" hidden>
               <div class="row justify-content-left mb-3 ml-3">
-                <button style="font-size: 200%;" type="submit" data-kirim="[v,500]" id="param1b" data-aksi="data" class="btn fa fa-arrow-circle-down kirim1a">
+                <button style="font-size: 200%;" type="submit" data-kirim="[v,500]" data-id="<?= $modul['modul'] ?>;" id="param1b" data-aksi="data" class="btn fa fa-arrow-circle-down kirim1a">
 
                 </button>
                 <button type="submit" id="param3" data-aksi="cektinggi" class="btn btn-secondary pl-1 px-4 kirim3">
