@@ -186,7 +186,6 @@ $(function () {
 	$(".kirim1a").on("click", function () {
 		const kirim = $(this).data("kirim");
 		const id = $(this).data("id");
-		console.log(kirim);
 		$.ajax({
 			url: base + "praktikan/getpercobaan",
 			data: {
