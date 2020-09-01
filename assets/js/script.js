@@ -231,8 +231,8 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
 				$("#data3").val(data);
+				console.log(data);
 			},
 		});
 	});
