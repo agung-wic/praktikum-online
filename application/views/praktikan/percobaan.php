@@ -43,12 +43,12 @@
               </div>
 
               <div class="row justify-content-center mb-3 ml-3">
-                <button style="font-size: 300%;font-color: red" type="submit" data-tampil="#data1a" data-kirim="[c,200]" data-id="<?= $modul['modul'] ?>;" id="param1a" class="btn fa fa-arrow-circle-up kirim1a">
+                <button style="font-size: 300%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[c,200]" data-id="<?= $modul['modul'] ?>;" id="param1a" class="btn fa fa-arrow-circle-up kirim1a">
                 </button>
 
               </div>
               <div class="row justify-content-center mb-3 ml-3">
-                <button style="font-size: 300%;" type="submit" data-tampil="#data1a" data-kirim="[v,500]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
+                <button style="font-size: 300%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[v,500]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
                 </button>
 
               </div>
