@@ -46,7 +46,7 @@
                 </button>
                 <div class="p-1">
                 </div>
-                <button type="submit" id="param2" data-kirim="[d]" data-tampil="#data1a" data-id="<?= $modul['modul'] ?>;" class="btn btn-secondary px-4 kirim1a">
+                <button type="submit" id="param2" data-kirim="[d]" data-id="<?= $modul['modul'] ?>;" class="btn btn-secondary px-4 kirim1a">
                   Jatuhkan
                 </button>
                 <div class="p-1">
@@ -58,7 +58,7 @@
               <input type="text" id="id" name="id" data-id="<?= $modul['modul']; ?>" value="<?= $modul['modul']; ?>" hidden>
               <input type="text" name="aksi" value="jatuhkan" hidden>
               <div class="row justify-content-left mb-3 ml-3">
-                <button style="font-size: 200%;" type="submit" data-kirim="[v,500]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
+                <button style="font-size: 200%;" type="submit" data-tampil="#data1a" data-kirim="[v,500]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
 
                 </button>
                 <button type="submit" id="param3" class="btn btn-secondary pl-1 px-4 kirim3">
