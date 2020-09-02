@@ -227,6 +227,9 @@ class Praktikan extends CI_Controller
                 } else if ($result2[0] == "t") {
                     $result2[1] = (int)$result2[1];
                     $result2 = $result2[1] / 10 . " " . "s";
+                } else if ($result2[0] == "i") {
+                    $result2[1] = (int)$result2[1];
+                    $result2 = $result2[1] . " " . "Buah";
                 }
                 return $result2;
             } else {
