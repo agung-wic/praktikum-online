@@ -83,7 +83,7 @@
                 <h6 class="mb-3"><b>Output</b></h6>
                 <div class="form-group">
                   <label for="data1">Jumlah Bola</label>
-                  <output type="text" id="data4" name="data4" class="form-control form-control-user mb-4"></output>
+                  <output type="text" id="data4" name="data4" class="form-control form-control-user"></output>
                   <label for="data1">Ketinggian sekarang</label>
                   <output type="text" id="data1a" name="data1a" class="form-control form-control-user"></output>
                   <label for="data1">Hasil waktu</label>
