@@ -194,11 +194,8 @@ class Praktikan extends CI_Controller
             $result2 = socket_connect($socket2, $host, $port2);
 
             $result = [$result1, $result2];
-            if ($result1 && $result2) {
+            if ($result1 || $result2) {
                 $success = [$socket, $result];
-                return $success;
-            } else if ($result1) {
-                $success = [$socket, $result1];
                 return $success;
                 socket_shutdown($socket2, 2);
                 socket_shutdown($socket1, 2);
