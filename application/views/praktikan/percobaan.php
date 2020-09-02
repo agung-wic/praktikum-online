@@ -51,7 +51,6 @@
                   Jumlah Bola
                 </button>
               </div>
-              <input type="text" id="id" name="id" data-id="<?= $modul['modul']; ?>" value="<?= $modul['modul']; ?>" hidden>
               <input type="text" name="aksi" value="jatuhkan" hidden>
               <div class="row justify-content-left mb-3 ml-3">
                 <button style="font-size: 200%;" type="submit" data-tampil="#data1a" data-kirim="[v,500]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
