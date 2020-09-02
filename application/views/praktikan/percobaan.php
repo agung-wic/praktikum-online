@@ -41,11 +41,18 @@
                 <input type="text" name="aksi" value="data" hidden>
                 <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
               </div>
-              <div class="row justify-content-left mb-3 ml-3">
-                <button style="font-size: 200%;" type="submit" data-tampil="#data1a" data-kirim="[c,200]" data-id="<?= $modul['modul'] ?>;" id="param1a" class="btn fa fa-arrow-circle-up kirim1a">
+
+              <div class="row justify-content-center mb-3 ml-3">
+                <button style="font-size: 300%;font-color: red" type="submit" data-tampil="#data1a" data-kirim="[c,200]" data-id="<?= $modul['modul'] ?>;" id="param1a" class="btn fa fa-arrow-circle-up kirim1a">
                 </button>
-                <div class="p-1">
-                </div>
+
+              </div>
+              <div class="row justify-content-center mb-3 ml-3">
+                <button style="font-size: 300%;" type="submit" data-tampil="#data1a" data-kirim="[v,500]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
+                </button>
+
+              </div>
+              <div class="row justify-content-center mb-3 ml-3">
                 <button type="submit" id="param2" data-kirim="[d]" data-id="<?= $modul['modul'] ?>;" class="btn btn-secondary px-4 kirim1a">
                   Jatuhkan
                 </button>
@@ -56,9 +63,7 @@
                 </button>
               </div>
               <input type="text" name="aksi" value="jatuhkan" hidden>
-              <div class="row justify-content-left mb-3 ml-3">
-                <button style="font-size: 200%;" type="submit" data-tampil="#data1a" data-kirim="[v,500]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
-                </button>
+              <div class="row justify-content-center mb-3 ml-3">
                 <button type="submit" data-kirim="[t]" data-tampil="#data3" data-id="<?= $modul['modul'] ?>;" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a">
                   Hasil waktu
                 </button>
