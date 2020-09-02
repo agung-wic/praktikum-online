@@ -218,11 +218,12 @@ class Praktikan extends CI_Controller
             $result2 = socket_read($socket2, 1024);
             $result2 = htmlspecialchars($result2);
             if ($result2) {
-                $result2 = str_replace("[", $result2);
-                $result2 = str_replace("]", $result2);
+                $result2 = str_replace("[", "", $result2);
+                $result2 = str_replace("]", "", $result2);
                 $result2 = explode(",", $result2);
-                if ($result2[0] == "c" || $result2[0] == "v") {
-                    $result2 = $result2[1] . " " . "Milisecond";
+                if ($result2[0] == "h") {
+                    $result2[1] = (int)$result2[1];
+                    $result2 = $result2[1] / 10 . " " . "cm";
                 }
                 return $result2;
             } else {
