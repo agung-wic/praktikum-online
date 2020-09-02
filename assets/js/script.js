@@ -201,8 +201,8 @@ $(function () {
 				console.log(data);
 				$("#data1a").val(data);
 			},
-			error: function (data) {
-				console.log("Halo");
+			error: function (error) {
+				console.log(error);
 			},
 		});
 	});
