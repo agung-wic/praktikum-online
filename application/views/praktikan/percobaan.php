@@ -41,24 +41,21 @@
                 <input type="text" name="aksi" value="data" hidden>
                 <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
               </div>
-
-              <div class="row justify-content-center mb-3 ml-3">
-                <button style="font-size: 300%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[c,200]" data-id="<?= $modul['modul'] ?>;" id="param1a" class="btn fa fa-arrow-circle-up kirim1a">
+              <div class="row justify-content-center">
+                <button style="font-size: 300%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[c,86]" data-id="<?= $modul['modul'] ?>;" id="param1a" class="btn fa fa-arrow-circle-up kirim1a">
                 </button>
-
               </div>
               <div class="row justify-content-center mb-3 ml-3">
-                <button style="font-size: 300%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[v,500]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
+                <button style="font-size: 300%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[v,86]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
                 </button>
-
               </div>
               <div class="row justify-content-center mb-3 ml-3">
-                <button type="submit" id="param2" data-kirim="[d]" data-id="<?= $modul['modul'] ?>;" class="btn btn-secondary px-4 kirim1a">
+                <button type="submit" id="param2" data-kirim="[d]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" class="btn btn-secondary px-4 kirim1a">
                   Jatuhkan
                 </button>
                 <div class="p-1">
                 </div>
-                <button type="submit" id="param5" class="btn btn-secondary px-4 kirim5">
+                <button type="submit" data-kirim="[i]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" id="param4" class="btn btn-secondary px-4 kirim1a">
                   Jumlah Bola
                 </button>
               </div>
@@ -69,8 +66,13 @@
                 </button>
                 <div class="p-1">
                 </div>
-                <button type="submit" id="param4" class="btn btn-secondary px-4 kirim4">
+                <button type="submit" data-kirim="[r]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" id="param4" class="btn btn-secondary px-4 kirim1a">
                   Reload Bola
+                </button>
+              </div>
+              <div class="row justify-content-center mb-3 ml-3">
+                <button type="submit" data-kirim="[s]" data-id="<?= $modul['modul'] ?>;" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a">
+                  RESET
                 </button>
               </div>
             </div>
@@ -80,15 +82,15 @@
               <div class="container mt-2" style="color: black;">
                 <h6 class="mb-3"><b>Output</b></h6>
                 <div class="form-group">
-                  <label for="data1">Ketinggian sekarang (cm) </label>
-                  <output type="text" id="data1a" name="data1a" class="form-control form-control-user mb-4"></output>
-                  <label for="data1">Hasil waktu (detik) </label>
+                  <label for="data1">Jumlah Bola</label>
+                  <output type="text" id="data4" name="data4" class="form-control form-control-user mb-4"></output>
+                  <label for="data1">Ketinggian sekarang</label>
+                  <output type="text" id="data1a" name="data1a" class="form-control form-control-user"></output>
+                  <label for="data1">Hasil waktu</label>
                   <output type="text" id="data3" name="data3" class="form-control form-control-user"></output>
                 </div>
-
                 <div class="row justify-content-center mb-3">
                 </div>
-
               </div>
             </div>
           </div>
