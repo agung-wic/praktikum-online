@@ -232,8 +232,14 @@ class Praktikan extends CI_Controller
     public function getpercobaan()
     {
         $connect = $this->_connectsocket();
-        $hasil = $this->_sendsocket($connect[0][0], $connect[0][1], $this->input->post('kirim'), $this->input->post('id'));
-        echo json_encode($connect);
+        if ($connect[0][0]) {
+            echo json_encode("Halo");
+        } else if ($connect[0][1]) {
+            echo json_encode("Halo 2");
+        } else {
+            $hasil = $this->_sendsocket($connect[0][0], $connect[0][1], $this->input->post('kirim'), $this->input->post('id'));
+            echo json_encode($hasil);
+        }
     }
 
     public function jadwal()
