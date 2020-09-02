@@ -165,28 +165,9 @@ $(function () {
 		});
 	});
 
-	$(".kirim1").on("click", function () {
-		const kirim = $("#var").find(":selected").data("send");
-		const id = $(this).data("id");
-		$.ajax({
-			url: base + "praktikan/getpercobaan",
-			data: {
-				kirim: kirim,
-				id: id,
-			},
-			method: "post",
-			dataType: "json",
-			success: function (data) {
-				$("#data1").val(data);
-				console.log(data);
-			},
-			error: function (error) {
-				console.log(error);
-			},
-		});
-	});
 
 	$(".kirim1a").on("click", function () {
+		const tampil = $(this).data("tampil");
 		const kirim = $(this).data("kirim");
 		const id = $(this).data("id");
 		$.ajax({
@@ -199,79 +180,10 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				console.log(data);
-				$("#data1a").val(data);
+				$(tampil).val(data);
 			},
 			error: function (error) {
 				console.log(error);
-			},
-		});
-	});
-
-	$(".kirim2").on("click", function () {
-		const kirim = "[d]";
-		const id = $(this).data("id");
-		$.ajax({
-			url: base + "praktikan/getpercobaan",
-			data: {
-				kirim: kirim,
-				id: id,
-			},
-			method: "post",
-			dataType: "json",
-			success: function (data) {
-				$("#data2").val(data);
-			},
-		});
-	});
-
-	$(".kirim3").on("click", function () {
-		const kirim = "[t]";
-		const id = $(this).data("id");
-		$.ajax({
-			url: base + "praktikan/getpercobaan",
-			data: {
-				kirim: kirim,
-				id: id,
-			},
-			method: "post",
-			dataType: "json",
-			success: function (data) {
-				$("#data3").val(data);
-				console.log(data);
-			},
-		});
-	});
-
-	$(".kirim4").on("click", function () {
-		const kirim = "[r]";
-		const id = $(this).data("id");
-		$.ajax({
-			url: base + "praktikan/getpercobaan",
-			data: {
-				kirim: kirim,
-				id: id,
-			},
-			method: "post",
-			dataType: "json",
-			success: function (data) {
-				$("#data4").val(data);
-			},
-		});
-	});
-
-	$(".kirim5").on("click", function () {
-		const kirim = "[i]";
-		const id = $(this).data("id");
-		$.ajax({
-			url: base + "praktikan/getpercobaan",
-			data: {
-				kirim: kirim,
-				id: id,
-			},
-			method: "post",
-			dataType: "json",
-			success: function (data) {
-				$("#data5").val(data);
 			},
 		});
 	});

@@ -42,16 +42,16 @@
                 <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
               </div>
               <div class="row justify-content-left mb-3 ml-3">
-                <button style="font-size: 200%;" type="submit" data-kirim="[c,200]" data-id="<?= $modul['modul'] ?>;" id="param1a" class="btn fa fa-arrow-circle-up kirim1a">
+                <button style="font-size: 200%;" type="submit" data-tampil="#data1a" data-kirim="[c,200]" data-id="<?= $modul['modul'] ?>;" id="param1a" class="btn fa fa-arrow-circle-up kirim1a">
                 </button>
                 <div class="p-1">
                 </div>
-                <button type="submit" id="param2" data-aksi="jatuhkan" class="btn btn-secondary px-4 kirim2">
+                <button type="submit" id="param2" data-kirim="[d]" data-tampil="#data1a" data-id="<?= $modul['modul'] ?>;" class="btn btn-secondary px-4 kirim1a">
                   Jatuhkan
                 </button>
                 <div class="p-1">
                 </div>
-                <button type="submit" id="param5" data-aksi="cekbola" class="btn btn-secondary px-4 kirim5">
+                <button type="submit" id="param5" class="btn btn-secondary px-4 kirim5">
                   Jumlah Bola
                 </button>
               </div>
@@ -61,12 +61,12 @@
                 <button style="font-size: 200%;" type="submit" data-kirim="[v,500]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
 
                 </button>
-                <button type="submit" id="param3" data-aksi="cektinggi" class="btn btn-secondary pl-1 px-4 kirim3">
+                <button type="submit" id="param3" class="btn btn-secondary pl-1 px-4 kirim3">
                   Hasil waktu
                 </button>
                 <div class="p-1">
                 </div>
-                <button type="submit" id="param4" data-aksi="reload" class="btn btn-secondary px-4 kirim4">
+                <button type="submit" id="param4" class="btn btn-secondary px-4 kirim4">
                   Reload Bola
                 </button>
               </div>
@@ -80,7 +80,7 @@
                   <label for="data1">Ketinggian sekarang (cm) </label>
                   <output type="text" id="data1a" name="data1a" class="form-control form-control-user mb-4"></output>
                   <label for="data1">Hasil waktu (detik) </label>
-                  <output type="text" id="data3" name="data3" class="form-control form-control-user" id="data3" name="data3"></output>
+                  <output type="text" id="data3" name="data3" class="form-control form-control-user"></output>
                 </div>
 
                 <div class="row justify-content-center mb-3">
