@@ -254,7 +254,7 @@ class Praktikan extends CI_Controller
     {
         $this->load->model('Praktikan_model');
 
-        $config['base_url'] = 'http://localhost/fisdas/praktikan/jadwal';
+        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/praktikan/jadwal';
         $config['total_rows'] = $this->Praktikan_model->JumlahJadwal($this->session->userdata('nrp'));
         $config['per_page'] = 10;
         $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';

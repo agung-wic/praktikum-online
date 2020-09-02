@@ -13,7 +13,7 @@ class Admin extends CI_Controller
     { #USER#
         $this->load->model('Admin_model');
 
-        $config['base_url'] = 'https://virtulab-its.com/admin/index';
+        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/admin/index';
         $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
         $config['full_tag_close'] = '</ul></nav>';
 
@@ -258,7 +258,7 @@ class Admin extends CI_Controller
     {
         $this->load->model('Admin_model');
 
-        $config['base_url'] = 'https://virtulab-its.com/admin/pengumuman';
+        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/admin/pengumuman';
         $config['total_rows'] = $this->Admin_model->JumlahPengumuman();
 
         $config['per_page'] = 5;

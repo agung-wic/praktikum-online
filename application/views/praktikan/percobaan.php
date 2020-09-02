@@ -58,7 +58,6 @@
               <input type="text" name="aksi" value="jatuhkan" hidden>
               <div class="row justify-content-left mb-3 ml-3">
                 <button style="font-size: 200%;" type="submit" data-tampil="#data1a" data-kirim="[v,500]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
-
                 </button>
                 <button type="submit" data-kirim="[t]" data-tampil="#data3" data-id="<?= $modul['modul'] ?>;" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a">
                   Hasil waktu
