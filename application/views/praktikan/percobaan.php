@@ -45,11 +45,11 @@
                 <button style="font-size: 300%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[c,86]" data-id="<?= $modul['modul'] ?>;" id="param1a" class="btn fa fa-arrow-circle-up kirim1a">
                 </button>
               </div>
-              <div class="row justify-content-center mb-3 ml-3">
+              <div class="row justify-content-center mb-3">
                 <button style="font-size: 300%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[v,86]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
                 </button>
               </div>
-              <div class="row justify-content-center mb-3 ml-3">
+              <div class="row justify-content-center mb-3">
                 <button type="submit" id="param2" data-kirim="[d]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" class="btn btn-secondary px-4 kirim1a">
                   Jatuhkan
                 </button>
@@ -60,7 +60,7 @@
                 </button>
               </div>
               <input type="text" name="aksi" value="jatuhkan" hidden>
-              <div class="row justify-content-center mb-3 ml-3">
+              <div class="row justify-content-center mb-3">
                 <button type="submit" data-kirim="[t]" data-tampil="#data3" data-id="<?= $modul['modul'] ?>;" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a">
                   Hasil waktu
                 </button>
@@ -70,7 +70,7 @@
                   Reload Bola
                 </button>
               </div>
-              <div class="row justify-content-center mb-3 ml-3">
+              <div class="row justify-content-center mb-3">
                 <button type="submit" data-kirim="[s]" data-id="<?= $modul['modul'] ?>;" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a">
                   RESET
                 </button>
