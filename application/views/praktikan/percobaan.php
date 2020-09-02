@@ -42,11 +42,11 @@
                 <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
               </div>
               <div class="row justify-content-center">
-                <button style="font-size: 300%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[c,87]" data-id="<?= $modul['modul'] ?>;" id="param1a" class="btn fa fa-arrow-circle-up kirim1a">
+                <button style="font-size: 400%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[c,87]" data-id="<?= $modul['modul'] ?>;" id="param1a" class="btn fa fa-arrow-circle-up kirim1a">
                 </button>
               </div>
               <div class="row justify-content-center mb-3">
-                <button style="font-size: 300%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[v,87]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
+                <button style="font-size: 400%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[v,87]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
                 </button>
               </div>
               <div class="row justify-content-center mb-3">
