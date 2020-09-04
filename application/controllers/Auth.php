@@ -63,8 +63,8 @@ class Auth extends CI_Controller
                         'id' => $user['id'],
                         'is_online' => 1
                     ];
-                    var_dump($data);
-                    die;
+                    $this->db->where('nrp', $user['nrp']);
+                    $this->db->update('user', $data);
                     $this->session->set_userdata($data);
                     if ($user['role_id'] == 1) {
                         redirect(base_url('profil'));
