@@ -54,7 +54,6 @@
                                     <th scope="col">Nama</th>
                                     <th scope="col">NRP</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Role</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -64,7 +63,6 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">NRP</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Role</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </tfoot>
@@ -77,7 +75,6 @@
                                         <td><?= $l['name']; ?></td>
                                         <td><?= $l['nrp']; ?></td>
                                         <td><?= $l['email']; ?></td>
-                                        <td><?= $l['role']; ?></td>
                                     </tr>
                                 <?php $start++;
                                 endforeach; ?>
