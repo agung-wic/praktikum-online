@@ -8,25 +8,6 @@ class Auth extends CI_Controller
         parent::__construct();
     }
 
-    public function index()
-    {
-        if ($this->session->userdata('email')) {
-            redirect(base_url('profil'));
-        } else {
-            $this->form_validation->set_rules('nrp', 'NRP', 'required|trim');
-            $this->form_validation->set_rules('password', 'Password', 'required|trim');
-            if ($this->form_validation->run() == false) {
-                $data['title'] = 'Login';
-                $this->load->view('template/auth_header.php', $data);
-                $this->load->view('auth/login.php');
-                $this->load->view('template/auth_footer.php');
-            } else {
-                //VALIDASI BERHASIL
-                $this->_login();
-            }
-        }
-    }
-
     public function login()
     {
         if ($this->session->userdata('email')) {
@@ -60,7 +41,8 @@ class Auth extends CI_Controller
                         'nrp' => $user['nrp'],
                         'email' => $user['email'],
                         'role_id' => $user['role_id'],
-                        'id' => $user['id']
+                        'id' => $user['id'],
+                        'is_online' => 1
                     ];
                     $this->session->set_userdata($data);
                     if ($user['role_id'] == 1) {
