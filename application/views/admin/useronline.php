@@ -44,7 +44,7 @@
                     </div>
                     <?php if (empty($list)) { ?>
                         <div class="alert alert-danger" role="alert">
-                            Data not found!
+                            Tidak ada yang online!
                         </div>
                     <?php } else { ?>
                         <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
