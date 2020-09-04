@@ -331,6 +331,11 @@ class Auth extends CI_Controller
         $this->session->unset_userdata('role_id');
         $this->session->unset_userdata('nrp');
         $this->session->unset_userdata('id');
+        $data = [
+            'is_online' => 0
+        ];
+        $this->db->where('nrp', $user['nrp']);
+        $this->db->update('user', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Logout berhasil!</div>');
         redirect('auth');
     }
