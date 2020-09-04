@@ -140,4 +140,22 @@ class Admin_model extends CI_Model
 
     return $this->db->query($query)->row_array();
   }
+
+  public function TampilUserOnline($limit, $start)
+  {
+    $id = $this->input->post('id', true);
+    $query = "SELECT * FROM `user` 
+              WHERE `is_online`= 1 AND `role_id`= 2 LIMIT $limit OFFSET $start ";
+
+
+    return $this->db->query($query)->row_array();
+  }
+
+  public function JumlahUserOnline()
+  {
+    $query = "SELECT * FROM `user` 
+              WHERE `is_online`= 1 AND `role_id`= 2";
+
+    return $this->db->query($query)->num_rows();
+  }
 }

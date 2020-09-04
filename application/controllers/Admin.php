@@ -60,6 +60,57 @@ class Admin extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function useronline($id = '')
+    { #USER#
+        $this->load->model('Admin_model');
+
+        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/admin/index';
+        $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li class="page-item">';
+        $config['next_tag_close'] = '</li>';
+
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="page-item">';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+        $config['cur_tag_close'] = '</li></a>';
+
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+
+        $config['attributes'] = array('class' => 'page-link');
+
+        $data['start'] = $this->uri->segment(3);
+        if ($data['start'] == null) {
+            $data['start'] = 0;
+        }
+
+        if ($this->input->post('keyword')) {
+            $data['keyword'] = $this->input->post('keyword');
+            $config['total_rows'] = $this->db->count_all_results();
+        } else {
+            $data['keyword'] = null;
+            $config['total_rows'] = $this->Admin_model->JumlahUserOnline();
+        }
+        $config['per_page'] = 5;
+        $this->pagination->initialize($config);
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['list'] = $this->Admin_model->TampilUserOnline($config['per_page'], $data['start']);
+        $data['detail'] = $this->db->get_where('user', ['id' => $id])->row_array();
+        $data['role'] = $this->db->get('user_role')->result_array();
+
+        $data['title'] = 'User List';
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('admin/useronline', $data);
+        $this->load->view('template/footer');
+    }
+
     public function delete($id)
     {
         $this->db->where('id', $id);
