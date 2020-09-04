@@ -75,7 +75,7 @@
                                         <td><?= $l['name']; ?></td>
                                         <td><?= $l['nrp']; ?></td>
                                         <td><?= $l['email']; ?></td>
-                                        <td><i class="fas fa-circle" style="color:#2ec1ac"></i></td>
+                                        <td><i class="fas fa-circle" style="color:#2ec1ac"></i> Online </td>
                                     </tr>
                                 <?php $start++;
                                 endforeach; ?>
