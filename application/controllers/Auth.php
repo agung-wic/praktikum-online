@@ -327,10 +327,6 @@ class Auth extends CI_Controller
 
     public function logout()
     {
-        $nrp = $this->session->set_userdata('nrp');
-        var_dump($nrp);
-        die;
-        $user = $this->db->get_where('user', ['nrp' => $nrp])->row_array();
         $data = [
             'is_online' => 0
         ];
