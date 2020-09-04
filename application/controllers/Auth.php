@@ -335,7 +335,7 @@ class Auth extends CI_Controller
             'email' => $user['email'],
             'role_id' => $user['role_id'],
             'id' => $user['id'],
-            'is_online' => 1
+            'is_online' => 0
         ];
         $this->db->where('nrp', $user['nrp']);
         $this->db->update('user', $data);
