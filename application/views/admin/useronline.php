@@ -54,7 +54,7 @@
                                     <th scope="col">Nama</th>
                                     <th scope="col">NRP</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">Status</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -63,7 +63,7 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">NRP</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">Status</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -75,6 +75,7 @@
                                         <td><?= $l['name']; ?></td>
                                         <td><?= $l['nrp']; ?></td>
                                         <td><?= $l['email']; ?></td>
+                                        <td><i class="fas fa-circle" style="color:#2ec1ac"></i></td>
                                     </tr>
                                 <?php $start++;
                                 endforeach; ?>
