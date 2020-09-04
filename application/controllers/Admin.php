@@ -61,7 +61,7 @@ class Admin extends CI_Controller
     }
 
     public function useronline($id = '')
-    { #USER#
+    {
         $this->load->model('Admin_model');
 
         $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/admin/index';
@@ -95,6 +95,8 @@ class Admin extends CI_Controller
         } else {
             $data['keyword'] = null;
             $config['total_rows'] = $this->Admin_model->JumlahUserOnline();
+            var_dump($config['total_rows']);
+            die;
         }
         $config['per_page'] = 5;
         $this->pagination->initialize($config);
