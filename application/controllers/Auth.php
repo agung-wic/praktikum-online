@@ -327,14 +327,9 @@ class Auth extends CI_Controller
 
     public function logout()
     {
-        $nrp = $this->input->post('nrp');
-        $Password = $this->input->post('password');
+        $nrp = $this->session->post('nrp');
         $user = $this->db->get_where('user', ['nrp' => $nrp])->row_array();
         $data = [
-            'nrp' => $user['nrp'],
-            'email' => $user['email'],
-            'role_id' => $user['role_id'],
-            'id' => $user['id'],
             'is_online' => 0
         ];
         $this->db->where('nrp', $user['nrp']);
