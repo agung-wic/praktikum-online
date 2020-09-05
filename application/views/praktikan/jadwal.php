@@ -88,7 +88,8 @@
                                 </a>
                               <?php endif; ?>
                             </td>
-                          <?php } else { ?>
+                          <?php break;
+                          } else { ?>
                             <td>Belum ada jadwal</td>
                             <td></td>
                             <td></td>
