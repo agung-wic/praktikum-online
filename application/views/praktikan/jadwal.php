@@ -92,12 +92,12 @@
                             </td>
                           <?php
                             $i++;
-                          } else { ?>
-                            <td>Belum ada jadwal</td>
-                            <td></td>
-                            <td></td>
-                        <?php }
-                        } ?>
+                          }
+                        } else { ?>
+                          <td>Belum ada jadwal</td>
+                          <td></td>
+                          <td></td>
+                        <?php } ?>
                       </tr>
                     <?php $start++;
                     endforeach; ?>
@@ -167,16 +167,3 @@
     </div>
   </div>
 </div>
-
-
-
-foreach:
-foreach:
-if{
-
-break;
-}else{
-
-}
-endforeach;
-endforeach;
