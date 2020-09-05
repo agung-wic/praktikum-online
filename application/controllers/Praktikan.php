@@ -305,6 +305,9 @@ class Praktikan extends CI_Controller
             "is_approved" => 0
         ];
 
+        var_dump($this->input->post('jadwal_new'));
+        die;
+
         $this->db->insert('req_jadwal', $data);
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
           Pengajuan jadwal sukses! Silakan menunggu persetujuan dari Admin.
