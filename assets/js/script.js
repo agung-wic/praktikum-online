@@ -155,6 +155,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
+				console.log(data);
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#modul_id").val(data.modul_id);
