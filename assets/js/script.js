@@ -156,11 +156,12 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				console.log(data);
+				jadwal = data.jadwal;
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#modul_id").val(data.modul_id);
 				$("#modul").val(data.modul_id);
-				$("#jadwal_old").val(data.jadwal);
+				$("#jadwal_old").val(jadwal.replace(" ", "T"));
 				$("#id").val(data.id);
 			},
 		});
