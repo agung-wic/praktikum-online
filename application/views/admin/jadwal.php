@@ -82,7 +82,7 @@
                         <td><?= $r['name']; ?></td>
                         <td><?= $r['nrp']; ?></td>
                         <td><?= $r['modul']; ?></td>
-                        <td><?= str_replace("T", " | ", $r['jadwal_old']); ?></td>
+                        <td><?= str_replace("T", " ", $r['jadwal_old']); ?></td>
                         <td>
                           <a href="<?= base_url('admin/detailpengajuan/') . $r['id']; ?>" class="badge badge-pill badge-primary">
                             <i class=" fas fa-fw fa-edit"></i>
