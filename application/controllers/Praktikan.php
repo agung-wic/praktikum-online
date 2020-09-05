@@ -285,8 +285,6 @@ class Praktikan extends CI_Controller
 
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['list'] = $this->Praktikan_model->JadwalPraktikan($this->session->userdata('nrp'), $config['per_page'], $data['start']);
-        var_dump($data['list']);
-        die;
         $data['modul'] = $this->db->get('modul')->result_array();
         $data['total'] = $this->Praktikan_model->JumlahJadwal($this->session->userdata('nrp'));
         $this->load->view('template/header', $data);
