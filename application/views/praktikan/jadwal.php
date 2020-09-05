@@ -60,34 +60,42 @@
                   </tfoot>
                   <tbody>
                     <?php $i = 1;
-                    foreach ($list as $l) :
+                    foreach ($modul as $m) :
+                      foreach ($list as $l) :
                     ?>
-                      <tr>
-                        <th scope="row"><?= $start + 1; ?></th>
-                        <td><?= $l['modul']; ?></td>
-                        <td><?= str_replace("T", " | ", $l['jadwal']); ?></td>
-                        <td><?php if ($l['is_approved'] == null) {
-                              echo "";
-                            } elseif ($l['is_approved'] == 1) {
-                              echo "Perubahan Jadwal Disetujui";
-                            } elseif ($l['is_approved'] == 2) {
-                              echo "Perubahan Jadwal Ditolak";
-                            } elseif ($l['is_approved'] == 0) {
-                              echo "Menunggu Persetujuan";
-                            }
-                            ?></td>
-                        <td>
-                          <?php $jadwal = strtotime(str_replace("T", " ", $l['jadwal']));
-                          $now = time();
-                          if ($jadwal > $now) : ?>
-                            <a href="<?= base_url('praktikan/reqjadwal/') . $l['id']; ?>" class="badge badge-pill badge-primary reqJadwalPraktikan" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#JadwalEdit">
-                              <i class=" fas fa-fw fa-edit"></i>
-                              Ubah Jadwal
-                            </a>
-                          <?php endif; ?>
-                        </td>
-                      </tr>
+                        <tr>
+                          <th scope="row"><?= $start + 1; ?></th>
+                          <td><?= $m['name']; ?></td>
+                          <?php if ($m['modul'] == $l['modul_id']) { ?>
+                            <td><?= str_replace("T", " | ", $l['jadwal']); ?></td>
+                            <td><?php if ($l['is_approved'] == null) {
+                                  echo "";
+                                } elseif ($l['is_approved'] == 1) {
+                                  echo "Perubahan Jadwal Disetujui";
+                                } elseif ($l['is_approved'] == 2) {
+                                  echo "Perubahan Jadwal Ditolak";
+                                } elseif ($l['is_approved'] == 0) {
+                                  echo "Menunggu Persetujuan";
+                                }
+                                ?></td>
+                            <td>
+                              <?php $jadwal = strtotime(str_replace("T", " ", $l['jadwal']));
+                              $now = time();
+                              if ($jadwal > $now) : ?>
+                                <a href="<?= base_url('praktikan/reqjadwal/') . $l['id']; ?>" class="badge badge-pill badge-primary reqJadwalPraktikan" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#JadwalEdit">
+                                  <i class=" fas fa-fw fa-edit"></i>
+                                  Ubah Jadwal
+                                </a>
+                              <?php endif; ?>
+                            </td>
+                          <?php } else { ?>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          <?php } ?>
+                        </tr>
                     <?php $start++;
+                      endforeach;
                     endforeach; ?>
                   </tbody>
                 </table>
