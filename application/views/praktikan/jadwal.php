@@ -89,7 +89,7 @@
                               <?php endif; ?>
                             </td>
                           <?php } else { ?>
-                            <td></td>
+                            <td>Belum ada jadwal</td>
                             <td></td>
                             <td></td>
                           <?php } ?>
