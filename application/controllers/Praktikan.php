@@ -306,10 +306,9 @@ class Praktikan extends CI_Controller
         ];
         $ada = $this->db->get_where('req_jadwal', array('nrp' => $this->input->post('nrp'), 'modul_id' => $this->input->post('modul')))->row_array();
         if ($ada) {
-            $this->db->set($data);
             $this->db->where('nrp', $this->input->post('nrp'));
-            $this->db->where('modul_id', $this->input->post('modul_id'));
-            $this->db->update('req_jadwal');
+            $this->db->where('modul_id', $this->input->post('modul'));
+            $this->db->update('req_jadwal', $data);
         } else {
             $this->db->insert('req_jadwal', $data);
         }
