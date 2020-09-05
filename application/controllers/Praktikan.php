@@ -304,8 +304,16 @@ class Praktikan extends CI_Controller
             "ket" => $this->input->post('ket'),
             "is_approved" => 0
         ];
-
-        $this->db->insert('req_jadwal', $data);
+        $this->db->where('nrp', $this->input->post('nrp'));
+        $this->db->where('modul_id', $this->input->post('modul_id'));
+        $ada = $this->db->get('req_jadwal')->row_array();
+        if ($ada) {
+            $this->db->where('nrp', $this->input->post('nrp'));
+            $this->db->where('modul_id', $this->input->post('modul_id'));
+            $this->db->update('req_jadwal', $data);
+        } else {
+            $this->db->insert('req_jadwal', $data);
+        }
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
           Pengajuan jadwal sukses! Silakan menunggu persetujuan dari Admin.
           </div>');
