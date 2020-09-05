@@ -304,9 +304,7 @@ class Praktikan extends CI_Controller
             "ket" => $this->input->post('ket'),
             "is_approved" => 0
         ];
-        $this->db->where('nrp', $this->input->post('nrp'));
-        $this->db->where('modul_id', $this->input->post('modul_id'));
-        $ada = $this->db->get('req_jadwal')->row_array();
+        $ada = $this->db->get_where('req_jadwal', array('nrp' => $this->input->post('nrp'), 'modul_id' => $this->input->post('modul_id')))->row_array();
         var_dump($ada);
         die;
         if ($ada) {
