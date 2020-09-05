@@ -8,7 +8,7 @@
           <?php $i = 0;
           foreach ($modul as $m) : ?>
             <div class="card pb-2">
-              <div class="card-header py-3" style="margin-bottom: 0px; background: linear-gradient(40deg,rgba(111, 140, 252, 1) 8%,rgba(47, 200, 201, 1) 100%);color: white;" id="heading<?= $m['modul']; ?>">
+              <div class="card-header gradien py-3" id="heading<?= $m['modul']; ?>">
                 <h2 class="mb-0">
                   <div class="btn-block text-left collapsed" style="font-size: large; " type="button" data-toggle="collapse" data-target="#collapse<?= $m['modul']; ?>" aria-expanded="true">
                     <div>
