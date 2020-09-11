@@ -182,8 +182,8 @@ class Praktikan extends CI_Controller
         // $port    = 1800;
         // $port2    = 1801;
         $host    = "192.168.1.13";
-        $port    = 1800;
-        $port2    = 1801;
+        $port    = 1025;
+        $port2    = 1026;
         //echo "Message To server :" . $message;
         // create socket
         $socket1 = socket_create(AF_INET, SOCK_STREAM, 0);
