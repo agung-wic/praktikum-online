@@ -37,20 +37,6 @@ class Modul extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function edittombol()
-    {
-        $data = [
-            "role" => $this->input->post('role', true)
-        ];
-
-        $this->db->where('id', $this->input->post('id'));
-        $this->db->update('user_role', $data);
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-        Role berhasil diubah!
-        </div>');
-        redirect(base_url('admin/role'));
-    }
-
     public function navigasi($id = NULL)
     {
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
@@ -88,9 +74,9 @@ class Modul extends CI_Controller
     public function edittomboltulisan()
     {
         $data = [
-            "tombol_kirim" => $this->input->post('tombol_kirim', true),
-            "tombol_keterangan" => $this->input->post('tombol_keterangan', true),
-            "tombol_status" => $this->input->post('tombol_status', true),
+            "tombol_kirim" => $this->input->post('tombol_kirimm', true),
+            "tombol_keterangan" => $this->input->post('tombol_keterangann', true),
+            "tombol_status" => $this->input->post('tombol_statuss', true),
         ];
         if ($data["tombol_status"] == "on") {
             $data["tombol_status"] = 1;
