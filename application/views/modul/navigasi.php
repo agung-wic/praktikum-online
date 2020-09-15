@@ -66,7 +66,7 @@
                     </div>
                     <div class="form-group">
                         <label for="tombol_status">Status</label>
-                        <input type="checkbox" class="form-check-input pl-5" id="tombol_status" name="tombol_status">
+                        <input type="checkbox" class="form-check-input ml-3 pl-5" id="tombol_status" name="tombol_status">
                     </div>
                     <div class="form-group">
                         <label for="tombol_keterangan">Keterangan tombol</label>
