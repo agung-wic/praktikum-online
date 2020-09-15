@@ -6,8 +6,6 @@
                     <div class="kotak" style="background-color: #bcaead;">
                         <div class="container mt-2" style="color: black;">
                             <h6 class="mb-3"><b><?= $modul['name'] ?></b></h6>
-                            <input type="text" name="aksi" value="data" hidden>
-                            <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
                         </div>
                         <div class="row justify-content-center">
                             <button style="font-size:300%;margin-bottom:3%;margin-top:10%" type="submit" class="btn btn-dark fa fa-arrow-circle-up tombolEditArah" data-id="<?= $tombol_arah[0]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
