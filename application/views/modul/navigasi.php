@@ -58,7 +58,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('modul/edittombol') ?>" method="post">
+                <form action="<?= base_url('modul/edittombolarah') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
                         <label for="tombol_kirim">Nilai yang dikirim</label>

@@ -28,7 +28,7 @@ class Modul extends CI_Controller
         $this->load->model('Modul_model');
         $data['modul'] = $this->db->get('modul')->result_array();
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-        $data['title'] = 'Navigasi Modul';
+        $data['title'] = 'Konten Modul';
         $data['list'] = $this->Modul_model->TampilModul();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -65,6 +65,22 @@ class Modul extends CI_Controller
         $this->load->view('template/topbar', $data);
         $this->load->view('modul/navigasi', $data);
         $this->load->view('template/footer');
+    }
+
+    public function edittombolarah()
+    {
+        $data = [
+            "tombol_kirim" => $this->input->post('tombol_kirim', true),
+            "tombol_keterangan" => $this->input->post('tombol_keterangan', true),
+            "tombol_status" => $this->input->post('tombol_status', true),
+        ];
+
+        $this->db->where('id', $this->input->post('id_modul'));
+        $this->db->update('tombol_arah', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Tombol Navigasi berhasil diubah!
+        </div>');
+        redirect(base_url('modul/editnavigasi'));
     }
 
 
@@ -173,10 +189,5 @@ class Modul extends CI_Controller
     public function getubahvideo()
     {
         echo json_encode($this->db->get_where('modul', ['id' => $this->input->post('id')])->row_array());
-    }
-
-    public function getubahtombolarah()
-    {
-        echo json_encode($this->db->get_where('tombol_arah', ['id' => $this->input->post('id')])->row_array());
     }
 }
