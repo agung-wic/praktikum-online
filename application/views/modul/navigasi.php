@@ -24,10 +24,10 @@
                             </button>
                         </div>
                         <?php
-                        foreach ($tombol_tulisan as $t) :  ?>
+                        foreach $i=2;($tombol_tulisan as $t) :  ?>
                             <div class="row justify-content-center mb-1">
-                                <button type="submit" style="margin: 1%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $tombol_tulisan[2]['id'] ?>" class="btn btn-dark px-4 tombolEditTulisan">
-                                    <?= $t['tombol_keterangan'] ?><?php var_dump($tombol_tulisan[3]['id']); ?>
+                                <button type="submit" style="margin: 1%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $tombol_tulisan[$i++]['id'] ?>" class="btn btn-dark px-4 tombolEditTulisan">
+                                    <?= $t['tombol_keterangan'] ?><?php var_dump($tombol_tulisan[$i++]['id']); ?>
                                 </button>
                             </div>
                         <?php
