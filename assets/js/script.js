@@ -167,7 +167,6 @@ $(function () {
 		});
 	});
 
-
 	$(".kirim1a").on("click", function () {
 		const tampil = $(this).data("tampil");
 		const kirim = $(this).data("kirim");
@@ -352,7 +351,29 @@ $(function () {
 				$("#tombol_keterangan").val(data.tombol_keterangan);
 				$("#tombol_kirim").val(data.tombol_kirim);
 				if (data.tombol_status == 1) {
-					$("#tombol_status").attr('checked', 'checked');
+					$("#tombol_status").attr("checked", "checked");
+				}
+			},
+		});
+	});
+
+	$(".tombolEditTulisan").on("click", function () {
+		const id = $(this).data("id");
+
+		$.ajax({
+			url: base + "modul/getubahtombolarah",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				$("#tombolEditTulisanLabel").html(data.tombol_keterangan);
+				$("#id").val(data.id);
+				$("#tombol_keterangan").val(data.tombol_keterangan);
+				$("#tombol_kirim").val(data.tombol_kirim);
+				if (data.tombol_status == 1) {
+					$("#tombol_status").attr("checked", "checked");
 				}
 			},
 		});

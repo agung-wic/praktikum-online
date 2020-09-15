@@ -85,6 +85,24 @@ class Modul extends CI_Controller
         redirect(base_url('modul/editnavigasi'));
     }
 
+    public function edittomboltulisan()
+    {
+        $data = [
+            "tombol_kirim" => $this->input->post('tombol_kirim', true),
+            "tombol_keterangan" => $this->input->post('tombol_keterangan', true),
+            "tombol_status" => $this->input->post('tombol_status', true),
+        ];
+        if ($data["tombol_status"] == "on") {
+            $data["tombol_status"] = 1;
+        } else $data["tombol_status"] = 0;
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('tombol_tulisan', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Tombol Navigasi berhasil diubah!
+        </div>');
+        redirect(base_url('modul/editnavigasi'));
+    }
+
 
     public function editmodul()
     {
@@ -196,5 +214,10 @@ class Modul extends CI_Controller
     public function getubahtombolarah()
     {
         echo json_encode($this->db->get_where('tombol_arah', ['id' => $this->input->post('id')])->row_array());
+    }
+
+    public function getubahtomboltulisan()
+    {
+        echo json_encode($this->db->get_where('tombol_tulisan', ['id' => $this->input->post('id')])->row_array());
     }
 }

@@ -26,7 +26,7 @@
                         <?php
                         foreach ($tombol_tulisan as $t) :  ?>
                             <div class="row justify-content-center mb-1">
-                                <button type="submit" style="margin: 1%;" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" class="btn btn-dark px-4">
+                                <button type="submit" style="margin: 1%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $tombol_tulisan[2]['id'] ?>" class="btn btn-dark px-4 tombolEditTulisan">
                                     <?= $t['tombol_keterangan'] ?>
                                 </button>
                             </div>
@@ -59,6 +59,40 @@
             </div>
             <div class="modal-body">
                 <form action="<?= base_url('modul/edittombolarah') ?>" method="post">
+                    <div class="form-group">
+                        <input type="hidden" id="id" name="id">
+                        <label for="tombol_kirim">Nilai yang dikirim</label>
+                        <input type="text" class="form-control" id="tombol_kirim" name="tombol_kirim">
+                    </div>
+                    <div class="form-group">
+                        <label for="tombol_status">Status</label>
+                        <input type="checkbox" class="form-check-input ml-3 pl-5" id="tombol_status" name="tombol_status">
+                    </div>
+                    <div class="form-group">
+                        <label for="tombol_keterangan">Keterangan tombol</label>
+                        <input type="text" class="form-control" id="tombol_keterangan" name="tombol_keterangan">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Ubah</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tombolEditTulisan" tabindex="-1" role="dialog" aria-labelledby="tombolEditTulisanLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tombolEditTulisanLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('modul/edittomboltulisan') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
                         <label for="tombol_kirim">Nilai yang dikirim</label>
