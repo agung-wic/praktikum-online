@@ -82,10 +82,6 @@ class Modul extends CI_Controller
             $data["tombol_status"] = 1;
         } else $data["tombol_status"] = 0;
         $this->db->where('id', $this->input->post('idd'));
-        var_dump($this->input->post('idd'));
-        var_dump($this->input->post('id'));
-        var_dump($data);
-        die;
         $this->db->update('tombol_tulisan', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Tombol Navigasi berhasil diubah!
