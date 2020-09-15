@@ -73,6 +73,10 @@ class Modul extends CI_Controller
             "tombol_kirim" => $this->input->post('tombol_kirim', true),
             "tombol_keterangan" => $this->input->post('tombol_keterangan', true),
             "tombol_status" => $this->input->post('tombol_status', true),
+            if("tombol_status" == "on")
+            {
+                "tombol_status" = 1;
+            } else "tombol_status" == 0;
         ];
         var_dump($data);
         die;
