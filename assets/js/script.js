@@ -351,9 +351,9 @@ $(function () {
 				$("#id").val(data.id);
 				$("#tombol_keterangan").val(data.tombol_keterangan);
 				$("#tombol_kirim").val(data.tombol_kirim);
-				if (data.tombol_status == 1) {
-					$("#tombol_status").attr("checked", true);
-				} else $("#tombol_status").attr("check", false);
+				if (data.tombol_status == 0) {
+					$("#tombol_status").attr("checked", false);
+				} else $("#tombol_status").attr("check", true);
 			},
 		});
 	});
