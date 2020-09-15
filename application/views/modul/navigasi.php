@@ -94,17 +94,17 @@
             <div class="modal-body">
                 <form action="<?= base_url('modul/edittomboltulisan') ?>" method="post">
                     <div class="form-group">
-                        <input type="hidden" id="id" name="id">
+                        <input type="hidden" class="id" name="id">
                         <label for="tombol_kirim">Nilai yang dikirim</label>
                         <input type="text" class="form-control" id="tombol_kirim" name="tombol_kirim">
                     </div>
                     <div class="form-group">
                         <label for="tombol_status">Status</label>
-                        <input type="checkbox" class="form-check-input ml-3 pl-5" id="tombol_status" name="tombol_status">
+                        <input type="checkbox" class="form-check-input ml-3 pl-5" class="tombol_status" name="tombol_status">
                     </div>
                     <div class="form-group">
                         <label for="tombol_keterangan">Keterangan tombol</label>
-                        <input type="text" class="form-control" id="tombol_keterangan" name="tombol_keterangan">
+                        <input type="text" class="form-control" class="tombol_keterangan" name="tombol_keterangan">
                     </div>
             </div>
             <div class="modal-footer">
