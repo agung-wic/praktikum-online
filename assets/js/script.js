@@ -336,7 +336,7 @@ $(function () {
 		});
 	});
 
-	$(".TombolEditArah").on("click", function () {
+	$(".tombolEditArah").on("click", function () {
 		const id = $(this).data("id");
 		console.log(id);
 
