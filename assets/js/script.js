@@ -353,7 +353,7 @@ $(function () {
 				$("#tombol_kirim").val(data.tombol_kirim);
 				if (data.tombol_status == 0) {
 					$("#tombol_status").attr("checked", false);
-				} else $("#tombol_status").attr("check", true);
+				} else $("#tombol_status").attr("checked", true);
 			},
 		});
 	});
