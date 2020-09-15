@@ -347,6 +347,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
+				console.log(data);
 				$("#tombolEditArahModalLabel").html(data.tombol_keterangan);
 				$("id").val(data.id);
 				$("#tombol_kirim").val(data.tombol_kirim);

@@ -64,11 +64,11 @@
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
                         <label for="tombol_kirim">Nilai yang dikirim</label>
-                        <input type="text" class="form-control" id="tombol_kirim" name="tombol_kirim" placeholder="Nilai yang dikirim..">
+                        <input type="text" class="form-control" id="tombol_kirim" name="tombol_kirim">
                     </div>
                     <div class="form-group">
-                        <label for=""></label>
-                        <input type="checkbox" class="form-control" id="tombol_status" name="tombol_status">
+                        <label for="tombol_status"></label>
+                        <input type="checkbox" class="form-check-input" id="tombol_status" name="tombol_status">
                     </div>
             </div>
             <div class="modal-footer">
