@@ -338,7 +338,6 @@ $(function () {
 
 	$(".tombolEditArah").on("click", function () {
 		const id = $(this).data("id");
-		console.log(id);
 
 		$.ajax({
 			url: base + "modul/getubahtombolarah",
