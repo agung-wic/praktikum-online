@@ -115,6 +115,7 @@ class Menu extends CI_Controller
     public function editsub()
     {
         $data = [
+            "menu_id" => $this->input->post('menu_id', true),
             "title" => $this->input->post('title', true),
             "url" => $this->input->post('url', true),
             "icon" => $this->input->post('icon', true),
@@ -123,6 +124,7 @@ class Menu extends CI_Controller
 
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('user_sub_menu', $data);
+
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Submenu has been edited!
         </div>');

@@ -54,51 +54,11 @@
     });
   });
 
-  $('#param1a').click(function() {
-    var param1a = $(this);
+  $('.param1').click(function() {
+    let param1a = $(this);
     param1a.prop('disabled', true);
     setTimeout(function() {
       param1a.prop('disabled', false);
-    }, 3000);
-  });
-
-  $('#param1b').click(function() {
-    var param1b = $(this);
-    param1b.prop('disabled', true);
-    setTimeout(function() {
-      param1b.prop('disabled', false);
-    }, 3000);
-  });
-
-  $('#param2').click(function() {
-    var param2 = $(this);
-    param2.prop('disabled', true);
-    setTimeout(function() {
-      param2.prop('disabled', false);
-    }, 3000);
-  });
-
-  $('#param3').click(function() {
-    var param3 = $(this);
-    param3.prop('disabled', true);
-    setTimeout(function() {
-      param3.prop('disabled', false);
-    }, 3000);
-  });
-
-  $('#param4').click(function() {
-    var param4 = $(this);
-    param4.prop('disabled', true);
-    setTimeout(function() {
-      param4.prop('disabled', false);
-    }, 3000);
-  });
-
-  $('#param5').click(function() {
-    var param5 = $(this);
-    param5.prop('disabled', true);
-    setTimeout(function() {
-      param5.prop('disabled', false);
     }, 3000);
   });
 </script>

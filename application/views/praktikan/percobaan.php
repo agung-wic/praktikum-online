@@ -22,17 +22,19 @@
   </div>
 </div>
 <div class="row mx-3">
-  <div class="col-lg-6 justify-content-center">
-    <div class="kotak" style="transform:rotate(270deg);">
-      <div class="container">
-        <iframe width="560" height="600" src="https://www.youtube.com/embed/XwC44ihPP8g?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="col-lg-6">
+    <div class="kotak" style="background-color:black">
+      <div class="container text-center" style="transform:rotate(270deg);">
+        <iframe style="border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;" width="450" height="450" src="https://www.youtube.com/embed/SG2YQnHWetE?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="kotak">
+    <div class="kotak" background-color:black">
       <div class="container py-3">
-
         <div class="row">
           <div class="col-lg-6">
             <div class="kotak" style="background-color: #bcaead;">
@@ -42,39 +44,93 @@
                 <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
               </div>
               <div class="row justify-content-center">
-                <button style="font-size: 400%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[c,87]" data-id="<?= $modul['modul'] ?>;" id="param1a" class="btn fa fa-arrow-circle-up kirim1a">
-                </button>
+                <?php if ($tombol_arah[0]['tombol_status'] == 1) { ?>
+                  <button style="font-size: 300%;margin-bottom:3%;margin-top:10%" type="submit" data-tampil="#data1a" data-kirim=" <?= $tombol_arah[0]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>;" class="param1 btn btn-dark fa fa-arrow-circle-up kirim1a">
+                  </button>
+                <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;margin-bottom:3%;margin-top:10%" data-id="<?= $modul['modul'] ?>;" class="btn fa fa-arrow-circle-up" disabled>
+                  </button>
+                <?php } ?>
               </div>
-              <div class="row justify-content-center mb-3">
-                <button style="font-size: 400%;color: #E5E5E5" type="submit" data-tampil="#data1a" data-kirim="[v,87]" data-id="<?= $modul['modul'] ?>;" id="param1b" class="btn fa fa-arrow-circle-down kirim1a">
+              <div class="row justify-content-center">
+                <?php if ($tombol_arah[2]['tombol_status'] == 1) { ?>
+                  <button style="font-size: 300%" type="submit" data-tampil="#data1a" data-kirim="<?= $tombol_arah[1]['tombol_kirim'] ?>]" data-id="<?= $modul['modul'] ?>;" class="param1 btn btn-dark fa fa-arrow-circle-left kirim1a">
+                  </button>
+                <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%" data-id="<?= $modul['modul'] ?>;" class="btn fa fa-arrow-circle-left" disabled>
+                  </button>
+                <?php } ?>
+                <button style="font-size:200%;margin-right:3%;margin-left:3%;background-color:black;color:white" type="submit" data-id="<?= $modul['modul'] ?>;" class="btn fas fa-circle kirim1a" disabled>
                 </button>
+                <?php if ($tombol_arah[3]['tombol_status'] == 1) { ?>
+                  <button style="font-size: 300%" type="submit" data-tampil="#data1a" data-kirim="[c,87]" data-id="<?= $modul['modul'] ?>;" class="param1 btn btn-dark fa fa-arrow-circle-right kirim1a">
+                  </button>
+                <?php } else { ?><button style="color:#bcaead;background-color:#bcaead;font-size: 300%" data-id="<?= $modul['modul'] ?>;" class="btn fa fa-arrow-circle-right" disabled>
+                  </button>
+                <?php } ?>
               </div>
-              <div class="row justify-content-center mb-3">
-                <button type="submit" id="param2" data-kirim="[d]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" class="btn btn-secondary px-4 kirim1a">
-                  Jatuhkan
+              <div class="row justify-content-center">
+                <?php if ($tombol_arah[1]['tombol_status'] == 1) { ?>
+                  <button style="font-size: 300%;margin-top:3%;margin-bottom:20%" type="submit" data-tampil="#data1a" data-kirim="[v,87]" data-id="<?= $modul['modul'] ?>;" class="param1 btn btn-dark fa fa-arrow-circle-down kirim1a">
+                  </button>
+                <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;margin-bottom:3%;margin-top:10%" data-id="<?= $modul['modul'] ?>;" class="btn fa fa-arrow-circle-up" disabled>
+                  </button>
+                <?php } ?>
+              </div>
+              <?php
+              foreach ($tombol_tulisan as $t) :  ?>
+                <div class="row justify-content-center mb-1">
+                  <button type="submit" style="margin: 1%;" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" class="param1 btn btn-dark px-4 kirim1a">
+                    <?= $t['tombol_keterangan'] ?>
+                  </button>
+                </div>
+              <?php
+              endforeach;
+              ?>
+              <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
+              </div>
+              <!-- <button type="submit" id="param2" data-kirim="[d]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" class="btn btn-secondary px-4 kirim1a">
+                  1
+                </button>
+                <div class="p-1">
+                </div>
+                <button type="submit" data-kirim="[i]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" id="param3" class="btn btn-secondary px-4 kirim1a">
+                  2
                 </button>
                 <div class="p-1">
                 </div>
                 <button type="submit" data-kirim="[i]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" id="param4" class="btn btn-secondary px-4 kirim1a">
-                  Jumlah Bola
+                  3
                 </button>
               </div>
               <input type="text" name="aksi" value="jatuhkan" hidden>
               <div class="row justify-content-center mb-3">
-                <button type="submit" data-kirim="[t]" data-tampil="#data3" data-id="<?= $modul['modul'] ?>;" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a">
-                  Hasil waktu
+                <button type="submit" data-kirim="[t]" data-tampil="#data3" data-id="<?= $modul['modul'] ?>;" id="param5" class="btn btn-secondary pl-1 px-4 kirim1a">
+                  4
                 </button>
                 <div class="p-1">
                 </div>
-                <button type="submit" data-kirim="[r]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" id="param4" class="btn btn-secondary px-4 kirim1a">
-                  Reload Bola
+                <button type="submit" data-kirim="[r]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" id="param6" class="btn btn-secondary px-4 kirim1a">
+                  5
+                </button>
+                <div class="p-1">
+                </div>
+                <button type="submit" data-kirim="[r]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" id="param7" class="btn btn-secondary px-4 kirim1a">
+                  6
                 </button>
               </div>
               <div class="row justify-content-center mb-3">
-                <button type="submit" data-kirim="[s]" data-id="<?= $modul['modul'] ?>;" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a">
-                  RESET
+                <button type="submit" style="margin-bottom:20%" data-kirim="[s]" data-id="<?= $modul['modul'] ?>;" id="param8" class="btn btn-secondary pl-1 px-4 kirim1a">
+                  7
                 </button>
-              </div>
+                <div class="p-1">
+                </div>
+                <button type="submit" style="margin-bottom:20%" data-kirim="" data-id="<?= $modul['modul'] ?>;" id="param9" class="btn btn-secondary pl-1 px-4 kirim1a">
+                  8
+                </button>
+                <div class="p-1">
+                </div>
+                <button type="submit" style="margin-bottom:20%" data-kirim="" data-id="<?= $modul['modul'] ?>;" id="param10" class="btn btn-secondary pl-1 px-4 kirim1a">
+                  9
+                </button> -->
             </div>
           </div>
           <div class="col-lg-6">
@@ -109,6 +165,75 @@
             <a href="#" class="btn gradien px-5" data-toggle="modal" data-target="#SelesaiModal">Selesai</a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="Keterangan" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Keterangan Button</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button type="submit" id="param2" data-kirim="[d]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" class="btn btn-secondary px-4 kirim1a" disabled>
+          1
+        </button>
+        <a class="">Drop Bola</a>
+        <div class="p-1">
+        </div>
+        <button type="submit" data-kirim="[i]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
+          2
+        </button>
+        <a class="">Status Bola</a>
+        <div class="p-1">
+        </div>
+        <button type="submit" data-kirim="[t]" data-tampil="#data3" data-id="<?= $modul['modul'] ?>;" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a" disabled>
+          3
+        </button>
+        <a class="">Cek Waktu</a>
+        <div class="p-1">
+        </div>
+        <button type="submit" data-kirim="[r]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
+          4
+        </button>
+        <a class="">Reload Bola</a>
+        <div class="p-1">
+        </div>
+        <button type="submit" data-kirim="" data-tampil="#data3" data-id="<?= $modul['modul'] ?>;" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a" disabled>
+          5
+        </button>
+        <a class="">Reset Alat</a>
+        <div class="p-1">
+        </div>
+        <button type="submit" data-kirim="" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
+          6
+        </button>
+        <a class=""></a>
+        <div class="p-1">
+        </div>
+        <button type="submit" data-kirim="[r]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
+          7
+        </button>
+        <a class=""></a>
+        <div class="p-1">
+        </div>
+        <button type="submit" data-kirim="" data-tampil="#data3" data-id="<?= $modul['modul'] ?>;" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a" disabled>
+          8
+        </button>
+        <a class=""></a>
+        <div class="p-1">
+        </div>
+        <button type="submit" data-kirim="" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
+          9
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

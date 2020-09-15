@@ -15,8 +15,6 @@ class Praktikan extends CI_Controller
         $data['title'] = 'Pengumuman';
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['pengumuman'] = $this->Praktikan_model->TampilPengumuman();
-
-
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
@@ -56,6 +54,9 @@ class Praktikan extends CI_Controller
     public function percobaan($id = NULL)
     {
         $data['modul'] = $this->db->get_where('modul', ['modul' => $id])->row_array();
+        $address = $data['modul']['ip_address'];
+        $data['tombol_arah'] = $this->db->get_where('tombol_arah', ['id_modul' => $id])->result_array();
+        $data['tombol_tulisan'] = $this->db->get_where('tombol_tulisan', ['id_modul' => $id])->result_array();
         $this->db->where('nrp', $this->session->userdata('nrp'));
         $this->db->where('modul_id', $id);
         $cek = $this->db->get('jadwal')->row_array();
@@ -181,9 +182,10 @@ class Praktikan extends CI_Controller
         // $host    = "10.122.10.43";
         // $port    = 1800;
         // $port2    = 1801;
-        $host    = "192.168.1.9";
-        $port    = 1025;
-        $port2    = 1026;
+        $data['modul'] = $this->db->get_where('modul', ['modul' => $id])->row_array();
+        $host = $data['modul']['ip_address'];
+        $port = $data['modul']['port1'];
+        $port2 = $data['modul']['port2'];
         //echo "Message To server :" . $message;
         // create socket
         $socket1 = socket_create(AF_INET, SOCK_STREAM, 0);
