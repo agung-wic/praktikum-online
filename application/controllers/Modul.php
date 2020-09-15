@@ -86,7 +86,7 @@ class Modul extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Tombol Navigasi berhasil diubah!
         </div>');
-        redirect(base_url('modul/editnavigasi'));
+        redirect(base_url('modul/navigasi/'));
     }
 
 
