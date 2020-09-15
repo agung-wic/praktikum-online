@@ -335,4 +335,25 @@ $(function () {
 			},
 		});
 	});
+
+	$(".TombolEditArah").on("click", function () {
+		const id = $(this).data("id");
+
+		$.ajax({
+			url: base + "modul/getubahtombolarah",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				$("#tombolEditArahModalLabel").html(data.tombol_keterangan);
+				$("id").val(data.id);
+				$("#tombol_kirim").val(data.tombol_kirim);
+				if (data.tombol_status == 1) {
+					$("#tombol_status").setAttribute('checked', 'checked');
+				}
+			},
+		});
+	});
 });

@@ -28,7 +28,7 @@ class Modul extends CI_Controller
         $this->load->model('Modul_model');
         $data['modul'] = $this->db->get('modul')->result_array();
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-        $data['title'] = 'Konten Modul';
+        $data['title'] = 'Navigasi Modul';
         $data['list'] = $this->Modul_model->TampilModul();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -173,5 +173,10 @@ class Modul extends CI_Controller
     public function getubahvideo()
     {
         echo json_encode($this->db->get_where('modul', ['id' => $this->input->post('id')])->row_array());
+    }
+
+    public function getubahtombolarah()
+    {
+        echo json_encode($this->db->get_where('tombol_arah', ['id' => $this->input->post('id')])->row_array());
     }
 }

@@ -10,7 +10,7 @@
                             <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
                         </div>
                         <div class="row justify-content-center">
-                            <button style="font-size:300%;margin-bottom:3%;margin-top:10%" type="submit" class="btn btn-dark fa fa-arrow-circle-up tombolTambahRole" data-toggle="modal" data-target="#tombolEditAtasModal">
+                            <button style="font-size:300%;margin-bottom:3%;margin-top:10%" type="submit" class="btn btn-dark fa fa-arrow-circle-up tombolEditArah" data-id="<?= $tombol_arah['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
                             </button>
                         </div>
                         <div class="row justify-content-center">
@@ -50,11 +50,11 @@
 </div>
 </div>
 
-<div class="modal fade" id="tombolEditAtasModal" tabindex="-1" role="dialog" aria-labelledby="tombolEditAtasModalLabel" aria-hidden="true">
+<div class="modal fade" id="tombolEditArahModal" tabindex="-1" role="dialog" aria-labelledby="tombolEditArahModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="tombolEditAtasModalLabel">Tombol Atas</h5>
+                <h5 class="modal-title" id="tombolEditArahModalLabel">Tombol Atas</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -63,7 +63,12 @@
                 <form action="<?= base_url('modul/edittombol') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
-                        <input type="text" class="form-control" id="role" name="role" placeholder="">
+                        <label for="tombol_kirim">Nilai yang dikirim</label>
+                        <input type="text" class="form-control" id="tombol_kirim" name="tombol_kirim" placeholder="Nilai yang dikirim..">
+                    </div>
+                    <div class="form-group">
+                        <label for=""></label>
+                        <input type="checkbox" class="form-control" id="tombol_status" name="tombol_status">
                     </div>
             </div>
             <div class="modal-footer">
