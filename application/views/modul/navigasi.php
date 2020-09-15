@@ -12,15 +12,15 @@
                             </button>
                         </div>
                         <div class="row justify-content-center">
-                            <button style="font-size: 300%" type="submit" class="btn btn-dark fa fa-arrow-circle-left" data-id="<?= $tombol_arah[0]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
+                            <button style="font-size: 300%" type="submit" class="btn btn-dark fa fa-arrow-circle-left" data-id="<?= $tombol_arah[2]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
                             </button>
                             <button style="font-size:200%;margin-right:3%;margin-left:3%;background-color:black;color:white" type="submit" class="btn fas fa-circle" disabled>
                             </button>
-                            <button style="font-size: 300%" type="submit" class="btn btn-dark fa fa-arrow-circle-right" data-id="<?= $tombol_arah[0]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
+                            <button style="font-size: 300%" type="submit" class="btn btn-dark fa fa-arrow-circle-right" data-id="<?= $tombol_arah[3]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
                             </button>
                         </div>
                         <div class="row justify-content-center">
-                            <button style="font-size: 300%;margin-top:3%;margin-bottom:20%" type="submit" class="btn btn-dark fa fa-arrow-circle-down" data-id="<?= $tombol_arah[0]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
+                            <button style="font-size: 300%;margin-top:3%;margin-bottom:20%" type="submit" class="btn btn-dark fa fa-arrow-circle-down" data-id="<?= $tombol_arah[1]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
                             </button>
                         </div>
                         <?php
