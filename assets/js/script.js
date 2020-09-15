@@ -371,7 +371,7 @@ $(function () {
 			success: function (data) {
 				console.log(data);
 				$(".tombolEditTulisanLabel").html(data.tombol_keterangan);
-				$("#idd").val(data.id);
+				$("#id1").val(data.id);
 				$("#tombol_keterangann").val(data.tombol_keterangan);
 				$("#tombol_kirimm").val(data.tombol_kirim);
 				if (data.tombol_status == 0) {
