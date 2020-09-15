@@ -94,7 +94,7 @@
             <div class="modal-body">
                 <form action="<?= base_url('modul/edittomboltulisan') ?>" method="post">
                     <div class="form-group">
-                        <input type="hidden" id="id" name="id">
+                        <input type="hidden" id="idd" name="id">
                         <label for="tombol_kirimm">Nilai yang dikirim</label>
                         <input type="text" class="form-control" id="tombol_kirimm" name="tombol_kirimm">
                     </div>
