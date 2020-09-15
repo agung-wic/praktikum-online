@@ -190,4 +190,9 @@ class Modul extends CI_Controller
     {
         echo json_encode($this->db->get_where('modul', ['id' => $this->input->post('id')])->row_array());
     }
+
+    public function getubahtombolarah()
+    {
+        echo json_encode($this->db->get_where('tombol_arah', ['id' => $this->input->post('id')])->row_array());
+    }
 }
