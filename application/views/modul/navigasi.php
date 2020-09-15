@@ -1,5 +1,8 @@
 <div class="col-lg-6" style="margin:auto">
     <div class="kotak">
+        <?php
+        var_dump($tombol_arah);
+        die; ?>
         <div class="container py-3">
             <div class="row">
                 <div class="col-lg-6" style="margin:auto">
