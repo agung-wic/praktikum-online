@@ -348,7 +348,8 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				$("#tombolEditArahLabel").html(data.tombol_keterangan);
-				$("id").val(data.id);
+				$("#id").val(data.id);
+				$("#tombol_keterangan").val(data.tombol_keterangan);
 				$("#tombol_kirim").val(data.tombol_kirim);
 				if (data.tombol_status == 1) {
 					$("#tombol_status").attr('checked', 'checked');

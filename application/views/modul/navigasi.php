@@ -12,21 +12,21 @@
                             </button>
                         </div>
                         <div class="row justify-content-center">
-                            <button style="font-size: 300%" type="submit" data-tampil="#data1a" data-kirim="<?= $tombol_arah[1]['tombol_kirim'] ?>]" data-id="<?= $modul['modul'] ?>;" class="param1 btn btn-dark fa fa-arrow-circle-left kirim1a">
+                            <button style="font-size: 300%" type="submit" class="btn btn-dark fa fa-arrow-circle-left" data-id="<?= $tombol_arah[0]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
                             </button>
-                            <button style="font-size:200%;margin-right:3%;margin-left:3%;background-color:black;color:white" type="submit" data-id="<?= $modul['modul'] ?>;" class="btn fas fa-circle kirim1a" disabled>
+                            <button style="font-size:200%;margin-right:3%;margin-left:3%;background-color:black;color:white" type="submit" class="btn fas fa-circle" disabled>
                             </button>
-                            <button style="font-size: 300%" type="submit" data-tampil="#data1a" data-kirim="[c,87]" data-id="<?= $modul['modul'] ?>;" class="param1 btn btn-dark fa fa-arrow-circle-right kirim1a">
+                            <button style="font-size: 300%" type="submit" class="btn btn-dark fa fa-arrow-circle-right" data-id="<?= $tombol_arah[0]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
                             </button>
                         </div>
                         <div class="row justify-content-center">
-                            <button style="font-size: 300%;margin-top:3%;margin-bottom:20%" type="submit" data-tampil="#data1a" data-kirim="[v,87]" data-id="<?= $modul['modul'] ?>;" class="param1 btn btn-dark fa fa-arrow-circle-down kirim1a">
+                            <button style="font-size: 300%;margin-top:3%;margin-bottom:20%" type="submit" class="btn btn-dark fa fa-arrow-circle-down" data-id="<?= $tombol_arah[0]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
                             </button>
                         </div>
                         <?php
                         foreach ($tombol_tulisan as $t) :  ?>
                             <div class="row justify-content-center mb-1">
-                                <button type="submit" style="margin: 1%;" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" class="param1 btn btn-dark px-4 kirim1a">
+                                <button type="submit" style="margin: 1%;" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil="#data4" data-id="<?= $modul['modul'] ?>;" class="btn btn-dark px-4">
                                     <?= $t['tombol_keterangan'] ?>
                                 </button>
                             </div>
@@ -65,8 +65,12 @@
                         <input type="text" class="form-control" id="tombol_kirim" name="tombol_kirim">
                     </div>
                     <div class="form-group">
-                        <label for="tombol_status"></label>
-                        <input type="checkbox" class="form-check-input" id="tombol_status" name="tombol_status">
+                        <label for="tombol_status">Status</label>
+                        <input type="checkbox" class="form-check-input ml-5 pl-5" id="tombol_status" name="tombol_status">
+                    </div>
+                    <div class="form-group">
+                        <label for="tombol_keterangan">Keterangan tombol</label>
+                        <input type="text" class="form-control" id="tombol_keterangan" name="tombol_keterangan">
                     </div>
             </div>
             <div class="modal-footer">
