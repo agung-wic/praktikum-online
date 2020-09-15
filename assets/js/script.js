@@ -362,7 +362,7 @@ $(function () {
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: base + "modul/getubahtombolarah",
+			url: base + "modul/getubahtomboltulisan",
 			data: {
 				id: id,
 			},
