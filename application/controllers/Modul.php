@@ -74,7 +74,8 @@ class Modul extends CI_Controller
             "tombol_keterangan" => $this->input->post('tombol_keterangan', true),
             "tombol_status" => $this->input->post('tombol_status', true),
         ];
-
+        var_dump($data);
+        die;
         $this->db->where('id', $this->input->post('id_modul'));
         $this->db->update('tombol_arah', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
