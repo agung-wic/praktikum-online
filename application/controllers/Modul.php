@@ -81,6 +81,8 @@ class Modul extends CI_Controller
         if ($data["tombol_status"] == "on") {
             $data["tombol_status"] = 1;
         } else $data["tombol_status"] = 0;
+        var_dump(input->post('id'));
+        die;
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('tombol_tulisan', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
