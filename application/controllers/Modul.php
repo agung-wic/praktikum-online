@@ -91,7 +91,6 @@ class Modul extends CI_Controller
         redirect(base_url('modul/navigasi/') . $id);
     }
 
-
     public function editmodul()
     {
         $data = [
@@ -111,7 +110,7 @@ class Modul extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Modul berhasil diubah!
         </div>');
-        redirect(base_url('dosen/modul'));
+        redirect(base_url('modul/konten'));
     }
 
     public function getubah()
@@ -146,18 +145,29 @@ class Modul extends CI_Controller
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
         Modul berhasil ditambahkan!
         </div>');
-        redirect(base_url('dosen/modul'));
+        redirect(base_url('modul/konten'));
     }
 
     public function deletemodul($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('tombol_tulisan');
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+        Tombol berhasil dihapus!
+        </div>');
+        redirect(base_url('modul/konten'));
+    }
+
+    public function deletetomboltulisan(&id)
     {
         $this->db->where('id', $id);
         $this->db->delete('modul');
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
         Jadwal berhasil dihapus!
         </div>');
-        redirect(base_url('dosen/modul'));
+        redirect(base_url('modul/navigasi/') . $id);
     }
+
 
     public function addfilevideo()
     {
@@ -181,16 +191,16 @@ class Modul extends CI_Controller
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
            Video modul berhasil diubah!
             </div>');
-                redirect(base_url('dosen/modul'));
+                redirect(base_url('modul/konten'));
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
-                redirect(base_url('dosen/modul'));
+                redirect(base_url('modul/konten'));
             }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
           Upload video modul!
           </div>');
-            redirect(base_url('dosen/modul'));
+            redirect(base_url('modul/konten'));
         }
     }
 
