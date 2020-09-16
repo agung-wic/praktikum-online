@@ -135,7 +135,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title tombolTambahTulisanLabel"></h5>
+                <h5 class="modal-title">Tambah Tombol</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -143,8 +143,7 @@
             <div class="modal-body">
                 <form action="<?= base_url('modul/tambahtomboltulisan') ?>" method="post">
                     <div class="form-group">
-                        <input type="hidden" id="idd" name="idd">
-                        <input type="hidden" id="idd_modul" name="idd_modul">
+                        <input type="hidden" id="iddd_modul" name="iddd_modul">
                         <label for="tombol_kirimm">Nilai yang dikirim</label>
                         <input type="text" class="form-control" id="tombol_kirimm" name="tombol_kirimm">
                     </div>
