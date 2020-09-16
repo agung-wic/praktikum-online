@@ -27,26 +27,26 @@
                         <?php $i = 0;
                         foreach ($tombol_tulisan as $t) :  ?>
                             <div class="row justify-content-center mb-1">
-                                <div class="col-lg-6 justify-content-center" style="margin:auto">
+                                <div class="col-lg-6 justify-content-center">
                                     <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $tombol_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 tombolEditTulisan">
                                         <?= $t['tombol_keterangan'] ?>
                                     </button>
                                 </div>
-                                <div class="col-lg-6 justify-content-center" style="margin:auto">
+                                <div class="col-lg-6 text-center">
                                     <a href="<?= base_url('modul/deletetomboltulisan/') . $t['id']; ?>" onclick=" return confirm('Yakin?');"">
-                                        <i class=" fas fa-minus-circle" style="margin-top:20%;font-size:200%;color:#e74a3b"></i>
+                                        <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
                                     </a>
                                 </div>
                             </div>
                         <?php $i++;
                         endforeach;
                         ?>
+                        <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
+                        </div>
                         <div class="row justify-content-center mt-3 mb-1">
-                            <a class="badge badge-pill badge-success" href="<?= base_url('modul/tambahtomboltulisan/') ?>" onclick="return confirm('Yakin?');">
+                            <a class="badge badge-pill badge-success" style="padding-bottom:10%;" href="<?= base_url('modul/tambahtomboltulisan/') ?>" onclick="return confirm('Yakin?');">
                                 Tambahkan Tombol
                             </a>
-                        </div>
-                        <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
                         </div>
                     </div>
                 </div>
