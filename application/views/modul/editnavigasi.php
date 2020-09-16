@@ -31,7 +31,6 @@
                                 ?>
                                     <?php if ($i % 3 == 0) { ?>
                                         <div class="row">
-
                                         <?php } ?>
                                         <div class="col-lg-3">
                                             <div class="card border-left-primary shadow h-100 p-2">
@@ -47,7 +46,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php if ($i % 3 == 0) { ?>
+                                        <?php if ($i % (3 + 3) == 0) { ?>
                                         </div>
                                     <?php } ?>
                                 <?php $i++;
