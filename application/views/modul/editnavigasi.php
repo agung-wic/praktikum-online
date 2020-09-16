@@ -26,31 +26,25 @@
                             </div>
                         <?php } else { ?>
                             <div id="bungkus">
-                                <?php $i = 0;
-                                foreach ($modul as $m) :
-                                ?>
-                                    <?php if ($i % 3 == 0) { ?>
-                                        <div class="row">
-                                        <?php } ?>
-                                        <div class="col-lg-3">
-                                            <div class="card border-left-primary shadow h-100 p-2">
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <div class="col-lg-7">
-                                                            <?= $m['name']; ?>
-                                                        </div>
-                                                        <div class="col-lg-auto">
-                                                            <div class="h5 font-weight-bold"><?= $m['modul'] ?></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <?php if ($i % (3 + 3) == 0) { ?>
-                                        </div>
-                                    <?php } ?>
-                                <?php $i++;
-                                endforeach; ?>
+                                <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                                    <tbody>
+                                        <?php $i = 1;
+                                        foreach ($modul as $m) :
+                                        ?>
+                                            <tr>
+                                                <th scope="row"><?= $i; ?></th>
+                                                <td><?= $m['modul'] ?>. <?= $m['name']; ?></td>
+                                                <td>
+                                                    <a href="<?= base_url('modul/navigasi/') . $m['modul']; ?>" class="badge badge-pill badge-primary tampilEditModul">
+                                                        <i class=" fas fa-fw fa-edit"></i>
+                                                        Navigasi
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <?php $i++;
+                                        endforeach; ?>
+                                    </tbody>
+                                </table>
                             </div>
                         <?php } ?>
                     </div>
