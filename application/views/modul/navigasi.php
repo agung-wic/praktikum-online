@@ -44,7 +44,7 @@
                         <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
                         </div>
                         <div class="row justify-content-center mt-3 mb-1">
-                            <a class="badge badge-pill badge-success" style="padding-bottom:10%;" href="<?= base_url('modul/tambahtomboltulisan/') ?>" onclick="return confirm('Yakin?');">
+                            <a class="badge badge-pill badge-success" href="<?= base_url('modul/tambahtomboltulisan/') ?>" onclick="return confirm('Yakin?');">
                                 Tambahkan Tombol
                             </a>
                         </div>
