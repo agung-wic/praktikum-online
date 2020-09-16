@@ -30,7 +30,7 @@
                                 <button type="submit" style="margin: 1%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $tombol_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 tombolEditTulisan">
                                     <?= $t['tombol_keterangan'] ?>
                                 </button>
-                                <a href="<?= base_url('modul/deletetomboltulisan/') . $l['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
+                                <a href="<?= base_url('modul/deletetomboltulisan/') . $t['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
                                     <i class="fas fa-fw fa-trash-alt"></i>
                                     Delete
                                 </a>
