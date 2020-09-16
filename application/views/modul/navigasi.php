@@ -62,6 +62,7 @@
                 <form action="<?= base_url('modul/edittombolarah') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
+                        <input type="hidden" id="id_modul" name="id_modul">
                         <label for="tombol_kirim">Nilai yang dikirim</label>
                         <input type="text" class="form-control" id="tombol_kirim" name="tombol_kirim">
                     </div>
@@ -96,6 +97,7 @@
                 <form action="<?= base_url('modul/edittomboltulisan') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="idd" name="idd">
+                        <input type="hidden" id="idd_modul" name="idd_modul">
                         <label for="tombol_kirimm">Nilai yang dikirim</label>
                         <input type="text" class="form-control" id="tombol_kirimm" name="tombol_kirimm">
                     </div>
