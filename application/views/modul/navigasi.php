@@ -37,6 +37,12 @@
                         <?php $i++;
                         endforeach;
                         ?>
+                        <div class="row justify-content-center mb-1">
+                            <a href="<?= base_url('modul/tambahtomboltulisan/') ?>" onclick="return confirm('Yakin?');"">
+                                    <i class=" fas fa-plus-circle" style="font-size:200%;color:#26A65B"></i>
+                                Tambahkan Tombol
+                            </a>
+                        </div>
                         <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
                         </div>
                     </div>

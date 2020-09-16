@@ -382,4 +382,28 @@ $(function () {
 			},
 		});
 	});
+
+	$(".tombolEditTulisan").on("click", function () {
+		const id = $(this).data("id");
+
+		$.ajax({
+			url: base + "modul/getubahtomboltulisan",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				console.log(data);
+				$(".tombolEditTulisanLabel").html(data.tombol_keterangan);
+				$("#idd_modul").val(data.id_modul);
+				$("#idd").val(data.id);
+				$("#tombol_keterangann").val(data.tombol_keterangan);
+				$("#tombol_kirimm").val(data.tombol_kirim);
+				if (data.tombol_status == 0) {
+					$("#tombol_statuss").attr("checked", false);
+				} else $("#tombol_statuss").attr("checked", true);
+			},
+		});
+	});
 });

@@ -91,6 +91,24 @@ class Modul extends CI_Controller
         redirect(base_url('modul/navigasi/') . $id);
     }
 
+    public function tambahtomboltulisan()
+    {
+        $id = $this->input->post('idd_modul', true);
+        $data = [
+            "tombol_kirim" => $this->input->post('tombol_kirimm', true),
+            "tombol_keterangan" => $this->input->post('tombol_keterangann', true),
+            "tombol_status" => $this->input->post('tombol_statuss', true),
+        ];
+        if ($data["tombol_status"] == "on") {
+            $data["tombol_status"] = 1;
+        } else $data["tombol_status"] = 0;
+        $this->db->insert('tombol_tulisan', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Tombol Navigasi berhasil diubah!
+        </div>');
+        redirect(base_url('modul/navigasi/') . $id);
+    }
+
     public function editmodul()
     {
         $data = [
