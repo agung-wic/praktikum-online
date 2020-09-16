@@ -27,7 +27,7 @@
                         <?php $i = 0;
                         foreach ($tombol_tulisan as $t) :  ?>
                             <div class="row justify-content-center mb-1">
-                                <div class="col-lg-69 text-center">
+                                <div class="col-lg-9 text-center">
                                     <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $tombol_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 tombolEditTulisan">
                                         <?= $t['tombol_keterangan'] ?>
                                     </button>
