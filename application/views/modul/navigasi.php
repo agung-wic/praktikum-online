@@ -44,7 +44,7 @@
                         <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
                         </div>
                         <div class="row justify-content-center mt-3 mb-1">
-                            <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-toggle="modal" data-target="#tombolTambahTulisan" class="btn btn-dark px-4 tombolTambahTulisan">
+                            <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $modul['modul']; ?>" data-toggle="modal" data-target="#tombolTambahTulisan" class="btn btn-dark px-4 tombolTambahTulisan">
                                 Tambahkan Tombol
                             </button>
                         </div>
@@ -143,17 +143,17 @@
             <div class="modal-body">
                 <form action="<?= base_url('modul/tambahtomboltulisan') ?>" method="post">
                     <div class="form-group">
-                        <input type="hidden" id="iddd_modul" name="iddd_modul">
-                        <label for="tombol_kirimm">Nilai yang dikirim</label>
-                        <input type="text" class="form-control" id="tombol_kirimm" name="tombol_kirimm">
+                        <label for="keterangan">Keterangan tombol</label>
+                        <input type="text" class="form-control" id="keterangan" name="keterangan">
                     </div>
                     <div class="form-group">
-                        <label for="tombol_statuss">Status</label>
-                        <input type="checkbox" class="form-check-input ml-3 pl-5" id="tombol_statuss" name="tombol_statuss">
+                        <input type="hidden" id="modul_id" name="modul_id">
+                        <label for="nilai">Nilai yang dikirim</label>
+                        <input type="text" class="form-control" id="nilai" name="nilai">
                     </div>
                     <div class="form-group">
-                        <label for="tombol_keterangann">Keterangan tombol</label>
-                        <input type="text" class="form-control" id="tombol_keterangann" name="tombol_keterangann">
+                        <label for="status">Status</label>
+                        <input type="checkbox" class="form-check-input ml-3 pl-5" id="status" name="status">
                     </div>
             </div>
             <div class="modal-footer">

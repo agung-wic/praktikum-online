@@ -95,6 +95,7 @@ class Modul extends CI_Controller
     {
         $id = $this->input->post('idd_modul', true);
         $data = [
+            "id_modul" => $this->input->post('modul_id', true),
             "tombol_kirim" => $this->input->post('tombol_kirimm', true),
             "tombol_keterangan" => $this->input->post('tombol_keterangann', true),
             "tombol_status" => $this->input->post('tombol_statuss', true),
@@ -104,7 +105,7 @@ class Modul extends CI_Controller
         } else $data["tombol_status"] = 0;
         $this->db->insert('tombol_tulisan', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-        Tombol Navigasi berhasil diubah!
+        Tombol Navigasi berhasil ditambahkan!
         </div>');
         redirect(base_url('modul/navigasi/') . $id);
     }

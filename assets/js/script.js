@@ -359,6 +359,11 @@ $(function () {
 		});
 	});
 
+	$(".tombolTambahTulisan").on("click", function () {
+		const id = $(this).data("id");
+		$("#modul_id").val(id);
+	});
+
 	$(".tombolEditTulisan").on("click", function () {
 		const id = $(this).data("id");
 
