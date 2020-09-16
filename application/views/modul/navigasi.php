@@ -6,7 +6,7 @@
                 <div class="col-lg-6" style="margin:auto">
                     <div class="kotak" style="background-color: #bcaead;">
                         <div class="container mt-2" style="color: black;">
-                            <h6 class="mb-3"><b><?= $modul['name'] ?></b></h6>
+                            <h6 class="text-center mb-3 mt-5" style="padding-top:5%"><b><?= $modul['name'] ?></b></h6>
                         </div>
                         <div class="row justify-content-center">
                             <button style="font-size:300%;margin-bottom:3%;margin-top:10%" type="submit" class="btn btn-dark fa fa-arrow-circle-up tombolEditArah" data-id="<?= $tombol_arah[0]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
