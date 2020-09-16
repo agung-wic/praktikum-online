@@ -349,7 +349,7 @@ $(function () {
 				console.log(data);
 				$("#tombolEditArahLabel").html(data.tombol_keterangan);
 				$("#id_modul").val(data.id_modul);
-				$("$id").val(data.id);
+				$("#id").val(data.id);
 				$("#tombol_keterangan").val(data.tombol_keterangan);
 				$("#tombol_kirim").val(data.tombol_kirim);
 				if (data.tombol_status == 0) {
