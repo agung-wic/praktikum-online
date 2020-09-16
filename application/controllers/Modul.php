@@ -161,7 +161,7 @@ class Modul extends CI_Controller
     public function deletetomboltulisan($id)
     {
         $this->db->where('id', $id);
-        $this->db->delete('modul');
+        $this->db->delete('tombol_tulisan');
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
         Jadwal berhasil dihapus!
         </div>');
