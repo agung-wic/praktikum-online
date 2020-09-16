@@ -41,10 +41,8 @@
             </div>
             <div class="row mt-5">
                 <div class="col-lg-auto mr-auto">
-                    <<<<<<< HEAD <a href="<?= base_url('modul/') . $modul['modul'] ?>" class="btn btn-secondary px-5">Kembali</a>
-                        =======
-                        <a href="<?= base_url('modul/editnavigasi') ?>" class="btn btn-secondary px-5">Kembali</a>
-                        >>>>>>> fd56d30412f8b5b4a2c8addd331877969a47565d
+                    <a href="<?= base_url('modul/') . $modul['modul'] ?>" class="btn btn-secondary px-5">Kembali</a>
+                    <a href="<?= base_url('modul/editnavigasi') ?>" class="btn btn-secondary px-5">Kembali</a>
                 </div>
             </div>
         </div>
