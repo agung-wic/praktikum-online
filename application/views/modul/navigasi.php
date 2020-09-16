@@ -44,12 +44,9 @@
                         <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
                         </div>
                         <div class="row justify-content-center mt-3 mb-1">
-                            <button type="submit" style="background-color:#26A65B" data-toggle="modal" data-target="#tombolEditTulisan" class="btn btn-dark px-4 tombolEditTulisan">
+                            <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-toggle="modal" data-target="#tombolTambahTulisan" class="btn btn-dark px-4 tombolTambahTulisan">
                                 Tambahkan Tombol
                             </button>
-                            <a class="badge badge-pill badge-success" style="padding:3%;margin-bottom:5%" href="<?= base_url('modul/tambahtomboltulisan/') ?>" onclick="return confirm('Yakin?');">
-                                Tambahkan Tombol
-                            </a>
                         </div>
                     </div>
                 </div>
