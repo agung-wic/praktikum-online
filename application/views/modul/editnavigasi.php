@@ -9,7 +9,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col">
-                        <h6 class="m-0 font-weight-bold "><?= $title; ?> Praktikumla</h6>
+                        <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
                     </div>
                     <!-- <div class="col-auto mr-auto">
                         <a href="" class="btn gradien mb-3 tampilTambahModul" data-toggle="modal" data-target="#BuatModul">Buat Modul</a>
