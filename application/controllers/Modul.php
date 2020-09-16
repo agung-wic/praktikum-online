@@ -96,9 +96,9 @@ class Modul extends CI_Controller
         $id = $this->input->post('idd_modul', true);
         $data = [
             "id_modul" => $this->input->post('modul_id', true),
-            "tombol_kirim" => $this->input->post('tombol_kirimm', true),
-            "tombol_keterangan" => $this->input->post('tombol_keterangann', true),
-            "tombol_status" => $this->input->post('tombol_statuss', true),
+            "tombol_kirim" => $this->input->post('nilai', true),
+            "tombol_keterangan" => $this->input->post('keterangan', true),
+            "tombol_status" => $this->input->post('status', true),
         ];
         if ($data["tombol_status"] == "on") {
             $data["tombol_status"] = 1;
