@@ -165,7 +165,7 @@ class Modul extends CI_Controller
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
         Jadwal berhasil dihapus!
         </div>');
-        redirect(base_url('modul/navigasi/');
+        redirect(base_url('modul/navigasi/'));
     }
 
 
