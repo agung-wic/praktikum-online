@@ -352,8 +352,8 @@ $(function () {
 				$("#tombol_keterangan").val(data.tombol_keterangan);
 				$("#tombol_kirim").val(data.tombol_kirim);
 				if (data.tombol_status == 0) {
-					$("#tombol_status").attr("checked", false);
-				} else $("#tombol_status").attr("checked", true);
+					$("#tombol_status").attr("checked", "");
+				} else $("#tombol_status").attr("checked", "checked");
 			},
 		});
 	});
@@ -375,8 +375,8 @@ $(function () {
 				$("#tombol_keterangann").val(data.tombol_keterangan);
 				$("#tombol_kirimm").val(data.tombol_kirim);
 				if (data.tombol_status == 0) {
-					$("#tombol_statuss").attr("checked", false);
-				} else $("#tombol_statuss").attr("checked", true);
+					$("#tombol_statuss").attr("checked", "");
+				} else $("#tombol_statuss").attr("checked", "checked");
 			},
 		});
 	});
