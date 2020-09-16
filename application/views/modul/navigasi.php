@@ -27,7 +27,7 @@
                         <?php $i = 0;
                         foreach ($tombol_tulisan as $t) :  ?>
                             <div class="row justify-content-center mb-1">
-                                <button type="submit" style="margin: 1%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $tombol_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 tombolEditTulisan">
+                                <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $tombol_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 tombolEditTulisan">
                                     <?= $t['tombol_keterangan'] ?>
                                 </button>
                                 <a href="<?= base_url('modul/deletetomboltulisan/') . $t['id']; ?>" onclick="return confirm('Yakin?');"">
