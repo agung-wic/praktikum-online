@@ -160,13 +160,12 @@ class Modul extends CI_Controller
 
     public function deletetomboltulisan($id)
     {
-        $id_modul = $this->input->post('idd_modul', true);
         $this->db->where('id', $id);
         $this->db->delete('modul');
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
         Jadwal berhasil dihapus!
         </div>');
-        redirect(base_url('modul/navigasi/') . $id_modul);
+        redirect(base_url('modul/navigasi/');
     }
 
 
