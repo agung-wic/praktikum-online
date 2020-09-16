@@ -1,6 +1,7 @@
 <div class="col-lg-6" style="margin:auto">
     <div class="kotak">
         <div class="container py-3">
+            <?= $this->session->flashdata('message'); ?>
             <div class="row">
                 <div class="col-lg-6" style="margin:auto">
                     <div class="kotak" style="background-color: #bcaead;">

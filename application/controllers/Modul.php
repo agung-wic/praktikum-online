@@ -55,6 +55,7 @@ class Modul extends CI_Controller
 
     public function edittombolarah()
     {
+        $id = $this->input->post('id', true);
         $data = [
             "tombol_kirim" => $this->input->post('tombol_kirim', true),
             "tombol_keterangan" => $this->input->post('tombol_keterangan', true),
@@ -68,11 +69,12 @@ class Modul extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Tombol Navigasi berhasil diubah!
         </div>');
-        redirect(base_url('modul/editnavigasi'));
+        redirect(base_url('modul/navigasi/') . $id);
     }
 
     public function edittomboltulisan()
     {
+        $id = $this->input->post('idd', true);
         $data = [
             "tombol_kirim" => $this->input->post('tombol_kirimm', true),
             "tombol_keterangan" => $this->input->post('tombol_keterangann', true),
@@ -86,7 +88,7 @@ class Modul extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Tombol Navigasi berhasil diubah!
         </div>');
-        redirect(base_url('modul/navigasi/'));
+        redirect(base_url('modul/navigasi/') . $id);
     }
 
 
