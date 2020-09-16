@@ -41,7 +41,6 @@
             </div>
             <div class="row mt-5">
                 <div class="col-lg-auto mr-auto">
-                    <a href="<?= base_url('modul/') . $modul['modul'] ?>" class="btn btn-secondary px-5">Kembali</a>
                     <a href="<?= base_url('modul/editnavigasi') ?>" class="btn btn-secondary px-5">Kembali</a>
                 </div>
             </div>
