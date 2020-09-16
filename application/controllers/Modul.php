@@ -93,9 +93,9 @@ class Modul extends CI_Controller
 
     public function tambahtomboltulisan()
     {
-        $id = $this->input->post('idd_modul', true);
+        $id = $this->input->post('modul_id', true);
         $data = [
-            "id_modul" => $this->input->post('modul_id', true),
+            "id_modul" => $id,
             "tombol_kirim" => $this->input->post('nilai', true),
             "tombol_keterangan" => $this->input->post('keterangan', true),
             "tombol_status" => $this->input->post('status', true),
