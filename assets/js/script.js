@@ -376,7 +376,7 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				console.log(data);
-				$("#iddd_modul").val(data.id_modul);
+				$("#idd_modul").val(data.id_modul);
 				if (data.tombol_status == 0) {
 					$("#tombol_statuss").attr("checked", false);
 				} else $("#tombol_statuss").attr("checked", true);
