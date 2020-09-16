@@ -56,9 +56,6 @@ class Modul extends CI_Controller
     public function edittombolarah()
     {
         $id = $this->input->post('id', true);
-        $tes = $this->input->post();
-        var_dump($tes);
-        die;
         $data = [
             "tombol_kirim" => $this->input->post('tombol_kirim', true),
             "tombol_keterangan" => $this->input->post('tombol_keterangan', true),
