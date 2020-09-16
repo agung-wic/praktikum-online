@@ -348,7 +348,8 @@ $(function () {
 			success: function (data) {
 				console.log(data);
 				$("#tombolEditArahLabel").html(data.tombol_keterangan);
-				$("#id").val(data.id_modul);
+				$("#id_modul").val(data.id_modul);
+				$("$id").val(data.id);
 				$("#tombol_keterangan").val(data.tombol_keterangan);
 				$("#tombol_kirim").val(data.tombol_kirim);
 				if (data.tombol_status == 0) {
@@ -371,7 +372,8 @@ $(function () {
 			success: function (data) {
 				console.log(data);
 				$(".tombolEditTulisanLabel").html(data.tombol_keterangan);
-				$("#idd").val(data.id_modul);
+				$("#idd_modul").val(data.id_modul);
+				$("#idd").val(data.id);
 				$("#tombol_keterangann").val(data.tombol_keterangan);
 				$("#tombol_kirimm").val(data.tombol_kirim);
 				if (data.tombol_status == 0) {
