@@ -31,7 +31,7 @@
                                     <?= $t['tombol_keterangan'] ?>
                                 </button>
                                 <a href="<?= base_url('modul/deletetomboltulisan/') . $t['id']; ?>" onclick="return confirm('Yakin?');"">
-                                    <i class=" fas fa-minus-circle" style="margin-top:15%;font-size:200%;color:#e74a3b"></i>
+                                    <i class=" fas fa-minus-circle" style="margin-top:20%;font-size:200%;color:#e74a3b"></i>
                                 </a>
                             </div>
                         <?php $i++;
