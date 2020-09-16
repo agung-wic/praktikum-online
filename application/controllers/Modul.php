@@ -164,8 +164,8 @@ class Modul extends CI_Controller
         $id_modul = $id_modul['id_modul'];
         $this->db->where('id', $id);
         $this->db->delete('tombol_tulisan');
-        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
-        Jadwal berhasil dihapus!
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Tombol berhasil dihapus!
         </div>');
         redirect(base_url('modul/navigasi/') . $id_modul);
     }
