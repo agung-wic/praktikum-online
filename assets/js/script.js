@@ -383,7 +383,7 @@ $(function () {
 		});
 	});
 
-	$(".tombolEditTulisan").on("click", function () {
+	$(".tombolTambahTulisan").on("click", function () {
 		const id = $(this).data("id");
 
 		$.ajax({

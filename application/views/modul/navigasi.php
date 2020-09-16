@@ -27,19 +27,22 @@
                         <?php $i = 0;
                         foreach ($tombol_tulisan as $t) :  ?>
                             <div class="row justify-content-center mb-1">
-                                <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $tombol_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 tombolEditTulisan">
-                                    <?= $t['tombol_keterangan'] ?>
-                                </button>
-                                <a href="<?= base_url('modul/deletetomboltulisan/') . $t['id']; ?>" onclick="return confirm('Yakin?');"">
-                                    <i class=" fas fa-minus-circle" style="margin-top:20%;font-size:200%;color:#e74a3b"></i>
-                                </a>
+                                <div class="col-lg-6" style="margin:auto">
+                                    <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $tombol_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 tombolEditTulisan">
+                                        <?= $t['tombol_keterangan'] ?>
+                                    </button>
+                                </div>
+                                <div class="col-lg-6" style="margin:auto">
+                                    <a href="<?= base_url('modul/deletetomboltulisan/') . $t['id']; ?>" class="badge badge-pill badge-primary" onclick=" return confirm('Yakin?');"">
+                                        <i class=" fas fa-minus-circle" style="margin-top:20%;font-size:200%;color:#e74a3b"></i>
+                                    </a>
+                                </div>
                             </div>
                         <?php $i++;
                         endforeach;
                         ?>
                         <div class="row justify-content-center mb-1">
-                            <a href="<?= base_url('modul/tambahtomboltulisan/') ?>" onclick="return confirm('Yakin?');"">
-                                    <i class=" fas fa-plus-circle" style="font-size:200%;color:#26A65B"></i>
+                            <a class="badge badge-pill badge-danger" href="<?= base_url('modul/tambahtomboltulisan/') ?>" onclick="return confirm('Yakin?');">
                                 Tambahkan Tombol
                             </a>
                         </div>
