@@ -158,7 +158,7 @@ class Modul extends CI_Controller
         redirect(base_url('modul/konten'));
     }
 
-    public function deletetomboltulisan(&id)
+    public function deletetomboltulisan($id)
     {
         $this->db->where('id', $id);
         $this->db->delete('modul');
