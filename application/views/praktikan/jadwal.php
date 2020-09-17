@@ -92,7 +92,11 @@
                             </td>
                           <?php
                             $i++;
-                          }
+                          } else { ?>
+                            <td>Belum ada jadwal</td>
+                            <td></td>
+                            <td></td>
+                          <?php }
                         } else { ?>
                           <td>Belum ada jadwal</td>
                           <td></td>
