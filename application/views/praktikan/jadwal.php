@@ -93,7 +93,7 @@
                           <?php
                             $i++;
                           }
-                        } else { ?>
+                        } else if ($i > count($list)) { ?>
                           <td>Belum ada jadwal</td>
                           <td></td>
                           <td></td>
