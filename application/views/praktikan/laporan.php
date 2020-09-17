@@ -15,7 +15,7 @@
                 <label for="modul">Pilih Modul</label>
                 <select class="form-control" name="modul_id" id="modul_id">
                   <?php foreach ($modul as $m) : ?>
-                    <option value="<?= $m['modul'] ?>"><?= $m['name'] ?></option>
+                    <!-- <option value="<?= $m['modul'] ?>"><?= $m['name'] ?></option> -->
                     <?= var_dump($m['name']); ?>
                     <?= var_dump($m['modul']); ?>
                   <?php endforeach; ?>
