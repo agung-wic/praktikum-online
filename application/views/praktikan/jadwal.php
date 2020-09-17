@@ -91,9 +91,8 @@
                               <?php endif; ?>
                             </td>
                           <?php
-
+                            $i++;
                           }
-                          $i++;
                         } else { ?>
                           <td>Belum ada jadwal</td>
                           <td></td>
