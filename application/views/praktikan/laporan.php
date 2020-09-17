@@ -16,7 +16,8 @@
                 <select class="form-control" name="modul_id" id="modul_id">
                   <?php foreach ($modul as $m) : ?>
                     <option value="<?= $m['modul'] ?>"><?= $m['name'] ?></option>
-                  <?php endforeach; ?>
+                  <?php echo var_dump($m['modul'] ?>"><?= $m['name']);
+                endforeach; ?>
                 </select>
               </div>
               <div class="custom-file">
