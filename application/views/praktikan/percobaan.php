@@ -24,7 +24,7 @@
 </div>
 <div class="row mx-3">
   <div class="col-lg-6">
-    <nav style="background-color: white;">
+    <nav>
       <div class="nav nav-tabs" style="border:none;" id="nav-tab">
         <?php
         $i = 0;
