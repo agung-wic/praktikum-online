@@ -40,7 +40,7 @@
           border-bottom-left-radius: 25px;
           border-bottom-right-radius: 25px;">
         <div class="container text-center" style="transform:rotate(270deg);">
-          <iframe style="padding-right:3%" width="600" height="600" frameborder="0" allow="accelerometer; mute; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe style="padding-right:3%" width="620" height="620" frameborder="0" allow="accelerometer; mute; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </nav>
@@ -56,7 +56,7 @@
           border-bottom-left-radius: 25px;
           border-bottom-right-radius: 25px;">
             <div class="container text-center" style="transform:rotate(270deg);">
-              <iframe style="padding-right:3%" width="600" height="600" src="<?= $live_stream[$i]['link'] ?>" frameborder="0" allow="accelerometer; mute; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe style="padding-right:3%" width="620" height="620" src="<?= $live_stream[$i]['link'] ?>" frameborder="0" allow="accelerometer; mute; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
