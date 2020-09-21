@@ -41,9 +41,9 @@
       while ($i < count($live_stream)) {
       ?>
         <div class="tab-pane fade" id="video-<?= $i; ?>" role="tabpanel" aria-labelledby="video-<?= $i; ?>-tab">
-          <div class="kotak" style="background-color:black">
+          <div class="kotak" style="background-color:black;border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;">
             <div class="container text-center" style="transform:rotate(270deg);">
-              <iframe style="border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;" width="600" height="600" src="<?= $live_stream[$i]['link'] ?>" frameborder="0" allow="accelerometer; mute; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe style="padding-right:3%" width="600" height="600" src="<?= $live_stream[$i]['link'] ?>" frameborder="0" allow="accelerometer; mute; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
