@@ -198,20 +198,24 @@ class Praktikan extends CI_Controller
 
         $socket = [$socket1, $socket2];
         $data['result2'] = NULL;
-        if ($socket1 && $socket2) {
+
+
+        if ($socket1 || $socket2) {
             // connect to server    
-            $result1 = socket_connect($socket1, $host, intval($port));
-            $result2 = socket_connect($socket2, $host, intval($port2));
+            $result1 = socket_connect($socket1, $host, $port);
+            $result2 = socket_connect($socket2, $host, $port2);
 
             $result = [$result1, $result2];
-            if ($result1 || $result2) {
+            if ($result1 && $result2) {
                 $success = [$socket, $result];
-
                 return $success;
+            } else if ($result1) {
+                $success = [$socket1, $result1];
+                return $success;
+                socket_close($socket2);
             } else {
                 echo "<script>alert('Tidak dapat terhubung ke server!');
                 window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
-                //return "ok";
             }
         } else {
             echo "<script>alert('Gagal membuat socket!');
