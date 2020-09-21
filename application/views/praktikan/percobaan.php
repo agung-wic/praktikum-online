@@ -25,7 +25,7 @@
 <div class="row mx-3">
   <div class="col-lg-6">
     <nav>
-      <div class="nav nav-tabs" style="border:none;" id="nav-tab">
+      <div class="nav nav-tabs" id="nav-tab">
         <?php
         $i = 0;
         while ($i < count($live_stream)) {
