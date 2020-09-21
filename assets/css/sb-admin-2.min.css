@@ -4822,9 +4822,12 @@ input[type="submit"].btn-block {
 }
 
 .nav-tabs .nav-link {
+	border: 0px solid transparent;
+	border-top-left-radius: 0rem;
+	border-top-right-radius: 0rem;
 	color: white;
 	background-color black;
-	border: 0rem;
+	border-color: #dddfeb #dddfeb #fff;
 }
 
 .nav-tabs .nav-link:focus,
