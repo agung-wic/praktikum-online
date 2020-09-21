@@ -30,7 +30,7 @@
         $i = 0;
         while ($i < count($live_stream)) {
         ?>
-          <a class="nav-item nav-link" style="background-color:white;color:black;border:white" id="nav-video-<?= $i ?>" data-toggle="tab" href="#video-<?= $i; ?>" role="tab" aria-controls="video-<?= $i; ?>" aria-selected="true">Video <?= $i; ?></a>
+          <a class="nav-item nav-link" style="background-color:black;color:white" id="nav-video-<?= $i ?>" data-toggle="tab" href="#video-<?= $i; ?>" role="tab" aria-controls="video-<?= $i; ?>" aria-selected="true">Video <?= $i; ?></a>
         <?php $i++;
         } ?>
       </div>
