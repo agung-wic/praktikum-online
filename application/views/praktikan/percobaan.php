@@ -34,15 +34,6 @@
         <?php $i++;
         } ?>
       </div>
-      <div class="kotak" style="background-color:black;
-          border-top-left-radius: 0px;
-          border-top-right-radius: 25px;
-          border-bottom-left-radius: 25px;
-          border-bottom-right-radius: 25px;">
-        <div class="container text-center" style="transform:rotate(270deg);">
-          <iframe style="padding-right:3%" width="620" height="620" frameborder="0" allow="accelerometer; mute; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
       <?php
