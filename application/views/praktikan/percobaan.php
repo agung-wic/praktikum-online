@@ -34,6 +34,15 @@
         <?php $i++;
         } ?>
       </div>
+      <div class="kotak" style="background-color:black;
+          border-top-left-radius: 0px;
+          border-top-right-radius: 25px;
+          border-bottom-left-radius: 25px;
+          border-bottom-right-radius: 25px;">
+        <div class="container text-center" style="transform:rotate(270deg);">
+          <iframe style="padding-right:3%" width="600" height="600" frameborder="0" allow="accelerometer; mute; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
       <?php
@@ -43,7 +52,7 @@
         <div class="tab-pane fade" id="video-<?= $i; ?>" role="tabpanel" aria-labelledby="video-<?= $i; ?>-tab">
           <div class="kotak" style="background-color:black;
           border-top-left-radius: 0px;
-          border-top-right-radius: 0px;
+          border-top-right-radius: 25px;
           border-bottom-left-radius: 25px;
           border-bottom-right-radius: 25px;">
             <div class="container text-center" style="transform:rotate(270deg);">
@@ -54,10 +63,6 @@
       <?php $i++;
       } ?>
     </div>
-
-
-
-
   </div>
   <div class="col-lg-6">
     <div class="kotak" background-color:black">
