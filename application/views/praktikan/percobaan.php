@@ -109,58 +109,13 @@
               <?php
               endforeach;
               ?>
-
               <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
               </div>
-              <!-- <button type="submit" id="param2" data-kirim="[d]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" class="btn btn-secondary px-4 kirim1a">
-                  1
-                </button>
-                <div class="p-1">
-                </div>
-                <button type="submit" data-kirim="[i]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param3" class="btn btn-secondary px-4 kirim1a">
-                  2
-                </button>
-                <div class="p-1">
-                </div>
-                <button type="submit" data-kirim="[i]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a">
-                  3
-                </button>
-              </div>
-              <input type="text" name="aksi" value="jatuhkan" hidden>
-              <div class="row justify-content-center mb-3">
-                <button type="submit" data-kirim="[t]" data-tampil="#data3" data-id="<?= $modul['modul'] ?>" id="param5" class="btn btn-secondary pl-1 px-4 kirim1a">
-                  4
-                </button>
-                <div class="p-1">
-                </div>
-                <button type="submit" data-kirim="[r]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param6" class="btn btn-secondary px-4 kirim1a">
-                  5
-                </button>
-                <div class="p-1">
-                </div>
-                <button type="submit" data-kirim="[r]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param7" class="btn btn-secondary px-4 kirim1a">
-                  6
-                </button>
-              </div>
-              <div class="row justify-content-center mb-3">
-                <button type="submit" style="margin-bottom:20%" data-kirim="[s]" data-id="<?= $modul['modul'] ?>" id="param8" class="btn btn-secondary pl-1 px-4 kirim1a">
-                  7
-                </button>
-                <div class="p-1">
-                </div>
-                <button type="submit" style="margin-bottom:20%" data-kirim="" data-id="<?= $modul['modul'] ?>" id="param9" class="btn btn-secondary pl-1 px-4 kirim1a">
-                  8
-                </button>
-                <div class="p-1">
-                </div>
-                <button type="submit" style="margin-bottom:20%" data-kirim="" data-id="<?= $modul['modul'] ?>" id="param10" class="btn btn-secondary pl-1 px-4 kirim1a">
-                  9
-                </button> -->
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="kotak" style="margin-top:5%">
-              <div class="container mt-2" style="color: black;">
+            <div class="kotak" style="background-color: #bcaead;margin-top:5%">
+              <div class="container mt-2" style="color: black;margin-top:5%">
                 <h6 class="mb-3"><b>Output</b></h6>
                 <div class="form-group">
                   <label for="data1">Jumlah Bola</label>
