@@ -30,7 +30,7 @@
         $i = 0;
         while ($i < count($live_stream)) {
         ?>
-          <a class="nav-item nav-link" style="background-color:black;font-color:white" id="nav-video-<?= $i ?>" data-toggle="tab" href="#video-<?= $i; ?>" role="tab" aria-controls="video-<?= $i; ?>" aria-selected="true">Video <?= $i; ?></a>
+          <a class="nav-item nav-link" style="background-color:black;color:white" id="nav-video-<?= $i ?>" data-toggle="tab" href="#video-<?= $i; ?>" role="tab" aria-controls="video-<?= $i; ?>" aria-selected="true">Video <?= $i; ?></a>
         <?php $i++;
         } ?>
       </div>
@@ -41,7 +41,11 @@
       while ($i < count($live_stream)) {
       ?>
         <div class="tab-pane fade" id="video-<?= $i; ?>" role="tabpanel" aria-labelledby="video-<?= $i; ?>-tab">
-          <div class="kotak" style="background-color:black;border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;">
+          <div class="kotak" style="background-color:black;
+          border-top-left-radius: 0px;
+          border-top-right-radius: 0px;
+          border-bottom-left-radius: 25px;
+          border-bottom-right-radius: 25px;">
             <div class="container text-center" style="transform:rotate(270deg);">
               <iframe style="padding-right:3%" width="600" height="600" src="<?= $live_stream[$i]['link'] ?>" frameborder="0" allow="accelerometer; mute; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
