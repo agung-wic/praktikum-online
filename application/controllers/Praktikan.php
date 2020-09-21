@@ -63,6 +63,8 @@ class Praktikan extends CI_Controller
         $jadwal = strtotime($cek['jadwal']);
         $batas = strtotime($data['modul']['time']);
         $time = (date('H', $batas) * 60 * 60) + (date('i', $batas) * 60) + date('s', $batas);
+        $data['live_stream'] = $this->db->get_where('live_stream', ['id_modul' => $id])->result_array();
+        $data['lokasi'] = ($this->uri->segment('3') == NULL) ? 'tes' : $this->uri->segment('3');
         if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) {
             if ($cek['status'] == 0) {
                 $this->_connectsocket($id);
@@ -183,9 +185,12 @@ class Praktikan extends CI_Controller
         // $port    = 1800;
         // $port2    = 1801;
         $data['modul'] = $this->db->get_where('modul', ['modul' => $id])->row_array();
+        // var_dump($data['modul']);
+        // die;
         $host = $data['modul']['ip_address'];
         $port = $data['modul']['port1'];
         $port2 = $data['modul']['port2'];
+
         //echo "Message To server :" . $message;
         // create socket
         $socket1 = socket_create(AF_INET, SOCK_STREAM, 0);
@@ -195,16 +200,18 @@ class Praktikan extends CI_Controller
         $data['result2'] = NULL;
         if ($socket1 && $socket2) {
             // connect to server    
-            $result1 = socket_connect($socket1, $host, $port);
-            $result2 = socket_connect($socket2, $host, $port2);
+            $result1 = socket_connect($socket1, $host, intval($port));
+            $result2 = socket_connect($socket2, $host, intval($port2));
 
             $result = [$result1, $result2];
             if ($result1 || $result2) {
                 $success = [$socket, $result];
+
                 return $success;
             } else {
                 echo "<script>alert('Tidak dapat terhubung ke server!');
                 window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
+                //return "ok";
             }
         } else {
             echo "<script>alert('Gagal membuat socket!');
@@ -233,18 +240,16 @@ class Praktikan extends CI_Controller
                 }
                 return $result2;
             } else {
-                echo "<script>alert('Tidak dapat membaca respon dari server!');
-                    window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
+                return "Error 1";
             }
         } else {
-            echo "<script>alert('Tidak dapat mengirim data ke server!');
-            window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
+            return "Error 2";
         }
     }
 
     public function getpercobaan()
     {
-        $connect = $this->_connectsocket();
+        $connect = $this->_connectsocket($this->input->post('id'));
         $hasil = $this->_sendsocket($connect[0][0], $connect[0][1], $this->input->post('kirim'), $this->input->post('id'));
         if ($hasil) {
             echo json_encode($hasil);
@@ -253,11 +258,22 @@ class Praktikan extends CI_Controller
         }
     }
 
+    public function tombolKamera()
+    {
+        $id = $this->input->post("id");
+        $link = $this->db->get_where('live_stream', ['id_modul' => $id])->result_array();
+        if ($link) {
+            echo json_encode($link);
+        } else {
+            echo json_encode("Error");
+        }
+    }
+
     public function jadwal()
     {
         $this->load->model('Praktikan_model');
 
-        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/praktikan/jadwal';
+        $config['base_url'] = 'http://localhost/fisdas-8/praktikan/jadwal';
         $config['total_rows'] = $this->Praktikan_model->JumlahJadwal($this->session->userdata('nrp'));
         $config['per_page'] = 10;
         $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';

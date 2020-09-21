@@ -1,5 +1,5 @@
 $(function () {
-	const base = "https://riset.its.ac.id/praktikum-fisdas/";
+	const base = "http://localhost/fisdas-8/";
 	$(".tampilModalUbah").on("click", function () {
 		const id = $(this).data("id");
 
@@ -171,6 +171,8 @@ $(function () {
 		const tampil = $(this).data("tampil");
 		const kirim = $(this).data("kirim");
 		const id = $(this).data("id");
+		console.log(kirim);
+		console.log(id);
 		$.ajax({
 			url: base + "praktikan/getpercobaan",
 			data: {
@@ -183,10 +185,19 @@ $(function () {
 				console.log(data);
 				$(tampil).val(data);
 			},
-			error: function (error) {
-				console.log(error);
+			error: function (jqXHR, textStatus, errorThrown) {
+				console.log(JSON.stringify(jqXHR));
+				console.log("AJAX error: " + textStatus + " : " + errorThrown);
 			},
 		});
+	});
+
+	$(".video").on("click", function () {
+		const id = $(this).attr("id");
+		console.log(id);
+		$("#" + id).attr("active", true);
+		$("#" + id).css("background-color", "white");
+		$("#" + id).html("click");
 	});
 
 	$(".tampilEditPengumuman").on("click", function () {
