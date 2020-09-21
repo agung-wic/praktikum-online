@@ -59,7 +59,7 @@
     param1a.prop('disabled', true);
     setTimeout(function() {
       param1a.prop('disabled', false);
-    }, 3000);
+    }, 100);
   });
 </script>
 </body>
