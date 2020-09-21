@@ -34,6 +34,7 @@
         <?php $i++;
         } ?>
       </div>
+
     </nav>
     <div class="tab-content" id="nav-tabContent">
       <?php
@@ -158,7 +159,7 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="kotak" style="background-color: #bcaead;">
+            <div class="kotak" style="background-color: #bcaead;margin-top:5%">
               <div class="container mt-2" style="color: black;">
                 <h6 class="mb-3"><b>Output</b></h6>
                 <div class="form-group">
