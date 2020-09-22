@@ -47,8 +47,8 @@
           border-top-right-radius: 25px;
           border-bottom-left-radius: 25px;
           border-bottom-right-radius: 25px;">
-            <div class="container text-center">
-              <iframe style=" padding-right:3%" width="500" height="500" src="<?= $live_stream[$i]['link'] ?>" frameborder="0" allow="accelerometer; mute; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="container text-center" style="transform:<?= $live_stream[$i]['transform'] ?>">
+              <iframe style="padding-right:3%" width="<?= $live_stream[$i]['width'] ?>" height="<?= $live_stream[$i]['height'] ?>" src="<?= $live_stream[$i]['link'] ?>" frameborder="0" allow="accelerometer; mute; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
