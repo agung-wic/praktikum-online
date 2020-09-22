@@ -12,12 +12,10 @@
                 <h2 class="mb-0">
                   <div class="btn-block text-left collapsed" style="font-size: large; " type="button" data-toggle="collapse" data-target="#collapse<?= $m['modul']; ?>" aria-expanded="true">
                     <div>
-
                     </div><strong><?= $m['modul'] ?></strong> . <?= $m['name']; ?>
                   </div>
                 </h2>
               </div>
-
               <div id="collapse<?= $m['modul']; ?>" class="collapse" aria-labelledby="heading<?= $m['modul']; ?>" data-parent="#accordionExample">
                 <div class="card-body">
                   Tujuan Percobaan: <?= $m['tujuan'] ?>

@@ -1,5 +1,5 @@
 <div class="row mx-5">
-  <div class="kotak">
+  <div class="kotak" style="background-color: white;">
     <div class="container">
       <h4 class="mt-3"><b><?= $modul['name'] ?></b></h4>
       <h6>Kode Percobaan: <?= $modul['modul']; ?></h6>

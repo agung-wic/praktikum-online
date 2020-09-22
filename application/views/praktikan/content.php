@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="col justify-content-center">
-    <div class="kotak">
+    <div class="kotak" style="background-color: white;">
       <div class="container py-3">
         <video width="100%" controls autoplay loop>
           <source src="<?= base_url('assets/vid/') . $modul['video']; ?>" type="video/mp4">
