@@ -1,6 +1,6 @@
 <div class="row mx-5">
   <div class="col justify-content-center">
-    <div class="kotak">
+    <div class="kotak" style="background-color: white;">
       <div class="container">
         <h4 class="mt-3"><b><?= $modul['name'] ?></b></h4>
         <h6>Kode Percobaan: <?= $modul['modul']; ?></h6>
@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="col justify-content-center">
-    <div class="kotak" style="background-color: white;">
+    <div class="kotak">
       <div class="container py-3">
         <video width="100%" controls autoplay loop>
           <source src="<?= base_url('assets/vid/') . $modul['video']; ?>" type="video/mp4">
