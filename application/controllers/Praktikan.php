@@ -3,11 +3,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Praktikan extends CI_Controller
 {
+    private $socket;
     public function __construct()
     {
         parent::__construct();
         is_logged_in();
-        $this->socket = NULL;
     }
 
     public function index()
@@ -255,7 +255,7 @@ class Praktikan extends CI_Controller
     public function getpercobaan()
     {
         //$connect = $this->_connectsocket($this->input->post('id'));
-        $hasil = $this->socket;
+        $hasil = $this->_sendsocket($this->socket[0][0], $this->socket[0][1], $this->input->post('kirim'), $this->input->post('id'));
         if ($hasil) {
             echo json_encode($hasil);
         } else {
