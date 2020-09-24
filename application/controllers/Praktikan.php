@@ -255,12 +255,13 @@ class Praktikan extends CI_Controller
     public function getpercobaan()
     {
         //$connect = $this->_connectsocket($this->input->post('id'));
-        $hasil = $this->_sendsocket($this->socket[0][0], $this->socket[0][1], $this->input->post('kirim'), $this->input->post('id'));
-        if ($hasil) {
-            echo json_encode($hasil);
-        } else {
-            echo json_encode("Halo");
-        }
+        //$hasil = $this->_sendsocket($this->socket[0][0], $this->socket[0][1], $this->input->post('kirim'), $this->input->post('id'));
+        echo json_encode($this->socket);
+        // if ($hasil) {
+        //     echo json_encode($hasil);
+        // } else {
+        //     echo json_encode("Halo");
+        // }
     }
 
     public function tombolKamera()
