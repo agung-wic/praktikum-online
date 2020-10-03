@@ -1,5 +1,10 @@
 <div class="row mx-5">
   <div class="kotak" style="background-color: white;">
+    <div class="row justify-content-center mt-3 mb-1">
+      <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%;margin-top:5%" class="btn btn-dark px-4 param1">
+        Tambahkan Tombol
+      </button>
+    </div>
     <div class="container">
       <h4 class="mt-3"><b><?= $modul['name'] ?></b></h4>
       <h6>Kode Percobaan: <?= $modul['modul']; ?></h6>
