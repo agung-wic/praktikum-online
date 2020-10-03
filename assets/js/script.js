@@ -402,7 +402,7 @@ $(function () {
 
 	$(".tambahOutput").on("click", function () {
 		const id = $(this).data("id");
-		$("#modul_id").val(id);
+		$("#modul_idddd").val(id);
 	});
 
 	$(".outputEdit").on("click", function () {
