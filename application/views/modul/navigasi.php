@@ -227,13 +227,13 @@
             <div class="modal-body">
                 <form action="<?= base_url('modul/tambahoutput') ?>" method="post">
                     <div class="form-group">
-                        <input type="hidden" id="modul_id" name="modul_id">
-                        <label for="tulisan">Keterangan Output</label>
-                        <input type="text" class="form-control" id="tulisan" name="tulisan">
+                        <input type="hidden" id="modul_idddd" name="modul_idddd">
+                        <label for="tulisann">Keterangan Output</label>
+                        <input type="text" class="form-control" id="tulisann" name="tulisann">
                     </div>
                     <div class="form-group">
-                        <label for="data_tampil_output">Data output</label>
-                        <input type="text" class="form-control" id="data_tampil_output" name="data_tampil_output">
+                        <label for="data_tampil_outputttt">Data output</label>
+                        <input type="text" class="form-control" id="data_tampil_outputttt" name="data_tampil_outputttt">
                     </div>
             </div>
             <div class="modal-footer">

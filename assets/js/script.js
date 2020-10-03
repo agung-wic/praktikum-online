@@ -419,7 +419,7 @@ $(function () {
 				console.log(data);
 				$("#iddd_modul").val(data.id_modul);
 				$("#iddd").val(data.id);
-				$("#tulisan").val(data.data_tampil_output);
+				$("#tulisan").val(data.tulisan);
 				$("#data_tampil_outputtt").val(data.data_tampil_output);
 			},
 		});
