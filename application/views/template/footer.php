@@ -65,9 +65,6 @@
   $('.absen').click(function() {
     let absen = $(this);
     absen.prop('disabled', true);
-    setTimeout(function() {
-      absen.prop('disabled', false);
-    });
   });
 </script>
 </body>
