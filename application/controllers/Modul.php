@@ -131,12 +131,12 @@ class Modul extends CI_Controller
 
     public function editoutput()
     {
-        $id = $this->input->post('iddd_modul', true);
+        $id = $this->input->post('idddd_modul', true);
         $data = [
-            "tulisan" => $this->input->post('tulisan', true),
-            "data_tampil_output" => $this->input->post('data_tampil_outputtt', true),
+            "tulisan" => $this->input->post('tulisann', true),
+            "data_tampil_output" => $this->input->post('data_tampil_outputttt', true),
         ];
-        $this->db->where('id', $this->input->post('iddd'));
+        $this->db->where('id', $this->input->post('idddd'));
         $this->db->update('output_tulisan', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Tombol Navigasi berhasil diubah!
