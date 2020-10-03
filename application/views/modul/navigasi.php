@@ -62,9 +62,9 @@
                                             <label><?= $t['tulisan']; ?></label>
                                         </div>
                                         <div class="col-lg-3 mb-2">
-                                            <button type="submit" style="margin-left:50%;" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 outputEdit">
+                                            <a type="submit" style="margin-left:50%;color:#e74a3b" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="btn btn-info px-4 outputEdit">
                                                 Edit
-                                            </button>
+                                            </a>
                                         </div>
                                         <div class="col-lg-3 text-right">
                                             <a href="<?= base_url('modul/output_tulisan/') . $t['id']; ?>" onclick=" return confirm('Yakin?');"">
@@ -80,7 +80,7 @@
                             <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
                             </div>
                             <div class="row justify-content-center mt-3 mb-1">
-                                <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $modul['modul']; ?>" data-toggle="modal" data-target="#tombolTambahTulisan" class="btn btn-dark px-4 tombolTambahTulisan">
+                                <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $modul['modul']; ?>" data-toggle="modal" data-target="#tambahOutput" class="btn btn-dark px-4 tambahOutput">
                                     Tambahkan Output
                                 </button>
                             </div>
@@ -189,6 +189,45 @@
                 <form action="<?= base_url('modul/tambahtomboltulisan') ?>" method="post">
                     <div class="form-group">
                         <label for="keterangan">Keterangan tombol</label>
+                        <input type="text" class="form-control" id="keterangan" name="keterangan">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" id="modul_id" name="modul_id">
+                        <label for="nilai">Nilai yang dikirim</label>
+                        <input type="text" class="form-control" id="nilai" name="nilai">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <input type="checkbox" class="form-check-input ml-3 pl-5" id="status" name="status">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <label for="data-output">Data Output</label>
+                        <input type="text" class="form-control" id="data-output" name="data-output">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Tambah</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tambahOutput" tabindex="-1" role="dialog" aria-labelledby="tambahOutputLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tambah Tombol</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('modul/tambahtomboltulisan') ?>" method="post">
+                    <div class="form-group">
+                        <label for="keterangan">Keterangan Output</label>
                         <input type="text" class="form-control" id="keterangan" name="keterangan">
                     </div>
                     <div class="form-group">
