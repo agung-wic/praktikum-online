@@ -57,8 +57,9 @@
                             <div class="form-group">
                                 <?php $i = 0;
                                 foreach ($output_tulisan as $t) :  ?>
+                                    <label for="data1"><?= $t['tulisan']; ?></label>
                                     <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $output_tulisan[$i]['id'] ?>" class="form-control form-control-user mb-4 tombolEditTulisan">
-                                        <?= $t['tulisan'] ?>
+                                        <?= Edit ?>
                                     </button>
                                 <?php $i++;
                                 endforeach;
