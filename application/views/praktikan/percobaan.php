@@ -1,11 +1,11 @@
 <div class="row mx-5">
   <div class="kotak" style="background-color: white;">
     <div class="row justify-content-center mt-3 mb-1">
-      <div class="col-lg-12">
+      <div class="col-lg-12 text-center">
         Klik tombol di bawah ini untuk absensi
       </div>
-      <div class="col-lg-12">
-        <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%;margin-top:5%" class="btn btn-dark px-4 absen">
+      <div class="col-lg-12 text-center">
+        <button type="submit" style="background-color:#26A65B;border:none" class="btn btn-dark px-4 absen">
           ABSEN
         </button>
       </div>
