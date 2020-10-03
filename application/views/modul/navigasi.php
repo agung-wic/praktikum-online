@@ -68,10 +68,12 @@
                                         </div>
                                         <div class="col-lg-3 text-right">
                                             <a href="<?= base_url('modul/output_tulisan/') . $t['id']; ?>" onclick=" return confirm('Yakin?');"">
-                                        <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
+                                            <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
                                             </a>
                                         </div>
-                                        <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
+                                        <div class="col-lg-12">
+                                            <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
+                                        </div>
                                     </div>
                                 <?php $i++;
                                 endforeach;
