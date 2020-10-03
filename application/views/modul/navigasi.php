@@ -259,7 +259,7 @@
                     <div class="form-group">
                         <input type="hidden" id="iddd" name="iddd">
                         <input type="hidden" id="iddd_modul" name="iddd_modul">
-                        <label for="tulsian">Tampilan</label>
+                        <label for="tulisan">Keterangan Output</label>
                         <input type="text" class="form-control" id="tulisan" name="tulisan">
                     </div>
                     <div class="form-group">
