@@ -62,7 +62,7 @@
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="kotak" background-color:black">
+    <div class="kotak">
       <div class="container py-3">
         <div class="row">
           <?php if ($user['role_id'] != "8") { ?>
@@ -119,8 +119,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-12">
-            <?php } else { ?> <div class="col-lg-6"> <?php }  ?>
+            <div class="col-lg-6">
+            <?php } else { ?> <div class="col-lg-12"> <?php }  ?>
               <div class="kotak" style="background-color: #bcaead;">
                 <div class="container mt-2" style="color: black;">
                   <h6 class="mb-3"><b>Output</b></h6>
