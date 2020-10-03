@@ -33,7 +33,7 @@
                                     </button>
                                 </div>
                                 <div class="col-lg-3">
-                                    <a href="<?= base_url('modul/deletetomboltulisan/') . $t['id']; ?>" onclick=" return confirm('Yakin?');"">
+                                    <a href="<?= base_url('modul/deletetomboltulisan/') . $t['id']; ?>" onclick=" return confirm('Yakin?');">
                                         <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
                                     </a>
                                 </div>
@@ -67,8 +67,8 @@
                                             </a>
                                         </div>
                                         <div class="col-lg-3 text-right">
-                                            <a href="<?= base_url('modul/output_tulisan/') . $t['id']; ?>" onclick=" return confirm('Yakin?');"">
-                                            <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
+                                            <a href="<?= base_url('modul/deleteoutput/') . $t['id']; ?>" onclick=" return confirm('Yakin?');">
+                                                <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
                                             </a>
                                         </div>
                                         <div class="col-lg-12">
