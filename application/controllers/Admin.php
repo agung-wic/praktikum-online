@@ -45,7 +45,7 @@ class Admin extends CI_Controller
             $data['keyword'] = null;
             $config['total_rows'] = $this->Admin_model->JumlahUser();
         }
-        $config['per_page'] = 5;
+        $config['per_page'] = 10;
         $this->pagination->initialize($config);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['list'] = $this->Admin_model->TampilUser($config['per_page'], $data['start'], $data['keyword']);
@@ -96,7 +96,7 @@ class Admin extends CI_Controller
             $data['keyword'] = null;
             $config['total_rows'] = $this->Admin_model->JumlahUserOnline();
         }
-        $config['per_page'] = 5;
+        $config['per_page'] = 10;
         $this->pagination->initialize($config);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['list'] = $this->Admin_model->TampilUserOnline($config['per_page'], $data['start']);
@@ -312,7 +312,7 @@ class Admin extends CI_Controller
         $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/admin/pengumuman';
         $config['total_rows'] = $this->Admin_model->JumlahPengumuman();
 
-        $config['per_page'] = 5;
+        $config['per_page'] = 10;
         $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
         $config['full_tag_close'] = '</ul></nav>';
 
