@@ -6,7 +6,7 @@
   <div class="container-fluid">
 
 
-    <div class="kotak">
+    <div class="kotak" style="margin-bottom:1%">
       <div class="card-header">
         <div class="row">
           <div class="col">
