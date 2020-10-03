@@ -58,7 +58,7 @@
                                 <?php $i = 0;
                                 foreach ($output_tulisan as $t) :  ?>
                                     <label for="data1"><?= $t['tulisan']; ?></label>
-                                    <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $output_tulisan[$i]['id'] ?>" class="form-control form-control-user mb-4 tombolEditTulisan">
+                                    <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#outputEdit" data-id=" <?= $output_tulisan[$i]['id'] ?>" class="form-control form-control-user mb-4 outputEdit">
                                         Edit
                                     </button>
                                 <?php $i++;
@@ -148,6 +148,71 @@
                     <div class="form-group">
                         <label for="data_tampil_outputt">Data output</label>
                         <input type="text" class="form-control" id="data_tampil_outputt" name="data_tampil_outputt">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Ubah</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tombolTambahTulisan" tabindex="-1" role="dialog" aria-labelledby="tombolTambahTulisanLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tambah Tombol</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('modul/tambahtomboltulisan') ?>" method="post">
+                    <div class="form-group">
+                        <label for="keterangan">Keterangan tombol</label>
+                        <input type="text" class="form-control" id="keterangan" name="keterangan">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" id="modul_id" name="modul_id">
+                        <label for="nilai">Nilai yang dikirim</label>
+                        <input type="text" class="form-control" id="nilai" name="nilai">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <input type="checkbox" class="form-check-input ml-3 pl-5" id="status" name="status">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Tambah</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="outputEdit" tabindex="-1" role="dialog" aria-labelledby="outputEditLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title outputEditLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('modul/editoutput') ?>" method="post">
+                    <div class="form-group">
+                        <input type="hidden" id="id" name="id">
+                        <input type="hidden" id="id_modul" name="id_modul">
+                        <label for="tulsian">Tampilan</label>
+                        <input type="text" class="form-control" id="tulisan" name="tulsian">
+                    </div>
+                    <div class="form-group">
+                        <label for="data_tampil_output">Data output</label>
+                        <input type="text" class="form-control" id="data_tampil_output" name="data_tampil_output">
                     </div>
             </div>
             <div class="modal-footer">

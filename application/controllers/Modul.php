@@ -61,6 +61,7 @@ class Modul extends CI_Controller
             "tombol_kirim" => $this->input->post('tombol_kirim', true),
             "tombol_keterangan" => $this->input->post('tombol_keterangan', true),
             "tombol_status" => $this->input->post('tombol_status', true),
+            "tombol_status" => $this->input->post('data_tampil_output', true),
         ];
         if ($data["tombol_status"] == "on") {
             $data["tombol_status"] = 1;
@@ -80,6 +81,7 @@ class Modul extends CI_Controller
             "tombol_kirim" => $this->input->post('tombol_kirimm', true),
             "tombol_keterangan" => $this->input->post('tombol_keterangann', true),
             "tombol_status" => $this->input->post('tombol_statuss', true),
+            "data_tampil_output" => $this->input->post('data_tampil_outputt', true),
         ];
         if ($data["tombol_status"] == "on") {
             $data["tombol_status"] = 1;
@@ -93,6 +95,41 @@ class Modul extends CI_Controller
     }
 
     public function tambahtomboltulisan()
+    {
+        $id = $this->input->post('modul_id', true);
+        $data = [
+            "id_modul" => $id,
+            "tombol_kirim" => $this->input->post('nilai', true),
+            "tombol_keterangan" => $this->input->post('keterangan', true),
+            "tombol_status" => $this->input->post('status', true),
+            "data_tampil_output" => $this->input->post('data_tampil_output', true),
+        ];
+        if ($data["tombol_status"] == "on") {
+            $data["tombol_status"] = 1;
+        } else $data["tombol_status"] = 0;
+        $this->db->insert('tombol_tulisan', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Tombol Navigasi berhasil ditambahkan!
+        </div>');
+        redirect(base_url('modul/navigasi/') . $id);
+    }
+
+    public function editoutput()
+    {
+        $id = $this->input->post('id_modul', true);
+        $data = [
+            "tulisan" => $this->input->post('tulisan', true),
+            "data_tampil_output" => $this->input->post('data_tampil_output', true),
+        ];
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('output_tulisan', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Tombol Navigasi berhasil diubah!
+        </div>');
+        redirect(base_url('modul/navigasi/') . $id);
+    }
+
+    public function tambahoutput()
     {
         $id = $this->input->post('modul_id', true);
         $data = [
