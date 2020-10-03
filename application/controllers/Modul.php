@@ -117,8 +117,6 @@ class Modul extends CI_Controller
     public function tambahoutput()
     {
         $id = $this->input->post('modul_idddd', true);
-        var_dump($id);
-        die;
         $data = [
             "id_modul" => $id,
             "tulisan" => $this->input->post('tulisann', true),
