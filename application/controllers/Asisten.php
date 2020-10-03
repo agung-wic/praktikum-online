@@ -32,6 +32,61 @@ class Asisten extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  public function jadwal()
+  {
+    $this->load->model('Admin_model');
+    $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/admin/jadwal';
+    $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
+    $config['full_tag_close'] = '</ul></nav>';
+
+    $config['next_link'] = '&raquo';
+    $config['next_tag_open'] = '<li class="page-item">';
+    $config['next_tag_close'] = '</li>';
+
+    $config['prev_link'] = '&laquo';
+    $config['prev_tag_open'] = '<li class="page-item">';
+    $config['prev_tag_close'] = '</li>';
+
+    $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+    $config['cur_tag_close'] = '</li></a>';
+
+    $config['num_tag_open'] = '<li class="page-item">';
+    $config['num_tag_close'] = '</li>';
+
+    $config['attributes'] = array('class' => 'page-link');
+
+    $data['start'] = $this->uri->segment(3);
+    if ($data['start'] == null) {
+      $data['start'] = 0;
+    }
+
+    if ($this->input->post('keyword1')) {
+      $data['keyword'] = $this->input->post('keyword1');
+      $this->session->set_userdata('keyword1', $data['keyword']);
+      $config['per_page'] = 10;
+      $config['total_rows'] = $this->db->count_all_results();
+    } else {
+      $data['keyword'] = $this->session->userdata('keyword1');
+      $config['per_page'] = 10;
+      $config['total_rows'] = $this->Admin_model->JumlahJadwal();
+    }
+    $this->pagination->initialize($config);
+
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $data['title'] = 'Jadwal Praktikum';
+    $data['modul'] = $this->db->get('modul')->result_array();
+    $data['list'] = $this->Admin_model->TampilJadwal($config['per_page'], $data['start'], $data['keyword']);
+    $data['req'] = $this->Admin_model->TampilReqJadwal();
+    if ($this->input->post('keyword2')) {
+      $data['req'] = $this->Admin_model->CariReqJadwal();
+    }
+    $this->load->view('template/header', $data);
+    $this->load->view('template/sidebar', $data);
+    $this->load->view('template/topbar', $data);
+    $this->load->view('admin/jadwal', $data);
+    $this->load->view('template/footer');
+  }
+
   public function getubahnilai()
   {
     $this->load->model('Asisten_model');
