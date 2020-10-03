@@ -65,12 +65,13 @@
               <div class="container mt-2" style="color: black;">
                 <h6 class="mb-3"><b>Output</b></h6>
                 <div class="form-group">
-                  <label for="data1">Output 1</label>
-                  <output type="text" id="data4" name="data4" class="form-control form-control-user mb-4"></output>
-                  <label for="data1">Output 2</label>
-                  <output type="text" id="data1a" name="data1a" class="form-control form-control-user mb-4"></output>
-                  <label for="data1">Output 3</label>
-                  <output type="text" id="data3" name="data3" class="form-control form-control-user"></output>
+                  <?php
+                  foreach ($output_tulisan as $t) :  ?>
+                    <label for="data1"><?= $t['tulisan']; ?></label>
+                    <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
+                  <?php
+                  endforeach;
+                  ?>
                 </div>
                 <div class="row justify-content-center mb-3">
                 </div>
