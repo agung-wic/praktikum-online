@@ -53,47 +53,18 @@
                 <div class="col-lg-6" style="margin:auto">
                     <div class="kotak" style="background-color: #bcaead;">
                         <div class="container mt-2" style="color: black;">
-                            <h6 class="text-center mb-5" style="padding-top:7%"><b><?= $modul['name'] ?></b></h6>
-                        </div>
-                        <div class="row justify-content-center">
-                            <button style="font-size:300%;margin-bottom:3%;margin-top:10%" type="submit" class="btn btn-dark fa fa-arrow-circle-up tombolEditArah" data-id="<?= $tombol_arah[0]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
-                            </button>
-                        </div>
-                        <div class="row justify-content-center">
-                            <button style="font-size: 300%" type="submit" class="btn btn-dark fa fa-arrow-circle-left tombolEditArah" data-id="<?= $tombol_arah[2]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
-                            </button>
-                            <button style="font-size:200%;margin-right:3%;margin-left:3%;background-color:black;color:white" type="submit" class="btn fas fa-circle" disabled>
-                            </button>
-                            <button style="font-size: 300%" type="submit" class="btn btn-dark fa fa-arrow-circle-right tombolEditArah" data-id="<?= $tombol_arah[3]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
-                            </button>
-                        </div>
-                        <div class="row justify-content-center">
-                            <button style="font-size: 300%;margin-top:3%;margin-bottom:20%" type="submit" class="btn btn-dark fa fa-arrow-circle-down tombolEditArah" data-id="<?= $tombol_arah[1]['id']; ?>" data-toggle="modal" data-target="#tombolEditArah">
-                            </button>
-                        </div>
-                        <?php $i = 0;
-                        foreach ($tombol_tulisan as $t) :  ?>
-                            <div class="row justify-content-center mb-1">
-                                <div class="col-lg-9 text-center">
-                                    <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $tombol_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 tombolEditTulisan">
-                                        <?= $t['tombol_keterangan'] ?>
-                                    </button>
-                                </div>
-                                <div class="col-lg-3">
-                                    <a href="<?= base_url('modul/deletetomboltulisan/') . $t['id']; ?>" onclick=" return confirm('Yakin?');"">
-                                        <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
-                                    </a>
-                                </div>
+                            <h6 class="mb-3"><b>Output</b></h6>
+                            <div class="form-group">
+                                <?php
+                                foreach ($output_tulisan as $t) :  ?>
+                                    <label for="data1"><?= $t['tulisan']; ?></label>
+                                    <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
+                                <?php
+                                endforeach;
+                                ?>
                             </div>
-                        <?php $i++;
-                        endforeach;
-                        ?>
-                        <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
-                        </div>
-                        <div class="row justify-content-center mt-3 mb-1">
-                            <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $modul['modul']; ?>" data-toggle="modal" data-target="#tombolTambahTulisan" class="btn btn-dark px-4 tombolTambahTulisan">
-                                Tambahkan Tombol
-                            </button>
+                            <div class="row justify-content-center mb-3">
+                            </div>
                         </div>
                     </div>
                 </div>
