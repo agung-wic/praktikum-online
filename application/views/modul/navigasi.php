@@ -53,13 +53,14 @@
                 <div class="col-lg-6" style="margin:auto">
                     <div class="kotak" style="background-color: #bcaead;">
                         <div class="container mt-2" style="color: black;">
-                            <h6 class="mb-3"><b>Output</b></h6>
+                            <h6 class="text-center mb-3"><b>Output</b></h6>
                             <div class="form-group">
-                                <?php
+                                <?php $i = 0;
                                 foreach ($output_tulisan as $t) :  ?>
-                                    <label for="data1"><?= $t['tulisan']; ?></label>
-                                    <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
-                                <?php
+                                    <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#tombolEditTulisan" data-id=" <?= $output_tulisan[$i]['id'] ?>" class="form-control form-control-user mb-4 tombolEditTulisan">
+                                        <?= $t['tulisan'] ?>
+                                    </button>
+                                <?php $i++;
                                 endforeach;
                                 ?>
                             </div>
