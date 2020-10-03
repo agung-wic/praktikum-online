@@ -366,7 +366,7 @@ $(function () {
 				if (data.tombol_status == 0) {
 					$("#tombol_status").attr("checked", false);
 				} else $("#tombol_status").attr("checked", true);
-				$("#data_tampil_output").val(data.data_tampil_output);
+				$("#data_tampil_output").val(data.tombol_keterangan);
 			},
 		});
 	});
