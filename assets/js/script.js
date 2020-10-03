@@ -414,7 +414,7 @@ $(function () {
 				console.log(data);
 				$("#iddd_modul").val(data.id_modul);
 				$("#iddd").val(data.id);
-				$("#tulisan").val(data.tulisan);
+				$("#tulisan").val(data.data_tampil_output);
 				$("#data_tampil_outputtt").val(data.data_tampil_output);
 			},
 		});
