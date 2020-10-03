@@ -126,6 +126,8 @@ class Modul extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Tombol Navigasi berhasil diubah!
         </div>');
+        var_dump($id);
+        die;
         redirect(base_url('modul/navigasi/') . $id);
     }
 
