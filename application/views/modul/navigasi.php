@@ -62,7 +62,7 @@
                                             <label><?= $t['tulisan']; ?></label>
                                         </div>
                                         <div class="col-lg-3 mb-2">
-                                            <a type="submit" style="margin-left:50%;color:#bcaead" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="btn btn-info px-4 outputEdit">
+                                            <a type="submit" style="margin-left:50%;color:white" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="btn btn-info px-4 outputEdit">
                                                 Edit
                                             </a>
                                         </div>
