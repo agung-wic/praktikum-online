@@ -3,7 +3,7 @@
         <div class="container py-3">
             <?= $this->session->flashdata('message'); ?>
             <div class="row">
-                <div class="col-lg-6" style="margin:auto">
+                <div class="col-lg-6">
                     <div class="kotak" style="background-color: #bcaead;">
                         <div class="container mt-2" style="color: black;">
                             <h6 class="text-center mb-5" style="padding-top:7%"><b><?= $modul['name'] ?></b></h6>
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" style="margin:auto">
+                <div class="col-lg-6">
                     <div class="kotak" style="background-color: #bcaead;">
                         <div class="container mt-2" style="color: black;">
                             <h6 class="text-center mb-3"><b>Output</b></h6>
