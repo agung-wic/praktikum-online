@@ -277,4 +277,9 @@ class Modul extends CI_Controller
     {
         echo json_encode($this->db->get_where('tombol_tulisan', ['id' => $this->input->post('id')])->row_array());
     }
+
+    public function getubahoutput()
+    {
+        echo json_encode($this->db->get_where('output_tulisan', ['id' => $this->input->post('id')])->row_array());
+    }
 }

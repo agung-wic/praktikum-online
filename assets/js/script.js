@@ -404,7 +404,7 @@ $(function () {
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: base + "modul/getubahtomboltulisan",
+			url: base + "modul/getubahoutput",
 			data: {
 				id: id,
 			},
