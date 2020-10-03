@@ -119,7 +119,7 @@
                 <h6 class="mb-3"><b>Output</b></h6>
                 <div class="form-group">
                   <?php
-                  foreach ($tombol_tulisan as $t) :  ?>
+                  foreach ($output_tulisan as $t) :  ?>
                     <label for="data1"><?= $t['tulisan']; ?></label>
                     <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
                   <?php
