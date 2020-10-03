@@ -60,7 +60,6 @@
                                     <div class="row justify-content-center mb-1">
                                         <div class="col-lg-6 text-center">
                                             <label><?= $t['tulisan']; ?></label>
-                                            <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
                                         </div>
                                         <div class="col-lg-3">
                                             <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 outputEdit">
@@ -72,6 +71,7 @@
                                         <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
                                             </a>
                                         </div>
+                                        <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
                                     </div>
                                 <?php $i++;
                                 endforeach;
