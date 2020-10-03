@@ -117,8 +117,6 @@ class Modul extends CI_Controller
     public function editoutput()
     {
         $id = $this->input->post('iddd_modul', true);
-        var_dump($id);
-        die;
         $data = [
             "tulisan" => $this->input->post('tulisan', true),
             "data_tampil_output" => $this->input->post('data_tampil_outputtt', true),
