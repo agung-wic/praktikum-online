@@ -62,7 +62,7 @@
                                             <label><?= $t['tulisan']; ?></label>
                                         </div>
                                         <div class="col-lg-3 mb-2">
-                                            <a type="submit" style="margin-left:50%;color:#e74a3b" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="btn btn-info px-4 outputEdit">
+                                            <a type="submit" style="margin-left:50%;color:#bcaead" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="btn btn-info px-4 outputEdit">
                                                 Edit
                                             </a>
                                         </div>
@@ -225,24 +225,15 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('modul/tambahtomboltulisan') ?>" method="post">
-                    <div class="form-group">
-                        <label for="keterangan">Keterangan Output</label>
-                        <input type="text" class="form-control" id="keterangan" name="keterangan">
-                    </div>
+                <form action="<?= base_url('modul/tambahoutput') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="modul_id" name="modul_id">
-                        <label for="nilai">Nilai yang dikirim</label>
-                        <input type="text" class="form-control" id="nilai" name="nilai">
+                        <label for="tulisan">Keterangan Output</label>
+                        <input type="text" class="form-control" id="tulisan" name="tulisan">
                     </div>
                     <div class="form-group">
-                        <label for="status">Status</label>
-                        <input type="checkbox" class="form-check-input ml-3 pl-5" id="status" name="status">
-                    </div>
-                    <div class="form-group">
-                        <label for="status">Status</label>
-                        <label for="data-output">Data Output</label>
-                        <input type="text" class="form-control" id="data-output" name="data-output">
+                        <label for="data_tampil_output">Data output</label>
+                        <input type="text" class="form-control" id="data_tampil_output" name="data_tampil_output">
                     </div>
             </div>
             <div class="modal-footer">
