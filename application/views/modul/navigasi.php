@@ -213,7 +213,7 @@
                         <input type="hidden" id="iddd" name="iddd">
                         <input type="hidden" id="iddd_modul" name="iddd_modul">
                         <label for="tulsian">Tampilan</label>
-                        <input type="text" class="form-control" id="tulisan" name="tulsian">
+                        <input type="text" class="form-control" id="tulisan" name="tulisan">
                     </div>
                     <div class="form-group">
                         <label for="data_tampil_outputtt">Data output</label>
