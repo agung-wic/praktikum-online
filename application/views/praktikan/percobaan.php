@@ -102,7 +102,7 @@
               <?php
               foreach ($tombol_tulisan as $t) :  ?>
                 <div class="row justify-content-center mb-1">
-                  <button type="submit" style="margin: 1%;" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
+                  <button type="submit" style="margin: 1%;" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
                     <?= $t['tombol_keterangan'] ?>
                   </button>
                 </div>
@@ -118,12 +118,13 @@
               <div class="container mt-2" style="color: black;">
                 <h6 class="mb-3"><b>Output</b></h6>
                 <div class="form-group">
-                  <label for="data1">Output 1</label>
-                  <output type="text" id="data4" name="data4" class="form-control form-control-user mb-4"></output>
-                  <label for="data1">Output 2</label>
-                  <output type="text" id="data1a" name="data1a" class="form-control form-control-user mb-4"></output>
-                  <label for="data1">Output 3</label>
-                  <output type="text" id="data3" name="data3" class="form-control form-control-user"></output>
+                  <?php
+                  foreach ($tombol_tulisan as $t) :  ?>
+                    <label for="data1"><?= $t['tulisan']; ?></label>
+                    <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
+                  <?php
+                  endforeach;
+                  ?>
                 </div>
                 <div class="row justify-content-center mb-3">
                 </div>
@@ -160,13 +161,13 @@
         </button>
       </div>
       <div class="modal-body">
-        <button type="submit" id="param2" data-kirim="[d]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" class="btn btn-secondary px-4 kirim1a" disabled>
+        <button type="submit" id="param2" data-kirim="[d]" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" class="btn btn-secondary px-4 kirim1a" disabled>
           1
         </button>
         <a class="">Drop Bola</a>
         <div class="p-1">
         </div>
-        <button type="submit" data-kirim="[i]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
+        <button type="submit" data-kirim="[i]" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
           2
         </button>
         <a class="">Status Bola</a>
@@ -178,7 +179,7 @@
         <a class="">Cek Waktu</a>
         <div class="p-1">
         </div>
-        <button type="submit" data-kirim="[r]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
+        <button type="submit" data-kirim="[r]" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
           4
         </button>
         <a class="">Reload Bola</a>
@@ -190,13 +191,13 @@
         <a class="">Reset Alat</a>
         <div class="p-1">
         </div>
-        <button type="submit" data-kirim="" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
+        <button type="submit" data-kirim="" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
           6
         </button>
         <a class=""></a>
         <div class="p-1">
         </div>
-        <button type="submit" data-kirim="[r]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
+        <button type="submit" data-kirim="[r]" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
           7
         </button>
         <a class=""></a>
@@ -208,7 +209,7 @@
         <a class=""></a>
         <div class="p-1">
         </div>
-        <button type="submit" data-kirim="" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
+        <button type="submit" data-kirim="" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
           9
         </button>
       </div>

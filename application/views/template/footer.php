@@ -28,7 +28,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url(); ?>assets/js/sb-admin-2.min.js?v=9"></script>
-<script src="<?= base_url(); ?>assets/js/script.js?v=80"></script>
+<script src="<?= base_url(); ?>assets/js/script.js?v=81"></script>
 
 
 <script>

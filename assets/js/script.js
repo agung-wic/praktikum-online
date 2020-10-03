@@ -366,6 +366,7 @@ $(function () {
 				if (data.tombol_status == 0) {
 					$("#tombol_status").attr("checked", false);
 				} else $("#tombol_status").attr("checked", true);
+				$("#data_tampil_output").val(data.data_tampil_output);
 			},
 		});
 	});
@@ -394,6 +395,7 @@ $(function () {
 				if (data.tombol_status == 0) {
 					$("#tombol_statuss").attr("checked", false);
 				} else $("#tombol_statuss").attr("checked", true);
+				$("#data_tampil_outputt").val(data.data_tampil_output);
 			},
 		});
 	});

@@ -57,6 +57,7 @@ class Praktikan extends CI_Controller
         $address = $data['modul']['ip_address'];
         $data['tombol_arah'] = $this->db->get_where('tombol_arah', ['id_modul' => $id])->result_array();
         $data['tombol_tulisan'] = $this->db->get_where('tombol_tulisan', ['id_modul' => $id])->result_array();
+        $data['output_tulisan'] = $this->db->get_where('output_tulisan', ['id_modul' => $id])->result_array();
         $this->db->where('nrp', $this->session->userdata('nrp'));
         $this->db->where('modul_id', $id);
         $cek = $this->db->get('jadwal')->row_array();

@@ -86,6 +86,10 @@
                         <label for="tombol_keterangan">Keterangan tombol</label>
                         <input type="text" class="form-control" id="tombol_keterangan" name="tombol_keterangan">
                     </div>
+                    <div class="form-group">
+                        <label for="data_tampil_output">Data output</label>
+                        <input type="text" class="form-control" id="data_tampil_output" name="data_tampil_output">
+                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -120,6 +124,10 @@
                     <div class="form-group">
                         <label for="tombol_keterangann">Keterangan tombol</label>
                         <input type="text" class="form-control" id="tombol_keterangann" name="tombol_keterangann">
+                    </div>
+                    <div class="form-group">
+                        <label for="data_tampil_outputt">Data output</label>
+                        <input type="text" class="form-control" id="data_tampil_outputt" name="data_tampil_outputt">
                     </div>
             </div>
             <div class="modal-footer">
