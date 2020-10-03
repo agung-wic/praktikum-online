@@ -227,6 +227,18 @@ class Modul extends CI_Controller
         redirect(base_url('modul/navigasi/') . $id_modul);
     }
 
+    public function deleteoutput($id)
+    {
+        $id_modul = $this->db->get_where('output_tulisan', ['id' => $id])->row_array();
+        $id_modul = $id_modul['id_modul'];
+        $this->db->where('id', $id);
+        $this->db->delete('output_tulisan');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Tombol berhasil dihapus!
+        </div>');
+        redirect(base_url('modul/navigasi/') . $id_modul);
+    }
+
 
     public function addfilevideo()
     {

@@ -57,10 +57,22 @@
                             <div class="form-group">
                                 <?php $i = 0;
                                 foreach ($output_tulisan as $t) :  ?>
-                                    <label><?= $t['tulisan']; ?></label>
-                                    <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="form-control form-control-user mb-4 outputEdit">
-                                        Edit
-                                    </button>
+                                    <div class="row justify-content-center mb-1">
+                                        <div class="col-lg-6 text-center">
+                                            <label><?= $t['tulisan']; ?></label>
+                                            <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 outputEdit">
+                                                Edit
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <a href="<?= base_url('modul/output_tulisan/') . $t['id']; ?>" onclick=" return confirm('Yakin?');"">
+                                        <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 <?php $i++;
                                 endforeach;
                                 ?>
