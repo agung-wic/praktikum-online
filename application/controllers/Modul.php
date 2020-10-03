@@ -114,22 +114,22 @@ class Modul extends CI_Controller
         redirect(base_url('modul/navigasi/') . $id);
     }
 
-    // public function tambahoutput()
-    // {
-    //     $id = $this->input->post('modul_id', true);
-    //     var_dump($id);
-    //     die;
-    //     $data = [
-    //         "id_modul" => $id,
-    //         "tulisan" => $this->input->post('tulisann', true),
-    //         "data_tampil_output" => $this->input->post('data_tampil_outputttt', true),
-    //     ];
-    //     $this->db->insert('output_tulisan', $data);
-    //     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-    //     Tombol Navigasi berhasil ditambahkan!
-    //     </div>');
-    //     redirect(base_url('modul/navigasi/') . $id);
-    // }
+    public function tambahoutput()
+    {
+        $id = $this->input->post('modul_id', true);
+        var_dump($id);
+        die;
+        $data = [
+            "id_modul" => $id,
+            "tulisan" => $this->input->post('tulisann', true),
+            "data_tampil_output" => $this->input->post('data_tampil_outputttt', true),
+        ];
+        $this->db->insert('output_tulisan', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Tombol Navigasi berhasil ditambahkan!
+        </div>');
+        redirect(base_url('modul/navigasi/') . $id);
+    }
 
     public function editoutput()
     {

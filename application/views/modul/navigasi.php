@@ -257,14 +257,14 @@
             <div class="modal-body">
                 <form action="<?= base_url('modul/editoutput') ?>" method="post">
                     <div class="form-group">
-                        <input type="hidden" id="idddd" name="idddd">
-                        <input type="hidden" id="idddd_modul" name="idddd_modul">
+                        <input type="hidden" id="iddd" name="idddd">
+                        <input type="hidden" id="iddd_modul" name="iddd_modul">
                         <label for="tulisan">Keterangan Output</label>
-                        <input type="text" class="form-control" id="tulisann" name="tulisann">
+                        <input type="text" class="form-control" id="tulisan" name="tulisan">
                     </div>
                     <div class="form-group">
                         <label for="data_tampil_outputtt">Data output</label>
-                        <input type="text" class="form-control" id="data_tampil_outputttt" name="data_tampil_outputttt">
+                        <input type="text" class="form-control" id="data_tampil_outputttt" name="data_tampil_outputtt">
                     </div>
             </div>
             <div class="modal-footer">
