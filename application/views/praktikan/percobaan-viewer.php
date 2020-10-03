@@ -62,7 +62,7 @@
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="kotak" background-color:black">
+    <div class="kotak">
       <div class="container py-3">
         <div class="row">
           <div class="col-lg-12">

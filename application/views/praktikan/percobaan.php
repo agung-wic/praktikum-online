@@ -65,6 +65,8 @@
     <div class="kotak" background-color:black">
       <div class="container py-3">
         <div class="row">
+          <?php var_dump($data['user']['role_id']);
+          die; ?>
           <div class="col-lg-6">
             <div class="kotak" style="background-color: #bcaead;">
               <div class="container mt-2" style="color: black;">
