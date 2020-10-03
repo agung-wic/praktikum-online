@@ -183,6 +183,11 @@
                         <label for="status">Status</label>
                         <input type="checkbox" class="form-check-input ml-3 pl-5" id="status" name="status">
                     </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <label for="data-output">Data Output</label>
+                        <input type="text" class="form-control" id="data-output" name="data-output">
+                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -205,53 +210,19 @@
             <div class="modal-body">
                 <form action="<?= base_url('modul/editoutput') ?>" method="post">
                     <div class="form-group">
-                        <input type="hidden" id="id" name="id">
-                        <input type="hidden" id="id_modul" name="id_modul">
+                        <input type="hidden" id="iddd" name="iddd">
+                        <input type="hidden" id="iddd_modul" name="iddd_modul">
                         <label for="tulsian">Tampilan</label>
                         <input type="text" class="form-control" id="tulisan" name="tulsian">
                     </div>
                     <div class="form-group">
                         <label for="data_tampil_output">Data output</label>
-                        <input type="text" class="form-control" id="data_tampil_output" name="data_tampil_output">
+                        <input type="text" class="form-control" id="data_tampil_outputtt" name="data_tampil_outputtt">
                     </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <button type="submit" class="btn btn-primary">Ubah</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="tombolTambahTulisan" tabindex="-1" role="dialog" aria-labelledby="tombolTambahTulisanLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Tambah Tombol</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?= base_url('modul/tambahtomboltulisan') ?>" method="post">
-                    <div class="form-group">
-                        <label for="keterangan">Keterangan tombol</label>
-                        <input type="text" class="form-control" id="keterangan" name="keterangan">
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" id="modul_id" name="modul_id">
-                        <label for="nilai">Nilai yang dikirim</label>
-                        <input type="text" class="form-control" id="nilai" name="nilai">
-                    </div>
-                    <div class="form-group">
-                        <label for="status">Status</label>
-                        <input type="checkbox" class="form-check-input ml-3 pl-5" id="status" name="status">
-                    </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary">Tambah</button>
             </div>
             </form>
         </div>
