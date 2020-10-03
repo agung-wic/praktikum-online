@@ -216,7 +216,7 @@
                         <input type="text" class="form-control" id="tulisan" name="tulsian">
                     </div>
                     <div class="form-group">
-                        <label for="data_tampil_output">Data output</label>
+                        <label for="data_tampil_outputtt">Data output</label>
                         <input type="text" class="form-control" id="data_tampil_outputtt" name="data_tampil_outputtt">
                     </div>
             </div>
