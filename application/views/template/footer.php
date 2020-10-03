@@ -61,6 +61,14 @@
       param1a.prop('disabled', false);
     }, 3000);
   });
+
+  $('.absen').click(function() {
+    let param1a = $(this);
+    param1a.prop('disabled', true);
+    setTimeout(function() {
+      param1a.prop('disabled', false);
+    });
+  });
 </script>
 </body>
 
