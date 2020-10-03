@@ -57,16 +57,16 @@
                             <div class="form-group">
                                 <?php $i = 0;
                                 foreach ($output_tulisan as $t) :  ?>
-                                    <div class="row justify-content-center mb-1">
+                                    <div class="row justify mb-2">
                                         <div class="col-lg-6 text-center">
                                             <label><?= $t['tulisan']; ?></label>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-3 mb-2">
                                             <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 outputEdit">
                                                 Edit
                                             </button>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-3 mb-2">
                                             <a href="<?= base_url('modul/output_tulisan/') . $t['id']; ?>" onclick=" return confirm('Yakin?');"">
                                         <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
                                             </a>
