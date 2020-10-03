@@ -63,10 +63,10 @@
   });
 
   $('.absen').click(function() {
-    let param1a = $(this);
-    param1a.prop('disabled', true);
+    let absen = $(this);
+    absen.prop('disabled', true);
     setTimeout(function() {
-      param1a.prop('disabled', false);
+      absen.prop('disabled', false);
     });
   });
 </script>
