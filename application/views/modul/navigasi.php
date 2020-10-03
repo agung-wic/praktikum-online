@@ -58,15 +58,15 @@
                                 <?php $i = 0;
                                 foreach ($output_tulisan as $t) :  ?>
                                     <div class="row justify mb-2">
-                                        <div class="col-lg-6 text-center">
+                                        <div class="col-lg-6 mt-3">
                                             <label><?= $t['tulisan']; ?></label>
                                         </div>
                                         <div class="col-lg-3 mb-2">
-                                            <button type="submit" style="margin-right: 3%;" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 outputEdit">
+                                            <button type="submit" style="margin-left:50%;" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="btn btn-dark px-4 outputEdit">
                                                 Edit
                                             </button>
                                         </div>
-                                        <div class="col-lg-3 mb-2">
+                                        <div class="col-lg-3 text-right">
                                             <a href="<?= base_url('modul/output_tulisan/') . $t['id']; ?>" onclick=" return confirm('Yakin?');"">
                                         <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
                                             </a>
