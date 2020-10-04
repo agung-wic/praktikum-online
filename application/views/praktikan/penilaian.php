@@ -58,7 +58,7 @@
                 ?>
                   <tr>
                     <th scope="row"><?= $start; ?></th>
-                    <td><?= $m['name']; ?></td>
+                    <td><?= $m['modul']; ?></td>
                     <?php if ($i < count($list)) {
                       if ($m['modul'] == $list[$i]['modul_id']) {
                         if ($list[$i]['is_acc'] == 0) {
@@ -79,8 +79,13 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                    <?php }
-                    } ?>
+                      <?php }
+                    } else { ?>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    <?php } ?>
                   </tr>
                 <?php $start++;
                 endforeach; ?>
