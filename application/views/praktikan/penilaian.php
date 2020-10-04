@@ -58,7 +58,7 @@
                 ?>
                   <tr>
                     <th scope="row"><?= $start; ?></th>
-                    <td><?= $m['modul']; ?></td>
+                    <td><?= $m['name']; ?></td>
                     <?php if ($i < count($list)) {
                       if ($m['modul'] == $list[$i]['modul_id']) {
                         if ($list[$i]['is_acc'] == 0) {
@@ -71,8 +71,8 @@
                             Unduh
                           </a>
                         </td>
-                        <td><?= date("Y-m-d H:i:s", $llist[$i]['laporan_time']); ?></td>
-                        <td><?= $llist[$i]['nilai']; ?></td>
+                        <td><?= date("Y-m-d H:i:s", $list[$i]['laporan_time']); ?></td>
+                        <td><?= $list[$i]['nilai']; ?></td>
                       <?php $i++;
                       } else { ?>
                         <td></td>
