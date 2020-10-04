@@ -424,22 +424,4 @@ $(function () {
 			},
 		});
 	});
-
-	$(".tombolAbsen").on("click", function () {
-		const id = $(this).data("id");
-
-		$.ajax({
-			url: base + "praktikan/getabsen",
-			data: {
-				id: id,
-			},
-			method: "post",
-			dataType: "json",
-			success: function (data) {
-				console.log(data);
-				$("#id_modul").val(data.id_modul);
-				$("#id").val(data.id);
-			},
-		});
-	});
 });

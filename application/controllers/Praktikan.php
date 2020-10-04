@@ -24,20 +24,18 @@ class Praktikan extends CI_Controller
 
     public function absen()
     {
-        $id = $this->input->post('id_modul', true);
-        $id_modul = $this->input->post('id_modul', true);
-        $data = [
-            'absen' => "1"
-        ];
-        var_dump($id);
-        var_dump($id_modul);
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $data['title'] = 'Profil Saya';
+        $data['status'] = $this->db->get_where('jadwal', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $data['modul'] = $this->db->get_where('modul', ['modul_id' => $data['status']['modul_id']]->row_array();
+        var_dump($data['modul']);
+        var_dump($data['status']);
         die;
-        $this->db->where('id', $this->input->post('id'));
-        $this->db->update('jadwal', $data);
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-                Absen Berhasil
-                </div>');
-        redirect(base_url('praktikan/percobaan') . $id_modul);
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('praktikan/absen', $data);
+        $this->load->view('template/footer');
     }
 
     public function getabsen()
