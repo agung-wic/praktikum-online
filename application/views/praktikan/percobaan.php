@@ -272,6 +272,7 @@
           <form action="<?= base_url('praktikan/absen') ?>" method="post">
             <div class="form-group">
               <input type="hidden" id="id" name="id">
+              <input type="hidden" id="id_modul" name="id_modul">
               <div class="row">
                 <div class="col">
                   <p class="card-text">Nama :<?= ' ' . $user['name']; ?></p>
