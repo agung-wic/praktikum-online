@@ -265,14 +265,14 @@
                   <p class="card-text">Nama :<?= ' ' . $user['name']; ?></p>
                   <p class="card-text">NRP :<?= ' ' . $user['nrp']; ?></p>
                   <p class="card-text">Email :<?= ' ' . $user['email']; ?></p>
-                  <hr>
-                  <p class="card-text"><small class="text-muted">Bergabung sejak <?= date('d F Y', $user['date_created']); ?></small></p>
+                  <p class="card-text">Praktikum :<?= ' ' . $modul['name'] ?></p>
+                  <p class="card-text">Jadwal :<?= ' ' . $jadwal['jadwal'] ?></p>
                 </div>
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-primary">Ubah</button>
+              <button type="submit" class="btn btn-primary">Absen</button>
             </div>
           </form>
         </div>
