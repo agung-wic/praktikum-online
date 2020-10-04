@@ -375,6 +375,7 @@ class Praktikan extends CI_Controller
         $this->load->model('Praktikan_model');
         $data['title'] = 'Penilaian';
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $data['modul'] = $this->db->get('modul')->result_array();
         $data['list'] = $this->Praktikan_model->PenilaianPraktikan($this->session->userdata('nrp'));
         $this->load->helper('download');
         $this->load->view('template/header', $data);

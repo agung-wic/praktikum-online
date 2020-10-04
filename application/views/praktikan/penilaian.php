@@ -12,23 +12,6 @@
       <div class="card-body">
         <div class="table-responsive">
           <div class="row mx-1">
-            <div class="col-md-7">
-              <div class="row">
-                <div class="col-md-1 mt-2">
-                  <label for="show">Show</label>
-                </div>
-                <div class="col-md-2">
-                  <select class="custom-select" name="show" id="show">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="40">40</option>
-                    <option value="50">50</option>
-                  </select>
-                </div>
-                <div class="col-md-2 mt-2">Entries</div>
-              </div>
-            </div>
             <div class="col-md-5 ml-auto">
               <form action="<?= base_url('admin') ?>" method="post">
                 <div class="input-group mb-3">
@@ -69,23 +52,30 @@
               </tfoot>
               <tbody>
                 <?php $i = 1;
-                foreach ($list as $l) :
+                foreach ($modul as $m) :
                   if ($l['is_acc'] == 0) {
                     $l['nilai'] = NULL;
                   }
                 ?>
                   <tr>
                     <th scope="row"><?= $i; ?></th>
-                    <td><?= $l['modul']; ?></td>
-                    <td><?= $l['asisten']; ?></td>
-                    <td>
-                      <a href="<?= base_url('assets/laporan/') . $l['laporan']; ?>" download class="badge badge-pill badge-warning">
-                        <i class=" fas fa-fw fa-download"></i>
-                        Unduh
-                      </a>
-                    </td>
-                    <td><?= date("Y-m-d H:i:s", $l['laporan_time']); ?></td>
-                    <td><?= $l['nilai']; ?></td>
+                    <td><?= $m['modul']; ?></td>
+                    <?php if ($m['id'] == $list[$i]['modul_id']) { ?>
+                      <td><?= $list[$i]['asisten']; ?></td>
+                      <td>
+                        <a href="<?= base_url('assets/laporan/') . $list[$i]['laporan']; ?>" download class="badge badge-pill badge-warning">
+                          <i class=" fas fa-fw fa-download"></i>
+                          Unduh
+                        </a>
+                      </td>
+                      <td><?= date("Y-m-d H:i:s", $llist[$i]['laporan_time']); ?></td>
+                      <td><?= $llist[$i]['nilai']; ?></td>
+                    <?php } else { ?>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    <?php } ?>
                   </tr>
                 <?php $i++;
                 endforeach; ?>
