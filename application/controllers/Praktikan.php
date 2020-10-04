@@ -22,7 +22,7 @@ class Praktikan extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function absen($id == NULL)
+    public function absen($id = NULL)
     {
         $data = [
             'absen' => "1"
