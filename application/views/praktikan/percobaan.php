@@ -5,7 +5,7 @@
         Klik tombol di bawah ini untuk absensi
       </div>
       <div class="col-lg-12 mb-2 text-center">
-        <a data-toggle="modal" data-target="#tombolAbsen" style="background-color:#26A65B;border:none" class="btn btn-dark px-4 absen">
+        <a data-toggle="modal" data-target="#tombolAbsen" style="background-color:#26A65B;border:none;color:white" class="btn btn-dark px-4 absen">
           ABSEN
         </a>
       </div>
