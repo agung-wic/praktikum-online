@@ -26,7 +26,6 @@ class Praktikan extends CI_Controller
     {
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['title'] = 'Profil Saya';
-
         $data['modul'] = $this->db->get_where('modul', ['modul' => $id])->row_array();
         $address = $data['modul']['ip_address'];
         $data['tombol_arah'] = $this->db->get_where('tombol_arah', ['id_modul' => $id])->result_array();
