@@ -29,11 +29,11 @@ class Praktikan extends CI_Controller
         $data = [
             'absen' => "1"
         ];
-        $this->db->where('id', $this->input->post('id'));
-        $this->db->update('tombol_arah', $data);
         var_dump($id);
         var_dump($id_modul);
         die;
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('jadwal', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                 Absen Berhasil
                 </div>');
