@@ -22,48 +22,18 @@ class Praktikan extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function absen($id = NULL)
+    public function absen()
     {
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['title'] = 'Profil Saya';
-        $data['modul'] = $this->db->get_where('modul', ['modul' => $id])->row_array();
-        $address = $data['modul']['ip_address'];
-        $data['tombol_arah'] = $this->db->get_where('tombol_arah', ['id_modul' => $id])->result_array();
-        $data['tombol_tulisan'] = $this->db->get_where('tombol_tulisan', ['id_modul' => $id])->result_array();
-        $data['output_tulisan'] = $this->db->get_where('output_tulisan', ['id_modul' => $id])->result_array();
-        $this->db->where('nrp', $this->session->userdata('nrp'));
-        $this->db->where('modul_id', $id);
-        $cek = $this->db->get('jadwal')->row_array();
-        $jadwal = strtotime($cek['jadwal']);
-        $batas = strtotime($data['modul']['time']);
-        $time = (date('H', $batas) * 60 * 60) + (date('i', $batas) * 60) + date('s', $batas);
-        $data['live_stream'] = $this->db->get_where('live_stream', ['id_modul' => $id])->result_array();
-        $data['lokasi'] = ($this->uri->segment('3') == NULL) ? 'tes' : $this->uri->segment('3');
-        if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) {
-            if ($cek['status'] == 0) {
-                $this->_connectsocket($id);
-                $data['output'] = NULL;
-
-                $data['title'] = 'Percobaan Praktikum';
-                $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-
-                $this->db->select('*');
-                $this->db->from('jadwal');
-                $this->db->where('nrp', $this->session->userdata('nrp'));
-                $this->db->where('modul_id', $id);
-                $data['jadwal'] = $this->db->get()->row_array();
-
-                $this->load->view('template/header', $data);
-                $this->load->view('template/sidebar', $data);
-                $this->load->view('template/topbar', $data);
-                $this->load->view('praktikan/absen', $data);
-                $this->load->view('template/footer');
-            } else {
-                redirect(base_url('praktikan/modul/') . $id);
-            }
-        } else {
-            redirect(base_url('praktikan/modul/') . $id);
-        }
+        $data['status'] = $this->db->get_where('jadwal', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        var_dump($data['status']);
+        die;
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('praktikan/absen', $data);
+        $this->load->view('template/footer');
     }
 
     public function getabsen()
