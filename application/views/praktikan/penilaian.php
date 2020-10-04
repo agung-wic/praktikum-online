@@ -63,6 +63,8 @@
                       if ($list[$i]['is_acc'] == 0) {
                         $list[$i]['nilai'] = NULL;
                       }
+                      var_dump($list);
+                      die;
                       if ($m['id'] == $list[$i]['modul_id']) { ?>
                         <td><?= $list[$i]['asisten']; ?></td>
                         <td>
