@@ -1,6 +1,6 @@
 <div class="row mx-5">
   <div class="kotak" style="background-color: white;">
-    <?php if ($modul['absen'] == "0") { ?>
+    <?php if ($jadwal['absen'] == "0") { ?>
       <div class="row justify-content-center mt-3 mb-1">
         <div class="col-lg-12 mb-1 text-center">
           Klik tombol di bawah ini untuk absensi
