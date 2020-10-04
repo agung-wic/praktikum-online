@@ -51,31 +51,35 @@
                 </tr>
               </tfoot>
               <tbody>
-                <?php $i = 1;
+                <?php $i = 0;
+                $start = 1;
                 foreach ($modul as $m) :
-                  if ($l['is_acc'] == 0) {
-                    $l['nilai'] = NULL;
-                  }
+
                 ?>
                   <tr>
-                    <th scope="row"><?= $i; ?></th>
+                    <th scope="row"><?= $start; ?></th>
                     <td><?= $m['modul']; ?></td>
-                    <?php if ($m['id'] == $list[$i]['modul_id']) { ?>
-                      <td><?= $list[$i]['asisten']; ?></td>
-                      <td>
-                        <a href="<?= base_url('assets/laporan/') . $list[$i]['laporan']; ?>" download class="badge badge-pill badge-warning">
-                          <i class=" fas fa-fw fa-download"></i>
-                          Unduh
-                        </a>
-                      </td>
-                      <td><?= date("Y-m-d H:i:s", $llist[$i]['laporan_time']); ?></td>
-                      <td><?= $llist[$i]['nilai']; ?></td>
-                    <?php } else { ?>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    <?php } ?>
+                    <?php if ($i < count($list)) {
+                      if ($list[$i]['is_acc'] == 0) {
+                        $list[$i]['nilai'] = NULL;
+                      }
+                      if ($m['id'] == $list[$i]['modul_id']) { ?>
+                        <td><?= $list[$i]['asisten']; ?></td>
+                        <td>
+                          <a href="<?= base_url('assets/laporan/') . $list[$i]['laporan']; ?>" download class="badge badge-pill badge-warning">
+                            <i class=" fas fa-fw fa-download"></i>
+                            Unduh
+                          </a>
+                        </td>
+                        <td><?= date("Y-m-d H:i:s", $llist[$i]['laporan_time']); ?></td>
+                        <td><?= $llist[$i]['nilai']; ?></td>
+                      <?php } else { ?>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    <?php }
+                    } ?>
                   </tr>
                 <?php $i++;
                 endforeach; ?>
