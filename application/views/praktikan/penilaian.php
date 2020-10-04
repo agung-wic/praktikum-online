@@ -58,7 +58,7 @@
                 ?>
                   <tr>
                     <th scope="row"><?= $start; ?></th>
-                    <td><?= $m['modul']; ?></td>
+                    <td><?= $m['name']; ?></td>
                     <?php if ($i < count($list)) {
                       if ($m['modul'] == $list[$i]['modul_id']) {
                         if ($list[$i]['is_acc'] == 0) {
