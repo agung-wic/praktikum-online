@@ -22,6 +22,23 @@ class Praktikan extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function absen()
+    {
+        $data = [
+            'absen' => "1"
+          ];
+          $this->db->where('id', $this->input->post('id'));  
+          $id_modul = $this->db->get_where('jadwal', ['id' => $id])->row_array();
+          $id_modul = $id_modul['id_modul'];
+          $this->db->update('jadwal', $data);
+          $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Berhasil Absen
+                </div>');
+          redirect(base_url('praktikan/percobaan') . $id_modul);
+        }
+    }
+
+
     public function modul($id = NULL)
     {
         $data['modul'] = $this->db->get('modul')->result_array();

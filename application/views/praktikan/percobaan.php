@@ -1,5 +1,8 @@
 <div class="row mx-5">
   <div class="kotak" style="background-color: white;">
+    <div class="row-lg-6">
+      <?= $this->session->flashdata('message'); ?>
+    </div>
     <?php if ($jadwal['absen'] == "0") { ?>
       <div class="row justify-content-center mt-3 mb-1">
         <div class="col-lg-12 mb-1 text-center">
