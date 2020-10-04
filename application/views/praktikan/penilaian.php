@@ -60,12 +60,10 @@
                     <th scope="row"><?= $start; ?></th>
                     <td><?= $m['modul']; ?></td>
                     <?php if ($i < count($list)) {
-                      if ($list[$i]['is_acc'] == 0) {
-                        $list[$i]['nilai'] = NULL;
-                      }
-                      var_dump($list);
-                      die;
-                      if ($m['id'] == $list[$i]['modul_id']) { ?>
+                      if ($m['modul'] == $list[$i]['modul_id']) {
+                        if ($list[$i]['is_acc'] == 0) {
+                          $list[$i]['nilai'] = NULL;
+                        } ?>
                         <td><?= $list[$i]['asisten']; ?></td>
                         <td>
                           <a href="<?= base_url('assets/laporan/') . $list[$i]['laporan']; ?>" download class="badge badge-pill badge-warning">
