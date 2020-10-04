@@ -271,6 +271,7 @@
         <div class="modal-body">
           <form action="<?= base_url('praktikan/absen') ?>" method="post">
             <div class="form-group">
+              <input type="hidden" id="id" name="id">
               <div class="row">
                 <div class="col">
                   <p class="card-text">Nama :<?= ' ' . $user['name']; ?></p>

@@ -28,11 +28,11 @@ class Praktikan extends CI_Controller
             'absen' => "1"
         ];
         $this->db->where('id', $this->input->post('id'));
-        $id_modul = $this->db->get_where('jadwal', ['id' => $id])->row_array();
-        $id_modul = $id_modul['id_modul'];
         $this->db->update('jadwal', $data);
+        $id_modul = $this->db->get_where('jadwal', ['id' => $id])->row_array();
+        $id_modul = $id_modul['modul_id'];
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-                Berhasil Absen
+                Absen Berhasil
                 </div>');
         redirect(base_url('praktikan/percobaan') . $id_modul);
     }
