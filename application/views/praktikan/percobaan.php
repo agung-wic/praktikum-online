@@ -1,13 +1,15 @@
 <div class="row mx-5">
   <div class="kotak" style="background-color: white;">
-    <div class="row justify-content-center mt-3 mb-1">
-      <div class="col-lg-12 mb-1 text-center">
-        Klik tombol di bawah ini untuk absensi
+    <?php if ($modul['absen'] == "0") { ?>
+      <div class="row justify-content-center mt-3 mb-1">
+        <div class="col-lg-12 mb-1 text-center">
+          Klik tombol di bawah ini untuk absensi
+        </div>
+        <div class="col-lg-12 mb-2 text-center">
+          <a href="#" class="btn gradien px-5" data-toggle="modal" data-target="#tombolAbsen">ABSEN</a>
+        </div>
       </div>
-      <div class="col-lg-12 mb-2 text-center">
-        <a href="#" class="btn gradien px-5" data-toggle="modal" data-target="#tombolAbsen">ABSEN</a>
-      </div>
-    </div>
+    <?php } ?>
     <div class="container">
       <h4 class="mt-3"><b><?= $modul['name'] ?></b></h4>
       <h6>Kode Percobaan: <?= $modul['modul']; ?></h6>
