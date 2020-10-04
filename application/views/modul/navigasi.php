@@ -61,7 +61,7 @@
                                         <div class="col-lg-6">
                                             <label><?= $t['tulisan']; ?></label>
                                         </div>
-                                        <div class="col-lg-3 text-right mb-2">
+                                        <div class="col-lg-3 text-right">
                                             <a type="submit" style="color:white" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="outputEdit">
                                                 <i class="fas fa-pen-square" style="font-size:200%;color:#4e73df"></i>
                                             </a>
