@@ -23,7 +23,7 @@
                   <th scope="col">Modul</th>
                   <th scope="col">Asisten</th>
                   <th scope="col">Laporan</th>
-                  <th scope="col">Waktu</th>
+                  <th scope="col">Waktu Unggah</th>
                   <th scope="col">Nilai</th>
                 </tr>
               </thead>
@@ -33,7 +33,7 @@
                   <th scope="col">Modul</th>
                   <th scope="col">Asisten</th>
                   <th scope="col">Laporan</th>
-                  <th scope="col">Waktu</th>
+                  <th scope="col">Waktu Unggah</th>
                   <th scope="col">Nilai</th>
                 </tr>
               </tfoot>
