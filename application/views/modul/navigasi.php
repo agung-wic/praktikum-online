@@ -61,17 +61,15 @@
                                         <div class="col-lg-6 mt-3">
                                             <label><?= $t['tulisan']; ?></label>
                                         </div>
-                                        <div class="col-lg-6 mt-3">
-                                            <div class="col-lg-3 content-center mb-2">
-                                                <a type="submit" style="color:white" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="outputEdit">
-                                                    <i class="fas fa-edit" style="font-size:200%;color:#4e73df"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col-lg-3 text-center">
-                                                <a href="<?= base_url('modul/deleteoutput/') . $t['id']; ?>" onclick=" return confirm('Yakin?');">
-                                                    <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
-                                                </a>
-                                            </div>
+                                        <div class="col-lg-3 content-center mb-2">
+                                            <a type="submit" style="color:white" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="outputEdit">
+                                                <i class="fas fa-pen-square" style="font-size:200%;color:#4e73df"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 text-center">
+                                            <a href="<?= base_url('modul/deleteoutput/') . $t['id']; ?>" onclick=" return confirm('Yakin?');">
+                                                <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="row justify">
