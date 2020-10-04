@@ -58,15 +58,15 @@
                                 <?php $i = 0;
                                 foreach ($output_tulisan as $t) :  ?>
                                     <div class="row justify mb-2">
-                                        <div class="col-lg-6 mt-3">
+                                        <div class="col-lg-6">
                                             <label><?= $t['tulisan']; ?></label>
                                         </div>
-                                        <div class="col-lg-3 content-center mb-2">
+                                        <div class="col-lg-3 text-right mb-2">
                                             <a type="submit" style="color:white" data-toggle="modal" data-target="#outputEdit" data-id="<?= $output_tulisan[$i]['id'] ?>" class="outputEdit">
                                                 <i class="fas fa-pen-square" style="font-size:200%;color:#4e73df"></i>
                                             </a>
                                         </div>
-                                        <div class="col-lg-3 text-center">
+                                        <div class="col-lg-3 text-left">
                                             <a href="<?= base_url('modul/deleteoutput/') . $t['id']; ?>" onclick=" return confirm('Yakin?');">
                                                 <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
                                             </a>
