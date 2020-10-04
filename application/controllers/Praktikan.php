@@ -22,12 +22,13 @@ class Praktikan extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function absen()
+    public function absen($id = NULL)
     {
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['title'] = 'Profil Saya';
         $data['status'] = $this->db->get_where('jadwal', ['nrp' => $this->session->userdata('nrp')])->row_array();
-        var_dump($data['status']);
+        $data['modul'] = $this->db->get_where('modul', ['modul' => $id])->row_array();
+        var_dump($data['modul']);
         die;
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);

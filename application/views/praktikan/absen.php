@@ -7,7 +7,7 @@
                 <p class="card-text">NRP :<?= ' ' . $user['nrp']; ?></p>
                 <p class="card-text">Email :<?= ' ' . $user['email']; ?></p>
                 <p class="card-text">Praktikum :<?= ' ' . $modul['name'] ?></p>
-                <p class="card-text">Jadwal :<?= ' ' . $jadwal['jadwal'] ?></p>
+                <p class="card-text">Jadwal :<?= ' ' . $status['jadwal'] ?></p>
             </div>
         </div>
     </div>
