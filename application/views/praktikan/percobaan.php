@@ -4,10 +4,10 @@
       <div class="col-lg-12 mb-1 text-center">
         Klik tombol di bawah ini untuk absensi
       </div>
-      <div class="col-lg-12 text-center">
-        <button type="submit" style="background-color:#26A65B;border:none" class="btn btn-dark px-4 absen">
+      <div class="col-lg-12 mb-2 text-center">
+        <a type="submit" data-target="#tombolAbsen" style="background-color:#26A65B;border:none" class="btn btn-dark px-4 absen">
           ABSEN
-        </button>
+        </a>
       </div>
     </div>
     <div class="container">
@@ -250,37 +250,68 @@
     </div>
   </div>
 
-  <script>
-    // The data/time we want to countdown to
-    var countDownDate = new Date("<?= $jadwal['jadwal']; ?>").getTime();
-    var waktu = "<?= $modul['time']; ?>";
-    var batas = waktu.split(":");
-    var jam = parseInt(batas[0]) * 60 * 60 * 1000;
-    var menit = parseInt(batas[1]) * 60 * 1000;
-    var detik = parseInt(batas[2]) * 1000;
-    var sisa = jam + menit + detik;
-    // Run myfunc every second
-    var myfunc = setInterval(function() {
+  <div class="modal fade" id="tombolAbsen" tabindex="-1" role="dialog" aria-labelledby="tombolAbsenLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tombolAbsenLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="<?= base_url('praktikan/absen') ?>" method="post">
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <p class="card-text">Nama :<?= ' ' . $user['name']; ?></p>
+                  <p class="card-text">NRP :<?= ' ' . $user['nrp']; ?></p>
+                  <p class="card-text">Email :<?= ' ' . $user['email']; ?></p>
+                  <hr>
+                  <p class="card-text"><small class="text-muted">Bergabung sejak <?= date('d F Y', $user['date_created']); ?></small></p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary">Ubah</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
-      var now = new Date().getTime();
-      var timeleft = countDownDate + jam + menit + detik - now;
+    <script>
+      // The data/time we want to countdown to
+      var countDownDate = new Date("<?= $jadwal['jadwal']; ?>").getTime();
+      var waktu = "<?= $modul['time']; ?>";
+      var batas = waktu.split(":");
+      var jam = parseInt(batas[0]) * 60 * 60 * 1000;
+      var menit = parseInt(batas[1]) * 60 * 1000;
+      var detik = parseInt(batas[2]) * 1000;
+      var sisa = jam + menit + detik;
+      // Run myfunc every second
+      var myfunc = setInterval(function() {
 
-      // Calculating the days, hours, minutes and seconds left
-      var hours = Math.floor((timeleft / (1000 * 60 * 60)));
-      var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+        var now = new Date().getTime();
+        var timeleft = countDownDate + jam + menit + detik - now;
 
-      // Result is output to the specific element
-      document.getElementById("hours").innerHTML = hours + " :"
-      document.getElementById("mins").innerHTML = minutes + " :"
-      document.getElementById("secs").innerHTML = seconds
+        // Calculating the days, hours, minutes and seconds left
+        var hours = Math.floor((timeleft / (1000 * 60 * 60)));
+        var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-      if (timeleft < 0) {
-        clearInterval(myfunc);
-        document.getElementById("hours").innerHTML = ""
-        document.getElementById("mins").innerHTML = ""
-        document.getElementById("secs").innerHTML = ""
-        window.location.href = "<?= base_url('praktikan/modul/') ?>";
-      }
-    }, 1000);
-  </script>
+        // Result is output to the specific element
+        document.getElementById("hours").innerHTML = hours + " :"
+        document.getElementById("mins").innerHTML = minutes + " :"
+        document.getElementById("secs").innerHTML = seconds
+
+        if (timeleft < 0) {
+          clearInterval(myfunc);
+          document.getElementById("hours").innerHTML = ""
+          document.getElementById("mins").innerHTML = ""
+          document.getElementById("secs").innerHTML = ""
+          window.location.href = "<?= base_url('praktikan/modul/') ?>";
+        }
+      }, 1000);
+    </script>
