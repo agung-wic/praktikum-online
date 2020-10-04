@@ -11,19 +11,6 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <div class="row mx-1">
-            <div class="col-md-5 ml-auto">
-              <form action="<?= base_url('admin') ?>" method="post">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control" name="keyword" placeholder="Cari...">
-                  <div class="input-group-append">
-                    <button class="btn gradien" type="submit"><i class="fas fa-fw fa-search"></i></button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <?= $this->session->flashdata('message'); ?>
-          </div>
           <?php if (empty($list)) { ?>
             <div class="alert alert-danger" role="alert">
               Data not found!
