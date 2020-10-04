@@ -73,7 +73,8 @@
                         </td>
                         <td><?= date("Y-m-d H:i:s", $llist[$i]['laporan_time']); ?></td>
                         <td><?= $llist[$i]['nilai']; ?></td>
-                      <?php } else { ?>
+                      <?php $i++;
+                      } else { ?>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -81,7 +82,7 @@
                     <?php }
                     } ?>
                   </tr>
-                <?php $i++;
+                <?php $start++;
                 endforeach; ?>
               </tbody>
             </table>
