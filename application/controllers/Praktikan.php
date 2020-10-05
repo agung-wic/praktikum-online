@@ -43,7 +43,6 @@ class Praktikan extends CI_Controller
         echo json_encode($this->db->get_where('jadwal', ['id' => $this->input->post('id')])->row_array());
     }
 
-
     public function modul($id = NULL)
     {
         $data['modul'] = $this->db->get('modul')->result_array();
@@ -280,6 +279,13 @@ class Praktikan extends CI_Controller
     {
         $connect = $this->_connectsocket($this->input->post('id'));
         $hasil = $this->_sendsocket($connect[0][0], $connect[0][1], $this->input->post('kirim'), $this->input->post('id'));
+        $data = [
+            'nrp_praktikan' => $this->session->userdata('nrp'),
+            'id_modul' => $this->input->post('id'),
+            'input' => $this->input->post('kirim'),
+            'output' => $hasil
+        ];
+        $this->db->insert('audit_log', $data);
         if ($hasil) {
             echo json_encode($hasil);
         } else {
