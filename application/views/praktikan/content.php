@@ -42,7 +42,7 @@
               $batas = strtotime($modul['time']);
               $time = (date('H', $batas) * 60 * 60) + (date('i', $batas) * 60) + date('s', $batas);
               if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) { ?>
-                <a href="<?= base_url('praktikan/absen/') ?>" class="btn gradien px-5">Mulai Praktikum!</a>
+                <a href="<?= base_url('praktikan/absen/') . $modul['modul']; ?>" class="btn gradien px-5">Mulai Praktikum!</a>
               <?php } else { ?>
                 <span class="btn btn-secondary px-5">Mulai Praktikum!</span>
             <?php }

@@ -1,14 +1,15 @@
 <div class="row mx-5">
-    <div class="col justify-content-center">
-        <div class="kotak" style="background-color: white;">
-            <div class="container">
-                <h4><b>ABSEN</b></h4>
-                <p class="card-text">Nama :<?= ' ' . $user['name']; ?></p>
-                <p class="card-text">NRP :<?= ' ' . $user['nrp']; ?></p>
-                <p class="card-text">Email :<?= ' ' . $user['email']; ?></p>
-                <p class="card-text">Praktikum :<?= ' ' . $modul['name'] ?></p>
-                <p class="card-text">Jadwal :<?= ' ' . $status['jadwal'] ?></p>
+    <div class="col-lg-6 justify-content-center">
+        <div class="card border-left-warning h-100 py-2" style="background-color: white;">
+            <div class="card-header">
+                <h6>Selamat Datang</h6>
+            </div>
+            <div class="card-body">
+                <h4><b><?= $user['name'] ?></b></h4>
+                <h5><b><?= $user['nrp'] ?></b></h5>
             </div>
         </div>
     </div>
 </div>
+<p class="card-text">Praktikum :<?= ' ' . $modul['name'] ?></p>
+<p class="card-text">Jadwal :<?= ' ' . $status['jadwal'] ?></p>
