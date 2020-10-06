@@ -110,6 +110,29 @@ $(function () {
 		$("#TambahKelompokLabel").html("Tambah Kelompok");
 		$(".modal-footer button[type=submit]").html("Add");
 		$(".modal-body form").attr("action", base + "asisten/tambahkelompok");
+
+		$("#id").val(null);
+		$("#no_kelompok").val(null);
+	});
+
+	$(".tombolEditKelompok").on("click", function () {
+		$("#TambahKelompokLabel").html("Edit Kelompok");
+		$(".modal-footer button[type=submit]").html("Edit");
+		$(".modal-body form").attr("action", base + "asisten/editkelompok");
+		const id = $(this).data("id");
+
+		$.ajax({
+			url: base + "asisten/getubahkelompok",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				$("#id").val(data.id);
+				$("#no_kelompok").val(data.no_kelompok);
+			},
+		});
 	});
 
 	$(".tampilTambahJadwal").on("click", function () {

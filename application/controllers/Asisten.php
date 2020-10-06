@@ -77,6 +77,11 @@ class Asisten extends CI_Controller
     redirect(base_url('asisten/kelompok'));
   }
 
+  public function getubahkelompok()
+  {
+    echo json_encode($this->db->get_where('kelompok', ['id' => $this->input->post('id')])->row_array());
+  }
+
   public function jadwal()
   {
     $this->load->model('Asisten_model');
