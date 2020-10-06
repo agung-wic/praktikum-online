@@ -151,6 +151,8 @@ class Praktikan extends CI_Controller
         $this->db->where('modul_id', $id);
         $cek = $this->db->get('jadwal')->row_array();
         $jadwal = strtotime($cek['jadwal']);
+        var_dump($data['modul']['time']);
+        die;
         $batas = strtotime($data['modul']['time']);
         $time = (date('H', $batas) * 60 * 60) + (date('i', $batas) * 60) + date('s', $batas);
 
