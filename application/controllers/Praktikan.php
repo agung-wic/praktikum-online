@@ -317,7 +317,7 @@ class Praktikan extends CI_Controller
     private function _sendsocket($socket1, $socket2, $message, $id)
     {
         $data = $data['tombol_arah'] = $this->db->get_where('tombol_arah', ['id_modul' => $id, 'tombol_kirim' => $message])->row_array();
-        if ($data == NULL) {
+        if ($data != NULL) {
             $result2 = "error";
         } else {
             $data['tombol_tulisan'] = $this->db->get_where('tombol_tulisan', ['id_modul' => $id, 'tombol_kirim' => $message])->row_array();
