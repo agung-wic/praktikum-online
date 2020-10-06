@@ -70,7 +70,7 @@ class Asisten extends CI_Controller
 
   public function tambahkelompok()
   {
-    $this->db->insert('kelompok', ['kelompok' => $this->input->post('no_kelompok')]);
+    $this->db->insert('kelompok', ['no_kelompok' => $this->input->post('no_kelompok')]);
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
            Kelompok baru berhasil ditambahkan!
             </div>');

@@ -59,7 +59,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="TambahKelompokLabel">Add New Role</h5>
+                <h5 class="modal-title" id="TambahKelompokLabel"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -68,7 +68,7 @@
                 <form action="<?= base_url('asisten/tambahkelompok') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
-                        <input type="text" class="form-control" id="role" name="role" placeholder="">
+                        <input type="text" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
                     </div>
             </div>
             <div class="modal-footer">
