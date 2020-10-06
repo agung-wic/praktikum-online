@@ -79,17 +79,17 @@ class Asisten extends CI_Controller
     } else {
       $data['keyword'] = $this->session->userdata('keyword1');
       $config['per_page'] = 10;
-      $config['total_rows'] = $this->Asisten_moodel->JumlahJadwal();
+      $config['total_rows'] = $this->Asisten_model->JumlahJadwal();
     }
     $this->pagination->initialize($config);
 
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['title'] = 'Jadwal Praktikum';
     $data['modul'] = $this->db->get('modul')->result_array();
-    $data['list'] = $this->Asisten_moodel->TampilJadwal($config['per_page'], $data['start'], $data['keyword']);
-    $data['req'] = $this->Asisten_moodel->TampilReqJadwal();
+    $data['list'] = $this->Asisten_model->TampilJadwal($config['per_page'], $data['start'], $data['keyword']);
+    $data['req'] = $this->Asisten_model->TampilReqJadwal();
     if ($this->input->post('keyword2')) {
-      $data['req'] = $this->Asisten_moodel->CariReqJadwal();
+      $data['req'] = $this->Asisten_model->CariReqJadwal();
     }
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
