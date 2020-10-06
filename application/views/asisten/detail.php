@@ -13,7 +13,7 @@
                         <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
                     </div>
                     <div class="col-auto mr-auto">
-                        <a href="" class="btn gradien mb-3 tombolTambahAnggota" data-toggle="modal" data-target="#TambahAnggota">Tambah Kelompok</a>
+                        <a href="" class="btn gradien mb-3 tombolTambahAnggota" data-toggle="modal" data-target="#TambahAnggota">Tambah Anggota</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -67,6 +67,14 @@
                 <form action="<?= base_url('asisten/tambbahanggota') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
+                        <input type="text" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="modul">NRP</label>
+                        <input type="text" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="modul">Nama</label>
                         <input type="text" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
                     </div>
             </div>
