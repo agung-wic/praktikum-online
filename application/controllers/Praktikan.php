@@ -346,6 +346,8 @@ class Praktikan extends CI_Controller
     {
         $connect = $this->_connectsocket($this->input->post('id'));
         $hasil = $this->_sendsocket($connect[0][0], $connect[0][1], $this->input->post('kirim'), $this->input->post('id'));
+        var_dump($hasil);
+        die;
         // $data = [
         //     'nrp_praktikan' => $this->session->userdata('nrp'),
         //     'id_modul' => $this->input->post('id'),
