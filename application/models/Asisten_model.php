@@ -135,4 +135,11 @@ class Asisten_model extends CI_Model
 
     return $this->db->query($query)->row_array();
   }
+
+  public function TampilKelompok()
+  {
+    $query = "SELECT COUNT(nrp), no_kelompok FROM kelompok GROUP BY no_kelompok";
+
+    return $this->db->query($query)->result_array();
+  }
 }
