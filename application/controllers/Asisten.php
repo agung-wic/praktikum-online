@@ -99,6 +99,8 @@ class Asisten extends CI_Controller
       "nrp" => $this->input->post('nrp', true),
       "no_kelompok" => $this->input->post('no_kelompok', true),
     ];
+    var_dump($data['no_kelompok']);
+    die;
     $this->db->insert('anggota_kelompok', $data);
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
            Anggota baru berhasil ditambahkan!
