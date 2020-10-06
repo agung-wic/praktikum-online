@@ -3,7 +3,6 @@
 
   <div class="row">
     <div class="col-lg">
-
       <div class="kotak">
         <div class="card-header">
           <div class="row">
