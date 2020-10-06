@@ -348,8 +348,6 @@ class Praktikan extends CI_Controller
             } else {
                 return "Error 1";
             }
-        } else {
-            return "Error 2";
         }
     }
 
