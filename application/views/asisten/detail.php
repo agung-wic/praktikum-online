@@ -30,8 +30,8 @@
                                     <tr>
 
                                         <th scope="row"><?= $i; ?></th>
-                                        <td>Kelompok <?= $k['no_kelompok'] ?></td>
-                                        <td><?= $k['jumlah'] ?></td>
+                                        <td>Kelompok <?= $k['nrp'] ?></td>
+                                        <td><?= $k['name'] ?></td>
                                         <td>
                                             <a href="<?= base_url('asisten/detail/' . $k['no_kelompok']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-edit"></i>Detail</a>
                                         </td>
