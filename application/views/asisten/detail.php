@@ -70,8 +70,12 @@
                         <input type="hidden" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="nrp">NRP</label>
-                        <input type="text" class="form-control" id="nrp" name="nrp" placeholder="">
+                        <label for="nrp_praktikan">NRP</label>
+                        <input type="text" class="form-control" id="nrp_praktikan" name="nrp" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Nama</label>
+                        <input type="text" class="form-control" id="name" name="name" disabled>
                     </div>
             </div>
             <div class="modal-footer">

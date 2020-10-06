@@ -113,6 +113,11 @@ class Asisten extends CI_Controller
     }
   }
 
+  public function getuser()
+  {
+    echo json_encode($this->db->get_where('user', ['nrp' => $this->input->post('nrp')])->row_array());
+  }
+
   public function getubahkelompok()
   {
     echo json_encode($this->db->get_where('kelompok', ['id' => $this->input->post('id')])->row_array());

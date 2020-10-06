@@ -119,6 +119,7 @@ $(function () {
 		$("#TambahAnggotaLabel").html("Tambah Anggota");
 		$(".modal-footer button[type=submit]").html("Add");
 		$(".modal-body form").attr("action", base + "asisten/tambahanggota");
+		$("#name").val(null);
 		const id = $(this).data("id");
 
 		$.ajax({
@@ -132,6 +133,23 @@ $(function () {
 				console.log(data);
 				$("#id").val(data.id);
 				$("#no_kelompok").val(data.no_kelompok);
+			},
+		});
+	});
+
+	$("#nrp_praktikan").on("keyup", function () {
+		const nrp = $("#nrp_praktikan").val();
+		$("#name").val(null);
+
+		$.ajax({
+			url: base + "asisten/getuser",
+			data: {
+				nrp: nrp,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				$("#name").val(data.name);
 			},
 		});
 	});
@@ -151,6 +169,7 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				$("#id").val(data.id);
+				$("#no_kelompok").val(data.no_kelompok);
 			},
 		});
 	});
