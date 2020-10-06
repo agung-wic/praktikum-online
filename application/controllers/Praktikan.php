@@ -316,9 +316,8 @@ class Praktikan extends CI_Controller
 
     private function _sendsocket($socket1, $socket2, $message, $id)
     {
-        $data['tombol_arah'] = $this->db->get_where('tombol_arah', ['id_modul' => $id])->result_array();
-        $data['tombol_tulisan'] = $this->db->get_where('tombol_tulisan', ['id_modul' => $id])->result_array();
-        $data['output_tulisan'] = $this->db->get_where('output_tulisan', ['id_modul' => $id])->result_array();
+        $data['tombol_arah'] = $this->db->get_where('tombol_arah', ['id_modul' => $id], ['tombol_kirim'] => $message])->row_array();
+        $data['tombol_tulisan'] = $this->db->get_where('tombol_tulisan', ['id_modul' => $id], ['tombol_kirim'] => $message])->row_array();
         if (socket_write($socket1, $message, strlen($message))) {
             $result2 = socket_read($socket2, 1024);
             $result2 = htmlspecialchars($result2);
