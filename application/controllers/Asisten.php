@@ -61,11 +61,11 @@ class Asisten extends CI_Controller
   public function deleteanggotakelompok($id)
   {
     $this->db->where('id', $id);
-    $this->db->delete('jadwal');
+    $this->db->delete('anggota_kelompok');
     $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
-        Jadwal berhasil dihapus!
+        Anggota Kelompok berhasil dihapus!
         </div>');
-    redirect(base_url('admin/jadwal'));
+    redirect(base_url('asisten/detail'));
   }
 
 
