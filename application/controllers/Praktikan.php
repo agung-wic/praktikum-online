@@ -334,7 +334,7 @@ class Praktikan extends CI_Controller
                 $result2 = str_replace("]", "", $result2);
                 $result2 = explode(",", $result2);
 
-                if (count($compare) > 1) {
+                if (count($result2) > 1) {
                     if ($compare[1] == "1" || $compare[1] == "0") {
                         $result2 = $satuan;
                     }
