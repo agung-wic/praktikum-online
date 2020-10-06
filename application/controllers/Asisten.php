@@ -45,6 +45,21 @@ class Asisten extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  public function editkelompok()
+  {
+    $data = [
+      "no_kelompok" => $this->input->post('no_kelompok')
+    ];
+
+    $this->db->where('id', $this->input->post('id'));
+    $this->db->update('kelompok', $data);
+
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+          Kelompok berhasil diubah!
+          </div>');
+    redirect(base_url('asisten/kelompok'));
+  }
+
   public function detail($id)
   {
     $this->load->model('Asisten_model');
