@@ -115,7 +115,7 @@ class Asisten extends CI_Controller
 
   public function gettambahanggota()
   {
-    echo json_encode($this->db->get_where('anggota_kelompok', ['id' => $this->input->post('id')])->row_array());
+    echo json_encode($this->db->get_where('kelompok', ['id' => $this->input->post('id')])->row_array());
   }
 
   public function jadwal()
