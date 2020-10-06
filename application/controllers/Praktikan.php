@@ -317,41 +317,37 @@ class Praktikan extends CI_Controller
     private function _sendsocket($socket1, $socket2, $message, $id)
     {
         $data = $data['tombol_arah'] = $this->db->get_where('tombol_arah', ['id_modul' => $id, 'tombol_kirim' => $message])->row_array();
-        if ($data != NULL) {
-            $result2 = "error";
-        } else {
-            $data['tombol_tulisan'] = $this->db->get_where('tombol_tulisan', ['id_modul' => $id, 'tombol_kirim' => $message])->row_array();
-            if (socket_write($socket1, $message, strlen($message))) {
-                $result2 = socket_read($socket2, 1024);
-                $result2 = htmlspecialchars($result2);
-                if ($result2) {
-                    $satuan_arah = $data['tombol_arah']['data_satuan'];
-                    $compare_arah = $data['tombol_arah']['data_kirim'];
-                    $compare_arah = str_replace("[", "", $compare_arah);
-                    $compare_arah = str_replace("]", "", $compare_arah);
-                    $compare_arah = explode(",", $compare_arah);
-                    $satuan_tulisan = $data['tombol_tulisan']['data_satuan'];
-                    $compare_tulisan = $data['tombol_tulisan']['data_kirim'];
-                    $compare_tulisan = str_replace("[", "", $compare_tulisan);
-                    $compare_tulisan = str_replace("]", "", $compare_tulisan);
-                    $compare_tulisan = explode(",", $compare_tulisan);
-                    $result2 = str_replace("[", "", $result2);
-                    $result2 = str_replace("]", "", $result2);
-                    $result2 = explode(",", $result2);
-                    if ($result2[0] == $compare_arah[0]) {
-                        $result2[1] = (int)$result2[1];
-                        $result2 = $result2[1] . " " . $satuan_arah;
-                    } else if ($result2[0] == $compare_tulisan[0]) {
-                        $result2[1] = (int)$result2[1];
-                        $result2 = $result2[1] . " " . $satuan_tulisan;
-                    }
-                    return $result2;
-                } else {
-                    return "Error 1";
+        $data['tombol_tulisan'] = $this->db->get_where('tombol_tulisan', ['id_modul' => $id, 'tombol_kirim' => $message])->row_array();
+        if (socket_write($socket1, $message, strlen($message))) {
+            $result2 = socket_read($socket2, 1024);
+            $result2 = htmlspecialchars($result2);
+            if ($result2) {
+                $satuan_arah = $data['tombol_arah']['data_satuan'];
+                $compare_arah = $data['tombol_arah']['data_kirim'];
+                $compare_arah = str_replace("[", "", $compare_arah);
+                $compare_arah = str_replace("]", "", $compare_arah);
+                $compare_arah = explode(",", $compare_arah);
+                $satuan_tulisan = $data['tombol_tulisan']['data_satuan'];
+                $compare_tulisan = $data['tombol_tulisan']['data_kirim'];
+                $compare_tulisan = str_replace("[", "", $compare_tulisan);
+                $compare_tulisan = str_replace("]", "", $compare_tulisan);
+                $compare_tulisan = explode(",", $compare_tulisan);
+                $result2 = str_replace("[", "", $result2);
+                $result2 = str_replace("]", "", $result2);
+                $result2 = explode(",", $result2);
+                if ($result2[0] == $compare_arah[0]) {
+                    $result2[1] = (int)$result2[1];
+                    $result2 = $result2[1] . " " . $satuan_arah;
+                } else if ($result2[0] == $compare_tulisan[0]) {
+                    $result2[1] = (int)$result2[1];
+                    $result2 = $result2[1] . " " . $satuan_tulisan;
                 }
+                return $result2;
             } else {
-                return "Error 2";
+                return "Error 1";
             }
+        } else {
+            return "Error 2";
         }
     }
 
