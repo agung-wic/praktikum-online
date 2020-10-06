@@ -319,34 +319,33 @@ class Praktikan extends CI_Controller
         $data = $this->db->get_where('tombol_arah', ['id_modul' => $id, 'tombol_kirim' => $message])->row_array();
         if ($data == NULL) {
             $data = $this->db->get_where('tombol_tulisan', ['id_modul' => $id, 'tombol_kirim' => $message])->row_array();
-        } else {
-            if (socket_write($socket1, $message, strlen($message))) {
-                $result2 = socket_read($socket2, 1024);
-                $result2 = htmlspecialchars($result2);
-                if ($result2) {
-                    $satuan = $data['data_satuan'];
-                    $compare = $data['tombol_kirim'];
-                    $compare = str_replace("[", "", $compare);
-                    $compare = str_replace("]", "", $compare);
-                    $compare = explode(",", $compare);
+        }
+        if (socket_write($socket1, $message, strlen($message))) {
+            $result2 = socket_read($socket2, 1024);
+            $result2 = htmlspecialchars($result2);
+            if ($result2) {
+                $satuan = $data['data_satuan'];
+                $compare = $data['tombol_kirim'];
+                $compare = str_replace("[", "", $compare);
+                $compare = str_replace("]", "", $compare);
+                $compare = explode(",", $compare);
 
-                    $result2 = str_replace("[", "", $result2);
-                    $result2 = str_replace("]", "", $result2);
-                    $result2 = explode(",", $result2);
+                $result2 = str_replace("[", "", $result2);
+                $result2 = str_replace("]", "", $result2);
+                $result2 = explode(",", $result2);
 
-                    if (count($compare) > 1) {
-                        $result2 = $result2[1] . " " . $satuan;
-                    } else {
-                        $result2 = $satuan;
-                    }
-                    return "Halo";
+                if (count($compare) > 1) {
+                    $result2 = $result2[1] . " " . $satuan;
                 } else {
-                    return "Error 1";
+                    $result2 = $satuan;
                 }
                 return $result2;
             } else {
                 return "Error 1";
             }
+            return $result2;
+        } else {
+            return "Error 1";
         }
     }
 
