@@ -68,7 +68,7 @@
                 <form action="<?= base_url('asisten/tambahkelompok') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
-                        <input type="text" class="form-control" id="role" name="role" placeholder="Role name">
+                        <input type="text" class="form-control" id="role" name="role" placeholder="">
                     </div>
             </div>
             <div class="modal-footer">
