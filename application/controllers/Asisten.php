@@ -58,6 +58,17 @@ class Asisten extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  public function deleteanggotakelompok($id)
+  {
+    $this->db->where('id', $id);
+    $this->db->delete('jadwal');
+    $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+        Jadwal berhasil dihapus!
+        </div>');
+    redirect(base_url('admin/jadwal'));
+  }
+
+
   public function jadwal()
   {
     $this->load->model('Asisten_model');

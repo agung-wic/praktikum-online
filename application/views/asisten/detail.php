@@ -33,8 +33,8 @@
                                         <td><?= $k['nrp'] ?></td>
                                         <td><?= $k['name'] ?></td>
                                         <td>
-                                            <a href="<?= base_url('asisten/detail/' . $k['no_kelompok']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-edit"></i>Detail</a>
-                                            <a href="<?= base_url('admin/deleterole/' . $k['no_kelompok']); ?>" class="badge badge-pill badge-danger" onclick="return confirm('Yakin?');"><i class="fas fa-fw fa-trash-alt"></i>Delete</a>
+                                            <a href="<?= base_url('asisten/gantikelompok/' . $k['id']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-edit"></i>Detail</a>
+                                            <a href="<?= base_url('asisten/deleteanggotakelompok/' . $k['id']); ?>" class="badge badge-pill badge-danger" onclick="return confirm('Yakin?');"><i class="fas fa-fw fa-trash-alt"></i>Delete</a>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
