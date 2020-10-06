@@ -316,7 +316,11 @@ class Praktikan extends CI_Controller
 
     private function _sendsocket($socket1, $socket2, $message, $id)
     {
-        $data['tombol_arah'] = $this->db->get_where('tombol_arah', ['id_modul' => $id, 'tombol_kirim' => $message])->row_array();
+        $data = $data['tombol_arah'] = $this->db->get_where('tombol_arah', ['id_modul' => $id, 'tombol_kirim' => $message])->row_array();
+        if($data == NULL)  {
+            result2 = "error";
+        }
+        else {
         $data['tombol_tulisan'] = $this->db->get_where('tombol_tulisan', ['id_modul' => $id, 'tombol_kirim' => $message])->row_array();
         if (socket_write($socket1, $message, strlen($message))) {
             $result2 = socket_read($socket2, 1024);
@@ -343,7 +347,8 @@ class Praktikan extends CI_Controller
                     $result2 = $result2[1] . " " . $satuan_tulisan;
                 }
                 return $result2;
-            } else {
+            }
+        } else {
                 return "Error 1";
             }
         } else {
