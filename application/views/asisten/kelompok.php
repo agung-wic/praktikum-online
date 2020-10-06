@@ -31,8 +31,7 @@
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $r['role'] ?></td>
                                         <td>
-                                            <a href="<?= base_url('asisten/doedit/' . $k['id']); ?>" data-toggle="modal" data-target="#NewRoleModal" data-id="<?= $r['id']; ?>" class="badge badge-pill badge-primary TampilEditRole"><i class="fas fa-fw fa-edit"></i>Edit</a>
-                                            <a href="<?= base_url('asisten/dodelete/' . $k['id']); ?>" class="badge badge-pill badge-danger" onclick="return confirm('Yakin?');"><i class="fas fa-fw fa-trash-alt"></i>Delete</a>
+                                            <a href="<?= base_url('asisten/doedatil/' . $k['id']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-edit"></i>Detail</a>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
