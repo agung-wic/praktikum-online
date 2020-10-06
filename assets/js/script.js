@@ -421,7 +421,7 @@ $(function () {
 				$("#iddd").val(data.id);
 				$("#tulisan").val(data.tulisan);
 				$("#data_tampil_outputtt").val(data.data_tampil_output);
-				$("#data_satuannn").val(data.data_tampil_output);
+				$("#data_satuannn").val(data.data_satuan);
 			},
 		});
 	});
