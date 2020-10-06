@@ -99,11 +99,18 @@ class Asisten extends CI_Controller
       "nrp" => $this->input->post('nrp', true),
       "no_kelompok" => $this->input->post('id', true),
     ];
-    $this->db->insert('anggota_kelompok', $data);
-    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+    if ($this->db->get_where('anggota_kelompok', ['nrp' => $this->input->post('nrp')])->row_array()) {
+      $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+      Anggota sudah terdaftar di kelompok lain!
+       </div>');
+      redirect(base_url('asisten/kelompok/') .  $this->input->post('no_kelompok'));
+    } else {
+      $this->db->insert('anggota_kelompok', $data);
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
            Anggota baru berhasil ditambahkan!
             </div>');
-    redirect(base_url('asisten/kelompok/') .  $this->input->post('no_kelompok'));
+      redirect(base_url('asisten/kelompok/') .  $this->input->post('no_kelompok'));
+    }
   }
 
   public function getubahkelompok()
