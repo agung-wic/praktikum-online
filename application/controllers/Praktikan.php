@@ -326,12 +326,12 @@ class Praktikan extends CI_Controller
                 $satuan_arah = $data['tombol_arah']['data_satuan'];
                 $compare_arah = $data['tombol_arah']['data_kirim'];
                 $compare_arah = str_replace("[", "", $compare_arah);
-                $compare_arah = str_replace("[", "", $compare_arah);
+                $compare_arah = str_replace("]", "", $compare_arah);
                 $compare_arah = explode(",", $compare_arah);
                 $satuan_tulisan = $data['tombol_tulisan']['data_satuan'];
                 $compare_tulisan = $data['tombol_tulisan']['data_kirim'];
                 $compare_tulisan = str_replace("[", "", $compare_tulisan);
-                $compare_tulisan = str_replace("[", "", $compare_tulisan);
+                $compare_tulisan = str_replace("]", "", $compare_tulisan);
                 $compare_tulisan = explode(",", $compare_tulisan);
                 $result2 = str_replace("[", "", $result2);
                 $result2 = str_replace("]", "", $result2);
