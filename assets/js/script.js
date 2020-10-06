@@ -106,6 +106,12 @@ $(function () {
 		$(".modal-body form").attr("action", base + "admin/role");
 	});
 
+	$(".tombolTambahRole").on("click", function () {
+		$("#NewRoleModalLabel").html("Tambah Kelompok");
+		$(".modal-footer button[type=submit]").html("Add");
+		$(".modal-body form").attr("action", base + "asisten/tambahkelompok");
+	});
+
 	$(".tampilTambahJadwal").on("click", function () {
 		$("#JadwalEditLabel").html("Tambahkan Jadwal Baru");
 		$(".modal-footer button[type=submit]").html("Tambah");

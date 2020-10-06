@@ -65,9 +65,17 @@ class Asisten extends CI_Controller
     $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
         Anggota Kelompok berhasil dihapus!
         </div>');
-    redirect(base_url('asisten/detail'));
+    redirect(base_url('asisten/kelompok'));
   }
 
+  public function tambahkelompok()
+  {
+    $this->db->insert('kelompok', ['kelompok' => $this->input->post('no_kelompok')]);
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+           Kelompok baru berhasil ditambahkan!
+            </div>');
+    redirect(base_url('asisten/kelompok'));
+  }
 
   public function jadwal()
   {
