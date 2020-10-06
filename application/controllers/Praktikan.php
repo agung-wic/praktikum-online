@@ -339,7 +339,7 @@ class Praktikan extends CI_Controller
                     } else {
                         $result2 = $satuan;
                     }
-                    return $data;
+                    return $message;
                 } else {
                     return "Error 1";
                 }
