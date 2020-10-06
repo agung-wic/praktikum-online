@@ -67,15 +67,15 @@
                 <form action="<?= base_url('asisten/tambbahanggota') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
-                        <input type="text" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
+                        <input type="hidden" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="modul">NRP</label>
-                        <input type="text" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
+                        <label for="nrp">NRP</label>
+                        <input type="text" class="form-control" id="nrp" name="nrp" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="modul">Nama</label>
-                        <input type="text" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="">
                     </div>
             </div>
             <div class="modal-footer">

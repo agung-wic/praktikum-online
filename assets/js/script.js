@@ -119,6 +119,19 @@ $(function () {
 		$("#TambahAnggotaLabel").html("Tambah Anggota");
 		$(".modal-footer button[type=submit]").html("Add");
 		$(".modal-body form").attr("action", base + "asisten/tambahanggota");
+
+		$.ajax({
+			url: base + "asisten/gettambahanggota",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				$("#id").val(data.id);
+				$("#no_kelompok").val(data.no_kelompok);
+			},
+		});
 	});
 
 	$(".tombolEditKelompok").on("click", function () {

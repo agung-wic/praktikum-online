@@ -66,6 +66,7 @@ class Asisten extends CI_Controller
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
     $data['title'] = 'Pembagian Kelompok';
     $data['kelompok'] = $this->Asisten_model->Tampildetailkelompok($id);
+    $data['id_kelompok'] = $id;
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
@@ -111,6 +112,11 @@ class Asisten extends CI_Controller
   public function getubahkelompok()
   {
     echo json_encode($this->db->get_where('kelompok', ['id' => $this->input->post('id')])->row_array());
+  }
+
+  public function gettambahanggota()
+  {
+    echo json_encode($this->db->get_where('anggota_kelompok', ['id' => $this->input->post('id')])->row_array());
   }
 
   public function jadwal()
