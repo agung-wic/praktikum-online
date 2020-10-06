@@ -92,6 +92,15 @@ class Asisten extends CI_Controller
     redirect(base_url('asisten/kelompok'));
   }
 
+  public function tambahanggota()
+  {
+    $this->db->insert('anggota_kelompok', ['no_kelompok' => $this->input->post('id')]);
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+           Anggota baru berhasil ditambahkan!
+            </div>');
+    redirect(base_url('asisten/kelompok/') .  $this->input->post('no_kelompok'));
+  }
+
   public function getubahkelompok()
   {
     echo json_encode($this->db->get_where('kelompok', ['id' => $this->input->post('id')])->row_array());

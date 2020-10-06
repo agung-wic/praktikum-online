@@ -115,6 +115,12 @@ $(function () {
 		$("#no_kelompok").val(null);
 	});
 
+	$(".tombolTambahAnggota").on("click", function () {
+		$("#TambahAnggotaLabel").html("Tambah Anggota");
+		$(".modal-footer button[type=submit]").html("Add");
+		$(".modal-body form").attr("action", base + "asisten/tambahanggota");
+	});
+
 	$(".tombolEditKelompok").on("click", function () {
 		$("#TambahKelompokLabel").html("Edit Kelompok");
 		$(".modal-footer button[type=submit]").html("Edit");
