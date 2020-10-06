@@ -28,7 +28,7 @@
                                 <?php foreach ($kelompok as $k) : ?>
                                     <tr>
 
-                                        <th scope="row"><?= $i; ?></th>
+                                        <th scope="row"><?= $k; ?></th>
                                         <td><?= $r['role'] ?></td>
                                         <td>
                                             <a href="<?= base_url('asisten/doedit/' . $r['id']); ?>" data-toggle="modal" data-target="#NewRoleModal" data-id="<?= $r['id']; ?>" class="badge badge-pill badge-primary TampilEditRole"><i class="fas fa-fw fa-edit"></i>Edit</a>
