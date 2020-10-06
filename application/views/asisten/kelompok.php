@@ -13,7 +13,7 @@
                         <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
                     </div>
                     <div class="col-auto mr-auto">
-                        <a href="" class="btn gradien mb-3 tombolTambahKelompok" data-toggle="modal" data-target="#NewRoleModal">Tambah Kelompok</a>
+                        <a href="" class="btn gradien mb-3 tombolTambahKelompok" data-toggle="modal" data-target="#TambahKelompok">Tambah Kelompok</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -55,17 +55,17 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="NewRoleModal" tabindex="-1" role="dialog" aria-labelledby="NewRoleModalLabel" aria-hidden="true">
+<div class="modal fade" id="TambahKelompok" tabindex="-1" role="dialog" aria-labelledby="TambahKelompokLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="NewRoleModalLabel">Add New Role</h5>
+                <h5 class="modal-title" id="TambahKelompokLabel">Add New Role</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('asisten/editrole') ?>" method="post">
+                <form action="<?= base_url('asisten/tambahkelompok') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
                         <input type="text" class="form-control" id="role" name="role" placeholder="Role name">

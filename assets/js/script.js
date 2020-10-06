@@ -107,7 +107,7 @@ $(function () {
 	});
 
 	$(".tombolTambahKelompok").on("click", function () {
-		$("#NewRoleModalLabel").html("Tambah Kelompok");
+		$("#TambahKelompokLabel").html("Tambah Kelompok");
 		$(".modal-footer button[type=submit]").html("Add");
 		$(".modal-body form").attr("action", base + "asisten/tambahkelompok");
 	});
