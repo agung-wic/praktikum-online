@@ -131,8 +131,6 @@ $(function () {
 				console.log(data);
 				$("#id").val(data.id);
 				$("#no_kelompok").val(data.no_kelompok);
-				$("#nrp").val(data.nrp);
-				$("#nama").val(data.nama);
 			},
 		});
 	});

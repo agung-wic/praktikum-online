@@ -98,11 +98,8 @@ class Asisten extends CI_Controller
     $data = [
       "nrp" => $this->input->post('nrp', true),
       "modul_id" => $this->input->post('modul_id', true),
-      "jadwal" => str_replace("T", " ", $this->input->post('jadwal', true))
     ];
-    $this->db->insert('jadwal', $data);
-
-    $this->db->insert('anggota_kelompok', ['no_kelompok' => $this->input->post('no_kelompok')]);
+    $this->db->insert('anggota_kelompok', $data);
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
            Anggota baru berhasil ditambahkan!
             </div>');
