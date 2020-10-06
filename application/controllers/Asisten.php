@@ -97,7 +97,7 @@ class Asisten extends CI_Controller
   {
     $data = [
       "nrp" => $this->input->post('nrp', true),
-      "id" => $this->input->post('id', true),
+      "no_kelompok" => $this->input->post('id', true),
     ];
     $this->db->insert('anggota_kelompok', $data);
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
