@@ -66,6 +66,7 @@ class Asisten extends CI_Controller
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
     $data['title'] = 'Pembagian Kelompok';
     $data['kelompok'] = $this->Asisten_model->Tampildetailkelompok($id);
+    $data['id_kelompok'] = $id;
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
@@ -96,12 +97,9 @@ class Asisten extends CI_Controller
   {
     $data = [
       "nrp" => $this->input->post('nrp', true),
-      "modul_id" => $this->input->post('modul_id', true),
-      "jadwal" => str_replace("T", " ", $this->input->post('jadwal', true))
+      "no_kelompok" => $this->input->post('no_kelompok', true),
     ];
-    $this->db->insert('jadwal', $data);
-
-    $this->db->insert('anggota_kelompok', ['no_kelompok' => $this->input->post('no_kelompok')]);
+    $this->db->insert('anggota_kelompok', $data);
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
            Anggota baru berhasil ditambahkan!
             </div>');
@@ -111,6 +109,11 @@ class Asisten extends CI_Controller
   public function getubahkelompok()
   {
     echo json_encode($this->db->get_where('kelompok', ['id' => $this->input->post('id')])->row_array());
+  }
+
+  public function gettambahanggota()
+  {
+    echo json_encode($this->db->get_where('anggota_kelompok', ['id' => $this->input->post('id')])->row_array());
   }
 
   public function jadwal()
