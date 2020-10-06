@@ -73,10 +73,6 @@
                         <label for="nrp">NRP</label>
                         <input type="text" class="form-control" id="nrp" name="nrp" placeholder="">
                     </div>
-                    <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="">
-                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
