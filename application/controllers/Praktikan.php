@@ -362,11 +362,8 @@ class Praktikan extends CI_Controller
         //     'output' => $hasil
         // ];
         // $this->db->insert('audit_log', $data);
-        if ($hasil) {
-            echo json_encode($hasil);
-        } else {
-            echo json_encode("Halo");
-        }
+
+        echo json_encode($hasil);
     }
 
     public function tombolKamera()
