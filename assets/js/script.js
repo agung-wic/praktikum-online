@@ -119,6 +119,7 @@ $(function () {
 		$("#TambahAnggotaLabel").html("Tambah Anggota");
 		$(".modal-footer button[type=submit]").html("Add");
 		$(".modal-body form").attr("action", base + "asisten/tambahanggota");
+		const id = $(this).data("id");
 
 		$.ajax({
 			url: base + "asisten/gettambahanggota",

@@ -13,7 +13,7 @@
                         <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
                     </div>
                     <div class="col-auto mr-auto">
-                        <a href="" class="btn gradien mb-3 tombolTambahAnggota" data-toggle="modal" data-target="#TambahAnggota">Tambah Anggota</a>
+                        <a href="" class="btn gradien mb-3 tombolTambahAnggota" data-id="<?php $data['id_kelompok'] ?>" data-toggle="modal" data-target="#TambahAnggota">Tambah Anggota</a>
                     </div>
                 </div>
                 <div class="card-body">
