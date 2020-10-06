@@ -239,6 +239,10 @@
                         <label for="data_tampil_outputttt">Data output</label>
                         <input type="text" class="form-control" id="data_tampil_outputttt" name="data_tampil_outputttt">
                     </div>
+                    <div class="form-group">
+                        <label for="data_satuannnn">Satuan</label>
+                        <input type="text" class="form-control" id="data_satuannnn" name="data_satuannnn">
+                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -269,6 +273,10 @@
                     <div class="form-group">
                         <label for="data_tampil_outputtt">Data output</label>
                         <input type="text" class="form-control" id="data_tampil_outputtt" name="data_tampil_outputtt">
+                    </div>
+                    <div class="form-group">
+                        <label for="data_satuannn">Satuan</label>
+                        <input type="text" class="form-control" id="data_satuannn" name="data_satuannn">
                     </div>
             </div>
             <div class="modal-footer">

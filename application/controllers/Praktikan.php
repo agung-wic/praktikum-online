@@ -325,10 +325,10 @@ class Praktikan extends CI_Controller
                 $result2 = explode(",", $result2);
                 if ($result2[0] == "h") {
                     $result2[1] = (int)$result2[1];
-                    $result2 = $result2[1] / 10 . " " . "cm";
+                    $result2 = $result2[1] . " " . "mm";
                 } else if ($result2[0] == "t") {
                     $result2[1] = (int)$result2[1];
-                    $result2 = $result2[1] / 10 . " " . "s";
+                    $result2 = $result2[1] . " " . "ms";
                 } else if ($result2[0] == "i") {
                     $result2[1] = (int)$result2[1];
                     $result2 = $result2[1] . " " . "Buah";
