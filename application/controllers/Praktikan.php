@@ -335,7 +335,7 @@ class Praktikan extends CI_Controller
                 $result2 = explode(",", $result2);
 
                 if (count($compare) > 1) {
-                    if ($compare[0] == "1" || $compare[0] == "0") {
+                    if ($compare[1] == "1" || $compare[1] == "0") {
                         $result2 = $satuan;
                     }
                     $result2 = $result2[1] . " " . $satuan;
