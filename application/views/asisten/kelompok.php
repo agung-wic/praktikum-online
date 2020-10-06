@@ -19,7 +19,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Role</th>
+                                    <th scope="col">Kelompok</th>
+                                    <th scope="col">Jumlah Anggota</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -29,9 +30,10 @@
                                     <tr>
 
                                         <th scope="row"><?= $i; ?></th>
-                                        <td><?= $r['role'] ?></td>
+                                        <td>Kelompok <?= $k['no_kelompok'] ?></td>
+                                        <td><?= $k['jumlah'] ?></td>
                                         <td>
-                                            <a href="<?= base_url('asisten/doedatil/' . $k['id']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-edit"></i>Detail</a>
+                                            <a href="<?= base_url('asisten/doedatil/' . $k['no_kelompok']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-edit"></i>Detail</a>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
