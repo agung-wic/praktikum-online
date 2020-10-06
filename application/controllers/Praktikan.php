@@ -463,4 +463,20 @@ class Praktikan extends CI_Controller
         $this->load->view('praktikan/penilaian', $data);
         $this->load->view('template/footer');
     }
+
+    public function kelompok()
+    {
+        $data['title'] = 'Kelompok';
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $id_kelompok = $this->db->get_where('anggota_kelompok', ['nrp ' => $this->session->userdata('nrp')])->row_array();
+        $data['kelompok'] = $this->db->get_where('kelompok', ['id' => $id_kelompok['no_kelompok']])->row_array();
+        $this->load->model('Praktikan_model');
+        $data['list'] = $this->Praktikan_model->TampilKelompok($id_kelompok['no_kelompok']);
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('praktikan/kelompok', $data);
+        $this->load->view('template/footer');
+    }
 }

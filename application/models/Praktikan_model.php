@@ -76,4 +76,13 @@ class Praktikan_model extends CI_Model
 
     return $this->db->query($query)->result_array();
   }
+
+  public function TampilKelompok($id)
+  {
+    $query = "SELECT `user`.`name`, `anggota_kelompok`.`nrp` 
+              FROM `anggota_kelompok` INNER JOIN `user` ON `anggota_kelompok`.`nrp` = `user`.`nrp`
+              WHERE `anggota_kelompok`.`no_kelompok` = $id";
+
+    return $this->db->query($query)->result_array();
+  }
 }
