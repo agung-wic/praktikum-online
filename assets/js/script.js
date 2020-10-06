@@ -151,7 +151,6 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				$("#id").val(data.id);
-				$("#no_kelompok").val(data.no_kelompok);
 			},
 		});
 	});
