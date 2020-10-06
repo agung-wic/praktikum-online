@@ -138,7 +138,9 @@ class Asisten_model extends CI_Model
 
   public function JumlahKelompok()
   {
-    $query = "SELECT COUNT(nrp) AS jumlah, no_kelompok FROM anggota_kelompok GROUP BY no_kelompok";
+    $query = "SELECT COUNT(`anggota_kelompok`.`nrp`) AS jumlah , `kelompok`.`no_kelompok`  
+              FROM `kelompok` LEFT JOIN `anggota_kelompok` 
+              ON `kelompok`.`no_kelompok` = `anggota_kelompok`.`no_kelompok` GROUP BY `no_kelompok`";
 
     return $this->db->query($query)->result_array();
   }
