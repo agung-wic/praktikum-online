@@ -367,6 +367,7 @@ $(function () {
 					$("#tombol_status").attr("checked", false);
 				} else $("#tombol_status").attr("checked", true);
 				$("#data_tampil_output").val(data.data_tampil_output);
+				$("#data_satuan").val(data.data_satuan);
 			},
 		});
 	});
@@ -396,6 +397,7 @@ $(function () {
 					$("#tombol_statuss").attr("checked", false);
 				} else $("#tombol_statuss").attr("checked", true);
 				$("#data_tampil_outputt").val(data.data_tampil_output);
+				$("#data_satuann").val(data.data_satuan);
 			},
 		});
 	});
@@ -421,7 +423,6 @@ $(function () {
 				$("#iddd").val(data.id);
 				$("#tulisan").val(data.tulisan);
 				$("#data_tampil_outputtt").val(data.data_tampil_output);
-				$("#data_satuannn").val(data.data_satuan);
 			},
 		});
 	});
