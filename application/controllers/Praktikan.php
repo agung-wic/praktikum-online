@@ -316,35 +316,22 @@ class Praktikan extends CI_Controller
 
     private function _sendsocket($socket1, $socket2, $message, $id)
     {
-        $data['tombol_arah'] = $this->db->get_where('tombol_arah', ['id_modul' => $id])->result_array();
-        $data['tombol_tulisan'] = $this->db->get_where('tombol_tulisan', ['id_modul' => $id])->result_array();
-        $data['output_tulisan'] = $this->db->get_where('output_tulisan', ['id_modul' => $id])->result_array();
-        var_dump($id);
-        var_dump($data['tombol_arah']);
-        die;
         if (socket_write($socket1, $message, strlen($message))) {
             $result2 = socket_read($socket2, 1024);
             $result2 = htmlspecialchars($result2);
             if ($result2) {
-                $satuan_arah = $data['tombol_arah']['data_satuan'];
-                $compare_arah = $data['tombol_arah']['data_kirim'];
-                $compare_arah = str_replace("[", "", $compare_arah);
-                $compare_arah = str_replace("[", "", $compare_arah);
-                $compare_arah = explode(",", $compare_arah);
-                $satuan_tulisan = $data['tombol_tulisan']['data_satuan'];
-                $compare_tulisan = $data['tombol_tulisan']['data_kirim'];
-                $compare_tulisan = str_replace("[", "", $compare_tulisan);
-                $compare_tulisan = str_replace("[", "", $compare_tulisan);
-                $compare_tulisan = explode(",", $compare_tulisan);
                 $result2 = str_replace("[", "", $result2);
                 $result2 = str_replace("]", "", $result2);
                 $result2 = explode(",", $result2);
-                if ($result2[0] == $compare_arah[0]) {
+                if ($result2[0] == "h") {
                     $result2[1] = (int)$result2[1];
-                    $result2 = $result2[1] . " " . $satuan_arah;
-                } else if ($result2[0] == $compare_tulisan[0]) {
+                    $result2 = $result2[1] / 10 . " " . "cm";
+                } else if ($result2[0] == "t") {
                     $result2[1] = (int)$result2[1];
-                    $result2 = $result2[1] . " " . $satuan_tulisan;
+                    $result2 = $result2[1] / 10 . " " . "s";
+                } else if ($result2[0] == "i") {
+                    $result2[1] = (int)$result2[1];
+                    $result2 = $result2[1] . " " . "Buah";
                 }
                 return $result2;
             } else {
