@@ -10,6 +10,11 @@
       <div class="card-header">
         <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
       </div>
+      <div class="col-auto text-right mt-4 mr-2">
+        <a href="" class="btn gradien mb-3 tampilTambahJadwal" data-toggle="modal" data-target="#JadwalEdit">Tambah Jadwal Baru</a>
+        <a href="" class="btn gradien mb-3" data-toggle="modal" data-target="#JadwalAddFile"><i class="fas fa-file-csv"></i>
+        </a>
+      </div>
       <div class="card-body">
         <div class="table-responsive">
           <div class="row mx-1">
