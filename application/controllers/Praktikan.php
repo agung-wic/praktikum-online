@@ -479,4 +479,9 @@ class Praktikan extends CI_Controller
         $this->load->view('praktikan/kelompok', $data);
         $this->load->view('template/footer');
     }
+
+    public function info()
+    {
+        phpinfo();
+    }
 }
