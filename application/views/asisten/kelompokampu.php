@@ -12,9 +12,6 @@
                     <div class="col">
                         <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
                     </div>
-                    <div class="col-auto mr-auto">
-                        <a href="" class="btn gradien mb-3 tombolTambahKelompok" data-toggle="modal" data-target="#TambahKelompok">Tambah Kelompok</a>
-                    </div>
                 </div>
                 <div class="card-body">
                     <?= $this->session->flashdata('message'); ?>
@@ -53,32 +50,4 @@
         <!-- /.container-fluid -->
     </div>
     <!-- End of Main Content -->
-</div>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="TambahKelompok" tabindex="-1" role="dialog" aria-labelledby="TambahKelompokLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="TambahKelompokLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?= base_url('asisten/tambahkelompok') ?>" method="post">
-                    <div class="form-group">
-                        <input type="hidden" id="id" name="id">
-                        <input type="text" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
-                    </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Add</button>
-            </div>
-            </form>
-        </div>
-    </div>
 </div>
