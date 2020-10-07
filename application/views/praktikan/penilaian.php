@@ -53,7 +53,7 @@
                         } ?>
                         <td><?= $list[$i]['asisten']; ?></td>
                         <td>
-                          <a href="<?= base_url('assets/laporan/') . $list[$i]['laporan']; ?>" download class="badge badge-pill badge-warning">
+                          <a href="<?= base_url('praktikan/unduh/') . $list[$i]['laporan']; ?>" download class="badge badge-pill badge-warning">
                             <i class=" fas fa-fw fa-download"></i>
                             Unduh
                           </a>

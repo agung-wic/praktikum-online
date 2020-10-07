@@ -480,8 +480,10 @@ class Praktikan extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function info()
+    public function unduh($id)
     {
-        phpinfo();
+        $this->load->helper('download');
+
+        force_download(base_url('/assets/laporan/') . $id);
     }
 }
