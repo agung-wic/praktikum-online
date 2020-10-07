@@ -483,7 +483,6 @@ class Praktikan extends CI_Controller
     public function unduh($id)
     {
         $this->load->helper('download');
-
         force_download(FCPATH . '/assets/laporan/' . $id, null);
     }
 }
