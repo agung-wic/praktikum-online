@@ -32,6 +32,12 @@ class Asisten extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  public function unduh($id)
+  {
+    $this->load->helper('download');
+    force_download(FCPATH . '/assets/laporan/' . $id, null);
+  }
+
   public function kelompok()
   {
     $this->load->model('Asisten_model');
