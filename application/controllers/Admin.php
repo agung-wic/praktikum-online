@@ -483,9 +483,9 @@ class Admin extends CI_Controller
     public function deletejadwal($id)
     {
         $this->db->where('id', $id);
-        $this->db->delete('anggota_kelompok');
+        $this->db->delete('jadwal');
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
-          Anggota kelompok berhasil dihapus!
+         Jadwal berhasil dihapus!
           </div>');
         redirect(base_url('admin/jadwal'));
     }
