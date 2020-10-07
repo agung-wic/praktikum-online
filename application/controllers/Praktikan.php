@@ -484,6 +484,6 @@ class Praktikan extends CI_Controller
     {
         $this->load->helper('download');
 
-        force_download(base_url('/assets/laporan/') . $id);
+        force_download(base_url('/assets/laporan/') . $id, NULL);
     }
 }
