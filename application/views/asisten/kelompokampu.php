@@ -39,7 +39,7 @@
                                         <td><?= $k['id_modul'] ?></td>
                                         <td><?= $k['jumlah'] ?></td>
                                         <td>
-                                            <a href="<?= base_url('asisten/detailkelompok/' . $k['no_kelompok']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-info"></i>Detail</a>
+                                            <a href="<?= base_url('asisten/detailkelompok/' . $k['id_kelompok']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-info"></i>Detail</a>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
