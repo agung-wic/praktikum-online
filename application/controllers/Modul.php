@@ -11,7 +11,7 @@ class Modul extends CI_Controller
 
     public function index()
     {
-        $this->load->model('Model_model');
+        $this->load->model('Modul_model');
         $data['modul'] = $this->db->get('modul')->result_array();
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['title'] = 'Set Operator';
