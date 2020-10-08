@@ -9,6 +9,20 @@ class Modul extends CI_Controller
         is_logged_in();
     }
 
+    public function index()
+    {
+        $this->load->model('Model_model');
+        $data['modul'] = $this->db->get('modul')->result_array();
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $data['title'] = 'Set Operator';
+        $data['list'] = $this->db->get('modul')->result_array();
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('modul/index', $data);
+        $this->load->view('template/footer');
+    }
+
     public function operator($id = '')
     { #USER#
         $this->load->model('Modul_model');
