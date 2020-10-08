@@ -116,7 +116,7 @@ class Praktikan extends CI_Controller
         $this->load->model('Praktikan_model');
         $data['list'] = $this->Praktikan_model->TampilKelompok($id_kelompok['no_kelompok']);
         $data['asisten'] = $this->Praktikan_model->KelompokAsisten($id_kelompok['no_kelompok']);
-        var_dump($data['asistem']);
+        var_dump($data['asisten']);
         die;
         if (!$id) {
             $this->db->where('nrp', $this->session->userdata('nrp'));
