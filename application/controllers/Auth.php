@@ -91,7 +91,7 @@ class Auth extends CI_Controller
         }
     }
 
-    public function addemail($nrp = NULL)
+    public function addemail()
     {
         if ($this->session->userdata('email')) {
             redirect(base_url('profil'));
@@ -110,6 +110,7 @@ class Auth extends CI_Controller
                 $this->load->view('auth/addemail.php');
                 $this->load->view('template/auth_footer.php');
             } else {
+                $nrp = $this->input->post('nrp', true);
                 $data = [
                     'email' => htmlspecialchars($this->input->post('email', true)),
                     'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
@@ -117,6 +118,8 @@ class Auth extends CI_Controller
                     'is_active' => 0,
                     'date_created' => time()
                 ];
+                var_dump($nrp);
+                die;
                 $this->db->where('nrp', $nrp);
                 $this->db->update('user', $data);
 
