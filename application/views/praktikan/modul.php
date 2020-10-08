@@ -50,10 +50,10 @@
                   if ($m['modul'] == $asisten[$i]['id_modul']) {
 
                     $halo = 0;
-                    echo "<p>Asisten : </p>";
+                    echo "<p style='margin-bottom:0px;'>Asisten : </p>";
                     while ($halo < count($flag)) {
 
-                  ?> <p><b><?= $halo + 1; ?>. <?= $asisten[$flag[$halo]]['name'] ?> - <?= $asisten[$flag[$halo]]['nrp'] ?></b></p>
+                  ?> <li><b><?= $halo + 1; ?>. <?= $asisten[$flag[$halo]]['name'] ?> - <?= $asisten[$flag[$halo]]['nrp'] ?></b></li>
 
                   <?php $halo++;
                     }
