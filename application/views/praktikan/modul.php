@@ -37,10 +37,9 @@
                     echo "<p><b>Status : Belum Selesai</b></p>";
                   }
                   if ($m['modul'] == $asisten[$i]['id_modul']) {
-                  ?> <p><b>Asisten : <?= $asisten[$a]['name'] ?> - <?= $asisten[$a]['nrp'] ?></b></p>
+                  ?> <p><b>Asisten : <?= $asisten[$i]['name'] ?> - <?= $asisten[$i]['nrp'] ?></b></p>
                   <?php }
-                  $i++;
-                  $a++; ?>
+                  $i++; ?>
                   <div class="row">
                     <a class="btn ml-auto gradien" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
                   </div>
