@@ -11,10 +11,10 @@ class Modul extends CI_Controller
 
     public function index()
     {
-        $this->load->model('Modul_asisten');
+        $this->load->model('Modul_model');
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['title'] = 'Set Operator';
-        $data['kelompok'] = $this->Modul_asisten->JumlahKelompok();
+        $data['kelompok'] = $this->Modul_model->JumlahKelompok();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
