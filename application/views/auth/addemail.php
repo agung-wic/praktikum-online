@@ -23,9 +23,7 @@
                 <input class="form-control" type="password" id="password2" name="password2" placeholder="Konfirmasi Kata Sandi" style="margin-top: 25px; background-color: #f6f6f6; border-top: 0px; border-bottom: 1px solid #6a6a6a; border-left: 1px solid #6a6a6a; border-right: 0px;">
             </div>
             <div class="form-group">
-                <?php var_dump($this->uri->segment('3'));
-                die; ?>
-                <input type="hidden" id="<?= $this->uri->segment('3') ?>" name="<?= $this->uri->segment('3') ?>">
+                <input type="hidden" value="<?= $this->uri->segment('3') ?>" ?>">
             </div>
             <div class="p-3"> <button type="submit" class="btn" style="display: block; margin: auto; background: linear-gradient(40deg, rgba(111,140,252,1) 8%, rgba(47,200,201,1) 100%); color: white; border-top-left-radius: 25px;
                 border-top-right-radius: 25px;
