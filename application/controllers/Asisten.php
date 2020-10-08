@@ -241,8 +241,6 @@ class Asisten extends CI_Controller
     $data['id_modul'] = $this->uri->segment(3);
     $data['id_kelompok'] = $this->uri->segment(4);
 
-    var_dump($data);
-    die;
     $this->load->model('Asisten_model');
     $data['modul'] = $this->db->get('modul')->result_array();
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
