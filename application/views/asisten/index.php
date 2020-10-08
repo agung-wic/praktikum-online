@@ -90,7 +90,7 @@
                       </a>
                     </td>
                     <td><?= date("Y-m-d H:i:s", $l['laporan_time']); ?></td>
-                    <td><a href="<?= base_url('asisten/detailnilai/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                    <td><a class="badge badge-pill badge-primary tampilDetailNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                         <i class=" fas fa-fw fa-info"></i>
                         Detail
                       </a>
@@ -140,15 +140,15 @@
           </div>
           <div class="form-group">
             <label for="name">Nama Lengkap</label>
-            <input type="text" class="form-control" id="name" name="name" readonly>
+            <input type="text" class="form-control hapus" id="name" name="name" readonly>
           </div>
           <div class="form-group">
             <label for="nrp">NRP</label>
-            <input type="text" class="form-control" id="nrp" name="nrp" readonly>
+            <input type="text" class="form-control hapus" id="nrp" name="nrp" readonly>
           </div>
           <div class="form-group">
             <label for="modul">Modul</label>
-            <input type="text" class="form-control" id="modul" name="modul" readonly>
+            <input type="text" class="form-control hapus" id="modul" name="modul" readonly>
           </div>
           <div class="form-group">
             <label for="resume">Resume</label>

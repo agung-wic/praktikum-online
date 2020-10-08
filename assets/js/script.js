@@ -305,7 +305,39 @@ $(function () {
 
 	$(".tampilModalNilai").on("click", function () {
 		const id = $(this).data("id");
+		$(".form-control").attr("readonly", false);
+		$(".hapus").show();
+		$.ajax({
+			url: base + "asisten/getubahnilai",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				console.log(data);
+				$("#id").val(data.id);
+				$("#modul_id").val(data.modul_id);
+				$("#name").val(data.name);
+				$("#nrp").val(data.nrp);
+				$("#modul").val(data.modul);
+				$("#resume").val(data.resume);
+				$("#pretest").val(data.pretest);
+				$("#uji_lisan").val(data.uji_lisan);
+				$("#praktikum").val(data.praktikum);
+				$("#postest").val(data.postest);
+				$("#format").val(data.format);
+				$("#bab").val(data.bab);
+				$("#kesimpulan").val(data.kesimpulan);
+			},
+		});
+	});
 
+	$(".tampilDetailNilai").on("click", function () {
+		const id = $(this).data("id");
+		$("#NilaiEditLabel").html("Detail Nilai");
+		$(".form-control").attr("readonly", true);
+		$(".hapus").hide();
 		$.ajax({
 			url: base + "asisten/getubahnilai",
 			data: {
