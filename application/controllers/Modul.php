@@ -450,7 +450,7 @@ class Modul extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
-        $this->load->view('operator/jadwal', $data);
+        $this->load->view('modul/jadwal', $data);
         $this->load->view('template/footer');
     }
 }
