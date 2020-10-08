@@ -89,7 +89,7 @@ class Modul extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
           Data user berhasil diubah!
           </div>');
-        redirect(base_url('modul'));
+        redirect(base_url('modul/operator/') . $this->input->post('data_kelompok', true));
     }
 
     public function penilaian($modul)

@@ -154,11 +154,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('modul/edit/operator/' . $no_kelompok) ?>" method="post">
+            <form action="<?= base_url('modul/edit') ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="id">ID</label>
                         <input class="form-control" type="text" name="id" id="id" readonly>
+                        <input class="form-control" type="hidden" name="no_kelompok" id="no_kelompok" value="<?= $this->uri->segment(3); ?>">
                     </div>
                     <div class="form-group">
                         <label for="name">Nama Lengkap</label>
