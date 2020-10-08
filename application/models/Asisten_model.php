@@ -138,7 +138,7 @@ class Asisten_model extends CI_Model
 
   public function JumlahKelompok()
   {
-    $query = "SELECT `kelompok`.`no_kelompok`, `kelompok`.`id`  
+    $query = "SELECT COUNT(`anggota_kelompok`.`nrp`) AS jumlah , `kelompok`.`no_kelompok`, `kelompok`.`id`  
               FROM `kelompok` LEFT JOIN `anggota_kelompok` 
               ON `kelompok`.`id` = `anggota_kelompok`.`no_kelompok` GROUP BY `no_kelompok`";
 
@@ -161,8 +161,9 @@ class Asisten_model extends CI_Model
 
   public function Tampildetailkelompok($id)
   {
-    $query = "SELECT `anggota_kelompok`.`id` , `anggota_kelompok`.`nrp` as `nrp` , `user`.`name` as 'name' , `anggota_kelompok`.`no_kelompok` FROM `user` 
+    $query = "SELECT `anggota_kelompok`.`id` , `absensi` . `nrp`,`anggota_kelompok`.`nrp` as `nrp` , `user`.`name` as 'name' , `anggota_kelompok`.`no_kelompok` FROM `user` 
               INNER JOIN `anggota_kelompok` ON `user`.`nrp` = `anggota_kelompok`.`nrp` 
+              INNER JOIN `absensi` ON `user`.`nrp` = `absensi` . `nrp`
               WHERE `anggota_kelompok`.`no_kelompok`= $id  
               ORDER BY `user`.`nrp` ASC";
 

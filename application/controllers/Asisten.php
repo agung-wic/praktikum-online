@@ -253,6 +253,7 @@ class Asisten extends CI_Controller
       $this->load->view('template/footer');
     } else {
       $data['kelompok'] = $this->Asisten_model->JumlahKelompok();
+      $data['id_modul'] = $id;
       $this->load->view('template/header', $data);
       $this->load->view('template/sidebar', $data);
       $this->load->view('template/topbar', $data);
