@@ -196,8 +196,6 @@ class Auth extends CI_Controller
 
     private function _sendEmail($token, $type, $data = NULL)
     {
-        var_dump($this->input->post('email', true));
-        die;
         $config = [
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
@@ -216,6 +214,9 @@ class Auth extends CI_Controller
         $this->email->to($this->input->post('email', true));
 
         if ($type == 'verify') {
+            var_dump($this->input->post('email', true));
+            var_dump($data['name']);
+            die;
             $this->email->subject('Verifikasi Akun');
             $this->email->message('
             <head>
