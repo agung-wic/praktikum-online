@@ -157,4 +157,16 @@ class Asisten_model extends CI_Model
 
     return $this->db->query($query)->result_array();
   }
+
+
+  public function Tampildetailkelompok($id)
+  {
+    $query = "SELECT `anggota_kelompok`.`id` , `absensi` . `nrp`,`anggota_kelompok`.`nrp` as `nrp` , `user`.`name` as 'name' , `anggota_kelompok`.`no_kelompok` FROM `user` 
+              INNER JOIN `anggota_kelompok` ON `user`.`nrp` = `anggota_kelompok`.`nrp` 
+              INNER JOIN `absensi` ON `user`.`nrp` = `absensi` . `nrp`
+              WHERE `anggota_kelompok`.`no_kelompok`= $id
+              ORDER BY `user`.`nrp` ASC";
+
+    return $this->db->query($query)->result_array();
+  }
 }
