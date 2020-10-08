@@ -47,6 +47,17 @@ class Praktikan_model extends CI_Model
     return $this->db->query($query)->result_array();
   }
 
+  public function TampilNilaiPraktikan($id)
+  {
+    $query = "SELECT `nilai`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', `modul`.`name` as 'modul', 
+              `nilai` . `resume` as 'resume' , `nilai` . `pretest` as 'pretest' , `nilai` . `uji_lisan` as 'uji_lisan' , `nilai` . `praktikum` as 'praktikum' , 
+              `nilai` . `postest` as 'postest' , `nilai` . `format` as 'format' , `nilai` . `bab` as 'bab' , `nilai` . `kesimpulan` as 'kesimpulan' , `nilai` . `nilai_akhir` as `nilai_akhir`
+              FROM `user` INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
+              INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` WHERE `nilai`.`id`=$id";
+
+    return $this->db->query($query)->row_array();
+  }
+
   public function PenilaianPraktikan($id)
   {
     $query = "SELECT `nilai`.`id`, `user`.`name` as 'name_praktikan', `user`.`nrp`, `modul`.`modul` as 'modul_id', 

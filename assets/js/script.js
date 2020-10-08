@@ -336,11 +336,13 @@ $(function () {
 
 	$(".tampilDetailNilai").on("click", function () {
 		const id = $(this).data("id");
+		const role = $(this).data("role");
+
 		$("#NilaiEditLabel").html("Detail Nilai");
 		$(".form-control").attr("readonly", true);
 		$(".hapus").hide();
 		$.ajax({
-			url: base + "asisten/getubahnilai",
+			url: base + role + "/getubahnilai",
 			data: {
 				id: id,
 			},

@@ -264,6 +264,13 @@ class Praktikan extends CI_Controller
         }
     }
 
+    public function getubahnilai()
+    {
+        $this->load->model('Praktikan_model');
+        echo json_encode($this->Praktikan_model->TampilNilaiPraktikan($this->input->post('id')));
+    }
+
+
     public function getubahlaporan()
     {
         echo json_encode($this->db->get_where('nilail', ['id' => $this->input->post('id')])->row_array());
