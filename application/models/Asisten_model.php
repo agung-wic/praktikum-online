@@ -16,8 +16,9 @@ class Asisten_model extends CI_Model
   public function TampilNilaiPraktikan($id)
   {
     $query = "SELECT `nilai`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', 
-              `modul`.`name` as 'modul'
-              FROM `user`   INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
+              `modul`.`name` as 'modul', `nilai` . `resume` as 'resume' , `nilai` . `pretest` as 'pretest' , `nilai` . `uji_lisan` as 'uji_lisan' , `nilai` . `praktikum` as 'praktikum' , 
+              `nilai` . `postest` as 'postest' , `nilai` . `format` as 'format' , `nilai` . `bab` as 'bab' , `nilai` . `kesimpulan` as 'kesimpulan'
+              FROM `user` INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
               INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` WHERE `nilai`.`id`=$id";
 
     return $this->db->query($query)->row_array();
