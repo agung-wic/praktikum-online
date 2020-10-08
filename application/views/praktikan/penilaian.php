@@ -59,7 +59,7 @@
                           </a>
                         </td>
                         <td><?= date("Y-m-d H:i:s", $list[$i]['laporan_time']); ?></td>
-                        <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                        <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-id="<?= $i['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                             <i class=" fas fa-fw fa-info"></i>
                             Detail
                           </a>
