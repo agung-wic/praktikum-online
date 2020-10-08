@@ -55,7 +55,12 @@ class Auth extends CI_Controller
 
         if ($user) {
             if (!$user['email']) {
-                redirect('auth/addemail/' . $nrp);
+                if ($Password == $user['password']) {
+                    redirect('auth/addemail/' . $nrp);
+                } else {
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!!</div>');
+                    redirect('auth');
+                }
             } else {
                 if ($user['is_active'] == 1) {
                     if (password_verify($Password, $user['password'])) {
