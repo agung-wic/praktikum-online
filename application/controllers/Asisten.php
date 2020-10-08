@@ -24,12 +24,12 @@ class Asisten extends CI_Controller
   }
 
 
-  public function penilaian()
+  public function penilaian($modul)
   {
     $this->load->model('Asisten_model');
     $data['title'] = 'Penilaian';
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-    $data['list'] = $this->Asisten_model->TampilNilai();
+    $data['list'] = $this->Asisten_model->TampilNilai($modul);
     $i = 0;
     while ($i < count($data['list'])) {
       $asisten = $data['list'][$i]['asisten'];
