@@ -140,15 +140,15 @@
           </div>
           <div class="form-group hapus">
             <label for="name">Nama Lengkap</label>
-            <input type="text" class="form-control " id="name" name="name" readonly>
+            <input type="text" class="form-control " id="name" name="name" disabled>
           </div>
           <div class="form-group hapus">
             <label for="nrp">NRP</label>
-            <input type="text" class="form-control " id="nrp" name="nrp" readonly>
+            <input type="text" class="form-control " id="nrp" name="nrp" disabled>
           </div>
           <div class="form-group hapus">
             <label for="modul">Modul</label>
-            <input type="text" class="form-control " id="modul" name="modul" readonly>
+            <input type="text" class="form-control " id="modul" name="modul" disabled>
           </div>
           <div class="form-group">
             <label for="resume">Resume</label>
