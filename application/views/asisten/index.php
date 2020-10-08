@@ -84,13 +84,13 @@
                     <td><?= $l['modul']; ?></td>
                     <td><?= $l['asisten']; ?></td>
                     <td>
-                      <a href="<?= base_url('asisten/unduh') . $l['laporan']; ?>" download class="badge badge-pill badge-warning">
+                      <a href="<?= base_url('asisten/unduh/') . $l['laporan']; ?>" download class="badge badge-pill badge-warning">
                         <i class=" fas fa-fw fa-download"></i>
                         Unduh
                       </a>
                     </td>
                     <td><?= date("Y-m-d H:i:s", $l['laporan_time']); ?></td>
-                    <td><a class="badge badge-pill badge-primary tampilDetailNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                    <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                         <i class=" fas fa-fw fa-info"></i>
                         Detail
                       </a>
@@ -173,7 +173,7 @@
           <div class="form-group">
             <label for="laporan">Laporan</label>
             <div class="row">
-              <div class="col-2">
+              <div class="col-3">
                 <span>Format</span>
               </div>
               <div class="col-auto">
@@ -181,15 +181,15 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-2">
+              <div class="col-3">
                 <span>Bab</span>
               </div>
               <div class="col-auto">
-                <input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 2, 3, 4">
+                <input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 3, 3, 4">
               </div>
             </div>
             <div class="row">
-              <div class="col-2">
+              <div class="col-3">
                 <span>Kesimpulan</span>
               </div>
               <div class="col-auto">
