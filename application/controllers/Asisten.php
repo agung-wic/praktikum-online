@@ -238,8 +238,8 @@ class Asisten extends CI_Controller
 
   public function absen()
   {
-    $data['id_modul'] = $this->uri->segment(4);
-    $data['id_kelompok'] = $this->uri->segment(5);
+    $data['id_modul'] = $this->uri->segment(3);
+    $data['id_kelompok'] = $this->uri->segment(4);
 
     var_dump($data);
     die;
