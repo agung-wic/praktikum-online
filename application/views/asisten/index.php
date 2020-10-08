@@ -143,8 +143,30 @@
             <input type="text" class="form-control" id="modul" name="modul" readonly>
           </div>
           <div class="form-group">
-            <label for="nilai">Nilai</label>
-            <input type="number" min="0" max="100" class="form-control" id="nilai" name="nilai">
+            <label for="resume">Resume</label>
+            <input type="number" min="0" max="100" class="form-control" id="resume" name="resume">
+          </div>
+          <div class="form-group">
+            <label for="pretest">Pretest</label>
+            <input type="number" min="0" max="100" class="form-control" id="pretest" name="pretest">
+          </div>
+          <div class="form-group">
+            <label for="uji_lisan">Uji Lisan</label>
+            <input type="number" min="0" max="100" class="form-control" id="uji_lisan" name="uji_lisan">
+          </div>
+          <div class="form-group">
+            <label for="praktikum">Praktikum</label>
+            <input type="number" min="0" max="100" class="form-control" id="praktikum" name="praktikum">
+          </div>
+          <div class="form-group">
+            <label for="posttest">Postest</label>
+            <input type="number" min="0" max="100" class="form-control" id="posttest" name="posttest">
+          </div>
+          <div class="form-group">
+            <label for="laporan">Laporan</label>
+            <input type="number" min="0" max="100" class="form-control" id="format" name="format" placeholder="Format Penulisan">
+            <input type="number" min="0" max="100" class="form-control" id="bab" name="bab" placeholder="Bab 2, 3, 4">
+            <input type="number" min="0" max="100" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
           </div>
         </div>
         <div class="modal-footer">
