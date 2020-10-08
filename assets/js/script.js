@@ -307,6 +307,7 @@ $(function () {
 		const id = $(this).data("id");
 		$(".form-control").attr("readonly", false);
 		$(".hapus").show();
+		$(".hapus").attr("readonly", true);
 		$.ajax({
 			url: base + "asisten/getubahnilai",
 			data: {
