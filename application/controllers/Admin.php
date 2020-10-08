@@ -9,7 +9,7 @@ class Admin extends CI_Controller
         is_logged_in();
     }
 
-    public function index()
+    public function index($id = '')
     { #USER#
         $this->load->model('Admin_model');
 
@@ -49,6 +49,7 @@ class Admin extends CI_Controller
         $this->pagination->initialize($config);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['list'] = $this->Admin_model->TampilUser($config['per_page'], $data['start'], $data['keyword']);
+        $data['detail'] = $this->db->get_where('user', ['id' => $id])->row_array();
         $data['role'] = $this->db->get('user_role')->result_array();
 
         $data['title'] = 'User List';
