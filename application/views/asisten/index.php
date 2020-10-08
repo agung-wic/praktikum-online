@@ -163,8 +163,8 @@
             <input type="number" min="0" max="100" class="form-control" id="praktikum" name="praktikum">
           </div>
           <div class="form-group">
-            <label for="posttest">Postest</label>
-            <input type="number" min="0" max="100" class="form-control" id="posttest" name="posttest">
+            <label for="postest">Postest</label>
+            <input type="number" min="0" max="100" class="form-control" id="postest" name="postest">
           </div>
           <div class="form-group">
             <label for="laporan">Laporan</label>
