@@ -9,7 +9,7 @@ class Modul extends CI_Controller
         is_logged_in();
     }
 
-    public function index($id = '')
+    public function operator($id = '')
     { #USER#
         $this->load->model('Modul_model');
 
