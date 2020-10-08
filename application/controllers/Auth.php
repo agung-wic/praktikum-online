@@ -214,9 +214,6 @@ class Auth extends CI_Controller
         $this->email->to($this->input->post('email', true));
 
         if ($type == 'verify') {
-            var_dump($this->input->post('email', true));
-            var_dump($data['name']);
-            die;
             $this->email->subject('Verifikasi Akun');
             $this->email->message('
             <head>
@@ -259,7 +256,7 @@ class Auth extends CI_Controller
                     <h4>Verifikasi Akun E-Mail</h4>
                     <hr>
                     <p>Halo <strong>' . $data['name'] . '</strong>,</p>
-                    <p>Terimakasih telah membuat akun di virtulab-its.com. Klik tombol dibawah ini untuk
+                    <p>Terimakasih telah membuat akun di https://riset.its.ac.id/praktikum-fisdas/. Klik tombol dibawah ini untuk
                         memverifikasi akun email
                         anda.</p>
                     <a href="' . base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '" target="_blank" style="display: inline-block; color: #ffffff; background: linear-gradient(
