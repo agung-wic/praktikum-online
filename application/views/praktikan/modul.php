@@ -30,6 +30,7 @@
                         echo "<p><b>Status : Selesai</b></p>";
                       }
                       echo "<p><b>Jadwal : " . $status[$i]['jadwal'] . "</b></p>";
+                      $i++;
                     } else {
                       echo "<p><b>Status : Belum Selesai</b></p>";
                     }
@@ -55,7 +56,7 @@
                   <?php $halo++;
                     }
                   }
-                  $i++; ?>
+                  ?>
                   <div class="row">
                     <a class="btn ml-auto gradien" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
                   </div>
