@@ -129,8 +129,6 @@ class Auth extends CI_Controller
                 ];
 
                 $user = $this->db->get_where('user', ['nrp' => $nrp])->row_array();
-                var_dump($user);
-                die;
 
                 $this->db->insert('user_token', $user_token);
 
@@ -198,6 +196,8 @@ class Auth extends CI_Controller
 
     private function _sendEmail($token, $type, $data = NULL)
     {
+        var_dump($data);
+        die;
         $config = [
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
