@@ -136,8 +136,8 @@
         </ol>
         <?= form_open_multipart(base_url('admin/addfileuser')) ?>
         <div class="custom-file">
-          <input type="file" class="custom-file-input" id="filejadwal" name="filejadwal">
-          <label class="custom-file-label" for="filejadwal">Pilih berkas</label>
+          <input type="file" class="custom-file-input" id="fileuser" name="fileuser">
+          <label class="custom-file-label" for="fileuser">Pilih berkas</label>
         </div>
       </div>
       <div class="modal-footer">
