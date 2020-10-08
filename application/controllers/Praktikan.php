@@ -115,14 +115,12 @@ class Praktikan extends CI_Controller
         $data['kelompok'] = $this->db->get_where('kelompok', ['id' => $id_kelompok['no_kelompok']])->row_array();
         $this->load->model('Praktikan_model');
         $data['list'] = $this->Praktikan_model->TampilKelompok($id_kelompok['no_kelompok']);
-        $data['asisten'] = $this->Praktikan_model->KelompokAsisten($id_kelompok['no_kelompok']);
-        var_dump($data['asisten']);
-        die;
         if (!$id) {
             $this->db->where('nrp', $this->session->userdata('nrp'));
             $this->db->order_by('modul_id', 'ASC');
             $data['status'] = $this->db->get('jadwal')->result_array();
             $data['title'] = 'Modul Praktikum';
+            $data['asisten'] = $this->Praktikan_model->KelompokAsisten($id_kelompok['no_kelompok']);
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar', $data);
             $this->load->view('template/topbar', $data);
@@ -133,8 +131,8 @@ class Praktikan extends CI_Controller
             $this->db->where('modul_id', $id);
             $this->db->where('nrp', $this->session->userdata('nrp'));
             $data['status'] = $this->db->get('jadwal')->row_array();
-
             $data['title'] = 'Modul Praktikum';
+            $data['asisten'] = $this->Praktikan_model->KelompokAsisten($id_kelompok['no_kelompok']);
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar', $data);
             $this->load->view('template/topbar', $data);
