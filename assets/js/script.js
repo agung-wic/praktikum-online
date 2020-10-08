@@ -320,6 +320,14 @@ $(function () {
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#modul").val(data.modul);
+				$("#resume").val(data.resume);
+				$("#pretest").val(data.pretest);
+				$("#uji_lisan").val(data.uji_lisan);
+				$("#praktikum").val(data.praktikum);
+				$("#postest").val(data.postest);
+				$("#format").val(data.format);
+				$("#bab").val(data.bab);
+				$("#kesimpulan").val(data.kesimpulan);
 			},
 		});
 	});

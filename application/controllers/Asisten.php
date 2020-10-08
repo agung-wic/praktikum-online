@@ -24,7 +24,6 @@ class Asisten extends CI_Controller
       }
       $i++;
     }
-
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
@@ -225,7 +224,14 @@ class Asisten extends CI_Controller
   public function editnilai()
   {
     $data = [
-      'nilai' => $this->input->post('nilai', true),
+      'resume' => $this->input->post('resume', true),
+      'pretest' => $this->input->post('pretest', true),
+      'uji_lisan' => $this->input->post('uji_lisan', true),
+      'praktikum' => $this->input->post('praktikum', true),
+      'postest' => $this->input->post('postest', true),
+      'format' => $this->input->post('format', true),
+      'bab' => $this->input->post('bab', true),
+      'kesimpulan' => $this->input->post('kesimpulan', true),
       'asisten' => $this->session->userdata('nrp')
     ];
     $this->db->where('id', $this->input->post('id'));
