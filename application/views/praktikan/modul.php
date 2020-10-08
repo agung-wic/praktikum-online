@@ -51,7 +51,7 @@
                     $halo = 0;
                     while ($halo < count($flag)) {
 
-                  ?> <p><b>Asisten : <?= $asisten[$flag['$halo']]['name'] ?> - <?= $asisten[$flag['$halo']]['nrp'] ?></b></p>
+                  ?> <p><b>Asisten : <?= $asisten[$flag[$halo]]['name'] ?> - <?= $asisten[$flag[$halo]]['nrp'] ?></b></p>
 
                   <?php $halo++;
                     }
