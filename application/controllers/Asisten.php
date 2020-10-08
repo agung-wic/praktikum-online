@@ -242,6 +242,20 @@ class Asisten extends CI_Controller
     redirect(base_url('asisten'));
   }
 
+  public function accnilai($id)
+  {
+    $data = [
+      'is_acc' => 1
+    ];
+
+    $this->db->where('id', $id);
+    $this->db->update('nilai', $data);
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+          Nilai berhasil disetujui!
+          </div>');
+    redirect(base_url('dosen'));
+  }
+
   public function absen()
   {
     $data['id_modul'] = $this->uri->segment(3);
