@@ -25,10 +25,18 @@
                                 <?php $i = 1; ?>
                                 <?php foreach ($kelompok as $k) : ?>
                                     <tr>
-
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $k['nrp'] ?></td>
                                         <td><?= $k['name'] ?></td>
+                                        <td><?php
+                                            $cek = 0;
+                                            while ($cek < count($absensi)) {
+                                                if ($k['nrp'] == $absensi[$cek]['nrp']) {
+                                                    echo "Ok";
+                                                    $cek++;
+                                                }
+                                            }
+                                            ?></td>
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>

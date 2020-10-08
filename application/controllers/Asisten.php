@@ -267,7 +267,8 @@ class Asisten extends CI_Controller
         $this->load->model('Asisten_model');
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['title'] = 'Pembagian Kelompok';
-        $data['kelompok'] = $this->Asisten_model->Tampildetailkelompok($data['id_kelompok'], $data['id_modul']);
+        $data['kelompok'] = $this->db->get_where('anggota_kelompok', ['no_kelompok' => $data['id_kelompok']])->result_array();
+        $data['absensi'] = $this->db->get_where('absensi', ['no_kelompok' => $data['id_kelompok'], 'modul' => $data['id_modul']])->result_array();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
