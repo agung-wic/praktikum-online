@@ -54,36 +54,91 @@ class Auth extends CI_Controller
         $user = $this->db->get_where('user', ['nrp' => $nrp])->row_array();
 
         if ($user) {
-            if ($user['is_active'] == 1) {
-                if (password_verify($Password, $user['password'])) {
-                    $data = [
-                        'nrp' => $user['nrp'],
-                        'email' => $user['email'],
-                        'role_id' => $user['role_id'],
-                        'id' => $user['id'],
-                        'is_online' => 1
-                    ];
-                    $this->db->where('nrp', $user['nrp']);
-                    $this->db->update('user', $data);
-                    $this->session->set_userdata($data);
-                    if ($user['role_id'] == 1) {
-                        redirect(base_url('profil'));
-                    } else if ($user['role_id'] == 2) {
-                        redirect(base_url('profil'));
-                    } else if ($user['role_id'] == 4) {
-                        redirect(base_url('profil'));
+            if (!$user['email']) {
+                redirect('auth/addemail/' . $user['nrp']);
+            } else {
+                if ($user['is_active'] == 1) {
+                    if (password_verify($Password, $user['password'])) {
+                        $data = [
+                            'nrp' => $user['nrp'],
+                            'email' => $user['email'],
+                            'role_id' => $user['role_id'],
+                            'id' => $user['id'],
+                            'is_online' => 1
+                        ];
+                        $this->db->where('nrp', $user['nrp']);
+                        $this->db->update('user', $data);
+                        $this->session->set_userdata($data);
+                        if ($user['role_id'] == 1) {
+                            redirect(base_url('profil'));
+                        } else if ($user['role_id'] == 2) {
+                            redirect(base_url('profil'));
+                        } else if ($user['role_id'] == 4) {
+                            redirect(base_url('profil'));
+                        }
+                    } else {
+                        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!!</div>');
+                        redirect('auth');
                     }
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!!</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Akun belum di aktivasi!</div>');
                     redirect('auth');
                 }
-            } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Akun belum di aktivasi!</div>');
-                redirect('auth');
             }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Akun belum terdaftar!</div>');
             redirect('auth');
+        }
+    }
+
+    public function addemail($nrp)
+    {
+        if ($this->session->userdata('email')) {
+            redirect(base_url('profil'));
+        } else {
+            $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
+                'is_unique' => 'Email sudah terdaftar!'
+            ]);
+            $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
+                'min_length' => 'Password minimal 6 karakter!',
+                'matches' => 'Password salah!'
+            ]);
+            $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
+            if ($this->form_validation->run() == false) {
+                $data['title'] = 'Daftarkan Email & Ubah Kata Sandi';
+                $this->load->view('template/auth_header.php', $data);
+                $this->load->view('auth/addemail.php');
+                $this->load->view('template/auth_footer.php');
+            } else {
+                $data = [
+                    'email' => htmlspecialchars($this->input->post('email', true)),
+                    'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
+                    'role_id' => 8,
+                    'is_active' => 0,
+                    'date_created' => time()
+                ];
+
+                $this->db->where('nrp', $nrp);
+                $this->db->update('user', $data);
+
+                $token = base64_encode(random_bytes(32));
+                $user_token = [
+                    'email' => $this->input->post('email', true),
+                    'token' => $token,
+                    'date_created' => time()
+                ];
+
+                $user = $this->db->get_where('user', ['nrp' => $nrp])->row_array();
+
+                $this->db->insert('user_token', $user_token);
+
+                $this->_sendEmail($token, 'verify', $user);
+
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                                            Selamat! Akun berhasil dibuat. Silakan periksa email untuk aktivasi!
+                                            </div>');
+                redirect(base_url('auth/login'));
+            }
         }
     }
 
@@ -114,7 +169,7 @@ class Auth extends CI_Controller
                     'email' => htmlspecialchars($this->input->post('email', true)),
                     'image' => 'default.jpg',
                     'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                    'role_id' => 2,
+                    'role_id' => 8,
                     'is_active' => 0,
                     'date_created' => time()
                 ];
