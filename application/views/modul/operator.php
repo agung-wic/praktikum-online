@@ -180,9 +180,8 @@
                     <div class="form-group">
                         <label for="role_id">Role</label>
                         <select class="form-control" name="role_id" id="role_id">
-                            <?php foreach ($role as $r) : ?>
-                                <option value="<?= $r['id'] ?>"><?= $r['role'] ?></option>
-                            <?php endforeach; ?>
+                            <option value="8">Praktikan</option>
+                            <option value="2">Praktikan (Operator)</option>
                         </select>
                     </div>
                 </div>
