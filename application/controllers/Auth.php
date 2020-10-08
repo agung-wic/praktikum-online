@@ -91,7 +91,7 @@ class Auth extends CI_Controller
         }
     }
 
-    public function addemail($nrp)
+    public function addemail($nrp = NULL)
     {
         if ($this->session->userdata('email')) {
             redirect(base_url('profil'));
