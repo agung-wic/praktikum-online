@@ -154,7 +154,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('admin/edit') ?>" method="post">
+            <form action="<?= base_url('operator/edit') ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="id">ID</label>
