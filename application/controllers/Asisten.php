@@ -236,7 +236,7 @@ class Asisten extends CI_Controller
     redirect(base_url('asisten'));
   }
 
-  public function asisten()
+  public function absen()
   {
     $data['modul'] = $this->db->get('modul')->result_array();
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
