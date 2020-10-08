@@ -14,7 +14,7 @@ class Asisten extends CI_Controller
     $this->load->model('Asisten_model');
     $data['modul'] = $this->db->get('modul')->result_array();
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-    $data['title'] = 'Nilai Praktikum';
+    $data['title'] = 'Penilaian';
     $data['list'] = $this->db->get('modul')->result_array();
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);

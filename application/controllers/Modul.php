@@ -13,7 +13,7 @@ class Modul extends CI_Controller
     { #USER#
         $this->load->model('Modul_model');
 
-        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/admin/index';
+        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/modul/operator';
         $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
         $config['full_tag_close'] = '</ul></nav>';
 
