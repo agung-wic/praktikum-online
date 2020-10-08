@@ -6,6 +6,7 @@
         <h1 class="mt-2 mb-5" style="text-align: center;"><?= $title ?></h1>
         <div class="accordion" id="accordionExample">
           <?php $i = 0;
+          $a = 0;
           foreach ($modul as $m) : ?>
             <div class="card pb-2">
               <div class="card-header gradien_modul py-3" id="heading<?= $m['modul']; ?>">
@@ -29,7 +30,6 @@
                         echo "<p><b>Status : Selesai</b></p>";
                       }
                       echo "<p><b>Jadwal : " . $status[$i]['jadwal'] . "</b></p>";
-                      $i++;
                     } else {
                       echo "<p><b>Status : Belum Selesai</b></p>";
                     }
@@ -38,7 +38,8 @@
                   }
                   if ($m['modul'] == $asisten[$i]['id_modul']) {
                   ?> <p><b>Asisten : <?= $asisten[$i]['name'] ?> - <?= $asisten[$i]['nrp'] ?></b></p>
-                  <?php } ?>
+                  <?php }
+                  $i++; ?>
                   <div class="row">
                     <a class="btn ml-auto gradien" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
                   </div>
