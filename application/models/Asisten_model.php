@@ -159,12 +159,12 @@ class Asisten_model extends CI_Model
   }
 
 
-  public function Tampildetailkelompok($id)
+  public function Tampildetailkelompok($id, $modul)
   {
     $query = "SELECT `anggota_kelompok`.`id` , `absensi` . `nrp`,`anggota_kelompok`.`nrp` as `nrp` , `user`.`name` as 'name' , `anggota_kelompok`.`no_kelompok` FROM `user` 
               INNER JOIN `anggota_kelompok` ON `user`.`nrp` = `anggota_kelompok`.`nrp` 
               INNER JOIN `absensi` ON `user`.`nrp` = `absensi` . `nrp`
-              WHERE `anggota_kelompok`.`no_kelompok`= $id  
+              WHERE `anggota_kelompok`.`no_kelompok`= $id  AND `absensi`.`modul` = $modul
               ORDER BY `user`.`nrp` ASC";
 
     return $this->db->query($query)->result_array();
