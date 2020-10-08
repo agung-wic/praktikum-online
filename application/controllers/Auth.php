@@ -196,7 +196,7 @@ class Auth extends CI_Controller
 
     private function _sendEmail($token, $type, $data = NULL)
     {
-        var_dump($data);
+        var_dump($this->input->post('email', true));
         die;
         $config = [
             'protocol' => 'smtp',
