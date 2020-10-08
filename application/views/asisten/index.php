@@ -99,6 +99,10 @@
                         <i class=" fas fa-fw fa-edit"></i>
                         Edit
                       </a>
+                      <a href="<?= base_url('asisten/accnilai/') . $l['id']; ?>" class="badge badge-pill badge-success">
+                        <i class="far fa-check-square"></i>
+                        Acc
+                      </a>
                     </td>
                   </tr>
                 <?php $i++;
