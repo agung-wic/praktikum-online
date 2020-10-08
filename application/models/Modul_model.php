@@ -27,7 +27,7 @@ class Modul_model extends CI_Model
             $query = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`nrp`, `user_role`.`role` 
             FROM `user` INNER JOIN `user_role` ON `user`.`role_id` = `user_role`.`id` 
             WHERE `user`.`role_id` = 8 OR `user`.`role_id`= 2 
-            OR `user`.`name` LIKE '%$keyword%'
+            AND `user`.`name` LIKE '%$keyword%'
             OR `user`.`email` LIKE '%$keyword%'
             OR `user`.`nrp` LIKE '%$keyword%' 
             OR `user_role`.`role` LIKE '%$keyword%' LIMIT $limit OFFSET $start";
