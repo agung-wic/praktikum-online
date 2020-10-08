@@ -20,22 +20,22 @@
               <div id="collapse<?= $m['modul']; ?>" class="collapse" aria-labelledby="heading<?= $m['modul']; ?>" data-parent="#accordionExample">
                 <div class="card-body">
                   Tujuan Percobaan: <?= $m['tujuan'] ?>
-                  <p class="mt-4"><b>Waktu : <?= $m['time'] ?></b></p>
+                  <p class="mt-4">Waktu : <b><?= $m['time'] ?></b></p>
                   <?php
                   if ($i < count($status)) {
                     if ($m['modul'] == $status[$i]['modul_id']) {
                       if ($status[$i]['status'] == 0) {
-                        echo "<p><b>Status : Belum Selesai</b></p>";
+                        echo "<p>Status : <b>Belum Selesai</b></p>";
                       } else {
-                        echo "<p><b>Status : Selesai</b></p>";
+                        echo "<p>Status : <b>Selesai</b></p>";
                       }
-                      echo "<p><b>Jadwal : " . $status[$i]['jadwal'] . "</b></p>";
+                      echo "<p>Jadwal : <b>" . $status[$i]['jadwal'] . "</b></p>";
                       $i++;
                     } else {
-                      echo "<p><b>Status : Belum Selesai</b></p>";
+                      echo "<p>Status : <b>Belum Selesai</b></p>";
                     }
                   } else {
-                    echo "<p><b>Status : Belum Selesai</b></p>";
+                    echo "<p>Status : <b>Belum Selesai</b></p>";
                   }
                   $temp = 0;
                   $tes = 0;
@@ -48,13 +48,16 @@
                   }
 
                   if ($m['modul'] == $asisten[$i]['id_modul']) {
+
                     $halo = 0;
+                    echo "<ul>Asisten : ";
                     while ($halo < count($flag)) {
 
-                  ?> <p><b>Asisten : <?= $asisten[$flag[$halo]]['name'] ?> - <?= $asisten[$flag[$halo]]['nrp'] ?></b></p>
+                  ?> <li><b><?= $asisten[$flag[$halo]]['name'] ?> - <?= $asisten[$flag[$halo]]['nrp'] ?></b></li>
 
                   <?php $halo++;
                     }
+                    echo "</ul>";
                   }
                   ?>
                   <div class="row">
