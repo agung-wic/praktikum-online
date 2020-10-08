@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="col-md-5 ml-auto">
-                            <form action="<?= base_url('modul/operaotr') . $no_kelompok ?>" method="post">
+                            <form action="<?= base_url('modul/operator/') . $no_kelompok ?>" method="post">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" name="keyword" placeholder="Cari user...">
                                     <div class="input-group-append">
