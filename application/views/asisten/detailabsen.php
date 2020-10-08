@@ -28,15 +28,19 @@
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $k['nrp'] ?></td>
                                         <td><?= $k['name'] ?></td>
-                                        <td><?php
-                                            $cek = 0;
-                                            while ($cek < count($absensi)) {
-                                                if ($k['nrp'] == $absensi[$cek]['nrp']) {
-                                                    echo "Ok";
-                                                    $cek++;
-                                                }
+                                        <?php
+                                        $cek = 0;
+
+                                        if ($cek < count($absensi)) {
+                                            if ($k['nrp'] == $absensi[$cek]['nrp']) {
+                                                echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
+                                                $cek++;
+                                            } else {
+                                                echo '<td></td>';
                                             }
-                                            ?></td>
+                                        }
+                                        ?>
+
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
