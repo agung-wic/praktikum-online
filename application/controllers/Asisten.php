@@ -236,12 +236,10 @@ class Asisten extends CI_Controller
     redirect(base_url('asisten'));
   }
 
-  public function asisten($id = NULL)
+  public function asisten()
   {
     $data['modul'] = $this->db->get('modul')->result_array();
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-    $id_kelompok = $this->db->get_where('anggota_kelompok', ['nrp ' => $this->session->userdata('nrp')])->row_array();
-    $data['kelompok'] = $this->db->get_where('kelompok', ['id' => $id_kelompok['no_kelompok']])->row_array();
     $data['status'] = $this->db->get('jadwal')->result_array();
     $data['title'] = 'List Absen';
     $this->load->view('template/header', $data);

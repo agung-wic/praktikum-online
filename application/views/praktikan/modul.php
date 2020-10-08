@@ -6,7 +6,6 @@
         <h1 class="mt-2 mb-5" style="text-align: center;"><?= $title ?></h1>
         <div class="accordion" id="accordionExample">
           <?php $i = 0;
-          $a = 0;
           foreach ($modul as $m) : ?>
             <div class="card pb-2">
               <div class="card-header gradien_modul py-3" id="heading<?= $m['modul']; ?>">
