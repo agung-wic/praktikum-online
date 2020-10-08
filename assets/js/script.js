@@ -330,6 +330,7 @@ $(function () {
 				$("#format").val(data.format);
 				$("#bab").val(data.bab);
 				$("#kesimpulan").val(data.kesimpulan);
+				$("#nilai_akhir").val(data.nilai_akhir);
 			},
 		});
 	});
@@ -361,6 +362,7 @@ $(function () {
 				$("#format").val(data.format);
 				$("#bab").val(data.bab);
 				$("#kesimpulan").val(data.kesimpulan);
+				$("#nilai_akhir").val(data.nilai_akhir);
 			},
 		});
 	});
