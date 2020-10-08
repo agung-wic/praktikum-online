@@ -11,8 +11,7 @@
         <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
       </div>
       <div class="col-auto text-right mt-4 mr-2">
-        <a href="" class="btn gradien mb-3 tampilTambahJadwal" data-toggle="modal" data-target="#JadwalEdit">Tambah Jadwal Baru</a>
-        <a href="" class="btn gradien mb-3" data-toggle="modal" data-target="#JadwalAddFile"><i class="fas fa-file-csv"></i>
+        <a href="" class="btn gradien mb-3" data-toggle="modal" data-target="#UserAddFile"><i class="fas fa-file-csv"></i>
         </a>
       </div>
       <div class="card-body">
@@ -113,50 +112,38 @@
 <!-- End of Main Content -->
 </div>
 
-<div class="modal fade" id="UserEdit" tabindex="-1" role="dialog" aria-labelledby="UserEditLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="UserAddFile" tabindex="-1" role="dialog" aria-labelledby="UserAddFileLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="UserEditLabel">Edit User Data</h5>
+        <h5 class="modal-title" id="UserAddFileLabel">Unggah User Baru</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?= base_url('admin/edit') ?>" method="post">
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="id">ID</label>
-            <input class="form-control" type="text" name="id" id="id" readonly>
-          </div>
-          <div class="form-group">
-            <label for="name">Nama Lengkap</label>
-            <input type="text" class="form-control" id="name" name="name">
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" id="email" name="email">
-          </div>
-          <div class="form-group">
-            <label for="nrp">NRP</label>
-            <input type="text" class="form-control" id="nrp" name="nrp">
-          </div>
-          <div class="form-group">
-            <label for="is_active">Active</label>
-            <input type="text" class="form-control" id="is_active" name="is_active">
-          </div>
-          <div class="form-group">
-            <label for="role_id">Role</label>
-            <select class="form-control" name="role_id" id="role_id">
-              <?php foreach ($role as $r) : ?>
-                <option value="<?= $r['id'] ?>"><?= $r['role'] ?></option>
-              <?php endforeach; ?>
-            </select>
-          </div>
+      <div class="modal-body">
+        <h6>Berkas csv harus memiliki format sebagai berikut:</h6>
+        <ol>
+          <li>Kolom pertama = Nama Lengkap</li>
+          <li>Kolom kedua = NRP Mahasiswa dengan 0 sebagai angka pertama</li>
+          <li>Kolom ketiga = Email user</li>
+          <li>Kolom keempat = Isi dengan default.img</li>
+          <li>Kolom kelima = Isi dengan 123</li>
+          <li>Kolom keenam = Role id (praktikan = 8)</li>
+          <li>Kolom ketujuh = kosongkan saja</li>
+          <li>Kolom kedelapan = kosongkan</li>
+          <li>Kolom kesembulan = kosongkan</li>
+        </ol>
+        <?= form_open_multipart(base_url('admin/addfileuser')) ?>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="filejadwal" name="filejadwal">
+          <label class="custom-file-label" for="filejadwal">Pilih berkas</label>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Edit</button>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-primary">Tambah</button>
+      </div>
       </form>
     </div>
   </div>

@@ -480,6 +480,44 @@ class Admin extends CI_Controller
         }
     }
 
+    public function addfileuser()
+    {
+        $file = $_FILES['fileuser']['name'];
+
+        $config['upload_path'] = './assets/file/';
+        $config['allowed_types'] = 'csv';
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('fileuser')) {
+
+            $data = fopen(base_url('assets/file/') . $file, "r");
+            while (!feof($data)) {
+                $csv = fgetcsv($data, 0, ';');
+                $user = [
+                    "nrp" => $csv[0],
+                    "name" => $csv[1],
+                    "email" => $csv[2],
+                    "image" => $csv[3],
+                    "password" => $csv[4],
+                    "role_id" => $csv[5],
+                    "is_active" => $csv[6],
+                    "date_created" => $csv[7],
+                    "is_online" => $csv[8],
+                ];
+                $this->db->insert('user', $user);
+            }
+            fclose($data);
+            unlink(FCPATH . 'assets/file/' . $file);
+            $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+            User berhasil ditambahkan!
+            </div>');
+            redirect(base_url('admin/index'));
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+            redirect(base_url('index'));
+        }
+    }
+
     public function deletejadwal($id)
     {
         $this->db->where('id', $id);
