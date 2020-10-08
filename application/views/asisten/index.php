@@ -90,7 +90,7 @@
                       </a>
                     </td>
                     <td><?= date("Y-m-d H:i:s", $l['laporan_time']); ?></td>
-                    <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                    <td><a class="badge badge-pill badge-primary tampilDetailNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                         <i class=" fas fa-fw fa-info"></i>
                         Detail
                       </a>
@@ -138,17 +138,17 @@
             <input class="form-control" type="text" name="id" id="id" hidden>
             <input class="form-control" type="text" name="modul_id" id="modul_id" hidden>
           </div>
-          <div class="form-group hapus">
+          <div class="form-group">
             <label for="name">Nama Lengkap</label>
-            <input type="text" class="form-control" id="name" name="name" disabled>
+            <input type="text" class="form-control hapus" id="name" name="name" readonly>
           </div>
-          <div class="form-group hapus">
+          <div class="form-group">
             <label for="nrp">NRP</label>
-            <input type="text" class="form-control" id="nrp" name="nrp" disabled>
+            <input type="text" class="form-control hapus" id="nrp" name="nrp" readonly>
           </div>
-          <div class="form-group hapus">
+          <div class="form-group">
             <label for="modul">Modul</label>
-            <input type="text" class="form-control" id="modul" name="modul" disabled>
+            <input type="text" class="form-control hapus" id="modul" name="modul" readonly>
           </div>
           <div class="form-group">
             <label for="resume">Resume</label>
@@ -172,9 +172,9 @@
           </div>
           <div class="form-group">
             <label for="laporan">Laporan</label>
-            <input type="number" min="0" max="100" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
-            <input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 2, 3, 4">
-            <input type="number" min="0" max="100" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
+            <span>Format</span><input type="number" min="0" max="100" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
+            <span>Bab</span><input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 2, 3, 4">
+            <span>Kesimpulan</span><input type="number" min="0" max="100" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
           </div>
         </div>
         <div class="modal-footer">
