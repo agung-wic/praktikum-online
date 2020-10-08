@@ -14,14 +14,14 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <?= $this->session->flashdata('message'); ?>
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Kelompok</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">NRP</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col">Hadir</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -30,10 +30,8 @@
                                     <tr>
 
                                         <th scope="row"><?= $i; ?></th>
-                                        <td><?= $k['no_kelompok'] ?></td>
-                                        <td>
-                                            <a href="<?= base_url('asisten/detailabsen/' . $k['id']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-info"></i>Detail</a>
-                                        </td>
+                                        <td><?= $k['nrp'] ?></td>
+                                        <td><?= $k['name'] ?></td>
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
