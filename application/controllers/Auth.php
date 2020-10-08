@@ -118,6 +118,8 @@ class Auth extends CI_Controller
                     'is_active' => 0,
                     'date_created' => time()
                 ];
+                var_dump($nrp);
+                die;
                 $this->db->where('nrp', $nrp);
                 $this->db->update('user', $data);
 
