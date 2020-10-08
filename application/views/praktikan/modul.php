@@ -36,9 +36,25 @@
                   } else {
                     echo "<p><b>Status : Belum Selesai</b></p>";
                   }
+                  $temp = 0;
+                  $tes = 0;
+                  while ($tes < count($asisten)) {
+                    if ($asisten[$tes]['id_modul'] == $m['modul']) {
+                      $flag[$temp] = $tes;
+                      $temp++;
+                    }
+                    $tes++;
+                  }
+
                   if ($m['modul'] == $asisten[$i]['id_modul']) {
-                  ?> <p><b>Asisten : <?= $asisten[$i]['name'] ?> - <?= $asisten[$i]['nrp'] ?></b></p>
-                  <?php }
+                    $halo = 0;
+                    while ($halo < count($flag)) {
+
+                  ?> <p><b>Asisten : <?= $asisten[$flag['$halo']]['name'] ?> - <?= $asisten[$flag['$halo']]['nrp'] ?></b></p>
+
+                  <?php $halo++;
+                    }
+                  }
                   $i++; ?>
                   <div class="row">
                     <a class="btn ml-auto gradien" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
