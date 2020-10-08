@@ -42,7 +42,7 @@ class Modul_model extends CI_Model
 
     public function JumlahKelompok()
     {
-        $query = "SELECT COUNT(`anggota_kelompok`.`nrp`) AS jumlah , `kelompok`.`no_kelompok`, `kelompok`.`id`  
+        $query = "SELECT `kelompok`.`no_kelompok`, `kelompok`.`id`  
                 FROM `kelompok` LEFT JOIN `anggota_kelompok` 
                 ON `kelompok`.`id` = `anggota_kelompok`.`no_kelompok` GROUP BY `no_kelompok`";
 
