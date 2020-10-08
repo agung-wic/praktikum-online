@@ -148,3 +148,52 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="UserEdit" tabindex="-1" role="dialog" aria-labelledby="UserEditLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="UserEditLabel">Edit User Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="<?= base_url('admin/edit') ?>" method="post">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="id">ID</label>
+            <input class="form-control" type="text" name="id" id="id" readonly>
+          </div>
+          <div class="form-group">
+            <label for="name">Nama Lengkap</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="nrp">NRP</label>
+            <input type="text" class="form-control" id="nrp" name="nrp">
+          </div>
+          <div class="form-group">
+            <label for="is_active">Active</label>
+            <input type="text" class="form-control" id="is_active" name="is_active">
+          </div>
+          <div class="form-group">
+            <label for="role_id">Role</label>
+            <select class="form-control" name="role_id" id="role_id">
+              <?php foreach ($role as $r) : ?>
+                <option value="<?= $r['id'] ?>"><?= $r['role'] ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Edit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
