@@ -172,9 +172,30 @@
           </div>
           <div class="form-group">
             <label for="laporan">Laporan</label>
-            <span>Format</span><input type="number" min="0" max="100" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
-            <span>Bab</span><input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 2, 3, 4">
-            <span>Kesimpulan</span><input type="number" min="0" max="100" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
+            <div class="row">
+              <div class="col-2">
+                <span>Format</span>
+              </div>
+              <div class="col-auto">
+                <input type="number" min="0" max="100" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <span>Bab</span>
+              </div>
+              <div class="col-auto">
+                <input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 2, 3, 4">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <span>Kesimpulan</span>
+              </div>
+              <div class="col-auto">
+                <input type="number" min="0" max="100" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
+              </div>
+            </div>
           </div>
         </div>
         <div class="modal-footer">
