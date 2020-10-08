@@ -83,13 +83,12 @@ class Modul extends CI_Controller
             "role_id" => $this->input->post('role_id', true),
             "is_active" => $this->input->post('is_active', true)
         ];
-
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('user', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
           Data user berhasil diubah!
           </div>');
-        redirect(base_url('modul/operator/') . $this->input->post('data_kelompok', true));
+        redirect(base_url('modul/operator/') . $this->input->post('no_kelompok', true));
     }
 
     public function penilaian($modul)
