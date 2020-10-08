@@ -64,7 +64,7 @@ class Modul extends CI_Controller
         $data['list'] = $this->Modul_model->TampilUser($config['per_page'], $data['start'], $data['keyword']);
         $data['no_kelompok'] = $this->uri->segment(3);
         $data['detail'] = $this->db->get_where('user', ['id' => $id])->row_array();
-        $data['role'] = $this->db->get('user_role')->result_array();
+        $data['role'] = $this->db->get_where('user_role' => 2 || 'user_role' => 8)->result_array();
 
         $data['title'] = 'Set Operator';
         $this->load->view('template/header', $data);
