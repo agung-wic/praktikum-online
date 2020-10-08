@@ -494,8 +494,8 @@ class Admin extends CI_Controller
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
                 $user = [
-                    "nrp" => $csv[0],
-                    "name" => $csv[1],
+                    "name" => $csv[0],
+                    "nrp" => $csv[1],
                     "email" => $csv[2],
                     "image" => $csv[3],
                     "password" => $csv[4],
