@@ -216,14 +216,14 @@ class Praktikan extends CI_Controller
         $file = $_FILES['filelaporan']['name'];
         $data['nilai'] = $this->db->get_where('nilai', ['modul' => $this->input->post('modul_id', true)])->row_array();
         if ($data['nilai']['laporan']) {
+            $old_laporan = $data['nilai']['laporan'];
+            unlink(FCPATH . 'assets/laporan/' . $old_laporan);
 
             $config['upload_path'] = './assets/laporan/';
             $config['allowed_types'] = 'pdf';
 
             $this->load->library('upload', $config);
             if ($this->upload->do_upload('filelaporan')) {
-                $old_laporan = $data['nilai']['laporan'];
-                unlink(FCPATH . 'assets/laporan/' . $old_laporan);
                 $new_laporan = $this->upload->data('file_name');
 
                 $this->db->set('laporan', $new_laporan);
