@@ -74,6 +74,24 @@ class Modul extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function edit()
+    {
+        $data = [
+            "name" => $this->input->post('name', true),
+            "email" => $this->input->post('email', true),
+            "nrp" => $this->input->post('nrp', true),
+            "role_id" => $this->input->post('role_id', true),
+            "is_active" => $this->input->post('is_active', true)
+        ];
+
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('user', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+          Data user berhasil diubah!
+          </div>');
+        redirect(base_url('modul'));
+    }
+
     public function penilaian($modul)
     {
         $this->load->model('Asisten_model');

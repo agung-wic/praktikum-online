@@ -83,13 +83,9 @@
                                         <td><?= $l['email']; ?></td>
                                         <td><?= $l['role']; ?></td>
                                         <td>
-                                            <a href="<?= base_url('admin/edit/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilModalUbah" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#UserEdit">
+                                            <a href="<?= base_url('modul/edit/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilModalUbah" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#UserEdit">
                                                 <i class=" fas fa-fw fa-edit"></i>
                                                 Edit
-                                            </a>
-                                            <a href="<?= base_url('admin/delete/') . $l['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
-                                                <i class="fas fa-fw fa-trash-alt"></i>
-                                                Delete
                                             </a>
                                         </td>
                                     </tr>
