@@ -48,9 +48,7 @@
                     <td><?= $m['name']; ?></td>
                     <?php if ($i < count($list)) {
                       if ($m['modul'] == $list[$i]['modul_id']) {
-                        if ($list[$i]['is_acc'] == 0) {
-                          $list[$i]['nilai'] = NULL;
-                        } ?>
+                    ?>
                         <td><?= $list[$i]['asisten']; ?></td>
                         <td>
                           <a href="<?= base_url('praktikan/unduh/') . $list[$i]['laporan']; ?>" class="badge badge-pill badge-warning">
@@ -59,12 +57,14 @@
                           </a>
                         </td>
                         <td><?= date("Y-m-d H:i:s", $list[$i]['laporan_time']); ?></td>
-                        <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="praktikan" data-id="<?= $list[$i]['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
-                            <i class=" fas fa-fw fa-info"></i>
-                            Detail
-                          </a>
-                        </td>
-                      <?php $i++;
+                        <?php if ($list[$i]['is_acc'] == 0) { ?>
+                          <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="praktikan" data-id="<?= $list[$i]['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                              <i class=" fas fa-fw fa-info"></i>
+                              Detail
+                            </a>
+                          </td>
+                        <?php }
+                        $i++;
                       } else { ?>
                         <td></td>
                         <td></td>
