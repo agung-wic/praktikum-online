@@ -109,7 +109,6 @@ class Auth extends CI_Controller
                 $this->load->view('template/auth_header.php', $data);
                 $this->load->view('auth/addemail.php');
                 $this->load->view('template/auth_footer.php');
-                $nrp = $this->input->post('nrp', true);
             } else {
                 $nrp = $this->input->post('nrp', true);
                 $data = [
@@ -119,8 +118,6 @@ class Auth extends CI_Controller
                     'is_active' => 0,
                     'date_created' => time()
                 ];
-                var_dump($nrp);
-                die;
                 $this->db->where('nrp', $nrp);
                 $this->db->update('user', $data);
 
