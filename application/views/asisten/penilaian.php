@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="col-md-5 ml-auto">
-                            <form action="<?= base_url('admin') ?>" method="post">
+                            <form action="<?= base_url('asisten') ?>" method="post">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" name="keyword" placeholder="Cari...">
                                     <div class="input-group-append">
