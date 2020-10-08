@@ -138,17 +138,17 @@
             <input class="form-control" type="text" name="id" id="id" hidden>
             <input class="form-control" type="text" name="modul_id" id="modul_id" hidden>
           </div>
-          <div class="form-group">
+          <div class="form-group hapus">
             <label for="name">Nama Lengkap</label>
-            <input type="text" class="form-control hapus" id="name" name="name" readonly>
+            <input type="text" class="form-control " id="name" name="name" readonly>
           </div>
-          <div class="form-group">
+          <div class="form-group hapus">
             <label for="nrp">NRP</label>
-            <input type="text" class="form-control hapus" id="nrp" name="nrp" readonly>
+            <input type="text" class="form-control " id="nrp" name="nrp" readonly>
           </div>
-          <div class="form-group">
+          <div class="form-group hapus">
             <label for="modul">Modul</label>
-            <input type="text" class="form-control hapus" id="modul" name="modul" readonly>
+            <input type="text" class="form-control " id="modul" name="modul" readonly>
           </div>
           <div class="form-group">
             <label for="resume">Resume</label>
