@@ -107,7 +107,7 @@ class Auth extends CI_Controller
             if ($this->form_validation->run() == false) {
                 $data['title'] = 'Daftarkan Email & Ubah Kata Sandi';
                 $this->load->view('template/auth_header.php', $data);
-                $this->load->view('auth/addemail.php');
+                $this->load->view('auth/addemail/' . $nrp);
                 $this->load->view('template/auth_footer.php');
             } else {
                 $data = [
