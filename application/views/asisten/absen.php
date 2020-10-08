@@ -8,13 +8,13 @@
                 $a = 0;
                 foreach ($modul as $m) : ?>
                     <div class="card pb-2">
-                        <button style="border: none;" href="<?= base_url() ?>asisten/absen/<?= $m['modul']; ?>" class="card-header gradien_modul py-3">
+                        <a style="border: none;" href="<?= base_url() ?>asisten/absen/<?= $m['modul']; ?>" class="card-header gradien_modul py-3">
                             <h2 class="mb-0">
                                 <div class="btn-block text-left collapsed" style="font-size: large; " type="button">
                                     <strong><?= $m['modul'] ?></strong> . <?= $m['name']; ?>
                                 </div>
                             </h2>
-                        </button>
+                        </a>
                     </div>
                 <?php endforeach; ?>
             </div>
