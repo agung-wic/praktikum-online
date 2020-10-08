@@ -90,7 +90,11 @@
                       </a>
                     </td>
                     <td><?= date("Y-m-d H:i:s", $l['laporan_time']); ?></td>
-                    <td><?= $l['nilai']; ?></td>
+                    <td><a href="<?= base_url('asisten/detailnilai/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                        <i class=" fas fa-fw fa-info"></i>
+                        Detail
+                      </a>
+                    </td>
                     <td><a href="<?= base_url('asisten/editnilai/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                         <i class=" fas fa-fw fa-edit"></i>
                         Edit
