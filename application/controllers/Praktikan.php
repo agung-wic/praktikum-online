@@ -472,6 +472,9 @@ class Praktikan extends CI_Controller
         $data['kelompok'] = $this->db->get_where('kelompok', ['id' => $id_kelompok['no_kelompok']])->row_array();
         $this->load->model('Praktikan_model');
         $data['list'] = $this->Praktikan_model->TampilKelompok($id_kelompok['no_kelompok']);
+        var_dump($id_kelompok['no_kelompok']);
+        die;
+        $data['asisten'] = $this->Praktikan_model->KelompokAsisten($id_kelompok['no_kelompok']);
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);

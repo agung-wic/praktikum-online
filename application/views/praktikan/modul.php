@@ -37,7 +37,7 @@
                     echo "<p><b>Status : Belum Selesai</b></p>";
                   }
                   ?>
-
+                  <p><b>Asisten : <?= $m['time'] ?></b></p>
                   <div class="row">
                     <a class="btn ml-auto gradien" href="<?= base_url() ?>praktikan/modul/<?= $m['modul']; ?>">Pilih Modul</a>
                   </div>
