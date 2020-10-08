@@ -401,7 +401,7 @@ class Modul extends CI_Controller
 
     public function jadwal()
     {
-        $this->load->model('Admin_model');
+        $this->load->model('Modul_model');
         $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/admin/jadwal';
         $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
         $config['full_tag_close'] = '</ul></nav>';
@@ -435,17 +435,17 @@ class Modul extends CI_Controller
         } else {
             $data['keyword'] = $this->session->userdata('keyword1');
             $config['per_page'] = 10;
-            $config['total_rows'] = $this->Admin_model->JumlahJadwal();
+            $config['total_rows'] = $this->Modul_model->JumlahJadwal();
         }
         $this->pagination->initialize($config);
 
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['title'] = 'Jadwal Praktikum';
         $data['modul'] = $this->db->get('modul')->result_array();
-        $data['list'] = $this->Admin_model->TampilJadwal($config['per_page'], $data['start'], $data['keyword']);
-        $data['req'] = $this->Admin_model->TampilReqJadwal();
+        $data['list'] = $this->Modul_model->TampilJadwal($config['per_page'], $data['start'], $data['keyword']);
+        $data['req'] = $this->Modul_model->TampilReqJadwal();
         if ($this->input->post('keyword2')) {
-            $data['req'] = $this->Admin_model->CariReqJadwal();
+            $data['req'] = $this->Modul_model->CariReqJadwal();
         }
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
