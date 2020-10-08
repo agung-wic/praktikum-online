@@ -11,11 +11,10 @@ class Modul extends CI_Controller
 
     public function index()
     {
-        $this->load->model('Modul_model');
-        $data['modul'] = $this->db->get('modul')->result_array();
+        $this->load->model('Modul_asisten');
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['title'] = 'Set Operator';
-        $data['list'] = $this->db->get('modul')->result_array();
+        $data['kelompok'] = $this->Modul_asisten->JumlahKelompok();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
@@ -48,6 +47,7 @@ class Modul extends CI_Controller
         $config['attributes'] = array('class' => 'page-link');
 
         $data['start'] = $this->uri->segment(4);
+        $data['id_modul'] =  $this->uri->segment(3);
         if ($data['start'] == null) {
             $data['start'] = 0;
         }
