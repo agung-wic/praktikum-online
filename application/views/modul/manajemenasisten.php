@@ -15,6 +15,7 @@
                 </div>
                 <div class="card-body">
                     <?= $this->session->flashdata('message'); ?>
+                    <?= $this->session->flashdata('message1'); ?>
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
