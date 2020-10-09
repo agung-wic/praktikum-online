@@ -43,6 +43,8 @@
                                             } else {
                                                 echo "<td>0</td>";
                                             }
+                                        } else {
+                                            echo "<td>0</td>";
                                         }
                                         ?>
                                         <td>
