@@ -541,6 +541,8 @@ class Modul extends CI_Controller
     public function deleteasistenkelompok()
     {
         $id = $this->uri->segment(5);
+        var_dump($id);
+        die;
         $this->db->where('id', $id);
         $this->db->delete('kelompok_asisten');
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
