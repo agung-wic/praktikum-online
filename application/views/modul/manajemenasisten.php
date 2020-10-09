@@ -38,7 +38,7 @@
                                         if ($cek < count($jumlah_asisten)) {
                                             if ($k['id'] == $jumlah_asisten[$cek]['id']) {
                                                 echo "<td>" . $k['id'] . " = " . $jumlah_asisten[$cek]['id'] . " XX " . $cek . "</td>";
-                                                $cek++;
+                                                $cek = $cek + 1;
                                             } else {
                                                 echo "<td>" . $k['id'] . " = " . $jumlah_asisten[$cek]['id'] . " XX " . $cek . "</td>";
                                             }
