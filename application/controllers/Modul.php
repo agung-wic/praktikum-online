@@ -532,11 +532,6 @@ class Modul extends CI_Controller
         echo json_encode($this->db->get_where('user', ['id' => $this->input->post('id')])->row_array());
     }
 
-    public function getubah()
-    {
-        echo json_encode($this->db->get_where('user', ['id' => $this->input->post('id')])->row_array());
-    }
-
     public function getubahrole()
     {
         echo json_encode($this->db->get_where('user_role', ['id' => $this->input->post('id')])->row_array());
