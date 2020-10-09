@@ -395,10 +395,7 @@ class Modul extends CI_Controller
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
                 $no_kelompok = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
-                $query = "SELECT * FROM `kelompok` WHERE `no_kelompok` =" . "'" . $no_kelompok . "'";
-                var_dump($query);
-                die;
-                $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => utf8_encode($csv[0])])->row_array();
+                $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $no_kelompok])->row_array();
                 $anggota = $this->db->get_where('anggota_kelompok', ['no_kelompok' => $id_kelompok['id']])->result_array();
                 foreach ($anggota as $a) {
                     $jadwal = [
