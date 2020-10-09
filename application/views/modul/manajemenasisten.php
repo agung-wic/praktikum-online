@@ -35,14 +35,13 @@
                                         <td><?= $k['no_kelompok'] ?></td>
                                         <?php
                                         $cek = 0;
-                                        while ($cek < count($jumlah_asisten)) {
+                                        if ($cek < count($jumlah_asisten)) {
                                             if ($k['id'] == $jumlah_asisten[$cek]['id']) {
                                                 echo "<td>" . $jumlah_asisten[$cek]['jumlah'] . "</td>";
-                                                break;
+                                                $cek++;
                                             } else {
                                                 echo "<td>0</td>";
                                             }
-                                            $cek++;
                                         }
                                         ?>
                                         <td>
