@@ -249,7 +249,6 @@ $(function () {
 				$("#no_kelompok").val(data.no_kelompok);
 				$("#jadwal").val(data.jadwal);
 				$("#id").val(data.id);
-				$("#no_kelompok").val("test");
 				console.log(data);
 			},
 		});
