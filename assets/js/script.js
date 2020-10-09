@@ -219,9 +219,7 @@ $(function () {
 		$(".modal-body form").attr("action", base + "modul/tambahjadwal");
 		$(".modal-body input[type=text]").attr("readonly", false);
 		$(".modal-body select").attr("disabled", false);
-		$(".disable").hide();
 
-		$("#kelompok").val(null);
 		$("#name").val(null);
 		$("#nrp").val(null);
 		$("#jadwal").val(null);
@@ -234,7 +232,6 @@ $(function () {
 		$(".modal-body form").attr("action", base + "modul/editjadwal");
 		$(".modal-body input[type=text]").attr("readonly", true);
 		$(".modal-body select").attr("disabled", true);
-		$(".disable").show();
 		const id = $(this).data("id");
 
 		$.ajax({
@@ -245,7 +242,6 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#modul_id").val(data.modul_id);
