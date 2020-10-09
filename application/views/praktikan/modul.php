@@ -39,7 +39,7 @@
                   }
                   $temp = 0;
                   $tes = 0;
-                  $flag = NULL;
+                  $flag = [];
                   while ($tes < count($asisten)) {
                     if ($asisten[$tes]['id_modul'] == $m['modul']) {
                       $flag[$temp] = $tes;
