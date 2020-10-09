@@ -717,7 +717,10 @@ class Modul extends CI_Controller
         $data = [
             "nrp" => $this->input->post('nrp', true),
             "no_kelompok" => $this->input->post('id', true),
+            "id_modul" => $this->input->post('id_modul', true)
         ];
+        var_dump($data);
+        die;
         if ($this->db->get_where('kelompok_asisten', ['nrp' => $this->input->post('nrp')])->row_array()) {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
         Anggota sudah terdaftar di kelompok lain!

@@ -63,6 +63,7 @@
                 <form action="<?= base_url('modul/tambahasisten') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
+                        <input type="hidden" id="id_modul" name="id_modul" value="<?= $this->uri->segment(3); ?>">
                         <input type="hidden" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
                     </div>
                     <div class="form-group">
