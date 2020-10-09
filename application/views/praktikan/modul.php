@@ -50,7 +50,7 @@
                   if ($m['modul'] == $asisten[$j]['id_modul']) {
 
                     $halo = 0;
-                    echo "<p style='margin-bottom:0px;'>Asisten : " . $m['modul'] . " = " . $asisten[$j]['id_modul'] . "</p>";
+                    echo "<p style='margin-bottom:0px;'>Asisten : " . $m['modul'] . " = " . $asisten[$j]['id_modul'] . " XX " . $j . "</p>";
                     while ($halo < count($flag)) {
 
                   ?> <li><b><?= $asisten[$flag[$halo]]['name'] ?> - <?= $asisten[$flag[$halo]]['nrp'] ?></b></li>
@@ -59,7 +59,7 @@
                     }
                     $j++;
                   } else {
-                    echo "<p style='margin-bottom:0px;'>Asisten : " . $m['modul'] . " = " . $asisten[$j]['id_modul'] . "</p>";
+                    echo "<p style='margin-bottom:0px;'>Asisten : " . $m['modul'] . " = " . $asisten[$j]['id_modul'] . " XX " . $j . "</p>";
                   }
                   ?>
                   <div class="row">
