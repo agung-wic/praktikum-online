@@ -540,7 +540,8 @@ class Modul extends CI_Controller
 
     public function deleteasistenkelompok()
     {
-        $this->db->where('id', $this->uri->segment(5));
+        $id = $this->uri->segment(5);
+        $this->db->where('id', $id);
         $this->db->delete('kelompok_asisten');
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
           Asisten berhasil dihapus!
