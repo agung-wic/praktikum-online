@@ -734,7 +734,7 @@ class Modul extends CI_Controller
         $this->load->model('Modul_model');
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['title'] = 'Manajemen Asistenk';
-        $data['kelompok'] = $this->Modul_model->Tampildetailkelompok($id);
+        $data['kelompok'] = $this->Modul_model->TampildetailkelompokAsisten($id);
         $data['id_kelompok'] = $id;
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
