@@ -399,10 +399,42 @@ class Modul extends CI_Controller
         echo json_encode($this->db->get_where('output_tulisan', ['id' => $this->input->post('id')])->row_array());
     }
 
+    public function addfilejadwal()
+    {
+        $file = $_FILES['filejadwal']['name'];
+
+        $config['upload_path'] = './assets/file/';
+        $config['allowed_types'] = 'csv';
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('filejadwal')) {
+
+            $data = fopen(base_url('assets/file/') . $file, "r");
+            while (!feof($data)) {
+                $csv = fgetcsv($data, 0, ';');
+                $jadwal = [
+                    "nrp" => $csv[0],
+                    "modul_id" => $csv[1],
+                    "jadwal" => str_replace("T", " ", $csv[2])
+                ];
+                $this->db->insert('jadwal', $jadwal);
+            }
+            fclose($data);
+            unlink(FCPATH . 'assets/file/' . $file);
+            $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+            Jadwal praktikan berhasil ditambahkan!
+            </div>');
+            redirect(base_url('modul/jadwal'));
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+            redirect(base_url('user'));
+        }
+    }
+
     public function jadwal()
     {
         $this->load->model('Modul_model');
-        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/admin/jadwal';
+        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/modul/jadwal';
         $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
         $config['full_tag_close'] = '</ul></nav>';
 
@@ -452,5 +484,175 @@ class Modul extends CI_Controller
         $this->load->view('template/topbar', $data);
         $this->load->view('modul/jadwal', $data);
         $this->load->view('template/footer');
+    }
+
+    public function detailpengajuan($id)
+    {
+        $this->load->model('Modul_model');
+        $data['jadwal'] = $this->Modul_model->DetailJadwal($id);
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['title'] = "Detail Pengajuan Jadwal";
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('admin/detail-pengajuan', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function editjadwal()
+    {
+
+        $data = [
+            "id" => $this->input->post('id', true),
+            "nrp" => $this->input->post('nrp', true),
+            "modul_id" => $this->input->post('modul', true),
+            "jadwal" => str_replace("T", " ", $this->input->post('jadwal', true))
+        ];
+
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('jadwal', $data);
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Jadwal praktikan berhasil diubah!
+          </div>');
+        redirect(base_url('modul/jadwal'));
+    }
+
+    public function deletejadwal($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('jadwal');
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+         Jadwal berhasil dihapus!
+          </div>');
+        redirect(base_url('modul/jadwal'));
+    }
+
+    public function getdetail()
+    {
+        echo json_encode($this->db->get_where('user', ['id' => $this->input->post('id')])->row_array());
+    }
+
+    public function getubah()
+    {
+        echo json_encode($this->db->get_where('user', ['id' => $this->input->post('id')])->row_array());
+    }
+
+    public function getubahrole()
+    {
+        echo json_encode($this->db->get_where('user_role', ['id' => $this->input->post('id')])->row_array());
+    }
+
+    public function editrole()
+    {
+        $data = [
+            "role" => $this->input->post('role', true)
+        ];
+
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('user_role', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Role berhasil diubah!
+        </div>');
+        redirect(base_url('modul/role'));
+    }
+
+    public function role()
+    {
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['title'] = 'Role';
+
+        $data['role'] = $this->db->get('user_role')->result_array();
+
+        $this->form_validation->set_rules('role', 'Role', 'required');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar', $data);
+            $this->load->view('template/topbar', $data);
+            $this->load->view('modul/role', $data);
+            $this->load->view('template/footer');
+        } else {
+            $this->db->insert('user_role', ['role' => $this->input->post('role')]);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+           Role baru berhasil ditambahkan!
+            </div>');
+            redirect(base_url('modul/role'));
+        }
+    }
+
+    public function tambahjadwal()
+    {
+        $data = [
+            "nrp" => $this->input->post('nrp', true),
+            "modul_id" => $this->input->post('modul_id', true),
+            "jadwal" => str_replace("T", " ", $this->input->post('jadwal', true))
+        ];
+
+        $this->db->insert('jadwal', $data);
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Jadwal praktikan berhasil ditambahkan!
+          </div>');
+        redirect(base_url('modul/jadwal'));
+    }
+
+    public function editjadwal()
+    {
+
+        $data = [
+            "id" => $this->input->post('id', true),
+            "nrp" => $this->input->post('nrp', true),
+            "modul_id" => $this->input->post('modul', true),
+            "jadwal" => str_replace("T", " ", $this->input->post('jadwal', true))
+        ];
+
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('jadwal', $data);
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Jadwal praktikan berhasil diubah!
+          </div>');
+        redirect(base_url('modul/jadwal'));
+    }
+
+    public function getubahjadwal()
+    {
+        $this->load->model('Modul_model');
+        echo json_encode($this->Modul_model->TampilJadwalPraktikan());
+    }
+
+    public function editpengumuman()
+    {
+        $data = [
+            "nrp" => $this->session->userdata('nrp'),
+            "judul" => $this->input->post('judul', true),
+            "isi" => $this->input->post('isi', true),
+            "tanggal" => time()
+        ];
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('pengumuman', $data);
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Pengumuman berhasil diubah!
+          </div>');
+        redirect(base_url('modul/pengumuman'));
+    }
+
+    public function getubahpengumuman()
+    {
+        $this->load->model('Modul_model');
+        echo json_encode($this->Modul_model->EditPengumuman());
+    }
+
+    public function tambahpengumuman()
+    {
+        $data = [
+            "nrp" => $this->session->userdata('nrp'),
+            "judul" => $this->input->post('judul', true),
+            "isi" => $this->input->post('isi', true),
+            "tanggal" => time()
+        ];
+        $this->db->insert('pengumuman', $data);
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Pengumuman berhasil ditambahkan!
+          </div>');
+        redirect(base_url('modul/pengumuman'));
     }
 }

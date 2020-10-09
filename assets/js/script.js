@@ -4,7 +4,7 @@ $(function () {
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: base + "admin/getubah",
+			url: base + "mmodul/getubah",
 			data: {
 				id: id,
 			},
@@ -82,12 +82,12 @@ $(function () {
 	$(".TampilEditRole").on("click", function () {
 		$("#NewRoleModalLabel").html("Edit Role");
 		$(".modal-footer button[type=submit]").html("Edit");
-		$(".modal-body form").attr("action", base + "admin/editrole");
+		$(".modal-body form").attr("action", base + "modul/editrole");
 
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: base + "admin/getubahrole",
+			url: base + "modul/getubahrole",
 			data: {
 				id: id,
 			},
@@ -103,7 +103,7 @@ $(function () {
 	$(".tombolTambahRole").on("click", function () {
 		$("#NewRoleModalLabel").html("Add New Role");
 		$(".modal-footer button[type=submit]").html("Add");
-		$(".modal-body form").attr("action", base + "admin/role");
+		$(".modal-body form").attr("action", base + "modul/role");
 	});
 
 	$(".tombolTambahKelompok").on("click", function () {
@@ -177,7 +177,7 @@ $(function () {
 	$(".tampilTambahJadwal").on("click", function () {
 		$("#JadwalEditLabel").html("Tambahkan Jadwal Baru");
 		$(".modal-footer button[type=submit]").html("Tambah");
-		$(".modal-body form").attr("action", base + "admin/tambahjadwal");
+		$(".modal-body form").attr("action", base + "modul/tambahjadwal");
 		$(".modal-body input[type=text]").attr("readonly", false);
 		$(".modal-body select").attr("disabled", false);
 
@@ -190,13 +190,13 @@ $(function () {
 	$(".tampilEditJadwal").on("click", function () {
 		$("#JadwalEditLabel").html("Edit Jadwal Praktikan");
 		$(".modal-footer button[type=submit]").html("Edit");
-		$(".modal-body form").attr("action", base + "admin/editjadwal");
+		$(".modal-body form").attr("action", base + "modul/editjadwal");
 		$(".modal-body input[type=text]").attr("readonly", true);
 		$(".modal-body select").attr("disabled", true);
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: base + "admin/getubahjadwal",
+			url: base + "modul/getubahjadwal",
 			data: {
 				id: id,
 			},
@@ -271,12 +271,12 @@ $(function () {
 	$(".tampilEditPengumuman").on("click", function () {
 		$("#BuatPengumumanLabel").html("Edit Pengumuman");
 		$(".modal-footer button[type=submit]").html("Edit");
-		$(".modal-body form").attr("action", base + "admin/editpengumuman");
+		$(".modal-body form").attr("action", base + "modul/editpengumuman");
 
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: base + "admin/getubahpengumuman",
+			url: base + "modul/getubahpengumuman",
 			data: {
 				id: id,
 			},
@@ -300,7 +300,7 @@ $(function () {
 	$(".tampilTambahPengumuman").on("click", function () {
 		$("#BuatPengumumanLabel").html("Tambahkan Pengumuman Baru");
 		$(".modal-footer button[type=submit]").html("Tambah");
-		$(".modal-body form").attr("action", base + "admin/tambahpengumuman");
+		$(".modal-body form").attr("action", base + "modul/tambahpengumuman");
 	});
 
 	$(".tampilModalNilai").on("click", function () {
