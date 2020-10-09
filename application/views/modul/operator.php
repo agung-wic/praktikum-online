@@ -10,10 +10,6 @@
             <div class="card-header">
                 <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
             </div>
-            <div class="col-auto text-right mt-4 mr-2">
-                <a href="" class="btn gradien mb-3" data-toggle="modal" data-target="#UserAddFile"><i class="fas fa-file-csv"></i>
-                </a>
-            </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <div class="row mx-1">
@@ -37,7 +33,7 @@
                         <div class="col-md-5 ml-auto">
                             <form action="<?= base_url('modul/operator/') . $no_kelompok ?>" method="post">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="keyword" placeholder="Cari user...">
+                                    <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Cari user...">
                                     <div class="input-group-append">
                                         <button class="btn gradien" type="submit"><i class="fas fa-fw fa-search"></i></button>
                                     </div>
