@@ -56,8 +56,8 @@
                   ?> <li><b><?= $asisten[$flag[$halo]]['name'] ?> - <?= $asisten[$flag[$halo]]['nrp'] ?></b></li>
 
                   <?php $halo++;
+                      $j++;
                     }
-                    $j++;
                   } else {
                     echo "<p style='margin-bottom:0px;'>Asisten : " . $m['modul'] . " = " . $asisten[$j]['id_modul'] . " XX " . $j . "</p>";
                   }
