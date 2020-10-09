@@ -538,11 +538,9 @@ class Modul extends CI_Controller
         redirect(base_url('modul/kelompok'));
     }
 
-    public function deleteasistenkelompok($id)
+    public function deleteasistenkelompok()
     {
-        var_dump($id);
-        die;
-        $this->db->where('id', $id);
+        $this->db->where('id', $this->uri->segment(5));
         $this->db->delete('kelompok_asisten');
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
           Asisten berhasil dihapus!
