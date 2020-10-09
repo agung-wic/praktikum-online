@@ -43,7 +43,7 @@
                                                 echo "<td>" . $jumlah_asisten[$cek]['jumlah'] . "</td>";
                                                 $cek++;
                                             } else {
-                                                echo "<td>0</td>";
+                                                echo "<td>Tidak ada</td>";
                                             }
                                         }
                                         ?>
