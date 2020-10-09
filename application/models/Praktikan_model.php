@@ -106,7 +106,7 @@ class Praktikan_model extends CI_Model
               INNER JOIN `user` ON `user`.`nrp` = `kelompok_asisten`.`nrp` 
               INNER JOIN `kelompok` ON `kelompok`.`id` = `kelompok_asisten`.`no_kelompok` 
               INNER JOIN `modul` ON `modul`.`modul` = `kelompok_asisten`.`id_modul` 
-              WHERE `kelompok`.`id` = $id";
+              WHERE `kelompok`.`id` = $id ORDER BY `kelompok_asisten`.`id_modul`";
 
     return $this->db->query($query)->result_array();
   }
