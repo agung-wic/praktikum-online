@@ -394,10 +394,9 @@ class Modul extends CI_Controller
             $data = fopen(base_url('assets/file/') . $file, "r");
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
-                $query = "SELECT * FROM `kelompok` WHERE `no_kelompok` =" . "'" . utf8_encode($csv[0]) . "'";
-                $id_kelompok = $this->db->query($query)->row_array();
+                $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => utf8_encode($csv[0])])->row_array();
                 $anggota = $this->db->get_where('anggota_kelompok', ['no_kelompok' => $id_kelompok['id']])->result_array();
-                var_dump($query);
+                var_dump($id_kelompok);
                 die;
                 foreach ($anggota as $a) {
                     $jadwal = [
