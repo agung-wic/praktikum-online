@@ -163,8 +163,8 @@
                                     <th scope="col">Nama</th>
                                     <th scope="col">NRP</th>
                                     <th scope="col">Modul</th>
-                                    <th scope="col">Jadwal</th>
                                     <th scope="col">Kelompok</th>
+                                    <th scope="col">Jadwal</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -174,8 +174,8 @@
                                     <th scope="col">Nama</th>
                                     <th scope="col">NRP</th>
                                     <th scope="col">Modul</th>
-                                    <th scope="col">Jadwal</th>
                                     <th scope="col">Kelompok</th>
+                                    <th scope="col">Jadwal</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </tfoot>
@@ -268,8 +268,8 @@
                         <input class="form-control" type="text" name="modul" id="modul" hidden>
                     </div>
                     <div class="form-group">
-                        <label for="kelompok">Kelompok</label>
-                        <input type="text" class="form-control edit" id="kelompok" name="kelompok">
+                        <label for="no_kelompok">Kelompok</label>
+                        <input type="text" class="form-control edit" id="no_kelompok" name="no_kelompok">
                     </div>
                     <div class="form-group disable">
                         <label for="name">Nama Lengkap</label>
