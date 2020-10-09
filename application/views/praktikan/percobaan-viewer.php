@@ -27,8 +27,41 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="kotak">
+    <div class="container py-3">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="kotak" style="background-color: #bcaead;">
+            <div class="container mt-2" style="color: black;">
+              <h6 class="mb-3"><b>Output</b></h6>
+              <div class="form-group">
+              </div>
+              <div class="row justify-content-center mb-3">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-auto ml-auto">
+          <h6><b>Sisa Waktu </h6> <span id="hours"></span>
+          <span id="mins"></span>
+          <span id="secs"></span>
+          </b>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-lg-auto mr-auto">
+          <a href="<?= base_url('praktikan/modul/') . $modul['modul'] ?>" class="btn btn-secondary px-5">Kembali</a>
+        </div>
+        <div class="col-lg-auto ml-auto">
+          <a href="#" class="btn gradien px-5" data-toggle="modal" data-target="#SelesaiModal">Selesai</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="row mx-3">
-  <div class="col-lg-6">
+  <div class="col">
     <nav>
       <div class="nav nav-tabs" style="border:none;" id="nav-tab">
         <?php
@@ -62,113 +95,7 @@
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="kotak">
-      <div class="container py-3">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="kotak" style="background-color: #bcaead;">
-              <div class="container mt-2" style="color: black;">
-                <h6 class="mb-3"><b>Output</b></h6>
-                <div class="form-group">
-                  <?php
-                  foreach ($output_tulisan as $t) :  ?>
-                    <label for="data1"><?= $t['tulisan']; ?></label>
-                    <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
-                  <?php
-                  endforeach;
-                  ?>
-                </div>
-                <div class="row justify-content-center mb-3">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-auto ml-auto">
-            <h6><b>Sisa Waktu </h6> <span id="hours"></span>
-            <span id="mins"></span>
-            <span id="secs"></span>
-            </b>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-auto mr-auto">
-            <a href="<?= base_url('praktikan/modul/') . $modul['modul'] ?>" class="btn btn-secondary px-5">Kembali</a>
-          </div>
-          <div class="col-lg-auto ml-auto">
-            <a href="#" class="btn gradien px-5" data-toggle="modal" data-target="#SelesaiModal">Selesai</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="modal fade" id="Keterangan" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Keterangan Button</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <button type="submit" id="param2" data-kirim="[d]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" class="btn btn-secondary px-4 kirim1a" disabled>
-          1
-        </button>
-        <a class="">Drop Bola</a>
-        <div class="p-1">
-        </div>
-        <button type="submit" data-kirim="[i]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
-          2
-        </button>
-        <a class="">Status Bola</a>
-        <div class="p-1">
-        </div>
-        <button type="submit" data-kirim="[t]" data-tampil="#data3" data-id="<?= $modul['modul'] ?>" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a" disabled>
-          3
-        </button>
-        <a class="">Cek Waktu</a>
-        <div class="p-1">
-        </div>
-        <button type="submit" data-kirim="[r]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
-          4
-        </button>
-        <a class="">Reload Bola</a>
-        <div class="p-1">
-        </div>
-        <button type="submit" data-kirim="" data-tampil="#data3" data-id="<?= $modul['modul'] ?>" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a" disabled>
-          5
-        </button>
-        <a class="">Reset Alat</a>
-        <div class="p-1">
-        </div>
-        <button type="submit" data-kirim="" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
-          6
-        </button>
-        <a class=""></a>
-        <div class="p-1">
-        </div>
-        <button type="submit" data-kirim="[r]" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
-          7
-        </button>
-        <a class=""></a>
-        <div class="p-1">
-        </div>
-        <button type="submit" data-kirim="" data-tampil="#data3" data-id="<?= $modul['modul'] ?>" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a" disabled>
-          8
-        </button>
-        <a class=""></a>
-        <div class="p-1">
-        </div>
-        <button type="submit" data-kirim="" data-tampil="#data4" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
-          9
-        </button>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
   </div>
 </div>
 

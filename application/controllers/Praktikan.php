@@ -176,8 +176,11 @@ class Praktikan extends CI_Controller
                 $this->load->view('template/header', $data);
                 $this->load->view('template/sidebar', $data);
                 $this->load->view('template/topbar', $data);
-
-                $this->load->view('praktikan/percobaan', $data);
+                if ($this->session->userdata('role_id') == 2) {
+                    $this->load->view('praktikan/percobaan', $data);
+                } else {
+                    $this->load->view('praktikan/percobaan-view', $data);
+                }
 
                 $this->load->view('template/footer');
             } else {
