@@ -394,7 +394,7 @@ class Modul extends CI_Controller
             $data = fopen(base_url('assets/file/') . $file, "r");
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
-                $no_kelompok = mb_convert_encoding($csv[0], "UTF-8", "ISO-8859-1");
+                $no_kelompok = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
                 $query = "SELECT * FROM `kelompok` WHERE `no_kelompok` =" . "'" . $no_kelompok . "'";
                 var_dump($query);
                 die;
