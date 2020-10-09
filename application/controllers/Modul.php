@@ -56,7 +56,7 @@ class Modul extends CI_Controller
             $config['total_rows'] = $this->db->count_all_results();
         } else {
             $data['keyword'] = null;
-            $config['total_rows'] = $this->Modul_model->JumlahUser();
+            $config['total_rows'] = $this->Modul_model->JumlahUser($data['no_kelompok']);
         }
         $config['per_page'] = 10;
         $this->pagination->initialize($config);
