@@ -39,6 +39,7 @@
                   }
                   $temp = 0;
                   $tes = 0;
+                  $flag = NULL;
                   while ($tes < count($asisten)) {
                     if ($asisten[$tes]['id_modul'] == $m['modul']) {
                       $flag[$temp] = $tes;
@@ -56,8 +57,8 @@
                   ?> <li><b><?= $asisten[$flag[$halo]]['name'] ?> - <?= $asisten[$flag[$halo]]['nrp'] ?></b></li>
 
                   <?php $halo++;
+                      $j++;
                     }
-                    $j++;
                   } else {
                     echo "<p style='margin-bottom:0px;'>Asisten : " . $m['modul'] . " = " . $asisten[$j]['id_modul'] . " XX " . $j . "</p>";
                   }
