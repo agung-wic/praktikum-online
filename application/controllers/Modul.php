@@ -719,6 +719,9 @@ class Modul extends CI_Controller
             "no_kelompok" => $this->input->post('id', true),
             "id_modul" => $this->input->post('id_modul', true)
         ];
+        var_dump($this->input->post('no'));
+        var_dump($this->input->post('id_modul'));
+        die;
         $this->db->insert('kelompok_asisten', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
              Asisten berhasil ditambahkan!
