@@ -137,12 +137,51 @@ $(function () {
 		});
 	});
 
+	$(".tombolTambahAsisten").on("click", function () {
+		$("#TambahAnggotaLabel").html("Tambah Asisten");
+		$(".modal-footer button[type=submit]").html("Add");
+		$(".modal-body form").attr("action", base + "modul/tambahasisten");
+		$("#name").val(null);
+		const id = $(this).data("id");
+
+		$.ajax({
+			url: base + "modul/gettambahasisten",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				console.log(data);
+				$("#id").val(data.id);
+				$("#no_kelompok").val(data.no_kelompok);
+			},
+		});
+	});
+
 	$("#nrp_praktikan").on("keyup", function () {
 		const nrp = $("#nrp_praktikan").val();
 		$("#name").val(null);
 
 		$.ajax({
 			url: base + "asisten/getuser",
+			data: {
+				nrp: nrp,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				$("#name").val(data.name);
+			},
+		});
+	});
+
+	$("#nrp_asisten").on("keyup", function () {
+		const nrp = $("#nrp_asisten").val();
+		$("#name").val(null);
+
+		$.ajax({
+			url: base + "modul/getuser",
 			data: {
 				nrp: nrp,
 			},

@@ -256,6 +256,11 @@ class Modul extends CI_Controller
         echo json_encode($this->db->get_where('user', ['id' => $this->input->post('id')])->row_array());
     }
 
+    public function getuser()
+    {
+        echo json_encode($this->db->get_where('user', ['nrp' => $this->input->post('nrp')])->row_array());
+    }
+
     public function getubahmodul()
     {
         $id = $this->input->post('id', true);
@@ -715,25 +720,11 @@ class Modul extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function detailkelompok($id)
-    {
-        $this->load->model('Modul_model');
-        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-        $data['title'] = 'Pembagian Kelompok';
-        $data['kelompok'] = $this->Modul_model->Tampildetailkelompok($id);
-        $data['id_kelompok'] = $id;
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar', $data);
-        $this->load->view('template/topbar', $data);
-        $this->load->view('modul/detailkelompok', $data);
-        $this->load->view('template/footer');
-    }
-
     public function detailmanajemenasisten($id)
     {
         $this->load->model('Modul_model');
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-        $data['title'] = 'Manajemen Asistenk';
+        $data['title'] = 'Manajemen Asisten';
         $data['kelompok'] = $this->Modul_model->TampildetailkelompokAsisten($id);
         $data['id_kelompok'] = $id;
         $this->load->view('template/header', $data);
@@ -741,5 +732,30 @@ class Modul extends CI_Controller
         $this->load->view('template/topbar', $data);
         $this->load->view('modul/detailmanajemenasisten', $data);
         $this->load->view('template/footer');
+    }
+
+    public function tambahasisten()
+    {
+        $data = [
+            "nrp" => $this->input->post('nrp', true),
+            "no_kelompok" => $this->input->post('id', true),
+        ];
+        if ($this->db->get_where('kelompok_asisten', ['nrp' => $this->input->post('nrp')])->row_array()) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+        Anggota sudah terdaftar di kelompok lain!
+         </div>');
+            redirect(base_url('modul/manajemenasisten/') .  $this->input->post('no_kelompok'));
+        } else {
+            $this->db->insert('kelompok_asisten', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+             Anggota baru berhasil ditambahkan!
+              </div>');
+            redirect(base_url('modul/manajemenasisten/') .  $this->input->post('no_kelompok'));
+        }
+    }
+
+    public function gettambahasisten()
+    {
+        echo json_encode($this->db->get_where('kelompok', ['id' => $this->input->post('id')])->row_array());
     }
 }
