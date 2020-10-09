@@ -27,10 +27,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i = 1;
-                                var_dump($kelompok);
-                                var_dump($jumlah_asisten);
-                                die; ?>
+                                <?php $i = 1; ?>
                                 <?php foreach ($kelompok as $k) : ?>
                                     <tr>
 
