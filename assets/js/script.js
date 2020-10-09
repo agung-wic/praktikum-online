@@ -433,12 +433,12 @@ $(function () {
 	$(".tampilEditModul").on("click", function () {
 		$("#BuatModulLabel").html("Edit Modul");
 		$(".modal-footer button[type=submit]").html("Edit");
-		$(".modal-body form").attr("action", base + "dosen/editmodul");
+		$(".modal-body form").attr("action", base + "modul/editmodul");
 
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: base + "dosen/getubahmodul",
+			url: base + "modul/getubahmodul",
 			data: {
 				id: id,
 			},
@@ -449,14 +449,14 @@ $(function () {
 					selector: "textarea",
 					plugins: "code image",
 					toolbar: "undo redo | image code",
-					images_upload_url: base + "dosen/upload",
+					images_upload_url: base + "modul/upload",
 					image_prepend_url: base + "assets/img/",
 					images_upload_handler: function (blobInfo, success, failure) {
 						var xhr, formData;
 
 						xhr = new XMLHttpRequest();
 						xhr.withCredentials = false;
-						xhr.open("POST", base + "dosen/upload");
+						xhr.open("POST", base + "modul/upload");
 
 						xhr.onload = function () {
 							var json;
