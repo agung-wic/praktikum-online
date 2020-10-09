@@ -52,11 +52,13 @@ class Modul_model extends CI_Model
         return $this->db->query($query)->result_array();
     }
 
-    public function JumlahKelompokAsisten()
+    public function JumlahKelompokAsisten($id)
     {
         $query = "SELECT COUNT(`kelompok_asisten`.`nrp`) AS jumlah , `kelompok`.`no_kelompok`, `kelompok`.`id`  
-                FROM `kelompok` LEFT JOIN `kelompok_asisten` 
-                ON `kelompok`.`id` = `kelompok_asisten`.`no_kelompok` GROUP BY `no_kelompok`";
+                FROM `kelompok` 
+                LEFT JOIN `kelompok_asisten`  ON `kelompok`.`id` = `kelompok_asisten`.`no_kelompok`
+                WHERE `kelompok_asisten`.`id_modul` = '$id'
+                GROUP BY `no_kelompok`";
 
         return $this->db->query($query)->result_array();
     }
