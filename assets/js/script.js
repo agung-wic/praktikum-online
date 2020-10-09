@@ -246,6 +246,7 @@ $(function () {
 				$("#nrp").val(data.nrp);
 				$("#modul_id").val(data.modul_id);
 				$("#modul").val(data.modul_id);
+				$("#no_kelompok").val(data.no_kelompok);
 				$("#jadwal").val(data.jadwal);
 				$("#id").val(data.id);
 			},
