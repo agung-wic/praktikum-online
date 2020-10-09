@@ -26,7 +26,7 @@ class Modul extends CI_Controller
     { #USER#
         $this->load->model('Modul_model');
 
-        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/modul/operator';
+        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/modul/operator/' . $id;
         $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
         $config['full_tag_close'] = '</ul></nav>';
 
@@ -46,6 +46,7 @@ class Modul extends CI_Controller
 
         $config['attributes'] = array('class' => 'page-link');
 
+        $data['no_kelompok'] = $this->uri->segment(3);
         $data['start'] = $this->uri->segment(4);
         if ($data['start'] == null) {
             $data['start'] = 0;
@@ -56,12 +57,11 @@ class Modul extends CI_Controller
             $config['total_rows'] = $this->db->count_all_results();
         } else {
             $data['keyword'] = null;
-            $config['total_rows'] = $this->Modul_model->JumlahUser();
+            $config['total_rows'] = $this->Modul_model->JumlahUser($data['no_kelompok']);
         }
         $config['per_page'] = 10;
         $this->pagination->initialize($config);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['no_kelompok'] = $this->uri->segment(3);
         $data['list'] = $this->Modul_model->TampilUser($config['per_page'], $data['start'], $data['keyword'], $data['no_kelompok']);
         $data['detail'] = $this->db->get_where('user', ['id' => $id])->row_array();
         $data['role'] = $this->db->get('user_role')->result_array();
