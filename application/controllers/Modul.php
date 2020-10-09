@@ -394,12 +394,16 @@ class Modul extends CI_Controller
             $data = fopen(base_url('assets/file/') . $file, "r");
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
-                $jadwal = [
-                    "nrp" => $csv[0],
-                    "modul_id" => $csv[1],
-                    "jadwal" => str_replace("T", " ", $csv[2])
-                ];
-                $this->db->insert('jadwal', $jadwal);
+                $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $csv[0]])->row_array();
+                $anggota = $this->db->get_where('anggota_kelompok', ['no_kelompok' => $id_kelompok['id']])->result_array();
+                foreach ($anggota as $a) {
+                    $jadwal = [
+                        "nrp" => $a['nrp'],
+                        "modul_id" => $csv[1],
+                        "jadwal" => str_replace("T", " ", $csv[2])
+                    ];
+                    $this->db->insert('jadwal', $jadwal);
+                }
             }
             fclose($data);
             unlink(FCPATH . 'assets/file/' . $file);
@@ -575,7 +579,6 @@ class Modul extends CI_Controller
             "modul_id" => $this->input->post('modul_id', true),
             "jadwal" => str_replace("T", " ", $this->input->post('jadwal', true))
         ];
-
         $this->db->insert('jadwal', $data);
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
           Jadwal praktikan berhasil ditambahkan!

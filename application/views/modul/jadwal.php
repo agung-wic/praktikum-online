@@ -233,7 +233,7 @@
             <div class="modal-body">
                 <h6>Berkas csv harus memiliki format sebagai berikut:</h6>
                 <ol>
-                    <li>Kolom pertama = NRP Mahasiswa dengan 0 sebagai angka pertama</li>
+                    <li>Kolom pertama = Nama Kelompok</li>
                     <li>Kolom kedua = Kode Modul (contoh: G1)</li>
                     <li>Kolom ketiga = Waktu dengan contoh format (2020-12-31 23:59) tanpa tanda kurung</li>
                 </ol>
