@@ -31,7 +31,18 @@
                                     <tr>
 
                                         <th scope="row"><?= $i; ?></th>
-                                        <td><?= $k['no_kelompok'] ?></td>
+                                        <td><?= $k['id'] ?></td>
+                                        <?php
+                                        $cek = 0;
+                                        if ($cek < count($jumlah_asisten)) {
+                                            if ($k['id'] == $jumlah_asisten[$cek]['no_kelompok']) {
+                                                echo "<td>" . $jumlah_asisten[$cek]['jumlah'] . "</td>";
+                                                $cek++;
+                                            } else {
+                                                echo "<td>0</td>";
+                                            }
+                                        }
+                                        ?>
                                         <td><?= $k['jumlah'] ?></td>
                                         <td>
                                             <a href="<?= base_url('modul/detailmanajemenasisten/' . $id_modul . '/' . $k['id']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-info"></i>Detail</a>
