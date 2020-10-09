@@ -87,18 +87,19 @@ class Modul_model extends CI_Model
     {
         $keyword = $this->input->post('keyword1', true);
         if ($keyword) {
-            $query = "SELECT `jadwal`.`id`,  `user`.`nrp`, `user`.`name` as `name`, `modul`.`name` as `modul`, `jadwal`.`jadwal`
+            $query = "SELECT `jadwal`.`id`,  `user`.`nrp`, `user`.`name` as `name`, `modul`.`name` as `modul`, `jadwal`.`jadwal`,`anggota_kelompok`.`no_kelompok` as 'no_kelompok'
                     FROM `user` INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
                     INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id`
+                    LEFT JOIN `anggota_kelompok` ON `user`.`nrp` = `anggota_kelompok`.`nrp` 
                     WHERE `user`.`name` LIKE '%$keyword%'
                     OR `modul`.`name` LIKE '%$keyword%'
                     OR `jadwal`.`jadwal` LIKE '%$keyword%' ";
         } else {
             $query = "SELECT `jadwal`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', `modul`.`name` as 'modul', `jadwal`.`jadwal`, `anggota_kelompok`.`no_kelompok` as 'no_kelompok'
-                    FROM `user`
-                    INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
-                    LEFT JOIN `anggota_kelompok` ON `user`.`nrp` = `anggota_kelompok`.`nrp` 
-                    INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id` LIMIT $limit OFFSET $start";
+                        FROM `user`
+                        INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
+                        LEFT JOIN `anggota_kelompok` ON `user`.`nrp` = `anggota_kelompok`.`nrp` 
+                        INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id` LIMIT $limit OFFSET $start";
         }
         return $this->db->query($query)->result_array();
     }
@@ -189,10 +190,11 @@ class Modul_model extends CI_Model
     public function TampilJadwalPraktikan()
     {
         $id = $this->input->post('id', true);
-        $query = "SELECT `jadwal`.`id`, `user`.`name` as 'name',`user`.`nrp`, `modul`.`modul` as 'modul_id', 
+        $query = "SELECT `jadwal`.`id`, `user`.`name` as 'name',`user`.`nrp`, `modul`.`modul` as 'modul_id', `anggota_kelompok`.`no_kelompok` as 'no_kelompok'
                     `modul`.`name` as 'modul', `jadwal`.`jadwal` FROM `user` 
                     INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
                     INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id` 
+                    LEFT JOIN `anggota_kelompok` ON `user`.`nrp` = `anggota_kelompok`.`nrp` 
                     WHERE `jadwal`.`id`='$id'";
 
         return $this->db->query($query)->row_array();
