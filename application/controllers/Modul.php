@@ -46,7 +46,7 @@ class Modul extends CI_Controller
 
         $config['attributes'] = array('class' => 'page-link');
 
-        $data['start'] = $this->uri->segment(5);
+        $data['start'] = $this->uri->segment(4);
         if ($data['start'] == null) {
             $data['start'] = 0;
         }
