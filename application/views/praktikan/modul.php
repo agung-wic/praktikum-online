@@ -6,6 +6,7 @@
         <h1 class="mt-2 mb-5" style="text-align: center;"><?= $title ?></h1>
         <div class="accordion" id="accordionExample">
           <?php $i = 0;
+          $j = 0;
           foreach ($modul as $m) : ?>
             <div class="card pb-2">
               <div class="card-header gradien_modul py-3" id="heading<?= $m['modul']; ?>">
@@ -46,16 +47,17 @@
                     $tes++;
                   }
 
-                  if ($m['modul'] == $asisten[$i]['id_modul']) {
+                  if ($m['modul'] == $asisten[$j]['id_modul']) {
 
                     $halo = 0;
                     echo "<p style='margin-bottom:0px;'>Asisten : </p>";
                     while ($halo < count($flag)) {
 
-                  ?> <li><b><?= $halo + 1; ?>. <?= $asisten[$flag[$halo]]['name'] ?> - <?= $asisten[$flag[$halo]]['nrp'] ?></b></li>
+                  ?> <li><b><?= $asisten[$flag[$halo]]['name'] ?> - <?= $asisten[$flag[$halo]]['nrp'] ?></b></li>
 
                   <?php $halo++;
                     }
+                    $j++;
                   }
                   ?>
                   <div class="row">
