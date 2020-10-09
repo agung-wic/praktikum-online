@@ -740,6 +740,9 @@ class Modul extends CI_Controller
         $data['modul'] = $this->db->get('modul')->result_array();
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['title'] = 'Manajemen Asisten';
+        $data['id_modul'] = $this->uri->segment(3);
+        var_dump($data['id_modul']);
+        die;
         $data['list'] = $this->db->get('modul')->result_array();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
