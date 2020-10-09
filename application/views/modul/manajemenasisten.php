@@ -36,7 +36,7 @@
                                         <?php
                                         $cek = 0;
                                         if ($cek < count($jumlah_asisten)) {
-                                            var_dump($k['id']);
+                                            var_dump($k['id'] . "Ini kelompok");
                                             var_dump($jumlah_asisten[$cek]['id']);
                                             if ($k['id'] == $jumlah_asisten[$cek]['id']) {
                                                 echo "<td>" . $jumlah_asisten[$cek]['jumlah'] . "</td>";
