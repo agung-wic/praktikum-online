@@ -734,4 +734,17 @@ class Modul extends CI_Controller
     {
         echo json_encode($this->db->get_where('kelompok', ['id' => $this->input->post('id')])->row_array());
     }
+
+    public function manajemen()
+    {
+        $data['modul'] = $this->db->get('modul')->result_array();
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $data['title'] = 'Manajemen Asisten';
+        $data['list'] = $this->db->get('modul')->result_array();
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('modul/manajemen', $data);
+        $this->load->view('template/footer');
+    }
 }
