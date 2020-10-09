@@ -706,7 +706,7 @@ class Modul extends CI_Controller
     {
         $this->load->model('Modul_model');
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-        $data['title'] = 'Pembagian Kelompok';
+        $data['title'] = 'Manajemen Asisten';
         $data['kelompok'] = $this->Modul_model->JumlahKelompok();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -733,7 +733,7 @@ class Modul extends CI_Controller
     {
         $this->load->model('Modul_model');
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-        $data['title'] = 'Pembagian Kelompok';
+        $data['title'] = 'Manajemen Asistenk';
         $data['kelompok'] = $this->Modul_model->Tampildetailkelompok($id);
         $data['id_kelompok'] = $id;
         $this->load->view('template/header', $data);
