@@ -245,6 +245,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
+				console.log(data);
 				$("#no_kelompok").val(data.no_kelompok);
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
