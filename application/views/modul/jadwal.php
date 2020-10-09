@@ -174,6 +174,7 @@
                                     <th scope="col">NRP</th>
                                     <th scope="col">Modul</th>
                                     <th scope="col">Jadwal</th>
+                                    <th scope="col">Kelompok</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </tfoot>
@@ -186,6 +187,7 @@
                                         <td><?= $l['name']; ?></td>
                                         <td><?= $l['nrp']; ?></td>
                                         <td><?= $l['modul']; ?></td>
+                                        <td><?= $l['no_kelompok']; ?></td>
                                         <td><?= str_replace("T", " | ", $l['jadwal']); ?></td>
                                         <td>
                                             <a href="<?= base_url('modul/editjadwal/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilEditJadwal" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#JadwalEdit">

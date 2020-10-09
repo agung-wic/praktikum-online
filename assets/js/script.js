@@ -221,6 +221,7 @@ $(function () {
 		$(".modal-body select").attr("disabled", false);
 		$(".disable").hide();
 
+		$("#kelompok").val(null);
 		$("#name").val(null);
 		$("#nrp").val(null);
 		$("#jadwal").val(null);
@@ -244,6 +245,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
+				$("#kelompok").val(data.kelompok);
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
 				$("#modul_id").val(data.modul_id);

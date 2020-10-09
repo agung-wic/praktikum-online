@@ -187,11 +187,12 @@ class Modul_model extends CI_Model
     public function TampilJadwalPraktikan()
     {
         $id = $this->input->post('id', true);
-        $query = "SELECT `jadwal`.`id`, `user`.`name` as 'name',`user`.`nrp`, `modul`.`modul` as 'modul_id', 
-                    `modul`.`name` as 'modul', `jadwal`.`jadwal` FROM `user` 
-                    INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
-                    INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id` 
-                    WHERE `jadwal`.`id`='$id'";
+        $query = "SELECT `jadwal`.`id`, `user`.`name` as 'name',`user`.`nrp`, `modul`.`modul` as 'modul_id', `anggota_kelompok`.`no_kelompok` as 'no_kelompok',
+                `modul`.`name` as 'modul', `jadwal`.`jadwal` FROM `user` 
+                INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
+                INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id` 
+                LEFT JOIN `anggota_kelompok` ON`anggota_kelompok`.`nrp` = `jadwal`.`nrp`
+                WHERE `jadwal`.`id`='$id'";
 
         return $this->db->query($query)->row_array();
     }
