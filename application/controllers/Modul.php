@@ -697,13 +697,14 @@ class Modul extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function detailmanajemenasisten($id)
+    public function detailmanajemenasisten()
     {
         $this->load->model('Modul_model');
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['title'] = 'Manajemen Asisten';
-        $data['kelompok'] = $this->Modul_model->TampildetailkelompokAsisten($id);
-        $data['id_kelompok'] = $id;
+        $data['id_modul'] = $this->uri->segment(3);
+        $data['no_kelompok'] = $this->uri->segment(4);
+        $data['kelompok'] = $this->Modul_model->TampildetailkelompokAsisten($data['id_modul'], $data['no_kelompok']);
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);

@@ -34,7 +34,7 @@
                                         <td><?= $k['no_kelompok'] ?></td>
                                         <td><?= $k['jumlah'] ?></td>
                                         <td>
-                                            <a href="<?= base_url('modul/detailmanajemenasisten/' . $k['id']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-info"></i>Detail</a>
+                                            <a href="<?= base_url('modul/detailmanajemenasisten/' . $id_modul . $k['id']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-info"></i>Detail</a>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
