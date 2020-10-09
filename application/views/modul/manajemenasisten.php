@@ -12,9 +12,6 @@
                     <div class="col">
                         <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
                     </div>
-                    <div class="col-auto mr-auto">
-                        <a href="" class="btn gradien mb-3 tombolTambahKelompok" data-toggle="modal" data-target="#TambahKelompok">Tambah Kelompok</a>
-                    </div>
                 </div>
                 <div class="card-body">
                     <?= $this->session->flashdata('message'); ?>
