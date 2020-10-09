@@ -590,24 +590,6 @@ class Modul extends CI_Controller
         redirect(base_url('modul/jadwal'));
     }
 
-    public function editjadwal()
-    {
-
-        $data = [
-            "id" => $this->input->post('id', true),
-            "nrp" => $this->input->post('nrp', true),
-            "modul_id" => $this->input->post('modul', true),
-            "jadwal" => str_replace("T", " ", $this->input->post('jadwal', true))
-        ];
-
-        $this->db->where('id', $this->input->post('id'));
-        $this->db->update('jadwal', $data);
-        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
-          Jadwal praktikan berhasil diubah!
-          </div>');
-        redirect(base_url('modul/jadwal'));
-    }
-
     public function getubahjadwal()
     {
         $this->load->model('Modul_model');
