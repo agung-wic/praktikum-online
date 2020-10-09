@@ -403,8 +403,6 @@ class Modul extends CI_Controller
                         "modul_id" => $csv[1],
                         "jadwal" => str_replace("T", " ", $csv[2])
                     ];
-                    var_dump($jadwal);
-                    die;
                     $this->db->insert('jadwal', $jadwal);
                 }
             }
