@@ -39,10 +39,10 @@
                                             if ($k['id'] == $jumlah_asisten[$cek]['id']) {
                                                 echo "<td>" . $jumlah_asisten[$cek]['jumlah'] . "</td>";
                                                 break;
-                                            } else {
-                                                echo "<td>0</td>";
                                             }
                                             $cek++;
+                                        } else {
+                                            echo "<td>0</td>";
                                         }
                                         ?>
                                         <td>
