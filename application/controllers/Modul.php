@@ -495,7 +495,7 @@ class Modul extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
-        $this->load->view('admin/detail-pengajuan', $data);
+        $this->load->view('modul/detail-pengajuan', $data);
         $this->load->view('template/footer');
     }
 
@@ -594,6 +594,61 @@ class Modul extends CI_Controller
     {
         $this->load->model('Modul_model');
         echo json_encode($this->Modul_model->TampilJadwalPraktikan());
+    }
+
+    public function pengumuman()
+    {
+        $this->load->model('Modul_model');
+
+        $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/modul/pengumuman';
+        $config['total_rows'] = $this->Modul_model->JumlahPengumuman();
+
+        $config['per_page'] = 10;
+        $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li class="page-item">';
+        $config['next_tag_close'] = '</li>';
+
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="page-item">';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+        $config['cur_tag_close'] = '</li></a>';
+
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+
+        $config['attributes'] = array('class' => 'page-link');
+
+        $this->pagination->initialize($config);
+
+        $data['start'] = $this->uri->segment(3);
+        if ($data['start'] == null) {
+            $data['start'] = 0;
+        }
+
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['title'] = 'Pengumuman';
+        $data['list'] = $this->Modul_model->TampilPengumuman($config['per_page'], $data['start']);
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('modul/pengumuman', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function deletepengumuman($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('pengumuman');
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Pengumuman berhasil dihapus!
+          </div>');
+        redirect(base_url('modul/pengumuman'));
     }
 
     public function editpengumuman()
