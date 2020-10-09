@@ -545,7 +545,7 @@ class Modul extends CI_Controller
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
           Asisten berhasil dihapus!
           </div>');
-        redirect(base_url('modul/kelompok'));
+        redirect(base_url('modul/detailmanajemenasisten/' . $this->uri->segment(3) . $this->uri->segment(4)));
     }
 
     public function getubahrole()
@@ -729,7 +729,6 @@ class Modul extends CI_Controller
             "no_kelompok" => $this->input->post('id', true),
             "id_modul" => $this->input->post('id_modul', true)
         ];
-
         $this->db->insert('kelompok_asisten', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
              Asisten berhasil ditambahkan!
