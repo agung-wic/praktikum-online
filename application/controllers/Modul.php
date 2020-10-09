@@ -397,7 +397,7 @@ class Modul extends CI_Controller
                 $query = "SELECT * FROM `kelompok` WHERE `no_kelompok` =" . "'" . utf8_encode($csv[0]) . "'";
                 $id_kelompok = $this->db->query($query)->row_array();
                 $anggota = $this->db->get_where('anggota_kelompok', ['no_kelompok' => $id_kelompok['id']])->result_array();
-                var_dump($id_kelompok);
+                var_dump($query);
                 die;
                 foreach ($anggota as $a) {
                     $jadwal = [
