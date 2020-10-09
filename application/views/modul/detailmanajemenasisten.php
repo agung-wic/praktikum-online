@@ -24,6 +24,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">NRP</th>
                                     <th scope="col">Nama</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,6 +35,9 @@
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $k['nrp'] ?></td>
                                         <td><?= $k['name'] ?></td>
+                                        <td>
+                                            <a href="<?= base_url('modul/deleteasistenkelompok/' . $id_modul . '/' . $no_kelompok . '/' . $k['id']); ?>" class="badge badge-pill badge-danger" onclick="return confirm('Yakin?');"><i class="fas fa-fw fa-trash-alt"></i>Delete</a>
+                                        </td>
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
@@ -64,6 +68,7 @@
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
                         <input type="hidden" id="id_modul" name="id_modul" value="<?= $this->uri->segment(3); ?>">
+                        <input type="hidden" id="no" name="no" value="<?= $this->uri->segment(4); ?>">
                         <input type="hidden" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
                     </div>
                     <div class="form-group">

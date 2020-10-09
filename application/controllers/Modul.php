@@ -538,6 +538,16 @@ class Modul extends CI_Controller
         redirect(base_url('modul/kelompok'));
     }
 
+    public function deleteasistenkelompok($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('kelomok_asisten');
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Asisten berhasil dihapus!
+          </div>');
+        redirect(base_url('modul/kelompok'));
+    }
+
     public function getubahrole()
     {
         echo json_encode($this->db->get_where('user_role', ['id' => $this->input->post('id')])->row_array());
@@ -720,18 +730,12 @@ class Modul extends CI_Controller
             "no_kelompok" => $this->input->post('id', true),
             "id_modul" => $this->input->post('id_modul', true)
         ];
-        if ($this->db->get_where('kelompok_asisten', ['nrp' => $this->input->post('nrp')])->row_array()) {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-        Anggota sudah terdaftar di kelompok lain!
-         </div>');
-            redirect(base_url('modul/manajemenasisten/') .  $this->input->post('no_kelompok'));
-        } else {
-            $this->db->insert('kelompok_asisten', $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-             Anggota baru berhasil ditambahkan!
+
+        $this->db->insert('kelompok_asisten', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+             Asisten berhasil ditambahkan!
               </div>');
-            redirect(base_url('modul/manajemenasisten/') .  $this->input->post('no_kelompok'));
-        }
+        redirect(base_url('modul/manajemenasisten/') .  $this->input->post('id_modul') . '/' . $this->input->post('no'));
     }
 
     public function gettambahasisten()
