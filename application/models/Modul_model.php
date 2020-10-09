@@ -18,7 +18,7 @@ class Modul_model extends CI_Model
         $query = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`nrp`, `user_role`.`role` , `anggota_kelompok` . `no_kelompok` as 'no_kelompok'
                     FROM `user` INNER JOIN `user_role` ON `user`.`role_id` = `user_role`.`id`
                     INNER JOIN `anggota_kelompok` ON `user`.`nrp` = `anggota_kelompok`.`nrp`
-                    WHERE  (((`user`.`role_id` = 8 OR `user`.`role_id`= 2) AND `anggota_kelompok` . `no_kelompok` = $no_kelompok)";
+                    WHERE  ((`user`.`role_id` = 8 OR `user`.`role_id`= 2) AND `anggota_kelompok` . `no_kelompok` = $no_kelompok)";
 
         return $this->db->query($query)->num_rows();
     }
