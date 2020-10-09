@@ -29,7 +29,7 @@ class Modul_model extends CI_Model
             FROM `user` 
             INNER JOIN `user_role` ON `user`.`role_id` = `user_role`.`id` 
             INNER JOIN `anggota_kelompok` ON `user`.`nrp` = `anggota_kelompok`.`nrp`
-            WHERE  (((`user`.`role_id` = 8 OR `user`.`role_id`= 2) AND `anggota_kelompok` . `no_kelompok` = $no_kelompok)
+            WHERE  ((`user`.`role_id` = 8 OR `user`.`role_id`= 2) AND `anggota_kelompok` . `no_kelompok` = $no_kelompok)
             AND `user`.`name` LIKE '%$keyword%'
             OR `user`.`email` LIKE '%$keyword%'
             OR `user`.`nrp` LIKE '%$keyword%' 
@@ -49,11 +49,6 @@ class Modul_model extends CI_Model
 
         return $this->db->query($query)->result_array();
     }
-
-
-
-
-
 
     public function TampilJadwal($limit, $start, $keyword = null)
     {
