@@ -46,7 +46,6 @@
                       <th scope="col">Modul</th>
                       <th scope="col">Jadwal</th>
                       <th scope="col">Keterangan</th>
-                      <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -55,7 +54,6 @@
                       <th scope="col">Modul</th>
                       <th scope="col">Jadwal</th>
                       <th scope="col">Keterangan</th>
-                      <th scope="col">Action</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -84,10 +82,10 @@
                               <?php $jadwal = strtotime(str_replace("T", " ", $list[$i]['jadwal']));
                               $now = time();
                               if ($jadwal > $now) : ?>
-                                <a href="<?= base_url('praktikan/reqjadwal/') . $list[$i]['id']; ?>" class="badge badge-pill badge-primary reqJadwalPraktikan" data-id="<?= $list[$i]['id']; ?>" data-toggle="modal" data-target="#JadwalEdit">
+                                <!-- <a href="<?= base_url('praktikan/reqjadwal/') . $list[$i]['id']; ?>" class="badge badge-pill badge-primary reqJadwalPraktikan" data-id="<?= $list[$i]['id']; ?>" data-toggle="modal" data-target="#JadwalEdit">
                                   <i class=" fas fa-fw fa-edit"></i>
                                   Ubah Jadwal
-                                </a>
+                                </a> -->
                               <?php endif; ?>
                             </td>
                           <?php
