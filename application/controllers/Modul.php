@@ -538,6 +538,16 @@ class Modul extends CI_Controller
         redirect(base_url('modul/kelompok'));
     }
 
+    public function deleteasistenkelompok($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('kelomok_asisten');
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Asisten berhasil dihapus!
+          </div>');
+        redirect(base_url('modul/kelompok'));
+    }
+
     public function getubahrole()
     {
         echo json_encode($this->db->get_where('user_role', ['id' => $this->input->post('id')])->row_array());
