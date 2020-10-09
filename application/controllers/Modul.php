@@ -719,18 +719,13 @@ class Modul extends CI_Controller
             "no_kelompok" => $this->input->post('id', true),
             "id_modul" => $this->input->post('id_modul', true)
         ];
-        if ($this->db->get_where('kelompok_asisten', ['nrp' => $this->input->post('nrp')])->row_array()) {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-        Anggota sudah terdaftar di kelompok lain!
-         </div>');
-            redirect(base_url('modul/manajemenasisten/') .  $this->input->post('no_kelompok'));
-        } else {
-            $this->db->insert('kelompok_asisten', $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-             Anggota baru berhasil ditambahkan!
+        $this->db->insert('kelompok_asisten', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+             Asisten berhasil ditambahkan!
               </div>');
-            redirect(base_url('modul/manajemenasisten/') .  $this->input->post('no_kelompok'));
-        }
+        var_dump($this->input->post('no_kelompok'));
+        die;
+        redirect(base_url('modul/manajemenasisten/') .  $this->input->post('no_kelompok'));
     }
 
     public function gettambahasisten()
