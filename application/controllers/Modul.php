@@ -724,8 +724,6 @@ class Modul extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
              Asisten berhasil ditambahkan!
               </div>');
-        var_dump($this->input->post('no_kelompok'));
-        die;
         redirect(base_url('modul/manajemenasisten/') .  $this->input->post('id_modul') . '/' . $this->input->post('no'));
     }
 
