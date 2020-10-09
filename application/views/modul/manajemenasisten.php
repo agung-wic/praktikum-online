@@ -31,7 +31,7 @@
                                     <tr>
 
                                         <th scope="row"><?= $i; ?></th>
-                                        <td><?= $k['id'] ?></td>
+                                        <td><?= $k['no_kelompok'] ?></td>
                                         <?php
                                         $cek = 0;
                                         if ($cek < count($jumlah_asisten)) {
