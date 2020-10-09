@@ -396,7 +396,7 @@ class Modul extends CI_Controller
                 $csv = fgetcsv($data, 0, ';');
                 $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $csv[0]])->row_array();
                 $anggota = $this->db->get_where('anggota_kelompok', ['no_kelompok' => $id_kelompok['id']])->result_array();
-                var_dump($id_kelompok);
+                var_dump($csv[0]);
                 die;
                 foreach ($anggota as $a) {
                     $jadwal = [
