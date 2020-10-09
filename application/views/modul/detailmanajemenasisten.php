@@ -60,7 +60,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('modul/tambbahasisten') ?>" method="post">
+                <form action="<?= base_url('modul/tambahasisten') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="id" name="id">
                         <input type="hidden" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
