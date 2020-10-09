@@ -265,10 +265,14 @@
                         <input class="form-control" type="text" name="modul" id="modul" hidden>
                     </div>
                     <div class="form-group">
+                        <label for="kelompok">Kelompok</label>
+                        <input type="text" class="form-control edit" id="kelompok" name="kelompok">
+                    </div>
+                    <div class="form-group disable">
                         <label for="name">Nama Lengkap</label>
                         <input type="text" class="form-control edit" id="name" name="name">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group disable">
                         <label for="nrp">NRP</label>
                         <input type="text" class="form-control edit" id="nrp" name="nrp">
                     </div>

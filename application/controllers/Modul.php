@@ -295,7 +295,7 @@ class Modul extends CI_Controller
     {
         $this->db->where('id', $id);
         $this->db->delete('tombol_tulisan');
-        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+        $this->session->set_flashdata('message1', '<div class="alert alert-danger" role="alert">
         Tombol berhasil dihapus!
         </div>');
         redirect(base_url('modul/konten'));
@@ -307,7 +307,7 @@ class Modul extends CI_Controller
         $id_modul = $id_modul['id_modul'];
         $this->db->where('id', $id);
         $this->db->delete('tombol_tulisan');
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
         Tombol berhasil dihapus!
         </div>');
         redirect(base_url('modul/navigasi/') . $id_modul);
@@ -319,7 +319,7 @@ class Modul extends CI_Controller
         $id_modul = $id_modul['id_modul'];
         $this->db->where('id', $id);
         $this->db->delete('output_tulisan');
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
         Tombol berhasil dihapus!
         </div>');
         redirect(base_url('modul/navigasi/') . $id_modul);
