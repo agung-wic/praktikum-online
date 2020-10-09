@@ -7,8 +7,6 @@
         <div class="accordion" id="accordionExample">
           <?php $i = 0;
           $j = 0;
-          var_dump($asisten);
-          die;
           foreach ($modul as $m) : ?>
             <div class="card pb-2">
               <div class="card-header gradien_modul py-3" id="heading<?= $m['modul']; ?>">
