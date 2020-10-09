@@ -546,7 +546,7 @@ class Modul extends CI_Controller
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
           Asisten berhasil dihapus!
           </div>');
-        redirect(base_url('modul/manajemenasisten/' . $this->uri->segment(3));
+        redirect(base_url('modul/manajemenasisten/' . $this->uri->segment(3)));
     }
 
     public function getubahrole()
