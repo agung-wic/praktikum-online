@@ -71,7 +71,7 @@ class Modul_model extends CI_Model
         return $this->db->query($query)->result_array();
     }
 
-    public function Tampildetailkelompok($id)
+    public function TampildetailkelompokAsisten($id)
     {
         $query = "SELECT `kelompok_asisten`.`id` , `kelompok_asisten`.`nrp` as `nrp` , `user`.`name` as 'name' , `kelompok_asisten`.`no_kelompok` FROM `kelompok_asisten` 
               INNER JOIN `user` ON `kelompok_asisten`.`nrp` = `user`.`nrp` 
