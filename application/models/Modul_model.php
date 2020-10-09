@@ -45,9 +45,19 @@ class Modul_model extends CI_Model
 
     public function JumlahKelompok()
     {
-        $query = "SELECT COUNT(`anggota_kelompok`.`nrp`) AS jumlah , `kelompok`.`no_kelompok`, `kelompok`.`id`  
-                FROM `kelompok` LEFT JOIN `anggota_kelompok` 
-                ON `kelompok`.`id` = `anggota_kelompok`.`no_kelompok` GROUP BY `no_kelompok`";
+        $query = "SELECT COUNT(`kelompok_asisten`.`nrp`) AS jumlah , `kelompok`.`no_kelompok`, `kelompok`.`id`  
+                FROM `kelompok` LEFT JOIN `kelompok_asisten` 
+                ON `kelompok`.`id` = `kelompok_asisten`.`no_kelompok` GROUP BY `no_kelompok`";
+
+        return $this->db->query($query)->result_array();
+    }
+
+    public function Tampildetailkelompok($id)
+    {
+        $query = "SELECT `anggota_kelompok`.`id` , `anggota_kelompok`.`nrp` as `nrp` , `user`.`name` as 'name' , `anggota_kelompok`.`no_kelompok` FROM `anggota_kelompok` 
+              INNER JOIN `user` ON `anggota_kelompok`.`nrp` = `user`.`nrp` 
+              WHERE `anggota_kelompok`.`no_kelompok`= $id
+              ORDER BY `user`.`nrp` ASC";
 
         return $this->db->query($query)->result_array();
     }

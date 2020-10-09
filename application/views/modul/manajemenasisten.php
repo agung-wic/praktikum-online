@@ -24,7 +24,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Kelompok</th>
-                                    <th scope="col">Jumlah Anggota</th>
+                                    <th scope="col">Jumlah Asisten</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
