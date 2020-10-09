@@ -27,21 +27,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i = 1; ?>
+                                <?php $i = 1;
+                                $cek = 0;
+                                ?>
                                 <?php foreach ($kelompok as $k) : ?>
                                     <tr>
 
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $k['no_kelompok'] ?></td>
                                         <?php
-                                        $cek = 0;
                                         if ($cek < count($jumlah_asisten)) {
                                             if ($k['id'] == $jumlah_asisten[$cek]['id']) {
-                                                echo "<td>" . $k['id'] . " = " . $jumlah_asisten[$cek]['id'] . "</td>";
+                                                echo "<td>" . $jumlah_asisten[$cek]['jumlah'] . "</td>";
                                                 $cek++;
                                             } else {
-                                                echo "<td>" . $k['id'] . " = " . $jumlah_asisten[$cek]['id'] . "</td>";
+                                                echo "<td>0</td>";
                                             }
+                                        } else {
+                                            echo "<td>0</td>";
                                         }
                                         ?>
                                         <td>
