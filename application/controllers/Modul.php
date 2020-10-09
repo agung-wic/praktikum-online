@@ -91,29 +91,6 @@ class Modul extends CI_Controller
         redirect(base_url('modul/operator/') . $this->input->post('no_kelompok', true));
     }
 
-    public function penilaian($modul)
-    {
-        $this->load->model('Asisten_model');
-        $data['title'] = 'Penilaian';
-        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-        $data['list'] = $this->Asisten_model->TampilNilai($modul);
-        $i = 0;
-        while ($i < count($data['list'])) {
-            $asisten = $data['list'][$i]['asisten'];
-            if ($asisten) {
-                $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
-                $data['list'][$i]['asisten'] = $nama['name'];
-            }
-            $i++;
-        }
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar', $data);
-        $this->load->view('template/topbar', $data);
-        $this->load->view('asisten/penilaian', $data);
-        $this->load->view('template/footer');
-    }
-
-
     public function konten()
     {
         $this->load->model('Modul_model');
@@ -686,5 +663,32 @@ class Modul extends CI_Controller
           Pengumuman berhasil ditambahkan!
           </div>');
         redirect(base_url('modul/pengumuman'));
+    }
+
+    public function kelompok()
+    {
+        $this->load->model('Modul_model');
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $data['title'] = 'Pembagian Kelompok';
+        $data['kelompok'] = $this->Modul_model->JumlahKelompok();
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('modul/kelompok', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function detailkelompok($id)
+    {
+        $this->load->model('Modul_model');
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $data['title'] = 'Pembagian Kelompok';
+        $data['kelompok'] = $this->Modul_model->Tampildetailkelompok($id);
+        $data['id_kelompok'] = $id;
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('modul/detailkelompok', $data);
+        $this->load->view('template/footer');
     }
 }
