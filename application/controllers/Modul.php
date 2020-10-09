@@ -509,6 +509,30 @@ class Modul extends CI_Controller
         echo json_encode($this->db->get_where('user', ['id' => $this->input->post('id')])->row_array());
     }
 
+    public function detail($id)
+    {
+        $this->load->model('Modul_model');
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $data['title'] = 'Pembagian Kelompok';
+        $data['kelompok'] = $this->Modul_model->Tampildetailkelompok($id);
+        $data['id_kelompok'] = $id;
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('modul/detail', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function deleteanggotakelompok($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('anggota_kelompok');
+        $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+          Anggota Kelompok berhasil dihapus!
+          </div>');
+        redirect(base_url('modul/kelompok'));
+    }
+
     public function getubahrole()
     {
         echo json_encode($this->db->get_where('user_role', ['id' => $this->input->post('id')])->row_array());
