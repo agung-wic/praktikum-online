@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <div class="col-md-5 ml-auto">
-                                <form action="<?= base_url('admin/jadwal') ?>" method="post">
+                                <form action="<?= base_url('asisten/jadwal') ?>" method="post">
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" id="keyword1" name="keyword1" placeholder="Cari  ...">
                                         <div class="input-group-append">
@@ -89,11 +89,11 @@
                                                 <td><?= $l['modul']; ?></td>
                                                 <td><?= str_replace("T", " | ", $l['jadwal']); ?></td>
                                                 <td>
-                                                    <a href="<?= base_url('admin/editjadwal/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilEditJadwal" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#JadwalEdit">
+                                                    <a href="<?= base_url('asisten/editjadwal/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilEditJadwal" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#JadwalEdit">
                                                         <i class=" fas fa-fw fa-edit"></i>
                                                         Edit
                                                     </a>
-                                                    <a href="<?= base_url('admin/deletejadwal/') . $l['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
+                                                    <a href="<?= base_url('asisten/deletejadwal/') . $l['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
                                                         <i class="fas fa-fw fa-trash-alt"></i>
                                                         Delete
                                                     </a>
@@ -135,7 +135,7 @@
                     <li>Kolom kedua = Kode Modul (contoh: G1)</li>
                     <li>Kolom ketiga = Waktu dengan contoh format (2020-12-31 23:59) tanpa tanda kurung</li>
                 </ol>
-                <?= form_open_multipart(base_url('admin/addfilejadwal')) ?>
+                <?= form_open_multipart(base_url('asisten/addfilejadwal')) ?>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="filejadwal" name="filejadwal">
                     <label class="custom-file-label" for="filejadwal">Pilih berkas</label>
@@ -160,7 +160,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('admin/editjadwal') ?>" method="post">
+                <form action="<?= base_url('asisten/editjadwal') ?>" method="post">
                     <div class="form-group">
                         <input class="form-control" type="number" name="id" id="id" hidden>
                         <input class="form-control" type="text" name="modul" id="modul" hidden>

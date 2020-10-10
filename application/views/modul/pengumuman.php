@@ -39,11 +39,11 @@
                                                 <td><?= $l['isi']; ?></td>
                                                 <td><?= date('Y-m-d H:i:s', $l['tanggal']) ?></td>
                                                 <td>
-                                                    <a href="<?= base_url('admin/editpengumuman/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilEditPengumuman" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#BuatPengumuman">
+                                                    <a href="<?= base_url('modul/editpengumuman/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilEditPengumuman" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#BuatPengumuman">
                                                         <i class=" fas fa-fw fa-edit"></i>
                                                         Edit
                                                     </a>
-                                                    <a href="<?= base_url('admin/deletepengumuman/') . $l['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
+                                                    <a href="<?= base_url('modul/deletepengumuman/') . $l['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
                                                         <i class="fas fa-fw fa-trash-alt"></i>
                                                         Delete
                                                     </a>
@@ -77,7 +77,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('admin/tambahpengumuman') ?>" method="post">
+                <form action="<?= base_url('modul/tambahpengumuman') ?>" method="post">
                     <div class="form-group">
                         <input class="form-control" type="number" name="id" id="id" hidden>
                     </div>
@@ -114,7 +114,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('admin/editpengumuman') ?>" method="post">
+                <form action="<?= base_url('modul/editpengumuman') ?>" method="post">
                     <div class="form-group">
                         <input class="form-control" type="number" name="id" id="id" hidden>
                     </div>
