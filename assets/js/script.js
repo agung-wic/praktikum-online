@@ -445,44 +445,6 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				tinymce.init({
-					mode: "specific_textareas",
-					editor_selector: "edit",
-					plugins: "code image",
-					toolbar: "undo redo | image code",
-					images_upload_url: base + "modul/upload",
-					image_prepend_url: base + "assets/img/",
-					images_upload_handler: function (blobInfo, success, failure) {
-						var xhr, formData;
-
-						xhr = new XMLHttpRequest();
-						xhr.withCredentials = false;
-						xhr.open("POST", base + "modul/upload");
-
-						xhr.onload = function () {
-							var json;
-
-							if (xhr.status != 200) {
-								failure("HTTP Error: " + xhr.status);
-								return;
-							}
-
-							json = JSON.parse(xhr.responseText);
-
-							if (!json || typeof json.location != "string") {
-								failure("Invalid JSON: " + xhr.responseText);
-								return;
-							}
-
-							success(json.location);
-						};
-
-						formData = new FormData();
-						formData.append("file", blobInfo.blob(), blobInfo.filename());
-
-						xhr.send(formData);
-					},
-				});
 				console.log(data);
 				$("#id").val(data.id);
 				$("#modul").val(data.modul);

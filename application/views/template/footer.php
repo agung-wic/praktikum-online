@@ -28,9 +28,6 @@
 
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url(); ?>assets/js/sb-admin-2.min.js?v=9"></script>
-<script src="<?= base_url(); ?>assets/js/script.js?v=100"></script>
-
-
 <script>
   tinymce.init({
     mode: "specific_textareas",
@@ -106,6 +103,9 @@
     absen.prop('disabled', true);
   });
 </script>
+<script src="<?= base_url(); ?>assets/js/script.js?v=101"></script>
+
+
 </body>
 
 </html>
