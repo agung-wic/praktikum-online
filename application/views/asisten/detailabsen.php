@@ -7,7 +7,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col">
-                        <h6 class="m-0 font-weight-bold "><?= $title . " " . $kelompok[0]['no_kelompok']; ?></h6>
+                        <h6 class="m-0 font-weight-bold "><?= $title . " " . $kelompok[0]['nama_kelompok']; ?></h6>
                     </div>
                 </div>
                 <div class="card-body">
