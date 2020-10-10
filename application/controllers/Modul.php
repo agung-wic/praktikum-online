@@ -110,7 +110,7 @@ class Modul extends CI_Controller
         $accepted_origins = array("https://riset.its.ac.id/praktikum-fisdas/");
 
         // Images upload path
-        $imageFolder = $_SERVER['DOCUMENT_ROOT'] . "/assets/img/";
+        $imageFolder = $_SERVER['DOCUMENT_ROOT'] . "/praktikum-fisdas/assets/img/";
         reset($_FILES);
         $temp = current($_FILES);
         if (is_uploaded_file($temp['tmp_name'])) {
