@@ -430,74 +430,74 @@ $(function () {
 		});
 	});
 
-	// $(".tampilEditModul").on("click", function () {
-	// 	$("#BuatModulLabel").html("Edit Modul");
-	// 	$(".modal-footer button[type=submit]").html("Edit");
-	// 	$(".modal-body form").attr("action", base + "modul/editmodul");
+	$(".tampilEditModul").on("click", function () {
+		$("#BuatModulLabel").html("Edit Modul");
+		$(".modal-footer button[type=submit]").html("Edit");
+		$(".modal-body form").attr("action", base + "modul/editmodul");
 
-	// 	const id = $(this).data("id");
+		const id = $(this).data("id");
 
-	// 	$.ajax({
-	// 		url: base + "modul/getubahmodul",
-	// 		data: {
-	// 			id: id,
-	// 		},
-	// 		method: "post",
-	// 		dataType: "json",
-	// 		success: function (data) {
-	// 			tinymce.init({
-	// 				selector: "textarea",
-	// 				plugins: "code image",
-	// 				toolbar: "undo redo | image code",
-	// 				images_upload_url: base + "modul/upload",
-	// 				image_prepend_url: base + "assets/img/",
-	// 				images_upload_handler: function (blobInfo, success, failure) {
-	// 					var xhr, formData;
+		$.ajax({
+			url: base + "modul/getubahmodul",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				// tinymce.init({
+				// 	selector: "textarea",
+				// 	plugins: "code image",
+				// 	toolbar: "undo redo | image code",
+				// 	images_upload_url: base + "modul/upload",
+				// 	image_prepend_url: base + "assets/img/",
+				// 	images_upload_handler: function (blobInfo, success, failure) {
+				// 		var xhr, formData;
 
-	// 					xhr = new XMLHttpRequest();
-	// 					xhr.withCredentials = false;
-	// 					xhr.open("POST", base + "modul/upload");
+				// 		xhr = new XMLHttpRequest();
+				// 		xhr.withCredentials = false;
+				// 		xhr.open("POST", base + "modul/upload");
 
-	// 					xhr.onload = function () {
-	// 						var json;
+				// 		xhr.onload = function () {
+				// 			var json;
 
-	// 						if (xhr.status != 200) {
-	// 							failure("HTTP Error: " + xhr.status);
-	// 							return;
-	// 						}
+				// 			if (xhr.status != 200) {
+				// 				failure("HTTP Error: " + xhr.status);
+				// 				return;
+				// 			}
 
-	// 						json = JSON.parse(xhr.responseText);
+				// 			json = JSON.parse(xhr.responseText);
 
-	// 						if (!json || typeof json.location != "string") {
-	// 							failure("Invalid JSON: " + xhr.responseText);
-	// 							return;
-	// 						}
+				// 			if (!json || typeof json.location != "string") {
+				// 				failure("Invalid JSON: " + xhr.responseText);
+				// 				return;
+				// 			}
 
-	// 						success(json.location);
-	// 					};
+				// 			success(json.location);
+				// 		};
 
-	// 					formData = new FormData();
-	// 					formData.append("file", blobInfo.blob(), blobInfo.filename());
+				// 		formData = new FormData();
+				// 		formData.append("file", blobInfo.blob(), blobInfo.filename());
 
-	// 					xhr.send(formData);
-	// 				},
-	// 			});
-	// 			console.log(data);
-	// 			$("#id").val(data.id);
-	// 			$("#modul").val(data.modul);
-	// 			$("#name").val(data.name);
-	// 			tinymce.get("peralatan").setContent(data.peralatan);
-	// 			tinymce.get("teori").setContent(data.teori);
-	// 			tinymce.get("cara").setContent(data.cara);
-	// 			tinymce.get("tugas_lapres").setContent(data.tugas_lapres);
-	// 			tinymce.get("tugas_pendahuluan").setContent(data.tugas_pendahuluan);
-	// 			$("#video").val(data.video);
-	// 			$("#pdf").val(data.pdf);
-	// 			$("#time").val(data.time);
-	// 			tinymce.get("tujuan").setContent(data.tujuan);
-	// 		},
-	// 	});
-	// });
+				// 		xhr.send(formData);
+				// 	},
+				// });
+				console.log(data);
+				$("#id").val(data.id);
+				$("#modul").val(data.modul);
+				$("#name").val(data.name);
+				tinymce.get("peralatan").setContent(data.peralatan);
+				tinymce.get("teori").setContent(data.teori);
+				tinymce.get("cara").setContent(data.cara);
+				tinymce.get("tugas_lapres").setContent(data.tugas_lapres);
+				tinymce.get("tugas_pendahuluan").setContent(data.tugas_pendahuluan);
+				$("#video").val(data.video);
+				$("#pdf").val(data.pdf);
+				$("#time").val(data.time);
+				tinymce.get("tujuan").setContent(data.tujuan);
+			},
+		});
+	});
 
 	$(".tombolEditArah").on("click", function () {
 		const id = $(this).data("id");

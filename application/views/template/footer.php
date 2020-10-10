@@ -28,7 +28,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url(); ?>assets/js/sb-admin-2.min.js?v=9"></script>
-<script src="<?= base_url(); ?>assets/js/script.js?v=98"></script>
+<script src="<?= base_url(); ?>assets/js/script.js?v=99"></script>
 
 
 <script>
@@ -37,6 +37,38 @@
     editor_selector: "edit",
     plugins: "code image",
     toolbar: "undo redo | image code",
+    images_upload_url: base + "modul/upload",
+    image_prepend_url: base + "assets/img/",
+    images_upload_handler: function(blobInfo, success, failure) {
+      var xhr, formData;
+
+      xhr = new XMLHttpRequest();
+      xhr.withCredentials = false;
+      xhr.open("POST", "https://riset.its.ac.id/praktikum-fisdas/modul/upload");
+
+      xhr.onload = function() {
+        var json;
+
+        if (xhr.status != 200) {
+          failure("HTTP Error: " + xhr.status);
+          return;
+        }
+
+        json = JSON.parse(xhr.responseText);
+
+        if (!json || typeof json.location != "string") {
+          failure("Invalid JSON: " + xhr.responseText);
+          return;
+        }
+
+        success(json.location);
+      };
+
+      formData = new FormData();
+      formData.append("file", blobInfo.blob(), blobInfo.filename());
+
+      xhr.send(formData);
+    },
   });
 
   $('.custom-file-input').on('change', function() {
