@@ -29,10 +29,20 @@
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url(); ?>assets/js/sb-admin-2.min.js?v=9"></script>
 <script>
+  $(document).on('focusin', function(e) {
+    if ($(e.target).closest(".mce-window").length) {
+      e.stopImmediatePropagation();
+    }
+  });
+
   tinymce.init({
     selector: "textarea.edit",
-    plugins: "code image",
-    toolbar: "undo redo | image | code",
+    plugins: [
+      "advlist autolink lists link image charmap hr anchor pagebreak",
+      "insertdatetime media nonbreaking save table contextmenu directionality",
+      "code"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media code",
     image_prepend_url: "https://riset.its.ac.id/praktikum-fisdas/assets/img/",
     images_upload_handler: function(blobInfo, success, failure) {
       var xhr, formData;
