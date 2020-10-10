@@ -162,7 +162,7 @@ class Asisten_model extends CI_Model
 
   public function Tampildetailkelompok($id)
   {
-    $query = "SELECT `anggota_kelompok`.`id` , `anggota_kelompok`.`nrp` as `nrp` , `user`.`name` as 'name' , `anggota_kelompok`.`no_kelompok` FROM `anggota_kelompok` 
+    $query = "SELECT `anggota_kelompok`.`id`, `kelompok`.`no_kelompok` , `anggota_kelompok`.`nrp` as `nrp` , `user`.`name` as 'name' , `anggota_kelompok`.`no_kelompok` FROM `anggota_kelompok` 
               INNER JOIN `user` ON `anggota_kelompok`.`nrp` = `user`.`nrp` 
               WHERE `anggota_kelompok`.`no_kelompok`= $id
               ORDER BY `user`.`nrp` ASC";
