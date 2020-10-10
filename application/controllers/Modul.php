@@ -107,7 +107,7 @@ class Modul extends CI_Controller
 
     public function upload()
     {
-        $accepted_origins = array("https://riset.its.ac.id/praktikum-fisdas");
+        $accepted_origins = array("https://riset.its.ac.id/praktikum-fisdas/");
 
         // Images upload path
         $imageFolder = $_SERVER['DOCUMENT_ROOT'] . "/assets/img/";
