@@ -149,64 +149,59 @@
                     </div>
                     <?= $this->session->flashdata('message1'); ?>
                 </div>
-                <?php if (empty($list)) { ?>
-                    <div class="alert alert-danger" role="alert">
-                        Data not found!
-                    </div>
-                <?php } else { ?>
-                    <div id="bungkus">
 
-                        <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
+                <div id="bungkus">
+
+                    <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">NRP</th>
+                                <th scope="col">Modul</th>
+                                <th scope="col">Kelompok</th>
+                                <th scope="col">Jadwal</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">NRP</th>
+                                <th scope="col">Modul</th>
+                                <th scope="col">Kelompok</th>
+                                <th scope="col">Jadwal</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <?php $i = 1;
+                            foreach ($list as $l) :
+                            ?>
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">NRP</th>
-                                    <th scope="col">Modul</th>
-                                    <th scope="col">Kelompok</th>
-                                    <th scope="col">Jadwal</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="row"><?= $start + 1; ?></th>
+                                    <td><?= $l['name']; ?></td>
+                                    <td><?= $l['nrp']; ?></td>
+                                    <td><?= $l['modul']; ?></td>
+                                    <td><?= $l['no_kelompok']; ?></td>
+                                    <td><?= str_replace("T", " | ", $l['jadwal']); ?></td>
+                                    <td>
+                                        <a href="<?= base_url('modul/editjadwal/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilEditJadwal" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#JadwalEdit">
+                                            <i class=" fas fa-fw fa-edit"></i>
+                                            Edit
+                                        </a>
+                                        <a href="<?= base_url('modul/deletejadwal/') . $l['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
+                                            <i class="fas fa-fw fa-trash-alt"></i>
+                                            Delete
+                                        </a>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">NRP</th>
-                                    <th scope="col">Modul</th>
-                                    <th scope="col">Kelompok</th>
-                                    <th scope="col">Jadwal</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                                <?php $i = 1;
-                                foreach ($list as $l) :
-                                ?>
-                                    <tr>
-                                        <th scope="row"><?= $start + 1; ?></th>
-                                        <td><?= $l['name']; ?></td>
-                                        <td><?= $l['nrp']; ?></td>
-                                        <td><?= $l['modul']; ?></td>
-                                        <td><?= $l['no_kelompok']; ?></td>
-                                        <td><?= str_replace("T", " | ", $l['jadwal']); ?></td>
-                                        <td>
-                                            <a href="<?= base_url('modul/editjadwal/') . $l['id']; ?>" class="badge badge-pill badge-primary tampilEditJadwal" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#JadwalEdit">
-                                                <i class=" fas fa-fw fa-edit"></i>
-                                                Edit
-                                            </a>
-                                            <a href="<?= base_url('modul/deletejadwal/') . $l['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
-                                                <i class="fas fa-fw fa-trash-alt"></i>
-                                                Delete
-                                            </a>
-                                        </td>
-                                    </tr>
-                                <?php $start++;
-                                endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                <?php } ?>
+                            <?php $start++;
+                            endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="mt-2">
                 <?= $this->pagination->create_links(); ?>
