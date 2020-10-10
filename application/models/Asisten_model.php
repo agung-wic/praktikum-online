@@ -164,7 +164,7 @@ class Asisten_model extends CI_Model
   {
     $query = "SELECT `anggota_kelompok`.`id`, `kelompok`.`no_kelompok` , `anggota_kelompok`.`nrp` as `nrp` , `user`.`name` as 'name' , `anggota_kelompok`.`no_kelompok` FROM `anggota_kelompok` 
               INNER JOIN `user` ON `anggota_kelompok`.`nrp` = `user`.`nrp`
-              INENR JOIN `kelompok` ON `anggota_kelompok`.`no_kelompok` = `kelompok`.`id`
+              INNER JOIN `kelompok` ON `anggota_kelompok`.`no_kelompok` = `kelompok`.`id`
               WHERE `anggota_kelompok`.`no_kelompok`= $id
               ORDER BY `user`.`nrp` ASC";
 
