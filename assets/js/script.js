@@ -4,7 +4,7 @@ $(function () {
 		const id = $(this).data("id");
 
 		$.ajax({
-			url: base + "mmodul/getubah",
+			url: base + "modul/getubah",
 			data: {
 				id: id,
 			},
