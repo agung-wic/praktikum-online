@@ -40,11 +40,11 @@
                 </div>
             </div>
             <div class="card-footer">
-                <a href="<?= base_url('admin/accpengajuan') . "?id=" . $jadwal['id'] . "&action=1" ?>" class="btn btn-primary">
+                <a href="<?= base_url('modul/accpengajuan') . "?id=" . $jadwal['id'] . "&action=1" ?>" class="btn btn-primary">
                     <i class=" fas fa-fw fa-check-circle"></i>
                     Setujui
                 </a>
-                <a href="<?= base_url('admin/accpengajuan') . "?id=" . $jadwal['id'] . "&action=2" ?>" onclick="return confirm('Yakin?');" class="btn btn-danger">
+                <a href="<?= base_url('modul/accpengajuan') . "?id=" . $jadwal['id'] . "&action=2" ?>" onclick="return confirm('Yakin?');" class="btn btn-danger">
                     <i class="fas fa-fw fa-times-circle"></i>
                     Tolak
                 </a>

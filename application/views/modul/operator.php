@@ -126,7 +126,7 @@
                     <li>Kolom kedelapan = kosongkan</li>
                     <li>Kolom kesembulan = kosongkan</li>
                 </ol>
-                <?= form_open_multipart(base_url('admin/addfileuser')) ?>
+                <?= form_open_multipart(base_url('modul/addfileuser')) ?>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="fileuser" name="fileuser">
                     <label class="custom-file-label" for="fileuser">Pilih berkas</label>
