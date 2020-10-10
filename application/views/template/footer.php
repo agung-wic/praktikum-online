@@ -70,11 +70,13 @@
     },
   });
 
+  // Prevent Bootstrap dialog from blocking focusin
   $(document).on('focusin', function(e) {
-    if ($(e.target).closest(".mce-window").length) {
+    if ($(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
       e.stopImmediatePropagation();
     }
   });
+
 
   $('.custom-file-input').on('change', function() {
     let fileName = $(this).val().split('\\').pop();
