@@ -29,12 +29,6 @@
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url(); ?>assets/js/sb-admin-2.min.js?v=9"></script>
 <script>
-  $(document).on('focusin', function(e) {
-    if ($(e.target).closest(".mce-window").length) {
-      e.stopImmediatePropagation();
-    }
-  });
-
   tinymce.init({
     selector: "textarea.edit",
     plugins: [
@@ -74,6 +68,12 @@
 
       xhr.send(formData);
     },
+  });
+
+  $(document).on('focusin', function(e) {
+    if ($(e.target).closest(".mce-window").length) {
+      e.stopImmediatePropagation();
+    }
   });
 
   $('.custom-file-input').on('change', function() {
