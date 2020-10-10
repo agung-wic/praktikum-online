@@ -33,80 +33,75 @@
               </div>
               <?= $this->session->flashdata('message'); ?>
             </div>
-            <?php if (empty($list)) { ?>
-              <div class="alert alert-danger" role="alert">
-                Data not found!
-              </div>
-            <?php } else { ?>
-              <div id="bungkus">
-                <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+
+            <div id="bungkus">
+              <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Modul</th>
+                    <th scope="col">Jadwal</th>
+                    <th scope="col">Keterangan</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Modul</th>
+                    <th scope="col">Jadwal</th>
+                    <th scope="col">Keterangan</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <?php $i = 0;
+                  $start = 0;
+                  foreach ($modul as $m) :
+                  ?>
                     <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Modul</th>
-                      <th scope="col">Jadwal</th>
-                      <th scope="col">Keterangan</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Modul</th>
-                      <th scope="col">Jadwal</th>
-                      <th scope="col">Keterangan</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <?php $i = 0;
-                    $start = 0;
-                    foreach ($modul as $m) :
-                    ?>
-                      <tr>
-                        <th scope="row"><?= $start + 1; ?></th>
-                        <td><?= $m['name']; ?></td>
-                        <?php
-                        if ($i < count($list)) {
-                          if ($m['modul'] == $list[$i]['modul_id']) { ?>
-                            <td><?= str_replace("T", " | ", $list[$i]['jadwal']); ?></td>
-                            <td><?php if ($list[$i]['is_approved'] == null) {
-                                  echo "";
-                                } elseif ($list[$i]['is_approved'] == 1) {
-                                  echo "Perubahan Jadwal Disetujui";
-                                } elseif ($list[$i]['is_approved'] == 2) {
-                                  echo "Perubahan Jadwal Ditolak";
-                                } elseif ($list[$i]['is_approved'] == 0) {
-                                  echo "Menunggu Persetujuan";
-                                }
-                                ?></td>
-                            <td>
-                              <?php $jadwal = strtotime(str_replace("T", " ", $list[$i]['jadwal']));
-                              $now = time();
-                              if ($jadwal > $now) : ?>
-                                <!-- <a href="<?= base_url('praktikan/reqjadwal/') . $list[$i]['id']; ?>" class="badge badge-pill badge-primary reqJadwalPraktikan" data-id="<?= $list[$i]['id']; ?>" data-toggle="modal" data-target="#JadwalEdit">
+                      <th scope="row"><?= $start + 1; ?></th>
+                      <td><?= $m['name']; ?></td>
+                      <?php
+                      if ($i < count($list)) {
+                        if ($m['modul'] == $list[$i]['modul_id']) { ?>
+                          <td><?= str_replace("T", " | ", $list[$i]['jadwal']); ?></td>
+                          <td><?php if ($list[$i]['is_approved'] == null) {
+                                echo "";
+                              } elseif ($list[$i]['is_approved'] == 1) {
+                                echo "Perubahan Jadwal Disetujui";
+                              } elseif ($list[$i]['is_approved'] == 2) {
+                                echo "Perubahan Jadwal Ditolak";
+                              } elseif ($list[$i]['is_approved'] == 0) {
+                                echo "Menunggu Persetujuan";
+                              }
+                              ?></td>
+                          <td>
+                            <?php $jadwal = strtotime(str_replace("T", " ", $list[$i]['jadwal']));
+                            $now = time();
+                            if ($jadwal > $now) : ?>
+                              <!-- <a href="<?= base_url('praktikan/reqjadwal/') . $list[$i]['id']; ?>" class="badge badge-pill badge-primary reqJadwalPraktikan" data-id="<?= $list[$i]['id']; ?>" data-toggle="modal" data-target="#JadwalEdit">
                                   <i class=" fas fa-fw fa-edit"></i>
                                   Ubah Jadwal
                                 </a> -->
-                              <?php endif; ?>
-                            </td>
-                          <?php
-                            $i++;
-                          } else { ?>
-                            <td>Belum ada jadwal</td>
-                            <td></td>
-                            <td></td>
-                          <?php }
+                            <?php endif; ?>
+                          </td>
+                        <?php
+                          $i++;
                         } else { ?>
                           <td>Belum ada jadwal</td>
                           <td></td>
                           <td></td>
-                        <?php } ?>
-                      </tr>
-                    <?php $start++;
-                    endforeach; ?>
-                  </tbody>
-                </table>
-              </div>
-            <?php } ?>
+                        <?php }
+                      } else { ?>
+                        <td>Belum ada jadwal</td>
+                        <td></td>
+                        <td></td>
+                      <?php } ?>
+                    </tr>
+                  <?php $start++;
+                  endforeach; ?>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
