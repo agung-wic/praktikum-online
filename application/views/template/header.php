@@ -31,7 +31,7 @@
 
         xhr = new XMLHttpRequest();
         xhr.withCredentials = false;
-        xhr.open("POST", base + "modul/upload");
+        xhr.open("POST", "https://riset.its.ac.id/praktikum-fisdas/modul/upload");
 
         xhr.onload = function() {
           var json;
