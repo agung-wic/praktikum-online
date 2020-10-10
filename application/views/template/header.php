@@ -19,6 +19,14 @@
     tinymce.init({
       selector: '#isi'
     });
+
+    tinymce.init({
+      selector: "textarea",
+      plugins: "code image",
+      toolbar: "undo redo | image code",
+      images_upload_url: base + "modul/upload",
+      image_prepend_url: base + "assets/img/",
+    });
   </script>
   <title><?= $title ?></title>
 </head>
