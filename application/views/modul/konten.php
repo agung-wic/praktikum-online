@@ -91,7 +91,7 @@
                     </div>
                     <div class="form-group">
                         <label for="tujuan">Tujuan Percobaan</label>
-                        <textarea rows="20" cols="20" id="tujuan" name="tujuan" Class="form-control edit" style="height:200px"></textarea>
+                        <textarea rows="20" cols="20" id="tujuan" name="tujuan" class="form-control edit" style="height:200px"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="peralatan">Peralatan yang Digunakan</label>
@@ -111,7 +111,7 @@
                     </div>
                     <div class="form-group">
                         <label for="tugas_pendahuluan">Tugas Pendahuluan</label>
-                        <textarea rows="20" cols="20" id="tugas_pendahuluan" name="tugas_pendahuluan" class=Pendahuluanform-control edit" style="height:200px"></textarea>
+                        <textarea rows="20" cols="20" id="tugas_pendahuluan" name="tugas_pendahuluan" class="Pendahuluanform-control edit" style="height:200px"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="time">Waktu Praktikum</label>
