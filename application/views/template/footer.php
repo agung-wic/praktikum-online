@@ -35,7 +35,6 @@
     plugins: "code image",
     toolbar: "undo redo | link image | code",
     image_dimensions: true,
-    images_upload_url: "https://riset.its.ac.id/praktikum-fisdas/modul/upload",
     image_prepend_url: "https://riset.its.ac.id/praktikum-fisdas/assets/img/",
     images_upload_handler: function(blobInfo, success, failure) {
       var xhr, formData;
