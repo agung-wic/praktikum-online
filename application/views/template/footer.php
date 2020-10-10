@@ -30,11 +30,9 @@
 <script src="<?= base_url(); ?>assets/js/sb-admin-2.min.js?v=9"></script>
 <script>
   tinymce.init({
-    mode: "specific_textareas",
-    editor_selector: "edit",
+    selector: "textarea.edit",
     plugins: "code image",
-    toolbar: "undo redo | link image | code",
-    image_dimensions: true,
+    toolbar: "undo redo | image | code",
     image_prepend_url: "https://riset.its.ac.id/praktikum-fisdas/assets/img/",
     images_upload_handler: function(blobInfo, success, failure) {
       var xhr, formData;
