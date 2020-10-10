@@ -29,7 +29,6 @@
                             <tbody>
                                 <?php $i = 1;
                                 $cek = 0;
-                                var_dump($jumlah_asisten);
                                 ?>
                                 <?php foreach ($kelompok as $k) : ?>
                                     <tr>
@@ -42,7 +41,7 @@
                                                 echo "<td>" . $jumlah_asisten[$cek]['jumlah'] . "</td>";
                                                 $cek++;
                                             } else {
-                                                echo "<td>" . $k['id'] . " = " . $jumlah_asisten[$cek]['id'] . "</td>";
+                                                echo "<td>0</td>";
                                             }
                                         } else {
                                             echo "<td>0</td>";
