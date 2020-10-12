@@ -11,7 +11,7 @@
         <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
       </div>
       <div class="col-auto text-right mt-4 mr-2">
-        <a href="" class="btn gradien mb-3" data-toggle="modal" data-target="#UserAddFile"><i class="fas fa-file-csv"></i>
+        <a href="" class="btn gradien mb-3" data-toggle="modal" data-target="#UserAddFile"><i class="fas fa-file-csv"></i> Tambah User Via File
         </a>
       </div>
       <div class="card-body">
@@ -39,7 +39,7 @@
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" name="keyword" placeholder="Cari user...">
                   <div class="input-group-append">
-                    <button class="btn gradien" type="submit"><i class="fas fa-fw fa-search"></i> Tambah User Via File</button>
+                    <button class="btn gradien" type="submit"><i class="fas fa-fw fa-search"></i></button>
                   </div>
                 </div>
               </form>
