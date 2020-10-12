@@ -36,6 +36,9 @@
       "insertdatetime media nonbreaking save table contextmenu directionality",
       "code"
     ],
+    relative_urls: false,
+    remove_script_host: false,
+    convert_urls: true,
     toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media code",
     image_prepend_url: "https://riset.its.ac.id/praktikum-fisdas/assets/img/",
     images_upload_handler: function(blobInfo, success, failure) {
