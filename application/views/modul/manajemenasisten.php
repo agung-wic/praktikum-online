@@ -29,6 +29,7 @@
                             <tbody>
                                 <?php $i = 1;
                                 $cek = 0;
+                                $masuk = 0;
                                 ?>
                                 <?php foreach ($kelompok as $k) : ?>
                                     <tr>
@@ -36,14 +37,16 @@
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $k['no_kelompok'] ?></td>
                                         <?php
-                                        if ($cek < count($jumlah_asisten)) {
+                                        while ($cek < count($jumlah_asisten)) {
                                             if ($k['id'] == $jumlah_asisten[$cek]['id']) {
                                                 echo "<td>" . $jumlah_asisten[$cek]['jumlah'] . "</td>";
-                                                $cek++;
+                                                $masuk = 1;
+                                                break;
                                             } else {
-                                                echo "<td>0</td>";
+                                                $cek++;
                                             }
-                                        } else {
+                                        }
+                                        if ($masuk == 0) {
                                             echo "<td>0</td>";
                                         }
                                         ?>
