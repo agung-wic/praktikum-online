@@ -45,12 +45,12 @@ class Admin extends CI_Controller
             $data['keyword'] = null;
             $config['total_rows'] = $this->Admin_model->JumlahUser();
         }
-        var_dump($data['keyword']);
-        die;
         $config['per_page'] = 10;
         $this->pagination->initialize($config);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['list'] = $this->Admin_model->TampilUser($config['per_page'], $data['start'], $data['keyword']);
+        var_dump($data['list']);
+        die;
         $data['detail'] = $this->db->get_where('user', ['id' => $id])->row_array();
         $data['role'] = $this->db->get('user_role')->result_array();
 
