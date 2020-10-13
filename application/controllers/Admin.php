@@ -41,13 +41,12 @@ class Admin extends CI_Controller
 
         if ($this->input->post('keyword')) {
             $data['keyword'] = $this->input->post('keyword');
-            $data['list'] = $this->Admin_model->TampilUser($config['per_page'], $data['start'], $data['keyword']);
+            $config['total_rows'] = $this->Admin_model->JumlahSearch();
         } else {
             $data['keyword'] = null;
-            $data['list'] = $this->Admin_model->TampilUser($config['per_page'], $data['start'], $data['keyword']);
-            // $config['total_rows'] = $this->Admin_model->JumlahUser();
+            $config['total_rows'] = $this->Admin_model->JumlahUser();
         }
-        $config['total_rows'] = $this->db->count_all_results();
+        $data['list'] = $this->Admin_model->TampilUser($config['per_page'], $data['start'], $data['keyword']);
         var_dump($config['total_rows']);
         $this->pagination->initialize($config);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
