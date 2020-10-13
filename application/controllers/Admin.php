@@ -448,38 +448,6 @@ class Admin extends CI_Controller
         redirect(base_url('admin/jadwal'));
     }
 
-    public function addfilejadwal()
-    {
-        $file = $_FILES['filejadwal']['name'];
-
-        $config['upload_path'] = './assets/file/';
-        $config['allowed_types'] = 'csv';
-
-        $this->load->library('upload', $config);
-        if ($this->upload->do_upload('filejadwal')) {
-
-            $data = fopen(base_url('assets/file/') . $file, "r");
-            while (!feof($data)) {
-                $csv = fgetcsv($data, 0, ';');
-                $jadwal = [
-                    "nrp" => $csv[0],
-                    "modul_id" => $csv[1],
-                    "jadwal" => str_replace("T", " ", $csv[2])
-                ];
-                $this->db->insert('jadwal', $jadwal);
-            }
-            fclose($data);
-            unlink(FCPATH . 'assets/file/' . $file);
-            $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
-            Jadwal praktikan berhasil ditambahkan!
-            </div>');
-            redirect(base_url('admin/jadwal'));
-        } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
-            redirect(base_url('user'));
-        }
-    }
-
     public function addfileuser()
     {
         $file = $_FILES['fileuser']['name'];
@@ -491,25 +459,30 @@ class Admin extends CI_Controller
         if ($this->upload->do_upload('fileuser')) {
 
             $data = fopen(base_url('assets/file/') . $file, "r");
+            $jumlah = 0;
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
-                $user = [
-                    "name" => $csv[0],
-                    "nrp" => $csv[1],
-                    "email" => $csv[2],
-                    "image" => $csv[3],
-                    "password" => $csv[4],
-                    "role_id" => $csv[5],
-                    "is_active" => $csv[6],
-                    "date_created" => $csv[7],
-                    "is_online" => $csv[8],
-                ];
-                $this->db->insert('user', $user);
+                $ada = $this->db->get_where('user', ['nrp' => $csv[1]])->row_array();
+                if (count($ada) <= 0) {
+                    $user = [
+                        "name" => $csv[0],
+                        "nrp" => $csv[1],
+                        "email" => $csv[2],
+                        "image" => $csv[3],
+                        "password" => $csv[4],
+                        "role_id" => $csv[5],
+                        "is_active" => $csv[6],
+                        "date_created" => $csv[7],
+                        "is_online" => $csv[8],
+                    ];
+                    $this->db->insert('user', $user);
+                    $jumlah++;
+                }
             }
             fclose($data);
             unlink(FCPATH . 'assets/file/' . $file);
             $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
-            User berhasil ditambahkan!
+            ' . $jumlah . ' user berhasil ditambahkan melalui file!
             </div>');
             redirect(base_url('admin/index'));
         } else {
