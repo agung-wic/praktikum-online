@@ -150,15 +150,14 @@ class Asisten_model extends CI_Model
   {
     $query = "SELECT COUNT(`anggota_kelompok`.`nrp`) AS jumlah ,`kelompok`.`id` as `id_kelompok`, `kelompok_asisten`.`id` , `kelompok_asisten`.`nrp` as `nrp` , `kelompok_asisten`.`id_modul` as `id_modul` , `kelompok_asisten`.`no_kelompok` as `no_kelompok` ,
               `user`.`name`,`kelompok`.`no_kelompok` FROM `kelompok_asisten` 
-              INNER JOIN `user` ON `user`.`nrp` = `kelompok_asisten`.`nrp` 
-              INNER JOIN `kelompok` ON `kelompok`.`id` = `kelompok_asisten`.`no_kelompok` 
-              INNER JOIN `modul` ON `modul`.`modul` = `kelompok_asisten`.`id_modul` 
-              INNER JOIN `anggota_kelompok` ON `anggota_kelompok` . `no_kelompok` = `kelompok_asisten` . `no_kelompok`
-              WHERE `kelompok_asisten`.`nrp` = $id";
+              LEFT JOIN `user` ON `user`.`nrp` = `kelompok_asisten`.`nrp` 
+              LEFT JOIN `kelompok` ON `kelompok`.`id` = `kelompok_asisten`.`no_kelompok` 
+              LEFT JOIN `modul` ON `modul`.`modul` = `kelompok_asisten`.`id_modul` 
+              LEFT JOIN `anggota_kelompok` ON `anggota_kelompok` . `no_kelompok` = `kelompok_asisten` . `no_kelompok`
+              WHERE `kelompok_asisten`.`nrp` = $id GROUP BY `kelompok_asisten`.`no_kelompok`";
 
     return $this->db->query($query)->result_array();
   }
-
 
   public function Tampildetailkelompok($id)
   {
