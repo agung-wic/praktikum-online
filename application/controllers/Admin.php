@@ -422,21 +422,25 @@ class Admin extends CI_Controller
             $jumlah = 0;
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
-                $ada = $this->db->get_where('user', ['nrp' => $csv[1]])->row_array();
-                if (!$ada) {
-                    $user = [
-                        "name" => $csv[0],
-                        "nrp" => $csv[1],
-                        "email" => $csv[2],
-                        "image" => $csv[3],
-                        "password" => $csv[4],
-                        "role_id" => $csv[5],
-                        "is_active" => $csv[6],
-                        "date_created" => $csv[7],
-                        "is_online" => $csv[8],
-                    ];
-                    $this->db->insert('user', $user);
-                    $jumlah++;
+                if ($csv[1] == "") {
+                    continue;
+                } else {
+                    $ada = $this->db->get_where('user', ['nrp' => $csv[1]])->row_array();
+                    if (!$ada) {
+                        $user = [
+                            "name" => $csv[0],
+                            "nrp" => $csv[1],
+                            "email" => $csv[2],
+                            "image" => $csv[3],
+                            "password" => $csv[4],
+                            "role_id" => $csv[5],
+                            "is_active" => $csv[6],
+                            "date_created" => $csv[7],
+                            "is_online" => $csv[8],
+                        ];
+                        $this->db->insert('user', $user);
+                        $jumlah++;
+                    }
                 }
             }
             fclose($data);
