@@ -19,23 +19,20 @@ class Admin_model extends CI_Model
     return $this->db->query($query)->result_array();
   }
 
-  public function JumlahSearch($keyword)
+  public function JumlahUser($keyword = NULL)
   {
-    $query = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`nrp`, `user_role`.`role` 
+    if ($keyword) {
+      $query = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`nrp`, `user_role`.`role` 
       FROM `user` INNER JOIN `user_role` ON `user`.`role_id` = `user_role`.`id` 
       WHERE `user`.`name` LIKE '%$keyword%'
       OR `user`.`email` LIKE '%$keyword%'
       OR `user`.`nrp` LIKE '%$keyword%' 
       OR `user_role`.`role` LIKE '%$keyword%'";
+    } else {
 
-    return $this->db->query($query)->num_rows();
-  }
-
-  public function JumlahUser()
-  {
-    $query = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`nrp`, `user_role`.`role` 
+      $query = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`nrp`, `user_role`.`role` 
               FROM `user` INNER JOIN `user_role` ON `user`.`role_id` = `user_role`.`id`";
-
+    }
     return $this->db->query($query)->num_rows();
   }
 
