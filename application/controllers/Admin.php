@@ -381,46 +381,6 @@ class Admin extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function accpengajuan()
-    {
-        $id = $this->input->get('id');
-        $action = $this->input->get('action');
-
-        $this->load->model('Admin_model');
-        $jadwal = $this->Admin_model->DetailJadwal($id);
-        if ($action == 1) {
-            $data = [
-                'nrp' => $jadwal['nrp'],
-                'modul_id' => $jadwal['modul_id'],
-                'jadwal' => str_replace("T", " ", $jadwal['jadwal_new'])
-            ];
-            $this->db->where('nrp', $jadwal['nrp']);
-            $this->db->where('modul_id', $jadwal['modul_id']);
-            $this->db->update('jadwal', $data);
-
-            $data = [
-                'nrp' => $jadwal['nrp'],
-                'modul_id' => $jadwal['modul_id'],
-                'jadwal_old' => str_replace("T", " ", $jadwal['jadwal_old']),
-                'jadwal_new' => str_replace("T", " ", $jadwal['jadwal_new']),
-                'is_approved' => 1
-            ];
-            $this->db->where('id', $id);
-            $this->db->update('req_jadwal', $data);
-        } elseif ($action == 2) {
-            $data = [
-                'nrp' => $jadwal['nrp'],
-                'modul_id' => $jadwal['modul_id'],
-                'jadwal_old' => $jadwal['jadwal_old'],
-                'jadwal_new' => $jadwal['jadwal_new'],
-                'is_approved' => 2
-            ];
-            $this->db->where('id', $id);
-            $this->db->update('req_jadwal', $data);
-        }
-        redirect(base_url('admin/jadwal'));
-    }
-
     public function getubahjadwal()
     {
         $this->load->model('Admin_model');
@@ -463,7 +423,7 @@ class Admin extends CI_Controller
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
                 $ada = $this->db->get_where('user', ['nrp' => $csv[1]])->row_array();
-                if (count($ada) <= 0) {
+                if (!$ada) {
                     $user = [
                         "name" => $csv[0],
                         "nrp" => $csv[1],

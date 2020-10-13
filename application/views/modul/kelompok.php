@@ -15,7 +15,7 @@
                     <div class="col-auto mr-auto">
                         <a href="" class="btn gradien mb-3 tombolTambahKelompok" data-toggle="modal" data-target="#TambahKelompok">Tambah Kelompok</a>
                     </div>
-                    <div class="col-1 mr-auto">
+                    <div class="col-1">
                         <a href="" class="btn gradien mb-3" data-toggle="modal" data-target="#KelompokAddFile"><i class="fas fa-file-csv"></i>
                         </a>
                     </div>
