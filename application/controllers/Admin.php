@@ -41,7 +41,7 @@ class Admin extends CI_Controller
 
         if ($this->input->post('keyword')) {
             $data['keyword'] = $this->input->post('keyword');
-            $config['total_rows'] = $this->Admin_model->JumlahSearch();
+            $config['total_rows'] = $this->Admin_model->JumlahSearch($data['keyword']);
         } else {
             $data['keyword'] = null;
             $config['total_rows'] = $this->Admin_model->JumlahUser();
