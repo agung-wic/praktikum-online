@@ -43,7 +43,7 @@ class Admin extends CI_Controller
             $data['keyword'] = $this->input->post('keyword');
             $this->session->set_userdata('keyword', $data['keyword']);
         } else {
-            $data['keyword'] = $this->session->userdata();
+            $data['keyword'] = $this->session->userdata('keyword');
         }
         $config['total_rows'] = $this->Admin_model->JumlahUser();
         $data['list'] = $this->Admin_model->TampilUser($config['per_page'], $data['start'], $data['keyword']);
