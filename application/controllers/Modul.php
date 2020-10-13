@@ -461,6 +461,59 @@ class Modul extends CI_Controller
         }
     }
 
+    public function addfilekelompok()
+    {
+        $file = $_FILES['filekelompok']['name'];
+
+        $config['upload_path'] = './assets/file/';
+        $config['allowed_types'] = 'csv';
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('filekelompok')) {
+
+            $data = fopen(base_url('assets/file/') . $file, "r");
+            while (!feof($data)) {
+                $csv = fgetcsv($data, 0, ';');
+                $no_kelompok = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
+                $nrp = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
+                $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $no_kelompok])->row_array();
+                if ($id_kelompok) {
+                    $anggota = $this->db->get_where('anggota_kelompok', ['no_kelompok' => $id_kelompok['id'], 'nrp' => $nrp])->row_array();
+                    if ($anggota) {
+                        continue;
+                    } else {
+                        $data = [
+                            "nrp" => $nrp,
+                            "no_kelompok" => $id_kelompok
+                        ];
+                        $this->db->insert('anggota_kelompok', $data);
+                    }
+                } else {
+                    $kelompok = [
+                        'no_kelompok' => $no_kelompok
+                    ];
+                    $this->db->insert('kelompok', $kelompok);
+
+                    $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $no_kelompok])->row_array();
+                    $data = [
+                        "nrp" => $nrp,
+                        "no_kelompok" => $id_kelompok
+                    ];
+                    $this->db->insert('anggota_kelompok', $data);
+                }
+            }
+            fclose($data);
+            unlink(FCPATH . 'assets/file/' . $file);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Data kelompok berhasil ditambahkan!
+            </div>');
+            redirect(base_url('modul/kelompok'));
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+            redirect(base_url('modul/kelompok'));
+        }
+    }
+
     public function jadwal()
     {
         $this->load->model('Modul_model');
