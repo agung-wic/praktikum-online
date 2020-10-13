@@ -45,7 +45,7 @@ class Admin extends CI_Controller
         } else {
             $data['keyword'] = $this->session->userdata('keyword');
         }
-        $config['total_rows'] = $this->Admin_model->JumlahUser();
+        $config['total_rows'] = $this->Admin_model->JumlahUser($data['keyword']);
         $data['list'] = $this->Admin_model->TampilUser($config['per_page'], $data['start'], $data['keyword']);
         var_dump($config['total_rows']);
         $this->pagination->initialize($config);
