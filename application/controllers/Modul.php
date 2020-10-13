@@ -801,6 +801,7 @@ class Modul extends CI_Controller
         $data['title'] = 'Manajemen Asisten';
         $data['id_modul'] = $this->uri->segment(3);
         $data['jumlah_asisten'] = $this->Modul_model->JumlahKelompokAsisten($data['id_modul']);
+        $this->db->order_by('no_kelompok', 'ASC');
         $data['kelompok'] = $this->db->get('kelompok')->result_array();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
