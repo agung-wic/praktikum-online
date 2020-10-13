@@ -28,11 +28,12 @@
                             </thead>
                             <tbody>
                                 <?php $i = 1;
-                                $cek = 0;
+
                                 ?>
 
                                 <?php foreach ($kelompok as $k) :
-                                    $masuk = 0; ?>
+                                    $masuk = 0;
+                                    $cek = 0; ?>
                                     <tr>
 
                                         <th scope="row"><?= $i; ?></th>
