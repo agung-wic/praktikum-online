@@ -7,7 +7,7 @@
       <div class="card-header">
         <div class="row">
           <div class="col">
-            <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
+            <h6 class="m-0 font-weight-bold "><?= $kelompok['no_kelompok']; ?></h6>
             <?= $this->session->flashdata('message1'); ?>
           </div>
         </div>
