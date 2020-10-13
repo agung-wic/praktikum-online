@@ -445,7 +445,7 @@ class Admin extends CI_Controller
             }
             fclose($data);
             unlink(FCPATH . 'assets/file/' . $file);
-            $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             ' . $jumlah . ' user berhasil ditambahkan melalui file!
             </div>');
             redirect(base_url('admin/index'));
