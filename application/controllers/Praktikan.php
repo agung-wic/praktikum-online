@@ -112,9 +112,11 @@ class Praktikan extends CI_Controller
         $data['modul'] = $this->db->get('modul')->result_array();
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $id_kelompok = $this->db->get_where('anggota_kelompok', ['nrp ' => $this->session->userdata('nrp')])->row_array();
-        $data['kelompok'] = $this->db->get_where('kelompok', ['id' => $id_kelompok['no_kelompok']])->row_array();
+        if ($id_kelompok != NULL) {
+            $data['kelompok'] = $this->db->get_where('kelompok', ['id' => $id_kelompok['no_kelompok']])->row_array();
+            $data['list'] = $this->Praktikan_model->TampilKelompok($id_kelompok['no_kelompok']);
+        }
         $this->load->model('Praktikan_model');
-        $data['list'] = $this->Praktikan_model->TampilKelompok($id_kelompok['no_kelompok']);
         if (!$id) {
             $this->db->where('nrp', $this->session->userdata('nrp'));
             $this->db->order_by('modul_id', 'ASC');
