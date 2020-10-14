@@ -517,8 +517,8 @@ class Auth extends CI_Controller
         }
         $data['title'] = 'Ubah Kata Sandi';
 
-        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[8]|matches[password2]');
-        $this->form_validation->set_rules('password2', 'Repeat Password', 'required|trim|min_length[8]|matches[password1]');
+        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[1]|matches[password2]');
+        $this->form_validation->set_rules('password2', 'Repeat Password', 'required|trim|min_length[1]|matches[password1]');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('template/auth_header', $data);
