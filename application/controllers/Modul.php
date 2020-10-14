@@ -523,13 +523,15 @@ class Modul extends CI_Controller
 
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('filekelompokasisten')) {
-
             $data = fopen(base_url('assets/file/') . $file, "r");
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
                 $nrp = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
                 $no_kelompok = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
                 $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $no_kelompok])->row_array();
+                var_dump($no_kelompok);
+                var_dump($id_kelompok);
+                die;
                 $id_modul = mb_convert_encoding($csv[2], "ISO-8859-1", "UTF-8");
                 $cek = $this->db->get_where('kelompok_asisten', ['nrp' => $nrp, 'id_modul' => $id_modul, 'no_kelompok' => $no_kelompok])->row_array();
                 if ($cek) {
