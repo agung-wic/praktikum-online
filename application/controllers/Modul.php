@@ -540,7 +540,7 @@ class Modul extends CI_Controller
                 } else {
                     $data = [
                         "nrp" => $nrp,
-                        "id_modul" => $id_modul
+                        "id_modul" => $id_modul,
                         "no_kelompok" => $id_kelompok,
                     ];
                     $this->db->insert('kelompok_asisten', $data);

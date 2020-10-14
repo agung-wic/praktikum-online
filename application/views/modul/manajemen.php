@@ -73,8 +73,8 @@
                 <h6>Berkas csv harus memiliki format sebagai berikut:</h6>
                 <ol>
                     <li>Kolom pertama = NRP Mahasiswa dengan 0 sebagai angka pertama</li>
-                    <li>Kolom kedua = Nama Kelompok</li>
                     <li>Kolom kedua = Id Modul</li>
+                    <li>Kolom ketiga = Nama Kelompok</li>
 
                 </ol>
                 <?= form_open_multipart(base_url('modul/addfilekelompokasisten')) ?>
