@@ -251,26 +251,23 @@ class Asisten extends CI_Controller
       'asisten' => $this->session->userdata('nrp')
     ];
     $nilai_angka = (($data['resume'] * 0.25) + ($data['pretest'] * 0.05) + ($data['uji_lisan'] * 0.1) + ($data['praktikum'] * 0.1) + ($data['postest'] * 0.05) + ($data['format'] * 0.1) + ($data['bab'] * 0.25) + ($data['kesimpulan'] * 0.1));
-    if ($nilai_angka >= 86.00 && $nilai_angka <= 100.00) {
+    if ($nilai_angka >= 86.00000 && $nilai_angka <= 100.00000) {
       $nilai_angka_abjad = "A";
-    } else if ($nilai_angka >= 76.00 && $nilai_angka <= 85.00) {
+    } else if ($nilai_angka >= 76.00000 && $nilai_angka <= 85.00000) {
       $nilai_angka_abjad = "AB";
-    } else if ($nilai_angka >= 66.00 && $nilai_angka <= 75.00) {
+    } else if ($nilai_angka >= 66.00000 && $nilai_angka <= 75.00000) {
       $nilai_angka_abjad = "B";
-    } else if ($nilai_angka >= 61.00 && $nilai_angka <= 65.00) {
+    } else if ($nilai_angka >= 61.00000 && $nilai_angka <= 65.00000) {
       $nilai_angka_abjad = "BC";
-    } else if ($nilai_angka >= 56.00 && $nilai_angka <= 60.00) {
+    } else if ($nilai_angka >= 56.00000 && $nilai_angka <= 60.00000) {
       $nilai_angka_abjad = "C";
-    } else if ($nilai_angka >= 41.00 && $nilai_angka <= 55.00) {
+    } else if ($nilai_angka >= 41.00000 && $nilai_angka <= 55.00000) {
       $nilai_angka_abjad = "D";
-    } else if ($nilai_angka >= 0.00 && $nilai_angka <= 40.00) {
+    } else if ($nilai_angka >= 0.00000 && $nilai_angka <= 40.00000) {
       $nilai_angka_abjad = "E";
     }
     $data['nilai_angka'] = $nilai_angka;
     $data['nilai_angka_abjad'] = $nilai_angka_abjad;
-    var_dump($data['nilai_angka']);
-    var_dump($data['nilai_angka_abjad']);
-    die;
     $this->db->where('id', $this->input->post('id'));
     $this->db->update('nilai', $data);
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
