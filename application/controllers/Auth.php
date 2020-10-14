@@ -150,7 +150,7 @@ class Auth extends CI_Controller
 
     public function addpassword()
     {
-        if ($this->session->userdata('password') = "123") {
+        if ($this->session->userdata('password')) {
             redirect(base_url('profil'));
         } else {
             $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
