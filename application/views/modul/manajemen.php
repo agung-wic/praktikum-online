@@ -11,6 +11,10 @@
                     <div class="col">
                         <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
                     </div>
+                    <div class="col-auto mr-auto">
+                        <a href="" class="btn gradien mb-3" data-toggle="modal" data-target="#KelompokAddFile"><i class="fas fa-file-csv"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
