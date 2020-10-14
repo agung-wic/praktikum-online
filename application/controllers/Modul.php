@@ -550,7 +550,7 @@ class Modul extends CI_Controller
                         }
                     } else {
                         $kelompok = [
-                            'no_kelompok' => $no_kelompok
+                            'no_kelompok' => $id_kelompok['id']
                         ];
                         $this->db->insert('kelompok', $kelompok);
                     }
