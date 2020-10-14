@@ -172,8 +172,8 @@ class Auth extends CI_Controller
                     'date_created' => time()
                 ];
                 $user = $this->db->get_where('user', ['nrp' => $nrp])->row_array();
-                // $this->db->where('nrp', $nrp);
-                // $this->db->update('user', $data);
+                $this->db->where('nrp', $nrp);
+                $this->db->update('user', $data);
                 $token = base64_encode(random_bytes(32));
                 $user_token = [
                     'email' => $user['email'],
