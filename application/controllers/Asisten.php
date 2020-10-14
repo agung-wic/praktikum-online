@@ -252,19 +252,19 @@ class Asisten extends CI_Controller
     ];
     $modul_id = $this->input->post('modul_id', true);
     $nilai_akhir = (($data['resume'] * 0.25) + ($data['pretest'] * 0.05) + ($data['uji_lisan'] * 0.1) + ($data['praktikum'] * 0.1) + ($data['postest'] * 0.05) + ($data['format'] * 0.1) + ($data['bab'] * 0.25) + ($data['kesimpulan'] * 0.1));
-    if ($nilai_akhir >= 86.00 && $nilai_akhir <= 100.00) {
+    if ($nilai_akhir >= 86.0000 && $nilai_akhir <= 100.0000) {
       $nilai_akhir_abjad = "A";
-    } else if ($nilai_akhir >= 76.00 && $nilai_akhir <= 85.00) {
+    } else if ($nilai_akhir >= 76.0000 && $nilai_akhir <= 85.0000) {
       $nilai_akhir_abjad = "AB";
-    } else if ($nilai_akhir >= 66.00 && $nilai_akhir <= 75.00) {
+    } else if ($nilai_akhir >= 66.0000 && $nilai_akhir <= 75.0000) {
       $nilai_akhir_abjad = "B";
-    } else if ($nilai_akhir >= 61.00 && $nilai_akhir <= 65.00) {
+    } else if ($nilai_akhir >= 61.0000 && $nilai_akhir <= 65.0000) {
       $nilai_akhir_abjad = "BC";
-    } else if ($nilai_akhir >= 56.00 && $nilai_akhir <= 60.00) {
+    } else if ($nilai_akhir >= 56.0000 && $nilai_akhir <= 60.0000) {
       $nilai_akhir_abjad = "C";
-    } else if ($nilai_akhir >= 41.00 && $nilai_akhir <= 55.00) {
+    } else if ($nilai_akhir >= 41.0000 && $nilai_akhir <= 55.0000) {
       $nilai_akhir_abjad = "D";
-    } else if ($nilai_akhir >= 0.00 && $nilai_akhir <= 40.00) {
+    } else if ($nilai_akhir >= 0.0000 && $nilai_akhir <= 40.0000) {
       $nilai_akhir_abjad = "E";
     }
     $data['nilai_akhir'] = $nilai_akhir;
