@@ -210,7 +210,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-auto">
-                                        <input type="number" min="0" max="100" class="form-control mb-1" id="nilai_akhir_abjad" name="nilai_akhir_abjad" disabled>
+                                        <input type="text" min="0" max="100" class="form-control mb-1" id="nilai_akhir_abjad" name="nilai_akhir_abjad" disabled>
                                     </div>
                                 </div>
                             </div>
