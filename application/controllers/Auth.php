@@ -180,8 +180,7 @@ class Auth extends CI_Controller
                     'token' => $token,
                     'date_created' => time()
                 ];
-                var_dump($user_token);
-                die;
+
                 $this->db->insert('user_token', $user_token);
 
                 $this->_sendEmail($token, 'verify', $user);
