@@ -170,38 +170,60 @@
                         <label for="postest">Postest</label>
                         <input type="number" min="0" max="100" class="form-control" id="postest" name="postest">
                     </div>
-                    <div class="form-group">
-                        <label for="laporan">Laporan</label>
-                        <div class="row">
-                            <div class="col-3">
-                                <span>Format</span>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="laporan">Laporan</label>
+                            <div class="row">
+                                <div class="col-3">
+                                    <span>Format</span>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="number" min="0" max="100" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
+                                </div>
                             </div>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="100" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
+                            <div class="row">
+                                <div class="col-3">
+                                    <span>Bab</span>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 3, 3, 4">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3">
-                                <span>Bab</span>
-                            </div>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 3, 3, 4">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3">
-                                <span>Kesimpulan</span>
-                            </div>
-                            <div class="col-auto">
-                                <input type="number" min="0" max="100" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
+                            <div class="row">
+                                <div class="col-3">
+                                    <span>Kesimpulan</span>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="number" min="0" max="100" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Edit</button>
-                </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="laporan">Nilai Akhir</label>
+                            <div class="row">
+                                <div class="col-3">
+                                    <span>Nilai Angka</span>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="number" min="0" max="100" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <span>Nilai</span>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 3, 3, 4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    </div>
             </form>
         </div>
     </div>
