@@ -268,8 +268,6 @@ class Asisten extends CI_Controller
     }
     $data['nilai_akhir'] = $nilai_akhir;
     $data['nilai_akhir_abjad'] = $nilai_akhir_abjad;
-    var_dump($data['nilai_akhir_abjad']);
-    die;
     $this->db->where('id', $this->input->post('id'));
     $this->db->update('nilai', $data);
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
