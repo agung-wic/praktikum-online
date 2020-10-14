@@ -371,6 +371,7 @@ $(function () {
 				$("#bab").val(data.bab);
 				$("#kesimpulan").val(data.kesimpulan);
 				$("#nilai_akhir").val(data.nilai_akhir);
+				$("#nilai_akhir_abjad").val(data.nilai_akhir_abjad);
 			},
 		});
 	});
@@ -405,6 +406,7 @@ $(function () {
 				$("#bab").val(data.bab);
 				$("#kesimpulan").val(data.kesimpulan);
 				$("#nilai_akhir").val(data.nilai_akhir);
+				$("#nilai_akhir_abjad").val(data.nilai_akhir_abjad);
 			},
 		});
 	});

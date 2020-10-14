@@ -250,8 +250,9 @@ class Asisten extends CI_Controller
       'kesimpulan' => $this->input->post('kesimpulan', true),
       'asisten' => $this->session->userdata('nrp')
     ];
-    $jumlah = $data['resume'] + $data['pretest'];
-    var_dump($jumlah);
+    // $nilai_angka = ($data['resume'] + ($data['pretest'] + ($data['uji_lisan'] + ($data['praktikum'] + ($data['postest'] + ($data['format'] + ($data['bab'] + ($data['kesimpulan'];
+    $coba = (($data['resume'] * 0.25) + ($data['pretest'] * 0.75)) * 100;
+    var_dump($coba);
     die;
     $this->db->where('id', $this->input->post('id'));
     $this->db->update('nilai', $data);

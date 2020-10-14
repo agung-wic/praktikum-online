@@ -201,22 +201,16 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="form-group">
+                            <div class="form-group hapus">
                                 <label for="laporan">Nilai Akhir</label>
                                 <div class="row">
-                                    <div class="col-3">
-                                        <span>Nilai Angka</span>
-                                    </div>
                                     <div class="col-auto">
-                                        <input type="number" min="0" max="100" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
+                                        <input type="number" min="0" max="100" class="form-control mb-1" id="nilai_akhir" name="nilai_akhir" disabled>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-3">
-                                        <span>Nilai</span>
-                                    </div>
                                     <div class="col-auto">
-                                        <input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 3, 3, 4">
+                                        <input type="number" min="0" max="100" class="form-control mb-1" id="nilai_akhir_abjad" name="nilai_akhir_abjad" disabled>
                                     </div>
                                 </div>
                             </div>
