@@ -167,7 +167,7 @@ class Auth extends CI_Controller
                 $nrp = $this->input->post('nrp', true);
                 $data = [
                     'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                    'role_id' => 8,
+                    'role_id' => 7,
                     'is_active' => 0,
                     'date_created' => time()
                 ];
