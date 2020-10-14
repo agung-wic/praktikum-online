@@ -523,7 +523,6 @@ class Modul extends CI_Controller
 
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('filekelompokasisten')) {
-
             $data = fopen(base_url('assets/file/') . $file, "r");
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
