@@ -61,6 +61,13 @@ class Auth extends CI_Controller
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!!</div>');
                     redirect('auth');
                 }
+            } else if ($user['password'] == "123") {
+                if ($Password == $user['password']) {
+                    redirect('auth/addpassword/' . $nrp);
+                } else {
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!!</div>');
+                    redirect('auth');
+                }
             } else {
                 if ($user['is_active'] == 1) {
                     if (password_verify($Password, $user['password'])) {
@@ -123,6 +130,52 @@ class Auth extends CI_Controller
                 $token = base64_encode(random_bytes(32));
                 $user_token = [
                     'email' => $this->input->post('email', true),
+                    'token' => $token,
+                    'date_created' => time()
+                ];
+
+                $user = $this->db->get_where('user', ['nrp' => $nrp])->row_array();
+
+                $this->db->insert('user_token', $user_token);
+
+                $this->_sendEmail($token, 'verify', $user);
+
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                                            Selamat! Akun berhasil dibuat. Silakan periksa email untuk aktivasi!
+                                            </div>');
+                redirect(base_url('auth/login'));
+            }
+        }
+    }
+
+    public function addpassword()
+    {
+        if ($this->session->userdata('password') = "123") {
+            redirect(base_url('profil'));
+        } else {
+            $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
+                'min_length' => 'Password minimal 6 karakter!',
+                'matches' => 'Password salah!'
+            ]);
+            $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
+            if ($this->form_validation->run() == false) {
+                $data['title'] = 'Ubah Kata Sandi';
+                $this->load->view('template/auth_header.php', $data);
+                $this->load->view('auth/addpassword.php');
+                $this->load->view('template/auth_footer.php');
+            } else {
+                $nrp = $this->input->post('nrp', true);
+                $data = [
+                    'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
+                    'role_id' => 8,
+                    'is_active' => 0,
+                    'date_created' => time()
+                ];
+                $this->db->where('nrp', $nrp);
+                $this->db->update('user', $data);
+
+                $token = base64_encode(random_bytes(32));
+                $user_token = [
                     'token' => $token,
                     'date_created' => time()
                 ];
