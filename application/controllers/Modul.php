@@ -527,13 +527,13 @@ class Modul extends CI_Controller
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
                 $nrp = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
+                $id_modul = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
+                $no_kelompok = mb_convert_encoding($csv[2], "ISO-8859-1", "UTF-8");
                 if ($nrp == NULL || $nrp == "") {
                     continue;
                 } else {
-                    $no_kelompok = mb_convert_encoding($csv[2], "ISO-8859-1", "UTF-8");
                     $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $no_kelompok])->row_array();
                     if ($id_kelompok) {
-                        $id_modul = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
                         $cek = $this->db->get_where('kelompok_asisten', ['nrp' => $nrp, 'id_modul' => $id_modul, 'no_kelompok' => $no_kelompok])->row_array();
                         if ($cek) {
                             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
@@ -544,15 +544,23 @@ class Modul extends CI_Controller
                             $masuk = [
                                 "nrp" => $nrp,
                                 "id_modul" => $id_modul,
-                                "no_kelompok" => $id_kelompok['id'],
+                                "no_kelompok" => $id_kelompok['id']
                             ];
                             $this->db->insert('kelompok_asisten', $masuk);
                         }
                     } else {
                         $kelompok = [
-                            'no_kelompok' => $id_kelompok['id']
+                            'no_kelompok' => $no_kelompok
                         ];
                         $this->db->insert('kelompok', $kelompok);
+
+                        $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $no_kelompok])->row_array();
+                        $masuk = [
+                            "nrp" => $nrp,
+                            "id_modul" => $id_modul,
+                            "no_kelompok" => $id_kelompok['id']
+                        ];
+                        $this->db->insert('kelompok_asisten', $masuk);
                     }
                 }
             }
