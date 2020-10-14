@@ -391,20 +391,20 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				console.log(data);
-				$("#idd").val(data.id);
-				$("#modul_idd").val(data.modul_id);
-				$("#namee").val(data.name);
-				$("#nrpp").val(data.nrp);
-				$("#modull").val(data.modul);
-				$("#resumee").val(data.resume);
-				$("#pretestt").val(data.pretest);
-				$("#uji_lisann").val(data.uji_lisan);
-				$("#praktikumm").val(data.praktikum);
-				$("#postestt").val(data.postest);
-				$("#formatt").val(data.format);
-				$("#babn").val(data.bab);
-				$("#kesimpulann").val(data.kesimpulan);
-				$("#nilai_akhirr").val(data.nilai_akhir);
+				$("#id").val(data.id);
+				$("#modul_id").val(data.modul_id);
+				$("#name").val(data.name);
+				$("#nrp").val(data.nrp);
+				$("#modul").val(data.modul);
+				$("#resume").val(data.resume);
+				$("#pretest").val(data.pretest);
+				$("#uji_lisan").val(data.uji_lisan);
+				$("#praktikum").val(data.praktikum);
+				$("#postest").val(data.postest);
+				$("#format").val(data.format);
+				$("#bab").val(data.bab);
+				$("#kesimpulan").val(data.kesimpulan);
+				$("#nilai_akhir").val(data.nilai_akhir);
 			},
 		});
 	});
