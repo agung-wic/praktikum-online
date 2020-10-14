@@ -383,6 +383,7 @@ $(function () {
 		$(".form-control").attr("readonly", true);
 		$(".hapus").hide();
 		$.ajax({
+			url: base + role + "/getubahnilai",
 			data: {
 				id: id,
 			},
