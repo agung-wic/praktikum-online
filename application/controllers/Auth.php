@@ -176,7 +176,7 @@ class Auth extends CI_Controller
 
                 $token = base64_encode(random_bytes(32));
                 $user_token = [
-                    'email' => $user['email'];
+                    'email' => $user['email'],
                     'token' => $token,
                     'date_created' => time()
                 ];
