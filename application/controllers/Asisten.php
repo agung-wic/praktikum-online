@@ -248,9 +248,9 @@ class Asisten extends CI_Controller
       'format' => $this->input->post('format', true),
       'bab' => $this->input->post('bab', true),
       'kesimpulan' => $this->input->post('kesimpulan', true),
-      'modul_id' => $this->input->post('modul_id', true),
       'asisten' => $this->session->userdata('nrp')
     ];
+    $modul_id = $this->input->post('modul_id', true);
     $nilai_akhir = (($data['resume'] * 0.25) + ($data['pretest'] * 0.05) + ($data['uji_lisan'] * 0.1) + ($data['praktikum'] * 0.1) + ($data['postest'] * 0.05) + ($data['format'] * 0.1) + ($data['bab'] * 0.25) + ($data['kesimpulan'] * 0.1));
     if ($nilai_akhir >= 86.00 && $nilai_akhir <= 100.00) {
       $nilai_akhir_abjad = "A";
@@ -274,7 +274,7 @@ class Asisten extends CI_Controller
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
           Nilai berhasil diubah!
           </div>');
-    redirect(base_url('asisten/penilaian/' . $data['modul_id']));
+    redirect(base_url('asisten/penilaian/' . $modul_id));
   }
 
   public function accnilai($id)
