@@ -42,7 +42,6 @@ class Admin extends CI_Controller
 
         if ($this->input->post('keyword')) {
             $data['keyword'] = $this->input->post('keyword');
-            var_dump($data['keyword']);
             $this->session->set_userdata('keyword', $data['keyword']);
         } else {
             $data['keyword'] = $this->session->userdata('keyword');
