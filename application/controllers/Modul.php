@@ -532,7 +532,7 @@ class Modul extends CI_Controller
                 $id_modul = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
                 $cek = $this->db->get_where('kelompok_asisten', ['nrp' => $nrp, 'id_modul' => $id_modul, 'no_kelompok' => $no_kelompok])->row_array();
                 if ($cek) {
-                    $this->session->set_flashdata('message1', '<div class="alert alert-danger" role="alert">
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
                     Tidak boleh menambahkan asisten dalam satu sesi yang sama!
                     </div>');
                     redirect(base_url('modul/konten'));
