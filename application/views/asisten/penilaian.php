@@ -135,49 +135,49 @@
             <form action="<?= base_url('asisten/editnilai') ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
-                        <input class="form-control" type="text" name="id" id="id" hidden>
-                        <input class="form-control" type="text" name="modul_id" id="modul_id" hidden>
+                        <input class="form-control" type="text" name="idd" id="idd" hidden>
+                        <input class="form-control" type="text" name="modul_idd" id="modul_idd" hidden>
                     </div>
                     <div class="form-group hapus">
-                        <label for="name">Nama Lengkap</label>
-                        <input type="text" class="form-control " id="name" name="name" disabled>
+                        <label for="namee">Nama Lengkap</label>
+                        <input type="text" class="form-control " id="namee" name="namee" disabled>
                     </div>
                     <div class="form-group hapus">
-                        <label for="nrp">NRP</label>
-                        <input type="text" class="form-control " id="nrp" name="nrp" disabled>
+                        <label for="nrpp">NRP</label>
+                        <input type="text" class="form-control " id="nrpp" name="nrpp" disabled>
                     </div>
                     <div class="form-group hapus">
-                        <label for="modul">Modul</label>
-                        <input type="text" class="form-control " id="modul" name="modul" disabled>
+                        <label for="modull">Modul</label>
+                        <input type="text" class="form-control " id="modull" name="modull" disabled>
                     </div>
                     <div class="form-group">
-                        <label for="resume">Resume</label>
-                        <input type="number" min="0" max="100" class="form-control" id="resume" name="resume">
+                        <label for="resumee">Resume</label>
+                        <input type="number" min="0" max="100" class="form-control" id="resumee" name="resumee">
                     </div>
                     <div class="form-group">
-                        <label for="pretest">Pretest</label>
-                        <input type="number" min="0" max="100" class="form-control" id="pretest" name="pretest">
+                        <label for="pretestt">Pretest</label>
+                        <input type="number" min="0" max="100" class="form-control" id="pretestt" name="pretestt">
                     </div>
                     <div class="form-group">
-                        <label for="uji_lisan">Uji Lisan</label>
-                        <input type="number" min="0" max="100" class="form-control" id="uji_lisan" name="uji_lisan">
+                        <label for="uji_lisann">Uji Lisan</label>
+                        <input type="number" min="0" max="100" class="form-control" id="uji_lisann" name="uji_lisann">
                     </div>
                     <div class="form-group">
-                        <label for="praktikum">Praktikum</label>
-                        <input type="number" min="0" max="100" class="form-control" id="praktikum" name="praktikum">
+                        <label for="praktikumm">Praktikum</label>
+                        <input type="number" min="0" max="100" class="form-control" id="praktikumm" name="praktikumm">
                     </div>
                     <div class="form-group">
-                        <label for="postest">Postest</label>
-                        <input type="number" min="0" max="100" class="form-control" id="postest" name="postest">
+                        <label for="postestt">Postest</label>
+                        <input type="number" min="0" max="100" class="form-control" id="postestt" name="postestt">
                     </div>
                     <div class="form-group">
-                        <label for="laporan">Laporan</label>
+                        <label for="laporann">Laporan</label>
                         <div class="row">
                             <div class="col-3">
                                 <span>Format</span>
                             </div>
                             <div class="col-auto">
-                                <input type="number" min="0" max="100" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
+                                <input type="number" min="0" max="100" class="form-control mb-1" id="formmatt" name="formmatt" placeholder="Format Penulisan">
                             </div>
                         </div>
                         <div class="row">
@@ -185,7 +185,7 @@
                                 <span>Bab</span>
                             </div>
                             <div class="col-auto">
-                                <input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 3, 3, 4">
+                                <input type="number" min="0" max="100" class="form-control mb-1" id="babb" name="babb" placeholder="Bab 3, 3, 4">
                             </div>
                         </div>
                         <div class="row">
@@ -193,7 +193,7 @@
                                 <span>Kesimpulan</span>
                             </div>
                             <div class="col-auto">
-                                <input type="number" min="0" max="100" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
+                                <input type="number" min="0" max="100" class="form-control" id="kesimpulann" name="kesimpulann" placeholder="Kesimpulan">
                             </div>
                         </div>
                     </div>
