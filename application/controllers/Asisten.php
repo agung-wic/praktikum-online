@@ -288,7 +288,7 @@ class Asisten extends CI_Controller
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
           Nilai berhasil disetujui!
           </div>');
-    redirect(base_url('asisten/penilaian/'));
+    redirect(base_url('asisten'));
   }
 
   public function absen()
