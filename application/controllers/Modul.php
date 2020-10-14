@@ -541,7 +541,7 @@ class Modul extends CI_Controller
                         redirect(base_url('modul/konten'));
                     } else {
                         $kelompok = [
-                            'no_kelompok' => $no_kelompok
+                            'no_kelompok' => $id_kelompok['id']
                         ];
                         $this->db->insert('kelompok', $kelompok);
 
