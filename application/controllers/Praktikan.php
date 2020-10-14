@@ -220,7 +220,7 @@ class Praktikan extends CI_Controller
     public function uploadlaporan()
     {
         $file = $_FILES['filelaporan']['name'];
-        $data['nilai'] = $this->db->get_where('nilai', ['modul' => $this->input->post('modul_id', true)])->row_array();
+        $data['nilai'] = $this->db->get_where('nilai', ['modul' => $this->input->post('modul_id', true), 'nrp' => $this->session->userdata('nrp')])->row_array();
         if ($data['nilai']['laporan']) {
             $old_laporan = $data['nilai']['laporan'];
             unlink(FCPATH . 'assets/laporan/' . $old_laporan);
@@ -233,7 +233,9 @@ class Praktikan extends CI_Controller
                 $new_laporan = $this->upload->data('file_name');
 
                 $this->db->set('laporan', $new_laporan);
+                $this->db->set('laporan_time', time());
                 $this->db->where('modul', $this->input->post('modul_id'));
+                $this->db->where('nrp', $this->session->userdata('nrp'));
                 $this->db->update('nilai');
 
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
