@@ -198,8 +198,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6">
                         <div class="form-group">
                             <label for="laporan">Nilai Akhir</label>
                             <div class="row">
