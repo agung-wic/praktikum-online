@@ -537,12 +537,12 @@ class Modul extends CI_Controller
                     </div>');
                     redirect(base_url('modul/konten'));
                 } else {
-                    $data = [
+                    $masuk = [
                         "nrp" => $nrp,
                         "id_modul" => $id_modul,
                         "no_kelompok" => $id_kelompok['id'],
                     ];
-                    $this->db->insert('kelompok_asisten', $data);
+                    $this->db->insert('kelompok_asisten', $masuk);
                 }
             }
             fclose($data);
