@@ -47,7 +47,7 @@
                     }
                     $tes++;
                   }
-                  if (count($asisten) > 0) {
+                  if ($j < count($asisten)) {
 
                     if ($m['modul'] == $asisten[$j]['id_modul']) {
 
