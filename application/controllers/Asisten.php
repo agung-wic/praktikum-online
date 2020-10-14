@@ -28,6 +28,7 @@ class Asisten extends CI_Controller
   {
     $this->load->model('Asisten_model');
     $data['title'] = 'Penilaian';
+    $data['cekrole'] = $this->uri->segment(2);
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
     $data['list'] = $this->Asisten_model->TampilNilai($modul);
     $i = 0;
