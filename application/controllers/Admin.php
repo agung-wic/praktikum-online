@@ -38,7 +38,6 @@ class Admin extends CI_Controller
             $data['start'] = 0;
         }
         $config['per_page'] = 10;
-        var_dump($this->input->post());
 
         if ($this->input->post()) {
             $data['keyword'] = $this->input->post('keyword');
