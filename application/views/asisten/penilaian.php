@@ -201,7 +201,7 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="form-group hapus">
+                            <div class="form-group">
                                 <label for="laporan">Nilai Akhir</label>
                                 <div class="row">
                                     <div class="col-auto">
