@@ -74,7 +74,7 @@ class Praktikan_model extends CI_Model
     $query = "SELECT `nilai`.`id`, `user`.`name` as 'name_praktikan', `user`.`nrp`, `modul`.`modul` as 'modul_id', 
               `modul`.`name` as 'modul', `nilai`.`laporan`, `nilai`.`laporan_time`, `nilai`.`is_acc`, `nilai`.`asisten`,
               `nilai` . `resume` as 'resume' , `nilai` . `pretest` as 'pretest' , `nilai` . `uji_lisan` as 'uji_lisan' , `nilai` . `praktikum` as 'praktikum' , 
-              `nilai` . `postest` as 'postest' , `nilai` . `format` as 'format' , `nilai` . `bab` as 'bab' , `nilai` . `kesimpulan` as 'kesimpulan' , `nilai` . `nilai_akhir` as `nilai_akhir`
+              `nilai` . `postest` as 'postest' , `nilai` . `format` as 'format' , `nilai` . `bab` as 'bab' , `nilai` . `kesimpulan` as 'kesimpulan' , `nilai` . `nilai_akhir` as `nilai_akhir`, `nilai` . `nilai_akhir_abjad` as `nilai_akhir_abjad`
               FROM `user`   INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
               INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` WHERE `nilai`.`nrp`=$id";
 
