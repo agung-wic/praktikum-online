@@ -514,6 +514,50 @@ class Modul extends CI_Controller
         }
     }
 
+    public function addfilekelompokasisten()
+    {
+        $file = $_FILES['filekelompokasisten']['name'];
+
+        $config['upload_path'] = './assets/file/';
+        $config['allowed_types'] = 'csv';
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('filekelompokasisten')) {
+
+            $data = fopen(base_url('assets/file/') . $file, "r");
+            while (!feof($data)) {
+                $csv = fgetcsv($data, 0, ';');
+                $nrp = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
+                $no_kelompok = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
+                $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $no_kelompok])->row_array();
+                $id_modul = mb_convert_encoding($csv[2], "ISO-8859-1", "UTF-8");
+                $cek = $this->db->get_where('kelompok_asisten', ['nrp' => $nrp, 'id_modul' => $id_modul, 'no_kelompok' => $no_kelompok])->row_array();
+                if ($cek) {
+                    $this->session->set_flashdata('message1', '<div class="alert alert-danger" role="alert">
+                    Tidak boleh menambahkan asisten dalam satu sesi yang sama!
+                    </div>');
+                    redirect(base_url('modul/konten'));
+                } else {
+                    $data = [
+                        "nrp" => $nrp,
+                        "id_modul" => $id_modul
+                        "no_kelompok" => $id_kelompok,
+                    ];
+                    $this->db->insert('kelompok_asisten', $data);
+                }
+            }
+            fclose($data);
+            unlink(FCPATH . 'assets/file/' . $file);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Asisten berhasil ditambahkan!
+            </div>');
+            redirect(base_url('modul/manajemen'));
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+            redirect(base_url('modul/manajemen'));
+        }
+    }
+
     public function jadwal()
     {
         $this->load->model('Modul_model');
