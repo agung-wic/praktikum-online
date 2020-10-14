@@ -40,7 +40,7 @@ class Admin extends CI_Controller
         $config['per_page'] = 10;
         var_dump($this->input->post());
 
-        if ($this->input->post('keyword')) {
+        if ($this->input->post()) {
             $data['keyword'] = $this->input->post('keyword');
             $this->session->set_userdata('keyword', $data['keyword']);
         } else {
