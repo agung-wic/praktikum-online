@@ -61,6 +61,13 @@ class Auth extends CI_Controller
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!!</div>');
                     redirect('auth');
                 }
+            } else if ($user['password'] == "123") {
+                if ($Password == $user['password']) {
+                    redirect('auth/addpassword/' . $nrp);
+                } else {
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!!</div>');
+                    redirect('auth');
+                }
             } else {
                 if ($user['is_active'] == 1) {
                     if (password_verify($Password, $user['password'])) {
@@ -105,8 +112,9 @@ class Auth extends CI_Controller
             $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
             if ($this->form_validation->run() == false) {
                 $data['title'] = 'Daftarkan Email & Ubah Kata Sandi';
+                $data['email'] = $this->input->post('email', true);
                 $this->load->view('template/auth_header.php', $data);
-                $this->load->view('auth/addemail.php');
+                $this->load->view('auth/addemail.php', $data);
                 $this->load->view('template/auth_footer.php');
             } else {
                 $nrp = $this->input->post('nrp', true);
@@ -153,8 +161,9 @@ class Auth extends CI_Controller
             $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
             if ($this->form_validation->run() == false) {
                 $data['title'] = 'Ubah Kata Sandi';
+                $data['nrp'] = $this->input->post('nrp', true);
                 $this->load->view('template/auth_header.php', $data);
-                $this->load->view('auth/addpassword.php');
+                $this->load->view('auth/addpassword.php', $data);
                 $this->load->view('template/auth_footer.php');
             } else {
                 $nrp = $this->input->post('nrp', true);
@@ -164,22 +173,11 @@ class Auth extends CI_Controller
                     'is_active' => 0,
                     'date_created' => time()
                 ];
-                $user = $this->db->get_where('user', ['nrp' => $nrp])->row_array();
                 $this->db->where('nrp', $nrp);
                 $this->db->update('user', $data);
-                $token = base64_encode(random_bytes(32));
-                $user_token = [
-                    'email' => $user['email'],
-                    'token' => $token,
-                    'date_created' => time()
-                ];
-
-                $this->db->insert('user_token', $user_token);
-
-                $this->_sendEmail($token, 'verify', $user);
 
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-                                            Selamat! Akun berhasil dibuat. Silakan periksa email untuk aktivasi!
+                                            Selamat! Kata sandi anda berhasil diubah! Silakan masuk.
                                             </div>');
                 redirect(base_url('auth/login'));
             }
