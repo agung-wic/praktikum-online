@@ -182,7 +182,7 @@ class Praktikan extends CI_Controller
                 if ($this->session->userdata('role_id') != 8) {
                     $this->load->view('praktikan/percobaan', $data);
                 } else {
-                    $this->load->view('praktikan/percobaan-view', $data);
+                    $this->load->view('praktikan/percobaan-viewer', $data);
                 }
 
                 $this->load->view('template/footer');
@@ -193,6 +193,7 @@ class Praktikan extends CI_Controller
             redirect(base_url('praktikan/modul/') . $id);
         }
     }
+
 
     public function selesai($id)
     {
