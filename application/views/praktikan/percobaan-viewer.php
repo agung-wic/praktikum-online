@@ -57,6 +57,14 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-lg-auto mr-auto">
+    <a href="<?= base_url('praktikan/modul/') . $modul['modul'] ?>" class="btn btn-secondary px-5">Kembali</a>
+  </div>
+  <div class="col-lg-auto ml-auto">
+    <a href="#" class="btn gradien px-5" data-toggle="modal" data-target="#SelesaiModal">Selesai</a>
+  </div>
+</div>
 
 <div class="modal fade" id="SelesaiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
