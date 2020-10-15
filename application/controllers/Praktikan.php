@@ -39,11 +39,7 @@ class Praktikan extends CI_Controller
 
         if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) {
             if ($absen) {
-                if ($this->session->userdata('role_id') != 8) {
-                    redirect(base_url('praktikan/percobaan/') . $modul);
-                } else {
-                    redirect(base_url('praktikan/percobaan-viewer/') . $modul);
-                }
+                redirect(base_url('praktikan/percobaan/') . $modul);
             } else {
                 $this->load->view('template/header', $data);
                 $this->load->view('template/sidebar', $data);
