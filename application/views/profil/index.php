@@ -19,7 +19,7 @@
                      <p class="card-text">Nama :<?= ' ' . $user['name']; ?></p>
                      <p class="card-text">NRP :<?= ' ' . $user['nrp']; ?></p>
                      <p class="card-text">Email :<?= ' ' . $user['email']; ?></p>
-                     <p class="card-text">Role :<?= ' ' . $role_id ?></p>
+                     <p class="card-text">Role :<?= ' ' . $role_id['role']; ?></p>
                      <hr>
                      <p class="card-text"><small class="text-muted">Bergabung sejak <?= date('d F Y', $user['date_created']); ?></small></p>
                   </div>
