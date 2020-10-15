@@ -13,6 +13,8 @@ class Profil extends CI_Controller
   {
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['role_id'] = $this->db->get_where('user_role', ['id' => $data['user']])->row_array();
+    var_dump($data['role_id']);
+    die;
     $data['title'] = 'Profil Saya';
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
