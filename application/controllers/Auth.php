@@ -63,7 +63,21 @@ class Auth extends CI_Controller
                 }
             } else if ($user['password'] == "123") {
                 if ($Password == $user['password']) {
-                    redirect('auth/addpassword/' . $nrp);
+                    if ($user) {
+                        $token = base64_encode(random_bytes(32));
+                        $user_token = [
+                            'email' => $user['email'],
+                            'token' => $token,
+                            'date_created' => time()
+                        ];
+
+                        $this->db->insert('user_token', $user_token);
+                        $this->_sendEmail($token, 'forgot', $user);
+                        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                                        Silakan periksa email untuk mengatur ulang kata sandi!
+                                        </div>');
+                        redirect('auth');
+                    }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!!</div>');
                     redirect('auth');
