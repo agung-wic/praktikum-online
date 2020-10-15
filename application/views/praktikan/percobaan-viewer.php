@@ -23,7 +23,7 @@
   </div>
 </div>
 <div class="row mx-3">
-  <div class="col-auto">
+  <div class="col-12">
     <nav>
       <div class="nav nav-tabs" style="border:none;" id="nav-tab">
         <?php
@@ -57,12 +57,22 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-lg-auto mr-auto">
-    <a href="<?= base_url('praktikan/modul/') . $modul['modul'] ?>" class="btn btn-secondary px-5">Kembali</a>
-  </div>
-  <div class="col-lg-auto ml-auto">
-    <a href="#" class="btn gradien px-5" data-toggle="modal" data-target="#SelesaiModal">Selesai</a>
+<div class="row mx-3">
+  <div class="col-lg-12">
+    <div class="kotak">
+      <div class="container py-3">
+        <div class="row">
+          <div class="row mt-5">
+            <div class="col-lg-auto mr-auto">
+              <a href="<?= base_url('praktikan/modul/') . $modul['modul'] ?>" class="btn btn-secondary px-5">Kembali</a>
+            </div>
+            <div class="col-lg-auto ml-auto">
+              <a href="#" class="btn gradien px-5" data-toggle="modal" data-target="#SelesaiModal">Selesai</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
