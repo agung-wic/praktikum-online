@@ -155,158 +155,90 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="Keterangan" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Keterangan Button</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <button type="submit" id="param2" data-kirim="[d]" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" class="btn btn-secondary px-4 kirim1a" disabled>
-            1
-          </button>
-          <a class="">Drop Bola</a>
-          <div class="p-1">
-          </div>
-          <button type="submit" data-kirim="[i]" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
-            2
-          </button>
-          <a class="">Status Bola</a>
-          <div class="p-1">
-          </div>
-          <button type="submit" data-kirim="[t]" data-tampil="#data3" data-id="<?= $modul['modul'] ?>" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a" disabled>
-            3
-          </button>
-          <a class="">Cek Waktu</a>
-          <div class="p-1">
-          </div>
-          <button type="submit" data-kirim="[r]" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
-            4
-          </button>
-          <a class="">Reload Bola</a>
-          <div class="p-1">
-          </div>
-          <button type="submit" data-kirim="" data-tampil="#data3" data-id="<?= $modul['modul'] ?>" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a" disabled>
-            5
-          </button>
-          <a class="">Reset Alat</a>
-          <div class="p-1">
-          </div>
-          <button type="submit" data-kirim="" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
-            6
-          </button>
-          <a class=""></a>
-          <div class="p-1">
-          </div>
-          <button type="submit" data-kirim="[r]" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
-            7
-          </button>
-          <a class=""></a>
-          <div class="p-1">
-          </div>
-          <button type="submit" data-kirim="" data-tampil="#data3" data-id="<?= $modul['modul'] ?>" id="param3" class="btn btn-secondary pl-1 px-4 kirim1a" disabled>
-            8
-          </button>
-          <a class=""></a>
-          <div class="p-1">
-          </div>
-          <button type="submit" data-kirim="" data-tampil="#output2" data-id="<?= $modul['modul'] ?>" id="param4" class="btn btn-secondary px-4 kirim1a" disabled>
-            9
-          </button>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+<div class="modal fade" id="SelesaiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Yakin keluar?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Pilih "Selesai" jika ingin mengakhiri praktikum ini.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-primary" href="<?= base_url('praktikan/selesai/') . $modul['modul'] ?>">Selesai</a>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="SelesaiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Yakin keluar?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Pilih "Selesai" jika ingin mengakhiri praktikum ini.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?= base_url('praktikan/selesai/') . $modul['modul'] ?>">Selesai</a>
-        </div>
+<div class="modal fade" id="tombolAbsen" tabindex="-1" role="dialog" aria-labelledby="tombolAbsenLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tombolAbsenLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="tombolAbsen" tabindex="-1" role="dialog" aria-labelledby="tombolAbsenLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="tombolAbsenLabel"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form action="<?= base_url('praktikan/absen') ?>" method="post">
-            <div class="form-group">
-              <input type="hidden" id="id" name="id">
-              <input type="hidden" id="id_modul" name="id_modul">
-              <div class="row">
-                <div class="col">
-                  <p class="card-text">Nama :<?= ' ' . $user['name']; ?></p>
-                  <p class="card-text">NRP :<?= ' ' . $user['nrp']; ?></p>
-                  <p class="card-text">Email :<?= ' ' . $user['email']; ?></p>
-                  <p class="card-text">Praktikum :<?= ' ' . $modul['name'] ?></p>
-                  <p class="card-text">Jadwal :<?= ' ' . $jadwal['jadwal'] ?></p>
-                </div>
+      <div class="modal-body">
+        <form action="<?= base_url('praktikan/absen') ?>" method="post">
+          <div class="form-group">
+            <input type="hidden" id="id" name="id">
+            <input type="hidden" id="id_modul" name="id_modul">
+            <div class="row">
+              <div class="col">
+                <p class="card-text">Nama :<?= ' ' . $user['name']; ?></p>
+                <p class="card-text">NRP :<?= ' ' . $user['nrp']; ?></p>
+                <p class="card-text">Email :<?= ' ' . $user['email']; ?></p>
+                <p class="card-text">Praktikum :<?= ' ' . $modul['name'] ?></p>
+                <p class="card-text">Jadwal :<?= ' ' . $jadwal['jadwal'] ?></p>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-primary">Absen</button>
-            </div>
-          </form>
-        </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Absen</button>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
 
-    <script>
-      // The data/time we want to countdown to
-      var countDownDate = new Date("<?= $jadwal['jadwal']; ?>").getTime();
-      var waktu = "<?= $modul['time']; ?>";
-      var batas = waktu.split(":");
-      var jam = parseInt(batas[0]) * 60 * 60 * 1000;
-      var menit = parseInt(batas[1]) * 60 * 1000;
-      var detik = parseInt(batas[2]) * 1000;
-      var sisa = jam + menit + detik;
-      // Run myfunc every second
-      var myfunc = setInterval(function() {
+  <script>
+    // The data/time we want to countdown to
+    var countDownDate = new Date("<?= $jadwal['jadwal']; ?>").getTime();
+    var waktu = "<?= $modul['time']; ?>";
+    var batas = waktu.split(":");
+    var jam = parseInt(batas[0]) * 60 * 60 * 1000;
+    var menit = parseInt(batas[1]) * 60 * 1000;
+    var detik = parseInt(batas[2]) * 1000;
+    var sisa = jam + menit + detik;
+    // Run myfunc every second
+    var myfunc = setInterval(function() {
 
-        var now = new Date().getTime();
-        var timeleft = countDownDate + jam + menit + detik - now;
+      var now = new Date().getTime();
+      var timeleft = countDownDate + jam + menit + detik - now;
 
-        // Calculating the days, hours, minutes and seconds left
-        var hours = Math.floor((timeleft / (1000 * 60 * 60)));
-        var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+      // Calculating the days, hours, minutes and seconds left
+      var hours = Math.floor((timeleft / (1000 * 60 * 60)));
+      var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-        // Result is output to the specific element
-        document.getElementById("hours").innerHTML = hours + " :"
-        document.getElementById("mins").innerHTML = minutes + " :"
-        document.getElementById("secs").innerHTML = seconds
+      // Result is output to the specific element
+      document.getElementById("hours").innerHTML = hours + " :"
+      document.getElementById("mins").innerHTML = minutes + " :"
+      document.getElementById("secs").innerHTML = seconds
 
-        if (timeleft < 0) {
-          clearInterval(myfunc);
-          document.getElementById("hours").innerHTML = ""
-          document.getElementById("mins").innerHTML = ""
-          document.getElementById("secs").innerHTML = ""
-          window.location.href = "<?= base_url('praktikan/modul/') ?>";
-        }
-      }, 1000);
-    </script>
+      if (timeleft < 0) {
+        clearInterval(myfunc);
+        document.getElementById("hours").innerHTML = ""
+        document.getElementById("mins").innerHTML = ""
+        document.getElementById("secs").innerHTML = ""
+        window.location.href = "<?= base_url('praktikan/modul/') ?>";
+      }
+    }, 1000);
+  </script>

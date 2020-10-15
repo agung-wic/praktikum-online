@@ -1,10 +1,5 @@
 <div class="row mx-5">
   <div class="kotak" style="background-color: white;">
-    <div class="row justify-content-center mt-3 mb-1">
-      <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%;margin-top:5%" class="btn btn-dark px-4 param1">
-        Tambahkan Tombol
-      </button>
-    </div>
     <div class="container">
       <h4 class="mt-3"><b><?= $modul['name'] ?></b></h4>
       <h6>Kode Percobaan: <?= $modul['modul']; ?></h6>
@@ -27,41 +22,8 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="kotak">
-    <div class="container py-3">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="kotak" style="background-color: #bcaead;">
-            <div class="container mt-2" style="color: black;">
-              <h6 class="mb-3"><b>Output</b></h6>
-              <div class="form-group">
-              </div>
-              <div class="row justify-content-center mb-3">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-auto ml-auto">
-          <h6><b>Sisa Waktu </h6> <span id="hours"></span>
-          <span id="mins"></span>
-          <span id="secs"></span>
-          </b>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-lg-auto mr-auto">
-          <a href="<?= base_url('praktikan/modul/') . $modul['modul'] ?>" class="btn btn-secondary px-5">Kembali</a>
-        </div>
-        <div class="col-lg-auto ml-auto">
-          <a href="#" class="btn gradien px-5" data-toggle="modal" data-target="#SelesaiModal">Selesai</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="row mx-3">
-  <div class="col">
+  <div class="col-auto">
     <nav>
       <div class="nav nav-tabs" style="border:none;" id="nav-tab">
         <?php
@@ -93,9 +55,6 @@
       <?php $i++;
       } ?>
     </div>
-  </div>
-  <div class="col-lg-6">
-
   </div>
 </div>
 
