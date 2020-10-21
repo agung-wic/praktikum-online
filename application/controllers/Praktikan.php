@@ -161,8 +161,24 @@ class Praktikan extends CI_Controller
         $jadwal = strtotime($cek['jadwal']);
         $batas = strtotime($data['modul']['time']);
         $time = (date('H', $batas) * 60 * 60) + (date('i', $batas) * 60) + date('s', $batas);
+        if ($this->session->userdata('role_id') == 1) {
+            $this->_connectsocket($id);
+            $data['output'] = NULL;
 
-        if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) {
+            $data['title'] = 'Percobaan Praktikum';
+            $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+
+            $this->db->select('*');
+            $this->db->from('jadwal');
+            $this->db->where('nrp', $this->session->userdata('nrp'));
+            $this->db->where('modul_id', $id);
+            $data['jadwal'] = $this->db->get()->row_array();
+
+            $this->load->view('template/header', $data);
+            $this->load->view('template/sidebar', $data);
+            $this->load->view('template/topbar', $data);
+            $this->load->view('praktikan/percobaan', $data);
+        } else if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) {
             if ($cek['status'] == 0) {
                 $this->_connectsocket($id);
                 $data['output'] = NULL;
@@ -184,7 +200,6 @@ class Praktikan extends CI_Controller
                 } else {
                     $this->load->view('praktikan/percobaan-viewer', $data);
                 }
-
                 $this->load->view('template/footer');
             } else {
                 redirect(base_url('praktikan/modul/') . $id);
