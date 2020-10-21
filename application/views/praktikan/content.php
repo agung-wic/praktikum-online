@@ -41,7 +41,7 @@
               $jadwal = strtotime($status['jadwal']);
               $batas = strtotime($modul['time']);
               $time = (date('H', $batas) * 60 * 60) + (date('i', $batas) * 60) + date('s', $batas);
-              if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) { ?>
+              if ((time() >= $jadwal) && ((time() <= ($jadwal + $time))) || $role_id == 1) { ?>
                 <a href="<?= base_url('praktikan/absen/') . $modul['modul']; ?>" class="btn gradien px-5">Mulai Praktikum!</a>
               <?php } else { ?>
                 <span class="btn btn-secondary px-5">Mulai Praktikum!</span>
