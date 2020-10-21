@@ -43,11 +43,12 @@
               $time = (date('H', $batas) * 60 * 60) + (date('i', $batas) * 60) + date('s', $batas);
               if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) { ?>
                 <a href="<?= base_url('praktikan/absen/') . $modul['modul']; ?>" class="btn gradien px-5">Mulai Praktikum!</a>
-              <?php } else if($user['role_id'] == 1) { ?>
+              <?php } else if ($user['role_id'] == 1) { ?>
                 <a href="<?= base_url('praktikan/percobaan/') . $modul['modul']; ?>" class="btn gradien px-5">Mulai Praktikum!</a>
               <?php } else { ?>
-            <span class="btn btn-secondary px-5">Mulai Praktikum!</span>
-            <?php } ?>
+                <span class="btn btn-secondary px-5">Mulai Praktikum!</span>
+            <?php }
+            } ?>
           </div>
         </div>
       </div>
