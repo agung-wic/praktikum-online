@@ -161,9 +161,6 @@ class Praktikan extends CI_Controller
         $jadwal = strtotime($cek['jadwal']);
         $batas = strtotime($data['modul']['time']);
         $time = (date('H', $batas) * 60 * 60) + (date('i', $batas) * 60) + date('s', $batas);
-        $role_id = $this->session->userdata('role_id');
-        var_dump($role_id);
-        die;
         if ($this->session->userdata('role_id') == 1) {
             $this->_connectsocket($id);
             $data['output'] = NULL;
