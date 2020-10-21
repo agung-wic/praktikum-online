@@ -178,6 +178,7 @@ class Praktikan extends CI_Controller
             $this->load->view('template/sidebar', $data);
             $this->load->view('template/topbar', $data);
             $this->load->view('praktikan/percobaan', $data);
+            $this->load->view('template/footer');
         } else if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) {
             if ($cek['status'] == 0) {
                 $this->_connectsocket($id);
