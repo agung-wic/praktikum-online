@@ -95,7 +95,7 @@ class Praktikan_model extends CI_Model
   {
     $query = "SELECT `modul`.`modul`, `modul`.`name`, `jadwal`.`status`, `jadwal`.`nrp` FROM `modul` 
               LEFT JOIN `jadwal` ON `modul`.`modul` = `jadwal`.`modul_id`
-              WHERE `jadwal`.`nrp`=$id AND `jadwal`.`status`=1
+              WHERE `jadwal`.`nrp`=$id
               ORDER BY `modul`.`modul` ASC";
 
     return $this->db->query($query)->result_array();
