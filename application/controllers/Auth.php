@@ -254,10 +254,10 @@ class Auth extends CI_Controller
     {
         $config = [
             'protocol' => 'smtp',
-            'smtp_host' => 'tls://smtp.googlemail.com',
-            'smtp_user' => 'fisikadasar006@gmail.com',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'fisikadasar001@gmail.com',
             'smtp_pass' => '1234asdf!@#$ASDF',
-            'smtp_port' => 587,
+            'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',
             'newline' => "\r\n"
@@ -266,7 +266,7 @@ class Auth extends CI_Controller
         $this->load->library('email', $config);
         $this->email->initialize($config);
 
-        $this->email->from('fisikadasar006@gmail.com', 'Praktikum Fisika Dasar');
+        $this->email->from('fisikadasar001@gmail.com', 'Praktikum Fisika Dasar');
         $this->email->to($this->input->post('email', true));
 
         if ($type == 'verify') {
