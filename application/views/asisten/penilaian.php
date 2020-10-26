@@ -151,51 +151,51 @@
                         <input type="text" class="form-control " id="modul" name="modul" disabled>
                     </div>
                     <div class="form-group">
-                        <label for="resume">Resume</label>
-                        <input type="number" min="0" max="100" class="form-control" id="resume" name="resume">
+                        <label for="resume">Resume (0-25)</label>
+                        <input type="number" min="0" max="25" class="form-control" id="resume" name="resume">
                     </div>
                     <div class="form-group">
-                        <label for="pretest">Pretest</label>
-                        <input type="number" min="0" max="100" class="form-control" id="pretest" name="pretest">
+                        <label for="pretest">Pretest (0-5)</label>
+                        <input type="number" min="0" max="5" class="form-control" id="pretest" name="pretest">
                     </div>
                     <div class="form-group">
-                        <label for="uji_lisan">Uji Lisan</label>
-                        <input type="number" min="0" max="100" class="form-control" id="uji_lisan" name="uji_lisan">
+                        <label for="uji_lisan">Uji Lisan (0-10)</label>
+                        <input type="number" min="0" max="10" class="form-control" id="uji_lisan" name="uji_lisan">
                     </div>
                     <div class="form-group">
-                        <label for="praktikum">Praktikum</label>
-                        <input type="number" min="0" max="100" class="form-control" id="praktikum" name="praktikum">
+                        <label for="praktikum">Praktikum (0-10)</label>
+                        <input type="number" min="0" max="10" class="form-control" id="praktikum" name="praktikum">
                     </div>
                     <div class="form-group">
-                        <label for="postest">Postest</label>
-                        <input type="number" min="0" max="100" class="form-control" id="postest" name="postest">
+                        <label for="postest">Postest (0-5)</label>
+                        <input type="number" min="0" max="5" class="form-control" id="postest" name="postest">
                     </div>
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="laporan">Laporan</label>
                                 <div class="row">
-                                    <div class="col-3">
-                                        <span>Format</span>
+                                    <div class="col-6">
+                                        <span>Format (0-10)</span>
                                     </div>
-                                    <div class="col-auto">
-                                        <input type="number" min="0" max="100" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
+                                    <div class="col-3">
+                                        <input type="number" min="0" max="10" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-3">
-                                        <span>Bab</span>
+                                    <div class="col-6">
+                                        <span>Bab (0-25)</span>
                                     </div>
-                                    <div class="col-auto">
-                                        <input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 3, 3, 4">
+                                    <div class="col-3">
+                                        <input type="number" min="0" max="25" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 3, 3, 4">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-3">
-                                        <span>Kesimpulan</span>
+                                    <div class="col-6">
+                                        <span>Kesimpulan (0-10)</span>
                                     </div>
-                                    <div class="col-auto">
-                                        <input type="number" min="0" max="100" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
+                                    <div class="col-3">
+                                        <input type="number" min="0" max="10" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
                                     </div>
                                 </div>
                             </div>
