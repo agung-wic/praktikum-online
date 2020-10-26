@@ -46,49 +46,9 @@ class Asisten extends CI_Controller
     $data['id_modul'] = $this->uri->segment(3);
     $data['id_kelompok'] = $this->uri->segment(4);
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-
+    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok']);
     $data['nama_kelompok'] = $this->db->get_where('kelompok', ['id' => $data['id_kelompok']])->row_array();
     $data['nama_modul'] = $this->db->get_where('modul', ['modul' =>  $data['id_modul']])->row_array();
-
-    $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/asisten/penilaian_detail/' . $data['id_modul'] . "/" . $data['id_kelompok'] . "/";
-    $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
-    $config['full_tag_close'] = '</ul></nav>';
-
-    $config['next_link'] = '&raquo';
-    $config['next_tag_open'] = '<li class="page-item">';
-    $config['next_tag_close'] = '</li>';
-
-    $config['prev_link'] = '&laquo';
-    $config['prev_tag_open'] = '<li class="page-item">';
-    $config['prev_tag_close'] = '</li>';
-
-    $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
-    $config['cur_tag_close'] = '</li></a>';
-
-    $config['num_tag_open'] = '<li class="page-item">';
-    $config['num_tag_close'] = '</li>';
-
-    $config['attributes'] = array('class' => 'page-link');
-
-    $data['start'] = $this->uri->segment(5);
-    if ($data['start'] == null) {
-      $data['start'] = 0;
-    }
-
-    if ($this->input->post('keyword1')) {
-      $data['keyword'] = $this->input->post('keyword1');
-      $this->session->set_userdata('keyword1', $data['keyword']);
-      $config['per_page'] = 2;
-      $config['total_rows'] = $this->db->count_all_results();
-    } else {
-      $data['keyword'] = $this->session->userdata('keyword1');
-      $config['per_page'] = 2;
-      $config['total_rows'] = $this->Asisten_model->JumlahTampilNilai($data['id_modul'], $data['id_kelompok']);
-    }
-    $this->pagination->initialize($config);
-
-    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok'], $data['keyword'], $config['per_page'], 0);
-
     $i = 0;
     while ($i < count($data['list'])) {
       $asisten = $data['list'][$i]['asisten'];
