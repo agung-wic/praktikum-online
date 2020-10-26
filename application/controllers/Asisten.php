@@ -46,7 +46,7 @@ class Asisten extends CI_Controller
     $data['id_modul'] = $this->uri->segment(3);
     $data['id_kelompok'] = $this->uri->segment(4);
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok'], $data['keyword'], $config['per_page'], $data['start']);
+
     $data['nama_kelompok'] = $this->db->get_where('kelompok', ['id' => $data['id_kelompok']])->row_array();
     $data['nama_modul'] = $this->db->get_where('modul', ['modul' =>  $data['id_modul']])->row_array();
 
@@ -86,6 +86,8 @@ class Asisten extends CI_Controller
       $config['total_rows'] = $this->Asisten_model->JumlahTampilNilai($data['id_modul'], $data['id_kelompok']);
     }
     $this->pagination->initialize($config);
+
+    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok'], $data['keyword'], $config['per_page'], $data['start']);
 
     $i = 0;
     while ($i < count($data['list'])) {
