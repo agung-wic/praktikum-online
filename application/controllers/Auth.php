@@ -123,6 +123,7 @@ class Auth extends CI_Controller
                 'min_length' => 'Password minimal 6 karakter!',
                 'matches' => 'Password salah!'
             ]);
+            $user = $this->db->get_where('user', ['nrp' => $nrp])->row_array();
             $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
             if ($this->form_validation->run() == false) {
                 $data['title'] = 'Daftarkan Email & Ubah Kata Sandi';
@@ -133,6 +134,7 @@ class Auth extends CI_Controller
             } else {
                 $nrp = $this->input->post('nrp', true);
                 $data = [
+                    'name' => $user['name'];
                     'email' => htmlspecialchars($this->input->post('email', true)),
                     'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                     'role_id' => 8,
