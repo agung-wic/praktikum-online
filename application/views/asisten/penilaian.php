@@ -57,7 +57,8 @@
                                     <th scope="col">Laporan</th>
                                     <th scope="col">Waktu</th>
                                     <th scope="col">Nilai</th>
-                                    <th scope="col"></th>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">Acc</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -70,7 +71,8 @@
                                     <th scope="col">Laporan</th>
                                     <th scope="col">Waktu</th>
                                     <th scope="col">Nilai</th>
-                                    <th scope="col"></th>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">Acc</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -106,7 +108,12 @@
                                         </td>
                                     </tr>
                                 <?php $i++;
-                                endforeach; ?>
+                                endforeach;
+                                if ($l['is_acc'] == 1) {
+                                    echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
+                                } else {
+                                    echo '<td></td>';
+                                } ?>
                             </tbody>
                         </table>
                     <?php } ?>
