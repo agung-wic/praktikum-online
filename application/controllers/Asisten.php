@@ -280,10 +280,16 @@ class Asisten extends CI_Controller
 
   public function accnilai($id)
   {
-    $data = [
-      'is_acc' => 1
-    ];
     $nilai = $this->db->get_where('nilai', ['id ' => $id])->row_array();
+    if ($nilai[is_acc] == 1) {
+      $data = [
+        'is_acc' => 0
+      ];
+    } else if ($nilai[is_acc] == 0) {
+      $data = [
+        'is_acc' => 1
+      ];
+    }
     $this->db->where('id', $id);
     $this->db->update('nilai', $data);
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
