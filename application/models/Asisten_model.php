@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Asisten_model extends CI_Model
 {
-  public function TampilNilai($id, $id_kelompok, $keyword = null)
+  public function TampilNilai($id, $id_kelompok, $keyword = null, $limit, $start)
   {
     if ($keyword) {
       $query = "SELECT `nilai`.`id`, `user`.`name` as 'name_praktikan', `user`.`nrp`, `modul`.`modul` as 'modul_id', 
@@ -22,7 +22,7 @@ class Asisten_model extends CI_Model
               INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
               INNER JOIN `anggota_kelompok`ON `user`.`nrp` = `anggota_kelompok`.`nrp`
               INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` 
-              WHERE `nilai` . `modul` = '$id' AND `anggota_kelompok`.`no_kelompok` = '$id_kelompok'";
+              WHERE `nilai` . `modul` = '$id' AND `anggota_kelompok`.`no_kelompok` = '$id_kelompok' LIMIT $limit OFFSET $start";
     }
     return $this->db->query($query)->result_array();
   }

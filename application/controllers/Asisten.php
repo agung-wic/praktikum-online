@@ -46,11 +46,11 @@ class Asisten extends CI_Controller
     $data['id_modul'] = $this->uri->segment(3);
     $data['id_kelompok'] = $this->uri->segment(4);
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok']);
+    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok'], $data['keyword'], $config['per_page'], $data['start']);
     $data['nama_kelompok'] = $this->db->get_where('kelompok', ['id' => $data['id_kelompok']])->row_array();
     $data['nama_modul'] = $this->db->get_where('modul', ['modul' =>  $data['id_modul']])->row_array();
 
-    $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/asisten/penilaian_detail/' .  $data['id_modul'] . "/" . $data['id_kelompok'];
+    $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/asisten/penilaian_detail/' . $data['id_modul'] . "/" . $data['id_kelompok'];
     $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
     $config['full_tag_close'] = '</ul></nav>';
 
