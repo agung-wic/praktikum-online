@@ -13,6 +13,7 @@
                 <div class="table-responsive">
                     <div class="row mx-1">
                         <div class="col-md-5 ml-auto">
+                            <?= $this->session->flashdata('message'); ?>
                             <form action="<?= base_url('asisten') ?>" method="post">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" name="keyword" placeholder="Cari...">
@@ -22,7 +23,6 @@
                                 </div>
                             </form>
                         </div>
-                        <?= $this->session->flashdata('message'); ?>
                     </div>
                     <?php if (empty($list)) { ?>
                         <div class="alert alert-danger" role="alert">
