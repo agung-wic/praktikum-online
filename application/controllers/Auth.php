@@ -152,8 +152,6 @@ class Auth extends CI_Controller
                 ];
 
                 $user = $this->db->get_where('user', ['nrp' => $nrp])->row_array();
-                var_dump($data['name']);
-                die;
 
                 $this->db->insert('user_token', $user_token);
 

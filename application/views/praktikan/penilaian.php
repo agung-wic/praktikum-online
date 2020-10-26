@@ -124,23 +124,23 @@
           </div>
           <div class="form-group">
             <label for="resume">Resume</label>
-            <input type="number" min="0" max="100" class="form-control" id="resume" name="resume">
+            <input type="number" min="0" max="25" class="form-control" id="resume" name="resume">
           </div>
           <div class="form-group">
             <label for="pretest">Pretest</label>
-            <input type="number" min="0" max="100" class="form-control" id="pretest" name="pretest">
+            <input type="number" min="0" max="5" class="form-control" id="pretest" name="pretest">
           </div>
           <div class="form-group">
             <label for="uji_lisan">Uji Lisan</label>
-            <input type="number" min="0" max="100" class="form-control" id="uji_lisan" name="uji_lisan">
+            <input type="number" min="0" max="10" class="form-control" id="uji_lisan" name="uji_lisan">
           </div>
           <div class="form-group">
             <label for="praktikum">Praktikum</label>
-            <input type="number" min="0" max="100" class="form-control" id="praktikum" name="praktikum">
+            <input type="number" min="0" max="10" class="form-control" id="praktikum" name="praktikum">
           </div>
           <div class="form-group">
             <label for="postest">Postest</label>
-            <input type="number" min="0" max="100" class="form-control" id="postest" name="postest">
+            <input type="number" min="0" max="5" class="form-control" id="postest" name="postest">
           </div>
           <div class="row">
             <div class="col-6">
@@ -151,7 +151,7 @@
                     <span>Format</span>
                   </div>
                   <div class="col-auto">
-                    <input type="number" min="0" max="100" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
+                    <input type="number" min="0" max="10" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
                   </div>
                 </div>
                 <div class="row">
@@ -159,7 +159,7 @@
                     <span>Bab</span>
                   </div>
                   <div class="col-auto">
-                    <input type="number" min="0" max="100" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 3, 3, 4">
+                    <input type="number" min="0" max="25" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 3, 3, 4">
                   </div>
                 </div>
                 <div class="row">
@@ -167,7 +167,7 @@
                     <span>Kesimpulan</span>
                   </div>
                   <div class="col-auto">
-                    <input type="number" min="0" max="100" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
+                    <input type="number" min="0" max="10" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
                   </div>
                 </div>
               </div>
