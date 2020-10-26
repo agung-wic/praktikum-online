@@ -78,16 +78,16 @@ class Asisten extends CI_Controller
     if ($this->input->post('keyword1')) {
       $data['keyword'] = $this->input->post('keyword1');
       $this->session->set_userdata('keyword1', $data['keyword']);
-      $config['per_page'] = 2;
+      $config['per_page'] = 10;
       $config['total_rows'] = $this->db->count_all_results();
     } else {
       $data['keyword'] = $this->session->userdata('keyword1');
-      $config['per_page'] = 2;
+      $config['per_page'] = 10;
       $config['total_rows'] = $this->Asisten_model->JumlahTampilNilai($data['id_modul'], $data['id_kelompok']);
     }
     $this->pagination->initialize($config);
 
-    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok'], $data['keyword'], $config['per_page'], $data['start']);
+    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok'], $data['keyword'], $config['per_page'], 0);
 
     $i = 0;
     while ($i < count($data['list'])) {
