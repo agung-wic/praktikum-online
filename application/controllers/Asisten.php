@@ -281,11 +281,11 @@ class Asisten extends CI_Controller
   public function accnilai($id)
   {
     $nilai = $this->db->get_where('nilai', ['id ' => $id])->row_array();
-    if ($nilai[is_acc] == 1) {
+    if ($nilai['is_acc'] == 1) {
       $data = [
         'is_acc' => 0
       ];
-    } else if ($nilai[is_acc] == 0) {
+    } else if ($nilai['is_acc'] == 0) {
       $data = [
         'is_acc' => 1
       ];
