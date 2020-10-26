@@ -40,7 +40,7 @@ class Asisten extends CI_Controller
   {
     $this->load->model('Asisten_model');
     $data['title'] = 'Penilaian';
-    $data['cekrole'] = $this->uri->segment(1);
+    $data['cekrole'] = $this->uri->segment(3);
     var_dump($data['cekrole']);
     die;
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
