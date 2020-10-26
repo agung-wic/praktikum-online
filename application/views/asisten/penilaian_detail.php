@@ -7,7 +7,7 @@
         <!-- DataTales Example -->
         <div class="kotak">
             <div class="card-header">
-                <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
+                <h6 class="m-0 font-weight-bold "><?= $title . "/" . $l['modul'] . "/" . $nama_kelompok; ?></h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -37,7 +37,6 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">NRP</th>
-                                    <th scope="col">Kelompok</th>
                                     <th scope="col">Asisten</th>
                                     <th scope="col">Laporan</th>
                                     <th scope="col">Waktu</th>
@@ -51,7 +50,6 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">NRP</th>
-                                    <th scope="col">Kelompok</th>
                                     <th scope="col">Asisten</th>
                                     <th scope="col">Laporan</th>
                                     <th scope="col">Waktu</th>
@@ -68,7 +66,6 @@
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $l['name_praktikan']; ?></td>
                                         <td><?= $l['nrp']; ?></td>
-                                        <td><?= $l['modul']; ?></td>
                                         <td><?= $l['asisten']; ?></td>
                                         <td>
                                             <a href="<?= base_url('asisten/unduh/') . $l['laporan']; ?>" download class="badge badge-pill badge-warning">
