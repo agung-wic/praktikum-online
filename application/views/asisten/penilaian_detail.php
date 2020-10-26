@@ -12,14 +12,6 @@
             <div class="card-body">
                 <div class="table-responsive">
                     <div class="row mx-1">
-                        <div class="col-md-7">
-                            <div class="row">
-                                <div class="col-md-1 mt-2">
-                                    <label for="show">Show</label>
-                                </div>
-                                <div class="col-md-2 mt-2">Entries</div>
-                            </div>
-                        </div>
                         <div class="col-md-5 ml-auto">
                             <form action="<?= base_url('asisten') ?>" method="post">
                                 <div class="input-group mb-3">
