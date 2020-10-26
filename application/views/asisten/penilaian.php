@@ -109,7 +109,7 @@
                                     <?php if ($l['is_acc'] == "1") {
                                         echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
                                     } else {
-                                        echo '<td></td>';
+                                        echo '<td><p class="badge badge-pill badge-success" style="background-color:#f6f6f6"><i class="fas fa-check"></i></p></td>';
                                     };
                                     $i++;
                                 endforeach;
