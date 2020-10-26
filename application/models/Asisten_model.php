@@ -22,9 +22,22 @@ class Asisten_model extends CI_Model
               INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
               INNER JOIN `anggota_kelompok`ON `user`.`nrp` = `anggota_kelompok`.`nrp`
               INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` 
-              WHERE `nilai` . `modul` = '$id' AND `anggota_kelompok`.`no_kelompok` = '$id_kelompok'
+              WHERE `nilai` . `modul` = '$id' AND `anggota_kelompok`.`no_kelompok` = '$id_kelompok'";
     }
     return $this->db->query($query)->result_array();
+  }
+
+  public function JumlahTampilNilai($id, $id_kelompok)
+  {
+    $query = "SELECT `nilai`.`id`, `user`.`name` as 'name_praktikan', `user`.`nrp`, `modul`.`modul` as 'modul_id', 
+              `modul`.`name` as 'modul', `nilai`.`laporan`, `nilai`.`laporan_time`, `nilai`.`is_acc` as 'is_acc', `nilai`.`asisten`, `nilai` . `resume`, `nilai` . `pretest`,`nilai` . `uji_lisan`,`nilai` . `praktikum`, `nilai` . `postest`,`nilai` . `format`,`nilai` . `bab`, `nilai` . `kesimpulan`, `nilai` . `nilai_akhir` as `nilai_akhir`, `nilai` . `nilai_akhir_abjad` as `nilai_akhir_abjad`,`anggota_kelompok`.`no_kelompok`as 'kelompok'
+              FROM `user`  
+              INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
+              INNER JOIN `anggota_kelompok`ON `user`.`nrp` = `anggota_kelompok`.`nrp`
+              INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` 
+              WHERE `nilai` . `modul` = '$id' AND `anggota_kelompok`.`no_kelompok` = '$id_kelompok'";
+
+    return $this->db->query($query)->num_rows();
   }
 
   public function JumlahKelompok()
