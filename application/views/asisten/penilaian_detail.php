@@ -17,15 +17,6 @@
                                 <div class="col-md-1 mt-2">
                                     <label for="show">Show</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <select class="custom-select" name="show" id="show">
-                                        <option value="10">10</option>
-                                        <option value="20">20</option>
-                                        <option value="30">30</option>
-                                        <option value="40">40</option>
-                                        <option value="50">50</option>
-                                    </select>
-                                </div>
                                 <div class="col-md-2 mt-2">Entries</div>
                             </div>
                         </div>
