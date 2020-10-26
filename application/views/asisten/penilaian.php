@@ -9,7 +9,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col">
-                        <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
+                        <h6 class="m-0 font-weight-bold "><?= $title . " - " . $nama_modul['name']; ?></h6>
                     </div>
                     <div class="col-auto mr-auto">
                         <a href="" class="btn gradien mb-3 tombolTambahKelompok" data-toggle="modal" data-target="#TambahKelompok">Tambah Kelompok</a>
