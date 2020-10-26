@@ -37,7 +37,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">NRP</th>
-                                    <th scope="col">Modul</th>
+                                    <th scope="col">Kelompok</th>
                                     <th scope="col">Asisten</th>
                                     <th scope="col">Laporan</th>
                                     <th scope="col">Waktu</th>
@@ -51,7 +51,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">NRP</th>
-                                    <th scope="col">Modul</th>
+                                    <th scope="col">Kelompok</th>
                                     <th scope="col">Asisten</th>
                                     <th scope="col">Laporan</th>
                                     <th scope="col">Waktu</th>
