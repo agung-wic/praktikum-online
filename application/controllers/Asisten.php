@@ -285,16 +285,19 @@ class Asisten extends CI_Controller
       $data = [
         'is_acc' => 0
       ];
+      $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+          Nilai batal disetujui!
+          </div>');
     } else if ($nilai['is_acc'] == 0) {
       $data = [
         'is_acc' => 1
       ];
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+          Nilai berhasil disetujui!
+          </div>');
     }
     $this->db->where('id', $id);
     $this->db->update('nilai', $data);
-    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-          Nilai berhasil disetujui!
-          </div>');
     redirect(base_url('asisten/penilaian/' . $nilai['modul']));
   }
 
