@@ -50,7 +50,7 @@ class Asisten extends CI_Controller
     $data['nama_kelompok'] = $this->db->get_where('kelompok', ['id' => $data['id_kelompok']])->row_array();
     $data['nama_modul'] = $this->db->get_where('modul', ['modul' =>  $data['id_modul']])->row_array();
 
-    $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/asisten/penilaian_detail/' . $data['id_modul'] . "/" . $data['id_kelompok'];
+    $config['base_url'] = 'https://riset.its.ac.id/praktikum-fisdas/asisten/penilaian_detail/' . $data['id_modul'] . "/" . $data['id_kelompok'] . "/";
     $config['full_tag_open'] = '<nav aria-label="..."> <ul class="pagination">';
     $config['full_tag_close'] = '</ul></nav>';
 
