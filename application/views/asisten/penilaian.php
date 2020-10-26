@@ -178,7 +178,7 @@
                                     <div class="col-6">
                                         <span>Format (0-10)</span>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-4">
                                         <input type="number" min="0" max="10" class="form-control mb-1" id="format" name="format" placeholder="Format Penulisan">
                                     </div>
                                 </div>
@@ -186,15 +186,15 @@
                                     <div class="col-6">
                                         <span>Bab (0-25)</span>
                                     </div>
-                                    <div class="col-3">
-                                        <input type="number" min="0" max="25" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 3, 3, 4">
+                                    <div class="col-4">
+                                        <input type="number" min="0" max="25" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 4, 4, 4">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
                                         <span>Kesimpulan (0-10)</span>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-4">
                                         <input type="number" min="0" max="10" class="form-control" id="kesimpulan" name="kesimpulan" placeholder="Kesimpulan">
                                     </div>
                                 </div>
