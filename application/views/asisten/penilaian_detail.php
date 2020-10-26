@@ -103,6 +103,9 @@
                     <div class="mt-2">
                     </div>
                 </div>
+                <div class="mt-2">
+                    <?= $this->pagination->create_links(); ?>
+                </div>
             </div>
         </div>
 
