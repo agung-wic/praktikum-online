@@ -45,7 +45,7 @@ class Asisten extends CI_Controller
     $data['id_modul'] = $this->uri->segment(3);
     $data['id_kelompok'] = $this->uri->segment(4);
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul']);
+    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok']);
     $i = 0;
     while ($i < count($data['list'])) {
       $asisten = $data['list'][$i]['asisten'];
