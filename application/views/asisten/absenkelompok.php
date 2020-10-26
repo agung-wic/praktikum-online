@@ -10,7 +10,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col">
-                        <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
+                        <h6 class="m-0 font-weight-bold "><?= $title .  " - " . $nama_modul['name']; ?></h6>
                     </div>
                 </div>
                 <div class="card-body">
