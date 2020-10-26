@@ -13,6 +13,15 @@ class Asisten_model extends CI_Model
     return $this->db->query($query)->result_array();
   }
 
+  public function JumlahKelompok()
+  {
+    $query = "SELECT `kelompok`.`no_kelompok`, `kelompok`.`id`  
+              FROM `kelompok` LEFT JOIN `anggota_kelompok` 
+              ON `kelompok`.`id` = `anggota_kelompok`.`no_kelompok` GROUP BY `id`";
+
+    return $this->db->query($query)->result_array();
+  }
+
   public function TampilNilaiPraktikan($id)
   {
     $query = "SELECT `nilai`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', `modul`.`name` as 'modul', 
@@ -137,15 +146,6 @@ class Asisten_model extends CI_Model
     return $this->db->query($query)->row_array();
   }
 
-  public function JumlahKelompok()
-  {
-    $query = "SELECT COUNT(`anggota_kelompok`.`nrp`) AS jumlah , `kelompok`.`no_kelompok`, `kelompok`.`id`  
-              FROM `kelompok` LEFT JOIN `anggota_kelompok` 
-              ON `kelompok`.`id` = `anggota_kelompok`.`no_kelompok` GROUP BY `no_kelompok`";
-
-    return $this->db->query($query)->result_array();
-  }
-
   public function KelompokAsisten($id)
   {
     $query = "SELECT COUNT(`anggota_kelompok`.`nrp`) AS jumlah ,`kelompok`.`id` as `id_kelompok`, `kelompok_asisten`.`id` , `kelompok_asisten`.`nrp` as `nrp` , `kelompok_asisten`.`id_modul` as `id_modul` , `kelompok_asisten`.`no_kelompok` as `no_kelompok` ,
@@ -154,7 +154,7 @@ class Asisten_model extends CI_Model
               LEFT JOIN `kelompok` ON `kelompok`.`id` = `kelompok_asisten`.`no_kelompok` 
               LEFT JOIN `modul` ON `modul`.`modul` = `kelompok_asisten`.`id_modul` 
               LEFT JOIN `anggota_kelompok` ON `anggota_kelompok` . `no_kelompok` = `kelompok_asisten` . `no_kelompok`
-              WHERE `kelompok_asisten`.`nrp` = $id GROUP BY `kelompok_asisten`.`no_kelompok` ORDER BY `kelompok`.`no_kelompok` ASC";
+              WHERE `kelompok_asisten`.`nrp` = $id GROUP BY `kelompok_asisten`.`no_kelompok` ORDER BY `kelompok`.`id` ASC";
 
     return $this->db->query($query)->result_array();
   }

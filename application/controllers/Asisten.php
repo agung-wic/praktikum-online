@@ -23,14 +23,26 @@ class Asisten extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  public function penilaian()
+  {
+    $this->load->model('Asisten_model');
+    $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+    $data['title'] = 'Pembagian Kelompok';
+    $data['kelompok'] = $this->Asisten_model->JumlahKelompok();
+    $this->load->view('template/header', $data);
+    $this->load->view('template/sidebar', $data);
+    $this->load->view('template/topbar', $data);
+    $this->load->view('asisten/penilaian', $data);
+    $this->load->view('template/footer');
+  }
 
-  public function penilaian($modul)
+  public function penilaian_detail($kelompok)
   {
     $this->load->model('Asisten_model');
     $data['title'] = 'Penilaian';
     $data['cekrole'] = $this->uri->segment(1);
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-    $data['list'] = $this->Asisten_model->TampilNilai($modul);
+    $data['list'] = $this->Asisten_model->TampilNilai($kelompok);
     $i = 0;
     while ($i < count($data['list'])) {
       $asisten = $data['list'][$i]['asisten'];
@@ -43,7 +55,7 @@ class Asisten extends CI_Controller
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
-    $this->load->view('asisten/penilaian', $data);
+    $this->load->view('asisten/penilaian_detail', $data);
     $this->load->view('template/footer');
   }
 
