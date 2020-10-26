@@ -313,8 +313,6 @@ class Asisten extends CI_Controller
     }
     $this->db->where('id', $id);
     $this->db->update('nilai', $data);
-    var_dump($id_kelompok);
-    die;
     redirect(base_url('asisten/penilaian_detail/' . $nilai['modul'] . "/" . $id_kelompok));
   }
 
