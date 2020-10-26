@@ -109,6 +109,7 @@
                                     </tr>
                                 <?php $i++;
                                 endforeach;
+                                echo $l[is_acc];
                                 if ($l['is_acc'] == 1) {
                                     echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
                                 } else {
