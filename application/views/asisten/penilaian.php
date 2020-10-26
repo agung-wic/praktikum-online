@@ -106,7 +106,6 @@
                                                 Acc
                                             </a>
                                         </td>
-                                        </td>
                                     <?php $i++;
                                 endforeach;
                                 if ($l['is_acc'] == "1") {
@@ -114,7 +113,6 @@
                                 } else {
                                     echo '<td></td>';
                                 } ?>
-                                    </td>
                                     </tr>
                             </tbody>
                         </table>
