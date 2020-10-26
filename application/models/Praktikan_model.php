@@ -93,9 +93,9 @@ class Praktikan_model extends CI_Model
 
   public function TampilModulLaporan($id)
   {
-    $query = "SELECT `modul`.`modul`, `modul`.`name`, `jadwal`.`status`, `jadwal`.`nrp`,`nilai`.`is_acc` FROM `modul` 
-              LEFT JOIN `jadwal` ON `modul`.`modul` = `jadwal`.`modul_id`
-              LEFT JOIN `nilai` ON `jadwal`.`nrp` = `nilai`.`nrp`
+    $query = "SELECT `modul`.`modul`, `modul`.`name`, `jadwal`.`status`, `jadwal`.`nrp`,`nilai`.`is_acc` FROM modul 
+              LEFT JOIN jadwal ON `modul`.`modul` = `jadwal`.`modul_id`
+              LEFT JOIN nilai ON `jadwal`.`nrp` = `nilai`.`nrp` AND `modul`.`modul` = `nilai`.`modul`
               WHERE `jadwal`.`nrp`=$id AND `nilai`.`is_acc`= 0
               ORDER BY `modul`.`modul` ASC";
 
