@@ -106,13 +106,14 @@
                                                 Acc
                                             </a>
                                         </td>
-                                    <?php $i++;
+                                    <?php if ($l['is_acc'] == "1") {
+                                        echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
+                                    } else {
+                                        echo '<td></td>';
+                                    };
+                                    $i++;
                                 endforeach;
-                                if ($l['is_acc'] == "1") {
-                                    echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
-                                } else {
-                                    echo '<td></td>';
-                                } ?>
+                                    ?>
                                     </tr>
                             </tbody>
                         </table>
