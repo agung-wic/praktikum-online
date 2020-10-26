@@ -104,9 +104,11 @@ class Praktikan_model extends CI_Model
 
   public function TampilKelompok($id)
   {
-    $query = "SELECT `user`.`name`, `anggota_kelompok`.`nrp` 
-              FROM `anggota_kelompok` INNER JOIN `user` ON `anggota_kelompok`.`nrp` = `user`.`nrp`
-              WHERE `anggota_kelompok`.`no_kelompok` = $id";
+    $query = "SELECT `modul`.`modul`, `modul`.`name`, `jadwal`.`status`, `jadwal`.`nrp`,`nilai`.`is_acc` FROM modul 
+              LEFT JOIN jadwal ON `modul`.`modul` = `jadwal`.`modul_id`
+              LEFT JOIN nilai ON `jadwal`.`nrp` = `nilai`.`nrp` AND `modul`.`modul` = `nilai`.`modul`
+              WHERE `jadwal`.`nrp`= $id AND `nilai`.`is_acc`= 0
+              ORDER BY `modul`.`modul` ASC";
 
     return $this->db->query($query)->result_array();
   }
