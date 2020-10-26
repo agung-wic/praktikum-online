@@ -38,7 +38,7 @@
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $k['no_kelompok'] ?></td>
                                         <td>
-                                            <a href="<?= base_url('asisten/penilaian_detail/' . $k['id']); ?>" data-id="<?= $k['id'] ?>" data-toggle="modal" data-target="#TambahKelompok" class="badge badge-pill badge-primary tombolEditKelompok"><i class="fas fa-fw fa-edit"></i>Edit</a>
+                                            <a href="<?= base_url('asisten/penilaian_detail/' . $k['id']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-info"></i>Detail</a>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
