@@ -293,7 +293,7 @@ class Asisten extends CI_Controller
     redirect(base_url('asisten/penilaian/' . $modul_id));
   }
 
-  public function accnilai($id)
+  public function accnilai($id, $id_kelompok)
   {
     $nilai = $this->db->get_where('nilai', ['id ' => $id])->row_array();
     if ($nilai['is_acc'] == 1) {
@@ -313,7 +313,7 @@ class Asisten extends CI_Controller
     }
     $this->db->where('id', $id);
     $this->db->update('nilai', $data);
-    redirect(base_url('asisten/penilaian/' . $nilai['modul']));
+    redirect(base_url('asisten/penilaian_detail/' . $nilai['modul'] . "/" . $id_kelompok));
   }
 
   public function absen()
