@@ -99,9 +99,9 @@ class Auth extends CI_Controller
                         $this->db->where('nrp', $user['nrp']);
                         $this->db->update('user', $data);
                         $this->session->set_userdata($data);
-                        if ($this->session->userdata('role_id' == 8) || $this->session->userdata('role_id' == 2)) {
+                        if ($this->session->userdata('role_id' == 1) || $this->session->userdata('role_id' == 7)) {
                             redirect(base_url('praktikan'));
-                        } else {
+                        } else if ($this->session->userdata('role_id' == 8) || $this->session->userdata('role_id' == 2)) {
                             redirect(base_url('profil'));
                         }
                     } else {
