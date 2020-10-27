@@ -100,8 +100,8 @@ class Auth extends CI_Controller
                         $this->db->update('user', $data);
                         $this->session->set_userdata($data);
                         if ($this->session->userdata('role_id' == 2 || 'role_id' == 8)) {
-                            redirect(base_url('praktikan/index'));
-                        } else if ($this->session->userdata('role_id' == 1 || 'role_id' == 7)) {
+                            redirect(base_url('praktikan'));
+                        } else {
                             redirect(base_url('profil'));
                         }
                     } else {
