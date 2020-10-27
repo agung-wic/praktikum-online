@@ -58,7 +58,7 @@ class Modul_model extends CI_Model
                 FROM `kelompok` 
                 LEFT JOIN `kelompok_asisten`  ON `kelompok`.`id` = `kelompok_asisten`.`no_kelompok`
                 WHERE `kelompok_asisten`.`id_modul` = '$id'
-                GROUP BY `kelompok`.`id` ORDER BY `kelompok`.`id`";
+                GROUP BY `kelompok`.`id` ORDER BY `kelompok`.`id` ASC";
 
         return $this->db->query($query)->result_array();
     }
