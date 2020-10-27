@@ -21,8 +21,8 @@
               </div>
               <div class="custom-file">
                 <input type="file" class="custom-file-input" id="filelaporan" name="filelaporan">
-                <input type="text" class="custom-file-input" id="cek" name="cek" value="<?= $cek; ?>" hidden>
-                <input type="text" class="custom-file-input" id="cek_modul" name="cek_modul" value="<?= $cek_modul; ?>" hidden>
+                <input type="text" id="cek" name="cek" value="<?= $cek; ?>" hidden>
+                <input type="text" id="cek_modul" name="cek_modul" value="<?= $cek_modul; ?>" hidden>
                 <label class="custom-file-label" for="filelaporan">Pilih berkas</label>
               </div>
             </div>
