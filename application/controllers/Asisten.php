@@ -38,14 +38,14 @@ class Asisten extends CI_Controller
     $this->load->view('template/footer');
   }
 
-  public function penilaian_detail()
+  public function penilaian_detail($id_modul, $id_kelompok)
   {
     $this->load->model('Asisten_model');
     $data['title'] = 'Penilaian';
     $data['keyword'] = $this->input->post('keyword');
     $data['cekrole'] = $this->uri->segment(1);
-    $data['id_modul'] = $this->uri->segment(3);
-    $data['id_kelompok'] = $this->uri->segment(4);
+    $data['id_modul'] = $id_modul;
+    $data['id_kelompok'] = $id_kelompok;
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
     $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok'], $data['keyword']);
     $data['nama_kelompok'] = $this->db->get_where('kelompok', ['id' => $data['id_kelompok']])->row_array();
