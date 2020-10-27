@@ -285,7 +285,7 @@ class Praktikan extends CI_Controller
                     if ($this->session->userdata('role_id') == 2) {
                         redirect(base_url('praktikan/percobaan/') . $this->input->post('cek_modul'));
                     } else {
-                        redirect(base_url('praktikan/percobaan_viewer/') . $this->input->post('cek_modul'));
+                        redirect(base_url('praktikan/percobaan-viewer/') . $this->input->post('cek_modul'));
                     }
                 }
             } else {
