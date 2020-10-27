@@ -30,14 +30,19 @@
                                         <td><?= $k['name'] ?></td>
                                         <?php
                                         $cek = 0;
+                                        $masuk = 0;
 
                                         while ($cek < count($absensi)) {
                                             if ($k['nrp'] == $absensi[$cek]['nrp']) {
                                                 echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
-                                                $cek++;
+                                                $masuk = 1;
+                                                break;
                                             } else {
-                                                echo '<td></td>';
+                                                $cek++;
                                             }
+                                        }
+                                        if ($masuk == 0) {
+                                            echo '<td></td>';
                                         }
                                         ?>
                                     </tr>
