@@ -236,9 +236,8 @@ class Praktikan extends CI_Controller
 
     public function uploadlaporan()
     {
+        $_FILES['filelaporan']['name'] = $this->session->userdata('nrp') . "_" . $this->input->post('modul_id');
         $file = $_FILES['filelaporan']['name'];
-        $file = str_replace(" ", "_", $file);
-        $_FILES['filelaporan']['name'] = $file;
         $data['nilai'] = $this->db->get_where('nilai', ['modul' => $this->input->post('modul_id', true), 'nrp' => $this->session->userdata('nrp')])->row_array();
         if ($data['nilai']['laporan']) {
             $old_laporan = $data['nilai']['laporan'];
