@@ -31,7 +31,7 @@
                                         <?php
                                         $cek = 0;
 
-                                        if ($cek < count($absensi)) {
+                                        while ($cek < count($absensi)) {
                                             if ($k['nrp'] == $absensi[$cek]['nrp']) {
                                                 echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
                                                 $cek++;
