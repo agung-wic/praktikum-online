@@ -36,7 +36,7 @@
                                         while ($cek < count($absensi)) {
                                             if ($k['nrp'] == $absensi[$cek]['nrp']) {
                                                 echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
-                                                echo '<td><?= $absensi[$cek]['keterangan'] ?></td>';
+                                                echo '<td>' . $absensi[$cek]['keterangan'] . '</td>';
                                                 $masuk = 1;
                                                 break;
                                             } else {
@@ -48,7 +48,7 @@
                                             echo '<td></td>';
                                         }
                                         ?>
-                                        
+
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
