@@ -49,6 +49,15 @@ class Asisten_model extends CI_Model
     return $this->db->query($query)->result_array();
   }
 
+  public function JumlahKelompokTotal()
+  {
+    $query = "SELECT COUNT(`anggota_kelompok`.`nrp`) AS jumlah , `kelompok`.`no_kelompok`, `kelompok`.`id`  
+              FROM `kelompok` LEFT JOIN `anggota_kelompok` 
+              ON `kelompok`.`id` = `anggota_kelompok`.`no_kelompok` GROUP BY `id`";
+
+    return $this->db->query($query)->result_array();
+  }
+
   public function TampilNilaiPraktikan($id)
   {
     $query = "SELECT `nilai`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', `modul`.`name` as 'modul', 
