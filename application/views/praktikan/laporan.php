@@ -15,8 +15,10 @@
                 <input type="text" class="form-control" id="cek" name="cek" value="<?= $cek; ?>" hidden>
                 <input type="text" class="form-control" id="cek_modul" name="cek_modul" value="<?= $cek_modul; ?>" hidden>
                 <label for="modul">Pilih Modul</label>
-                <select <?= ($cek_modul) ? "disabled" : ""; ?> value="<?= $cek_modul ?>" class="form-control" name="modul_id" id="modul_id">
-                  <?php if ($cek_modul) { ?>
+                <select <?= ($cek_modul) ? "disabled" : ""; ?> class="form-control" name="modul_id" id="modul_id">
+                  <?php if ($cek_modul) {
+                    var_dump($cek_modul);
+                    die; ?>
                     <option value="<?= $cek_modul ?>"><?= $cek_nama_modul['name']; ?></option>
                   <?php } else { ?>
                     <?php foreach ($modul as $m) : ?>
