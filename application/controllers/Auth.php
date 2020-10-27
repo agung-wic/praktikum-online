@@ -99,7 +99,11 @@ class Auth extends CI_Controller
                         $this->db->where('nrp', $user['nrp']);
                         $this->db->update('user', $data);
                         $this->session->set_userdata($data);
-                        redirect(base_url('profil'));
+                        if ($this->session->userdata('role_id' == 2 || 'role_id' == 8)) {
+                            redirect(base_url('praktikan/index'));
+                        } else if ($this->session->userdata('role_id' == 1 || 'role_id' == 7)) {
+                            redirect(base_url('profil'));
+                        }
                     } else {
                         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!!</div>');
                         redirect('auth');
