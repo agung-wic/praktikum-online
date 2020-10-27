@@ -40,7 +40,6 @@
                                             }
                                         }
                                         ?>
-
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
