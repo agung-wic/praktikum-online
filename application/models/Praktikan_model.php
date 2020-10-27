@@ -96,13 +96,22 @@ class Praktikan_model extends CI_Model
     $query = "SELECT `modul`.`modul`, `modul`.`name`, `jadwal`.`status`, `jadwal`.`nrp`,`nilai`.`is_acc` FROM modul 
               LEFT JOIN jadwal ON `modul`.`modul` = `jadwal`.`modul_id`
               LEFT JOIN nilai ON `jadwal`.`nrp` = `nilai`.`nrp` AND `modul`.`modul` = `nilai`.`modul`
-              WHERE `jadwal`.`nrp`=$id AND `nilai`.`is_acc`= 0
+              WHERE `jadwal`.`nrp`= '07211740000010' AND (`nilai`.`is_acc`= 0 OR `nilai`.`is_acc`IS NULL)
               ORDER BY `modul`.`modul` ASC";
 
     return $this->db->query($query)->result_array();
   }
 
   public function TampilKelompok($id)
+  {
+    $query = "SELECT `user`.`name`, `anggota_kelompok`.`nrp` 
+              FROM `anggota_kelompok` INNER JOIN `user` ON `anggota_kelompok`.`nrp` = `user`.`nrp`
+              WHERE `anggota_kelompok`.`no_kelompok` = $id";
+
+    return $this->db->query($query)->result_array();
+  }
+
+  public function TampilKelompokModul($id)
   {
     $query = "SELECT `modul`.`modul`, `modul`.`name`, `jadwal`.`status`, `jadwal`.`nrp`,`nilai`.`is_acc` FROM modul 
               LEFT JOIN jadwal ON `modul`.`modul` = `jadwal`.`modul_id`

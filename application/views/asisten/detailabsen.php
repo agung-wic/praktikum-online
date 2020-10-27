@@ -19,7 +19,7 @@
                                     <th scope="col">NRP</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Hadir</th>
-                                    <th scope="col">keterangan</th>
+                                    <th scope="col">Keterangan</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,7 +44,7 @@
                                             }
                                         }
                                         if ($masuk == 0) {
-                                            echo '<td></td>';
+                                            echo '<td><p class="badge badge-pill badge-success" style="opacity:0%"><i class="fas fa-check"></i></p></td>';
                                             echo '<td></td>';
                                         }
                                         ?>
