@@ -23,40 +23,7 @@
   </div>
 </div>
 <div class="row mx-3">
-  <div class="col-lg-6">
-    <nav>
-      <div class="nav nav-tabs" style="border:none;" id="nav-tab">
-        <?php
-        $i = 0;
-        while ($i < count($live_stream)) {
-        ?>
-          <a class="nav-item nav-link" style="background-color:black;color:white" id="nav-video-<?= $i ?>" data-toggle="tab" href="#video-<?= $i; ?>" role="tab" aria-controls="video-<?= $i; ?>" aria-selected="true">Video <?= $i + 1; ?></a>
-        <?php $i++;
-        } ?>
-      </div>
-
-    </nav>
-    <div class="tab-content" id="nav-tabContent">
-      <?php
-      $i = 0;
-      while ($i < count($live_stream)) {
-      ?>
-        <div class="tab-pane fade" id="video-<?= $i; ?>" role="tabpanel" aria-labelledby="video-<?= $i; ?>-tab">
-          <div class="kotak" style="background-color:black;
-          border-top-left-radius: 0px;
-          border-top-right-radius: 25px;
-          border-bottom-left-radius: 25px;
-          border-bottom-right-radius: 25px;">
-            <div class="container text-center">
-              <iframe style="padding-right:3%;transform:<?= $live_stream[$i]['transform'] ?>" width="<?= $live_stream[$i]['width'] ?>" height=" <?= $live_stream[$i]['height'] ?>" src="<?= $live_stream[$i]['link'] ?>" frameborder="0" allow="accelerometer; mute; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      <?php $i++;
-      } ?>
-    </div>
-  </div>
-  <div class="col-lg-6">
+  <div class="col-lg-12">
     <div class="kotak">
       <div class="container py-3">
         <div class="row">
