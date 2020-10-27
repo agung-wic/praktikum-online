@@ -45,6 +45,7 @@
                                             echo '<td></td>';
                                         }
                                         ?>
+                                        <td><?= $k['keterangan'] ?></td>
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
