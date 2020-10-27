@@ -77,7 +77,7 @@ class Praktikan extends CI_Controller
 
                 if (intval($jadwal_menit) - intval($sekarang_menit) < 0) {
                     if (floor(($sekarang_menit - $jadwal_menit) / 60) > 0) {
-                        $terlambat = "Terlambat " . ($sekarang_menit - $jadwal_menit) / 60 . " jam " . ($sekarang_menit - $jadwal_menit) % 60 . " menit";
+                        $terlambat = "Terlambat " . floor(($sekarang_menit - $jadwal_menit) / 60) . " jam " . ($sekarang_menit - $jadwal_menit) % 60 . " menit";
                     } else {
                         $terlambat = "Terlambat " .  ($sekarang_menit - $jadwal_menit) % 60 . " menit";
                     }
