@@ -258,8 +258,6 @@ class Praktikan extends CI_Controller
         $_FILES['filelaporan']['name'] = $this->session->userdata('nrp') . "_" . $this->input->post('modul_id') . ".pdf";
         $file = $_FILES['filelaporan']['name'];
 
-        var_dump($this->input->post());
-        die;
         $data['nilai'] = $this->db->get_where('nilai', ['modul' => $this->input->post('modul_id', true), 'nrp' => $this->session->userdata('nrp')])->row_array();
         if ($data['nilai']['laporan']) {
             $old_laporan = $data['nilai']['laporan'];
