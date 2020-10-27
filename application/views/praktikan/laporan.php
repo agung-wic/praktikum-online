@@ -17,7 +17,7 @@
               </div>
               <div class="form-group">
                 <label for="modul_id">Pilih Modul</label>
-                <select class="form-control" name="modul_id" id="modul_id" <?= ($cek_modul) ? "disabled" : ""; ?>>
+                <select class="form-control" name="modul_id" id="modul_id">
                   <?php if ($cek_modul) { ?>
                     <option value="<?= 'M4' ?>" selected><?= $cek_nama_modul['name']; ?></option>
                   <?php
