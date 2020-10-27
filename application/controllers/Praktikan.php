@@ -244,6 +244,7 @@ class Praktikan extends CI_Controller
         $data['modul'] = $this->Praktikan_model->TampilModulLaporan($this->session->userdata('nrp'));
         $data['cek'] = 1;
         $data['cek_modul'] = $modul;
+        $data['cek_nama_modul'] = $this->db->get_where('modul', ['modul' => $modul])->row_array();
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
