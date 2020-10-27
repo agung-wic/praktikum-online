@@ -44,7 +44,7 @@
                                             }
                                         }
                                         if ($masuk == 0) {
-                                            echo '<td></td>';
+                                            echo '<td><p class="badge badge-pill badge-success" style="opacity:0%"><i class="fas fa-check"></i></p></td>';
                                             echo '<td></td>';
                                         }
                                         ?>
