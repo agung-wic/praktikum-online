@@ -93,7 +93,7 @@ class Praktikan extends CI_Controller
                 ];
 
                 $this->db->insert('absensi', $input);
-                redirect(base_url('praktikan/percobaan/') . $this->input->post('modul_id'));
+                redirect(base_url('praktikan/laporan_2/') . $this->input->post('modul_id'));
             } else {
                 redirect(base_url('praktikan/percobaan/') . $this->input->post('modul_id'));
             }
@@ -226,6 +226,24 @@ class Praktikan extends CI_Controller
         $data['title'] = 'Unggah Laporan';
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['modul'] = $this->Praktikan_model->TampilModulLaporan($this->session->userdata('nrp'));
+        $data['cek'] = 0;
+        $data['cek_modul'] = NULL;
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('template/topbar', $data);
+        $this->load->view('praktikan/laporan', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function laporan_2($modul)
+    {
+        $this->load->model('Praktikan_model');
+        $data['title'] = 'Unggah Laporan';
+        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+        $data['modul'] = $this->Praktikan_model->TampilModulLaporan($this->session->userdata('nrp'));
+        $data['cek'] = 1;
+        $data['cek_modul'] = $modul;
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -259,7 +277,15 @@ class Praktikan extends CI_Controller
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                    Laporan modul berhasil diubah!
                     </div>');
-                redirect(base_url('praktikan/laporan'));
+                if ($this->input->post('cek') == 0) {
+                    redirect(base_url('praktikan/laporan'));
+                } else {
+                    if ($this->session->userdata('role_id') == 2) {
+                        redirect(base_url('praktikan/percobaan/') . $this->input->post('cek_modul'));
+                    } else {
+                        redirect(base_url('praktikan/percobaan_viewer/') . $this->input->post('cek_modul'));
+                    }
+                }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
                 redirect(base_url('praktikan/laporan'));
