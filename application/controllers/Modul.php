@@ -307,8 +307,8 @@ class Modul extends CI_Controller
     public function getubahmodul()
     {
         $id = $this->input->post('id', true);
-        $this->load->model('Dosen_model');
-        echo json_encode($this->Dosen_model->EditModul($id));
+        $this->load->model('Modul_model');
+        echo json_encode($this->Modul_model->EditModul($id));
     }
 
     public function tambahmodul()

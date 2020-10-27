@@ -35,15 +35,15 @@
                                                 <th scope="row"><?= $i; ?></th>
                                                 <td><?= $m['modul'] ?>. <?= $m['name']; ?></td>
                                                 <td>
-                                                    <a href="<?= base_url('dosen/editVideo/') . $m['id']; ?>" class="badge badge-pill badge-info tampilEditVideo" data-id="<?= $m['id']; ?>" data-toggle="modal" data-target="#BuatVideo">
+                                                    <a href="<?= base_url('modul/editVideo/') . $m['id']; ?>" class="badge badge-pill badge-info tampilEditVideo" data-id="<?= $m['id']; ?>" data-toggle="modal" data-target="#BuatVideo">
                                                         <i class="fas fa-video"></i>
                                                         Edit Video
                                                     </a>
-                                                    <a href="<?= base_url('dosen/editModul/') . $m['id']; ?>" class="badge badge-pill badge-primary tampilEditModul" data-id="<?= $m['id']; ?>" data-toggle="modal" data-target="#BuatModul">
+                                                    <a href="<?= base_url('modul/editModul/') . $m['id']; ?>" class="badge badge-pill badge-primary tampilEditModul" data-id="<?= $m['id']; ?>" data-toggle="modal" data-target="#BuatModul">
                                                         <i class=" fas fa-fw fa-edit"></i>
                                                         Edit Konten
                                                     </a>
-                                                    <a href="<?= base_url('dosen/deleteModul/') . $m['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
+                                                    <a href="<?= base_url('modul/deleteModul/') . $m['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
                                                         <i class="fas fa-fw fa-trash-alt"></i>
                                                         Delete
                                                     </a>
@@ -77,7 +77,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('dosen/tambahModul') ?>" method="post">
+                <form action="<?= base_url('modul/tambahModul') ?>" method="post">
                     <div class="form-group">
                         <input class="form-control" type="number" name="id" id="id" hidden>
                     </div>
@@ -137,7 +137,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <?= form_open_multipart(base_url('dosen/addfilevideo')) ?>
+                <?= form_open_multipart(base_url('modul/addfilevideo')) ?>
                 <div class="form-group">
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="filevideo" name="filevideo">
