@@ -102,7 +102,7 @@ class Auth extends CI_Controller
                         if ($this->session->userdata('role_id' == 8) || $this->session->userdata('role_id' == 2)) {
                             redirect(base_url('praktikan'));
                         } else {
-                            redirect(base_url('profil'));
+                            redirect(base_url('praktikan'));
                         }
                     } else {
                         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!!</div>');
