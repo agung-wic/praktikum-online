@@ -19,7 +19,7 @@
                                     <th scope="col">NRP</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Hadir</th>
-                                    <th scope="col">keterangan</th>
+                                    <th scope="col">Keterangan</th>
                                 </tr>
                             </thead>
                             <tbody>
