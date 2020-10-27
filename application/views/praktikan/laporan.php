@@ -17,7 +17,8 @@
                 <label for="modul">Pilih Modul</label>
                 <select <?= ($cek_modul) ? "disabled" : ""; ?> class="form-control" name="modul_id" id="modul_id">
                   <?php if ($cek_modul) {
-                  ?>
+                    var_dump($cek_modul);
+                    die; ?>
                     <option value="<?= $cek_modul ?>" selected><?= $cek_nama_modul['name']; ?></option>
                   <?php } else { ?>
                     <?php foreach ($modul as $m) : ?>
