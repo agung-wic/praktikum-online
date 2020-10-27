@@ -19,6 +19,7 @@
                                     <th scope="col">NRP</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Hadir</th>
+                                    <th scope="col">keterangan</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,6 +36,7 @@
                                         while ($cek < count($absensi)) {
                                             if ($k['nrp'] == $absensi[$cek]['nrp']) {
                                                 echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
+                                                echo '<td><?= $absensi[$cek]['keterangan'] ?></td>';
                                                 $masuk = 1;
                                                 break;
                                             } else {
@@ -43,9 +45,10 @@
                                         }
                                         if ($masuk == 0) {
                                             echo '<td></td>';
+                                            echo '<td></td>';
                                         }
                                         ?>
-                                        <td><?= $k['keterangan'] ?></td>
+                                        
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
