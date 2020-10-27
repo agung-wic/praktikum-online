@@ -19,8 +19,7 @@
                   <?php if ($cek_modul) {
                   ?>
                     <option value="<?= $cek_modul ?>" selected><?= $cek_nama_modul['name']; ?></option>
-                  <?php var_dump($cek_modul);
-                    die;
+                  <?php
                   } else { ?>
                     <?php foreach ($modul as $m) : ?>
                       <option value="<?= $m['modul'] ?>"><?= $m['name'] ?></option>
