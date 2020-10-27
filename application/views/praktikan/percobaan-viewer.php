@@ -1,27 +1,3 @@
-<div class="row mx-5">
-  <div class="kotak" style="background-color: white;">
-    <div class="container">
-      <h4 class="mt-3"><b><?= $modul['name'] ?></b></h4>
-      <h6>Kode Percobaan: <?= $modul['modul']; ?></h6>
-      <a href="<?= base_url('assets/file/') . $modul['pdf'] ?>" download class=" mb-3 badge badge-pill badge-info"><i class="fas fa-fw fa-download"></i>
-        Modul
-      </a>
-      <h6><b>I. Tujuan Percobaan</b></h6>
-      <p><?= $modul['tujuan']; ?></p>
-      <h6><b>II. Peralatan Yang Digunakan</b></h6>
-      <?= $modul['peralatan']; ?>
-      <h6><b>III. Teori</b></h6>
-      <?= $modul['teori']; ?>
-      <h6><b>IV. Cara Melakukan Percobaan:</b></h6>
-      <?= $modul['cara']; ?>
-      <h6><b>V. Tugas Untuk Laporan Resmi:</b></h6>
-      <?= $modul['tugas_lapres']; ?>
-      <h6><b>VI. Tugas Pendahuluan:</b></h6>
-      <?= $modul['tugas_pendahuluan']; ?>
-      <?= $lokasi ?>
-    </div>
-  </div>
-</div>
 <div class="row mx-3">
   <div class="col-lg-12">
     <div class="kotak">
@@ -46,6 +22,29 @@
     </div>
   </div>
 </div>
+<div class="row mx-5">
+  <div class="kotak" style="background-color: white;">
+    <div class="container">
+      <h4 class="mt-3"><b><?= $modul['name'] ?></b></h4>
+      <h6>Kode Percobaan: <?= $modul['modul']; ?></h6>
+      <a href="<?= base_url('assets/file/') . $modul['pdf'] ?>" download class=" mb-3 badge badge-pill badge-info"><i class="fas fa-fw fa-download"></i>
+        Modul
+      </a>
+      <h6><b>I. Tujuan Percobaan</b></h6>
+      <p><?= $modul['tujuan']; ?></p>
+      <h6><b>II. Peralatan Yang Digunakan</b></h6>
+      <?= $modul['peralatan']; ?>
+      <h6><b>III. Teori</b></h6>
+      <?= $modul['teori']; ?>
+      <h6><b>IV. Cara Melakukan Percobaan:</b></h6>
+      <?= $modul['cara']; ?>
+      <h6><b>V. Tugas Untuk Laporan Resmi:</b></h6>
+      <?= $modul['tugas_lapres']; ?>
+      <h6><b>VI. Tugas Pendahuluan:</b></h6>
+      <?= $modul['tugas_pendahuluan']; ?>
+      <?= $lokasi ?>
+    </div>
+  </div>
 </div>
 
 <div class="modal fade" id="SelesaiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
