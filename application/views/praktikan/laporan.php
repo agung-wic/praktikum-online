@@ -12,6 +12,8 @@
             <?= form_open_multipart(base_url('praktikan/uploadlaporan')) ?>
             <div class="col-lg">
               <div class="form-group">
+                <input type="text" class="form-control" id="cek" name="cek" value="<?= $cek; ?>" hidden>
+                <input type="text" class="form-control" id="cek_modul" name="cek_modul" value="<?= $cek_modul; ?>" hidden>
                 <label for="modul">Pilih Modul</label>
                 <select class="form-control" name="modul_id" id="modul_id">
                   <?php foreach ($modul as $m) : ?>
@@ -21,8 +23,6 @@
               </div>
               <div class="custom-file">
                 <input type="file" class="custom-file-input" id="filelaporan" name="filelaporan">
-                <input type="text" id="cek" name="cek" value="<?= $cek; ?>" hidden>
-                <input type="text" id="cek_modul" name="cek_modul" value="<?= $cek_modul; ?>" hidden>
                 <label class="custom-file-label" for="filelaporan">Pilih berkas</label>
               </div>
             </div>
