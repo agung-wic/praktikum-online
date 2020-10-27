@@ -15,9 +15,8 @@
                 <input type="text" class="form-control" id="cek" name="cek" value="<?= $cek; ?>" hidden>
                 <input type="text" class="form-control" id="cek_modul" name="cek_modul" value="<?= $cek_modul; ?>" hidden>
                 <label for="modul">Pilih Modul</label>
-                <select <?= ($cek_modul) ? "disabled" : ""; ?> class="form-control" name="modul_id" id="modul_id">
-                  <?php if ($cek_modul) {
-                  ?>
+                <select class="form-control" name="modul_id" id="modul_id" <?= ($cek_modul) ? "disabled" : ""; ?>>
+                  <?php if ($cek_modul) { ?>
                     <option value="<?= 'M4' ?>" selected><?= $cek_nama_modul['name']; ?></option>
                   <?php
                   } else { ?>
