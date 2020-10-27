@@ -10,7 +10,9 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        if ($this->session->userdata('email')) {
+        if ($this->session->userdata('role_id' == 2 || 'role_id' == 8)) {
+            redirect(base_url('praktikan'));
+        } else if ($this->session->userdata('role_id' == 1 || 'role_id' == 7)) {
             redirect(base_url('profil'));
         } else {
             $this->form_validation->set_rules('nrp', 'NRP', 'required|trim');
@@ -29,7 +31,9 @@ class Auth extends CI_Controller
 
     public function login()
     {
-        if ($this->session->userdata('email')) {
+        if ($this->session->userdata('role_id' == 2 || 'role_id' == 8)) {
+            redirect(base_url('praktikan'));
+        } else if ($this->session->userdata('role_id' == 1 || 'role_id' == 7)) {
             redirect(base_url('profil'));
         } else {
             $this->form_validation->set_rules('nrp', 'NRP', 'required|trim');
@@ -113,7 +117,9 @@ class Auth extends CI_Controller
 
     public function addemail()
     {
-        if ($this->session->userdata('email')) {
+        if ($this->session->userdata('role_id' == 2 || 'role_id' == 8)) {
+            redirect(base_url('praktikan/index'));
+        } else if ($this->session->userdata('role_id' == 1 || 'role_id' == 7)) {
             redirect(base_url('profil'));
         } else {
             $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
@@ -167,7 +173,9 @@ class Auth extends CI_Controller
 
     public function addpassword()
     {
-        if ($this->session->userdata('email')) {
+        if ($this->session->userdata('role_id' == 2 || 'role_id' == 8)) {
+            redirect(base_url('praktikan/index'));
+        } else if ($this->session->userdata('role_id' == 1 || 'role_id' == 7)) {
             redirect(base_url('profil'));
         } else {
             $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
@@ -202,7 +210,9 @@ class Auth extends CI_Controller
 
     public function registration()
     {
-        if ($this->session->userdata('email')) {
+        if ($this->session->userdata('role_id' == 2 || 'role_id' == 8)) {
+            redirect(base_url('praktikan/index'));
+        } else if ($this->session->userdata('role_id' == 1 || 'role_id' == 7)) {
             redirect(base_url('profil'));
         } else {
             $this->form_validation->set_rules('name', 'Name', 'required|trim');
