@@ -421,7 +421,7 @@ class Admin extends CI_Controller
             $data = fopen(base_url('assets/file/') . $file, "r");
             $jumlah = 0;
             while (!feof($data)) {
-                $csv = fgetcsv($data, 0, ';');
+                $csv = fgetcsv($data, 0, ',');
                 if ($csv[1] == "") {
                     continue;
                 } else {
