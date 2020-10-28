@@ -383,8 +383,10 @@ class Modul extends CI_Controller
             if ($this->upload->do_upload('filevideo')) {
                 if ($data['modul']['video'] != "" || $data['modul']['video'] != NULL) {
                     $old_video = $data['modul']['video'];
-                    if (!unlink(FCPATH . 'assets/vid/' . $old_video)) {
-                        continue;
+
+                    try {
+                        unlink(FCPATH . 'assets/vid/' . $old_video);
+                    } catch (Exception $e) {
                     }
                 }
                 $new_video = $this->upload->data('file_name');
