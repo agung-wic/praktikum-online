@@ -374,6 +374,8 @@ class Modul extends CI_Controller
         $file = $_FILES['filevideo']['name'];
         if ($file) {
             $data['modul'] = $this->db->get_where('modul', ['id' => $this->input->post('idi', true)])->row_array();
+            var_dump($this->input->post('idi'));
+            die;
             $config['upload_path'] = './assets/vid/';
             $config['allowed_types'] = 'mp4|mkv ';
 
@@ -381,7 +383,9 @@ class Modul extends CI_Controller
             if ($this->upload->do_upload('filevideo')) {
                 if ($data['modul']['video'] != "" || $data['modul']['video'] != NULL) {
                     $old_video = $data['modul']['video'];
-                    unlink(FCPATH . 'assets/vid/' . $old_video);
+                    if (!unlink(FCPATH . 'assets/vid/' . $old_video)) {
+                        continue;
+                    }
                 }
                 $new_video = $this->upload->data('file_name');
 
