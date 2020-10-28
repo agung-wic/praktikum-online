@@ -282,11 +282,7 @@ class Praktikan extends CI_Controller
                 if ($this->input->post('cek') == 0) {
                     redirect(base_url('praktikan/laporan'));
                 } else {
-                    if ($this->session->userdata('role_id') == 2) {
-                        redirect(base_url('praktikan/percobaan/') . $this->input->post('cek_modul'));
-                    } else {
-                        redirect(base_url('praktikan/percobaan-viewer/') . $this->input->post('cek_modul'));
-                    }
+                    redirect(base_url('praktikan/percobaan/') . $this->input->post('cek_modul'));
                 }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
@@ -313,11 +309,7 @@ class Praktikan extends CI_Controller
                 if ($this->input->post('cek') == 0) {
                     redirect(base_url('praktikan/laporan'));
                 } else {
-                    if ($this->session->userdata('role_id') == 2) {
-                        redirect(base_url('praktikan/percobaan/') . $this->input->post('cek_modul'));
-                    } else {
-                        redirect(base_url('praktikan/percobaan-viewer/') . $this->input->post('cek_modul'));
-                    }
+                    redirect(base_url('praktikan/percobaan/') . $this->input->post('cek_modul'));
                 }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
