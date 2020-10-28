@@ -139,7 +139,7 @@
             <input type="number" min="0" max="10" class="form-control" id="praktikum" name="praktikum">
           </div>
           <div class="form-group">
-            <label for="postest">Postest</label>
+            <label for="postest">Postest/Video</label>
             <input type="number" min="0" max="5" class="form-control" id="postest" name="postest">
           </div>
           <div class="row">
