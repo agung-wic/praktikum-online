@@ -10,7 +10,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col">
-                        <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
+                        <h6 class="m-0 font-weight-bold "><?= $title . $data['nama_kelompok']['no_kelompok']; ?></h6>
                     </div>
                     <div class="col-auto mr-auto">
                         <a href="" class="btn gradien mb-3 tombolTambahAnggota" data-id="<?= $id_kelompok ?>" data-toggle="modal" data-target="#TambahAnggota">Tambah Anggota</a>
