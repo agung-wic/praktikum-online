@@ -374,14 +374,15 @@ class Modul extends CI_Controller
         $file = $_FILES['filevideo']['name'];
         if ($file) {
             $data['modul'] = $this->db->get_where('modul', ['id' => $this->input->post('idi', true)])->row_array();
-
             $config['upload_path'] = './assets/vid/';
             $config['allowed_types'] = 'mp4|mkv ';
 
             $this->load->library('upload', $config);
             if ($this->upload->do_upload('filevideo')) {
-                $old_video = $data['modul']['video'];
-                unlink(FCPATH . 'assets/vid/' . $old_video);
+                if ($data['modul']['video'] != "" || $data['modul']['video'] != NULL) {
+                    $old_video = $data['modul']['video'];
+                    unlink(FCPATH . 'assets/vid/' . $old_video);
+                }
                 $new_video = $this->upload->data('file_name');
 
                 $this->db->set('video', $new_video);
@@ -389,8 +390,8 @@ class Modul extends CI_Controller
                 $this->db->update('modul');
 
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-           Video modul berhasil diubah!
-            </div>');
+                    Video modul berhasil diubah!
+                    </div>');
                 redirect(base_url('modul/konten'));
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
@@ -398,7 +399,7 @@ class Modul extends CI_Controller
             }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-          Upload video modul!
+          Harap pilih video!
           </div>');
             redirect(base_url('modul/konten'));
         }
