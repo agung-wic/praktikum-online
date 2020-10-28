@@ -92,7 +92,7 @@ class Asisten extends CI_Controller
     $data['kelompok'] = $this->Asisten_model->Tampildetailkelompok($id);
     $data['id_kelompok'] = $id;
     $data['nama_kelompok'] = $this->db->get_where('kelompok', ['id' => $data['id_kelompok']])->row_array();
-    $data['title'] = 'Kelompok' . ' - ' . $data['nama_kelompok']['no_kelompok'];
+    $data['title'] = $data['nama_kelompok']['no_kelompok'];
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
