@@ -296,9 +296,7 @@ class Asisten extends CI_Controller
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
           Nilai berhasil diubah!
           </div>');
-    var_dump($id_kelompok);
-    die;
-    redirect(base_url('asisten/penilaian/' . $modul_id . "/" . $id_kelompok));
+    redirect(base_url('asisten/penilaian/' . $modul_id . "/" . $id));
   }
 
   public function accnilai($id, $id_kelompok)
