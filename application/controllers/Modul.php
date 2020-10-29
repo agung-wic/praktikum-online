@@ -483,7 +483,10 @@ class Modul extends CI_Controller
                 $csv = fgetcsv($data, 0, ';');
                 $no_kelompok = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
                 $nrp = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
+                var_dump($nrp);
                 $nrp = str_replace(" ", "", $nrp);
+                var_dump($nrp);
+                die;
                 if ($csv[0] == NULL || $csv[0] == "") {
                     continue;
                 } else {
