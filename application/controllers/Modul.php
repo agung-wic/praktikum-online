@@ -47,7 +47,7 @@ class Modul extends CI_Controller
         $config['attributes'] = array('class' => 'page-link');
 
         $data['no_kelompok'] = $this->uri->segment(3);
-        $data['start'] = $this->uri->segment(4);
+        $data['start'] = 0;
         if ($data['start'] == null) {
             $data['start'] = 0;
         }
