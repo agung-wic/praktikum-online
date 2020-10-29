@@ -4,6 +4,11 @@
       <div class="container py-3">
         <div class="row">
           <div class="col-lg-auto ml-auto">
+            <h4><b>Praktikan</b></h4>
+            <h6>Perhatikan share screen dari <b>Praktikan Operator<b> dan analisa percobaan modul <b><?= $modul['name'] ?></b> dengan baik. Jangan lupa untuk menekan tombol selesai
+                  jika praktikum dirasa sudah cukup. <b> TIDAK AKAN DIANGGAP PRAKTIKUM JIKA TIDAK MENEKAN TOMBOL SELESAI </b></h6>
+          </div>
+          <div class="col-lg-auto ml-auto">
             <h6><b>Sisa Waktu </h6> <span id="hours"></span>
             <span id="mins"></span>
             <span id="secs"></span>
@@ -42,7 +47,6 @@
       <?= $modul['tugas_lapres']; ?>
       <h6><b>VI. Tugas Pendahuluan:</b></h6>
       <?= $modul['tugas_pendahuluan']; ?>
-      <?= $lokasi ?>
     </div>
   </div>
 </div>

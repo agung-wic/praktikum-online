@@ -21,7 +21,6 @@
       <?= $modul['tugas_lapres']; ?>
       <h6><b>VI. Tugas Pendahuluan:</b></h6>
       <?= $modul['tugas_pendahuluan']; ?>
-      <?= $lokasi ?>
     </div>
   </div>
 </div>
