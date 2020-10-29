@@ -113,7 +113,7 @@ class Asisten extends CI_Controller
     $this->load->view('template/footer');
   }
 
-  public function editkelompok($id, $id_kelompok)
+  public function editkelompok()
   {
     $data = [
       "no_kelompok" => $this->input->post('no_kelompok')
@@ -125,7 +125,7 @@ class Asisten extends CI_Controller
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
           Kelompok berhasil diubah!
           </div>');
-    redirect(base_url('asisten/penilaian_detail/' . $id . "/" . $id_kelompok));
+    redirect(base_url('asisten/kelompok'));
   }
 
   public function detail($id)
@@ -257,7 +257,7 @@ class Asisten extends CI_Controller
     echo json_encode($this->Asisten_model->TampilNilaiPraktikan($this->input->post('id')));
   }
 
-  public function editnilai()
+  public function editnilai($id, $id_kelompok)
   {
     $data = [
       'resume' => $this->input->post('resume', true),
@@ -295,7 +295,7 @@ class Asisten extends CI_Controller
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
           Nilai berhasil diubah!
           </div>');
-    redirect(base_url('asisten/penilaian/' . $modul_id));
+    redirect(base_url('asisten/penilaian_detail/' . $id . "/" . $id_kelompok));
   }
 
   public function accnilai($id, $id_kelompok)
