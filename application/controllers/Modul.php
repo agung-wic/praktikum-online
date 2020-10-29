@@ -443,7 +443,7 @@ class Modul extends CI_Controller
 
             $data = fopen(base_url('assets/file/') . $file, "r");
             while (!feof($data)) {
-                $csv = fgetcsv($data, 0, ';');
+                $csv = fgetcsv($data, 0, ',');
                 $no_kelompok = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
                 $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $no_kelompok])->row_array();
                 $anggota = $this->db->get_where('anggota_kelompok', ['no_kelompok' => $id_kelompok['id']])->result_array();
@@ -480,7 +480,7 @@ class Modul extends CI_Controller
 
             $data = fopen(base_url('assets/file/') . $file, "r");
             while (!feof($data)) {
-                $csv = fgetcsv($data, 0, ';');
+                $csv = fgetcsv($data, 0, ',');
                 $no_kelompok = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
                 $nrp = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
                 $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $no_kelompok])->row_array();
@@ -532,7 +532,7 @@ class Modul extends CI_Controller
         if ($this->upload->do_upload('filekelompokasisten')) {
             $data = fopen(base_url('assets/file/') . $file, "r");
             while (!feof($data)) {
-                $csv = fgetcsv($data, 0, ';');
+                $csv = fgetcsv($data, 0, ',');
                 $nrp = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
                 $id_modul = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
                 $no_kelompok = mb_convert_encoding($csv[2], "ISO-8859-1", "UTF-8");
