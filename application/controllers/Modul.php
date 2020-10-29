@@ -484,7 +484,7 @@ class Modul extends CI_Controller
                 $no_kelompok = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
                 $nrp = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
                 if ($csv[0] == NULL || $csv[0] == "") {
-                    break;
+                    continue;
                 } else {
                     $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $no_kelompok])->row_array();
                     if ($id_kelompok) {
@@ -492,11 +492,11 @@ class Modul extends CI_Controller
                         if ($anggota) {
                             continue;
                         } else {
-                            $data = [
+                            $data_anggota = [
                                 "nrp" => $nrp,
                                 "no_kelompok" => $id_kelompok['id']
                             ];
-                            $this->db->insert('anggota_kelompok', $data);
+                            $this->db->insert('anggota_kelompok', $data_anggota);
                         }
                     } else {
                         $kelompok = [
@@ -505,11 +505,11 @@ class Modul extends CI_Controller
                         $this->db->insert('kelompok', $kelompok);
 
                         $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $no_kelompok])->row_array();
-                        $data = [
+                        $data_kelompok = [
                             "nrp" => $nrp,
                             "no_kelompok" => $id_kelompok['id']
                         ];
-                        $this->db->insert('anggota_kelompok', $data);
+                        $this->db->insert('anggota_kelompok', $data_kelompok);
                     }
                 }
             }
