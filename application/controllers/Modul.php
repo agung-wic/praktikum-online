@@ -47,7 +47,7 @@ class Modul extends CI_Controller
         $config['attributes'] = array('class' => 'page-link');
 
         $data['no_kelompok'] = $this->uri->segment(3);
-        $data['start'] = 11;
+        $data['start'] = $this->uri->segment(4);
         if ($data['start'] == null) {
             $data['start'] = 0;
         }
@@ -59,7 +59,7 @@ class Modul extends CI_Controller
             $data['keyword'] = null;
             $config['total_rows'] = $this->Modul_model->JumlahUser($data['no_kelompok']);
         }
-        $config['per_page'] = 10;
+        $config['per_page'] = 100;
         $this->pagination->initialize($config);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['list'] = $this->Modul_model->TampilUser($config['per_page'], $data['start'], $data['keyword'], $data['no_kelompok']);
