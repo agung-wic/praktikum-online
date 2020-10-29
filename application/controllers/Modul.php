@@ -480,7 +480,7 @@ class Modul extends CI_Controller
 
             $data = fopen(base_url('assets/file/') . $file, "r");
             while (!feof($data)) {
-                $csv = fgetcsv($data, 0, ',');
+                $csv = fgetcsv($data, 0, ';');
                 $no_kelompok = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
                 $nrp = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
                 var_dump($no_kelompok);
