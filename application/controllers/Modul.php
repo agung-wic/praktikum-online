@@ -484,7 +484,7 @@ class Modul extends CI_Controller
                 $no_kelompok = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
                 $nrp = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
                 if ($nrp == NULL || $nrp == "") {
-                    continue;
+                    break;
                 } else {
                     $id_kelompok = $this->db->get_where('kelompok', ['no_kelompok' => $no_kelompok])->row_array();
                     if ($id_kelompok) {
