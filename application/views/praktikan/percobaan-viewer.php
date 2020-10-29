@@ -6,7 +6,8 @@
           <div class="col-lg-auto ml-auto">
             <h4><b>Praktikan</b></h4>
             <h6>Perhatikan share screen dari <b>Praktikan Operator</b> dan analisa percobaan modul <b><?= $modul['name'] ?></b> dengan baik. Jangan lupa untuk menekan tombol selesai
-              jika praktikum dirasa sudah cukup. <b> PRAKTIKAN DIANGGAP TIDAK PRAKTIKUM JIKA TIDAK MENEKAN TOMBOL SELESAI </b></h6>
+              jika praktikum dirasa sudah cukup.</h6>
+            <h6<b> PRAKTIKAN DIANGGAP TIDAK MENGIKUTI PRAKTIKUM JIKA TIDAK MENEKAN TOMBOL SELESAI </b>></h6>
           </div>
           <div class="col-lg-8 ml-auto">
             <h6><b>Sisa Waktu </h6> <span id="hours"></span>
