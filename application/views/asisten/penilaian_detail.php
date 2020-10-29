@@ -79,7 +79,7 @@
                                                 Detail
                                             </a>
                                         </td>
-                                        <td><a href="<?= base_url('asisten/editnilai/') . $l['id']; . $l['id'] . "/" . $id_kelompok ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                                        <td><a href="<?= base_url('asisten/editnilai/') . $l['id'] . "/" . $id_kelompok ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                                                 <i class=" fas fa-fw fa-edit"></i>
                                                 Edit
                                             </a>
