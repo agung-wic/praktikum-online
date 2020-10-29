@@ -271,6 +271,7 @@ class Asisten extends CI_Controller
       'asisten' => $this->session->userdata('nrp')
     ];
     $modul_id = $this->input->post('modul_id', true);
+    $id_kelompok = $this->db->get_where('anggota_kelompok', ['nrp ' => $this->session->userdata('nrp')])->row_array();
     // $nilai_akhir = (($data['resume'] * 0.25) + ($data['pretest'] * 0.05) + ($data['uji_lisan'] * 0.1) + ($data['praktikum'] * 0.1) + ($data['postest'] * 0.05) + ($data['format'] * 0.1) + ($data['bab'] * 0.25) + ($data['kesimpulan'] * 0.1));
     $nilai_akhir = (($data['resume']) + ($data['pretest']) + ($data['uji_lisan']) + ($data['praktikum']) + ($data['postest']) + ($data['format']) + ($data['bab']) + ($data['kesimpulan']));
     if ($nilai_akhir >= 86 && $nilai_akhir <= 100) {
@@ -295,7 +296,7 @@ class Asisten extends CI_Controller
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
           Nilai berhasil diubah!
           </div>');
-    redirect(base_url('asisten/penilaian/' . $modul_id));
+    redirect(base_url('asisten/penilaian/' . $modul_id . "/" . $id_kelompok));
   }
 
   public function accnilai($id, $id_kelompok)
