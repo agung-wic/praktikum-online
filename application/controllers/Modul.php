@@ -491,7 +491,7 @@ class Modul extends CI_Controller
                     } else {
                         $data = [
                             "nrp" => $nrp,
-                            "no_kelompok" => $id_kelompok['id']
+                            "no_kelompok" => $id_kelompok['no_kelompok']
                         ];
                         $this->db->insert('anggota_kelompok', $data);
                     }
