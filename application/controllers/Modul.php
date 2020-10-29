@@ -479,6 +479,8 @@ class Modul extends CI_Controller
         if ($this->upload->do_upload('filekelompok')) {
 
             $data = fopen(base_url('assets/file/') . $file, "r");
+            var_dump($data);
+            die;
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
                 $no_kelompok = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
