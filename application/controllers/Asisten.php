@@ -113,7 +113,7 @@ class Asisten extends CI_Controller
     $this->load->view('template/footer');
   }
 
-  public function editkelompok()
+  public function editkelompok($id, $id_kelompok)
   {
     $data = [
       "no_kelompok" => $this->input->post('no_kelompok')
@@ -125,7 +125,7 @@ class Asisten extends CI_Controller
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
           Kelompok berhasil diubah!
           </div>');
-    redirect(base_url('asisten/kelompok'));
+    redirect(base_url('asisten/penilaian_detail/' . $id . "/" . $id_kelompok));
   }
 
   public function detail($id)
