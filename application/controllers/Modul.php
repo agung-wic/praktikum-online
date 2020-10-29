@@ -483,6 +483,7 @@ class Modul extends CI_Controller
                 $csv = fgetcsv($data, 0, ';');
                 $no_kelompok = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
                 $nrp = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
+                $nrp = str_replace(" ", "", $nrp);
                 if ($csv[0] == NULL || $csv[0] == "") {
                     continue;
                 } else {
@@ -538,10 +539,7 @@ class Modul extends CI_Controller
             while (!feof($data)) {
                 $csv = fgetcsv($data, 0, ';');
                 $nrp = mb_convert_encoding($csv[0], "ISO-8859-1", "UTF-8");
-                var_dump($nrp);
                 $nrp = str_replace(" ", "", $nrp);
-                var_dump($nrp);
-                die;
                 $id_modul = mb_convert_encoding($csv[1], "ISO-8859-1", "UTF-8");
                 $no_kelompok = mb_convert_encoding($csv[2], "ISO-8859-1", "UTF-8");
                 if ($nrp == NULL || $nrp == "") {
