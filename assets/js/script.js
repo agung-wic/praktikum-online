@@ -544,4 +544,20 @@ $(function () {
 			},
 		});
 	});
+
+	$(".editVideo").on("click", function () {
+		const id = $(this).data("idi");
+
+		$.ajax({
+			url: base + "modul/getubahvideo",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				$("#idi").val(data.id);
+			},
+		});
+	});
 });
