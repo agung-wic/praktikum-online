@@ -257,7 +257,7 @@ class Asisten extends CI_Controller
     echo json_encode($this->Asisten_model->TampilNilaiPraktikan($this->input->post('id')));
   }
 
-  public function editnilai($id, $id_kelompok)
+  public function editnilai()
   {
     $data = [
       'resume' => $this->input->post('resume', true),
@@ -295,7 +295,7 @@ class Asisten extends CI_Controller
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
           Nilai berhasil diubah!
           </div>');
-    redirect(base_url('asisten/penilaian_detail/' . $id . "/" . $id_kelompok));
+    redirect(base_url('asisten/penilaian/' . $modul_id));
   }
 
   public function accnilai($id, $id_kelompok)
