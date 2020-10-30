@@ -99,7 +99,7 @@ class Auth extends CI_Controller
                         $data2 = [
                             'nrp' => $user['nrp'],
                             'name' => $user['name'],
-                            'login_time' => time()
+                            'login_time' => date("Y-m-d h:i:s")
                         ];
                         $this->db->where('nrp', $user['nrp']);
                         $this->db->update('user', $data);
