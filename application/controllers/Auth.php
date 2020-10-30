@@ -27,7 +27,7 @@ class Auth extends CI_Controller
         //         $this->_login();
         //     }
         // }
-        $data['title'] = 'Access Denied';
+        $data['title'] = 'Maintenance';
         $this->load->view('template/auth_header', $data);
         $this->load->view('auth/denied');
     }
@@ -51,7 +51,7 @@ class Auth extends CI_Controller
         //         $this->_login();
         //     }
         // }
-        $data['title'] = 'Access Denied';
+        $data['title'] = 'Maintenance';
         $this->load->view('template/auth_header', $data);
         $this->load->view('auth/denied');
     }
