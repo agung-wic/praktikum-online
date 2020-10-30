@@ -160,27 +160,14 @@ class Auth extends CI_Controller
                     'email' => htmlspecialchars($this->input->post('email', true)),
                     'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                     'role_id' => 8,
-                    'is_active' => 0,
+                    'is_active' => 1,
                     'date_created' => time()
                 ];
                 $this->db->where('nrp', $nrp);
                 $this->db->update('user', $data);
 
-                $token = base64_encode(random_bytes(32));
-                $user_token = [
-                    'email' => $this->input->post('email', true),
-                    'token' => $token,
-                    'date_created' => time()
-                ];
-
-                $user = $this->db->get_where('user', ['nrp' => $nrp])->row_array();
-
-                $this->db->insert('user_token', $user_token);
-
-                $this->_sendEmail($token, 'verify', $user);
-
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-                                            Selamat! Akun berhasil dibuat. Silakan periksa email untuk aktivasi!
+                                            Selamat! Akun berhasil dibuat. Silakan login!
                                             </div>');
                 redirect(base_url('auth/login'));
             }
