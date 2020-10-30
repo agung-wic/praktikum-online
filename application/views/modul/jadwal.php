@@ -194,7 +194,7 @@
                                                 Delete
                                             </a>
                                         <?php } else { ?>
-                                            <a href="#" class="badge badge-pill badge-danger" style="opacity: 0%;" disabled>
+                                            <a class="badge badge-pill badge-danger" style="opacity: 0%;">
                                                 <i class="fas fa-fw fa-trash-alt"></i>
                                                 Delete
                                             </a>
