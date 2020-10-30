@@ -188,10 +188,17 @@
                                             <i class=" fas fa-fw fa-edit"></i>
                                             Edit
                                         </a>
-                                        <a href="<?= base_url('modul/deletejadwal/') . $l['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
-                                            <i class="fas fa-fw fa-trash-alt"></i>
-                                            Delete
-                                        </a>
+                                        <?php if ($user['role_id'] == 1) { ?>
+                                            <a href="<?= base_url('modul/deletejadwal/') . $l['id']; ?>" onclick="return confirm('Yakin?');" class="badge badge-pill badge-danger">
+                                                <i class="fas fa-fw fa-trash-alt"></i>
+                                                Delete
+                                            </a>
+                                        <?php } else { ?>
+                                            <a href="#" class="badge badge-pill badge-danger" style="opacity: 0%;">
+                                                <i class="fas fa-fw fa-trash-alt"></i>
+                                                Delete
+                                            </a>
+                                        <?php } ?>
                                     </td>
                                 </tr>
                             <?php $start++;
