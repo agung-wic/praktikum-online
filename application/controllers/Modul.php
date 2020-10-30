@@ -158,7 +158,7 @@ class Modul extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
-        if ($user['role_id'] == 1) {
+        if ($data['user']['role_id'] == 1) {
             $this->load->view('modul/editnavigasi', $data);
         } else {
             $this->load->view('auth/denied');
