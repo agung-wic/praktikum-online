@@ -96,7 +96,7 @@ class Admin extends CI_Controller
             $data['keyword'] = null;
             $config['total_rows'] = $this->Admin_model->JumlahUserOnline();
         }
-        $config['per_page'] = 10;
+        $config['per_page'] = 1000;
         $this->pagination->initialize($config);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['list'] = $this->Admin_model->TampilUserOnline($config['per_page'], $data['start']);
