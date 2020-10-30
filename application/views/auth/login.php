@@ -35,8 +35,5 @@
         <h6 class="text-center pt-4">
             <a href="<?= base_url('auth/forgotpassword'); ?>" style="color: #6a6a6a; font-size: small;">Lupa Password?</a>
         </h6>
-        <h6 class="text-center">
-            <u><a href="<?= base_url('auth/registration'); ?>" style=" color: #6a6a6a; font-size: small;">Daftar Praktikum</a></u>
-        </h6>
     </div>
 </div>
