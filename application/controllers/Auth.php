@@ -103,7 +103,7 @@ class Auth extends CI_Controller
                         ];
                         $this->db->where('nrp', $user['nrp']);
                         $this->db->update('user', $data);
-                        $this->db->update('userlog', $data2);
+                        $this->db->insert('userlog', $data2);
                         $this->session->set_userdata($data);
                         if ($this->session->userdata('role_id') == 8 || $this->session->userdata('role_id') == 2) {
                             redirect(base_url('praktikan'));
