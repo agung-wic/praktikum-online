@@ -153,7 +153,7 @@ class Admin_model extends CI_Model
   public function TampilUserOnline($limit, $start)
   {
     $query = "SELECT * FROM `user` 
-              WHERE `is_online`= 1 AND `role_id`= 2 LIMIT $limit OFFSET $start ";
+              WHERE `is_online`= 1 LIMIT $limit OFFSET $start ";
 
     return $this->db->query($query)->result_array();
   }
@@ -161,7 +161,7 @@ class Admin_model extends CI_Model
   public function JumlahUserOnline()
   {
     $query = "SELECT * FROM `user` 
-              WHERE `is_online`= 1 AND `role_id`= 2";
+              WHERE `is_online`= 1";
 
     return $this->db->query($query)->num_rows();
   }
