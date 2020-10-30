@@ -31,23 +31,26 @@ class Auth extends CI_Controller
 
     public function login()
     {
-        if ($this->session->userdata('role_id' == 2 || 'role_id' == 8)) {
-            redirect(base_url('praktikan'));
-        } else if ($this->session->userdata('role_id' == 1 || 'role_id' == 7)) {
-            redirect(base_url('profil'));
-        } else {
-            $this->form_validation->set_rules('nrp', 'NRP', 'required|trim');
-            $this->form_validation->set_rules('password', 'Password', 'required|trim');
-            if ($this->form_validation->run() == false) {
-                $data['title'] = 'Login';
-                $this->load->view('template/auth_header.php', $data);
-                $this->load->view('auth/login.php');
-                $this->load->view('template/auth_footer.php');
-            } else {
-                //VALIDASI BERHASIL
-                $this->_login();
-            }
-        }
+        // if ($this->session->userdata('role_id' == 2 || 'role_id' == 8)) {
+        //     redirect(base_url('praktikan'));
+        // } else if ($this->session->userdata('role_id' == 1 || 'role_id' == 7)) {
+        //     redirect(base_url('profil'));
+        // } else {
+        //     $this->form_validation->set_rules('nrp', 'NRP', 'required|trim');
+        //     $this->form_validation->set_rules('password', 'Password', 'required|trim');
+        //     if ($this->form_validation->run() == false) {
+        //         $data['title'] = 'Login';
+        //         $this->load->view('template/auth_header.php', $data);
+        //         $this->load->view('auth/login.php');
+        //         $this->load->view('template/auth_footer.php');
+        //     } else {
+        //         //VALIDASI BERHASIL
+        //         $this->_login();
+        //     }
+        // }
+        $data['title'] = 'Access Denied';
+        $this->load->view('template/auth_header', $data);
+        $this->load->view('auth/denied');
     }
 
     private function _login()
