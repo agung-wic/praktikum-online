@@ -103,8 +103,6 @@ class Auth extends CI_Controller
                         ];
                         $this->db->where('nrp', $user['nrp']);
                         $this->db->update('user', $data);
-                        var_dump($data2);
-                        die;
                         $this->db->update('userlog', $data2);
                         $this->session->set_userdata($data);
                         if ($this->session->userdata('role_id') == 8 || $this->session->userdata('role_id') == 2) {
