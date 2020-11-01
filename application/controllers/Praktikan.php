@@ -281,6 +281,8 @@ class Praktikan extends CI_Controller
                 "laporan" => $this->input->post('link'),
                 "laporan_time" => time()
             ];
+            $this->db->where('modul', $this->input->post('modul_id'));
+            $this->db->where('nrp', $this->session->userdata('nrp'));
             $this->db->update('nilai', $nilai);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                 Laporan praktikum berhasil diunggah!
