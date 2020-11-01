@@ -51,7 +51,7 @@
                     ?>
                         <td><?= $list[$i]['asisten']; ?></td>
                         <td>
-                          <a href="<?= base_url('praktikan/unduh/') . $list[$i]['laporan']; ?>" class="badge badge-pill badge-warning">
+                          <a href="<?= $list[$i]['laporan']; ?>" target="_blank" class="badge badge-pill badge-warning">
                             <i class=" fas fa-fw fa-download"></i>
                             Unduh
                           </a>
