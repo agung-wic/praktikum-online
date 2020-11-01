@@ -58,7 +58,7 @@
                             </a>
                           <?php } ?>
                         </td>
-                        <td><?= date("Y-m-d H:i:s", $list[$i]['laporan_time']); ?></td>
+                        <td><?= ($list[$i]['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $list[$i]['laporan_time']) : ""; ?></td>
                         <?php if ($list[$i]['is_acc'] == 1) { ?>
                           <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="praktikan" data-id="<?= $list[$i]['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                               <i class=" fas fa-fw fa-info"></i>
