@@ -11,8 +11,8 @@ class Asisten_model extends CI_Model
               FROM `user`  
               LEFT JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
               INNER JOIN `anggota_kelompok`ON `user`.`nrp` = `anggota_kelompok`.`nrp`
-              INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` 
-              WHERE (`nilai` . `modul` = '$id' AND `anggota_kelompok`.`no_kelompok` = '$id_kelompok') AND (
+              LEFT JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` 
+              WHERE ((`nilai` . `modul` = '$id' OR `nilai` . `modul` IS NULL)  AND `anggota_kelompok`.`no_kelompok` = '$id_kelompok') AND (
               `user`.`name` LIKE '%$keyword%'
               OR `user`.`nrp` LIKE '%$keyword%')";
     } else {
@@ -22,7 +22,7 @@ class Asisten_model extends CI_Model
               LEFT JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
               INNER JOIN `anggota_kelompok`ON `user`.`nrp` = `anggota_kelompok`.`nrp`
               LEFT JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` 
-              WHERE `nilai` . `modul` = '$id' AND `anggota_kelompok`.`no_kelompok` = '$id_kelompok'";
+              WHERE (`nilai` . `modul` = '$id' OR `nilai` . `modul` IS NULL) AND `anggota_kelompok`.`no_kelompok` = '$id_kelompok'";
     }
     return $this->db->query($query)->result_array();
   }
