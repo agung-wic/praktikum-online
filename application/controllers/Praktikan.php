@@ -278,13 +278,10 @@ class Praktikan extends CI_Controller
             }
         } else {
             $nilai = [
-                "nrp" => $this->session->userdata('nrp'),
-                "modul" => $this->input->post('modul_id'),
                 "laporan" => $this->input->post('link'),
-                "laporan_time" => time(),
-                "is_acc" => 0
+                "laporan_time" => time()
             ];
-            $this->db->insert('nilai', $nilai);
+            $this->db->update('nilai', $nilai);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                 Laporan praktikum berhasil diunggah!
                 </div>');
