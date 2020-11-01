@@ -86,14 +86,20 @@ class Praktikan extends CI_Controller
                 }
 
                 $input = [
-                    'nrp' => $this->input->post('nrp'),
+                    'nrp' => $this->session->userdata('nrp'),
                     'modul' => $this->input->post('modul_id'),
                     'time' => time(),
                     'keterangan' => $terlambat
                 ];
 
+                $nilai = [
+                    'nrp' => $this->session->userdata('nrp'),
+                    'modul' => $this->input->post('modul_id'),
+                    'is_acc' => 0
+                ];
                 $this->db->insert('absensi', $input);
-                redirect(base_url('praktikan/laporan_2/') . $this->input->post('modul_id'));
+                $this->db->insert('nilai', $nilai);
+                redirect(base_url('praktikan/percobaan/') . $this->input->post('modul_id'));
             } else {
                 redirect(base_url('praktikan/percobaan/') . $this->input->post('modul_id'));
             }
