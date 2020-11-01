@@ -73,7 +73,7 @@
                                                 Unduh
                                             </a>
                                         </td>
-                                        <td><?= date("Y-m-d H:i:s", $l['laporan_time']); ?></td>
+                                        <td><?= ($l['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $l['laporan_time']) : ""; ?></td>
                                         <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="<?= $cekrole ?>" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                                                 <i class=" fas fa-fw fa-info"></i>
                                                 Detail
