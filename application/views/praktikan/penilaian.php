@@ -51,10 +51,12 @@
                     ?>
                         <td><?= $list[$i]['asisten']; ?></td>
                         <td>
-                          <a href="<?= $list[$i]['laporan']; ?>" target="_blank" class="badge badge-pill badge-warning">
-                            <i class=" fas fa-fw fa-download"></i>
-                            Unduh
-                          </a>
+                          <?php if ($list[$i]['laporan'] != NULL) { ?>
+                            <a href="<?= $list[$i]['laporan']; ?>" target="_blank" class="badge badge-pill badge-warning">
+                              <i class=" fas fa-fw fa-download"></i>
+                              Unduh
+                            </a>
+                          <?php } ?>
                         </td>
                         <td><?= date("Y-m-d H:i:s", $list[$i]['laporan_time']); ?></td>
                         <?php if ($list[$i]['is_acc'] == 1) { ?>
