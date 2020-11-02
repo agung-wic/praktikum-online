@@ -187,7 +187,6 @@ class Praktikan extends CI_Controller
             $this->load->view('template/footer');
         } else if ((time() >= $jadwal) && ((time() <= ($jadwal + $time)))) {
             if ($cek['status'] == 0) {
-                $this->_connectsocket($id);
                 $data['output'] = NULL;
 
                 $data['title'] = 'Percobaan Praktikum';
@@ -203,6 +202,7 @@ class Praktikan extends CI_Controller
                 $this->load->view('template/sidebar', $data);
                 $this->load->view('template/topbar', $data);
                 if ($this->session->userdata('role_id') != 8) {
+                    $this->_connectsocket($id);
                     $this->load->view('praktikan/percobaan', $data);
                 } else {
                     $this->load->view('praktikan/percobaan-viewer', $data);
