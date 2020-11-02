@@ -18,14 +18,9 @@
                 <div class="form-group">
                   <label for="modul_id">Pilih Modul</label>
                   <select class="form-control" name="modul_id" id="modul_id">
-                    <?php if ($cek_modul) { ?>
-                      <option value="<?= $cek_modul ?>" selected><?= $cek_nama_modul['name']; ?></option>
-                    <?php
-                    } else { ?>
-                      <?php foreach ($modul as $m) : ?>
-                        <option value="<?= $m['modul'] ?>"><?= $m['name'] ?></option>
-                    <?php endforeach;
-                    } ?>
+                    <?php foreach ($modul as $m) : ?>
+                      <option value="<?= $m['modul'] ?>"><?= $m['name'] ?></option>
+                    <?php endforeach; ?>
                   </select>
                 </div>
                 <div class="form-group">
