@@ -8,7 +8,7 @@
             <h6>Perhatikan share screen dari <b>Praktikan Operator</b> dan analisa percobaan modul <b><?= $modul['name'] ?></b> dengan baik. Jangan lupa untuk menekan tombol selesai
               jika praktikum dirasa sudah cukup.</h6>
             <br>
-            <h6><b> PRAKTIKAN DIANGGAP TIDAK MENGIKUTI PRAKTIKUM JIKA TIDAK MENEKAN TOMBOL SELESAI </b></h6>
+            <h6 class="bg-danger text-light"><b> PRAKTIKAN DIANGGAP TIDAK MENGIKUTI PRAKTIKUM JIKA TIDAK MENEKAN TOMBOL SELESAI </b></h6>
           </div>
           <div class="col-lg-auto ml-auto mt-auto">
             <h6><b>Sisa Waktu </h6> <span id="hours"></span>
@@ -101,7 +101,7 @@
       document.getElementById("hours").innerHTML = ""
       document.getElementById("mins").innerHTML = ""
       document.getElementById("secs").innerHTML = ""
-      window.location.href = "<?= base_url('praktikan/modul/') ?>";
+      window.location.href = "<?= base_url('praktikan/selesai/') . $modul['modul'] ?>";
     }
   }, 1000);
 </script>

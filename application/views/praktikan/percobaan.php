@@ -237,7 +237,7 @@
         document.getElementById("hours").innerHTML = ""
         document.getElementById("mins").innerHTML = ""
         document.getElementById("secs").innerHTML = ""
-        window.location.href = "<?= base_url('praktikan/modul/') ?>";
+        window.location.href = "<?= base_url('praktikan/selesai/') . $modul['modul'] ?>";
       }
     }, 1000);
   </script>
