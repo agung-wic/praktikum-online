@@ -8,7 +8,9 @@
             <h6>Perhatikan share screen dari <b>Asisten</b> dan analisa percobaan modul <b><?= $modul['name'] ?></b> dengan baik. Jangan lupa untuk menekan tombol selesai
               jika praktikum dirasa sudah cukup.</h6>
             <br>
-            <h6 class="bg-danger text-light"><b> PRAKTIKAN DIANGGAP TIDAK MENGIKUTI PRAKTIKUM JIKA TIDAK MENEKAN TOMBOL SELESAI </b></h6>
+            <div class="alert alert-danger">
+              <h6><b> PRAKTIKAN DIANGGAP TIDAK MENGIKUTI PRAKTIKUM JIKA TIDAK MENEKAN TOMBOL SELESAI </b></h6>
+            </div>
           </div>
           <div class="col-lg-auto ml-auto mt-auto">
             <h6><b>Sisa Waktu </h6> <span id="hours"></span>
