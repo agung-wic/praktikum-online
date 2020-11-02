@@ -5,7 +5,7 @@
         <!-- Page Heading -->
         <form action="<?= base_url('praktikan/uploadlaporan/') ?>" method="post">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold"><?= $title; ?> Praktikum</h6>
+            <h6 class="m-0 font-weight-bold"><?= $title; ?> Akhir</h6>
           </div>
           <div class="card-body">
             <?= $this->session->flashdata('message'); ?>
