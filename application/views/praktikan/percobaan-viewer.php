@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-lg-8">
             <h4><b>Praktikan</b></h4>
-            <h6>Perhatikan share screen dari <b>Praktikan Operator</b> dan analisa percobaan modul <b><?= $modul['name'] ?></b> dengan baik. Jangan lupa untuk menekan tombol selesai
+            <h6>Perhatikan share screen dari <b>Asisten</b> dan analisa percobaan modul <b><?= $modul['name'] ?></b> dengan baik. Jangan lupa untuk menekan tombol selesai
               jika praktikum dirasa sudah cukup.</h6>
             <br>
             <h6 class="bg-danger text-light"><b> PRAKTIKAN DIANGGAP TIDAK MENGIKUTI PRAKTIKUM JIKA TIDAK MENEKAN TOMBOL SELESAI </b></h6>
