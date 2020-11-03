@@ -251,6 +251,8 @@ class Praktikan extends CI_Controller
             $this->db->where('modul', $this->input->post('modul_id'));
             $this->db->where('nrp', $this->session->userdata('nrp'));
             $this->db->update('nilai');
+            var_dump($this->input->post('modul_id'));
+            die;
             if ($this->input->post('modul_id') != "" ||  $this->input->post('modul_id') != NULL)
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                                                Laporan modul berhasil diubah!
