@@ -471,41 +471,41 @@ class Auth extends CI_Controller
         redirect('auth');
     }
 
-    // public function forgotPassword()
-    // {
-    //     $data['title'] = 'Forgot Password';
+    public function forgotPassword()
+    {
+        $data['title'] = 'Forgot Password';
 
-    //     $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 
-    //     if ($this->form_validation->run() == false) {
-    //         $this->load->view('template/auth_header', $data);
-    //         $this->load->view('auth/forgot-password');
-    //         $this->load->view('template/auth_footer', $data);
-    //     } else {
-    //         $email = $this->input->post('email', true);
-    //         $user = $this->db->get_where('user', ['email' => $email, 'is_active' => 1])->row_array();
-    //         if ($user) {
-    //             $token = base64_encode(random_bytes(32));
-    //             $user_token = [
-    //                 'email' => $email,
-    //                 'token' => $token,
-    //                 'date_created' => time()
-    //             ];
+        if ($this->form_validation->run() == false) {
+            $this->load->view('template/auth_header', $data);
+            $this->load->view('auth/forgot-password');
+            $this->load->view('template/auth_footer', $data);
+        } else {
+            $email = $this->input->post('email', true);
+            $user = $this->db->get_where('user', ['email' => $email, 'is_active' => 1])->row_array();
+            if ($user) {
+                $token = base64_encode(random_bytes(32));
+                $user_token = [
+                    'email' => $email,
+                    'token' => $token,
+                    'date_created' => time()
+                ];
 
-    //             $this->db->insert('user_token', $user_token);
-    //             $this->_sendEmail($token, 'forgot', $user);
-    //             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-    //             Silakan periksa email untuk mengatur ulang kata sandi!
-    //             </div>');
-    //             redirect(base_url('auth/forgotpassword'));
-    //         } else {
-    //             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-    //             Email tidak terdaftar ataupun teraktivasi!
-    //             </div>');
-    //             redirect(base_url('auth/forgotpassword'));
-    //         }
-    //     }
-    // }
+                $this->db->insert('user_token', $user_token);
+                $this->_sendEmail($token, 'forgot', $user);
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Silakan periksa email untuk mengatur ulang kata sandi!
+                </div>');
+                redirect(base_url('auth/forgotpassword'));
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                Email tidak terdaftar ataupun teraktivasi!
+                </div>');
+                redirect(base_url('auth/forgotpassword'));
+            }
+        }
+    }
 
     public function resetPassword()
     {
