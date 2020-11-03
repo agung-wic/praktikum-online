@@ -245,6 +245,8 @@ class Praktikan extends CI_Controller
     public function uploadlaporan()
     {
         $data['nilai'] = $this->db->get_where('nilai', ['modul' => $this->input->post('modul_id', true), 'nrp' => $this->session->userdata('nrp')])->row_array();
+        var_dump($this->input->post('modul_id'));
+        die;
         if ($data['nilai']['laporan']) {
             $this->db->set('laporan', $this->input->post('link', true));
             $this->db->set('laporan_time', time());
