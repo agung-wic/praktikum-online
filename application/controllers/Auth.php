@@ -500,7 +500,7 @@ class Auth extends CI_Controller
                 redirect(base_url('auth/forgotpassword'));
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-                Email tidak terdaftar ataupun teraktivasi!
+                Email tidak terdaftar, silahkan aktivasi akun terlebih dahulu sesuai tutorial video di youtube kami.
                 </div>');
                 redirect(base_url('auth/forgotpassword'));
             }
