@@ -242,23 +242,6 @@ class Praktikan extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function laporan_2($modul)
-    {
-        $this->load->model('Praktikan_model');
-        $data['title'] = 'Unggah Laporan';
-        $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
-        $data['modul'] = $this->Praktikan_model->TampilModulLaporan($this->session->userdata('nrp'));
-        $data['cek'] = 1;
-        $data['cek_modul'] = $modul;
-        $data['cek_nama_modul'] = $this->db->get_where('modul', ['modul' => $modul])->row_array();
-
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar', $data);
-        $this->load->view('template/topbar', $data);
-        $this->load->view('praktikan/laporan', $data);
-        $this->load->view('template/footer');
-    }
-
     public function uploadlaporan()
     {
         $data['nilai'] = $this->db->get_where('nilai', ['modul' => $this->input->post('modul_id', true), 'nrp' => $this->session->userdata('nrp')])->row_array();
