@@ -245,16 +245,12 @@ class Praktikan extends CI_Controller
     public function uploadlaporan()
     {
         $data['nilai'] = $this->db->get_where('nilai', ['modul' => $this->input->post('modul_id', true), 'nrp' => $this->session->userdata('nrp')])->row_array();
-        var_dump($this->input->post('modul_id'));
-        die;
         if ($data['nilai']['laporan']) {
             $this->db->set('laporan', $this->input->post('link', true));
             $this->db->set('laporan_time', time());
             $this->db->where('modul', $this->input->post('modul_id'));
             $this->db->where('nrp', $this->session->userdata('nrp'));
             $this->db->update('nilai');
-            var_dump($this->input->post('modul_id'));
-            die;
             if ($this->input->post('modul_id') != "" ||  $this->input->post('modul_id') != NULL)
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                                                Laporan modul berhasil diubah!
@@ -274,12 +270,18 @@ class Praktikan extends CI_Controller
                 "laporan" => $this->input->post('link'),
                 "laporan_time" => time()
             ];
-            $this->db->where('modul', $this->input->post('modul_id'));
-            $this->db->where('nrp', $this->session->userdata('nrp'));
-            $this->db->update('nilai', $nilai);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-                Laporan praktikum berhasil diunggah!
-                </div>');
+            if ($this->input->post('modul_id') != "" ||  $this->input->post('modul_id') != NULL) {
+                $this->db->where('modul', $this->input->post('modul_id'));
+                $this->db->where('nrp', $this->session->userdata('nrp'));
+                $this->db->update('nilai', $nilai);
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                                           Laporan modul berhasil diubah!
+                                           </div>');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                            Harap pilih modul terlebih dahulu!
+                            </div>');
+            }
             if ($this->input->post('cek') == 0) {
                 redirect(base_url('praktikan/laporan'));
             } else {
