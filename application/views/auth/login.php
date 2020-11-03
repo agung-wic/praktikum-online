@@ -32,9 +32,11 @@
                 padding-right:15%">Login
             </button>
         </form>
-        <!-- <h6 class="text-center pt-4">
+        <h6 class="text-center pt-4">
             <a href="<?= base_url('auth/forgotpassword'); ?>" style="color: #6a6a6a; font-size: small;">Lupa Password?</a>
-        </h6> -->
+        </h6>
+        <h6 class="text-center">
+            <u><a href="<?= base_url('auth/registration'); ?>" style=" color: #6a6a6a; font-size: small;">Daftar Praktikum</a></u>
+        </h6>
     </div>
-    <!-- <iframe class="container" style="background-color:black;position:absolute;width:63%;margin-right:2%;margin-top:5%" width="560" height="550" src="https://www.youtube.com/embed/KHJK8L7hNOM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 </div>
