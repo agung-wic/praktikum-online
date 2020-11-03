@@ -9,6 +9,7 @@
           </div>
           <div class="card-body">
             <?= $this->session->flashdata('message'); ?>
+            Jika belum ada modul praktikum di list bawah ini, maka praktikum tersebut belum diselesaikan.
             <div class="row">
               <div class="col-lg">
                 <div class="form-group">
