@@ -365,7 +365,7 @@ class Praktikan extends CI_Controller
             if ($result2) {
                 $satuan = $data['data_satuan'];
                 $compare = $data['tombol_kirim'];
-                $compare = str_replace("][", "", $compare);
+                $compare = str_replace("][", ",", $compare);
                 $compare = str_replace("[", "", $compare);
                 $compare = str_replace("]", "", $compare);
                 $compare = explode(",", $compare);
