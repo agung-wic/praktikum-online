@@ -6,14 +6,14 @@ class Asisten_model extends CI_Model
   public function TampilNilai($id, $id_kelompok, $keyword = null)
   {
     if ($keyword) {
-      $query = "SELECT `nilai`.`id`, `user`.`name` as 'name_praktikan', `user`.`nrp` as 'nrp', `modul`.`modul` as 'modul_id', 
+      $query = "SELECT `nilai`.`id`, `user`.`name` as 'name_praktikan', `user`.`nrp`, `modul`.`modul` as 'modul_id', 
               `modul`.`name` as 'modul', `nilai`.`laporan`, `nilai`.`laporan_time`, `nilai`.`is_acc` as 'is_acc', `nilai`.`asisten`, `nilai` . `resume`, `nilai` . `pretest`,`nilai` . `uji_lisan`,`nilai` . `praktikum`, `nilai` . `postest`,`nilai` . `format`,`nilai` . `bab`, `nilai` . `kesimpulan`, `nilai` . `nilai_akhir` as `nilai_akhir`, `nilai` . `nilai_akhir_abjad` as `nilai_akhir_abjad`,`anggota_kelompok`.`no_kelompok`as 'kelompok'
               FROM `user`  
               INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
               INNER JOIN `anggota_kelompok`ON `user`.`nrp` = `anggota_kelompok`.`nrp`
               INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` 
               WHERE (`nilai` . `modul` = '$id' AND `anggota_kelompok`.`no_kelompok` = '$id_kelompok') AND (
-              `user`.`nrp` LIKE '%$keyword%'
+              `user`.`name` LIKE '%$keyword%'
               OR `user`.`nrp` LIKE '%$keyword%')";
     } else {
       $query = "SELECT `nilai`.`id`, `user`.`name` as 'name_praktikan', `user`.`nrp`, `modul`.`modul` as 'modul_id', 
@@ -77,6 +77,7 @@ class Asisten_model extends CI_Model
               FROM `user` INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
               INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id`
               WHERE `user`.`name` LIKE '%$keyword%'
+              `user`.`nrp` LIKE '%$keyword%'
               OR `modul`.`name` LIKE '%$keyword%'
               OR `jadwal`.`jadwal` LIKE '%$keyword%' ";
     } else {
