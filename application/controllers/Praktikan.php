@@ -375,7 +375,7 @@ class Praktikan extends CI_Controller
                 if (count($result2) > 1 && count($result2) <= 2) {
                     $result2 = $result2[1] . " " . $satuan;
                 } else if (count($result2) > 2) {
-                    $result2 = $result2[1] . " " . $satuan . ", " .  $result2[3] . " " . $satuan;
+                    $result2 = $result2[1] . " " . $satuan . ", " .  $result2[2] . " " . $satuan;
                 } else if (count($result2) <= 1) {
                     $result2 = $satuan;
                 }
