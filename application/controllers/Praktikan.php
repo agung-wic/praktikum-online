@@ -372,9 +372,12 @@ class Praktikan extends CI_Controller
                 $result2 = str_replace("[", "", $result2);
                 $result2 = str_replace("]", "", $result2);
                 $result2 = explode(",", $result2);
-                if (count($result2) > 1) {
+                if (count($result2) > 1) && $result2) <= 2) {
                     $result2 = $result2[1] . " " . $satuan;
-                } else {
+                } else if($result2) > 2){
+                    $result2 = $result2[1] . " " . $satuan . ", ".  $result2[3] . " " . $satuan;
+                }
+                else if($result2) <= 1) {
                     $result2 = $satuan;
                 }
                 return $result2;
