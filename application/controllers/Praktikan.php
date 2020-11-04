@@ -364,21 +364,22 @@ class Praktikan extends CI_Controller
             $result2 = htmlspecialchars($result2);
             if ($result2) {
                 $satuan = $data['data_satuan'];
-                $compare = $data['tombol_kirim'];
-                $compare = str_replace("][", ",", $compare);
-                $compare = str_replace("[", "", $compare);
-                $compare = str_replace("]", "", $compare);
-                $compare = explode(",", $compare);
+                // $compare = $data['tombol_kirim'];
+
+                // $compare = str_replace("][", ",", $compare);
+                // $compare = str_replace("[", "", $compare);
+                // $compare = str_replace("]", "", $compare);
+                // $compare = explode(",", $compare);
 
                 $result2 = str_replace("][", ",", $result2);
                 $result2 = str_replace("[", "", $result2);
                 $result2 = str_replace("]", "", $result2);
                 $result2 = explode(",", $result2);
-                if (count($result2) > 1 && count($result2) <= 2) {
+                if (count($result2) > 1 && count($result2) <= 2) { //[t,1] [0] => Array ( [0] => t [1] => 1 )
                     $result2 = $result2[1] . " " . $satuan;
-                } else if (count($result2) > 2) {
+                } else if (count($result2) > 2) { //[t,1][l,2] => Array ( [0] => t [1] => 1 [2] => l [3] => 2 ) 
                     $result2 = $result2[1] . " " . $satuan . ", " .  $result2[3] . " " . $satuan;
-                } else if (count($result2) <= 1) {
+                } else if (count($result2) > 0) {
                     $result2 = $satuan;
                 }
                 $result2 = $result2[1];
