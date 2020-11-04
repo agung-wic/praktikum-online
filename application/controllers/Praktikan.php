@@ -382,7 +382,6 @@ class Praktikan extends CI_Controller
                 } else if (count($result2) > 0) {
                     $result2 = $satuan;
                 }
-                $result2 = $result2[1];
                 return $result2;
             } else {
                 return "Error 1";
