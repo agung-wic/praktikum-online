@@ -91,6 +91,7 @@ class Modul_model extends CI_Model
                   FROM `user` INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
                   INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id`
                   WHERE `user`.`name` LIKE '%$keyword%'
+                  OR `user`.`nrp` LIKE '%$keyword%'
                   OR `modul`.`name` LIKE '%$keyword%'
                   OR `jadwal`.`jadwal` LIKE '%$keyword%' ";
         } else {
