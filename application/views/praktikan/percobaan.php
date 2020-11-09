@@ -137,13 +137,11 @@
                   <div class="container mt-2" style="color: black;">
                     <h6 class="mb-3"><b>Tabel</b></h6>
                     <div class="form-group">
-                      <?php
-                      foreach ($output_tulisan as $t) :  ?>
-                        <label for="data1"><?= $t['tulisan']; ?></label>
-                        <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
-                      <?php
-                      endforeach;
-                      ?>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Waktu</th>
+                        <th scope="col">Kecepatan</th>
+                      </tr>
                     </div>
                     <div class="row justify-content-center mb-3">
                     </div>
