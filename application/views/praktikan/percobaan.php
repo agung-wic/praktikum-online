@@ -137,11 +137,20 @@
                   <div class="container mt-2" style="color: black;">
                     <h6 class="mb-3"><b>Tabel</b></h6>
                     <div class="form-group">
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Waktu</th>
-                        <th scope="col">Kecepatan</th>
-                      </tr>
+                      <div class="table-responsive">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Waktu</th>
+                              <th scope="col">KEcepatan</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                     <div class="row justify-content-center mb-3">
                     </div>
