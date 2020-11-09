@@ -334,7 +334,6 @@ class Asisten extends CI_Controller
     $id_kelompok = $this->db->get_where('anggota_kelompok', ['nrp ' => $this->session->userdata('nrp')])->row_array();
     $data['kelompok'] = $this->db->get_where('kelompok', ['id' => $id_kelompok['no_kelompok']])->row_array();
     $data['status'] = $this->db->get('jadwal')->result_array();
-    $data['title'] = 'List Absen';
     if (!$data['id_modul']) {
       $this->load->view('template/header', $data);
       $this->load->view('template/sidebar', $data);
@@ -345,6 +344,7 @@ class Asisten extends CI_Controller
       if (!$data['id_kelompok']) {
         $data['kelompok'] = $this->Asisten_model->JumlahKelompok();
         $data['id_modul'] = $data['id_modul'];
+        $data['title'] = 'List Absen - ' . $data['id_modul'];
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
@@ -355,6 +355,7 @@ class Asisten extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
         $data['kelompok'] = $this->Asisten_model->Tampildetailkelompok($data['id_kelompok']);
         $data['absensi'] = $this->db->get_where('absensi', ['modul' => $data['id_modul']])->result_array();
+        $data['title'] = 'List Absen - ' . $data['id_modul'] . " - " . $data['id_kelompok'];
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('template/topbar', $data);
