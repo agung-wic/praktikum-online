@@ -149,6 +149,9 @@
                           <tbody>
                             <th>1</th>
                             <th>100 cm/ms</th>
+                            <th>500 ms</th>
+                            <th>10</th>
+                            <th>400 cm/ms</th>
                             <th>5000 ms</th>
                           </tbody>
                         </table>
