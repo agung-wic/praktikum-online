@@ -143,11 +143,13 @@
                             <tr>
                               <th scope="col">#</th>
                               <th scope="col">Waktu</th>
-                              <th scope="col">KEcepatan</th>
+                              <th scope="col">Kecepatan</th>
                             </tr>
                           </thead>
                           <tbody>
-
+                            <th>1</th>
+                            <th>100 cm/ms</th>
+                            <th>5000 ms</th>
                           </tbody>
                         </table>
                       </div>
