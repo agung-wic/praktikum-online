@@ -153,8 +153,6 @@ class Praktikan extends CI_Controller
     public function percobaan($id = NULL)
     {
         $data['modul'] = $this->db->get_where('modul', ['modul' => $id])->row_array();
-        var_dump($data['modul']);
-        die;
         $address = $data['modul']['ip_address'];
         $data['tombol_arah'] = $this->db->get_where('tombol_arah', ['id_modul' => $id])->result_array();
         $data['tombol_tulisan'] = $this->db->get_where('tombol_tulisan', ['id_modul' => $id])->result_array();
