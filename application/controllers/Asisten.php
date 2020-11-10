@@ -335,6 +335,7 @@ class Asisten extends CI_Controller
     $data['kelompok'] = $this->db->get_where('kelompok', ['id' => $id_kelompok['no_kelompok']])->row_array();
     $data['status'] = $this->db->get('jadwal')->result_array();
     if (!$data['id_modul']) {
+      $data['title'] = 'List Absen';
       $this->load->view('template/header', $data);
       $this->load->view('template/sidebar', $data);
       $this->load->view('template/topbar', $data);
