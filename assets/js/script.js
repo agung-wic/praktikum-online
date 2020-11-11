@@ -280,8 +280,6 @@ $(function () {
 		const tampil = $(this).data("tampil");
 		const kirim = $(this).data("kirim");
 		const id = $(this).data("id");
-		console.log(kirim);
-		console.log(id);
 		$.ajax({
 			url: base + "praktikan/getpercobaan",
 			data: {
@@ -291,9 +289,8 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data.length);
+				console.log(typeof(data));
 				if(id=="M8"){
-					console.log(data);
 					var html="";
 					var panjang_nomor = data.nomor;
 					if(data.tabel[0] == "d"){	
