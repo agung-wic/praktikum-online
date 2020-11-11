@@ -289,12 +289,9 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(typeof(data));
-				if(id=="M8"){
+				if(typeof data.tabel !== "undefined"){	
 					var html="";
-					var panjang_nomor = data.nomor;
-					if(data.tabel[0] == "d"){	
-						for(let i=0; i<panjang_nomor.length; i++){
+					for(let i=0; i<data.nomor.length; i++){
 							html+='<tr>';
 							html+='<td>'+ data.nomor[i]+'</td>';
 							html+='<td>'+ data.kecepatan[i]+'</td>';
@@ -302,11 +299,7 @@ $(function () {
 							html+='</tr>';
 						}
 						$("#dataM8").html(html);
-					}
-					else{
-						$(tampil).val(data);
-					}
-				} else {
+				}else{
 					$(tampil).val(data);
 				}
 			},
