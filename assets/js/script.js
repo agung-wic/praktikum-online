@@ -292,8 +292,9 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				if(id=="M8"){
+					console.log(data);
 					var html="";
-					if(data.tabel[0] == "d"){		
+					if(data.tabel[0] == "d"){	
 						for(let i=0; i<length(data.nomor); i++){
 							html+='<tr>';
 							html+='<td>'+ data.nomor[i]+'</td>';
@@ -304,11 +305,9 @@ $(function () {
 						$("#dataM8").html(html);
 					}
 					else{
-						console.log(data);
 						$(tampil).val(data);
 					}
 				} else {
-					console.log(data);
 					$(tampil).val(data);
 				}
 			},
