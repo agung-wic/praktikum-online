@@ -384,7 +384,12 @@ class Praktikan extends CI_Controller
                             $result6[$i] = $result2[$i];
                         }
                     }
-                    $result2 = $result4;
+                    $result2 = [
+                        "tabel" => $result3,
+                        "nomor" => $result4,
+                        "waktu" => $result5,
+                        "kecepatan" => $result6
+                    ];
                 } else if (count($result2) > 0) {
                     $result2 = $satuan;
                 }
