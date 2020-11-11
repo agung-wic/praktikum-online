@@ -291,6 +291,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
+				console.log(length(data));
 				if(id=="M8"){
 					console.log(data);
 					var html="";
