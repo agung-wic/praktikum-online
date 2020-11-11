@@ -294,8 +294,9 @@ $(function () {
 				if(id=="M8"){
 					console.log(data);
 					var html="";
+					var panjang_nomor = data.nomor;
 					if(data.tabel[0] == "d"){	
-						for(let i=0; i<length(data.nomor); i++){
+						for(let i=0; i<panjang_nomor.length; i++){
 							html+='<tr>';
 							html+='<td>'+ data.nomor[i]+'</td>';
 							html+='<td>'+ data.kecepatan[i]+'</td>';
