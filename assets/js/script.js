@@ -289,6 +289,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
+				console.log(data);
 				if(typeof data.tabel !== "undefined"){	
 					var html="";
 					for(let i=0; i<data.nomor.length; i++){
