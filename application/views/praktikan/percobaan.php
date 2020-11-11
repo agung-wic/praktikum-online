@@ -142,19 +142,12 @@
                           <thead>
                             <tr>
                               <th scope="col">#</th>
-                              <th scope="col">Waktu</th>
                               <th scope="col">Kecepatan</th>
+                              <th scope="col">Waktu</th>
                             </tr>
                           </thead>
-                          <tbody>
-                            <th>1</th>
-                            <th>100 cm/ms</th>
-                            <th>500 ms</th>
-                          </tbody>
-                          <tbody>
-                            <th>1</th>
-                            <th>100 cm/ms</th>
-                            <th>500 ms</th>
+                          <tbody id="dataM8">
+
                           </tbody>
                         </table>
                       </div>

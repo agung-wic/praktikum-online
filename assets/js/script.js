@@ -291,8 +291,20 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
-				$(tampil).val(data);
+				if(id=="M8"){
+					var html="";
+					for(let i=0; i<length(data.nomor); i++){
+						html+='<tr>';
+						html+='<td>'+ data.nomor[i]+'</td>';
+						html+='<td>'+ data.kecepatan[i]+'</td>';
+						html+='<td>'+ data.waktu[i]+'</td>';
+						html+='</tr>';
+					}
+					$("#dataM8").html(html);
+				} else {
+					console.log(data);
+					$(tampil).val(data);
+				}
 			},
 			error: function (jqXHR, textStatus, errorThrown) {
 				console.log(JSON.stringify(jqXHR));
