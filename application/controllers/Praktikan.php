@@ -384,6 +384,14 @@ class Praktikan extends CI_Controller
                             $result6[$i] = $result2[$i];
                         }
                     }
+                    $result3 = implode(",", $result3);
+                    $result3 = explode(",", $result3);
+                    $result4 = implode(",", $result4);
+                    $result4 = explode(",", $result4);
+                    $result5 = implode(",", $result5);
+                    $result5 = explode(",", $result5);
+                    $result6 = implode(",", $result6);
+                    $result6 = explode(",", $result6);
                     $result2 = [
                         "tabel" => $result3,
                         "nomor" => $result4,
