@@ -293,14 +293,20 @@ $(function () {
 			success: function (data) {
 				if(id=="M8"){
 					var html="";
-					for(let i=0; i<length(data.nomor); i++){
-						html+='<tr>';
-						html+='<td>'+ data.nomor[i]+'</td>';
-						html+='<td>'+ data.kecepatan[i]+'</td>';
-						html+='<td>'+ data.waktu[i]+'</td>';
-						html+='</tr>';
+					if(data.tabel[0] == "d"){		
+						for(let i=0; i<length(data.nomor); i++){
+							html+='<tr>';
+							html+='<td>'+ data.nomor[i]+'</td>';
+							html+='<td>'+ data.kecepatan[i]+'</td>';
+							html+='<td>'+ data.waktu[i]+'</td>';
+							html+='</tr>';
+						}
+						$("#dataM8").html(html);
 					}
-					$("#dataM8").html(html);
+					else{
+						console.log(data);
+						$(tampil).val(data);
+					}
 				} else {
 					console.log(data);
 					$(tampil).val(data);
