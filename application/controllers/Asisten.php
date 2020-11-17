@@ -32,8 +32,6 @@ class Asisten extends CI_Controller
     $data['title'] = 'Penilaian';
     if ($data['user']['role_id'] == 1) {
       $data['kelompok'] = $this->Asisten_model->KelompokAsistenNilaiAdmin($data['id_modul']);
-      var_dump($data['kelompok']);
-      die;
     } else {
       $data['kelompok'] = $this->Asisten_model->KelompokAsistenNilai($this->session->userdata('nrp'), $data['id_modul']);
     }
