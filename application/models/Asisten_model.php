@@ -198,7 +198,7 @@ class Asisten_model extends CI_Model
 
   public function KelompokAsistenAdmin()
   {
-    $query = "SELECT COUNT(`anggota_kelompok`.`nrp`) AS jumlah ,`kelompok`.`id` as `id_kelompok`, `kelompok_asisten`.`id` , `kelompok_asisten`.`nrp` as `nrp` , `kelompok_asisten`.`id_modul` as `id_modul` , `kelompok_asisten`.`no_kelompok` as `no_kelompok` ,
+    $query = "SELECT (COUNT(`anggota_kelompok`.`nrp`)/10) AS jumlah ,`kelompok`.`id` as `id_kelompok`, `kelompok_asisten`.`id` , `kelompok_asisten`.`nrp` as `nrp` , `kelompok_asisten`.`id_modul` as `id_modul` , `kelompok_asisten`.`no_kelompok` as `no_kelompok` ,
               `user`.`name`,`kelompok`.`no_kelompok`,`modul`.`name` as 'name_modul' FROM `kelompok_asisten` 
               LEFT JOIN `user` ON `user`.`nrp` = `kelompok_asisten`.`nrp` 
               LEFT JOIN `kelompok` ON `kelompok`.`id` = `kelompok_asisten`.`no_kelompok` 
