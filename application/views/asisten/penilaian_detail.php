@@ -69,7 +69,7 @@
                                         <td><?= $l['asisten']; ?></td>
                                         <td>
                                             <?php if ($l['laporan'] != NULL) { ?>
-                                                <a href="<?= $l['laporan']; ?>" download class="badge badge-pill badge-warning">
+                                                <a href="<?= $l['laporan']; ?>" target="_blank" class="badge badge-pill badge-warning">
                                                     <i class=" fas fa-fw fa-download"></i>
                                                     Unduh
                                                 </a>
