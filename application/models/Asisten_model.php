@@ -209,6 +209,13 @@ class Asisten_model extends CI_Model
     return $this->db->query($query)->result_array();
   }
 
+  public function KelompokAsistenNilaiAdmin($id_modul)
+  {
+    $query = "SELECT * FROM `nilai` WHERE `nilai`.`modul` = '$id_modul'";
+
+    return $this->db->query($query)->result_array();
+  }
+
   public function Tampildetailkelompok($id)
   {
     $query = "SELECT `anggota_kelompok`.`id`, `kelompok`.`no_kelompok` as `nama_kelompok` , `anggota_kelompok`.`nrp` as `nrp` , `user`.`name` as 'name' , `anggota_kelompok`.`no_kelompok` FROM `anggota_kelompok` 

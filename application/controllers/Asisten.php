@@ -30,7 +30,11 @@ class Asisten extends CI_Controller
     $data['nama_modul'] = $this->db->get_where('modul', ['modul' =>  $data['id_modul']])->row_array();
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
     $data['title'] = 'Penilaian';
-    $data['kelompok'] = $this->Asisten_model->KelompokAsistenNilai($this->session->userdata('nrp'), $data['id_modul']);
+    if ($data['user']['role_id'] == 1) {
+      $data['kelompok'] = $this->Asisten_model->KelompokAsistenNilaiAdmin($data['id_modul']);
+    } else {
+      $data['kelompok'] = $this->Asisten_model->KelompokAsistenNilai($this->session->userdata('nrp'), $data['id_modul']);
+    }
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
@@ -131,7 +135,7 @@ class Asisten extends CI_Controller
   public function detail($id)
   {
     $this->load->model('Asisten_model');
-    $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+    $data['user'] = $this->db->get_where('f', ['nrp' => $this->session->userdata('nrp')])->row_array();
     $data['title'] = 'Pembagian Kelompok';
     $data['kelompok'] = $this->Asisten_model->Tampildetailkelompok($id);
     $data['id_kelompok'] = $id;
