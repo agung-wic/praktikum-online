@@ -663,12 +663,15 @@ class Modul extends CI_Controller
 
     public function editjadwal()
     {
-
+        $tanggal = str_replace("T", " ", $this->input->post('jadwal', true));
+        $tanggal = explode(" ", $tanggal);
+        $jadwal = explode("-", $tanggal[0]);
+        $jadwal = $jadwal[2] . "-" . $jadwal[1] . "-" . $jadwal[0];
         $data = [
             "id" => $this->input->post('id', true),
             "nrp" => $this->input->post('nrp', true),
             "modul_id" => $this->input->post('modul', true),
-            "jadwal" => str_replace("T", " ", $this->input->post('jadwal', true))
+            "jadwal" => $jadwal
         ];
 
         $this->db->where('id', $this->input->post('id'));
