@@ -666,7 +666,7 @@ class Modul extends CI_Controller
         $tanggal = str_replace("T", " ", $this->input->post('jadwal', true));
         $tanggal = explode(" ", $tanggal);
         $jadwal = explode("-", $tanggal[0]);
-        $jadwal = $jadwal[2] . "-" . $jadwal[1] . "-" . $jadwal[0];
+        $jadwal = $jadwal[2] . "-" . $jadwal[1] . "-" . $jadwal[0] . " " . $tanggal[1];
         $data = [
             "id" => $this->input->post('id', true),
             "nrp" => $this->input->post('nrp', true),
