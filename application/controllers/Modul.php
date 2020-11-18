@@ -674,6 +674,8 @@ class Modul extends CI_Controller
             "jadwal" => $jadwal,
             "status" => $this->input->post('status', true)
         ];
+        var_dump($data);
+        die;
 
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('jadwal', $data);
