@@ -35,7 +35,6 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function(data){
-				console.log(data);
 				if(data==null){
 					$("#nrp").val(nrp);
 					$("#modul").val(modul);

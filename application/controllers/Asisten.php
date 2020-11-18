@@ -389,9 +389,6 @@ class Asisten extends CI_Controller
     $keterangan = $this->input->post('keterangan', true);
     $kelompok = $this->input->post('kelompok', true);
 
-    var_dump($kelompok);
-    die;
-
     $ada = $this->db->get_where('absensi', ['modul' => $modul, 'nrp' => $nrp])->row_array();
 
     if ($ada) {
