@@ -146,6 +146,7 @@
                                 <th scope="col">NRP</th>
                                 <th scope="col">Modul</th>
                                 <th scope="col">Jadwal</th>
+                                <th scope="col">Keterangan</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
