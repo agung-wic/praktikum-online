@@ -35,6 +35,19 @@ $(function () {
 			dataType: "json",
 			success: function(data){
 				console.log(data);
+				if(data==null){
+					$("#nrp").val(nrp);
+					$("#modul").val(modul);
+					$("#tidak_hadir").prop("checked",true);
+					$("#hadir").prop("checked",false);
+				}
+				else{
+					$("#nrp").val(data.nrp);
+					$("#modul").val(data.modul);
+					$("#tidak_hadir").prop("checked",false);
+					$("#hadir").prop("checked",true);
+					$("#keterangan").val(data.keterangan);
+				}
 			}
 		});
 	});

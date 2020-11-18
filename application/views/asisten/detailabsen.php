@@ -85,16 +85,17 @@
                     <div class="form-group">
                         <label for="nrp">NRP</label>
                         <input type="text" class="form-control" id="nrp" name="nrp" readonly>
+                        <input type="text" class="form-control" id="modul" name="modul" readonly>
                     </div>
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="absen" id="absen" value="hadir" checked>
+                            <input class="form-check-input" type="radio" name="absen" id="hadir" value="hadir" checked>
                             <label class="form-check-label" for="absen">
                                 Hadir
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="absen" id="absen" value="tidak_hadir">
+                            <input class="form-check-input" type="radio" name="absen" id="tidak_hadir" value="tidak_hadir">
                             <label class="form-check-label" for="absen">
                                 Tidak Hadir
                             </label>
