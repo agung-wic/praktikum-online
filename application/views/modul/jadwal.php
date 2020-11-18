@@ -171,7 +171,7 @@
                                     <td><?= $l['modul']; ?></td>
                                     <td><?= str_replace("T", " | ", $l['jadwal']); ?></td>
                                     <?php
-                                    var_dump($l['status'];
+                                    var_dump($l['status']);
                                     die;
                                     if ($l['status'] == 1) {
                                         echo '<td><p class="badge badge-pill badge-success" style="opacity:100%"><i class="fas fa-check"></i></p></td>';
