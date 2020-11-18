@@ -287,8 +287,8 @@ $(function () {
 					$("#selesai").prop("checked",true);
 					$("#belum_selesai").prop("checked",false);
 				} else 	{
-					$("#selesai").prop("checked",true);
-					$("#belum_selesai").prop("checked",false);
+					$("#selesai").prop("checked",false);
+					$("#belum_selesai").prop("checked",true);
 				}
 				console.log(data);
 			},
