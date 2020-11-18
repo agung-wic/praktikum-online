@@ -52,7 +52,7 @@
 
                                         <?php $i++; ?>
                                         <td>
-                                            <a href="<?= base_url('asisten/hadir/') ?>" class="badge badge-pill badge-primary tampilModalAbsen" data-modul="<?= $nama_modul['modul']; ?>" data-nrp="<?= $l['nrp']; ?>" data-toggle="modal" data-target="#AbsenEdit">
+                                            <a href="<?= base_url('asisten/hadir/') ?>" class="badge badge-pill badge-primary tampilModalAbsen" data-modul="<?= $nama_modul['modul']; ?>" data-nrp="<?= $k['nrp']; ?>" data-toggle="modal" data-target="#AbsenEdit">
                                                 <i class=" fas fa-fw fa-edit"></i>
                                                 Edit
                                             </a>
