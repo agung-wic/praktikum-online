@@ -85,7 +85,7 @@
                     <div class="form-group">
                         <label for="nrp">NRP</label>
                         <input type="text" class="form-control" id="nrp" name="nrp" readonly>
-                        <input type="text" class="form-control" id="modul" name="modul" readonly>
+                        <input type="text" class="form-control" id="modul" name="modul" hidden>
                     </div>
                     <div class="form-group">
                         <div class="form-check">

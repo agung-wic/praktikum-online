@@ -38,6 +38,7 @@ $(function () {
 				if(data==null){
 					$("#nrp").val(nrp);
 					$("#modul").val(modul);
+					$("#keterangan").val("");
 					$("#tidak_hadir").prop("checked",true);
 					$("#hadir").prop("checked",false);
 				}
