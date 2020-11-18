@@ -773,7 +773,7 @@ class Modul extends CI_Controller
         $tanggal = str_replace("T", "T", $data['jadwal']);
         $tanggal = explode(" ", $tanggal);
         $jadwal = explode("-", $tanggal[0]);
-        $jadwal = $jadwal[2] . "-" . $jadwal[1] . "-" . $jadwal[0] . " " . $tanggal[1];
+        $jadwal = $jadwal[2] . "-" . $jadwal[1] . "-" . $jadwal[0] . "T" . $tanggal[1];
         $data['jadwal'] = $jadwal;
         echo json_encode($data);
     }
