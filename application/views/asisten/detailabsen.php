@@ -52,7 +52,7 @@
 
                                         <?php $i++; ?>
                                         <td>
-                                            <a href="<?= base_url('asisten/hadir/') ?>" class="badge badge-pill badge-primary tampilModalUbah" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#UserEdit">
+                                            <a href="<?= base_url('asisten/hadir/') ?>" class="badge badge-pill badge-primary tampilModalUbah" data-toggle="modal" data-target="#UserEdit">
                                                 <i class=" fas fa-fw fa-edit"></i>
                                                 Edit
                                             </a>
