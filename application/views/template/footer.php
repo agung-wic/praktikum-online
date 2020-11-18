@@ -116,7 +116,7 @@
     absen.prop('disabled', true);
   });
 </script>
-<script src="<?= base_url(); ?>assets/js/script.js?v=116"></script>
+<script src="<?= base_url(); ?>assets/js/script.js?v=117"></script>
 
 
 </body>

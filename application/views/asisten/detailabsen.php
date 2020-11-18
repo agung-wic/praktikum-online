@@ -52,7 +52,7 @@
 
                                         <?php $i++; ?>
                                         <td>
-                                            <a href="<?= base_url('asisten/hadir/') ?>" class="badge badge-pill badge-primary tampilModalUbah" data-toggle="modal" data-target="#UserEdit">
+                                            <a href="<?= base_url('asisten/hadir/') ?>" class="badge badge-pill badge-primary tampilModalAbsen" data-modul="<?= $nama_modul['modul']; ?>" data-nrp="<?= $l['nrp']; ?>" data-toggle="modal" data-target="#AbsenEdit">
                                                 <i class=" fas fa-fw fa-edit"></i>
                                                 Edit
                                             </a>
@@ -71,11 +71,11 @@
 </div>
 
 
-<div class="modal fade" id="UserEdit" tabindex="-1" role="dialog" aria-labelledby="UserEditLabel" aria-hidden="true">
+<div class="modal fade" id="AbsenEdit" tabindex="-1" role="dialog" aria-labelledby="AbsenEditLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="UserEditLabel">Edit Absen Praktikan</h5>
+                <h5 class="modal-title" id="AbsenEditLabel">Edit Absen Praktikan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

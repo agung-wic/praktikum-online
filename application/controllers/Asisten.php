@@ -374,6 +374,14 @@ class Asisten extends CI_Controller
     }
   }
 
+  public function getabsen()
+  {
+    $nrp = $this->input->post('nrp');
+    $modul = $this->input->post('modul');
+
+    echo json_encode($this->db->get_where('absensi', ['nrp' => $nrp, 'modul' => $modul])->row_array());
+  }
+
   public function editabsen()
   {
     $modul_id = $this->input->post('modul_id', true);

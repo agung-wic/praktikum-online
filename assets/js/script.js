@@ -21,6 +21,24 @@ $(function () {
 		});
 	});
 
+	$(".tampilModalAbsen").on("click", function() {
+		const nrp = $(this).data("nrp");
+		const modul = $(this).data("modul");
+
+		$.ajax({
+			url: base + "asisten/getabsen",
+			data: {
+				nrp: nrp,
+				modul: modul
+			},
+			method: "post",
+			dataType: "json",
+			success: function(data){
+				console.log(data);
+			}
+		});
+	});
+
 	$(".TampilEditMenu").on("click", function () {
 		$("#NewMenuModalLabel").html("Edit Menu");
 		$(".modal-footer button[type=submit]").html("Edit");
