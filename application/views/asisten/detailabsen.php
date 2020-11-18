@@ -88,14 +88,14 @@
                     </div>
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                            <label class="form-check-label" for="exampleRadios1">
+                            <input class="form-check-input" type="radio" name="absen" id="absen" value="hadir" checked>
+                            <label class="form-check-label" for="absen">
                                 Hadir
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
+                            <input class="form-check-input" type="radio" name="absen" id="absen" value="tidak_hadir">
+                            <label class="form-check-label" for="absen">
                                 Tidak Hadir
                             </label>
                         </div>

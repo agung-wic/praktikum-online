@@ -376,16 +376,24 @@ class Asisten extends CI_Controller
 
   public function editabsen()
   {
+    $modul_id = $this->input->post('modul_id', true);
+    $kelompok_id = $this->input->post('kelompok_id', true);
     $data = [
-      "keterangan" => $this->input->post('no_kelompok')
+      "keterangan" => $this->input->post('keterangan')
     ];
-
     $this->db->where('id', $this->input->post('id'));
-    $this->db->update('absensi', $data);
+    if ($this->input->post('absen') == "hadir") {
+      $this->db->insert('absensi', $data);
+    } else if ($this->input->post('absen') == "tidak_hadir") {
+      $this->db->delete('absensi', $data);
+    } else if ("datane sudah ada tapi diganti") {
+      $this->db->update('absensi', $data);
+    }
+
 
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
           Absensi berhasil diubah!
           </div>');
-    redirect(base_url('asisten/absen'));
+    redirect(base_url('asisten/absen/') . $modul_id . "/" . $kelompok_id);
   }
 }
