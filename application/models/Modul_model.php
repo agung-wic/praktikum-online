@@ -87,7 +87,7 @@ class Modul_model extends CI_Model
     {
         $keyword = $this->input->post('keyword1', true);
         if ($keyword) {
-            $query = "SELECT `jadwal`.`id`,  `user`.`nrp`, `user`.`name` as `name`, `modul`.`name` as `modul`, `jadwal`.`jadwal`
+            $query = "SELECT `jadwal`.`id`,  `user`.`nrp`, `user`.`name` as `name`, `modul`.`name` as `modul`, `jadwal`.`jadwal` as 'jadwal', `jadwal`.`status` as 'status'
                   FROM `user` INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
                   INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id`
                   WHERE `user`.`name` LIKE '%$keyword%'
