@@ -775,6 +775,8 @@ class Modul extends CI_Controller
         $jadwal = explode("-", $tanggal[0]);
         $jadwal = $jadwal[2] . "-" . $jadwal[1] . "-" . $jadwal[0] . " " . $tanggal[1];
         $data['jadwal'] = $jadwal;
+        var_dump($data);
+        die;
         echo json_encode($data);
     }
 
