@@ -770,13 +770,11 @@ class Modul extends CI_Controller
     {
         $this->load->model('Modul_model');
         $data = $this->Modul_model->TampilJadwalPraktikan();
-        $tanggal = str_replace("T", " ", $data['jadwal']);
+        $tanggal = str_replace("T", "T", $data['jadwal']);
         $tanggal = explode(" ", $tanggal);
         $jadwal = explode("-", $tanggal[0]);
         $jadwal = $jadwal[2] . "-" . $jadwal[1] . "-" . $jadwal[0] . " " . $tanggal[1];
         $data['jadwal'] = $jadwal;
-        var_dump($data);
-        die;
         echo json_encode($data);
     }
 
