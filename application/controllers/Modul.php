@@ -674,9 +674,6 @@ class Modul extends CI_Controller
             "jadwal" => $jadwal,
             "status" => $this->input->post('status', true)
         ];
-        var_dump($data);
-        die;
-
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('jadwal', $data);
         $this->session->set_flashdata('message1', '<div class="alert alert-success" role="alert">

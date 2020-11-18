@@ -286,13 +286,13 @@
                     </div>
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="status" id="selesai" value="selesai" checked>
+                            <input class="form-check-input" type="radio" name="status" id="selesai" value="1" checked>
                             <label class="form-check-label" for="status">
                                 Selesai
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="status" id="belum_selesai" value="belum_selesai">
+                            <input class="form-check-input" type="radio" name="status" id="belum_selesai" value="0">
                             <label class="form-check-label" for="status">
                                 Belum Selesai
                             </label>
