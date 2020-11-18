@@ -87,14 +87,14 @@
                         <input type="text" class="form-control" id="nrp" name="nrp" readonly>
                     </div>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-success">
+                        <label class="btn btn-secondary p-3">
                             <input type="radio" name="options" id="option1" autocomplete="off" checked>Hadir
                         </label>
-                        <label class="btn btn-danger">
+                        <label class="btn btn-secondary p-3">
                             <input type="radio" name="options" id="option2" autocomplete="off">Tidak Hadir
                         </label>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-3">
                         <label for="keterangan">Keterangan</label>
                         <input type="text" class="form-control" id="keterangan" name="keterangan">
                     </div>
