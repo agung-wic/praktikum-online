@@ -86,18 +86,31 @@
                         <label for="nrp">NRP</label>
                         <input type="text" class="form-control" id="nrp" name="nrp" readonly>
                     </div>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary p-3">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked>Hadir
-                        </label>
-                        <label class="btn btn-secondary p-3">
-                            <input type="radio" name="options" id="option2" autocomplete="off">Tidak Hadir
-                        </label>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Hadir
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Tidak Hadir
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                            <label class="form-check-label" for="exampleRadios3">
+                                Disabled radio
+                            </label>
+                        </div>
                     </div>
                     <div class="form-group mt-3">
                         <label for="keterangan">Keterangan</label>
                         <input type="text" class="form-control" id="keterangan" name="keterangan">
                     </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
