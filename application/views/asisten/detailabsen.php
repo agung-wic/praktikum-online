@@ -99,12 +99,6 @@
                                 Tidak Hadir
                             </label>
                         </div>
-                        <div class="form-check disabled">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
-                            <label class="form-check-label" for="exampleRadios3">
-                                Disabled radio
-                            </label>
-                        </div>
                     </div>
                     <div class="form-group mt-3">
                         <label for="keterangan">Keterangan</label>
