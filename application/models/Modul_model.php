@@ -95,7 +95,7 @@ class Modul_model extends CI_Model
                   OR `modul`.`name` LIKE '%$keyword%'
                   OR `jadwal`.`jadwal` LIKE '%$keyword%' ";
         } else {
-            $query = "SELECT `jadwal`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', `modul`.`name` as 'modul', `jadwal`.`jadwal`
+            $query = "SELECT `jadwal`.`id`, `user`.`name` as 'name', `user`.`nrp`, `modul`.`modul` as 'modul_id', `modul`.`name` as 'modul',  `jadwal`.`jadwal` as 'jadwal', `jadwal`.`status` as 'status'
                   FROM `user` INNER JOIN `jadwal` ON `user`.`nrp` = `jadwal`.`nrp` 
                   INNER JOIN `modul` ON `modul`.`modul` = `jadwal`.`modul_id` LIMIT $limit OFFSET $start";
         }
