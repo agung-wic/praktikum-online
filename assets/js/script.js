@@ -30,8 +30,7 @@ $(function () {
 			url: base + "asisten/getabsen",
 			data: {
 				nrp: nrp,
-				modul: modul,
-				kelompok: kelompok
+				modul: modul
 			},
 			method: "post",
 			dataType: "json",
@@ -40,6 +39,7 @@ $(function () {
 				if(data==null){
 					$("#nrp").val(nrp);
 					$("#modul").val(modul);
+					$("#kelompok").val(kelompok);
 					$("#keterangan").val("");
 					$("#tidak_hadir").prop("checked",true);
 					$("#hadir").prop("checked",false);
@@ -47,6 +47,7 @@ $(function () {
 				else{
 					$("#nrp").val(data.nrp);
 					$("#modul").val(data.modul);
+					$("#kelompok").val(kelompok);
 					$("#tidak_hadir").prop("checked",false);
 					$("#hadir").prop("checked",true);
 					$("#keterangan").val(data.keterangan);
