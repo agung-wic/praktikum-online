@@ -766,11 +766,17 @@ class Modul extends CI_Controller
         redirect(base_url('modul/jadwal'));
     }
 
-    public function getubahjadwal()
-    {
-        $this->load->model('Modul_model');
-        echo json_encode($this->Modul_model->TampilJadwalPraktikan());
-    }
+        public function getubahjadwal()
+        {
+            $this->load->model('Modul_model');
+            $data = $this->Modul_model->TampilJadwalPraktikan()
+            $tanggal = str_replace("T", " ", $data['tanggal']);
+            $tanggal = explode(" ", $tanggal);
+            $jadwal = explode("-", $tanggal[0]);
+            $jadwal = $jadwal[2] . "-" . $jadwal[1] . "-" . $jadwal[0] . " " . $tanggal[1];
+            $data['tanggal'] = $jadwal;
+            echo json_encode($data);
+        }
 
     public function pengumuman()
     {

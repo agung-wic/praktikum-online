@@ -41,7 +41,7 @@ $(function () {
 					$("#kelompok").val(kelompok);
 					$("#keterangan").val("");
 					$("#tidak_hadir").prop("checked",true);
-					$("#hadir").prop("checked",false);
+					$("#hadir").prop("checked",false);					
 				}
 				else{
 					$("#nrp").val(data.nrp);
@@ -283,6 +283,13 @@ $(function () {
 				$("#no_kelompok").val(data.no_kelompok);
 				$("#jadwal").val(data.jadwal);
 				$("#id").val(data.id);
+				if (data.status == 1) {
+					$("#selesai").prop("checked",true);
+					$("#belum_selesai").prop("checked",false);
+				} else 	{
+					$("#selesai").prop("checked",true);
+					$("#belum_selesai").prop("checked",false);
+				}
 				console.log(data);
 			},
 		});
