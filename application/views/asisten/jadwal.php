@@ -160,7 +160,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('asisten/editjadwal') ?>" method="post">
+                <form action="<?= base_url('asisten /editjadwal') ?>" method="post">
                     <div class="form-group">
                         <input class="form-control" type="number" name="id" id="id" hidden>
                         <input class="form-control" type="text" name="modul" id="modul" hidden>
@@ -184,6 +184,20 @@
                     <div class="form-group">
                         <label for="jadwal">Jadwal</label>
                         <input type="datetime-local" class="form-control" id="jadwal" name="jadwal">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="status" id="selesai" value="selesai" checked>
+                            <label class="form-check-label" for="status">
+                                Selesai
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="status" id="belum_selesai" value="belum_selesai">
+                            <label class="form-check-label" for="status">
+                                Belum Selesai
+                            </label>
+                        </div>
                     </div>
             </div>
             <div class="modal-footer">

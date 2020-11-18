@@ -671,7 +671,8 @@ class Modul extends CI_Controller
             "id" => $this->input->post('id', true),
             "nrp" => $this->input->post('nrp', true),
             "modul_id" => $this->input->post('modul', true),
-            "jadwal" => $jadwal
+            "jadwal" => $jadwal,
+            "status" => $this->input->post('status', true)
         ];
 
         $this->db->where('id', $this->input->post('id'));
