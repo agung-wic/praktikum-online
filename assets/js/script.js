@@ -24,12 +24,14 @@ $(function () {
 	$(".tampilModalAbsen").on("click", function() {
 		const nrp = $(this).data("nrp");
 		const modul = $(this).data("modul");
+		const kelompok = $(this).data("kelompok");
 
 		$.ajax({
 			url: base + "asisten/getabsen",
 			data: {
 				nrp: nrp,
-				modul: modul
+				modul: modul,
+				kelompok: kelompok
 			},
 			method: "post",
 			dataType: "json",

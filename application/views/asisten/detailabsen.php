@@ -8,6 +8,7 @@
                 <div class="row">
                     <div class="col">
                         <h6 class="m-0 font-weight-bold "><?= $nama_modul['name'] . " - " . $nama_kelompok['no_kelompok']; ?></h6>
+                        <?= $this->session->flashdata('message'); ?>
                     </div>
                 </div>
                 <div class="card-body">
@@ -52,7 +53,7 @@
 
                                         <?php $i++; ?>
                                         <td>
-                                            <a href="<?= base_url('asisten/hadir/') ?>" class="badge badge-pill badge-primary tampilModalAbsen" data-modul="<?= $nama_modul['modul']; ?>" data-nrp="<?= $k['nrp']; ?>" data-toggle="modal" data-target="#AbsenEdit">
+                                            <a href="<?= base_url('asisten/hadir/') ?>" class="badge badge-pill badge-primary tampilModalAbsen" data-kelompok="<?= $nama_kelompok['id']; ?>" data-modul="<?= $nama_modul['modul']; ?>" data-nrp="<?= $k['nrp']; ?>" data-toggle="modal" data-target="#AbsenEdit">
                                                 <i class=" fas fa-fw fa-edit"></i>
                                                 Edit
                                             </a>
