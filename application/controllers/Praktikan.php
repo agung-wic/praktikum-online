@@ -344,7 +344,7 @@ class Praktikan extends CI_Controller
                 return $success;
                 socket_close($socket2);
             } else {
-                echo "<script>alert('Absen Berhasil! Silahkan tekan OK!');
+                echo "<script>alert('Server mati, silahkan hubungi admin!');
                 window.location.href='" . base_url('praktikan/modul/') . $id . "';</script>";
             }
         } else {
