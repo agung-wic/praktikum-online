@@ -363,44 +363,44 @@ class Praktikan extends CI_Controller
             $result2 = socket_read($socket2, 1024);
             $result2 = htmlspecialchars($result2);
             if ($result2) {
-                // $satuan = $data['data_satuan'];
-                // $result2 = str_replace("][", ",", $result2);
-                // $result2 = str_replace("[", "", $result2);
-                // $result2 = str_replace("]", "", $result2);
-                // $result2 = explode(",", $result2);
-                // if (count($result2) > 1 && count($result2) <= 2) { //[t,1] [0] => Array ( [0] => t [1] => 1 )
-                //     $result2 = $result2[1] . " " . $satuan;
-                // } else if (count($result2) > 2 && count($result2) <= 4) { //[t,1][l,2] => Array ( [0] => t [1] => 1 [2] => l [3] => 2 ) 
-                //     $result2 = $result2[1] . " " . $satuan . ", " .  $result2[3] . " " . $satuan;
-                // } else if (count($result2) > 4) {
-                //     for ($i = 0; $i < count($result2); $i = $i + 1) {
-                //         if ($i % 4 == 0) {
-                //             $result3[$i] = $result2[$i];
-                //         } else if (($i + 3) % 4 == 0) {
-                //             $result4[$i] = $result2[$i];
-                //         } else if (($i + 2) % 4 == 0) {
-                //             $result5[$i] = $result2[$i];
-                //         } else if (($i + 1) % 4 == 0) {
-                //             $result6[$i] = $result2[$i];
-                //         }
-                //     }
-                //     $result3 = implode(",", $result3);
-                //     $result3 = explode(",", $result3);
-                //     $result4 = implode(",", $result4);
-                //     $result4 = explode(",", $result4);
-                //     $result5 = implode(",", $result5);
-                //     $result5 = explode(",", $result5);
-                //     $result6 = implode(",", $result6);
-                //     $result6 = explode(",", $result6);
-                //     $result2 = [
-                //         "tabel" => $result3,
-                //         "nomor" => $result4,
-                //         "waktu" => $result5,
-                //         "kecepatan" => $result6
-                //     ];
-                // } else if (count($result2) > 0) {
-                //     $result2 = $satuan;
-                // }
+                $satuan = $data['data_satuan'];
+                $result2 = str_replace("][", ",", $result2);
+                $result2 = str_replace("[", "", $result2);
+                $result2 = str_replace("]", "", $result2);
+                $result2 = explode(",", $result2);
+                if (count($result2) > 1 && count($result2) <= 2) { //[t,1] [0] => Array ( [0] => t [1] => 1 )
+                    $result2 = $result2[1] . " " . $satuan;
+                } else if (count($result2) > 2 && count($result2) <= 4) { //[t,1][l,2] => Array ( [0] => t [1] => 1 [2] => l [3] => 2 ) 
+                    $result2 = $result2[1] . " " . $satuan . ", " .  $result2[3] . " " . $satuan;
+                } else if (count($result2) > 4) {
+                    for ($i = 0; $i < count($result2); $i = $i + 1) {
+                        if ($i % 4 == 0) {
+                            $result3[$i] = $result2[$i];
+                        } else if (($i + 3) % 4 == 0) {
+                            $result4[$i] = $result2[$i];
+                        } else if (($i + 2) % 4 == 0) {
+                            $result5[$i] = $result2[$i];
+                        } else if (($i + 1) % 4 == 0) {
+                            $result6[$i] = $result2[$i];
+                        }
+                    }
+                    $result3 = implode(",", $result3);
+                    $result3 = explode(",", $result3);
+                    $result4 = implode(",", $result4);
+                    $result4 = explode(",", $result4);
+                    $result5 = implode(",", $result5);
+                    $result5 = explode(",", $result5);
+                    $result6 = implode(",", $result6);
+                    $result6 = explode(",", $result6);
+                    $result2 = [
+                        "tabel" => $result3,
+                        "nomor" => $result4,
+                        "waktu" => $result5,
+                        "kecepatan" => $result6
+                    ];
+                } else if (count($result2) > 0) {
+                    $result2 = $satuan;
+                }
                 return $result2;
             } else {
                 return "Error 1";
