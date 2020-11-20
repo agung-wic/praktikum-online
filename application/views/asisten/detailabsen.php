@@ -41,7 +41,7 @@
                                                     echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
                                                     echo '<td>' . $absensi[$cek]['keterangan'] . '</td>';
                                                 } else if ($absensi[$cek]['status'] == 1) {
-                                                    echo '<td><p class="badge badge-pill badge-alert"><i class="fas fa-cross"></i></p></td>';
+                                                    echo '<td><p class="badge badge-pill badge-alert"><i class="fa fa-times"></i></p></td>';
                                                     echo '<td>' . $absensi[$cek]['keterangan'] . '</td>';
                                                 }
                                                 $masuk = 1;
