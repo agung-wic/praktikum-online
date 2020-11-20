@@ -119,7 +119,7 @@
 
 <style>
   #mydiv {
-    position: fixed;
+    position: relative;
     right: 55%;
     top: 9%;
     /* background-color: #f1f1f1; */
@@ -137,7 +137,7 @@
 
 <div id="mydiv">
   <div class="container p-5">
-    <div class="kotak row" id="mydivheader" style="background-color:white;position:fixed;opacity:75%;width:60%;transform:scale(0.7)">
+    <div class="kotak row" id="mydivheader" style="background-color:white;opacity:75%;width:60%;transform:scale(0.7)">
       <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;   
           border-top-left-radius: 25px;
           border-top-right-radius: 0px;
