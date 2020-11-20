@@ -181,7 +181,7 @@ class Praktikan extends CI_Controller
             $data['jadwal'] = $this->db->get()->row_array();
 
             $this->load->view('template/header', $data);
-            $this->load->view('template/sidebar', $data);
+            $this->load->view('template/sidebar-percobaan', $data);
             $this->load->view('template/topbar', $data);
             $this->load->view('praktikan/percobaan', $data);
             $this->load->view('template/footer');
