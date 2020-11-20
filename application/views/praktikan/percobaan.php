@@ -139,7 +139,7 @@
 
 <div id="mydiv">
   <div class="container p-5">
-    <div class="kotak row" id="mydivheader" style="background-color:white;position:fixed;opacity:75%;width:45%;transform:scale(0.7)">
+    <div class="kotak row" id="mydivheader" style="background-color:white;position:fixed;opacity:75%;width:60%;transform:scale(0.7)">
       <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;   
           border-top-left-radius: 25px;
           border-top-right-radius: 0px;
@@ -184,7 +184,6 @@
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 0px;">">
         <div class="container mt-2" style="color: black;">
-          <h6 class="mb-3 text-center"><b>Input</b></h6>
           <input type="text" name="aksi" value="data" hidden>
           <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
         </div>
@@ -192,7 +191,7 @@
           <?php
           foreach ($tombol_tulisan as $t) :  ?>
             <div class="row justify-content-center mb-1">
-              <button type="submit" style="margin: 1%;" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil=<?= "#" .  $t['data_tampil_output']; ?> data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
+              <button type="submit" style="margin: 1%;width:300px" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil=<?= "#" .  $t['data_tampil_output']; ?> data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
                 <?= $t['tombol_keterangan'] ?>
               </button>
             </div>
@@ -207,7 +206,6 @@
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 25px;">">">
         <div class="container mt-2" style="color: black;">
-          <h6 class="mb-3"><b>Output</b></h6>
           <div class="form-group">
             <?php
             foreach ($output_tulisan as $t) :  ?>
