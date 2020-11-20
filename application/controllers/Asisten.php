@@ -408,6 +408,7 @@ class Asisten extends CI_Controller
         $this->db->where('modul', $modul);
         $this->db->where('nrp', $nrp);
         $this->db->delete('absensi');
+        $this->db->delete('nilai');
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
          Absensi berhasil dihapus!
@@ -421,8 +422,13 @@ class Asisten extends CI_Controller
         "time" => time(),
         "keterangan" => $keterangan
       ];
-
+      $data_nilai = [
+        "nrp" => $nrp,
+        "modul" => $modul,
+        "is_acc" => 0
+      ];
       $this->db->insert('absensi', $data);
+      $this->db->insert('nilai', $data_nilai);
 
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
          Absensi berhasil ditambahkan!
