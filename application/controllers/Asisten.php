@@ -395,6 +395,7 @@ class Asisten extends CI_Controller
       if ($this->input->post('absen') == "hadir") {
         $data['keterangan'] = $keterangan;
         $data['time'] = time();
+        $data['status'] = 0;
 
         $this->db->where('modul', $modul);
         $this->db->where('nrp', $nrp);
@@ -405,37 +406,61 @@ class Asisten extends CI_Controller
           </div>');
         redirect(base_url('asisten/absen/') . $modul . "/" . $kelompok);
       } else {
+        $data['keterangan'] = $keterangan;
+        $data['time'] = time();
+        $data['status'] = 1;
+
         $this->db->where('modul', $modul);
         $this->db->where('nrp', $nrp);
-        $this->db->delete('absensi');
-        $this->db->where('modul', $modul);
-        $this->db->where('nrp', $nrp);
-        $this->db->delete('nilai');
+        $this->db->update('absensi', $data);
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-         Absensi berhasil dihapus!
+         Absensi berhasil diubah!
           </div>');
         redirect(base_url('asisten/absen/') . $modul . "/" . $kelompok);
       }
     } else {
-      $data = [
-        "nrp" => $nrp,
-        "modul" => $modul,
-        "time" => time(),
-        "keterangan" => $keterangan
-      ];
-      $data_nilai = [
-        "nrp" => $nrp,
-        "modul" => $modul,
-        "is_acc" => 0
-      ];
-      $this->db->insert('absensi', $data);
-      $this->db->insert('nilai', $data_nilai);
+      if ($this->input->post('absen') == "hadir") {
+        $data = [
+          "nrp" => $nrp,
+          "modul" => $modul,
+          "time" => time(),
+          "keterangan" => $keterangan,
+          "status" => 0
+        ];
+        $data_nilai = [
+          "nrp" => $nrp,
+          "modul" => $modul,
+          "is_acc" => 0
+        ];
+        $this->db->insert('absensi', $data);
+        $this->db->insert('nilai', $data_nilai);
 
-      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
          Absensi berhasil ditambahkan!
           </div>');
-      redirect(base_url('asisten/absen/') . $modul . "/" . $kelompok);
+        redirect(base_url('asisten/absen/') . $modul . "/" . $kelompok);
+      } else {
+        $data = [
+          "nrp" => $nrp,
+          "modul" => $modul,
+          "time" => time(),
+          "keterangan" => $keterangan,
+          "status" => 1
+        ];
+        $data_nilai = [
+          "nrp" => $nrp,
+          "modul" => $modul,
+          "is_acc" => 0
+        ];
+        $this->db->insert('absensi', $data);
+        $this->db->insert('nilai', $data_nilai);
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+         Absensi berhasil ditambahkan!
+          </div>');
+        redirect(base_url('asisten/absen/') . $modul . "/" . $kelompok);
+      }
     }
   }
 }
