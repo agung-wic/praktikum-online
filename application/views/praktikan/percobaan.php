@@ -140,12 +140,7 @@
 <div id="mydiv">
   <div class="container p-5">
     <div class="kotak row" id="mydivheader" style="background-color:white;position:fixed;opacity:75%;width:45%;transform:scale(0.7)">
-      <div class="kotak col-lg-4" style="background-color: #bcaead;">
-        <div class="container mt-2" style="color: black;">
-          <h6 class="mb-3 mt-5 text-center"><b>Input</b></h6>
-          <input type="text" name="aksi" value="data" hidden>
-          <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
-        </div>
+      <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;">
         <div class="row justify-content-center">
           <?php if ($tombol_arah[0]['tombol_status'] == 1) { ?>
             <button style="font-size: 300%;margin-bottom:3%;margin-top:10%" type="submit" data-tampil=<?= "#" .  $tombol_arah[0]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[0]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-up kirim1a">
@@ -179,19 +174,26 @@
           <?php } ?>
         </div>
       </div>
-      <div class="kotak col-lg-4" style="background-color: #bcaead;">
-        <?php
-        foreach ($tombol_tulisan as $t) :  ?>
-          <div class="row justify-content-center mb-1">
-            <button type="submit" style="margin: 1%;" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil=<?= "#" .  $t['data_tampil_output']; ?> data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
-              <?= $t['tombol_keterangan'] ?>
-            </button>
-          </div>
-        <?php
-        endforeach;
-        ?>
+      <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;">
+        <div class="container mt-2" style="color: black;">
+          <h6 class="mb-3 mt-5 text-center"><b>Input</b></h6>
+          <input type="text" name="aksi" value="data" hidden>
+          <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
+        </div>
+        <div class="mt-4">
+          <?php
+          foreach ($tombol_tulisan as $t) :  ?>
+            <div class="row justify-content-center mb-1">
+              <button type="submit" style="margin: 1%;" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil=<?= "#" .  $t['data_tampil_output']; ?> data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
+                <?= $t['tombol_keterangan'] ?>
+              </button>
+            </div>
+          <?php
+          endforeach;
+          ?>
+        </div>
       </div>
-      <div class="kotak col-lg-4" style="background-color: #bcaead;">
+      <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;">
         <div class="container mt-2" style="color: black;">
           <h6 class="mb-3"><b>Output</b></h6>
           <div class="form-group">
