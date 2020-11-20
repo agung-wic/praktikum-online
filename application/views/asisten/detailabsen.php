@@ -41,7 +41,7 @@
                                                     echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
                                                     echo '<td>' . $absensi[$cek]['keterangan'] . '</td>';
                                                 } else if ($absensi[$cek]['status'] == 1) {
-                                                    echo '<td><p class="badge badge-pill badge-alert"><i class="fa fa-times"></i></p></td>';
+                                                    echo '<td><p class="badge badge-pill badge-info"><i class="fa fa-info-circle"></i></p></td>';
                                                     echo '<td>' . $absensi[$cek]['keterangan'] . '</td>';
                                                 }
                                                 $masuk = 1;
@@ -51,8 +51,8 @@
                                             }
                                         }
                                         if ($masuk == 0) {
-                                            echo '<td><p class="badge badge-pill badge-success" style="opacity:0%"><i class="fas fa-check"></i></p></td>';
-                                            echo '<td>Belum Absen</td>';
+                                            echo '<td><p class="badge badge-pill badge-alert"><i class="fa fa-times"></i></p></td>';
+                                            echo '<td>Belum ada keterangan</td>';
                                         }
                                         ?>
 
