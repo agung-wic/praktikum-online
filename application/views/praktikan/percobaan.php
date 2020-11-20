@@ -139,7 +139,7 @@
 
 <div id="mydiv">
   <div class="container p-5">
-    <div class="row" id="mydivheader" style="position:fixed;opacity:93%;width:45%;transform:scale(0.7)">
+    <div class="kotak row" id="mydivheader" style="background-color:white;position:fixed;opacity:75%;width:45%;transform:scale(0.7)">
       <div class="kotak col-lg-4" style="background-color: #bcaead;">
         <div class="container mt-2" style="color: black;">
           <h6 class="mb-3 mt-5 text-center"><b>Input</b></h6>
@@ -178,10 +178,8 @@
             </button>
           <?php } ?>
         </div>
-        <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
-        </div>
       </div>
-      <div class="kotak col-lg-4" style="background-color: #bcaead;height:30%">
+      <div class="kotak col-lg-4" style="background-color: #bcaead;">
         <?php
         foreach ($tombol_tulisan as $t) :  ?>
           <div class="row justify-content-center mb-1">
@@ -193,7 +191,7 @@
         endforeach;
         ?>
       </div>
-      <div class="kotak col-lg-4" style="background-color: #bcaead;height:30%">
+      <div class="kotak col-lg-4" style="background-color: #bcaead;">
         <div class="container mt-2" style="color: black;">
           <h6 class="mb-3"><b>Output</b></h6>
           <div class="form-group">
