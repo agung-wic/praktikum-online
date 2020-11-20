@@ -120,10 +120,10 @@
 <style>
   #mydiv {
     position: fixed;
-    right: 25%;
+    right: 21%;
     top: 50px;
     z-index: 9;
-    padding: 10%;
+    padding: 1%;
     /* background-color: #f1f1f1; */
     text-align: center;
     /* border: 1px solid #d3d3d3; */
