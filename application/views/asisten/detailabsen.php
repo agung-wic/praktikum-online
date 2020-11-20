@@ -37,10 +37,10 @@
 
                                         while ($cek < count($absensi)) {
                                             if ($k['nrp'] == $absensi[$cek]['nrp']) {
-                                                if ($k['status'] == 0) {
+                                                if ($absensi[$cek]['status'] == 0) {
                                                     echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
                                                     echo '<td>' . $absensi[$cek]['keterangan'] . '</td>';
-                                                } else if ($k['status'] == 1) {
+                                                } else if ($absensi[$cek]['status'] == 1) {
                                                     echo '<td><p class="badge badge-pill badge-alert"><i class="fas fa-cross"></i></p></td>';
                                                     echo '<td>' . $absensi[$cek]['keterangan'] . '</td>';
                                                 }
