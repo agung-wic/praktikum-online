@@ -178,7 +178,7 @@
           <?php } ?>
         </div>
       </div>
-      <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
+      <div class="kotak col-lg-4 mb-0 mr-3" style="background-color: #bcaead;
          border-top-left-radius: 0px;
           border-top-right-radius: 25px;
           border-bottom-left-radius: 0px;
