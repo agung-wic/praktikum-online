@@ -51,7 +51,7 @@
                                             }
                                         }
                                         if ($masuk == 0) {
-                                            echo '<td><p class="badge badge-pill badge-alert"><i class="fa fa-times"></i></p></td>';
+                                            echo '<td><p class="badge badge-pill badge-danger"><i class="fa fa-times"></i></p></td>';
                                             echo '<td>Belum ada keterangan</td>';
                                         }
                                         ?>

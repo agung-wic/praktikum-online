@@ -111,11 +111,13 @@
             <div class="col">
                 <h6 class="m-0 font-weight-bold "><?= $title; ?></h6>
             </div>
-            <div class="col-auto mr-auto">
-                <a href="" class="btn gradien mb-3 tampilTambahJadwal" data-toggle="modal" data-target="#JadwalEdit">Tambah Jadwal Baru</a>
-                <a href="" class="btn gradien mb-3" data-toggle="modal" data-target="#JadwalAddFile"><i class="fas fa-file-csv"></i>
-                </a>
-            </div>
+            <?php if ($user['role_id'] == 1) { ?>
+                <div class="col-auto mr-auto">
+                    <a href="" class="btn gradien mb-3 tampilTambahJadwal" data-toggle="modal" data-target="#JadwalEdit">Tambah Jadwal Baru</a>
+                    <a href="" class="btn gradien mb-3" data-toggle="modal" data-target="#JadwalAddFile"><i class="fas fa-file-csv"></i>
+                    </a>
+                </div>
+            <?php } ?>
         </div>
         <div class="card-body">
             <div class="table-responsive">
