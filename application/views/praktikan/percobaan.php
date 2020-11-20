@@ -6,7 +6,7 @@
         $i = 0;
         while ($i < count($live_stream)) {
         ?>
-          <a class="nav-item nav-link" style="background-color:black;color:white" id="nav-video-<?= $i ?>" data-toggle="tab" href="#video-<?= $i; ?>" role="tab" aria-controls="video-<?= $i; ?>" aria-selected="true">Video <?= $i + 1; ?></a>
+          <a class="nav-item nav-link" style="background-color:black;color: white" id="nav-video-<?= $i ?>" data-toggle="tab" href="#video-<?= $i; ?>" role="tab" aria-controls="video-<?= $i; ?>" aria-selected="true">Video <?= $i + 1; ?></a>
         <?php $i++;
         } ?>
       </div>
@@ -78,7 +78,7 @@
                       <table class="table table-hover">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">Data ke-</th>
                             <th scope="col">Kecepatan</th>
                             <th scope="col">Waktu</th>
                           </tr>
@@ -139,7 +139,7 @@
 
 <div id="mydiv">
   <div class="container p-5">
-    <div class="row" id="mydivheader" style="position:fixed;opacity:93%;width:35%">
+    <div class="row" id="mydivheader" style="position:fixed;opacity:93%;width:35%;transform:scale(0.7)">
       <div class="kotak col-lg-5 mr-1" style="background-color: #bcaead;">
         <div class="container mt-2" style="color: black;">
           <h6 class="mb-3 mt-5 text-center"><b>Input</b></h6>
