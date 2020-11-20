@@ -119,7 +119,7 @@
 
 <style>
   #mydiv {
-    position: absolute;
+    position: fixed;
     right: 55%;
     top: 9%;
     /* background-color: #f1f1f1; */
