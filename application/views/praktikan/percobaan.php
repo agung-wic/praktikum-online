@@ -139,8 +139,8 @@
 
 <div id="mydiv">
   <div class="container p-5">
-    <div class="row" id="mydivheader" style="position:fixed;opacity:93%;width:35%;transform:scale(0.7)">
-      <div class="kotak col-lg-5 mr-1" style="background-color: #bcaead;">
+    <div class="row" id="mydivheader" style="position:fixed;opacity:93%;width:45%;transform:scale(0.7)">
+      <div class="kotak col-lg-5 mr-2" style="background-color: #bcaead;">
         <div class="container mt-2" style="color: black;">
           <h6 class="mb-3 mt-5 text-center"><b>Input</b></h6>
           <input type="text" name="aksi" value="data" hidden>
