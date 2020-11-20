@@ -205,7 +205,7 @@
           border-top-right-radius: 25px;
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 25px;">">">
-        <div class="container mt-2" style="color: black;">
+        <div class="container mt-4" style="color: black;">
           <div class="form-group">
             <?php
             foreach ($output_tulisan as $t) :  ?>
