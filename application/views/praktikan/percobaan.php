@@ -121,7 +121,7 @@
   #mydiv {
     position: fixed;
     right: 55%;
-    top: 10%;
+    top: 9%;
     /* background-color: #f1f1f1; */
     text-align: center;
     /* border: 1px solid #d3d3d3; */
