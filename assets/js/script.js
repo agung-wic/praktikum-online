@@ -42,7 +42,8 @@ $(function () {
 					$("#kelompok").val(kelompok);
 					$("#keterangan").val("");
 					$("#tidak_hadir").prop("checked",true);
-					$("#hadir").prop("checked",false);					
+					$("#hadir").prop("checked",false);	
+					console.log();				
 				}
 				else{
 					if(status == 0)
@@ -53,6 +54,7 @@ $(function () {
 						$("#tidak_hadir").prop("checked",false);
 						$("#hadir").prop("checked",true);
 						$("#keterangan").val(data.keterangan);
+						console.log();	
 					} else if(status == 1)
 					{
 						$("#nrp").val(data.nrp);
@@ -61,6 +63,7 @@ $(function () {
 						$("#tidak_hadir").prop("checked",true);
 						$("#hadir").prop("checked",false);
 						$("#keterangan").val(data.keterangan);
+						console.log();	
 					}
 				}
 			}
