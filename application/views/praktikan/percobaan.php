@@ -192,8 +192,6 @@
         <?php
         endforeach;
         ?>
-      </div>
-      <div class="kotak col-lg-4" style="background-color: #bcaead;height:30%">
         <div class="container mt-2" style="color: black;">
           <h6 class="mb-3"><b>Output</b></h6>
           <div class="form-group">
