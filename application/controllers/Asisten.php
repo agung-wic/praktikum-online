@@ -408,6 +408,8 @@ class Asisten extends CI_Controller
         $this->db->where('modul', $modul);
         $this->db->where('nrp', $nrp);
         $this->db->delete('absensi');
+        $this->db->where('modul', $modul);
+        $this->db->where('nrp', $nrp);
         $this->db->delete('nilai');
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
