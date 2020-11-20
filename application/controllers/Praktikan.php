@@ -381,7 +381,7 @@ class Praktikan extends CI_Controller
                         } else if (($i + 2) % 4 == 0) {
                             $result5[$i] = $result2[$i];
                         } else if (($i + 1) % 4 == 0) {
-                            $result6[$i] = $result2[$i];
+                            $result6[$i] = $result2[$i] * 0.01;
                         }
                     }
                     $result3 = implode(",", $result3);
