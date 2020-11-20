@@ -25,7 +25,6 @@ $(function () {
 		const nrp = $(this).data("nrp");
 		const modul = $(this).data("modul");
 		const kelompok = $(this).data("kelompok");
-		const status = $(this).data("status");
 
 		$.ajax({
 			url: base + "asisten/getabsen",
@@ -36,35 +35,21 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function(data){
-				if(data == null){
+				if(data==null){
 					$("#nrp").val(nrp);
 					$("#modul").val(modul);
 					$("#kelompok").val(kelompok);
 					$("#keterangan").val("");
 					$("#tidak_hadir").prop("checked",true);
-					$("#hadir").prop("checked",false);	
-					console.log();				
+					$("#hadir").prop("checked",false);					
 				}
 				else{
-					if(status == 0)
-					{
-						$("#nrp").val(data.nrp);
-						$("#modul").val(data.modul);
-						$("#kelompok").val(kelompok);
-						$("#tidak_hadir").prop("checked",false);
-						$("#hadir").prop("checked",true);
-						$("#keterangan").val(data.keterangan);
-						console.log();	
-					} else if(status == 1)
-					{
-						$("#nrp").val(data.nrp);
-						$("#modul").val(data.modul);
-						$("#kelompok").val(kelompok);
-						$("#tidak_hadir").prop("checked",true);
-						$("#hadir").prop("checked",false);
-						$("#keterangan").val(data.keterangan);
-						console.log();	
-					}
+					$("#nrp").val(data.nrp);
+					$("#modul").val(data.modul);
+					$("#kelompok").val(kelompok);
+					$("#tidak_hadir").prop("checked",false);
+					$("#hadir").prop("checked",true);
+					$("#keterangan").val(data.keterangan);
 				}
 			}
 		});
