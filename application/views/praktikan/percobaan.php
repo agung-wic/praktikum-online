@@ -275,11 +275,11 @@
 
   <script>
     // The data/time we want to countdown to
-    var $tanggal = $jadwal['jadwal'];
-    $tanggal = explode(" ", $tanggal);
-    var $jadwal = explode("-", $tanggal[0]);
+    var $tanggal = "<?= $jadwal['jadwal'] ?>";
+    $tanggal = $tanggal.split(" ");
+    var $jadwal = $tanggal[0].split("-");
     $jadwal = $jadwal[2] + "-" + $jadwal[1] + "-" + $jadwal[0] + " " + $tanggal[1];
-    var countDownDate = new Date("<?= $jadwal ?>").getTime();
+    var countDownDate = new Date($jadwal).getTime();
     var waktu = "<?= $modul['time']; ?>";
     var batas = waktu.split(":");
     var jam = parseInt(batas[0]) * 60 * 60 * 1000;
