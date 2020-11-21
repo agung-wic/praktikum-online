@@ -290,7 +290,9 @@
 
       var now = new Date().getTime();
       var timeleft = countDownDate + sisa - now;
-      console.log(timeleft);
+      console.log(countDownDate);
+      console.log(sisa);
+      console.log(now);
 
       // Calculating the days, hours, minutes and seconds left
       var hours = Math.floor((timeleft / (1000 * 60 * 60)));
