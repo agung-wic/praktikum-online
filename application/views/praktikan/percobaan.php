@@ -275,9 +275,9 @@
 
   <script>
     // The data/time we want to countdown to
-    $tanggal = $jadwal['jadwal'];
+    var $tanggal = $jadwal['jadwal'];
     $tanggal = explode(" ", $tanggal);
-    $jadwal = explode("-", $tanggal[0]);
+    var $jadwal = explode("-", $tanggal[0]);
     $jadwal = $jadwal[2] + "-" + $jadwal[1] + "-" + $jadwal[0] + " " + $tanggal[1];
     var countDownDate = new Date("<?= $jadwal ?>").getTime();
     var waktu = "<?= $modul['time']; ?>";
