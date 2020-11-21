@@ -289,7 +289,8 @@
     var myfunc = setInterval(function() {
 
       var now = new Date().getTime();
-      var timeleft = countDownDate + jam + menit + detik - now;
+      var timeleft = countDownDate + sisa - now;
+      console.log(timeleft);
 
       // Calculating the days, hours, minutes and seconds left
       var hours = Math.floor((timeleft / (1000 * 60 * 60)));
