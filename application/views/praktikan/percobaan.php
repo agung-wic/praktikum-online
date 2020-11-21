@@ -290,7 +290,7 @@
 
       var now = new Date().getTime();
       var timeleft = countDownDate + sisa - now;
-      console.log(<?= $jadwal['jadwal']; ?>);
+      console.log("<?= $jadwal['jadwal']; ?>");
       console.log(countDownDate);
       console.log(sisa);
       console.log(now);
