@@ -142,7 +142,7 @@
           border-top-left-radius: 25px;
           border-top-right-radius: 0px;
           border-bottom-left-radius: 25px;
-          border-bottom-right-radius: 0px;">">
+          border-bottom-right-radius: 0px;">
         <div class="row justify-content-center">
           <?php if ($tombol_arah[0]['tombol_status'] == 1) { ?>
             <button style="font-size: 300%;margin-bottom:3%;margin-top:10%" type="submit" data-tampil=<?= "#" .  $tombol_arah[0]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[0]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-up kirim1a">
@@ -180,7 +180,7 @@
          border-top-left-radius: 0px;
           border-top-right-radius: 0px;
           border-bottom-left-radius: 0px;
-          border-bottom-right-radius: 0px;">">
+          border-bottom-right-radius: 0px;">
         <div class="container mt-2" style="color: black;">
           <input type="text" name="aksi" value="data" hidden>
           <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
@@ -202,7 +202,7 @@
          border-top-left-radius: 0px;
           border-top-right-radius: 25px;
           border-bottom-left-radius: 0px;
-          border-bottom-right-radius: 25px;">">">
+          border-bottom-right-radius: 25px;">
         <div class="container mt-4" style="color: black;">
           <div class="form-group">
             <?php
