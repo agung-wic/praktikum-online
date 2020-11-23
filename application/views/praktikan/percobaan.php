@@ -80,7 +80,7 @@
                           <tr>
                             <th scope="col">Data ke-</th>
                             <th scope="col">Kecepatan (m/s)</th>
-                            <th scope="col">Waktu (ms)</th>
+                            <th scope="col">Waktu (s)</th>
                           </tr>
                         </thead>
                         <tbody id="dataM8">
