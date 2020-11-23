@@ -120,7 +120,7 @@
 <style>
   #mydiv {
     position: fixed;
-    right: 55%;
+    right: 60%;
     top: 9%;
     /* background-color: #f1f1f1; */
     text-align: center;
