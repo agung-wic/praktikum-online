@@ -79,8 +79,8 @@
                         <thead>
                           <tr>
                             <th scope="col">Data ke-</th>
-                            <th scope="col">Kecepatan</th>
-                            <th scope="col">Waktu</th>
+                            <th scope="col">Kecepatan (m/s)</th>
+                            <th scope="col">Waktu (ms)</th>
                           </tr>
                         </thead>
                         <tbody id="dataM8">
@@ -137,7 +137,7 @@
 
 <div id="mydiv">
   <div class="container p-5">
-    <div class="kotak row" id="mydivheader" style="background-color:white;position:fixed;opacity:75%;width:60%;transform:scale(0.7)">
+    <div class="kotak row" id="mydivheader" style="background-color:white;position:fixed;opacity:75%;width:75%;transform:scale(0.6)">
       <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;   
           border-top-left-radius: 25px;
           border-top-right-radius: 0px;
