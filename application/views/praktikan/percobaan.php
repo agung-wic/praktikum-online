@@ -229,7 +229,8 @@
                     <?= $t['tombol_keterangan'] ?>
                   </button>
                 </div>
-          <?php }
+          <?php } else {
+              }
             }
           endforeach;
           ?>
