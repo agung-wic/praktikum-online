@@ -144,6 +144,10 @@
           border-top-right-radius: 25px;
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 0px;">
+          <div class="container mt-2" style="color: black;">
+            <input type="text" name="aksi" value="data" hidden>
+            <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
+          </div>
           <div class="container mt-4" style="justify-content: center">
             <label for="data1">Status</label>
             <output style="width:180px;margin-left:41%" type="text" id="reset" name="reset" class="form-control form-control-user mb-4"></output>
