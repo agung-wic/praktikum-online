@@ -146,7 +146,7 @@
           border-bottom-right-radius: 0px;">
           <div class="container mt-4" style="color: black;">
             <div class="row justify-content-center mb-1">
-              <button type="submit" style="margin: 1%;width:300px" data-kirim="[reset]" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
+              <button type="submit" style="margin: 1%;width:300px" data-kirim="[reset]" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-danger px-4 kirim1a">
                 Reset Alat
               </button>
             </div>
@@ -154,7 +154,7 @@
         </div>
       <?php } ?>
       <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;   
-          border-top-left-radius: 25px;
+          border-top-left-radius: 0px;
           border-top-right-radius: 0px;
           border-bottom-left-radius: 25px;
           border-bottom-right-radius: 0px;">
@@ -215,7 +215,7 @@
       </div>
       <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
          border-top-left-radius: 0px;
-          border-top-right-radius: 25px;
+          border-top-right-radius: 0px;
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 25px;">
         <div class="container mt-4" style="color: black;">
