@@ -166,11 +166,19 @@
           </div>
         </div>
       <?php } ?>
+      <?php if ($user['role_id'] == 1) { ?>
       <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;   
-          border-top-left-radius: 25px;
+          border-top-left-radius: 0px;
           border-top-right-radius: 0px;
           border-bottom-left-radius: 25px;
           border-bottom-right-radius: 0px;">
+        <?php } else {
+            <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;   
+            border-top-left-radius: 25px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 0px;">
+        } ?>
         <div class="row justify-content-center">
           <?php if ($tombol_arah[0]['tombol_status'] == 1) { ?>
             <button style="font-size: 300%;margin-bottom:3%;margin-top:10%" type="submit" data-tampil=<?= "#" .  $tombol_arah[0]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[0]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-up kirim1a">
@@ -206,7 +214,7 @@
       </div>
       <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
          border-top-left-radius: 0px;
-          border-top-right-radius: 25px;
+          border-top-right-radius: 0px;
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 0px;">
         <div class="container mt-2" style="color: black;">
@@ -236,11 +244,19 @@
           ?>
         </div>
       </div>
+      <?php if ($user['role_id'] == 1) { ?>
       <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
-         border-top-left-radius: 0px;
+          border-top-left-radius: 0px;
           border-top-right-radius: 0px;
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 25px;">
+          <?php } else { ?>
+            <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
+          border-top-left-radius: 0px;
+          border-top-right-radius: 25px;
+          border-bottom-left-radius: 0px;
+          border-bottom-right-radius: 25px;">
+          <?php } ?>
         <div class="container mt-4" style="color: black;">
           <div class="form-group">
             <?php
