@@ -149,12 +149,12 @@
             <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
           </div>
           <div class="container mt-4" style="justify-content: center">
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="data1">Status</label>
               <output style="width:180px;margin-left:41%" type="text" id="reset" name="reset" class="form-control form-control-user mb-4"></output>
-            </div>
+            </div> -->
             <div class="row justify-content-center mb-1">
-              <button type="submit" style="margin: 1%;width:150px" data-tampil="#reset" data-kirim="[a]" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-danger px-4 kirim1a">
+              <button type="submit" style="margin: 1%;width:150px" data-tampil="#data1a" data-kirim="[s]" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-danger px-4 kirim1a">
                 Reset Alat
               </button>
             </div>
