@@ -167,248 +167,248 @@
         </div>
       <?php } ?>
       <?php if ($user['role_id'] == 1) { ?>
-      <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;   
+        <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;   
           border-top-left-radius: 0px;
           border-top-right-radius: 0px;
           border-bottom-left-radius: 25px;
           border-bottom-right-radius: 0px;">
-        <?php } else {
-            <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;   
+        <?php } else { ?>
+          <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;   
             border-top-left-radius: 25px;
             border-top-right-radius: 0px;
             border-bottom-left-radius: 25px;
             border-bottom-right-radius: 0px;">
-        } ?>
-        <div class="row justify-content-center">
-          <?php if ($tombol_arah[0]['tombol_status'] == 1) { ?>
-            <button style="font-size: 300%;margin-bottom:3%;margin-top:10%" type="submit" data-tampil=<?= "#" .  $tombol_arah[0]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[0]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-up kirim1a">
-            </button>
-          <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;margin-bottom:3%;margin-top:10%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-up" disabled>
-            </button>
           <?php } ?>
-        </div>
-        <div class="row justify-content-center">
-          <?php if ($tombol_arah[2]['tombol_status'] == 1) { ?>
-            <button style="font-size: 300%" type="submit" data-tampil=<?= "#" .  $tombol_arah[2]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[2]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-left kirim1a">
+          <div class="row justify-content-center">
+            <?php if ($tombol_arah[0]['tombol_status'] == 1) { ?>
+              <button style="font-size: 300%;margin-bottom:3%;margin-top:10%" type="submit" data-tampil=<?= "#" .  $tombol_arah[0]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[0]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-up kirim1a">
+              </button>
+            <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;margin-bottom:3%;margin-top:10%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-up" disabled>
+              </button>
+            <?php } ?>
+          </div>
+          <div class="row justify-content-center">
+            <?php if ($tombol_arah[2]['tombol_status'] == 1) { ?>
+              <button style="font-size: 300%" type="submit" data-tampil=<?= "#" .  $tombol_arah[2]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[2]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-left kirim1a">
+              </button>
+            <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-left" disabled>
+              </button>
+            <?php } ?>
+            <button style="font-size:200%;margin-right:3%;margin-left:3%;background-color:black;color:white" type="submit" data-id="<?= $modul['modul'] ?>" class="btn fas fa-circle kirim1a" disabled>
             </button>
-          <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-left" disabled>
-            </button>
-          <?php } ?>
-          <button style="font-size:200%;margin-right:3%;margin-left:3%;background-color:black;color:white" type="submit" data-id="<?= $modul['modul'] ?>" class="btn fas fa-circle kirim1a" disabled>
-          </button>
-          <?php if ($tombol_arah[3]['tombol_status'] == 1) { ?>
-            <button style="font-size: 300%" type="submit" data-tampil=<?= "#" .  $tombol_arah[3]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[3]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-right kirim1a">
-            </button>
-          <?php } else { ?><button style="color:#bcaead;background-color:#bcaead;font-size: 300%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-right" disabled>
-            </button>
-          <?php } ?>
-        </div>
-        <div class="row justify-content-center">
-          <?php if ($tombol_arah[1]['tombol_status'] == 1) { ?>
-            <button style="font-size: 300%;margin-top:3%;margin-bottom:20%" type="submit" data-tampil=<?= "#" . $tombol_arah[1]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[1]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-down kirim1a">
-            </button>
-          <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;margin-bottom:3%;margin-top:10%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-up" disabled>
-            </button>
-          <?php } ?>
-        </div>
-      </div>
-      <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
+            <?php if ($tombol_arah[3]['tombol_status'] == 1) { ?>
+              <button style="font-size: 300%" type="submit" data-tampil=<?= "#" .  $tombol_arah[3]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[3]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-right kirim1a">
+              </button>
+            <?php } else { ?><button style="color:#bcaead;background-color:#bcaead;font-size: 300%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-right" disabled>
+              </button>
+            <?php } ?>
+          </div>
+          <div class="row justify-content-center">
+            <?php if ($tombol_arah[1]['tombol_status'] == 1) { ?>
+              <button style="font-size: 300%;margin-top:3%;margin-bottom:20%" type="submit" data-tampil=<?= "#" . $tombol_arah[1]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[1]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-down kirim1a">
+              </button>
+            <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;margin-bottom:3%;margin-top:10%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-up" disabled>
+              </button>
+            <?php } ?>
+          </div>
+          </div>
+          <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
          border-top-left-radius: 0px;
           border-top-right-radius: 0px;
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 0px;">
-        <div class="container mt-2" style="color: black;">
-          <input type="text" name="aksi" value="data" hidden>
-          <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
-        </div>
-        <div class="mt-4">
-          <?php
-          foreach ($tombol_tulisan as $t) :
-            if ($user['role_id'] == 1) { ?>
-              <div class="row justify-content-center mb-1">
-                <button type="submit" style="margin: 1%;width:300px" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil=<?= "#" .  $t['data_tampil_output']; ?> data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
-                  <?= $t['tombol_keterangan'] ?>
-                </button>
-              </div>
+            <div class="container mt-2" style="color: black;">
+              <input type="text" name="aksi" value="data" hidden>
+              <input type="text" id="id" data-id="<?= $modul['modul']; ?>" name="id" value="<?= $modul['modul']; ?>" hidden>
+            </div>
+            <div class="mt-4">
+              <?php
+              foreach ($tombol_tulisan as $t) :
+                if ($user['role_id'] == 1) { ?>
+                  <div class="row justify-content-center mb-1">
+                    <button type="submit" style="margin: 1%;width:300px" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil=<?= "#" .  $t['data_tampil_output']; ?> data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
+                      <?= $t['tombol_keterangan'] ?>
+                    </button>
+                  </div>
+                  <?php } else {
+                  if ($t['tombol_status'] == 1) { ?>
+                    <div class="row justify-content-center mb-1">
+                      <button type="submit" style="margin: 1%;width:300px" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil=<?= "#" .  $t['data_tampil_output']; ?> data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
+                        <?= $t['tombol_keterangan'] ?>
+                      </button>
+                    </div>
               <?php } else {
-              if ($t['tombol_status'] == 1) { ?>
-                <div class="row justify-content-center mb-1">
-                  <button type="submit" style="margin: 1%;width:300px" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil=<?= "#" .  $t['data_tampil_output']; ?> data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
-                    <?= $t['tombol_keterangan'] ?>
-                  </button>
-                </div>
-          <?php } else {
-              }
-            }
-          endforeach;
-          ?>
-        </div>
-      </div>
-      <?php if ($user['role_id'] == 1) { ?>
-      <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
+                  }
+                }
+              endforeach;
+              ?>
+            </div>
+          </div>
+          <?php if ($user['role_id'] == 1) { ?>
+            <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
           border-top-left-radius: 0px;
           border-top-right-radius: 0px;
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 25px;">
-          <?php } else { ?>
-            <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
+            <?php } else { ?>
+              <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
           border-top-left-radius: 0px;
           border-top-right-radius: 25px;
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 25px;">
-          <?php } ?>
-        <div class="container mt-4" style="color: black;">
-          <div class="form-group">
-            <?php
-            foreach ($output_tulisan as $t) :  ?>
-              <label for="data1"><?= $t['tulisan']; ?></label>
-              <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
-            <?php
-            endforeach;
-            ?>
+              <?php } ?>
+              <div class="container mt-4" style="color: black;">
+                <div class="form-group">
+                  <?php
+                  foreach ($output_tulisan as $t) :  ?>
+                    <label for="data1"><?= $t['tulisan']; ?></label>
+                    <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
+                  <?php
+                  endforeach;
+                  ?>
+                </div>
+                <div class="row justify-content-center mb-3">
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="SelesaiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Yakin keluar?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
           </div>
-          <div class="row justify-content-center mb-3">
+          <div class="modal-body">Pilih "Selesai" jika ingin mengakhiri praktikum ini.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="<?= base_url('praktikan/selesai/') . $modul['modul'] ?>">Selesai</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-
-<div class="modal fade" id="SelesaiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Yakin keluar?</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="modal-body">Pilih "Selesai" jika ingin mengakhiri praktikum ini.</div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="<?= base_url('praktikan/selesai/') . $modul['modul'] ?>">Selesai</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="tombolAbsen" tabindex="-1" role="dialog" aria-labelledby="tombolAbsenLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="tombolAbsenLabel"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="<?= base_url('praktikan/absen') ?>" method="post">
-          <div class="form-group">
-            <input type="hidden" id="id" name="id">
-            <input type="hidden" id="id_modul" name="id_modul">
-            <div class="row">
-              <div class="col">
-                <p class="card-text">Nama :<?= ' ' . $user['name']; ?></p>
-                <p class="card-text">NRP :<?= ' ' . $user['nrp']; ?></p>
-                <p class="card-text">Email :<?= ' ' . $user['email']; ?></p>
-                <p class="card-text">Praktikum :<?= ' ' . $modul['name'] ?></p>
-                <p class="card-text">Jadwal :<?= ' ' . $jadwal['jadwal'] ?></p>
+    <div class="modal fade" id="tombolAbsen" tabindex="-1" role="dialog" aria-labelledby="tombolAbsenLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="tombolAbsenLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="<?= base_url('praktikan/absen') ?>" method="post">
+              <div class="form-group">
+                <input type="hidden" id="id" name="id">
+                <input type="hidden" id="id_modul" name="id_modul">
+                <div class="row">
+                  <div class="col">
+                    <p class="card-text">Nama :<?= ' ' . $user['name']; ?></p>
+                    <p class="card-text">NRP :<?= ' ' . $user['nrp']; ?></p>
+                    <p class="card-text">Email :<?= ' ' . $user['email']; ?></p>
+                    <p class="card-text">Praktikum :<?= ' ' . $modul['name'] ?></p>
+                    <p class="card-text">Jadwal :<?= ' ' . $jadwal['jadwal'] ?></p>
+                  </div>
+                </div>
               </div>
-            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Absen</button>
+              </div>
+            </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary">Absen</button>
-          </div>
-        </form>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <script>
-    // The data/time we want to countdown to
-    var $tanggal = "<?= $jadwal['jadwal'] ?>";
-    $tanggal = $tanggal.split(" ");
-    var $jadwal = $tanggal[0].split("-");
-    $jadwal = $jadwal[2] + "-" + $jadwal[1] + "-" + $jadwal[0] + " " + $tanggal[1];
-    var countDownDate = new Date($jadwal).getTime();
-    var waktu = "<?= $modul['time']; ?>";
-    var batas = waktu.split(":");
-    var jam = parseInt(batas[0]) * 60 * 60 * 1000;
-    var menit = parseInt(batas[1]) * 60 * 1000;
-    var detik = parseInt(batas[2]) * 1000;
-    var sisa = jam + menit + detik;
-    // Run myfunc every second
-    var myfunc = setInterval(function() {
+      <script>
+        // The data/time we want to countdown to
+        var $tanggal = "<?= $jadwal['jadwal'] ?>";
+        $tanggal = $tanggal.split(" ");
+        var $jadwal = $tanggal[0].split("-");
+        $jadwal = $jadwal[2] + "-" + $jadwal[1] + "-" + $jadwal[0] + " " + $tanggal[1];
+        var countDownDate = new Date($jadwal).getTime();
+        var waktu = "<?= $modul['time']; ?>";
+        var batas = waktu.split(":");
+        var jam = parseInt(batas[0]) * 60 * 60 * 1000;
+        var menit = parseInt(batas[1]) * 60 * 1000;
+        var detik = parseInt(batas[2]) * 1000;
+        var sisa = jam + menit + detik;
+        // Run myfunc every second
+        var myfunc = setInterval(function() {
 
-      var now = new Date().getTime();
-      var timeleft = countDownDate + sisa - now;
+          var now = new Date().getTime();
+          var timeleft = countDownDate + sisa - now;
 
-      // Calculating the days, hours, minutes and seconds left
-      var hours = Math.floor((timeleft / (1000 * 60 * 60)));
-      var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+          // Calculating the days, hours, minutes and seconds left
+          var hours = Math.floor((timeleft / (1000 * 60 * 60)));
+          var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-      // Result is output to the specific element
-      document.getElementById("hours").innerHTML = hours + " :"
-      document.getElementById("mins").innerHTML = minutes + " :"
-      document.getElementById("secs").innerHTML = seconds
+          // Result is output to the specific element
+          document.getElementById("hours").innerHTML = hours + " :"
+          document.getElementById("mins").innerHTML = minutes + " :"
+          document.getElementById("secs").innerHTML = seconds
 
-      if (timeleft < 0) {
-        clearInterval(myfunc);
-        document.getElementById("hours").innerHTML = ""
-        document.getElementById("mins").innerHTML = ""
-        document.getElementById("secs").innerHTML = ""
-        window.location.href = "<?= base_url('praktikan/selesai/') . $modul['modul'] ?>";
-      }
-    }, 1000);
+          if (timeleft < 0) {
+            clearInterval(myfunc);
+            document.getElementById("hours").innerHTML = ""
+            document.getElementById("mins").innerHTML = ""
+            document.getElementById("secs").innerHTML = ""
+            window.location.href = "<?= base_url('praktikan/selesai/') . $modul['modul'] ?>";
+          }
+        }, 1000);
 
-    //Make the DIV element draggagle:
-    dragElement(document.getElementById("mydiv"));
+        //Make the DIV element draggagle:
+        dragElement(document.getElementById("mydiv"));
 
-    function dragElement(elmnt) {
-      var pos1 = 0,
-        pos2 = 0,
-        pos3 = 0,
-        pos4 = 0;
-      if (document.getElementById(elmnt.id + "header")) {
-        /* if present, the header is where you move the DIV from:*/
-        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-      } else {
-        /* otherwise, move the DIV from anywhere inside the DIV:*/
-        elmnt.onmousedown = dragMouseDown;
-      }
+        function dragElement(elmnt) {
+          var pos1 = 0,
+            pos2 = 0,
+            pos3 = 0,
+            pos4 = 0;
+          if (document.getElementById(elmnt.id + "header")) {
+            /* if present, the header is where you move the DIV from:*/
+            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+          } else {
+            /* otherwise, move the DIV from anywhere inside the DIV:*/
+            elmnt.onmousedown = dragMouseDown;
+          }
 
-      function dragMouseDown(e) {
-        e = e || window.event;
-        e.preventDefault();
-        // get the mouse cursor position at startup:
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
-        // call a function whenever the cursor moves:
-        document.onmousemove = elementDrag;
-      }
+          function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+          }
 
-      function elementDrag(e) {
-        e = e || window.event;
-        e.preventDefault();
-        // calculate the new cursor position:
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        // set the element's new position:
-        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-      }
+          function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+          }
 
-      function closeDragElement() {
-        /* stop moving when mouse button is released:*/
-        document.onmouseup = null;
-        document.onmousemove = null;
-      }
-    }
-  </script>
+          function closeDragElement() {
+            /* stop moving when mouse button is released:*/
+            document.onmouseup = null;
+            document.onmousemove = null;
+          }
+        }
+      </script>
