@@ -167,7 +167,7 @@
         </div>
       <?php } ?>
       <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;   
-          border-top-left-radius: 0px;
+          border-top-left-radius: 25px;
           border-top-right-radius: 0px;
           border-bottom-left-radius: 25px;
           border-bottom-right-radius: 0px;">
@@ -206,7 +206,7 @@
       </div>
       <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
          border-top-left-radius: 0px;
-          border-top-right-radius: 0px;
+          border-top-right-radius: 25px;
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 0px;">
         <div class="container mt-2" style="color: black;">
