@@ -369,7 +369,7 @@ class Praktikan extends CI_Controller
                 $result2 = str_replace("]", "", $result2);
                 $result2 = explode(",", $result2);
                 if ($result2 == "a") {
-                    $result2 = "Alat telah direset";
+                    $result2 = $result2[1] . " " . $satuan;
                 } else if (count($result2) > 1 && count($result2) <= 2) { //[t,1] [0] => Array ( [0] => t [1] => 1 )
                     $result2 = $result2[1] . " " . $satuan;
                 } else if (count($result2) > 2 && count($result2) <= 4) { //[t,1][l,2] => Array ( [0] => t [1] => 1 [2] => l [3] => 2 ) 

@@ -159,7 +159,7 @@
               <output type="text" id="data1a" name="data1a" class="form-control form-control-user mb-4"></output>
             </div>
             <div class="row justify-content-center mb-1">
-              <button type="submit" style="margin: 1%;width:150px" data-tampil="#data1a" data-kirim="[a]" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-danger px-4 kirim1a">
+              <button type="submit" style="margin: 1%;width:150px" data-tampil="#data1a" data-kirim="[s]" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-danger px-4 kirim1a">
                 Reset Alat
               </button>
             </div>
