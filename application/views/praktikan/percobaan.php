@@ -154,13 +154,9 @@
               <output style="width:180px;margin-left:41%" type="text" id="reset" name="reset" class="form-control form-control-user mb-4"></output>
             </div> -->
             <div class="form-group">
-              <?php
-              foreach ($output_tulisan as $t) :  ?>
-                <label for="data1"><?= $t['tulisan']; ?></label>
-                <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
-              <?php
-              endforeach;
-              ?>
+
+              <label for="data1"><?= $t['tulisan']; ?></label>
+              <output type="text" id="#data1a" name="#data1a" class="form-control form-control-user mb-4"></output>
             </div>
             <div class="row justify-content-center mb-1">
               <button type="submit" style="margin: 1%;width:150px" data-tampil="#data1a" data-kirim="[s]" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-danger px-4 kirim1a">
