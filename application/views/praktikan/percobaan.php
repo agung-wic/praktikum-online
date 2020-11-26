@@ -146,7 +146,7 @@
           border-bottom-right-radius: 0px;">
           <div class="container mt-4" style="justify-content: center">
             <label for="data1">Status</label>
-            <output style="width:150px;display: block;" type="text" id="reset" name="reset" class="form-control form-control-user mb-4"></output>
+            <output style="width:180px;margin-left:41%" type="text" id="reset" name="reset" class="form-control form-control-user mb-4"></output>
             <div class="row justify-content-center mb-1">
               <button type="submit" style="margin: 1%;width:150px" data-tampil="#reset" data-kirim="[reset]" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-danger px-4 kirim1a">
                 Reset Alat
