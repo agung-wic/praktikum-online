@@ -155,7 +155,7 @@
             </div> -->
             <div class="form-group">
 
-              <label for="data1"><?= $t['tulisan']; ?></label>
+              <label for="data1">Status ?></label>
               <output type="text" id="#data1a" name="#data1a" class="form-control form-control-user mb-4"></output>
             </div>
             <div class="row justify-content-center mb-1">
