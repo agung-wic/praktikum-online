@@ -138,6 +138,21 @@
 <div id="mydiv">
   <div class="container p-5">
     <div class="kotak row" id="mydivheader" style="background-color:white;position:fixed;opacity:75%;width:75%;transform:scale(0.6)">
+      <?php if ($user['role_id'] == 1) { ?>
+        <div class="kotak col-lg-12 mb-0" style="background-color: #bcaead;
+         border-top-left-radius: 25px;
+          border-top-right-radius: 25px;
+          border-bottom-left-radius: 25px;
+          border-bottom-right-radius: 25px;">
+          <div class="container mt-4" style="color: black;">
+            <div class="row justify-content-center mb-1">
+              <button type="submit" style="margin: 1%;width:300px" data-kirim="[reset]" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
+                Reset Alat
+              </button>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
       <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;   
           border-top-left-radius: 25px;
           border-top-right-radius: 0px;
@@ -217,21 +232,6 @@
           </div>
         </div>
       </div>
-      <?php if ($user['role_id'] == 1) { ?>
-        <div class="kotak col-lg-4 mb-0" style="background-color: #bcaead;
-         border-top-left-radius: 0px;
-          border-top-right-radius: 25px;
-          border-bottom-left-radius: 0px;
-          border-bottom-right-radius: 25px;">
-          <div class="container mt-4" style="color: black;">
-            <div class="row justify-content-center mb-1">
-              <button type="submit" style="margin: 1%;width:300px" data-kirim="[reset]" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-alert px-4 kirim1a">
-                Reset Alat
-              </button>
-            </div>
-          </div>
-        </div>
-      <?php } ?>
     </div>
   </div>
 </div>
