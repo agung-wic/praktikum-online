@@ -216,7 +216,7 @@
         <div class="mt-4">
           <?php
           foreach ($tombol_tulisan as $t) :
-            if ($user['role_id'] == 8) { ?>
+            if ($user['role_id'] == 1) { ?>
               <div class="row justify-content-center mb-1">
                 <button type="submit" style="margin: 1%;width:300px" data-kirim="<?= $t['tombol_kirim']; ?>" data-tampil=<?= "#" .  $t['data_tampil_output']; ?> data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark px-4 kirim1a">
                   <?= $t['tombol_keterangan'] ?>
