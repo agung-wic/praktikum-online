@@ -177,7 +177,7 @@
           </div>
           <div class="row justify-content-center" style="transform:scale(1.4)">
             <?php if ($tombol_arah[1]['tombol_status'] == 1) { ?>
-              <button style="font-size: 300%;margin-top:7%;margin-bottom:20%" type="submit" data-tampil=<?= "#" . $tombol_arah[1]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[1]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-down kirim1a">
+              <button style="font-size: 300%;margin-top:11%;margin-bottom:20%" type="submit" data-tampil=<?= "#" . $tombol_arah[1]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[1]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-down kirim1a">
               </button>
             <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;margin-bottom:10%;margin-top:10%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-up" disabled>
               </button>
@@ -225,7 +225,7 @@
                   <?php
                   foreach ($output_tulisan as $t) :  ?>
                     <b><label style="transform:scale(1.5)" for="data1"><?= $t['tulisan']; ?></label></b>
-                    <output type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
+                    <output style="font-size:150%" type="text" id="<?= $t['data_tampil_output']; ?>" name="<?= $t['data_tampil_output']; ?>" class="form-control form-control-user mb-4"></output>
                   <?php
                   endforeach;
                   ?>
