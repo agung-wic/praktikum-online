@@ -153,7 +153,7 @@
           <?php } ?>
           <div class="row justify-content-center" style="transform:scale(1.4)">
             <?php if ($tombol_arah[0]['tombol_status'] == 1) { ?>
-              <button style="font-size: 300%;margin-bottom:3%;margin-top:10%" type="submit" data-tampil=<?= "#" .  $tombol_arah[0]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[0]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-up kirim1a">
+              <button style="font-size: 300%;margin-bottom:10%;margin-top:10%" type="submit" data-tampil=<?= "#" .  $tombol_arah[0]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[0]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-up kirim1a">
               </button>
             <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;margin-bottom:10%;margin-top:10%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-up" disabled>
               </button>
