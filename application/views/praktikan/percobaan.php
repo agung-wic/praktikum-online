@@ -151,35 +151,35 @@
             border-bottom-left-radius: 25px;
             border-bottom-right-radius: 0px;">
           <?php } ?>
-          <div class="row justify-content-center" style="transform:scale(1.4)">
+          <div class="row justify-content-center">
             <?php if ($tombol_arah[0]['tombol_status'] == 1) { ?>
-              <button style="font-size: 300%;margin-bottom:10%;margin-top:10%" type="submit" data-tampil=<?= "#" .  $tombol_arah[0]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[0]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-up kirim1a">
+              <button style="font-size: 300%;margin-bottom:10%;margin-top:10%;transform:scale(1.4)" type="submit" data-tampil=<?= "#" .  $tombol_arah[0]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[0]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-up kirim1a">
               </button>
-            <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;margin-bottom:10%;margin-top:10%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-up" disabled>
+            <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;margin-bottom:10%;margin-top:10%;transform:scale(1.4)" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-up" disabled>
               </button>
             <?php } ?>
           </div>
-          <div class="row justify-content-center" style="transform:scale(1.4)">
+          <div class="row justify-content-center">
             <?php if ($tombol_arah[2]['tombol_status'] == 1) { ?>
-              <button style="font-size: 300%" type="submit" data-tampil=<?= "#" .  $tombol_arah[2]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[2]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-left kirim1a">
+              <button style="font-size: 300%;transform:scale(1.4)" type="submit" data-tampil=<?= "#" .  $tombol_arah[2]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[2]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-left kirim1a">
               </button>
-            <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-left" disabled>
+            <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;transform:scale(1.4)" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-left" disabled>
               </button>
             <?php } ?>
-            <button style="font-size:200%;margin-right:3%;margin-left:3%;background-color:black;color:white" type="submit" data-id="<?= $modul['modul'] ?>" class="btn fas fa-circle kirim1a" disabled>
+            <button style="font-size:200%;margin-right:10%;margin-left:10%;background-color:black;color:white;transform:scale(1.4)" type="submit" data-id="<?= $modul['modul'] ?>" class="btn fas fa-circle kirim1a" disabled>
             </button>
             <?php if ($tombol_arah[3]['tombol_status'] == 1) { ?>
-              <button style="font-size: 300%" type="submit" data-tampil=<?= "#" .  $tombol_arah[3]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[3]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-right kirim1a">
+              <button style="font-size: 300%;transform:scale(1.4)" type="submit" data-tampil=<?= "#" .  $tombol_arah[3]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[3]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-right kirim1a">
               </button>
-            <?php } else { ?><button style="color:#bcaead;background-color:#bcaead;font-size: 300%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-right" disabled>
+            <?php } else { ?><button style="color:#bcaead;background-color:#bcaead;font-size: 300%;transform:scale(1.4)" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-right" disabled>
               </button>
             <?php } ?>
           </div>
-          <div class="row justify-content-center" style="transform:scale(1.4)">
+          <div class="row justify-content-center">
             <?php if ($tombol_arah[1]['tombol_status'] == 1) { ?>
-              <button style="font-size: 300%;margin-top:11%;margin-bottom:20%" type="submit" data-tampil=<?= "#" . $tombol_arah[1]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[1]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-down kirim1a">
+              <button style="font-size: 300%;margin-top:11%;margin-bottom:20%;transform:scale(1.4)" type="submit" data-tampil=<?= "#" . $tombol_arah[1]['data_tampil_output']; ?> data-kirim="<?= $tombol_arah[1]['tombol_kirim'] ?>" data-id="<?= $modul['modul'] ?>" class="param1 btn btn-dark fa fa-arrow-circle-down kirim1a">
               </button>
-            <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;margin-bottom:10%;margin-top:10%" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-up" disabled>
+            <?php } else { ?> <button style="color:#bcaead;background-color:#bcaead;font-size: 300%;margin-bottom:10%;margin-top:10%;transform:scale(1.4)" data-id="<?= $modul['modul'] ?>" class="btn fa fa-arrow-circle-up" disabled>
               </button>
             <?php } ?>
           </div>
