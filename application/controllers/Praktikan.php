@@ -370,7 +370,7 @@ class Praktikan extends CI_Controller
                 $result2 = explode(",", $result2);
                 if (count($result2) > 1 && count($result2) <= 2) { //[t,1] [0] => Array ( [0] => t [1] => 1 )
                     if ($result2[0] == "t") {
-                        $result_waktu = $result2[1] * 0.42;
+                        $result_waktu = $result2[1] * 0.35;
                         $result2 = $result_waktu . " " . $satuan;
                     } else {
                         $result2 = $result2[1] . " " . $satuan;
