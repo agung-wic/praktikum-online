@@ -460,7 +460,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data.id_kelompok);
+				console.log(data);
 				$("#id").val(data.id);
 				$("#modul_id").val(data.modul_id);
 				$("#name").val(data.name);
