@@ -133,10 +133,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post">
+            <form action="<?= base_url('asisten/editnilai/') ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <input class="form-control" type="text" name="id" id="id" hidden>
+                        <input class="form-control" type="text" name="id_kelompok" id="id_kelompok" hidden>
                         <input class="form-control" type="text" name="modul_id" id="modul_id" hidden>
                     </div>
                     <div class="form-group hapus">

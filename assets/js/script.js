@@ -412,10 +412,6 @@ $(function () {
 
 	$(".tampilModalNilai").on("click", function () {
 		const id = $(this).data("id");
-		const role = $(this).data("role");
-		const id_kelompok = $(this).data("id_kelompok");
-		$(".modal-body form").attr("action", base + "asisten/editnilai/" + id + "/" + id_kelompok);
-
 		$(".form-control").attr("readonly", false);
 		$(".hapus").show();
 		$.ajax({
@@ -426,8 +422,9 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(base + "asisten/editnilai/" + id + "/" + id_kelompok);
+				console.log(data);
 				$("#id").val(data.id);
+				$("#id_kelompok").val(data.id_kelompok);
 				$("#modul_id").val(data.modul_id);
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
@@ -449,12 +446,10 @@ $(function () {
 	$(".tampilDetailNilai").on("click", function () {
 		const id = $(this).data("id");
 		const role = $(this).data("role");
-		const id_kelompok = $(this).data("id_kelompok");
 
 		$("#NilaiEditLabel").html("Detail Nilai");
 		$(".form-control").attr("readonly", true);
 		$(".hapus").hide();
-	
 		$.ajax({
 			url: base + role + "/getubahnilai",
 			data: {

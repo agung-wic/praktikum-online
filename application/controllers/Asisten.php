@@ -266,7 +266,7 @@ class Asisten extends CI_Controller
     echo json_encode($this->Asisten_model->TampilNilaiPraktikan($this->input->post('id')));
   }
 
-  public function editnilai($id, $id_kelompok)
+  public function editnilai()
   {
     $data = [
       'resume' => $this->input->post('resume', true),
@@ -279,9 +279,7 @@ class Asisten extends CI_Controller
       'kesimpulan' => $this->input->post('kesimpulan', true),
       'asisten' => $this->session->userdata('nrp')
     ];
-    var_dump($data);
-    die;
-    $id = $id;
+    $id_kelompok = $this->input->post('id_kelomppok', true);
     $modul_id = $this->input->post('modul_id', true);
     // $nilai_akhir = (($data['resume'] * 0.25) + ($data['pretest'] * 0.05) + ($data['uji_lisan'] * 0.1) + ($data['praktikum'] * 0.1) + ($data['postest'] * 0.05) + ($data['format'] * 0.1) + ($data['bab'] * 0.25) + ($data['kesimpulan'] * 0.1));
     $nilai_akhir = (($data['resume']) + ($data['pretest']) + ($data['uji_lisan']) + ($data['praktikum']) + ($data['postest']) + ($data['format']) + ($data['bab']) + ($data['kesimpulan']));
