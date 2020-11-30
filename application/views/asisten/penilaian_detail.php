@@ -59,8 +59,6 @@
                             </tfoot>
                             <tbody>
                                 <?php $i = 1;
-                                var_dump($list);
-                                die;
                                 foreach ($list as $l) :
                                 ?>
                                     <tr>
