@@ -60,7 +60,7 @@
                                                 </a>
                                             <?php } ?>
                                         </td>
-                                        <td><?= ($l['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $l['laporan_time']) : ""; ?></td>
+                                        <td><?= ($k['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $l['laporan_time']) : ""; ?></td>
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
