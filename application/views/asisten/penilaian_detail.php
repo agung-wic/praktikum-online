@@ -67,12 +67,7 @@
                                         <td><?= $l['nrp']; ?></td>
                                         <td><?= $l['asisten']; ?></td>
                                         <td>
-                                            <?php if ($l['laporan'] != NULL) { ?>
-                                                <a href="<?= $l['laporan']; ?>" target="_blank" class="badge badge-pill badge-warning">
-                                                    <i class=" fas fa-fw fa-download"></i>
-                                                    Unduh
-                                                </a>
-                                            <?php } ?>
+
                                         </td>
                                         <td><?= ($l['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $l['laporan_time']) : ""; ?></td>
                                         <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="<?= $cekrole ?>" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
