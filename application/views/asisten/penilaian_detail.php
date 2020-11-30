@@ -188,7 +188,7 @@
                                         <span>Bab (0-25)</span>
                                     </div>
                                     <div class="col-4">
-                                        <input type="number" min="0" max="25" class="form-control mb-1" id="bab" name="bab" placeholder="Bab 4, 4, 4">
+                                        <input type="number" min="0" max="25" class="form-control mb-1" id="bab" name="bab" placeholder="Bab">
                                     </div>
                                 </div>
                                 <div class="row">
