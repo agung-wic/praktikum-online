@@ -461,6 +461,7 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				console.log(data);
+				console.log(base + "asisten/editnilai/" + id + "/" + id_kelompok)
 				$("#id").val(data.id);
 				$("#modul_id").val(data.modul_id);
 				$("#name").val(data.name);
