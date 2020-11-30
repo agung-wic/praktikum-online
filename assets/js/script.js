@@ -450,7 +450,7 @@ $(function () {
 		$("#NilaiEditLabel").html("Detail Nilai");
 		$(".form-control").attr("readonly", true);
 		$(".hapus").hide();
-		$(".modal-body form").attr("action", base + "asisten/editnilai/" + id + "/" + id_kelompok);
+		$(".modal-body").attr("action", base + "asisten/editnilai/" + id + "/" + id_kelompok);
 	
 		$.ajax({
 			url: base + role + "/getubahnilai",
