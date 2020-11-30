@@ -60,7 +60,7 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <?php foreach ($cek as $l) : ?>
+                                <?php foreach ($list as $l) : ?>
 
                                 <?php endforeach; ?>
                             </tbody>
