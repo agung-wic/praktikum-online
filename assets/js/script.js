@@ -445,10 +445,13 @@ $(function () {
 	$(".tampilDetailNilai").on("click", function () {
 		const id = $(this).data("id");
 		const role = $(this).data("role");
+		const id_kelompok = $(this).data("id_kelompok");
 
 		$("#NilaiEditLabel").html("Detail Nilai");
 		$(".form-control").attr("readonly", true);
 		$(".hapus").hide();
+		$(".modal-body form").attr("action", base + "asisten/editnilai/" + id + "/" + id_kelompok);
+	
 		$.ajax({
 			url: base + role + "/getubahnilai",
 			data: {
@@ -457,7 +460,7 @@ $(function () {
 			method: "post",
 			dataType: "json",
 			success: function (data) {
-				console.log(data);
+				console.log(data.id_kelompok);
 				$("#id").val(data.id);
 				$("#modul_id").val(data.modul_id);
 				$("#name").val(data.name);

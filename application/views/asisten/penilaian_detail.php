@@ -80,7 +80,7 @@
                                                 <?php } ?>
                                             </td>
                                             <td><?= ($k['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $k['laporan_time']) : ""; ?></td>
-                                            <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="<?= $cekrole ?>" data-id="<?= $k['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                                            <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="<?= $cekrole ?>" data-id_kelompok="<?= $id_kelompok ?>" data-id="<?= $k['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                                                     <i class=" fas fa-fw fa-info"></i>
                                                     Detail
                                                 </a>
