@@ -62,7 +62,7 @@
                                 foreach ($list as $l) :
                                 ?>
                                     <tr>
-                                        <th scope="row"><?= $i; ?></th>
+                                        <!-- <th scope="row"><?= $i; ?></th>
                                         <td><?= $l['name_praktikan']; ?></td>
                                         <td><?= $l['nrp']; ?></td>
                                         <td><?= $l['asisten']; ?></td>
@@ -73,7 +73,7 @@
                                                     Unduh
                                                 </a>
                                             <?php } ?>
-                                        </td>
+                                        </td> -->
                                         <!-- <td><?= ($l['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $l['laporan_time']) : ""; ?></td>
                                         <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="<?= $cekrole ?>" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                                                 <i class=" fas fa-fw fa-info"></i>
