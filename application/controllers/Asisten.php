@@ -63,8 +63,7 @@ class Asisten extends CI_Controller
       ]
     ];
 
-    var_dump($data['cek']);
-    die;
+
     // $i = 0;
     // while ($i < count($data['list'])) {
     //   $asisten = $data['list'][$i]['asisten'];
