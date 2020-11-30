@@ -61,7 +61,7 @@
                             </tfoot>
                             <tbody>
                                 <?php
-                                foreach ($list as $l) :
+                                foreach ($id_modul as $l) :
                                 ?>
                                     <tr>
 
