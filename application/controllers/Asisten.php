@@ -64,14 +64,14 @@ class Asisten extends CI_Controller
     ];
 
     $i = 0;
-    while ($i < count($data['list'])) {
-      $asisten = $data['list'][$i]['asisten'];
-      if ($asisten != "") {
-        $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
-        $data['list'][$i]['asisten'] = $nama['name'];
-      }
-      $i++;
-    }
+    // while ($i < count($data['list'])) {
+    //   $asisten = $data['list'][$i]['asisten'];
+    //   if ($asisten != "") {
+    //     $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
+    //     $data['list'][$i]['asisten'] = $nama['name'];
+    //   }
+    //   $i++;
+    // }
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
