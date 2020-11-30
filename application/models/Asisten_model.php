@@ -24,7 +24,7 @@ class Asisten_model extends CI_Model
               INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` 
               WHERE `nilai` . `modul` = '$id' AND `anggota_kelompok`.`no_kelompok` = '$id_kelompok'";
     }
-    return $this->db->query($query)->num_rows();
+    return $this->db->query($query)->result_array();
   }
 
   public function JumlahTampilNilai($id, $id_kelompok)
