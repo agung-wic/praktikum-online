@@ -60,7 +60,21 @@
                                                 </a>
                                             <?php } ?>
                                         </td>
-                                        <td><?= ($k['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $l['laporan_time']) : ""; ?></td>
+                                        <td><?= ($k['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $k['laporan_time']) : ""; ?></td>
+                                        <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="<?= $cekrole ?>" data-id="<?= $k['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                                                <i class=" fas fa-fw fa-info"></i>
+                                                Detail
+                                            </a>
+                                        </td>
+                                        <td><a href="<?= base_url('asisten/editnilai/') . $k['id'] . "/" . $id_kelompok ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $k['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                                                <i class=" fas fa-fw fa-edit"></i>
+                                                Edit
+                                            </a>
+                                            <a href="<?= base_url('asisten/accnilai/') . $k['id'] . "/" . $id_kelompok  ?>" class="badge badge-pill badge-success">
+                                                <i class="far fa-check-square"></i>
+                                                Acc
+                                            </a>
+                                        </td>
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
