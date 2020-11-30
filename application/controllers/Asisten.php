@@ -50,7 +50,7 @@ class Asisten extends CI_Controller
     $data['cekrole'] = $this->uri->segment(1);
     $data['id_modul'] = $id_modul;
     $data['id_kelompok'] = $id_kelompok;
-    $data['list'] = $this->Asisten_model->KelompokAsistenNilai($this->session->userdata('nrp'), $data['id_modul']);
+    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok'], $data['keyword']);
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
     $data['nama_kelompok'] = $this->db->get_where('kelompok', ['id' => $data['id_kelompok']])->row_array();
     $data['nama_modul'] = $this->db->get_where('modul', ['modul' =>  $data['id_modul']])->row_array();
@@ -63,15 +63,15 @@ class Asisten extends CI_Controller
       ]
     ];
 
-    $i = 0;
-    while ($i < count($data['list'])) {
-      $asisten = $data['list'][$i]['asisten'];
-      if ($asisten != "") {
-        $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
-        $data['list'][$i]['asisten'] = $nama['name'];
-      }
-      $i++;
-    }
+    // $i = 0;
+    // while ($i < count($data['list'])) {
+    //   $asisten = $data['list'][$i]['asisten'];
+    //   if ($asisten != "") {
+    //     $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
+    //     $data['list'][$i]['asisten'] = $nama['name'];
+    //   }
+    //   $i++;
+    // }
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
