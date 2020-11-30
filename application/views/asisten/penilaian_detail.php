@@ -65,8 +65,6 @@
                                     <tr>
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $l['name_praktikan']; ?></td>
-                                        <td><?= $l['nrp']; ?></td>
-                                        <td><?= $l['asisten']; ?></td>
 
                                     </tr>
                                     <?php $i++; ?>
