@@ -16,6 +16,21 @@
                 <div class="card-body">
                     <?= $this->session->flashdata('message'); ?>
                     <div class="table-responsive">
+                        <div class="row mx-1">
+                            <div class="col-auto">
+                                <?= $this->session->flashdata('message'); ?>
+                            </div>
+                            <div class="col-md-5 ml-auto">
+                                <form action="<?= base_url('asisten/penilaian_detail/' . $id_modul . "/" . $id_kelompok) ?>" method="post">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" name="keyword" placeholder="Cari...">
+                                        <div class="input-group-append">
+                                            <button class="btn gradien" type="submit"><i class="fas fa-fw fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
