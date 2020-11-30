@@ -75,6 +75,16 @@
                                                 Acc
                                             </a>
                                         </td>
+                                        <?php if ($k['is_acc'] == "1") { ?>
+                                            <td>
+                                                <p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p>
+                                            </td>
+                                        <?php } else {  ?>
+                                            <td>
+                                                <p class="badge badge-pill badge-success" style="opacity:0%;"><i class="fas fa-check"></i></p>
+                                            </td>
+                                        <?php }
+                                        ?>
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
