@@ -73,6 +73,8 @@ class Asisten extends CI_Controller
     //   }
     //   $i++;
     // }
+    var_dump($data['list']);
+    die;
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
