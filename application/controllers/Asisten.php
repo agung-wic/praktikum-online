@@ -63,6 +63,7 @@ class Asisten extends CI_Controller
       ]
     ];
 
+    var_dump($data['list']);
 
     $i = 0;
     while ($i < count($data['list'])) {
@@ -71,9 +72,9 @@ class Asisten extends CI_Controller
         $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
         $data['list'][$i]['asisten'] = $nama['name'];
       }
-      var_dump($asisten);
       $i++;
     }
+    var_dump($data['list']);
     die;
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
