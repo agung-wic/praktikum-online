@@ -133,7 +133,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post">
+            <form action="<?= base_url('asisten/editnilai/') . $wow['id'] . "/" . $id_kelompok ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <input class="form-control" type="text" name="id" id="id" hidden>
