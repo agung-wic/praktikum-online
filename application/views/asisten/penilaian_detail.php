@@ -61,7 +61,7 @@
                             </tfoot>
                             <tbody>
                                 <?php $i = 1; ?>
-                                <?php foreach ($list as $k) : ?>
+                                <?php foreach ($kelompok as $k) : ?>
                                     <tr>
 
                                         <th scope="row"><?= $i; ?></th>
