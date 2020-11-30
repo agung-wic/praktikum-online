@@ -14,7 +14,6 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <?= $this->session->flashdata('message'); ?>
                     <div class="table-responsive">
                         <div class="row mx-1">
                             <div class="col-auto">
@@ -31,80 +30,88 @@
                                 </form>
                             </div>
                         </div>
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">NRP</th>
-                                    <th scope="col">Asisten</th>
-                                    <th scope="col">Laporan</th>
-                                    <th scope="col">Waktu</th>
-                                    <th scope="col">Nilai</th>
-                                    <th scope="col">Action</th>
-                                    <th scope="col">Acc</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">NRP</th>
-                                    <th scope="col">Asisten</th>
-                                    <th scope="col">Laporan</th>
-                                    <th scope="col">Waktu</th>
-                                    <th scope="col">Nilai</th>
-                                    <th scope="col">Action</th>
-                                    <th scope="col">Acc</th>
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                                <?php $i = 1; ?>
-                                <?php foreach ($list as $k) : ?>
+                        <?php if (empty($list)) { ?>
+                            <div class="alert alert-danger" role="alert">
+                                Data not found!
+                            </div>
+                        <?php } else { ?>
+                            <table class="table table-hover">
+                                <thead>
                                     <tr>
-
-                                        <th scope="row"><?= $i; ?></th>
-                                        <td><?= $k['name_praktikan'] ?></td>
-                                        <td><?= $k['nrp']; ?></td>
-                                        <td><?= $k['asisten']; ?></td>
-                                        <td>
-                                            <?php if ($k['laporan'] != NULL) { ?>
-                                                <a href="<?= $k['laporan']; ?>" target="_blank" class="badge badge-pill badge-warning">
-                                                    <i class=" fas fa-fw fa-download"></i>
-                                                    Unduh
-                                                </a>
-                                            <?php } ?>
-                                        </td>
-                                        <td><?= ($k['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $k['laporan_time']) : ""; ?></td>
-                                        <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="<?= $cekrole ?>" data-id="<?= $k['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
-                                                <i class=" fas fa-fw fa-info"></i>
-                                                Detail
-                                            </a>
-                                        </td>
-                                        <td><a href="<?= base_url('asisten/editnilai/') . $k['id'] . "/" . $id_kelompok ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $k['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
-                                                <i class=" fas fa-fw fa-edit"></i>
-                                                Edit
-                                            </a>
-                                            <a href="<?= base_url('asisten/accnilai/') . $k['id'] . "/" . $id_kelompok  ?>" class="badge badge-pill badge-success">
-                                                <i class="far fa-check-square"></i>
-                                                Acc
-                                            </a>
-                                        </td>
-                                        <?php if ($k['is_acc'] == "1") { ?>
-                                            <td>
-                                                <p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p>
-                                            </td>
-                                        <?php } else {  ?>
-                                            <td>
-                                                <p class="badge badge-pill badge-success" style="opacity:0%;"><i class="fas fa-check"></i></p>
-                                            </td>
-                                        <?php }
-                                        ?>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nama</th>
+                                        <th scope="col">NRP</th>
+                                        <th scope="col">Asisten</th>
+                                        <th scope="col">Laporan</th>
+                                        <th scope="col">Waktu</th>
+                                        <th scope="col">Nilai</th>
+                                        <th scope="col">Action</th>
+                                        <th scope="col">Acc</th>
                                     </tr>
-                                    <?php $i++; ?>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nama</th>
+                                        <th scope="col">NRP</th>
+                                        <th scope="col">Asisten</th>
+                                        <th scope="col">Laporan</th>
+                                        <th scope="col">Waktu</th>
+                                        <th scope="col">Nilai</th>
+                                        <th scope="col">Action</th>
+                                        <th scope="col">Acc</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($list as $k) : ?>
+                                        <tr>
+
+                                            <th scope="row"><?= $i; ?></th>
+                                            <td><?= $k['name_praktikan'] ?></td>
+                                            <td><?= $k['nrp']; ?></td>
+                                            <td><?= $k['asisten']; ?></td>
+                                            <td>
+                                                <?php if ($k['laporan'] != NULL) { ?>
+                                                    <a href="<?= $k['laporan']; ?>" target="_blank" class="badge badge-pill badge-warning">
+                                                        <i class=" fas fa-fw fa-download"></i>
+                                                        Unduh
+                                                    </a>
+                                                <?php } ?>
+                                            </td>
+                                            <td><?= ($k['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $k['laporan_time']) : ""; ?></td>
+                                            <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="<?= $cekrole ?>" data-id="<?= $k['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                                                    <i class=" fas fa-fw fa-info"></i>
+                                                    Detail
+                                                </a>
+                                            </td>
+                                            <td><a href="<?= base_url('asisten/editnilai/') . $k['id'] . "/" . $id_kelompok ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $k['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
+                                                    <i class=" fas fa-fw fa-edit"></i>
+                                                    Edit
+                                                </a>
+                                                <a href="<?= base_url('asisten/accnilai/') . $k['id'] . "/" . $id_kelompok  ?>" class="badge badge-pill badge-success">
+                                                    <i class="far fa-check-square"></i>
+                                                    Acc
+                                                </a>
+                                            </td>
+                                            <?php if ($k['is_acc'] == "1") { ?>
+                                                <td>
+                                                    <p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p>
+                                                </td>
+                                            <?php } else {  ?>
+                                                <td>
+                                                    <p class="badge badge-pill badge-success" style="opacity:0%;"><i class="fas fa-check"></i></p>
+                                                </td>
+                                            <?php }
+                                            ?>
+                                        </tr>
+                                        <?php $i++; ?>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        <?php } ?>
+                        <div class="mt-2">
+                        </div>
                     </div>
                 </div>
             </div>
