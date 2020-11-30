@@ -61,20 +61,13 @@
                             </tfoot>
                             <tbody>
                                 <?php $i = 1; ?>
-                                <?php foreach ($list as $k) : ?>
+                                <?php foreach ($list as $l) : ?>
                                     <tr>
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $l['name_praktikan']; ?></td>
                                         <td><?= $l['nrp']; ?></td>
                                         <td><?= $l['asisten']; ?></td>
-                                        <td>
-                                            <?php if ($l['laporan'] != NULL) { ?>
-                                                <a href="<?= $l['laporan']; ?>" target="_blank" class="badge badge-pill badge-warning">
-                                                    <i class=" fas fa-fw fa-download"></i>
-                                                    Unduh
-                                                </a>
-                                            <?php } ?>
-                                        </td>
+
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
