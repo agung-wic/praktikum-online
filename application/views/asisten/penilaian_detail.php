@@ -74,7 +74,7 @@
                                                 </a>
                                             <?php } ?>
                                         </td>
-                                        <td><?= ($l['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $l['laporan_time']) : ""; ?></td>
+                                        <!-- <td><?= ($l['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $l['laporan_time']) : ""; ?></td>
                                         <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="<?= $cekrole ?>" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
                                                 <i class=" fas fa-fw fa-info"></i>
                                                 Detail
@@ -88,7 +88,7 @@
                                                 <i class="far fa-check-square"></i>
                                                 Acc
                                             </a>
-                                        </td>
+                                        </td> -->
                                     <?php if ($l['is_acc'] == "1") {
                                         echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td>';
                                     } else {
