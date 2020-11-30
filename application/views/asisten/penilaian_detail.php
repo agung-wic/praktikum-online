@@ -27,38 +27,34 @@
                             </form>
                         </div>
                     </div>
-                    <?php if (empty($list)) { ?>
-                        <div class="alert alert-danger" role="alert">
-                            Data not found!
-                        </div>
-                    <?php } else { ?>
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Kelompok</th>
-                                    <th scope="col">Jumlah Anggota</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $i = 1; ?>
-                                <?php foreach ($kelompok as $k) : ?>
-                                    <tr>
 
-                                        <th scope="row"><?= $i; ?></th>
-                                        <td><?= $k['no_kelompok'] ?></td>
-                                        <td><?= $k['jumlah'] ?></td>
-                                        <td>
-                                            <a href="<?= base_url('modul/detail/' . $k['id']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-info"></i>Detail</a>
-                                            <a href="<?= base_url('modul/editkelompok/' . $k['id']); ?>" data-id="<?= $k['id'] ?>" data-toggle="modal" data-target="#TambahKelompok" class="badge badge-pill badge-primary tombolEditKelompok"><i class="fas fa-fw fa-edit"></i>Edit</a>
-                                        </td>
-                                    </tr>
-                                    <?php $i++; ?>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    <?php } ?>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Kelompok</th>
+                                <th scope="col">Jumlah Anggota</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i = 1; ?>
+                            <?php foreach ($kelompok as $k) : ?>
+                                <tr>
+
+                                    <th scope="row"><?= $i; ?></th>
+                                    <td><?= $k['no_kelompok'] ?></td>
+                                    <td><?= $k['jumlah'] ?></td>
+                                    <td>
+                                        <a href="<?= base_url('modul/detail/' . $k['id']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-info"></i>Detail</a>
+                                        <a href="<?= base_url('modul/editkelompok/' . $k['id']); ?>" data-id="<?= $k['id'] ?>" data-toggle="modal" data-target="#TambahKelompok" class="badge badge-pill badge-primary tombolEditKelompok"><i class="fas fa-fw fa-edit"></i>Edit</a>
+                                    </td>
+                                </tr>
+                                <?php $i++; ?>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+
                     <div class="mt-2">
                     </div>
                 </div>
