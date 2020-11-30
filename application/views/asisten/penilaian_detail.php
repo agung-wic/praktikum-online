@@ -1,6 +1,5 @@
 <div class="container-fluid">
 
-
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
@@ -107,12 +106,9 @@
                 </div>
             </div>
         </div>
-
+        <!-- /.container-fluid -->
     </div>
-    <!-- /.container-fluid -->
-
-</div>
-<!-- End of Main Content -->
+    <!-- End of Main Content -->
 </div>
 
 <div class="modal fade" id="NilaiEdit" tabindex="-1" role="dialog" aria-labelledby="NilaiEditLabel" aria-hidden="true">
