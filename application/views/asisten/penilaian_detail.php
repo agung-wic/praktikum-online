@@ -60,7 +60,14 @@
                                 </tr>
                             </tfoot>
                             <tbody>
+                                <?php $i = 1;
+                                foreach ($list as $l) :
+                                ?>
 
+                                <?php
+                                    $i++;
+                                endforeach;
+                                ?>
                             </tbody>
                         </table>
                     <?php } ?>
