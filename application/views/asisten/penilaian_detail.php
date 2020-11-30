@@ -70,11 +70,11 @@
 
                                 endforeach;
                                 ?>
+                            <?php } ?>
                             </tbody>
                         </table>
-                    <?php } ?>
-                    <div class="mt-2">
-                    </div>
+                        <div class="mt-2">
+                        </div>
                 </div>
             </div>
         </div>
