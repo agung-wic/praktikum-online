@@ -56,10 +56,10 @@ class Asisten extends CI_Controller
     $data['nama_modul'] = $this->db->get_where('modul', ['modul' =>  $data['id_modul']])->row_array();
     $data['cek'] = [
       0 => [
-        'a'
+        'a' => 'tes'
       ],
       1 => [
-        'a'
+        'a' => 'tes'
       ]
     ];
 
