@@ -63,7 +63,7 @@
                                 <?php $i = 1;
                                 foreach ($list as $l) :
                                 ?>
-                                    <?= $l['id']; ?>
+                                    <?= $i; ?>
                                 <?php
                                     $i++;
                                 endforeach;
