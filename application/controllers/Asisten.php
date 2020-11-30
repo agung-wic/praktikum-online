@@ -70,8 +70,8 @@ class Asisten extends CI_Controller
       if ($asisten != "") {
         $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
         $data['list'][$i]['asisten'] = $nama['name'];
-        var_dump("Masuk");
       }
+      var_dump($i);
       $i++;
     }
     die;
