@@ -104,7 +104,6 @@
                                     </tr>
                                 <?php
                                     $i++;
-                                    break;
                                 endforeach;
                                 ?>
                             </tbody>
