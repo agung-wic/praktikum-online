@@ -61,7 +61,7 @@
                             </tfoot>
                             <tbody>
                                 <?php
-                                foreach ($id_modul as $l) :
+                                foreach ($coba as $l) :
                                 ?>
                                     <tr>
 
