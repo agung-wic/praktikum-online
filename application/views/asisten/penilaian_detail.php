@@ -60,7 +60,16 @@
                                 </tr>
                             </tfoot>
                             <tbody>
+                                <?php
+                                foreach ($list as $l) :
+                                ?>
+                                    <tr>
 
+                                    </tr>
+                                <?php
+
+                                endforeach;
+                                ?>
                             </tbody>
                         </table>
                     <?php } ?>
