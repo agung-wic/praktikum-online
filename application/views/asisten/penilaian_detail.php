@@ -63,7 +63,7 @@
                                 <?php $i = 1;
                                 foreach ($list as $l) :
                                 ?>
-                                    <tr>
+                                    <!-- <tr>
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $l['name_praktikan']; ?></td>
                                         <td><?= $l['nrp']; ?></td>
@@ -101,7 +101,7 @@
                                             </td>
                                         <?php }
                                         ?>
-                                    </tr>
+                                    </tr> -->
                                 <?php
                                     $i++;
                                     break;
