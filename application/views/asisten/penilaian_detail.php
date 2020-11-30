@@ -124,31 +124,6 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="TambahKelompok" tabindex="-1" role="dialog" aria-labelledby="TambahKelompokLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="TambahKelompokLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?= base_url('asisten/tambahkelompok') ?>" method="post">
-                    <div class="form-group">
-                        <input type="hidden" id="id" name="id">
-                        <input type="text" class="form-control" id="no_kelompok" name="no_kelompok" placeholder="">
-                    </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Add</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
-
 <div class="modal fade" id="NilaiEdit" tabindex="-1" role="dialog" aria-labelledby="NilaiEditLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -158,7 +133,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('asisten/editnilai/') . $l['id'] . "/" . $id_kelompok ?>" method="post">
+            <form action="<?= base_url('asisten/editnilai/') . $cobo['id'] . "/" . $id_kelompok ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <input class="form-control" type="text" name="id" id="id" hidden>
