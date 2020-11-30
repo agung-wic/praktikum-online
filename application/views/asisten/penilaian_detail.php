@@ -45,13 +45,21 @@
                             </tfoot>
                             <tbody>
                                 <?php $i = 1; ?>
-                                <?php foreach ($list as $k) : ?>
+                                <?php foreach ($kist as $k) : ?>
                                     <tr>
 
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $k['name_praktikan'] ?></td>
                                         <td><?= $k['nrp']; ?></td>
                                         <td><?= $k['asisten']; ?></td>
+                                        <td>
+                                            <?php if ($k['laporan'] != NULL) { ?>
+                                                <a href="<?= $k['laporan']; ?>" target="_blank" class="badge badge-pill badge-warning">
+                                                    <i class=" fas fa-fw fa-download"></i>
+                                                    Unduh
+                                                </a>
+                                            <?php } ?>
+                                        </td>
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
