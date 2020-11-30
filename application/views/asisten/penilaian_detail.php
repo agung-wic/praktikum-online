@@ -61,7 +61,7 @@
                             </tfoot>
                             <tbody>
                                 <?php $i = 1; ?>
-                                <?php foreach ($kelompok as $k) : ?>
+                                <?php foreach ($list as $k) : ?>
                                     <tr>
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $k['no_kelompok'] ?></td>
