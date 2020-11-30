@@ -74,16 +74,10 @@
                                                 </a>
                                             <?php } ?>
                                         </td>
-                                        <td></td>
-                                        <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="<?= $cekrole ?>" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
-                                                <i class=" fas fa-fw fa-info"></i>
-                                                Detail
-                                            </a>
+                                        <td><?= ($l['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $l['laporan_time']) : ""; ?></td>
+                                        <td>
                                         </td>
-                                        <td><a href="<?= base_url('asisten/editnilai/') . $l['id'] . "/" . $id_kelompok ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
-                                                <i class=" fas fa-fw fa-edit"></i>
-                                                Edit
-                                            </a>
+                                        <td>
                                             <a href="<?= base_url('asisten/accnilai/') . $l['id'] . "/" . $id_kelompok  ?>" class="badge badge-pill badge-success">
                                                 <i class="far fa-check-square"></i>
                                                 Acc
