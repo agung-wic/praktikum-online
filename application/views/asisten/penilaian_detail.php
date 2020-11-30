@@ -60,18 +60,16 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <?php $i = 1;
-                                foreach ($list as $k) :
-                                ?>
+                                <?php $i = 1; ?>
+                                <?php foreach ($list as $k) : ?>
                                     <tr>
+
                                         <th scope="row"><?= $i; ?></th>
-                                        <td><?= $k['name_praktikan']; ?></td>
+                                        <td><?= $k['no_kelompok'] ?></td>
 
                                     </tr>
-                                <?php
-                                    $i++;
-                                endforeach;
-                                ?>
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     <?php } ?>
