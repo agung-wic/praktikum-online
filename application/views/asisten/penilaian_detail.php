@@ -59,7 +59,6 @@
                                     <th scope="col">Acc</th>
                                 </tr>
                             </tfoot>
-                           
                             <tbody>
                                 <?php $i = 1; ?>
                                 <?php foreach ($kelompok as $k) : ?>
@@ -77,8 +76,9 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-                        <div class="mt-2">
-                        </div>
+                    <?php } ?>
+                    <div class="mt-2">
+                    </div>
                 </div>
             </div>
         </div>
