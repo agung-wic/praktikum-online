@@ -20,11 +20,29 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Kelompok</th>
-                                    <th scope="col">Jumlah Anggota</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col">NRP</th>
+                                    <th scope="col">Asisten</th>
+                                    <th scope="col">Laporan</th>
+                                    <th scope="col">Waktu</th>
+                                    <th scope="col">Nilai</th>
                                     <th scope="col">Action</th>
+                                    <th scope="col">Acc</th>
                                 </tr>
                             </thead>
+                            <tfoot>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col">NRP</th>
+                                    <th scope="col">Asisten</th>
+                                    <th scope="col">Laporan</th>
+                                    <th scope="col">Waktu</th>
+                                    <th scope="col">Nilai</th>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">Acc</th>
+                                </tr>
+                            </tfoot>
                             <tbody>
                                 <?php $i = 1; ?>
                                 <?php foreach ($list as $k) : ?>
