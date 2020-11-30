@@ -120,6 +120,8 @@ class Asisten extends CI_Controller
     $data['title'] = 'Kelompok';
     if ($data['user']['role_id'] == 1) {
       $data['kelompok'] = $this->Asisten_model->KelompokAsistenAdmin();
+      var_dump($data['kelompok']);
+      die;
     } else {
       $data['kelompok'] = $this->Asisten_model->KelompokAsisten($this->session->userdata('nrp'));
     }
