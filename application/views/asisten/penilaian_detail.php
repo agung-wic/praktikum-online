@@ -61,7 +61,7 @@
                             </tfoot>
                             <tbody>
                                 <?php $i = 1;
-                                foreach ($list as $l) :
+                                foreach ($wow as $l) :
                                 ?>
                                     <tr>
                                         <th scope="row"><?= $i; ?></th>
