@@ -11,69 +11,34 @@
                 <h6 class="m-0 font-weight-bold "><?= $title . " - " . $nama_modul['name'] . " - " . $nama_kelompok['no_kelompok']; ?></h6>
             </div>
             <div class="card-body">
+                <?= $this->session->flashdata('message'); ?>
                 <div class="table-responsive">
-                    <div class="row mx-1">
-                        <div class="col-auto">
-                            <?= $this->session->flashdata('message'); ?>
-                        </div>
-                        <div class="col-md-5 ml-auto">
-                            <form action="<?= base_url('asisten/penilaian_detail/' . $id_modul . "/" . $id_kelompok) ?>" method="post">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="keyword" placeholder="Cari...">
-                                    <div class="input-group-append">
-                                        <button class="btn gradien" type="submit"><i class="fas fa-fw fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <?php if (empty($list)) { ?>
-                        <div class="alert alert-danger" role="alert">
-                            Data not found!
-                        </div>
-                    <?php } else { ?>
-                        <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Kelompok</th>
+                                <th scope="col">Jumlah Anggota</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i = 1; ?>
+                            <?php foreach ($kelompok as $k) : ?>
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">NRP</th>
-                                    <th scope="col">Asisten</th>
-                                    <th scope="col">Laporan</th>
-                                    <th scope="col">Waktu</th>
-                                    <th scope="col">Nilai</th>
-                                    <th scope="col">Action</th>
-                                    <th scope="col">Acc</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">NRP</th>
-                                    <th scope="col">Asisten</th>
-                                    <th scope="col">Laporan</th>
-                                    <th scope="col">Waktu</th>
-                                    <th scope="col">Nilai</th>
-                                    <th scope="col">Action</th>
-                                    <th scope="col">Acc</th>
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                                <?php $i = 1; ?>
-                                <?php foreach ($kelompok as $k) : ?>
-                                    <tr>
 
-                                        <th scope="row"><?= $i; ?></th>
-
-                                    </tr>
-                                    <?php $i++; ?>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    <?php } ?>
-                    <div class="mt-2">
-                    </div>
+                                    <th scope="row"><?= $i; ?></th>
+                                    <td><?= $k['no_kelompok'] ?></td>
+                                    <td><?= $k['jumlah'] ?></td>
+                                    <td>
+                                        <a href="<?= base_url('modul/detail/' . $k['id']); ?>" class="badge badge-pill badge-primary"><i class="fas fa-fw fa-info"></i>Detail</a>
+                                        <a href="<?= base_url('modul/editkelompok/' . $k['id']); ?>" data-id="<?= $k['id'] ?>" data-toggle="modal" data-target="#TambahKelompok" class="badge badge-pill badge-primary tombolEditKelompok"><i class="fas fa-fw fa-edit"></i>Edit</a>
+                                    </td>
+                                </tr>
+                                <?php $i++; ?>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
