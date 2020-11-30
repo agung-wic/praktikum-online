@@ -60,7 +60,9 @@
                                 </tr>
                             </tfoot>
                             <tbody>
+                                <?php foreach ($cek as $l) : ?>
 
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     <?php } ?>
