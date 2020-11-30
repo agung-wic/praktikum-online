@@ -78,15 +78,11 @@
                                         <td>
                                         </td>
                                         <td>
-                                            <a href="<?= base_url('asisten/accnilai/') . $l['id'] . "/" . $id_kelompok  ?>" class="badge badge-pill badge-success">
-                                                <i class="far fa-check-square"></i>
-                                                Acc
-                                            </a>
                                         </td>
                                     <?php if ($l['is_acc'] == "1") {
-                                        echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td></tr>';
+                                        echo '<td></td></tr>';
                                     } else {
-                                        echo '<td><p class="badge badge-pill badge-success" style="opacity:0%"><i class="fas fa-check"></i></p></td></tr>';
+                                        echo '<td></td></tr>';
                                     };
                                     $i++;
                                 endforeach;
