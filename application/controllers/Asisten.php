@@ -279,7 +279,7 @@ class Asisten extends CI_Controller
       'kesimpulan' => $this->input->post('kesimpulan', true),
       'asisten' => $this->session->userdata('nrp')
     ];
-    $id_kelompok = $this->input->post('id_kelomppok', true);
+    $id_kelompok = $this->input->post('id_kelompok', true);
     $modul_id = $this->input->post('modul_id', true);
     var_dump($id_kelompok);
     die;
