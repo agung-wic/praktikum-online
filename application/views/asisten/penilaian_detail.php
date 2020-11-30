@@ -93,7 +93,7 @@
                                         echo '<td><p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p></td></tr>';
                                     } else {
                                         echo '<td><p class="badge badge-pill badge-success" style="opacity:0%"><i class="fas fa-check"></i></p></td></tr>';
-                                    };
+                                    }
                                     $i++;
                                 endforeach;
                                     ?>
