@@ -279,6 +279,8 @@ class Asisten extends CI_Controller
       'kesimpulan' => $this->input->post('kesimpulan', true),
       'asisten' => $this->session->userdata('nrp')
     ];
+    var_dump($data);
+    die;
     $id = $id;
     $modul_id = $this->input->post('modul_id', true);
     // $nilai_akhir = (($data['resume'] * 0.25) + ($data['pretest'] * 0.05) + ($data['uji_lisan'] * 0.1) + ($data['praktikum'] * 0.1) + ($data['postest'] * 0.05) + ($data['format'] * 0.1) + ($data['bab'] * 0.25) + ($data['kesimpulan'] * 0.1));
