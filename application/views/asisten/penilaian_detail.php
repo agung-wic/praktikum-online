@@ -63,45 +63,7 @@
                                 <?php $i = 1;
                                 foreach ($list as $l) :
                                 ?>
-                                    <tr>
-                                        <th scope="row"><?= $i; ?></th>
-                                        <td><?= $l['name_praktikan']; ?></td>
-                                        <td><?= $l['nrp']; ?></td>
-                                        <td><?= $l['asisten']; ?></td>
-                                        <td>
-                                            <?php if ($l['laporan'] != NULL) { ?>
-                                                <a href="<?= $l['laporan']; ?>" target="_blank" class="badge badge-pill badge-warning">
-                                                    <i class=" fas fa-fw fa-download"></i>
-                                                    Unduh
-                                                </a>
-                                            <?php } ?>
-                                        </td>
-                                        <td><?= ($l['laporan_time'] != NULL) ? date("Y-m-d H:i:s", $l['laporan_time']) : ""; ?></td>
-                                        <td><a href="#" class="badge badge-pill badge-primary tampilDetailNilai" data-role="<?= $cekrole ?>" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
-                                                <i class=" fas fa-fw fa-info"></i>
-                                                Detail
-                                            </a>
-                                        </td>
-                                        <td><a href="<?= base_url('asisten/editnilai/') . $l['id'] . "/" . $id_kelompok ?>" class="badge badge-pill badge-primary tampilModalNilai" data-id="<?= $l['id']; ?>" data-toggle="modal" data-target="#NilaiEdit">
-                                                <i class=" fas fa-fw fa-edit"></i>
-                                                Edit
-                                            </a>
-                                            <a href="<?= base_url('asisten/accnilai/') . $l['id'] . "/" . $id_kelompok  ?>" class="badge badge-pill badge-success">
-                                                <i class="far fa-check-square"></i>
-                                                Acc
-                                            </a>
-                                        </td>
-                                        <?php if ($l['is_acc'] == "1") { ?>
-                                            <td>
-                                                <p class="badge badge-pill badge-success"><i class="fas fa-check"></i></p>
-                                            </td>
-                                        <?php } else {  ?>
-                                            <td>
-                                                <p class="badge badge-pill badge-success" style="opacity:0%;"><i class="fas fa-check"></i></p>
-                                            </td>
-                                        <?php }
-                                        ?>
-                                    </tr>
+                                    <?php var_dump($l); ?>
                                 <?php
                                     $i++;
                                 endforeach;
