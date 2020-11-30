@@ -281,6 +281,8 @@ class Asisten extends CI_Controller
     ];
     $id_kelompok = $this->input->post('id_kelomppok', true);
     $modul_id = $this->input->post('modul_id', true);
+    var_dump($id_kelompok);
+    die;
     // $nilai_akhir = (($data['resume'] * 0.25) + ($data['pretest'] * 0.05) + ($data['uji_lisan'] * 0.1) + ($data['praktikum'] * 0.1) + ($data['postest'] * 0.05) + ($data['format'] * 0.1) + ($data['bab'] * 0.25) + ($data['kesimpulan'] * 0.1));
     $nilai_akhir = (($data['resume']) + ($data['pretest']) + ($data['uji_lisan']) + ($data['praktikum']) + ($data['postest']) + ($data['format']) + ($data['bab']) + ($data['kesimpulan']));
     if ($nilai_akhir >= 86 && $nilai_akhir <= 100) {
