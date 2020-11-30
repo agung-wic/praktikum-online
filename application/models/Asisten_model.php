@@ -191,7 +191,7 @@ class Asisten_model extends CI_Model
               LEFT JOIN `kelompok` ON `kelompok`.`id` = `kelompok_asisten`.`no_kelompok` 
               LEFT JOIN `modul` ON `modul`.`modul` = `kelompok_asisten`.`id_modul` 
               LEFT JOIN `anggota_kelompok` ON `anggota_kelompok` . `no_kelompok` = `kelompok_asisten` . `no_kelompok`
-              WHERE `kelompok_asisten`.`nrp` = '$id' GROUP BY `kelompok_asisten`.`no_kelompok` ORDER BY `kelompok_asisten`.`id_modul` ASC";
+              WHERE `kelompok_asisten`.`nrp` = '$id' GROUP BY `kelompok_asisten`.`no_kelompok` ORDER BY `kelompok_asisten`.`id_modul`,`kelompok_asisten`.`no_kelompok` ASC";
 
     return $this->db->query($query)->result_array();
   }
