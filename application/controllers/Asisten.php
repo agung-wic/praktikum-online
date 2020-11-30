@@ -122,6 +122,8 @@ class Asisten extends CI_Controller
       $data['kelompok'] = $this->Asisten_model->KelompokAsistenAdmin();
     } else {
       $data['kelompok'] = $this->Asisten_model->KelompokAsisten($this->session->userdata('nrp'));
+      var_dump($data['kelompok']);
+      die;
     }
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
