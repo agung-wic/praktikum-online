@@ -50,6 +50,8 @@
 
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $k['name_praktikan'] ?></td>
+                                        <td><?= $k['nrp']; ?></td>
+                                        <td><?= $k['asisten']; ?></td>
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
