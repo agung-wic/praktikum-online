@@ -63,7 +63,6 @@
                                 <?php $i = 1; ?>
                                 <?php foreach ($kelompok as $k) : ?>
                                     <tr>
-
                                         <th scope="row"><?= $i; ?></th>
                                         <td><?= $k['no_kelompok'] ?></td>
                                         <td><?= $k['jumlah'] ?></td>
