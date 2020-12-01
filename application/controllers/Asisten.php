@@ -50,20 +50,19 @@ class Asisten extends CI_Controller
     $data['cekrole'] = $this->uri->segment(1);
     $data['id_modul'] = $id_modul;
     $data['id_kelompok'] = $id_kelompok;
-    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok'], $data['keyword']);
     $data['user'] = $this->db->get_where('user', ['nrp' => $this->session->userdata('nrp')])->row_array();
+    $data['list'] = $this->Asisten_model->TampilNilai($data['id_modul'], $data['id_kelompok'], $data['keyword']);
     $data['nama_kelompok'] = $this->db->get_where('kelompok', ['id' => $data['id_kelompok']])->row_array();
     $data['nama_modul'] = $this->db->get_where('modul', ['modul' =>  $data['id_modul']])->row_array();
-
-    // $i = 0;
-    // while ($i < count($data['list'])) {
-    //   $asisten = $data['list'][$i]['asisten'];
-    //   if ($asisten != "") {
-    //     $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
-    //     $data['list'][$i]['asisten'] = $nama['name'];
-    //   }
-    //   $i++;
-    // }
+    $i = 0;
+    while ($i < count($data['list'])) {
+      $asisten = $data['list'][$i]['asisten'];
+      if ($asisten) {
+        $nama = $this->db->query("SELECT `name` FROM `user` WHERE `nrp`= $asisten")->row_array();
+        $data['list'][$i]['asisten'] = $nama['name'];
+      }
+      $i++;
+    }
     $this->load->view('template/header', $data);
     $this->load->view('template/sidebar', $data);
     $this->load->view('template/topbar', $data);
@@ -266,7 +265,7 @@ class Asisten extends CI_Controller
     echo json_encode($this->Asisten_model->TampilNilaiPraktikan($this->input->post('id')));
   }
 
-  public function editnilai()
+  public function editnilai($id, $id_kelompok)
   {
     $data = [
       'resume' => $this->input->post('resume', true),
@@ -279,10 +278,8 @@ class Asisten extends CI_Controller
       'kesimpulan' => $this->input->post('kesimpulan', true),
       'asisten' => $this->session->userdata('nrp')
     ];
-    $id_kelompok = $this->input->post('id_kelompok', true);
+    $id = $id;
     $modul_id = $this->input->post('modul_id', true);
-    var_dump($id_kelompok);
-    die;
     // $nilai_akhir = (($data['resume'] * 0.25) + ($data['pretest'] * 0.05) + ($data['uji_lisan'] * 0.1) + ($data['praktikum'] * 0.1) + ($data['postest'] * 0.05) + ($data['format'] * 0.1) + ($data['bab'] * 0.25) + ($data['kesimpulan'] * 0.1));
     $nilai_akhir = (($data['resume']) + ($data['pretest']) + ($data['uji_lisan']) + ($data['praktikum']) + ($data['postest']) + ($data['format']) + ($data['bab']) + ($data['kesimpulan']));
     if ($nilai_akhir >= 86 && $nilai_akhir <= 100) {

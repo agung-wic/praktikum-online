@@ -424,7 +424,6 @@ $(function () {
 			success: function (data) {
 				console.log(data);
 				$("#id").val(data.id);
-				$("#id_kelompok").val(data.id_kelompok);
 				$("#modul_id").val(data.modul_id);
 				$("#name").val(data.name);
 				$("#nrp").val(data.nrp);
