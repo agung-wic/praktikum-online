@@ -48,7 +48,7 @@
                     <td><?= $m['name']; ?></td>
                     <?php if ($i < count($list)) {
                       if ($m['modul'] == $list[$i]['modul_id']) {
-                        var_dump($m('modul'));
+                        var_dump($m['modul']);
                         var_dump($list[$i]['modul_id']);
                         die;
                     ?>
