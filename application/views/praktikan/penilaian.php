@@ -50,8 +50,8 @@
 
                       if ($m['modul'] == $list[$i]['modul_id']) {
                         var_dump(count($list));
-                        var_dump(count($m['modul']));
-                        var_dump(count($list[$i]['modul_id']));
+                        var_dump($m['modul']);
+                        var_dump($list[$i]['modul_id']);
                     ?>
                         <td><?= $list[$i]['asisten']; ?></td>
                         <td>
