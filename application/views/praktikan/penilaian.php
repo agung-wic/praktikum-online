@@ -47,6 +47,8 @@
                     <th scope="row"><?= $start; ?></th>
                     <td><?= $m['name']; ?></td>
                     <?php if ($i < count($list)) {
+                      var_dump($list);
+                      die;
                       if ($m['modul'] == $list[$i]['modul_id']) {
                     ?>
                         <td><?= $list[$i]['asisten']; ?></td>
