@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'fisdas_praktikum',
+	'hostname' => '156.67.222.148',
+	'username' => 'u938748859_fisdas',
 	'password' => '1234asdf!@#$ASDF',
-	'database' => 'fisdas_praktikum',
+	'database' => 'u938748859_fisdas',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
