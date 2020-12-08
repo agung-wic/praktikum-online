@@ -51,7 +51,6 @@
                       var_dump(count($m['modul']));
                       var_dump(count($list[$i]['modul_id']));
                       die;
-                    }
                       if ($m['modul'] == $list[$i]['modul_id']) {
                     ?>
                         <td><?= $list[$i]['asisten']; ?></td>
