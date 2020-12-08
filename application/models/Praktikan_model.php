@@ -76,7 +76,7 @@ class Praktikan_model extends CI_Model
               `nilai` . `resume` as 'resume' , `nilai` . `pretest` as 'pretest' , `nilai` . `uji_lisan` as 'uji_lisan' , `nilai` . `praktikum` as 'praktikum' , 
               `nilai` . `postest` as 'postest' , `nilai` . `format` as 'format' , `nilai` . `bab` as 'bab' , `nilai` . `kesimpulan` as 'kesimpulan' , `nilai` . `nilai_akhir` as `nilai_akhir`, `nilai` . `nilai_akhir_abjad` as `nilai_akhir_abjad`
               FROM `user`   INNER JOIN `nilai` ON `user`.`nrp` = `nilai`.`nrp`
-              INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` WHERE `nilai`.`nrp`=$id ORDER BY 'modul_id' ASC";
+              INNER JOIN `modul` ON `modul`.`modul` = `nilai`.`modul` WHERE `nilai`.`nrp`=$id ORDER BY `modul`.`modul` ASC;
 
     return $this->db->query($query)->result_array();
   }
