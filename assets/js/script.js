@@ -21,7 +21,7 @@ $(function () {
 		});
 	});
 
-	$(".tampilModalAbsen").on("click", function() {
+	$(".tampilModalAbsen").on("click", function () {
 		const nrp = $(this).data("nrp");
 		const modul = $(this).data("modul");
 		const kelompok = $(this).data("kelompok");
@@ -35,35 +35,32 @@ $(function () {
 			},
 			method: "post",
 			dataType: "json",
-			success: function(data){
-				if(data == null){
+			success: function (data) {
+				if (data == null) {
 					$("#nrp").val(nrp);
 					$("#modul").val(modul);
 					$("#kelompok").val(kelompok);
 					$("#keterangan").val("");
-					$("#tidak_hadir").prop("checked",true);
-					$("#hadir").prop("checked",false);	
-					console.log();				
-				}
-				else{
-					if(data.status == 0)
-					{
+					$("#tidak_hadir").prop("checked", true);
+					$("#hadir").prop("checked", false);
+					console.log();
+				} else {
+					if (data.status == 0) {
 						$("#nrp").val(data.nrp);
 						$("#modul").val(data.modul);
 						$("#kelompok").val(kelompok);
-						$("#tidak_hadir").prop("checked",false);
-						$("#hadir").prop("checked",true);
+						$("#tidak_hadir").prop("checked", false);
+						$("#hadir").prop("checked", true);
 						$("#keterangan").val(data.keterangan);
-						console.log();	
-					} else if(data.status == 1)
-					{
+						console.log();
+					} else if (data.status == 1) {
 						$("#nrp").val(data.nrp);
 						$("#modul").val(data.modul);
 						$("#kelompok").val(kelompok);
-						$("#tidak_hadir").prop("checked",true);
-						$("#hadir").prop("checked",false);
+						$("#tidak_hadir").prop("checked", true);
+						$("#hadir").prop("checked", false);
 						$("#keterangan").val(data.keterangan);
-						console.log();	
+						console.log();
 					}
 				}
 			}
@@ -299,11 +296,11 @@ $(function () {
 				$("#jadwal").val(data.jadwal);
 				$("#id").val(data.id);
 				if (data.status == 1) {
-					$("#selesai").prop("checked",true);
-					$("#belum_selesai").prop("checked",false);
-				} else 	{
-					$("#selesai").prop("checked",false);
-					$("#belum_selesai").prop("checked",true);
+					$("#selesai").prop("checked", true);
+					$("#belum_selesai").prop("checked", false);
+				} else {
+					$("#selesai").prop("checked", false);
+					$("#belum_selesai").prop("checked", true);
 				}
 				console.log(data);
 			},
@@ -346,17 +343,28 @@ $(function () {
 			dataType: "json",
 			success: function (data) {
 				console.log(data);
-				if(typeof data.tabel !== "undefined"){	
-					var html="";
-					for(let i=0; i<data.nomor.length; i++){
-							html+='<tr>';
-							html+='<td>'+ data.nomor[i]+'</td>';
-							html+='<td>'+ data.kecepatan[i]+'</td>';
-							html+='<td>'+ data.waktu[i]+'</td>';
-							html+='</tr>';
+				if (typeof data.tabel !== "undefined") {
+					var html = "";
+					if (id == 'M8') {
+						for (let i = 0; i < data.nomor.length; i++) {
+							html += '<tr>';
+							html += '<td>' + data.nomor[i] + '</td>';
+							html += '<td>' + data.kecepatan[i] + '</td>';
+							html += '<td>' + data.waktu[i] + '</td>';
+							html += '</tr>';
 						}
 						$("#dataM8").html(html);
-				}else{
+					} else if (id == 'G3') {
+						for (let i = 0; i < data.nomor.length; i++) {
+							html += '<tr>';
+							html += '<td>' + data.nomor[i] + '</td>';
+							html += '<td>' + data.kecepatan[i] + '</td>';
+							html += '</tr>';
+						}
+						$("#dataM8").html(html);
+					}
+
+				} else {
 					$(tampil).val(data);
 				}
 			},

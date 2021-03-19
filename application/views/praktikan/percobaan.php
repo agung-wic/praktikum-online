@@ -102,7 +102,6 @@
                           <tr>
                             <th scope="col">Data ke-</th>
                             <th scope="col">Jarak</th>
-                            <th scope="col">Indeks</th>
                           </tr>
                         </thead>
                         <tbody id="dataM8">
