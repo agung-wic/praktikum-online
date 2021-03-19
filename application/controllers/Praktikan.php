@@ -378,17 +378,31 @@ class Praktikan extends CI_Controller
                 } else if (count($result2) > 2 && count($result2) <= 4) { //[t,1][l,2] => Array ( [0] => t [1] => 1 [2] => l [3] => 2 ) 
                     $result2 = $result2[1] . " " . $satuan . ", " .  $result2[3] . " " . $satuan;
                 } else if (count($result2) > 4) {
-                    for ($i = 0; $i < count($result2); $i = $i + 1) { //[variabel,indeks,waktu,hasil]
-                        if ($i % 4 == 0) {
-                            $result3[$i] = $result2[$i];
-                        } else if (($i + 3) % 4 == 0) {
-                            $result4[$i] = $result2[$i];
-                        } else if (($i + 2) % 4 == 0) {
-                            $result5[$i] = $result2[$i] * 0.001;
-                            $result5[$i] = number_format($result5[$i], 3);
-                        } else if (($i + 1) % 4 == 0) {
-                            $result6[$i] = $result2[$i] * 0.001 * 1.2;
-                            $result6[$i] = number_format($result6[$i], 3);
+                    if ($id == 'M8') {
+                        for ($i = 0; $i < count($result2); $i = $i + 1) { //[variabel,indeks,waktu,hasil]
+                            if ($i % 4 == 0) {
+                                $result3[$i] = $result2[$i];
+                            } else if (($i + 3) % 4 == 0) {
+                                $result4[$i] = $result2[$i];
+                            } else if (($i + 2) % 4 == 0) {
+                                $result5[$i] = $result2[$i] * 0.001;
+                                $result5[$i] = number_format($result5[$i], 3);
+                            } else if (($i + 1) % 4 == 0) {
+                                $result6[$i] = $result2[$i] * 0.001 * 1.2;
+                                $result6[$i] = number_format($result6[$i], 3);
+                            }
+                        }
+                    } else if ($id == 'G3') {
+                        for ($i = 0; $i < count($result2); $i = $i + 1) { //[variabel,indeks,waktu,hasil]
+                            if ($i % 4 == 0) {
+                                $result3[$i] = $result2[$i];
+                            } else if (($i + 3) % 4 == 0) {
+                                $result4[$i] = $result2[$i];
+                            } else if (($i + 2) % 4 == 0) {
+                                $result5[$i] = $result2[$i];
+                            } else if (($i + 1) % 4 == 0) {
+                                $result6[$i] = $result2[$i];
+                            }
                         }
                     }
                     $result3 = implode(",", $result3);
