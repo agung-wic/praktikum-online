@@ -99,6 +99,7 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Nama</th>
+                                            <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <?php $i = 0;
@@ -107,6 +108,11 @@
                                             <tr>
                                                 <th scope="row"><?= $i ?></th>
                                                 <td><?= $v['ket'] ?></td>
+                                                <div class="row justify-content-center mt-3 mb-1">
+                                                    <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $v['id']; ?>" data-toggle="modal" data-target="#editVideoStream" class="btn btn-dark px-4 editVideoStream">
+                                                        Edit
+                                                    </button>
+                                                </div>
                                             </tr>
                                         </tbody>
                                     <?php $i++;
@@ -117,8 +123,8 @@
                             <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
                             </div>
                             <div class="row justify-content-center mt-3 mb-1">
-                                <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $modul['modul']; ?>" data-toggle="modal" data-target="#editVideo" class="btn btn-dark px-4 editVideo">
-                                    Edit
+                                <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $modul['modul']; ?>" data-toggle="modal" data-target="#editVideoStream" class="btn btn-dark px-4 editVideoStream">
+                                    Tambah
                                 </button>
                             </div>
                         </div>
@@ -325,17 +331,17 @@
     </div>
 </div>
 
-<div class="modal fade" id="editVideo" tabindex="-1" role="dialog" aria-labelledby="editVideo" aria-hidden="true">
+<div class="modal fade" id="editVideoStream" tabindex="-1" role="dialog" aria-labelledby="editVideoStream" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title editVideo"></h5>
+                <h5 class="modal-title editVideoStream"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('modul/editVideo') ?>" method="post">
+                <form action="<?= base_url('modul/editVideoStream') ?>" method="post">
                     <div class="form-group">
                         <input type="hidden" id="video_id" name="video_id">
                         <input type="hidden" id="video_id_modul" name="video_id_modul">

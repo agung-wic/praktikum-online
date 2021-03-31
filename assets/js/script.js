@@ -619,6 +619,28 @@ $(function () {
 		});
 	});
 
+	$(".editVideoStream").on("click", function () {
+		const id = $(this).data("id");
+
+		$.ajax({
+			url: base + "modul/getubahvideostream",
+			data: {
+				id: id,
+			},
+			method: "post",
+			dataType: "json",
+			success: function (data) {
+				console.log(data);
+				$("#video_id_modul").val(data.id_modul);
+				$("#video_id").val(data.id);
+				$("#link").val(data.link);
+				$("#width").val(data.width);
+				$("#height").val(data.height);
+				$("#transform").val(data.transform);
+			},
+		});
+	});
+
 	$(".editVideo").on("click", function () {
 		const id = $(this).data("idi");
 

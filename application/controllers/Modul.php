@@ -436,6 +436,11 @@ class Modul extends CI_Controller
         echo json_encode($this->db->get_where('output_tulisan', ['id' => $this->input->post('id')])->row_array());
     }
 
+    public function getubahvideostream()
+    {
+        echo json_encode($this->db->get_where('live_stream', ['id' => $this->input->post('id')])->row_array());
+    }
+
     public function addfilejadwal()
     {
         $file = $_FILES['filejadwal']['name'];
