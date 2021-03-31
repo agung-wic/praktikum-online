@@ -343,26 +343,26 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="hidden" id="tambah_video_id" name="video_id">
-                        <input type="hidden" id="tambah_video_id_modul" name="video_id_modul">
-                        <label for="ket">Nama</label>
-                        <input type="text" class="form-control" id="tambah_ket" name="ket" required>
+                        <input type="hidden" id="tambah_video_id" name="tambah_video_id">
+                        <input type="hidden" id="tambah_video_id_modul" name="tambah_video_id_modul">
+                        <label for="tambah_ket">Nama</label>
+                        <input type="text" class="form-control" id="tambah_ket" name="tambah_ket" required>
                     </div>
                     <div class="form-group">
-                        <label for="link">Link</label>
-                        <input type="text" class="form-control" id="tambah_link" name="link" required>
+                        <label for="tambah_link">Link</label>
+                        <input type="text" class="form-control" id="tambah_link" name="tambah_link" required>
                     </div>
                     <div class="form-group">
-                        <label for="width">Width</label>
-                        <input type="text" class="form-control" id="tambah_width" name="width" required>
+                        <label for="tambah_width">Width</label>
+                        <input type="text" class="form-control" id="tambah_width" name="tambah_width" required>
                     </div>
                     <div class="form-group">
-                        <label for="height">Height</label>
-                        <input type="text" class="form-control" id="tambah_height" name="height" required>
+                        <label for="tambah_height">Height</label>
+                        <input type="text" class="form-control" id="tambah_height" name="tambah_height" required>
                     </div>
                     <div class="form-group">
-                        <label for="transform">Transform</label>
-                        <input type="text" class="form-control" id="tambah_transform" name="transform" required>
+                        <label for="tambah_transform">Transform</label>
+                        <input type="text" class="form-control" id="tambah_transform" name="tambah_transform" required>
                     </div>
                 </div>
                 <div class="modal-footer">
