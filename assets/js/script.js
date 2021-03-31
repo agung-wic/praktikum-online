@@ -625,7 +625,6 @@ $(function () {
 
 	$(".tambahVideoStream").on("click", function () {
 		const id = $(this).data("id");
-		console.log(id);
 		$("#tambah_video_modul_id").val(id);
 	});
 

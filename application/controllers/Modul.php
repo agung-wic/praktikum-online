@@ -280,16 +280,14 @@ class Modul extends CI_Controller
     public function tambahVideoStream()
     {
         $id = $this->input->post('tambah_video_id_modul', true);
-        var_dump($id);
         $data = [
+            "id_modul" => $id,
             "ket" => $this->input->post('tambah_ket', true),
             "link" => $this->input->post('tambah_link', true),
             "width" => $this->input->post('tambah_width', true),
             "height" => $this->input->post('tambah_height', true),
             "transform" => $this->input->post('tambah_transform', true),
         ];
-        var_dump($data);
-        die;
         $this->db->insert('live_stream', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Video berhasil ditambahkan!
