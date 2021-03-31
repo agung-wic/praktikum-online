@@ -90,6 +90,21 @@
                             </div>
                         </div>
                     </div>
+                    <div class="kotak" style="background-color: #bcaead;">
+                        <div class="container mt-2" style="color: black;">
+                            <h6 class="text-center mb-3"><b>Setting Video dan IP</b></h6>
+                            <div class="form-group">
+
+                            </div>
+                            <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
+                            </div>
+                            <div class="row justify-content-center mt-3 mb-1">
+                                <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $modul['modul']; ?>" data-toggle="modal" data-target="#tambahOutput" class="btn btn-dark px-4 tambahOutput">
+                                    Edit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row mt-5">
