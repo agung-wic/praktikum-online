@@ -109,9 +109,12 @@
                                                 <th scope="row"><?= $i ?></th>
                                                 <td><?= $v['ket'] ?></td>
                                                 <td>
-                                                    <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $v['id']; ?>" data-toggle="modal" data-target="#editVideoStream" class="btn btn-dark px-4 editVideoStream">
-                                                        Edit
-                                                    </button>
+                                                    <a type="submit" style="color:white" data-id="<?= $v['id']; ?>" data-toggle="modal" data-target="#editVideoStream" class="editVideoStream">
+                                                        <i class="fas fa-pen-square" style="font-size:200%;color:#4e73df"></i>
+                                                    </a>
+                                                    <a href="<?= base_url('modul/deleteVideoStream/') . $v['id']; ?>" onclick=" return confirm('Yakin?');">
+                                                        <i class=" fas fa-minus-circle" style="font-size:200%;color:#e74a3b"></i>
+                                                    </a>
                                                 </td>
                                             </tr>
                                         </tbody>

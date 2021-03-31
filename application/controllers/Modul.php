@@ -317,6 +317,9 @@ class Modul extends CI_Controller
     public function editmodul()
     {
         $data = [
+            "ip" => $this->input->post('ip', true),
+            "port1" => $this->input->post('port1', true),
+            "port2" => $this->input->post('port2', true),
             "modul" => $this->input->post('modul', true),
             "name" => $this->input->post('name', true),
             "peralatan" => $this->input->post('peralatan', true),
@@ -409,6 +412,18 @@ class Modul extends CI_Controller
         $this->db->delete('output_tulisan');
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
         Tombol berhasil dihapus!
+        </div>');
+        redirect(base_url('modul/navigasi/') . $id_modul);
+    }
+
+    public function deleteVideoStream($id)
+    {
+        $id_modul = $this->db->get_where('live_stream', ['id' => $id])->row_array();
+        $id_modul = $id_modul['id_modul'];
+        $this->db->where('id', $id);
+        $this->db->delete('live_stream');
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+        Video Stream berhasil dihapus!
         </div>');
         redirect(base_url('modul/navigasi/') . $id_modul);
     }
