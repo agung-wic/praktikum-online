@@ -280,6 +280,8 @@ class Modul extends CI_Controller
     public function tambahVideoStream()
     {
         $id = $this->input->post('tambah_video_id_modul', true);
+        var_dump($id);
+        die;
         $data = [
             "id_modul" => $id,
             "ket" => $this->input->post('tambah_ket', true),
