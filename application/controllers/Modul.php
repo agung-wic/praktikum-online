@@ -317,7 +317,7 @@ class Modul extends CI_Controller
     public function editmodul()
     {
         $data = [
-            "ip" => $this->input->post('ip', true),
+            "ip_address" => $this->input->post('ip', true),
             "port1" => $this->input->post('port1', true),
             "port2" => $this->input->post('port2', true),
             "modul" => $this->input->post('modul', true),
