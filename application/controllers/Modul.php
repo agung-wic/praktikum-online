@@ -337,6 +337,9 @@ class Modul extends CI_Controller
     public function tambahmodul()
     {
         $data = [
+            "ip" => $this->input->post('ip', true),
+            "port1" => $this->input->post('port1', true),
+            "port2" => $this->input->post('port2', true),
             "modul" => $this->input->post('modul', true),
             "name" => $this->input->post('name', true),
             "peralatan" => $this->input->post('peralatan', true),

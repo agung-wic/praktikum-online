@@ -525,6 +525,9 @@ $(function () {
 				$("#id").val(data.id);
 				$("#modul").val(data.modul);
 				$("#name").val(data.name);
+				$("#ip").val(data.ip);
+				$("#port1").val(data.port1);
+				$("#port2").val(data.port2);
 				tinymce.get("peralatan").setContent(data.peralatan);
 				tinymce.get("teori").setContent(data.teori);
 				tinymce.get("cara").setContent(data.cara);

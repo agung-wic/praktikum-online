@@ -82,6 +82,18 @@
                         <input class="form-control" type="number" name="id" id="id" hidden>
                     </div>
                     <div class="form-group">
+                        <label for="ip">IP Address</label>
+                        <input type="text" class="form-control edit" id="ip" name="ip">
+                    </div>
+                    <div class="form-group">
+                        <label for="port1">Port 1</label>
+                        <input type="text" class="form-control edit" id="port1" name="port1">
+                    </div>
+                    <div class="form-group">
+                        <label for="port2">Port 2</label>
+                        <input type="text" class="form-control edit" id="port2" name="port2">
+                    </div>
+                    <div class="form-group">
                         <label for="modul">Kode Modul</label>
                         <input type="text" class="form-control edit" id="modul" name="modul">
                     </div>
