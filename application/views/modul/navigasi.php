@@ -117,10 +117,10 @@
                                                 <td><?= $v['transform'] ?></td>
                                             </tr>
                                         </tbody>
-                                </table>
-                            <?php $i++;
+                                    <?php $i++;
                                     endforeach;
-                            ?>
+                                    ?>
+                                </table>
                             </div>
                             <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
                             </div>
