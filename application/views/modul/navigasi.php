@@ -92,17 +92,13 @@
                     </div>
                     <div class="kotak" style="background-color: #bcaead;">
                         <div class="container mt-2" style="color: black;">
-                            <h6 class="text-center mb-3"><b>Setting Video dan IP</b></h6>
+                            <h6 class="text-center mb-3"><b>Setting Video</b></h6>
                             <div class="form-group">
                                 <table class="table">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Nama</th>
-                                            <th scope="col">Link</th>
-                                            <th scope="col">Width</th>
-                                            <th scope="col">Height</th>
-                                            <th scope="col">Transform</th>
                                         </tr>
                                     </thead>
                                     <?php $i = 0;
@@ -111,10 +107,6 @@
                                             <tr>
                                                 <th scope="row"><?= $i ?></th>
                                                 <td><?= $v['ket'] ?></td>
-                                                <td><?= $v['link'] ?></td>
-                                                <td><?= $v['width'] ?></td>
-                                                <td><?= $v['height'] ?></td>
-                                                <td><?= $v['transform'] ?></td>
                                             </tr>
                                         </tbody>
                                     <?php $i++;
@@ -125,7 +117,7 @@
                             <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
                             </div>
                             <div class="row justify-content-center mt-3 mb-1">
-                                <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $modul['modul']; ?>" data-toggle="modal" data-target="#tambahOutput" class="btn btn-dark px-4 tambahOutput">
+                                <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $modul['modul']; ?>" data-toggle="modal" data-target="#editVideo" class="btn btn-dark px-4 editVideo">
                                     Edit
                                 </button>
                             </div>
@@ -322,6 +314,49 @@
                     <div class="form-group">
                         <label for="data_tampil_outputtt">Data output</label>
                         <input type="text" class="form-control" id="data_tampil_outputtt" name="data_tampil_outputtt">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Ubah</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editVideo" tabindex="-1" role="dialog" aria-labelledby="editVideo" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title editVideo"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('modul/editVideo') ?>" method="post">
+                    <div class="form-group">
+                        <input type="hidden" id="video_id" name="video_id">
+                        <input type="hidden" id="video_id_modul" name="video_id_modul">
+                        <label for="ket">Nama</label>
+                        <input type="text" class="form-control" id="ket" name="ket">
+                    </div>
+                    <div class="form-group">
+                        <label for="link">Link</label>
+                        <input type="text" class="form-control" id="link" name="link">
+                    </div>
+                    <div class="form-group">
+                        <label for="width">Width</label>
+                        <input type="text" class="form-control" id="width" name="width">
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height</label>
+                        <input type="text" class="form-control" id="height" name="height">
+                    </div>
+                    <div class="form-group">
+                        <label for="transform">Transform</label>
+                        <input type="text" class="form-control" id="transform" name="transform">
                     </div>
             </div>
             <div class="modal-footer">
