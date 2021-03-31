@@ -334,14 +334,14 @@
 <div class="modal fade" id="tambahVideoStream" tabindex="-1" role="dialog" aria-labelledby="tambahVideoStream" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title tambahVideoStream"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?= base_url('modul/tambahVideoStream') ?>" method="post">
+            <form action="<?= base_url('modul/tambahVideoStream') ?>" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title tambahVideoStream"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
                     <div class="form-group">
                         <input type="hidden" id="tambah_video_id" name="video_id">
                         <input type="hidden" id="tambah_video_id_modul" name="video_id_modul">
@@ -364,11 +364,11 @@
                         <label for="transform">Transform</label>
                         <input type="text" class="form-control" id="tambah_transform" name="transform" required>
                     </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary">Ubah</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Ubah</button>
+                </div>
             </form>
         </div>
     </div>
