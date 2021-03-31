@@ -277,6 +277,24 @@ class Modul extends CI_Controller
         redirect(base_url('modul/navigasi/') . $id);
     }
 
+    public function editVideoStream()
+    {
+        $id = $this->input->post('video_id_modul', true);
+        $data = [
+            "ket" => $this->input->post('ket', true),
+            "link" => $this->input->post('link', true),
+            "width" => $this->input->post('width', true),
+            "height" => $this->input->post('height', true),
+            "transform" => $this->input->post('transform', true),
+        ];
+        $this->db->where('id', $this->input->post('video_id'));
+        $this->db->update('live_stream', $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Konfigurasi Video Berhasil Diubah!
+        </div>');
+        redirect(base_url('modul/navigasi/') . $id);
+    }
+
     public function editmodul()
     {
         $data = [
