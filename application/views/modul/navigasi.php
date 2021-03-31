@@ -94,7 +94,33 @@
                         <div class="container mt-2" style="color: black;">
                             <h6 class="text-center mb-3"><b>Setting Video dan IP</b></h6>
                             <div class="form-group">
-
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Nama</th>
+                                            <th scope="col">Link</th>
+                                            <th scope="col">Width</th>
+                                            <th scope="col">Height</th>
+                                            <th scope="col">Transform</th>
+                                        </tr>
+                                    </thead>
+                                    <?php $i = 0;
+                                    foreach ($video as $v) :  ?>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row"><?= $i ?></th>
+                                                <td><?= $v['ket'] ?></td>
+                                                <td><?= $v['link'] ?></td>
+                                                <td><?= $v['width'] ?></td>
+                                                <td><?= $v['height'] ?></td>
+                                                <td><?= $v['transform'] ?></td>
+                                            </tr>
+                                        </tbody>
+                                </table>
+                            <?php $i++;
+                                    endforeach;
+                            ?>
                             </div>
                             <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
                             </div>
