@@ -287,6 +287,8 @@ class Modul extends CI_Controller
             "height" => $this->input->post('tambah_height', true),
             "transform" => $this->input->post('tambah_transform', true),
         ];
+        var_dump($data);
+        die;
         $this->db->insert('live_stream', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Video berhasil ditambahkan!
