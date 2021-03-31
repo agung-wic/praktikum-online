@@ -346,23 +346,23 @@
                         <input type="hidden" id="tambah_video_id" name="video_id">
                         <input type="hidden" id="tambah_video_id_modul" name="video_id_modul">
                         <label for="ket">Nama</label>
-                        <input type="text" class="form-control" id="tambah_ket" name="ket" require>
+                        <input type="text" class="form-control" id="tambah_ket" name="ket" required>
                     </div>
                     <div class="form-group">
                         <label for="link">Link</label>
-                        <input type="text" class="form-control" id="tambah_link" name="link" require>
+                        <input type="text" class="form-control" id="tambah_link" name="link" required>
                     </div>
                     <div class="form-group">
                         <label for="width">Width</label>
-                        <input type="text" class="form-control" id="tambah_width" name="width" require>
+                        <input type="text" class="form-control" id="tambah_width" name="width" required>
                     </div>
                     <div class="form-group">
                         <label for="height">Height</label>
-                        <input type="text" class="form-control" id="tambah_height" name="height" require>
+                        <input type="text" class="form-control" id="tambah_height" name="height" required>
                     </div>
                     <div class="form-group">
                         <label for="transform">Transform</label>
-                        <input type="text" class="form-control" id="tambah_transform" name="transform" require>
+                        <input type="text" class="form-control" id="tambah_transform" name="transform" required>
                     </div>
             </div>
             <div class="modal-footer">
