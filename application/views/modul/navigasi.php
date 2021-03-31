@@ -123,7 +123,7 @@
                             <div class="row justify-content-center mb-3" style="padding-bottom:10%;">
                             </div>
                             <div class="row justify-content-center mt-3 mb-1">
-                                <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $modul['modul']; ?>" data-toggle="modal" data-target="#editVideoStream" class="btn btn-dark px-4 editVideoStream">
+                                <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $modul['modul']; ?>" data-toggle="modal" data-target="#tambahVideoStream" class="btn btn-dark px-4 tambahVideoStream">
                                     Tambah
                                 </button>
                             </div>
@@ -320,6 +320,49 @@
                     <div class="form-group">
                         <label for="data_tampil_outputtt">Data output</label>
                         <input type="text" class="form-control" id="data_tampil_outputtt" name="data_tampil_outputtt">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Ubah</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tambahVideoStream" tabindex="-1" role="dialog" aria-labelledby="tambahVideoStream" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title tambahVideoStream"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('modul/tambahVideoStream') ?>" method="post">
+                    <div class="form-group">
+                        <input type="hidden" id="tambah_video_id" name="video_id">
+                        <input type="hidden" id="tambah_video_id_modul" name="video_id_modul">
+                        <label for="ket">Nama</label>
+                        <input type="text" class="form-control" id="tambah_ket" name="ket">
+                    </div>
+                    <div class="form-group">
+                        <label for="link">Link</label>
+                        <input type="text" class="form-control" id="tambah_link" name="link">
+                    </div>
+                    <div class="form-group">
+                        <label for="width">Width</label>
+                        <input type="text" class="form-control" id="tambah_width" name="width">
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height</label>
+                        <input type="text" class="form-control" id="tambah_height" name="height">
+                    </div>
+                    <div class="form-group">
+                        <label for="transform">Transform</label>
+                        <input type="text" class="form-control" id="tambah_transform" name="transform">
                     </div>
             </div>
             <div class="modal-footer">

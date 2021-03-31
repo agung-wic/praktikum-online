@@ -622,6 +622,12 @@ $(function () {
 		});
 	});
 
+
+	$(".tambahVideoStream").on("click", function () {
+		const id = $(this).data("id");
+		$("#modul_id").val(id);
+	});
+
 	$(".editVideoStream").on("click", function () {
 		const id = $(this).data("id");
 
