@@ -108,11 +108,13 @@
                                             <tr>
                                                 <th scope="row"><?= $i ?></th>
                                                 <td><?= $v['ket'] ?></td>
-                                                <div class="row justify-content-center mt-3 mb-1">
-                                                    <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $v['id']; ?>" data-toggle="modal" data-target="#editVideoStream" class="btn btn-dark px-4 editVideoStream">
-                                                        Edit
-                                                    </button>
-                                                </div>
+                                                <td>
+                                                    <div class="row justify-content-center mt-3 mb-1">
+                                                        <button type="submit" style="background-color:#26A65B;border:none;margin-bottom:5%" data-id="<?= $v['id']; ?>" data-toggle="modal" data-target="#editVideoStream" class="btn btn-dark px-4 editVideoStream">
+                                                            Edit
+                                                        </button>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     <?php $i++;
