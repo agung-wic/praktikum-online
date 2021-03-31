@@ -102,7 +102,7 @@
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
-                                    <?php $i = 0;
+                                    <?php $i = 1;
                                     foreach ($video as $v) :  ?>
                                         <tbody>
                                             <tr>

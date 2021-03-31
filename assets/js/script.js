@@ -633,6 +633,7 @@ $(function () {
 				console.log(data);
 				$("#video_id_modul").val(data.id_modul);
 				$("#video_id").val(data.id);
+				$("#ket").val(data.ket);
 				$("#link").val(data.link);
 				$("#width").val(data.width);
 				$("#height").val(data.height);
