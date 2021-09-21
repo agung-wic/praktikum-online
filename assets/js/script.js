@@ -367,7 +367,6 @@ $(function () {
 							html += '<tr>';
 							html += '<td>' + data.nomor[i] + '</td>';
 							html += '<td>' + data.kecepatan[i] + '</td>';
-							html += '<td>' + data.waktu[i] + '</td>';
 							html += '</tr>';
 						}
 						$("#dataM8").html(html);

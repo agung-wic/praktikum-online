@@ -122,7 +122,7 @@
                         <thead>
                           <tr>
                             <th scope="col">Data ke-</th>
-                            <th scope="col">Jarak</th>
+                            <th scope="col">Derajat</th>
                           </tr>
                         </thead>
                         <tbody id="dataM8">
