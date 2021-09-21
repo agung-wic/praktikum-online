@@ -362,8 +362,16 @@ $(function () {
 							html += '</tr>';
 						}
 						$("#dataM8").html(html);
+					} else if (id == 'G2') {
+						for (let i = 0; i < data.nomor.length; i++) {
+							html += '<tr>';
+							html += '<td>' + data.nomor[i] + '</td>';
+							html += '<td>' + data.kecepatan[i] + '</td>';
+							html += '<td>' + data.waktu[i] + '</td>';
+							html += '</tr>';
+						}
+						$("#dataM8").html(html);
 					}
-
 				} else {
 					$(tampil).val(data);
 				}
