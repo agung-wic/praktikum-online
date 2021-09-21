@@ -113,6 +113,27 @@
                   <div class="row justify-content-center mb-3">
                   </div>
                 </div>
+              <?php } else if ($modul['modul'] == 'G2') { ?>
+                <div class="container mt-2" style="color: black;">
+                  <h6 class="mb-3"><b>Tabel</b></h6>
+                  <div class="form-group">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Data ke-</th>
+                            <th scope="col">Jarak</th>
+                          </tr>
+                        </thead>
+                        <tbody id="dataM8">
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="row justify-content-center mb-3">
+                  </div>
+                </div>
               <?php } ?>
             </div>
           </div>
